@@ -1,0 +1,63 @@
+V "GNAT Lib v2017"
+A -gnatc
+P GP FX
+
+RN
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U utils%b		utils.adb		c2fdde67 OO PK IL
+
+U utils%s		utils.ads		32ea56d4 OO PK IL
+W network_types%s	network_types.ads	network_types.ali
+
+D network_types.ads	20180213214944 c18a7534 network_types%s
+D system.ads		20170516105954 32a08138 system%s
+D utils.ads		20171209013448 f36023e0 utils%s
+D utils.adb		20171209014540 319dfd87 utils%b
+X 1 network_types.ads
+1K9*Network_Types 21e18 3|1w6 7r68 4|5r68 10r20 13r20
+2M9*Byte
+16I9*Message_Length_Range<short_integer> 4|13r34
+18A9*Byte_Array_Type(2M9)<16I9> 3|7r82 4|5r82
+19a4*BLANK_BYTE_ARRAY{18A9} 4|10r34
+X 3 utils.ads
+3K9*utils 10l5 10e10 4|3b14 17l5 17t10
+7U14*String_To_Byte_Array 7>35 7<52 4|5b14 15t7
+7a35 Str{string} 8r37 4|5b35 12r33 13r76
+7a52 ByteArray{1|18A9} 8r24 4|5b52 10m7 13m10
+X 4 utils.adb
+12i11 I{integer} 13r55 13r80
+FD 1 network_types.ads
+FS .1 1K9 network_types
+FD 2 system.ads
+FS .1 37K9 system
+FD 3 utils.ads
+FS .1 3K9 utils
+FS .2 7U14 utils__string_to_byte_array
+FD 4 utils.adb
+FS .1 3K14 utils -> 3.1
+FS .2 5U14 utils__string_to_byte_array -> 3.2
+FX 1 network_types.ads .1 network_types
+F 19*4 network_types__blank_byte_array 4|.2:10r34
+FX 3 utils.ads .2 utils__string_to_byte_array
+F 7>35 utils__string_to_byte_array__str 8c37 4|.2:12c33 13c76
+F 7<52 utils__string_to_byte_array__bytearray 8r24 4|.2:10m7 13m10
+FX 4 utils.adb .2 utils__string_to_byte_array
+F 12*11 utils__string_to_byte_array__L_1__i 13c55 13c80
+
+QQ SPARKVERSION 2017 (20170515)
+GG EK_REMOTE_STATES RS 0
+GG EK_GLOBALS utils KIND_PACKAGE ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 1 utils__string_to_byte_array local_init 0
+GG EK_GLOBALS utils__string_to_byte_array KIND_SUBPROGRAM ORIGIN_USER var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 0
+GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
+GG EK_NONBLOCKING 1 utils
+GG EK_NONRETURNING 1 utils__string_to_byte_array
+GG EK_TERMINATING 0
+GG EK_DIRECT_CALLS utils 0
+GG EK_DIRECT_CALLS utils__string_to_byte_array 0
+GG EK_TASKING_INFO utils ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO utils__string_to_byte_array ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_END_MARKER

@@ -1,0 +1,145 @@
+V "GNAT Lib v2017"
+A -gnatc
+P GP FX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U http_message%s	http_message.ads	e831c584 OO PK KU
+W string_types%s	string_types.ads	string_types.ali
+
+D http_message.ads	20180219231500 556d4640 http_message%s
+D string_types.ads	20180215232526 bd5c83c4 string_types%s
+D system.ads		20170516105954 32a08138 system%s
+X 1 http_message.ads
+3K9*Http_Message 76l5 76e17
+4K12*ST=4:23 11r35 12r36 13r37 14r36 15r37 16r32 17r36 18r36 19r38
+5E9*ClientServerType 5e45 49r53
+5n30*Client{5E9} 56r15 67r26
+5n38*Server{5E9} 59r15
+6E9*MethodType 7e33 8r37 57r21
+6n24*NONE{6E9} 73r17
+6n30*GET{6E9} 8r54
+6n35*UNKNOWN{6E9} 8r61 45r41
+6n44*HEAD{6E9}
+6n50*POST{6E9}
+7n7*PUT{6E9}
+7n12*DELETE{6E9}
+7n20*LINK{6E9}
+7n26*UNLINK{6E9}
+8E12*Primitive_Method_Type{6E9} 45r16
+10i4*MaxHeaders{natural} 40r47 41r37
+11A12*FirstLineStringType{2|7A12}<integer> 53r24
+12A12*HeaderNameStringType{2|5A12}<integer>
+13A12*HeaderValueStringType{2|7A12}<integer> 37r14
+14A12*EntityBodyStringType{2|13A12}<integer> 52r25
+15A12*HttpVersionStringType{2|3A12}<integer> 54r26
+16A12*MethodStringType{2|3A12}<integer>
+17A12*RequestURIStringType{2|8A12}<integer> 46r20 58r31
+18A12*StatusCodeStringType{2|2A12}<integer> 60r31
+19A12*ReasonPhraseStringType{2|5A12}<integer> 61r33
+22E9*HeaderType 30e54 33r42 33r57 36r13
+22n24*ALLOW{22E9}
+22n31*AUTHORIZATION{22E9}
+22n46*CONTENT_ENCODING{22E9}
+22n64*CONTENT_LENGTH{22E9}
+22n80*CONTENT_TYPE{22E9}
+23n7*DATE{22E9}
+23n13*EXPIRES{22E9}
+23n22*FROM{22E9}
+23n28*IF_MODIFIED_SINCE{22E9}
+23n47*LAST_MODIFIED{22E9}
+23n62*LOCATION{22E9}
+23n72*PRAGM{22E9}
+23n79*REFERER{22E9}
+23n88*SERVER{22E9}
+24n7*USER_AGENT{22E9}
+24n19*WWW_AUTHENTICATE{22E9}
+24n37*UNKNOWN_HEADER{22E9} 65r47
+26n7*ACCEP{22E9}
+26n14*ACCEPT_CHARSET{22E9}
+26n30*ACCEPT_ENCODING{22E9}
+26n47*ACCEPT_LANGUAGE{22E9}
+26n64*CONTENT_LANGUAGE{22E9}
+26n82*LINK{22E9}
+26n88*MIME_VERSION{22E9}
+26n102*RETRY_AFTER{22E9}
+26n115*TITLE{22E9}
+26n122*URI{22E9}
+28n7*ACCEPT_RANGES{22E9}
+28n22*AGE{22E9}
+28n27*CACHE_CONTROL{22E9}
+28n42*CONNECTION{22E9}
+28n54*CONTENT_LOCATION{22E9}
+28n72*CONTENT_MD5{22E9}
+28n85*CONTENT_RANGE{22E9}
+28n100*ETAG{22E9}
+28n106*EXPECT{22E9}
+28n114*HOST{22E9}
+28n120*IF_MATCH{22E9}
+29n7*IF_NONE_MATCH{22E9}
+29n22*IF_RANGE{22E9}
+29n32*IF_UNMODIFIED_SINCE{22E9}
+29n53*MAX_FORWARDS{22E9}
+29n67*PROXY_AUTHENTICATE{22E9}
+29n87*PROXY_AUTHORIZATION{22E9}
+29n108*RANG{22E9}
+29n114*TE{22E9}
+29n118*TRAILER{22E9}
+30n7*TRANSFER_ENCODING{22E9}
+30n26*UPGRADE{22E9}
+30n35*VARY{22E9}
+30n41*VIA{22E9}
+30n46*WARNING{22E9}
+33i4*DistinctHeaders{natural}
+35R9*Header 38e14 41r52 65r28
+36e7*Name{22E9} 65m39
+37a7*Value{13A12} 65m63
+40I12*MaxHeadersType{integer} 50r24
+41A9*HeaderArrayType(35R9)<integer> 51r16
+43R9*Primitive_HTTP_Request 47e14
+45e7*Method{8E12}
+46a7*RequestURI{17A12}
+49R9*Http_Message_Variant_Record 49d37 63e14 66r34
+49e37*ClientOrServer{5E9} 55r12 67m8
+50i7*NumberOfHeaders{40I12} 68m7
+51a7*Headers{41A9} 71m7
+52a7*EntityBodyString{14A12} 72m7
+53a7*FirstLineString{11A12} 69m7
+54a7*HttpVersionString{15A12} 70m7
+57e13*Method{6E9} 73m7
+58a13*RequestURIString{17A12} 74m7
+60a13*StatusCodeString{18A12}
+61a13*ReasonPhraseString{19A12}
+65r4*BLANK_HEADER{35R9} 71r29
+66r4*BLANK_HTTP_MESSAGE{49R9}
+X 2 string_types.ads
+1K9*String_Types 1|1w6 4r23 2|14e17
+2A12*String4{string}<integer> 1|18r39
+3A12*String8{string}<integer> 1|15r40 16r35
+5A12*String32{string}<integer> 1|12r39 19r41
+7A12*String128{string}<integer> 1|11r38 13r40
+8A12*String255{string}<integer> 1|17r39
+13A12*String32K{string}<integer> 1|14r39
+FD 1 http_message.ads
+FS .1 3K9 http_message
+FD 2 string_types.ads
+FS .1 1K9 string_types
+FD 3 system.ads
+FS .1 37K9 system
+FX 1 http_message.ads .1 http_message
+F 10*4 http_message__maxheaders 40c47 41c37
+F 65*4 http_message__blank_header 71r29
+
+QQ SPARKVERSION 2017 (20170515)
+GG EK_REMOTE_STATES RS 0
+GG EK_GLOBALS http_message KIND_PACKAGE ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 0 local_init 0
+GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
+GG EK_NONBLOCKING 1 http_message
+GG EK_NONRETURNING 0
+GG EK_TERMINATING 0
+GG EK_DIRECT_CALLS http_message 0
+GG EK_TASKING_INFO http_message ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_END_MARKER

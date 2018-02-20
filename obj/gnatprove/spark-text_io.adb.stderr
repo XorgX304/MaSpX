@@ -1,0 +1,5 @@
+spark-text_io.ads:94:25: warning: unrecognized convention name, C assumed
+spark-text_io.ads:98:25: warning: unrecognized convention name, C assumed
+spark-text_io.ads:102:25: warning: unrecognized convention name, C assumed
+spark-text_io.ads:107:23: warning: unrecognized convention name, C assumed
+spark-text_io.ads:113:25: warning: unrecognized convention name, C assumed

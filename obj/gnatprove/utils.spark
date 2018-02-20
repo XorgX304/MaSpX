@@ -1,0 +1,34 @@
+{
+  "spark": [
+    {
+      "name": "utils",
+      "sloc": [
+        {
+          "file": "utils.ads",
+          "line": 3
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "utils.String_To_Byte_Array",
+      "sloc": [
+        {
+          "file": "utils.ads",
+          "line": 7
+        }
+      ],
+      "spark": "spec"
+    }
+  ],
+  "flow": [
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "marking": 2.16154003283009E-04,
+    "globals (basic)": 4.83437994262204E-04,
+    "globals/properties (advanced)": 5.51493023522198E-04,
+    "flow analysis": 4.12914989283308E-04
+  }
+}

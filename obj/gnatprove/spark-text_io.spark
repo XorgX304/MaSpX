@@ -1,0 +1,1256 @@
+{
+  "spark": [
+    {
+      "name": "SPARK.Text_IO",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 27
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Status",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 86
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Is_Standard_Input",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 92
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Is_Standard_Output",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 96
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Is_Standard_Error",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 100
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Is_Standard_Writable",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 104
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "SPARK.Text_IO.Is_Standard_File",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 109
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "SPARK.Text_IO.Is_Open",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 115
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Mode",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 118
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Name",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 125
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Form",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 129
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Is_Readable",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 133
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "SPARK.Text_IO.Is_Writable",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 137
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "SPARK.Text_IO.Line_Length",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 298
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Page_Length",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 305
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Create",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 144
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Open",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 164
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Close",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 182
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Delete",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 188
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Reset",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 194
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Reset",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 205
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Flush",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 225
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Flush",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 236
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Set_Line_Length",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 252
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Set_Line_Length",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 263
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Set_Page_Length",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 276
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Set_Page_Length",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 286
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Line_Length",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 302
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Page_Length",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 309
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.New_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 314
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.New_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 325
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.End_Of_File",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 412
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Skip_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 339
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.End_Of_File",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 416
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Skip_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 348
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.End_Of_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 357
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.End_Of_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 361
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.New_Page",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 364
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.New_Page",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 374
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Skip_Page",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 388
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Skip_Page",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 396
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.End_Of_Page",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 405
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.End_Of_Page",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 409
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Col",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 484
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Set_Col",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 420
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Set_Col",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 435
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Page",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 498
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Set_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 452
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 491
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Set_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 467
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Col",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 488
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 495
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Page",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 502
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 507
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 515
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Put",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 528
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Put",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 540
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Look_Ahead",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 555
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Look_Ahead",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 565
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get_Immediate",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 573
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get_Immediate",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 582
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get_Immediate",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 591
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get_Immediate",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 601
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 613
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 624
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Put",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 634
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Put",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 646
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 664
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Get_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 679
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Put_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 690
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "SPARK.Text_IO.Put_Line",
+      "sloc": [
+        {
+          "file": "spark-text_io.ads",
+          "line": 703
+        }
+      ],
+      "spark": "spec"
+    }
+  ],
+  "flow": [
+    {
+      "file": "spark-text_io.ads",
+      "line": 29,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 30,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 30,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 30,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 31,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 31,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 31,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 29,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 29,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 80,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 80,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 80,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 81,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 81,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 81,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 82,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 82,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "spark-text_io.ads",
+      "line": 82,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "SPARK.Text_IO",
+        "sloc": [
+          {
+            "file": "spark-text_io.ads",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "spark-text_io__flow__247.trace",
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Is_Standard_Error",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 100
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Is_Standard_Input",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 92
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Is_Standard_Output",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 96
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "SPARK.Text_IO.Is_Standard_File",
+          "sloc": [
+            {
+              "file": "spark-text_io.ads",
+              "line": 109
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Is_Open",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 115
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Mode",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 118
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "SPARK.Text_IO.Is_Readable",
+          "sloc": [
+            {
+              "file": "spark-text_io.ads",
+              "line": 133
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Is_Standard_Error",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 100
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Is_Standard_Output",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 96
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "SPARK.Text_IO.Is_Standard_Writable",
+          "sloc": [
+            {
+              "file": "spark-text_io.ads",
+              "line": 104
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Is_Open",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 115
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Mode",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 118
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "SPARK.Text_IO.Is_Writable",
+          "sloc": [
+            {
+              "file": "spark-text_io.ads",
+              "line": 137
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 3.59105295501649E-03,
+    "globals (basic)": 3.27708274126053E-02,
+    "globals/properties (advanced)": 2.42258552461863E-02,
+    "flow analysis": 1.59643888473511E-02
+  }
+}

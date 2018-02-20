@@ -1,0 +1,64 @@
+{
+  "spark": [
+    {
+      "name": "network_ns",
+      "sloc": [
+        {
+          "file": "network_ns.ads",
+          "line": 11
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "network_ns.Initialize_TCP_State",
+      "sloc": [
+        {
+          "file": "network_ns.ads",
+          "line": 46
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "network_ns.Get_Client_Cxn",
+      "sloc": [
+        {
+          "file": "network_ns.ads",
+          "line": 51
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "network_ns.Recv_NET_Request",
+      "sloc": [
+        {
+          "file": "network_ns.ads",
+          "line": 57
+        }
+      ],
+      "spark": "spec"
+    },
+    {
+      "name": "network_ns.Send_TEST_Response",
+      "sloc": [
+        {
+          "file": "network_ns.ads",
+          "line": 62
+        }
+      ],
+      "spark": "spec"
+    }
+  ],
+  "flow": [
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "marking": 3.79768689163029E-03,
+    "globals (basic)": 4.02649976313114E-02,
+    "globals/properties (advanced)": 2.55404114723206E-02,
+    "flow analysis": 2.30329507030547E-03
+  }
+}

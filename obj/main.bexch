@@ -1,0 +1,26 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\ironwebs.gpr
+20171206205202
+[BOUND OBJECT FILES]
+D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\network_types.o
+D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\spark.o
+D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\utils.o
+D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\network_ns.o
+D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\spark-text_io.o
+D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\parsing.o
+D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LD:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\
+-LD:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\obj\
+-LC:/gnat/2017/lib/gcc/i686-pc-mingw32/6.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2017/lib/gcc/i686-pc-mingw32/6.3.1/adalib/libgnat.a
+-lws2_32
+-Wl,--stack=0x2000000

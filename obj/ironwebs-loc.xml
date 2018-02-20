@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project >
+    <file_marker column=" 6" line=" 15" >
+      <vfs_project>D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\ironwebs.gpr</vfs_project>
+      <vfs_file>D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 61" line=" 22" >
+      <vfs_project>D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\ironwebs.gpr</vfs_project>
+      <vfs_file>D:\OneDrive\OneDrive\ChthonianCyberServices\ada\ironwebs\src\network_ns.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

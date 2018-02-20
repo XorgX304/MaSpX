@@ -1,0 +1,207 @@
+{
+  "spark": [
+    {
+      "name": "Masp",
+      "sloc": [
+        {
+          "file": "masp.adb",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "masp.adb",
+      "line": 23,
+      "col": 40,
+      "rule": "INEFFECTIVE",
+      "severity": "warning",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__60.trace",
+      "msg_id": 0,
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 27,
+      "col": 49,
+      "rule": "INEFFECTIVE",
+      "severity": "warning",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__70.trace",
+      "msg_id": 1,
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 33,
+      "col": 36,
+      "rule": "INEFFECTIVE",
+      "severity": "warning",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__86.trace",
+      "msg_id": 2,
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 27,
+      "col": 19,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__92.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 30,
+      "col": 21,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__92.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 31,
+      "col": 41,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__92.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 33,
+      "col": 23,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__92.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 33,
+      "col": 23,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__92.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 40,
+      "col": 23,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__92.trace",
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "marking": 5.19052380695939E-03,
+    "globals (basic)": 7.90423080325127E-02,
+    "globals/properties (advanced)": 3.57705391943455E-02,
+    "flow analysis": 7.45714688673615E-03
+  }
+}

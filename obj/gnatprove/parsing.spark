@@ -1,0 +1,970 @@
+{
+  "spark": [
+    {
+      "name": "parsing",
+      "sloc": [
+        {
+          "file": "parsing.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "parsing.Get_First_Token_In_Range",
+      "sloc": [
+        {
+          "file": "parsing.ads",
+          "line": 12
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "parsing.Parse_HTTP_Request",
+      "sloc": [
+        {
+          "file": "parsing.ads",
+          "line": 22
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "parsing.ads",
+      "line": 17,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__34.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.ads",
+      "line": 17,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__34.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 29,
+      "col": 13,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__34.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 30,
+      "col": 40,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__34.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 30,
+      "col": 40,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__34.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 31,
+      "col": 29,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__34.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.ads",
+      "line": 24,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__79.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.ads",
+      "line": 24,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__79.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 56,
+      "col": 10,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__79.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 62,
+      "col": 10,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__79.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 67,
+      "col": 62,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__79.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 75,
+      "col": 39,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__79.trace",
+      "how_proved": "flow"
+    }
+  ],
+  "proof": [
+    {
+      "file": "parsing.adb",
+      "line": 14,
+      "col": 23,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 12,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 13,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 30,
+      "col": 50,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 52,
+              "time": 0.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 52,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 2,
+          "max_steps": 53,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 46,
+      "col": 7,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 607,
+              "time": 6.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 608,
+          "max_time": 5.99999986588955E-02
+        }
+      }
+    },
+    {
+      "file": "network_ns.ads",
+      "line": 38,
+      "col": 32,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 604,
+              "time": 8.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 605,
+          "max_time": 7.99999982118607E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 67,
+      "col": 60,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 3111,
+              "time": 1.25000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 3112,
+          "max_time": 1.25000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 64,
+      "col": 10,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 609,
+              "time": 8.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 610,
+          "max_time": 7.99999982118607E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 75,
+      "col": 44,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 615,
+              "time": 6.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 604,
+              "time": 6.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 615,
+              "time": 6.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 615,
+              "time": 8.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 4,
+          "max_steps": 616,
+          "max_time": 7.99999982118607E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 31,
+      "col": 42,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 74,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 75,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 30,
+      "col": 31,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 56,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 74,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 2,
+          "max_steps": 75,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 43,
+      "col": 36,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 604,
+              "time": 6.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 605,
+          "max_time": 5.99999986588955E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 75,
+      "col": 44,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 22
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 604,
+              "time": 8.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 605,
+          "max_time": 7.99999982118607E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 23,
+      "col": 11,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 39,
+              "time": 0.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 40,
+              "time": 0.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 2,
+          "max_steps": 41,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 25,
+      "col": 20,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_First_Token_In_Range",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 44,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 45,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 2,
+          "max_steps": 46,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "parsing.Get_First_Token_In_Range",
+          "sloc": [
+            {
+              "file": "parsing.ads",
+              "line": 12
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "parsing.Get_First_Token_In_Range",
+          "sloc": [
+            {
+              "file": "parsing.ads",
+              "line": 12
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "parsing",
+          "sloc": [
+            {
+              "file": "parsing.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "parsing.Get_First_Token_In_Range",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 12
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "parsing.Parse_HTTP_Request",
+          "sloc": [
+            {
+              "file": "parsing.ads",
+              "line": 22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "parsing.Get_First_Token_In_Range",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 12
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "parsing.Get_First_Token_In_Range",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 12
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "parsing.Parse_HTTP_Request",
+          "sloc": [
+            {
+              "file": "parsing.ads",
+              "line": 22
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 5.59215480461717E-03,
+    "globals (basic)": 4.36998419463634E-02,
+    "globals/properties (advanced)": 3.18307504057884E-02,
+    "flow analysis": 6.59922882914543E-03,
+    "codepeer results": 5.99499981035478E-06,
+    "init_why_sections": 3.07481997879222E-04,
+    "translation of standard": 3.06741707026958E-03,
+    "translation of compilation unit": 1.40658274292946E-01,
+    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
+    "gnatwhy3.init": 1.76562500000000E+00,
+    "gnatwhy3.save_session": 3.12500000000000E-02,
+    "proof": 2.31977367401123E+00
+  }
+}
