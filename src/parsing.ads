@@ -21,7 +21,7 @@ package parsing is
    --creates an http message out of a raw request
    procedure Parse_HTTP_Request(
       Raw_Request : Measured_Request_Buffer;
-      Parsed_Request : out Primitive_HTTP_Request
+      Parsed_Request : out Simple_HTTP_Request
    );
 
 end parsing;

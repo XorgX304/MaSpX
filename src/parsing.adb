@@ -36,7 +36,7 @@ package body parsing is
 --------------------------------------------------------------------------------
    procedure Parse_HTTP_Request(
       Raw_Request : Measured_Request_Buffer;
-      Parsed_Request : out Primitive_HTTP_Request)
+      Parsed_Request : out Simple_HTTP_Request)
    is
       Token : Measured_Request_Buffer;
    begin

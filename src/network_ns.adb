@@ -60,27 +60,25 @@ package body network_ns is
       Client_Stream : Gnat.Sockets.Stream_Access;
       SP_ct : Natural := 0;  --space count
       C_ct : Positive := 1; --character count
+      Prev_C : String (1 .. 1);
       C : String(1 .. 1);
    begin
+      Prev_C(1) := NUL;
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
       
       loop
-         String'Read(Client_Stream, C); --TODO-SEC:what happens when non-ASCII character (control char is encountered)
-                                                 --http/0.9 request line *should* be all printable ascii, but of course, we've got to test violations of the standard
-         if C = " " then
-            SP_ct := SP_ct + 1;
-         end if;
-         
-         --stop after two tokens, as all http/0.9 cares about is GET and URI
-         if SP_ct = 2 then
-            exit;
-         end if;
-         
+         String'Read(Client_Stream, C); --TODO-SEC:what happens when non-ASCII character (control char is encountered) or when longer than 259??
+                                                 --http/0.9 request line *should* be all printable ascii, but of course, we've got to test violations of the standard        
          Request.Buffer(C_ct) := C(1);  --TODO-SEC:what happens when network input is longer than String_Request? Crash probably. Fix by exiting loop when capacity reached.
          Request.Length := C_ct;
          
          C_ct := C_ct + 1;
       
+         if C(1) = LF and Prev_C(1) = CR then --this only works for Simple-Request
+            exit;
+         end if;
+         
+         Prev_C := C;
       end loop;
    end Recv_NET_Request;
    
@@ -105,4 +103,15 @@ package body network_ns is
    end Send_TEST_Response;
    
    -----------------------------------------------------------------------------
+   procedure Send_Simple_Response(
+      Client_Socket : Gnat.Sockets.Socket_Type;
+      Response : String)
+   is
+      Client_Stream : Gnat.Sockets.Stream_Access;
+   begin
+      Client_Stream := Gnat.Sockets.Stream(Client_Socket);
+   
+      String'Write(Client_Stream, Response);
+   end Send_Simple_Response;
+   
 end network_ns;

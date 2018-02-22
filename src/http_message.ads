@@ -5,7 +5,7 @@ PACKAGE Http_Message IS
    TYPE ClientServerType IS (Client, Server);
    TYPE MethodType IS (NONE, GET, UNKNOWN, HEAD, POST,  --only http 1.0 for now
       PUT, DELETE, LINK, UNLINK);   --less common
-   subtype Primitive_Method_Type is MethodType range GET .. UNKNOWN;
+   subtype Simple_Method_Type is MethodType range GET .. UNKNOWN;
 
    MaxHeaders : constant Natural := 32;
    subtype FirstLineStringType is ST.String128;
@@ -40,9 +40,9 @@ PACKAGE Http_Message IS
    SUBTYPE MaxHeadersType IS Integer RANGE 0..MaxHeaders;
    TYPE HeaderArrayType IS ARRAY(1..MaxHeaders) OF Header;
 
-   type Primitive_HTTP_Request is
+   type Simple_HTTP_Request is
    record
-      Method : Primitive_Method_Type := UNKNOWN;
+      Method : Simple_Method_Type := UNKNOWN;
       RequestURI : RequestURIStringType := (others=>' ');
    end record;
 

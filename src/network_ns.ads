@@ -2,10 +2,10 @@ with Gnat.Sockets;
 with Ada.Text_IO;
 with Ada.Exceptions;
 with Ada.Characters;
-with Ada.Characters.Latin_1;
+with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 with Ada.Streams;
 
-with utils;
+with utils_ns;
 with network_types; use Network_Types;
 
 package network_ns 
@@ -28,6 +28,7 @@ is
                                              ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF &
                                              "Hello World! My payload includes a trailing CRLF." & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
    STATIC_TEST_RESPONSE_09 : constant String := "Hello World! My payload includes a trailing CRLF." & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
+   STATIC_UNKNOWN_METHOD_RESPONSE_09 : constant String := "<p>MaSpX error! Unknown HTTP METHOD</p><hr /><p><em>&copy; htmlg.com</em></p>";
 
    subtype Request_Line is String(1 .. MAX_REQUEST_LINE_CT);
 
@@ -61,6 +62,11 @@ is
    procedure Send_TEST_Response(
       Client_Socket : Gnat.Sockets.Socket_Type
       --Message_Byte_Array : Network_Types.Byte_Array_Type
+   );
+   
+   procedure Send_Simple_Response(
+      Client_Socket : Gnat.Sockets.Socket_Type;
+      Response : String
    );
 
 end network_ns;

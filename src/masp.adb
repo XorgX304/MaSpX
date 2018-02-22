@@ -4,11 +4,12 @@ with Gnat.Sockets;
 with Ada.Characters.Latin_1;
 with SPARK.Text_IO; use SPARK.Text_IO;
 
+with server; use server;
 with Http_Message; use Http_Message;
 with parsing; use parsing;
 with network_ns; use network_ns;
 with Network_Types;
-with utils;
+with utils_ns;
 
 procedure Masp is
    Server_Socket : Gnat.Sockets.Socket_Type;
@@ -17,7 +18,7 @@ procedure Masp is
    Client_Socket_addr : Gnat.Sockets.Sock_Addr_Type;
    --Message_Byte_Array : Network_Types.Byte_Array_Type;
    Raw_Request : Measured_Request_Buffer;
-   Parsed_Request : Primitive_HTTP_Request;
+   Parsed_Request : Simple_HTTP_Request;
 begin
    Put_line("Debugging: About to Init");
    Initialize_TCP_State(Server_Socket, Server_Socket_addr); --        <--- network, non-SPARK stuff
@@ -43,10 +44,11 @@ begin
    end case;
    Put_Line("Debugging: Parsed URI:" & Parsed_Request.RequestURI);
 
-   --TODO:Sanitize_HTTP_Request --                     <--- SPARK goes here
+   --TODO:Sanitize_HTTP_Request --                     <--- SPARK goes here, be careful for directory traversal attacks
 
-   --TODO:Fulfill_HTTP_Request  --                     <--- SPARK goes here
+   Fulfill_HTTP_Request(Client_Socket, Parsed_Request);  --                     <--- SPARK goes here
 
-   --test: a single, static reply
-   Send_TEST_Response(Client_Socket); --        <--- network, non-SPARK stuff
+   loop
+      null;
+   end loop;
 end Masp;
