@@ -1,7 +1,11 @@
+with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
+
+with fileio; use fileio;
 WITH String_Types;
 
 PACKAGE Http_Message IS
    package ST renames String_Types;
+
    TYPE ClientServerType IS (Client, Server);
    TYPE MethodType IS (NONE, GET, UNKNOWN, HEAD, POST,  --only http 1.0 for now
       PUT, DELETE, LINK, UNLINK);   --less common
@@ -46,6 +50,13 @@ PACKAGE Http_Message IS
       RequestURI : RequestURIStringType := (others=>' ');
    end record;
 
+   type Simple_HTTP_Response is
+   record
+      --ltj: don't encode http version or status code because in MaspClassic, this is always HTTP/0.9 200 OK
+      Content_Length : ContentSize := 0;
+      Entity_Body : File_Buf := (others => NUL);
+   end record;
+
    TYPE Http_Message_Variant_Record(ClientOrServer: ClientServerType) IS RECORD
       NumberOfHeaders: MaxHeadersType;
       Headers: HeaderArrayType;
@@ -72,6 +83,9 @@ PACKAGE Http_Message IS
       EntityBodyString => (OTHERS => ' '),
       Method => NONE,
       RequestURIString => (OTHERS => ' '));
+
+   function Construct_Simple_HTTP_Response(Page : String) return Simple_HTTP_Response
+   with Pre => Page'Length <= MAX_FILE_READ_BYTE_CT;
 
 END Http_Message;
 

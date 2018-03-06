@@ -4,7 +4,7 @@ pragma SPARK_Mode(On);
 package body parsing is
 
    procedure Get_First_Token_In_Range(
-      Source : Request_Line;
+      Source : Simple_Request_Line;
       Delimit : Character;
       Start : Positive;
       Finish : Positive;

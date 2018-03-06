@@ -33,7 +33,7 @@ begin
 
    Parse_HTTP_Request(Raw_Request, Parsed_Request); --         <--- SPARK goes here
 
-   --debug print Parsed_Request
+   --debug: print Parsed_Request
    case Parsed_Request.Method is
       when Http_Message.GET =>
          Put_Line("Debugging: Parsed METHOD: GET");
@@ -44,9 +44,9 @@ begin
    end case;
    Put_Line("Debugging: Parsed URI:" & Parsed_Request.RequestURI);
 
-   --TODO:Sanitize_HTTP_Request --                     <--- SPARK goes here, be careful for directory traversal attacks
+   --TODO:Sanitize_HTTP_Request --be wary of directory traversal attacks
 
-   Fulfill_HTTP_Request(Client_Socket, Parsed_Request);  --                     <--- SPARK goes here
+   Fulfill_HTTP_Request(Client_Socket, Parsed_Request);
 
    loop
       null;

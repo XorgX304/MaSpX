@@ -1,3 +1,5 @@
+parsing.adb:53:07: medium: precondition might fail[#0]
+parsing.adb:71:10: medium: precondition might fail[#1]
 spark-text_io.ads:32:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:33:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:34:29: info: implicit function contract not available for proof ("Status" may not return)

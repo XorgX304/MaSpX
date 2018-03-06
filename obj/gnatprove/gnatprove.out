@@ -6,33 +6,37 @@ SPARK Analysis results        Total        Flow   Interval   CodePeer         Pr
 ------------------------------------------------------------------------------------------------------------
 Data Dependencies                 .           .          .          .               .           .          .
 Flow Dependencies                 .           .          .          .               .           .          .
-Initialization                   37          37          .          .               .           .          .
+Initialization                   43          43          .          .               .           .          .
 Non-Aliasing                      .           .          .          .               .           .          .
-Run-time Checks                  15           .          .          .    15 (altergo)           .          .
+Run-time Checks                  27           .          .          .    27 (altergo)           .          .
 Assertions                        .           .          .          .               .           .          .
-Functional Contracts              2           .          .          .     2 (altergo)           .          .
+Functional Contracts             31           .          .          .    22 (altergo)           .          9
 LSP Verification                  .           .          .          .               .           .          .
 ------------------------------------------------------------------------------------------------------------
-Total                            54    37 (69%)          .          .        17 (31%)           .          .
+Total                           101    43 (43%)          .          .        49 (49%)           .     9 (9%)
 
 
-Analyzed 7 units
+Analyzed 9 units
 in unit main, 1 subprograms and packages out of 1 analyzed
   Main at main.adb:7 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
 in unit masp, 1 subprograms and packages out of 1 analyzed
-  Masp at masp.adb:13 flow analyzed (0 errors and 3 warnings)
-in unit network_ns, 0 subprograms and packages out of 5 analyzed
+  Masp at masp.adb:14 flow analyzed (0 errors and 0 warnings) and not proved, 10 checks out of 16 proved
+in unit network_ns, 0 subprograms and packages out of 6 analyzed
   network_ns at network_ns.ads:11 skipped
   network_ns.Get_Client_Cxn at network_ns.ads:51 skipped
   network_ns.Initialize_TCP_State at network_ns.ads:46 skipped
   network_ns.Recv_NET_Request at network_ns.ads:57 skipped
+  network_ns.Send_Simple_Response at network_ns.ads:67 skipped
   network_ns.Send_TEST_Response at network_ns.ads:62 skipped
 in unit parsing, 3 subprograms and packages out of 3 analyzed
   parsing at parsing.ads:9 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
   parsing.Get_First_Token_In_Range at parsing.ads:12 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
-  parsing.Parse_HTTP_Request at parsing.ads:22 flow analyzed (0 errors and 0 warnings) and proved (7 checks)
+  parsing.Parse_HTTP_Request at parsing.ads:22 flow analyzed (0 errors and 0 warnings) and not proved, 9 checks out of 11 proved
+in unit server, 0 subprograms and packages out of 2 analyzed
+  server.Fulfill_HTTP_Request at server.ads:17 skipped
+  server.Sanitize_HTTP_Request at server.ads:12 skipped
 in unit spark, 1 subprograms and packages out of 2 analyzed
-  SPARK at spark.ads:29 flow analyzed (0 errors and 0 warnings)
+  SPARK at spark.ads:29 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
   SPARK.Text_IO_File_Type at spark.ads:53 skipped
 in unit spark-text_io, 4 subprograms and packages out of 71 analyzed
   SPARK.Text_IO at spark-text_io.ads:27 skipped
@@ -61,13 +65,13 @@ in unit spark-text_io, 4 subprograms and packages out of 71 analyzed
   SPARK.Text_IO.Get_Line at spark-text_io.ads:664 skipped
   SPARK.Text_IO.Get_Line at spark-text_io.ads:679 skipped
   SPARK.Text_IO.Is_Open at spark-text_io.ads:115 skipped
-  SPARK.Text_IO.Is_Readable at spark-text_io.ads:133 flow analyzed (0 errors and 0 warnings)
+  SPARK.Text_IO.Is_Readable at spark-text_io.ads:133 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
   SPARK.Text_IO.Is_Standard_Error at spark-text_io.ads:100 skipped
-  SPARK.Text_IO.Is_Standard_File at spark-text_io.ads:109 flow analyzed (0 errors and 0 warnings)
+  SPARK.Text_IO.Is_Standard_File at spark-text_io.ads:109 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
   SPARK.Text_IO.Is_Standard_Input at spark-text_io.ads:92 skipped
   SPARK.Text_IO.Is_Standard_Output at spark-text_io.ads:96 skipped
-  SPARK.Text_IO.Is_Standard_Writable at spark-text_io.ads:104 flow analyzed (0 errors and 0 warnings)
-  SPARK.Text_IO.Is_Writable at spark-text_io.ads:137 flow analyzed (0 errors and 0 warnings)
+  SPARK.Text_IO.Is_Standard_Writable at spark-text_io.ads:104 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  SPARK.Text_IO.Is_Writable at spark-text_io.ads:137 flow analyzed (0 errors and 0 warnings) and proved (2 checks)
   SPARK.Text_IO.Line at spark-text_io.ads:491 skipped
   SPARK.Text_IO.Line at spark-text_io.ads:495 skipped
   SPARK.Text_IO.Line_Length at spark-text_io.ads:298 skipped
@@ -109,3 +113,6 @@ in unit spark-text_io, 4 subprograms and packages out of 71 analyzed
 in unit utils, 0 subprograms and packages out of 2 analyzed
   utils at utils.ads:3 skipped
   utils.String_To_Byte_Array at utils.ads:7 skipped
+in unit utils_ns, 0 subprograms and packages out of 2 analyzed
+  utils_ns at utils_ns.ads:3 skipped
+  utils_ns.String_To_Byte_Array at utils_ns.ads:7 skipped

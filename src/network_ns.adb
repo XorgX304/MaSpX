@@ -74,10 +74,19 @@ package body network_ns is
          
          C_ct := C_ct + 1;
       
-         if C(1) = LF and Prev_C(1) = CR then --this only works for Simple-Request
+         if C(1) = LF and Prev_C(1) = CR then --this only works for Simple-Request, other versions of HTTP will be multi-line
             exit;
          end if;
          
+         case C(1) is
+            when CR =>
+               Ada.Text_IO.Put("\r");
+            when LF =>
+               Ada.Text_IO.Put("\n");
+            when others =>
+               Ada.Text_IO.Put(C);
+         end case;
+            
          Prev_C := C;
       end loop;
    end Recv_NET_Request;
@@ -89,7 +98,7 @@ package body network_ns is
    is
       Client_Stream : Gnat.Sockets.Stream_Access;
       --Message_Stream_Array : Ada.Streams.Stream_Element_Array (1 .. Ada.Streams.Stream_Element_Offset(Network_Types.MAX_HTTP_MSG_LENGTH));
-      --for Message_Stream_Array'Address use Message_Byte_Array'Address;
+      --for Message_Stream_Array'Address use Message_Byte_Array'Address;2
       --Result_Last : Ada.Streams.Stream_Element_Offset;
    begin
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
@@ -105,13 +114,18 @@ package body network_ns is
    -----------------------------------------------------------------------------
    procedure Send_Simple_Response(
       Client_Socket : Gnat.Sockets.Socket_Type;
-      Response : String)
+      Response : Simple_HTTP_Response)
    is
+      Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + ContentSize'Image(Response.Content_Length)'Length + 2 + 2 + Response.Content_Length));
       Client_Stream : Gnat.Sockets.Stream_Access;
    begin
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
    
-      String'Write(Client_Stream, Response);
-   end Send_Simple_Response;
+      Send_String := STATIC_RESPONSE_HEADER_09 & 
+                     STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & ContentSize'Image(Response.Content_Length) & CR & LF &
+                     CR & LF &
+                     Response.Entity_Body(1 .. Response.Content_Length);
    
+      String'Write(Client_Stream, Send_String);
+   end Send_Simple_Response;
 end network_ns;

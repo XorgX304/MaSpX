@@ -8,7 +8,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U masp%b		masp.adb		6bba99f7 OO SU
+U masp%b		masp.adb		c321e0e1 OO SU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -18,10 +18,11 @@ W http_message%s	http_message.ads	http_message.ali
 W network_ns%s		network_ns.adb		network_ns.ali
 W network_types%s	network_types.ads	network_types.ali
 W parsing%s		parsing.adb		parsing.ali
+W server%s		server.adb		server.ali
 W spark%s		spark.ads		spark.ali
 W spark.text_io%s	spark-text_io.adb	spark-text_io.ali
 W system%s		system.ads		system.ali
-W utils%s		utils.adb		utils.ali
+W utils_ns%s		utils_ns.adb		utils_ns.ali
 
 D ada.ads		20170516105950 76789da1 ada%s
 D a-charac.ads		20170516105954 2d3ec45b ada.characters%s
@@ -34,16 +35,17 @@ D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D a-uncdea.ads		20170516105954 f15a5ed1 ada.unchecked_deallocation%s
 D gnat.ads		20170516105956 fd2ad2f1 gnat%s
 D g-socket.ads		20170516105956 df7f0365 gnat.sockets%s
-D http_message.ads	20180219225622 20d7c9ed http_message%s
+D http_message.ads	20180220212412 1290406f http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D masp.adb		20180219223034 10f755a9 masp%b
-D network_ns.ads	20180219222108 381c0c44 network_ns%s
+D masp.adb		20180222204516 3ea6fa67 masp%b
+D network_ns.ads	20180222204608 71dda872 network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
-D parsing.ads		20180219223634 a313fcf1 parsing%s
+D parsing.ads		20180222200758 6099770a parsing%s
+D server.ads		20180222150842 5f75252b server%s
 D spark.ads		20140410152036 86380d85 spark%s
-D spark-text_io.ads	20171027033802 4b45dd86 spark.text_io%s
+D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
 D string_types.ads	20180215232526 bd5c83c4 string_types%s
 D system.ads		20170516105954 32a08138 system%s
 D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
@@ -54,7 +56,7 @@ D s-stalib.ads		20170516105954 09bd3940 system.standard_library%s
 D s-stoele.ads		20170516105956 2dc34a04 system.storage_elements%s
 D s-traent.ads		20170516105950 005bf670 system.traceback_entries%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20171209013448 f36023e0 utils%s
+D utils_ns.ads		20180220212052 c662e524 utils_ns%s
 X 1 ada.ads
 16K9*Ada 20e8 16|4r6
 X 2 a-charac.ads
@@ -62,43 +64,52 @@ X 2 a-charac.ads
 X 3 a-chlat1.ads
 18K24*Latin_1 296e27 16|4w21
 X 10 gnat.ads
-34K9*GNAT 37e9 16|3r6 14r20 15r25 16r20 17r25
+34K9*GNAT 37e9 16|3r6 15r20 16r25 17r20 18r25
 X 11 g-socket.ads
-55K14*Sockets 1284e17 16|3w11 14r25 15r30 16r25 17r30
-412I9*Socket_Type<integer> 16|14r33 16r33
-505R9*Sock_Addr_Type 508e14 16|15r38 17r38
+55K14*Sockets 1284e17 16|3w11 15r25 16r30 17r25 18r30
+412I9*Socket_Type<integer> 16|15r33 17r33
+505R9*Sock_Addr_Type 508e14 16|16r38 18r38
 X 12 http_message.ads
-3K9*Http_Message 76e17 16|7w6 7r24
-43R9*Primitive_HTTP_Request 47e14 16|20r21
+3K9*Http_Message 76e17 16|8w6 8r24 38r12 40r12
+6n30*GET{6E9} 16|38r25
+6n35*UNKNOWN{6E9} 16|40r25
+17A12*RequestURIStringType{23|8A12}<integer>
+43R9*Simple_HTTP_Request 47e14 16|21r21
+45e7*Method{8E12} 16|37r24
+46a7*RequestURI{17A12} 16|45r55
 X 16 masp.adb
-13U11*Masp 13b11 41l5 41t9
-14i4 Server_Socket{11|412I9} 23m25 27r19
-15r4 Server_Socket_addr{11|505R9} 23m40
-16i4 Client_Socket{11|412I9} 27m34 30r21 40r23
-17r4 Client_Socket_addr{11|505R9} 27m49
-19r4 Raw_Request{17|36R9} 30m36 31r41 33r23
-20r4 Parsed_Request{12|43R9} 33m36
+14U11*Masp 14b11 54l5 54t9
+15i4 Server_Socket{11|412I9} 24m25 28r19
+16r4 Server_Socket_addr{11|505R9} 24m40
+17i4 Client_Socket{11|412I9} 28m34 31r21 49r25
+18r4 Client_Socket_addr{11|505R9} 28m49
+20r4 Raw_Request{17|36R9} 31m36 32r41 34r23
+21r4 Parsed_Request{12|43R9} 34m36 37r9 45r40 49r40
 X 17 network_ns.ads
-11K9*network_ns 16|9w6 9r22 17|67e15
-33A12*Request_Line{string}<integer>
-36R9*Measured_Request_Buffer 16|19r18 17|40e14
-38a7*Buffer{33A12} 16|31r53
-46U14*Initialize_TCP_State 16|23s4
-51U14*Get_Client_Cxn 16|27s4
-57U14*Recv_NET_Request 16|30s4
-62U14*Send_TEST_Response 16|40s4
+11K9*network_ns 16|10w6 10r22 17|72e15
+33A12*Simple_Request_Line{string}<integer>
+36R9*Measured_Request_Buffer 16|20r18 17|40e14
+38a7*Buffer{33A12} 16|32r53
+46U14*Initialize_TCP_State 16|24s4
+51U14*Get_Client_Cxn 16|28s4
+57U14*Recv_NET_Request 16|31s4
 X 18 network_types.ads
-1K9*Network_Types 16|10w6 18|21e18
+1K9*Network_Types 16|11w6 18|21e18
 X 19 parsing.ads
-9K9*parsing 16|8w6 8r19 19|26e12
-21U14*Parse_HTTP_Request 16|33s4
-X 20 spark.ads
-29K9*SPARK 16|5r6 5r25 20|66e10
-X 21 spark-text_io.ads
-27K15*Text_IO 16|5w12 5r31 21|718e18
-703U14*Put_Line 16|22s4 25s4 29s4 31s4
-X 32 utils.ads
-3K9*utils 16|11w6 32|10e10
+9K9*parsing 16|9w6 9r19 19|27e12
+22U14*Parse_HTTP_Request 16|34s4
+X 20 server.ads
+6K9*server 16|7w6 7r18 20|22e11
+17U14*Fulfill_HTTP_Request 16|49s4
+X 21 spark.ads
+29K9*SPARK 16|5r6 5r25 21|66e10
+X 22 spark-text_io.ads
+27K15*Text_IO 16|5w12 5r31 22|718e18
+703U14*Put_Line 16|23s4 26s4 30s4 32s4 39s10 41s10 43s10 45s4
+X 23 string_types.ads
+8A12*String255{string}<integer>
+X 33 utils_ns.ads
+3K9*utils_ns 16|12w6 33|10e13
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -376,22 +387,27 @@ FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 16 masp.adb
-FS .1 13U11 masp
+FS .1 14U11 masp
 FD 17 network_ns.ads
 FS .1 11K9 network_ns
 FS .2 46U14 network_ns__initialize_tcp_state
 FS .3 51U14 network_ns__get_client_cxn
 FS .4 57U14 network_ns__recv_net_request
 FS .5 62U14 network_ns__send_test_response
+FS .6 67U14 network_ns__send_simple_response
 FD 18 network_types.ads
 FS .1 1K9 network_types
 FD 19 parsing.ads
 FS .1 9K9 parsing
 FS .2 12U14 parsing__get_first_token_in_range
-FS .3 21U14 parsing__parse_http_request
-FD 20 spark.ads
+FS .3 22U14 parsing__parse_http_request
+FD 20 server.ads
+FS .1 6K9 server
+FS .2 12U14 server__sanitize_http_request
+FS .3 17U14 server__fulfill_http_request
+FD 21 spark.ads
 FS .1 29K9 spark
-FD 21 spark-text_io.ads
+FD 22 spark-text_io.ads
 FS .1 27K15 spark__text_io
 FS .2 86V13 spark__text_io__status
 FS .3 92V13 spark__text_io__is_standard_input
@@ -463,20 +479,20 @@ FS .68 664U14 spark__text_io__get_line
 FS .69 679U14 spark__text_io__get_line__2
 FS .70 690U14 spark__text_io__put_line
 FS .71 703U14 spark__text_io__put_line__2
-FS .72 104V13 spark__text_io__is_standard_writable -> 21.6
-FS .73 109V13 spark__text_io__is_standard_file -> 21.7
-FS .74 133V13 spark__text_io__is_readable -> 21.12
-FS .75 137V13 spark__text_io__is_writable -> 21.13
-FD 22 string_types.ads
+FS .72 104V13 spark__text_io__is_standard_writable -> 22.6
+FS .73 109V13 spark__text_io__is_standard_file -> 22.7
+FS .74 133V13 spark__text_io__is_readable -> 22.12
+FS .75 137V13 spark__text_io__is_writable -> 22.13
+FD 23 string_types.ads
 FS .1 1K9 string_types
-FD 23 system.ads
+FD 24 system.ads
 FS .1 37K9 system
 FS .2 77V13 system__Olt
 FS .3 78V13 system__Ole
 FS .4 79V13 system__Ogt
 FS .5 80V13 system__Oge
 FS .6 81V13 system__Oeq
-FD 24 s-crtl.ads
+FD 25 s-crtl.ads
 FS .1 38K16 system__crtl
 FS .2 85V13 system__crtl__strlen
 FS .3 88U14 system__crtl__strncpy
@@ -522,22 +538,22 @@ FS .42 229V13 system__crtl__open
 FS .43 232V13 system__crtl__close
 FS .44 235V13 system__crtl__read
 FS .45 238V13 system__crtl__write
-FD 25 s-ficobl.ads
+FD 26 s-ficobl.ads
 FS .1 42K16 system__file_control_block
-FD 26 s-oscons.ads
+FD 27 s-oscons.ads
 FS .1 44K16 system__os_constants
-FD 27 s-parame.ads
+FD 28 s-parame.ads
 FS .1 51K16 system__parameters
 FS .2 81V13 system__parameters__default_stack_size
 FS .3 84V13 system__parameters__minimum_stack_size
 FS .4 87V13 system__parameters__adjust_storage_size
-FD 28 s-stalib.ads
+FD 29 s-stalib.ads
 FS .1 55K16 system__standard_library
 FS .2 76K4 system__standard_library__to_ptrGP4411
 FS .3 76V13 system__standard_library__to_ptr
 FS .4 254U14 system__standard_library__abort_undefer_direct
 FS .5 259U14 system__standard_library__adafinal
-FD 29 s-stoele.ads
+FD 30 s-stoele.ads
 FS .1 42K16 system__storage_elements
 FS .2 76V13 system__storage_elements__Oadd
 FS .3 81V13 system__storage_elements__Oadd__2
@@ -546,42 +562,44 @@ FS .5 91V13 system__storage_elements__Osubtract__2
 FS .6 96V13 system__storage_elements__Omod
 FS .7 107V13 system__storage_elements__to_address
 FS .8 112V13 system__storage_elements__to_integer
-FD 30 s-traent.ads
+FD 31 s-traent.ads
 FS .1 47K16 system__traceback_entries
 FS .2 58V13 system__traceback_entries__pc_for
 FS .3 63V13 system__traceback_entries__tb_entry_for
-FD 31 s-wchcon.ads
+FD 32 s-wchcon.ads
 FS .1 41K16 system__wch_con
 FS .2 203V13 system__wch_con__get_wc_encoding_method
 FS .3 207V13 system__wch_con__get_wc_encoding_method__2
 FS .4 212V13 system__wch_con__is_start_of_encoding
-FD 32 utils.ads
-FS .1 3K9 utils
-FS .2 7U14 utils__string_to_byte_array
+FD 33 utils_ns.ads
+FS .1 3K9 utils_ns
+FS .2 7U14 utils_ns__string_to_byte_array
 FX 16 masp.adb .1 masp
-F 14*4 masp__server_socket 23m25 27r19
-F 15*4 masp__server_socket_addr 23m40
-F 16*4 masp__client_socket 27m34 30r21 40r23
-F 17*4 masp__client_socket_addr 27m49
-F 19*4 masp__raw_request 30m36 31r41 33r23
-F 20*4 masp__parsed_request 33m36
+F 15*4 masp__server_socket 24m25 28r19
+F 16*4 masp__server_socket_addr 24m40
+F 17*4 masp__client_socket 28m34 31r21 49r25
+F 18*4 masp__client_socket_addr 28m49
+F 20*4 masp__raw_request 31m36 32r41 34r23
+F 21*4 masp__parsed_request 34m36 37r9 45r40 49r40
 FX 17 network_ns.ads .1 network_ns
-F 46*14 network_ns__initialize_tcp_state 16|.1:23s4
-F 51*14 network_ns__get_client_cxn 16|.1:27s4
-F 57*14 network_ns__recv_net_request 16|.1:30s4
-F 62*14 network_ns__send_test_response 16|.1:40s4
+F 46*14 network_ns__initialize_tcp_state 16|.1:24s4
+F 51*14 network_ns__get_client_cxn 16|.1:28s4
+F 57*14 network_ns__recv_net_request 16|.1:31s4
 FX 19 parsing.ads .1 parsing
-F 21*14 parsing__parse_http_request 16|.1:33s4
-FX 21 spark-text_io.ads .1 spark__text_io
-F 703*14 spark__text_io__put_line__2 16|.1:22s4 25s4 29s4 31s4
+F 22*14 parsing__parse_http_request 16|.1:34s4
+FX 20 server.ads .1 server
+F 17*14 server__fulfill_http_request 16|.1:49s4
+FX 22 spark-text_io.ads .1 spark__text_io
+F 703*14 spark__text_io__put_line__2 16|.1:23s4 26s4 30s4 32s4 39s10 41s10
+. 43s10 45s4
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS masp KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 5 network_ns__recv_net_request parsing__parse_http_request network_ns__send_test_response network_ns__initialize_tcp_state network_ns__get_client_cxn calls_conditional 0 local_var 6 masp__parsed_request masp__server_socket masp__server_socket_addr masp__client_socket masp__client_socket_addr masp__raw_request local_ghost 0 local_sub 0
+GG EK_GLOBALS masp KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 5 network_ns__initialize_tcp_state network_ns__get_client_cxn network_ns__recv_net_request parsing__parse_http_request server__fulfill_http_request calls_conditional 0 local_var 6 masp__server_socket masp__server_socket_addr masp__client_socket masp__client_socket_addr masp__raw_request masp__parsed_request local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 1 masp
-GG EK_NONRETURNING 0
+GG EK_NONRETURNING 1 masp
 GG EK_TERMINATING 0
-GG EK_DIRECT_CALLS masp 6 spark__text_io__put_line__2 parsing__parse_http_request network_ns__initialize_tcp_state network_ns__get_client_cxn network_ns__recv_net_request network_ns__send_test_response
+GG EK_DIRECT_CALLS masp 6 spark__text_io__put_line__2 server__fulfill_http_request network_ns__initialize_tcp_state network_ns__get_client_cxn network_ns__recv_net_request parsing__parse_http_request
 GG EK_TASKING_INFO masp ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 spark__text_io__standard_output LOCKS 0
 GG EK_END_MARKER

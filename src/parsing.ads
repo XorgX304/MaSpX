@@ -10,7 +10,7 @@ package parsing is
 
    --Start and Finish are inclusive
    procedure Get_First_Token_In_Range(
-      Source : Request_Line;
+      Source : Simple_Request_Line;
       Delimit : Character;
       Start : Positive;
       Finish : Positive;
