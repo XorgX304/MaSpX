@@ -3,143 +3,209 @@ A -gnatc
 P GP FX
 
 RN
+RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U http_message%s	http_message.ads	afccc3ab OO PK KU
+U http_message%b	http_message.adb	d841bb27 OO PK IL
+
+U http_message%s	http_message.ads	e4169a22 OO PK KU
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W config%s		config.ads		config.ali
+W fileio%s		fileio.ads		fileio.ali
 W string_types%s	string_types.ads	string_types.ali
 
-D http_message.ads	20180220212412 1290406f http_message%s
+D ada.ads		20170516105950 76789da1 ada%s
+D a-charac.ads		20170516105954 2d3ec45b ada.characters%s
+D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
+D config.ads		20180306175010 a15049f9 config%s
+D fileio.ads		20180305232738 4f7b6365 fileio%s
+D http_message.ads	20180306175028 d1244e4b http_message%s
+D http_message.adb	20180305235928 0965f56c http_message%b
 D string_types.ads	20180215232526 bd5c83c4 string_types%s
 D system.ads		20170516105954 32a08138 system%s
-X 1 http_message.ads
-3K9*Http_Message 76l5 76e17
-4K12*ST=4:23 11r35 12r36 13r37 14r36 15r37 16r32 17r36 18r36 19r38
-5E9*ClientServerType 5e45 49r53
-5n30*Client{5E9} 56r15 67r26
-5n38*Server{5E9} 59r15
-6E9*MethodType 7e33 8r34 57r21
-6n24*NONE{6E9} 73r17
-6n30*GET{6E9} 8r51
-6n35*UNKNOWN{6E9} 8r58 45r38
-6n44*HEAD{6E9}
-6n50*POST{6E9}
-7n7*PUT{6E9}
-7n12*DELETE{6E9}
-7n20*LINK{6E9}
-7n26*UNLINK{6E9}
-8E12*Simple_Method_Type{6E9} 45r16
-10i4*MaxHeaders{natural} 40r47 41r37
-11A12*FirstLineStringType{2|7A12}<integer> 53r24
-12A12*HeaderNameStringType{2|5A12}<integer>
-13A12*HeaderValueStringType{2|7A12}<integer> 37r14
-14A12*EntityBodyStringType{2|13A12}<integer> 52r25
-15A12*HttpVersionStringType{2|3A12}<integer> 54r26
-16A12*MethodStringType{2|3A12}<integer>
-17A12*RequestURIStringType{2|8A12}<integer> 46r20 58r31
-18A12*StatusCodeStringType{2|2A12}<integer> 60r31
-19A12*ReasonPhraseStringType{2|5A12}<integer> 61r33
-22E9*HeaderType 30e54 33r42 33r57 36r13
-22n24*ALLOW{22E9}
-22n31*AUTHORIZATION{22E9}
-22n46*CONTENT_ENCODING{22E9}
-22n64*CONTENT_LENGTH{22E9}
-22n80*CONTENT_TYPE{22E9}
-23n7*DATE{22E9}
-23n13*EXPIRES{22E9}
-23n22*FROM{22E9}
-23n28*IF_MODIFIED_SINCE{22E9}
-23n47*LAST_MODIFIED{22E9}
-23n62*LOCATION{22E9}
-23n72*PRAGM{22E9}
-23n79*REFERER{22E9}
-23n88*SERVER{22E9}
-24n7*USER_AGENT{22E9}
-24n19*WWW_AUTHENTICATE{22E9}
-24n37*UNKNOWN_HEADER{22E9} 65r47
-26n7*ACCEP{22E9}
-26n14*ACCEPT_CHARSET{22E9}
-26n30*ACCEPT_ENCODING{22E9}
-26n47*ACCEPT_LANGUAGE{22E9}
-26n64*CONTENT_LANGUAGE{22E9}
-26n82*LINK{22E9}
-26n88*MIME_VERSION{22E9}
-26n102*RETRY_AFTER{22E9}
-26n115*TITLE{22E9}
-26n122*URI{22E9}
-28n7*ACCEPT_RANGES{22E9}
-28n22*AGE{22E9}
-28n27*CACHE_CONTROL{22E9}
-28n42*CONNECTION{22E9}
-28n54*CONTENT_LOCATION{22E9}
-28n72*CONTENT_MD5{22E9}
-28n85*CONTENT_RANGE{22E9}
-28n100*ETAG{22E9}
-28n106*EXPECT{22E9}
-28n114*HOST{22E9}
-28n120*IF_MATCH{22E9}
-29n7*IF_NONE_MATCH{22E9}
-29n22*IF_RANGE{22E9}
-29n32*IF_UNMODIFIED_SINCE{22E9}
-29n53*MAX_FORWARDS{22E9}
-29n67*PROXY_AUTHENTICATE{22E9}
-29n87*PROXY_AUTHORIZATION{22E9}
-29n108*RANG{22E9}
-29n114*TE{22E9}
-29n118*TRAILER{22E9}
-30n7*TRANSFER_ENCODING{22E9}
-30n26*UPGRADE{22E9}
-30n35*VARY{22E9}
-30n41*VIA{22E9}
-30n46*WARNING{22E9}
-33i4*DistinctHeaders{natural}
-35R9*Header 38e14 41r52 65r28
-36e7*Name{22E9} 65m39
-37a7*Value{13A12} 65m63
-40I12*MaxHeadersType{integer} 50r24
-41A9*HeaderArrayType(35R9)<integer> 51r16
-43R9*Simple_HTTP_Request 47e14
-45e7*Method{8E12}
-46a7*RequestURI{17A12}
-49R9*Http_Message_Variant_Record 49d37 63e14 66r34
-49e37*ClientOrServer{5E9} 55r12 67m8
-50i7*NumberOfHeaders{40I12} 68m7
-51a7*Headers{41A9} 71m7
-52a7*EntityBodyString{14A12} 72m7
-53a7*FirstLineString{11A12} 69m7
-54a7*HttpVersionString{15A12} 70m7
-57e13*Method{6E9} 73m7
-58a13*RequestURIString{17A12} 74m7
-60a13*StatusCodeString{18A12}
-61a13*ReasonPhraseString{19A12}
-65r4*BLANK_HEADER{35R9} 71r29
-66r4*BLANK_HTTP_MESSAGE{49R9}
-X 2 string_types.ads
-1K9*String_Types 1|1w6 4r23 2|14e17
-2A12*String4{string}<integer> 1|18r39
-3A12*String8{string}<integer> 1|15r40 16r35
-5A12*String32{string}<integer> 1|12r39 19r41
-7A12*String128{string}<integer> 1|11r38 13r40
-8A12*String255{string}<integer> 1|17r39
-13A12*String32K{string}<integer> 1|14r39
-FD 1 http_message.ads
-FS .1 3K9 http_message
-FD 2 string_types.ads
+X 1 ada.ads
+16K9*Ada 20e8 6|1r6 1r34
+X 2 a-charac.ads
+16K13*Characters 18e19 6|1r10 1r38
+X 3 a-chlat1.ads
+18K24*Latin_1 296e27 6|1w21 1r49
+25e4*NUL{character} 6|59r44
+X 4 config.ads
+1K9*config 7e11 6|4w6 4r18
+5a4*DEFAULT_PAGE{string} 6|23r83
+X 5 fileio.ads
+4K9*fileio 16e11 6|3w6 3r18
+6i4*MAX_FILE_READ_BYTE_CT{natural} 6|90r31
+7I12*ContentSize{natural} 6|58r24
+8A12*File_Buf{string}<integer> 6|59r21
+X 6 http_message.ads
+7K9*Http_Message 92l5 92e17 7|1b14 17l5 17t17
+8K12*ST=8:23 16r35 17r36 18r37 19r36 20r37 21r32 22r36 24r36 25r38
+10E9*ClientServerType 10e45 62r53
+10n30*Client{10E9} 69r15 80r26
+10n38*Server{10E9} 72r15
+11E9*MethodType 12e33 13r34 70r21
+11n24*NONE{11E9} 86r17
+11n30*GET{11E9} 13r51
+11n35*UNKNOWN{11E9} 13r58 51r38
+11n44*HEAD{11E9}
+11n50*POST{11E9}
+12n7*PUT{11E9}
+12n12*DELETE{11E9}
+12n20*LINK{11E9}
+12n26*UNLINK{11E9}
+13E12*Simple_Method_Type{11E9} 51r16
+15i4*MaxHeaders{natural} 46r47 47r37
+16A12*FirstLineStringType{8|7A12}<integer> 66r24
+17A12*HeaderNameStringType{8|5A12}<integer>
+18A12*HeaderValueStringType{8|7A12}<integer> 43r14
+19A12*EntityBodyStringType{8|13A12}<integer> 65r25
+20A12*HttpVersionStringType{8|3A12}<integer> 67r26
+21A12*MethodStringType{8|3A12}<integer>
+22A12*RequestURIStringType{8|8A12}<integer> 23r55 71r31
+23A12*ParsedRequestURIStringType{string}<integer> 52r20
+24A12*StatusCodeStringType{8|2A12}<integer> 73r31
+25A12*ReasonPhraseStringType{8|5A12}<integer> 74r33
+28E9*HeaderType 36e54 39r42 39r57 42r13
+28n24*ALLOW{28E9}
+28n31*AUTHORIZATION{28E9}
+28n46*CONTENT_ENCODING{28E9}
+28n64*CONTENT_LENGTH{28E9}
+28n80*CONTENT_TYPE{28E9}
+29n7*DATE{28E9}
+29n13*EXPIRES{28E9}
+29n22*FROM{28E9}
+29n28*IF_MODIFIED_SINCE{28E9}
+29n47*LAST_MODIFIED{28E9}
+29n62*LOCATION{28E9}
+29n72*PRAGM{28E9}
+29n79*REFERER{28E9}
+29n88*SERVER{28E9}
+30n7*USER_AGENT{28E9}
+30n19*WWW_AUTHENTICATE{28E9}
+30n37*UNKNOWN_HEADER{28E9} 78r47
+32n7*ACCEP{28E9}
+32n14*ACCEPT_CHARSET{28E9}
+32n30*ACCEPT_ENCODING{28E9}
+32n47*ACCEPT_LANGUAGE{28E9}
+32n64*CONTENT_LANGUAGE{28E9}
+32n82*LINK{28E9}
+32n88*MIME_VERSION{28E9}
+32n102*RETRY_AFTER{28E9}
+32n115*TITLE{28E9}
+32n122*URI{28E9}
+34n7*ACCEPT_RANGES{28E9}
+34n22*AGE{28E9}
+34n27*CACHE_CONTROL{28E9}
+34n42*CONNECTION{28E9}
+34n54*CONTENT_LOCATION{28E9}
+34n72*CONTENT_MD5{28E9}
+34n85*CONTENT_RANGE{28E9}
+34n100*ETAG{28E9}
+34n106*EXPECT{28E9}
+34n114*HOST{28E9}
+34n120*IF_MATCH{28E9}
+35n7*IF_NONE_MATCH{28E9}
+35n22*IF_RANGE{28E9}
+35n32*IF_UNMODIFIED_SINCE{28E9}
+35n53*MAX_FORWARDS{28E9}
+35n67*PROXY_AUTHENTICATE{28E9}
+35n87*PROXY_AUTHORIZATION{28E9}
+35n108*RANG{28E9}
+35n114*TE{28E9}
+35n118*TRAILER{28E9}
+36n7*TRANSFER_ENCODING{28E9}
+36n26*UPGRADE{28E9}
+36n35*VARY{28E9}
+36n41*VIA{28E9}
+36n46*WARNING{28E9}
+39i4*DistinctHeaders{natural}
+41R9*Header 44e14 47r52 78r28
+42e7*Name{28E9} 78m39
+43a7*Value{18A12} 78m63
+46I12*MaxHeadersType{integer} 63r24
+47A9*HeaderArrayType(41R9)<integer> 64r16
+49R9*Simple_HTTP_Request 53e14
+51e7*Method{13E12}
+52a7*RequestURI{23A12}
+55R9*Simple_HTTP_Response 60e14 89r66 7|3r66 5r18
+58i7*Content_Length{5|7I12} 7|7m16
+59a7*Entity_Body{5|8A12} 7|11m19
+62R9*Http_Message_Variant_Record 62d37 76e14 79r34
+62e37*ClientOrServer{10E9} 68r12 80m8
+63i7*NumberOfHeaders{46I12} 81m7
+64a7*Headers{47A9} 84m7
+65a7*EntityBodyString{19A12} 85m7
+66a7*FirstLineString{16A12} 82m7
+67a7*HttpVersionString{20A12} 83m7
+70e13*Method{11E9} 86m7
+71a13*RequestURIString{22A12} 87m7
+73a13*StatusCodeString{24A12}
+74a13*ReasonPhraseString{25A12}
+78r4*BLANK_HEADER{41R9} 84r29
+79r4*BLANK_HTTP_MESSAGE{62R9}
+89V13*Construct_Simple_HTTP_Response{55R9} 89>44 7|3b13 15l8 15t38
+89a44 Page{string} 90r16 7|3b44 7r34 10r16 11r37
+X 7 http_message.adb
+5r7 Response{6|55R9} 7m7 11m10 14r14
+10i11 I{integer} 11r31 11r42
+X 8 string_types.ads
+1K9*String_Types 6|5w6 8r23 8|14e17
+2A12*String4{string}<integer> 6|24r39
+3A12*String8{string}<integer> 6|20r40 21r35
+5A12*String32{string}<integer> 6|17r39 25r41
+7A12*String128{string}<integer> 6|16r38 18r40
+8A12*String255{string}<integer> 6|22r39
+13A12*String32K{string}<integer> 6|19r39
+FD 1 ada.ads
+FS .1 16K9 ada
+FD 2 a-charac.ads
+FS .1 16K13 ada__characters
+FD 3 a-chlat1.ads
+FS .1 18K24 ada__characters__latin_1
+FD 4 config.ads
+FS .1 1K9 config
+FD 5 fileio.ads
+FS .1 4K9 fileio
+FD 6 http_message.ads
+FS .1 7K9 http_message
+FS .2 89V13 http_message__construct_simple_http_response
+FD 7 http_message.adb
+FS .1 1K14 http_message -> 6.1
+FS .2 3V13 http_message__construct_simple_http_response -> 6.2
+FD 8 string_types.ads
 FS .1 1K9 string_types
-FD 3 system.ads
+FD 9 system.ads
 FS .1 37K9 system
-FX 1 http_message.ads .1 http_message
-F 10*4 http_message__maxheaders 40c47 41c37
-F 65*4 http_message__blank_header 71r29
+FX 3 a-chlat1.ads .1 ada__characters__latin_1
+F 25*4 ada__characters__latin_1__nul 6|.1:59c44
+FX 4 config.ads .1 config
+F 5*4 config__default_page 6|.1:23c83
+FX 5 fileio.ads .1 fileio
+F 6*4 fileio__max_file_read_byte_ct 6|.2:90r31
+FX 6 http_message.ads .1 http_message
+F 15*4 http_message__maxheaders 46c47 47c37
+F 78*4 http_message__blank_header 84r29
+FX 6 http_message.ads .2 http_message__construct_simple_http_response
+F 89>44 http_message__construct_simple_http_response__page 90c16 7|.2:7c34
+. 10c16 11c37
+FX 7 http_message.adb .2 http_message__construct_simple_http_response
+F 5*7 http_message__construct_simple_http_response__response 7m7 11m10 14r14
+F 10*11 http_message__construct_simple_http_response__L_1__i 11c31 11c42
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS http_message KIND_PACKAGE ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 0 local_init 0
+GG EK_GLOBALS http_message KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 1 http_message__construct_simple_http_response local_init 0
+GG EK_GLOBALS http_message__construct_simple_http_response KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 1 fileio__max_file_read_byte_ct var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 1 http_message
-GG EK_NONRETURNING 0
+GG EK_NONRETURNING 1 http_message__construct_simple_http_response
 GG EK_TERMINATING 0
 GG EK_DIRECT_CALLS http_message 0
+GG EK_DIRECT_CALLS http_message__construct_simple_http_response 0
 GG EK_TASKING_INFO http_message ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_END_MARKER

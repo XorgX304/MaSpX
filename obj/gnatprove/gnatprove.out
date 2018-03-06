@@ -6,35 +6,37 @@ SPARK Analysis results        Total        Flow   Interval   CodePeer         Pr
 ------------------------------------------------------------------------------------------------------------
 Data Dependencies                 .           .          .          .               .           .          .
 Flow Dependencies                 .           .          .          .               .           .          .
-Initialization                   43          43          .          .               .           .          .
+Initialization                   50          50          .          .               .           .          .
 Non-Aliasing                      .           .          .          .               .           .          .
-Run-time Checks                  27           .          .          .    27 (altergo)           .          .
+Run-time Checks                  32           .          .          .    32 (altergo)           .          .
 Assertions                        .           .          .          .               .           .          .
 Functional Contracts             31           .          .          .    22 (altergo)           .          9
 LSP Verification                  .           .          .          .               .           .          .
 ------------------------------------------------------------------------------------------------------------
-Total                           101    43 (43%)          .          .        49 (49%)           .     9 (9%)
+Total                           113    50 (44%)          .          .        54 (48%)           .     9 (8%)
 
 
-Analyzed 9 units
+Analyzed 10 units
+in unit http_message, 0 subprograms and packages out of 1 analyzed
+  Http_Message.Construct_Simple_HTTP_Response at http_message.ads:87 skipped
 in unit main, 1 subprograms and packages out of 1 analyzed
   Main at main.adb:7 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
 in unit masp, 1 subprograms and packages out of 1 analyzed
   Masp at masp.adb:14 flow analyzed (0 errors and 0 warnings) and not proved, 10 checks out of 16 proved
 in unit network_ns, 0 subprograms and packages out of 6 analyzed
-  network_ns at network_ns.ads:11 skipped
-  network_ns.Get_Client_Cxn at network_ns.ads:51 skipped
-  network_ns.Initialize_TCP_State at network_ns.ads:46 skipped
-  network_ns.Recv_NET_Request at network_ns.ads:57 skipped
-  network_ns.Send_Simple_Response at network_ns.ads:67 skipped
-  network_ns.Send_TEST_Response at network_ns.ads:62 skipped
+  network_ns at network_ns.ads:13 skipped
+  network_ns.Get_Client_Cxn at network_ns.ads:55 skipped
+  network_ns.Initialize_TCP_State at network_ns.ads:50 skipped
+  network_ns.Recv_NET_Request at network_ns.ads:61 skipped
+  network_ns.Send_Simple_Response at network_ns.ads:72 skipped
+  network_ns.Send_TEST_Response at network_ns.ads:66 skipped
 in unit parsing, 3 subprograms and packages out of 3 analyzed
-  parsing at parsing.ads:9 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  parsing.Get_First_Token_In_Range at parsing.ads:12 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
-  parsing.Parse_HTTP_Request at parsing.ads:22 flow analyzed (0 errors and 0 warnings) and not proved, 9 checks out of 11 proved
+  parsing at parsing.ads:10 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  parsing.Get_First_Token_In_Range at parsing.ads:13 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
+  parsing.Parse_HTTP_Request at parsing.ads:23 flow analyzed (0 errors and 0 warnings) and not proved, 14 checks out of 16 proved
 in unit server, 0 subprograms and packages out of 2 analyzed
-  server.Fulfill_HTTP_Request at server.ads:17 skipped
-  server.Sanitize_HTTP_Request at server.ads:12 skipped
+  server.Fulfill_HTTP_Request at server.ads:19 skipped
+  server.Sanitize_HTTP_Request at server.ads:14 skipped
 in unit spark, 1 subprograms and packages out of 2 analyzed
   SPARK at spark.ads:29 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
   SPARK.Text_IO_File_Type at spark.ads:53 skipped

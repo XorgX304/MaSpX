@@ -48,7 +48,4 @@ begin
 
    Fulfill_HTTP_Request(Client_Socket, Parsed_Request);
 
-   loop
-      null;
-   end loop;
 end Masp;

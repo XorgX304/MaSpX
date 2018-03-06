@@ -16,6 +16,7 @@ is
 
    HTTP_PORT : constant Natural := 80;
    MAX_CXNS : constant Natural := 16; --arbitrary
+   --   v--- TODO: change to MAX_REQUEST_LINE_BYTE_CT
    MAX_REQUEST_LINE_CT : constant Natural := 259;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri
 
    STATIC_TEST_RESPONSE_11 : constant String := "HTTP/1.1 200 OK" & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF &
@@ -34,13 +35,14 @@ is
    STATIC_TEST_RESPONSE_09 : constant String := "Hello World! My payload includes a trailing CRLF." & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
    STATIC_UNKNOWN_METHOD_RESPONSE_09 : constant String := "<p>MaSpX error! Unknown HTTP METHOD</p><hr /><p><em>&copy; htmlg.com</em></p>";
 
+   subtype MRB_First_Empty_Index_Type is Natural range Natural'First .. MAX_REQUEST_LINE_CT;
    subtype Simple_Request_Line is String(1 .. MAX_REQUEST_LINE_CT);
 
    --ltj: this will probably be expanded to have headers in it in future implementations of later HTTP
    type Measured_Request_Buffer is
    record
       Buffer : Simple_Request_Line := (others => ' ');
-      Length : Natural := 0;
+      Length : MRB_First_Empty_Index_Type := 0;
    end record;
    
    --constant tokens for parsing aid

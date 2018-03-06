@@ -29,7 +29,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -49,7 +49,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -69,7 +69,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -89,7 +89,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -109,7 +109,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -129,7 +129,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -149,7 +149,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -169,7 +169,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -189,7 +189,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     },
     {
@@ -209,7 +209,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__117.trace",
+      "tracefile": "masp__flow__120.trace",
       "how_proved": "flow"
     }
   ],
@@ -235,7 +235,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 299,
-              "time": 8.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -247,7 +247,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 300,
-          "max_time": 7.99999982118607E-02
+          "max_time": 6.25000000000000E-02
         }
       }
     },
@@ -270,9 +270,9 @@
         {
           "proof_attempts": {
             "altergo": {
-              "result": "Unknown (none)",
+              "result": "Unknown (other)",
               "steps": -1,
-              "time": 8.90000000000000E-01
+              "time": 8.00000000000000E-01
             }
           },
           "transformations": {
@@ -301,9 +301,9 @@
         {
           "proof_attempts": {
             "altergo": {
-              "result": "Unknown (none)",
+              "result": "Unknown (other)",
               "steps": -1,
-              "time": 7.00000000000000E-01
+              "time": 6.30000000000000E-01
             }
           },
           "transformations": {
@@ -333,8 +333,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 1214,
-              "time": 3.10000000000000E-01
+              "steps": 1215,
+              "time": 2.81300000000000E-01
             }
           },
           "transformations": {
@@ -345,8 +345,8 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 1215,
-          "max_time": 3.10000002384186E-01
+          "max_steps": 1216,
+          "max_time": 2.81300008296967E-01
         }
       }
     },
@@ -369,9 +369,9 @@
         {
           "proof_attempts": {
             "altergo": {
-              "result": "Unknown (none)",
+              "result": "Unknown (other)",
               "steps": -1,
-              "time": 1.56000000000000E+00
+              "time": 1.36000000000000E+00
             }
           },
           "transformations": {
@@ -402,7 +402,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 299,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -414,7 +414,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 300,
-          "max_time": 5.99999986588955E-02
+          "max_time": 6.25000000000000E-02
         }
       }
     },
@@ -437,9 +437,9 @@
         {
           "proof_attempts": {
             "altergo": {
-              "result": "Unknown (none)",
+              "result": "Unknown (other)",
               "steps": -1,
-              "time": 1.53000000000000E+00
+              "time": 1.39000000000000E+00
             }
           },
           "transformations": {
@@ -468,9 +468,9 @@
         {
           "proof_attempts": {
             "altergo": {
-              "result": "Unknown (none)",
+              "result": "Unknown (other)",
               "steps": -1,
-              "time": 1.31000000000000E+00
+              "time": 1.17000000000000E+00
             }
           },
           "transformations": {
@@ -482,7 +482,7 @@
     },
     {
       "file": "network_ns.ads",
-      "line": 38,
+      "line": 42,
       "col": 39,
       "rule": "VC_LENGTH_CHECK",
       "severity": "info",
@@ -501,7 +501,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 299,
-              "time": 8.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -513,13 +513,13 @@
         "altergo": {
           "count": 1,
           "max_steps": 300,
-          "max_time": 7.99999982118607E-02
+          "max_time": 6.25000000000000E-02
         }
       }
     },
     {
       "file": "http_message.ads",
-      "line": 46,
+      "line": 50,
       "col": 44,
       "rule": "VC_LENGTH_CHECK",
       "severity": "info",
@@ -538,7 +538,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 299,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -550,7 +550,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 300,
-          "max_time": 5.99999986588955E-02
+          "max_time": 6.25000000000000E-02
         }
       }
     },
@@ -574,8 +574,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 437,
-              "time": 1.30000000000000E-01
+              "steps": 439,
+              "time": 1.09400000000000E-01
             }
           },
           "transformations": {
@@ -586,8 +586,8 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 438,
-          "max_time": 1.29999995231628E-01
+          "max_steps": 440,
+          "max_time": 1.09399996697903E-01
         }
       }
     },
@@ -610,9 +610,9 @@
         {
           "proof_attempts": {
             "altergo": {
-              "result": "Timeout",
+              "result": "Unknown (other)",
               "steps": -1,
-              "time": 1.00000000000000E+00
+              "time": 3.48000000000000E+00
             }
           },
           "transformations": {
@@ -643,7 +643,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 299,
-              "time": 6.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -655,7 +655,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 300,
-          "max_time": 5.99999986588955E-02
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -679,8 +679,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 327,
-              "time": 9.00000000000000E-02
+              "steps": 328,
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -691,8 +691,8 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 328,
-          "max_time": 9.00000035762787E-02
+          "max_steps": 329,
+          "max_time": 7.81000033020973E-02
         }
       }
     },
@@ -717,7 +717,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 299,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -729,7 +729,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 300,
-          "max_time": 5.99999986588955E-02
+          "max_time": 6.25000000000000E-02
         }
       }
     },
@@ -753,8 +753,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 519,
-              "time": 1.40000000000000E-01
+              "steps": 521,
+              "time": 1.40600000000000E-01
             }
           },
           "transformations": {
@@ -765,8 +765,8 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 520,
-          "max_time": 1.40000000596046E-01
+          "max_steps": 522,
+          "max_time": 1.40599995851517E-01
         }
       }
     }
@@ -793,7 +793,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 51
+                "line": 55
               }
             ]
           }
@@ -805,7 +805,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 46
+                "line": 50
               }
             ]
           }
@@ -817,7 +817,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 57
+                "line": 61
               }
             ]
           }
@@ -841,7 +841,7 @@
             "sloc": [
               {
                 "file": "server.ads",
-                "line": 17
+                "line": 19
               }
             ]
           }
@@ -862,19 +862,32 @@
     }
   ],
   "timings": {
-    "marking": 5.65632293000817E-03,
-    "globals (basic)": 4.59336079657078E-02,
-    "globals/properties (advanced)": 3.74528244137764E-02,
-    "flow analysis": 8.13698209822178E-03,
-    "codepeer results": 3.87799991585780E-06,
-    "init_why_sections": 2.30259000090882E-04,
-    "translation of standard": 2.75146798230708E-03,
-    "translation of compilation unit": 1.54825150966644E-01,
+    "marking": 5.33298216760159E-03,
+    "globals (basic)": 7.95916840434074E-02,
+    "globals/properties (advanced)": 3.70015278458595E-02,
+    "flow analysis": 1.06084858998656E-02,
+    "codepeer results": 4.93700008519227E-06,
+    "init_why_sections": 1.03210995439440E-03,
+    "translation of standard": 5.37741184234619E-03,
+    "translation of compilation unit": 1.60333961248398E-01,
     "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
     "gnatwhy3.register_vcs": 0.00000000000000E+00,
-    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 1.82812500000000E+00,
+    "gnatwhy3.transformations.eliminate_if": 3.12500000000000E-02,
+    "gnatwhy3.transformations.explode_record_param": 1.56250000000000E-02,
+    "gnatwhy3.transformations.eval_match": 3.12500000000000E-02,
+    "gnatwhy3.schedule_vcs": 1.56250000000000E-02,
+    "gnatwhy3.init": 1.85937500000000E+00,
+    "gnatwhy3.transformations.inline_trivial": 1.87500000000000E-01,
+    "gnatwhy3.transformations.inline_tagged": 1.56250000000000E-02,
+    "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_let": 1.56250000000000E-02,
     "gnatwhy3.save_session": 3.12500000000000E-02,
-    "proof": 2.58557415008545E+00
+    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_algebraic": 3.12500000000000E-02,
+    "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_recursion": 1.56250000000000E-02,
+    "proof": 1.29134464263916E+01
   }
 }

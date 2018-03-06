@@ -1,3 +1,5 @@
+with config; use config;
+
 PACKAGE String_Types IS
    SUBTYPE String4 IS String(1..4);
    SUBTYPE String8 IS String(1..8);
@@ -11,5 +13,17 @@ PACKAGE String_Types IS
    SUBTYPE String1024 IS String(1..1024);
    SUBTYPE String2048 IS String(1..2048);
    SUBTYPE String32K IS String(1..32*1024);
+
+   subtype FirstLineStringType is String128;
+   subtype HeaderNameStringType IS String32;
+   subtype HeaderValueStringType IS String128;
+   subtype EntityBodyStringType IS String32K;
+   subTYPE HttpVersionStringType IS String8;
+   subTYPE MethodStringType is String8;
+   subTYPE RequestURIStringType IS String255; -- RFC 2616:3.2.1 - a warning note that servers should be careful with URI's longer than 255 bytes which some older browsers may not handle.
+   subtype ParsedRequestURIStringType is String(1 .. (RequestURIStringType'Last + DEFAULT_PAGE'Length - 1)); --     ^-- this warning probably is not applicable in the year 2018, but for MaspClassic let's honor it.
+   --TODO:ltj: add assert about length of ParsedRequestURIStringType
+   subTYPE StatusCodeStringType IS String4;
+   subTYPE ReasonPhraseStringType IS String32;
 END String_Types;
 

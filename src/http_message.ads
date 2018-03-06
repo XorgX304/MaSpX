@@ -1,6 +1,7 @@
 with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 
 with fileio; use fileio;
+with config; use config;
 WITH String_Types;
 
 PACKAGE Http_Message IS
@@ -12,16 +13,6 @@ PACKAGE Http_Message IS
    subtype Simple_Method_Type is MethodType range GET .. UNKNOWN;
 
    MaxHeaders : constant Natural := 32;
-   subtype FirstLineStringType is ST.String128;
-   subtype HeaderNameStringType IS ST.String32;
-   subtype HeaderValueStringType IS ST.String128;
-   subtype EntityBodyStringType IS ST.String32K;
-   subTYPE HttpVersionStringType IS ST.String8;
-   subTYPE MethodStringType is ST.String8;
-   subTYPE RequestURIStringType IS ST.String255; -- RFC 2616:3.2.1 - a warning note that servers should be careful with URI's longer than 255 bytes which some older browsers may not handle.
-   subTYPE StatusCodeStringType IS ST.String4;                     --     ^-- this warning probably is not applicable in the year 2018, but for MaspClassic let's honor it.
-   subTYPE ReasonPhraseStringType IS ST.String32;
-
 
    TYPE HeaderType IS (ALLOW, AUTHORIZATION, CONTENT_ENCODING, CONTENT_LENGTH, CONTENT_TYPE,
       DATE, EXPIRES, FROM, IF_MODIFIED_SINCE, LAST_MODIFIED, LOCATION, PRAGM, REFERER, SERVER,
@@ -38,7 +29,7 @@ PACKAGE Http_Message IS
 
    TYPE Header IS RECORD
       Name: HeaderType;
-      Value: HeaderValueStringType;
+      Value: ST.HeaderValueStringType;
    END RECORD;
 
    SUBTYPE MaxHeadersType IS Integer RANGE 0..MaxHeaders;
@@ -47,7 +38,7 @@ PACKAGE Http_Message IS
    type Simple_HTTP_Request is
    record
       Method : Simple_Method_Type := UNKNOWN;
-      RequestURI : RequestURIStringType := (others=>' ');
+      RequestURI : ST.ParsedRequestURIStringType := (others=>' ');
    end record;
 
    type Simple_HTTP_Response is
@@ -60,16 +51,16 @@ PACKAGE Http_Message IS
    TYPE Http_Message_Variant_Record(ClientOrServer: ClientServerType) IS RECORD
       NumberOfHeaders: MaxHeadersType;
       Headers: HeaderArrayType;
-      EntityBodyString: EntityBodyStringType;
-      FirstLineString: FirstLineStringType;
-      HttpVersionString: HttpVersionStringType;
+      EntityBodyString: ST.EntityBodyStringType;
+      FirstLineString: ST.FirstLineStringType;
+      HttpVersionString: ST.HttpVersionStringType;
       CASE ClientOrServer IS
          WHEN Client =>
             Method: MethodType;
-            RequestURIString: RequestURIStringType;
+            RequestURIString: ST.RequestURIStringType;
          WHEN Server =>
-            StatusCodeString: StatusCodeStringType;
-            ReasonPhraseString: ReasonPhraseStringType;
+            StatusCodeString: ST.StatusCodeStringType;
+            ReasonPhraseString: ST.ReasonPhraseStringType;
       END CASE;
    END RECORD;
 
