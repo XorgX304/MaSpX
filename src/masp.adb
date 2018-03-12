@@ -23,29 +23,31 @@ begin
    Put_line("Debugging: About to Init");
    Initialize_TCP_State(Server_Socket, Server_Socket_addr); --        <--- network, non-SPARK stuff
 
-   Put_Line("Debugging: Waiting for client cxn...");
-   --TODO: make server able to accept more than one client, like in CRADLE
-   Get_Client_Cxn(Server_Socket, Client_Socket, Client_Socket_addr); --        <--- network, non-SPARK stuff
+   loop
+      Put_Line("Debugging: Waiting for client cxn...");
+      --TODO: make server able to accept more than one client, like in CRADLE
+      Get_Client_Cxn(Server_Socket, Client_Socket, Client_Socket_addr); --        <--- network, non-SPARK stuff
 
-   Put_Line("Debugging: Waiting for client request...");
-   Recv_NET_Request(Client_Socket, Raw_Request); --          <--- get string of request, non-SPARK
-   Put_Line("Debugging: Raw Request:" & Raw_Request.Buffer);
+      Put_Line("Debugging: Waiting for client request...");
+      Recv_NET_Request(Client_Socket, Raw_Request); --          <--- get string of request, non-SPARK
+      Put_Line("Debugging: Raw Request:" & Raw_Request.Buffer);
 
-   Parse_HTTP_Request(Raw_Request, Parsed_Request); --         <--- SPARK goes here
+      Parse_HTTP_Request(Raw_Request, Parsed_Request); --         <--- SPARK goes here
 
-   --debug: print Parsed_Request
-   case Parsed_Request.Method is
+      --debug: print Parsed_Request
+      case Parsed_Request.Method is
       when Http_Message.GET =>
          Put_Line("Debugging: Parsed METHOD: GET");
       when Http_Message.UNKNOWN =>
          Put_Line("Debugging: Parsed METHOD: UNKNOWN");
       when others =>
          Put_Line("Debugging: Parsed METHOD:");
-   end case;
-   Put_Line("Debugging: Parsed URI:" & Parsed_Request.RequestURI);
+      end case;
+      Put_Line("Debugging: Parsed URI:" & Parsed_Request.RequestURI);
 
-   --TODO:Sanitize_HTTP_Request --be wary of directory traversal attacks
+      --TODO:Sanitize_HTTP_Request --be wary of directory traversal attacks
 
-   Fulfill_HTTP_Request(Client_Socket, Parsed_Request);
+      Fulfill_HTTP_Request(Client_Socket, Parsed_Request);
+   end loop;
 
 end Masp;

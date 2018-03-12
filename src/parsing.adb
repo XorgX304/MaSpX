@@ -77,7 +77,7 @@ package body parsing is
          --ltj: shouldn't be cutting anything off... of well-formed requests... see sticky note for longest possible URI in this scheme
          Parsed_Request.RequestURI(RequestURIStringType'First .. RequestURIStringType'Last) := Token.Buffer(RequestURIStringType'First .. RequestURIStringType'Last);
          if Token.Length >= 2 then
-            if Parsed_Request.RequestURI(Token.Length - 1) = '/' then
+            if Parsed_Request.RequestURI(Token.Length - 1) = '/' or Parsed_Request.RequestURI(Token.Length - 1) = '\' then
                Parsed_Request.RequestURI(Token.Length .. Token.Length + DEFAULT_PAGE'Length - 1) := DEFAULT_PAGE;
             end if;
          else

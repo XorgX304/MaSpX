@@ -17,6 +17,7 @@ is
    HTTP_PORT : constant Natural := 80;
    MAX_CXNS : constant Natural := 16; --arbitrary
    --   v--- TODO: change to MAX_REQUEST_LINE_BYTE_CT
+   --TODO:ltj: change type to positive
    MAX_REQUEST_LINE_CT : constant Natural := 259;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri
 
    STATIC_TEST_RESPONSE_11 : constant String := "HTTP/1.1 200 OK" & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF &

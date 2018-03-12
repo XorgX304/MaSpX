@@ -78,5 +78,7 @@ PACKAGE Http_Message IS
    function Construct_Simple_HTTP_Response(Page : String) return Simple_HTTP_Response
    with Pre => Page'Length <= MAX_FILE_READ_BYTE_CT;
 
+   function Construct_Simple_HTTP_Response(MFB : Measured_File_Buffer) return Simple_HTTP_Response;
+
 END Http_Message;
 
