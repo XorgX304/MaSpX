@@ -24,6 +24,9 @@ begin
    Initialize_TCP_State(Server_Socket, Server_Socket_addr); --        <--- network, non-SPARK stuff
 
    loop
+      Raw_Request.Length := 1;
+      Raw_Request.Buffer := (others=>' ');
+
       Put_Line("Debugging: Waiting for client cxn...");
       --TODO: make server able to accept more than one client, like in CRADLE
       Get_Client_Cxn(Server_Socket, Client_Socket, Client_Socket_addr); --        <--- network, non-SPARK stuff

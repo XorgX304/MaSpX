@@ -1,44 +1,54 @@
 Summary of SPARK analysis
 =========================
 
-------------------------------------------------------------------------------------------------------------
-SPARK Analysis results        Total        Flow   Interval   CodePeer         Provers   Justified   Unproved
-------------------------------------------------------------------------------------------------------------
-Data Dependencies                 .           .          .          .               .           .          .
-Flow Dependencies                 .           .          .          .               .           .          .
-Initialization                   50          50          .          .               .           .          .
-Non-Aliasing                      .           .          .          .               .           .          .
-Run-time Checks                  32           .          .          .    32 (altergo)           .          .
-Assertions                        .           .          .          .               .           .          .
-Functional Contracts             31           .          .          .    22 (altergo)           .          9
-LSP Verification                  .           .          .          .               .           .          .
-------------------------------------------------------------------------------------------------------------
-Total                           113    50 (44%)          .          .        54 (48%)           .     9 (8%)
+-----------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total        Flow   Interval   CodePeer        Provers   Justified   Unproved
+-----------------------------------------------------------------------------------------------------------
+Data Dependencies                 .           .          .          .              .           .          .
+Flow Dependencies                 .           .          .          .              .           .          .
+Initialization                   85          85          .          .              .           .          .
+Non-Aliasing                      .           .          .          .              .           .          .
+Run-time Checks                   4           .          .          .    4 (altergo)           .          .
+Assertions                        .           .          .          .              .           .          .
+Functional Contracts              .           .          .          .              .           .          .
+LSP Verification                  .           .          .          .              .           .          .
+-----------------------------------------------------------------------------------------------------------
+Total                            89    85 (96%)          .          .         4 (4%)           .          .
 
 
-Analyzed 10 units
-in unit http_message, 0 subprograms and packages out of 1 analyzed
-  Http_Message.Construct_Simple_HTTP_Response at http_message.ads:87 skipped
+Analyzed 12 units
+in unit config, 1 subprograms and packages out of 1 analyzed
+  config at config.ads:3 flow analyzed (0 errors and 0 warnings)
+in unit fileio, 5 subprograms and packages out of 5 analyzed
+  fileio at fileio.ads:10 flow analyzed (0 errors and 0 warnings)
+  fileio.Construct_Measured_Filename at fileio.ads:50 flow analyzed (0 errors and 0 warnings)
+  fileio.Print_File_Status at fileio.ads:45 flow analyzed (0 errors and 0 warnings)
+  fileio.Read_File_To_MFB at fileio.ads:40 flow analyzed (0 errors and 0 warnings)
+  fileio.Trim_Filename at fileio.ads:35 flow analyzed (0 errors and 0 warnings)
+in unit http_message, 3 subprograms and packages out of 3 analyzed
+  Http_Message at http_message.ads:9 flow analyzed (0 errors and 0 warnings)
+  Http_Message.Construct_Simple_HTTP_Response at http_message.ads:80 flow analyzed (0 errors and 0 warnings)
+  Http_Message.Construct_Simple_HTTP_Response at http_message.ads:83 flow analyzed (0 errors and 0 warnings)
 in unit main, 1 subprograms and packages out of 1 analyzed
   Main at main.adb:7 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
 in unit masp, 1 subprograms and packages out of 1 analyzed
-  Masp at masp.adb:14 flow analyzed (0 errors and 0 warnings) and not proved, 10 checks out of 16 proved
+  Masp at masp.adb:14 flow analyzed (0 errors and 0 warnings)
 in unit network_ns, 0 subprograms and packages out of 6 analyzed
   network_ns at network_ns.ads:13 skipped
-  network_ns.Get_Client_Cxn at network_ns.ads:55 skipped
-  network_ns.Initialize_TCP_State at network_ns.ads:50 skipped
-  network_ns.Recv_NET_Request at network_ns.ads:61 skipped
-  network_ns.Send_Simple_Response at network_ns.ads:72 skipped
-  network_ns.Send_TEST_Response at network_ns.ads:66 skipped
+  network_ns.Get_Client_Cxn at network_ns.ads:58 skipped
+  network_ns.Initialize_TCP_State at network_ns.ads:53 skipped
+  network_ns.Recv_NET_Request at network_ns.ads:64 skipped
+  network_ns.Send_Simple_Response at network_ns.ads:75 skipped
+  network_ns.Send_TEST_Response at network_ns.ads:69 skipped
 in unit parsing, 3 subprograms and packages out of 3 analyzed
-  parsing at parsing.ads:10 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  parsing.Get_First_Token_In_Range at parsing.ads:13 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
-  parsing.Parse_HTTP_Request at parsing.ads:23 flow analyzed (0 errors and 0 warnings) and not proved, 14 checks out of 16 proved
-in unit server, 0 subprograms and packages out of 2 analyzed
-  server.Fulfill_HTTP_Request at server.ads:19 skipped
-  server.Sanitize_HTTP_Request at server.ads:14 skipped
+  parsing at parsing.ads:11 flow analyzed (0 errors and 0 warnings)
+  parsing.Get_First_Token_In_Range at parsing.ads:14 flow analyzed (0 errors and 0 warnings)
+  parsing.Parse_HTTP_Request at parsing.ads:24 flow analyzed (0 errors and 0 warnings)
+in unit server, 2 subprograms and packages out of 2 analyzed
+  server at server.ads:11 flow analyzed (0 errors and 0 warnings)
+  server.Fulfill_HTTP_Request at server.ads:18 flow analyzed (0 errors and 0 warnings)
 in unit spark, 1 subprograms and packages out of 2 analyzed
-  SPARK at spark.ads:29 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  SPARK at spark.ads:29 flow analyzed (0 errors and 0 warnings)
   SPARK.Text_IO_File_Type at spark.ads:53 skipped
 in unit spark-text_io, 4 subprograms and packages out of 71 analyzed
   SPARK.Text_IO at spark-text_io.ads:27 skipped
@@ -67,13 +77,13 @@ in unit spark-text_io, 4 subprograms and packages out of 71 analyzed
   SPARK.Text_IO.Get_Line at spark-text_io.ads:664 skipped
   SPARK.Text_IO.Get_Line at spark-text_io.ads:679 skipped
   SPARK.Text_IO.Is_Open at spark-text_io.ads:115 skipped
-  SPARK.Text_IO.Is_Readable at spark-text_io.ads:133 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  SPARK.Text_IO.Is_Readable at spark-text_io.ads:133 flow analyzed (0 errors and 0 warnings)
   SPARK.Text_IO.Is_Standard_Error at spark-text_io.ads:100 skipped
-  SPARK.Text_IO.Is_Standard_File at spark-text_io.ads:109 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  SPARK.Text_IO.Is_Standard_File at spark-text_io.ads:109 flow analyzed (0 errors and 0 warnings)
   SPARK.Text_IO.Is_Standard_Input at spark-text_io.ads:92 skipped
   SPARK.Text_IO.Is_Standard_Output at spark-text_io.ads:96 skipped
-  SPARK.Text_IO.Is_Standard_Writable at spark-text_io.ads:104 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  SPARK.Text_IO.Is_Writable at spark-text_io.ads:137 flow analyzed (0 errors and 0 warnings) and proved (2 checks)
+  SPARK.Text_IO.Is_Standard_Writable at spark-text_io.ads:104 flow analyzed (0 errors and 0 warnings)
+  SPARK.Text_IO.Is_Writable at spark-text_io.ads:137 flow analyzed (0 errors and 0 warnings)
   SPARK.Text_IO.Line at spark-text_io.ads:491 skipped
   SPARK.Text_IO.Line at spark-text_io.ads:495 skipped
   SPARK.Text_IO.Line_Length at spark-text_io.ads:298 skipped

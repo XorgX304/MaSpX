@@ -8,14 +8,15 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U parsing%b		parsing.adb		4c94e33c OO PK IL
+U parsing%b		parsing.adb		5370e153 OO PK IL
 
-U parsing%s		parsing.ads		ee247a4d OO PK IL
+U parsing%s		parsing.ads		0f4dc1ce OO PK IL
 W config%s		config.ads		config.ali
 W http_message%s	http_message.adb	http_message.ali
 W network_ns%s		network_ns.adb		network_ns.ali
 W spark%s		spark.ads		spark.ali
 W spark.text_io%s	spark-text_io.adb	spark-text_io.ali
+W string_types%s	string_types.ads	string_types.ali
 
 D ada.ads		20170516105950 76789da1 ada%s
 D a-charac.ads		20170516105954 2d3ec45b ada.characters%s
@@ -26,21 +27,21 @@ D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D a-uncdea.ads		20170516105954 f15a5ed1 ada.unchecked_deallocation%s
-D config.ads		20180306175010 a15049f9 config%s
-D fileio.ads		20180305232738 4f7b6365 fileio%s
+D config.ads		20180313162200 aa528ba9 config%s
+D fileio.ads		20180313232212 063b6919 fileio%s
 D gnat.ads		20170516105956 fd2ad2f1 gnat%s
 D g-socket.ads		20170516105956 df7f0365 gnat.sockets%s
-D http_message.ads	20180306175028 d1244e4b http_message%s
+D http_message.ads	20180313162300 877247c0 http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D network_ns.ads	20180306181402 cbef414a network_ns%s
+D network_ns.ads	20180312193300 cbef414a network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
-D parsing.ads		20180306175126 4a4b724b parsing%s
-D parsing.adb		20180306191636 06df9177 parsing%b
+D parsing.ads		20180306223454 ffb83659 parsing%s
+D parsing.adb		20180307193302 acc8d70a parsing%b
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
-D string_types.ads	20180215232526 bd5c83c4 string_types%s
+D string_types.ads	20180306224850 09ce344a string_types%s
 D system.ads		20170516105954 32a08138 system%s
 D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
@@ -52,52 +53,52 @@ D s-traent.ads		20170516105950 005bf670 system.traceback_entries%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
 D utils_ns.ads		20180220212052 c662e524 utils_ns%s
 X 10 config.ads
-1K9*config 7e11 20|6w6 6r18
-5a4*DEFAULT_PAGE{string} 21|78r73 78r101
+3K9*config 11e11 20|6w6 6r18
+8a4*DEFAULT_PAGE{string} 21|81r73 81r101
 X 14 http_message.ads
-7K9*Http_Message 92e17 20|7w6 7r24 21|57r35 59r35 62r25
-11n30*GET{11E9} 21|57r48
-11n35*UNKNOWN{11E9} 21|59r48
-22A12*RequestURIStringType{24|8A12}<integer> 21|62r38 75r36 75r66 75r109
-. 75r139
-23A12*ParsedRequestURIStringType{string}<integer>
-49R9*Simple_HTTP_Request 53e14 20|25r28 21|39r28
-51e7*Method{13E12} 21|57m25 59m25
-52a7*RequestURI{23A12} 21|43m22 75m25 77r31 78m31
+9K9*Http_Message 85e17 20|7w6 7r24 21|60r35 62r35
+13n30*GET{13E9} 21|60r48
+13n35*UNKNOWN{13E9} 21|62r48
+40R9*Simple_HTTP_Request 44e14 20|26r28 21|42r28
+42e7*Method{15E12} 21|60m25 62m25
+43a7*RequestURI{24|24A12} 21|46m22 78m25 80r31 80r84 81m31
 X 18 network_ns.ads
-13K9*network_ns 79e15 20|5w6 5r22
-38I12*MRB_First_Empty_Index_Type{natural}
-39A12*Simple_Request_Line{string}<integer> 20|14r16 21|7r16
-42R9*Measured_Request_Buffer 46e14 20|18r19 24r21 21|11r19 38r21 41r15
-44a7*Buffer{39A12} 21|14m13 29r34 30m19 47r22 49r22 50r22 53r55 56r16 65r25
-. 67r25 68r25 71r55 75r102
-45i7*Length{38I12} 21|15m13 19m16 29r19 29r56 30r32 31m19 31r35 62r16 67r46
-. 76r19 77r48 78r48 78r64
-50a4*GET_TOKEN_REQUEST_LINE{39A12} 21|56r25
+13K9*network_ns 80e15 20|5w6 5r22
+39I12*MRB_First_Empty_Index_Type{natural}
+40A12*Simple_Request_Line{string}<integer> 20|15r16 21|7r16
+43R9*Measured_Request_Buffer 47e14 20|19r19 25r21 21|11r19 41r21 44r15
+45a7*Buffer{40A12} 21|15m13 32r34 33m19 50r22 52r22 53r22 56r55 59r16 68r25
+. 70r25 71r25 74r55 78r102
+46i7*Length{39I12} 21|16m13 21m16 32r19 32r56 33r32 34m19 34r35 65r16 70r46
+. 79r19 80r48 80r101 81r48 81r64
+51a4*GET_TOKEN_REQUEST_LINE{40A12} 21|59r25
 X 20 parsing.ads
-10K9*parsing 28l5 28e12 21|4b14 87l5 87t12
-13U14*Get_First_Token_In_Range 14>7 15>7 16>7 17>7 18<7 21|6b14 34l8 34t32
-. 46s7 64s10
-14a7 Source{18|39A12} 21|7b7 18r18 18r42 25r13 30r43
-15e7 Delimit{character} 21|8b7 25r25
-16i7 Start{positive} 20r16 21|9b7 18r10 23r30
-17i7 Finish{positive} 20r24 21|10b7 18r33 23r39
-18r7 Token{18|42R9} 21|11b7 14m7 15m7 19m10 29r13 29r28 29r50 30m13 30r26
-. 31m13 31r29
-23U14*Parse_HTTP_Request 24>7 25<7 21|37b14 85l8 85t26
-24r7 Raw_Request{18|42R9} 21|38b7 47r10 49r10 50r10 65r13 67r13 68r13
-25r7 Parsed_Request{14|49R9} 21|39b7 43m7 57m10 59m10 75m10 77r16 78m16
+11K9*parsing 29l5 29e12 21|4b14 90l5 90t12
+14U14*Get_First_Token_In_Range 15>7 16>7 17>7 18>7 19<7 21|6b14 37l8 37t32
+. 49s7 67s10
+15a7 Source{18|40A12} 21|7b7 20r18 20r42 27r13 33r43
+16e7 Delimit{character} 21|8b7 27r25
+17i7 Start{positive} 21r16 21|9b7 20r10 25r30
+18i7 Finish{positive} 21r24 21|10b7 20r33 25r39
+19r7 Token{18|43R9} 21|11b7 15m7 16m7 21m10 32r13 32r28 32r50 33m13 33r26
+. 34m13 34r29
+24U14*Parse_HTTP_Request 25>7 26<7 21|40b14 88l8 88t26
+25r7 Raw_Request{18|43R9} 21|41b7 50r10 52r10 53r10 68r13 70r13 71r13
+26r7 Parsed_Request{14|40R9} 21|42b7 46m7 60m10 62m10 78m10 80r16 80r69 81m16
 X 21 parsing.adb
-23i11 I{integer} 25r20 30r50
-41r7 Token{18|42R9} 51m10 53r49 56r10 62r10 67r40 69m13 71r49 75r96 76r13
-. 77r42 78r42 78r58
+25i11 I{integer} 27r20 33r50
+44r7 Token{18|43R9} 54m10 56r49 59r10 65r10 70r40 72m13 74r49 78r96 79r13
+. 80r42 80r95 81r42 81r58
 X 22 spark.ads
 29K9*SPARK 20|3r6 3r25 22|66e10
 X 23 spark-text_io.ads
 27K15*Text_IO 20|3w12 3r31 23|718e18
-703U14*Put_Line 21|53s7 71s10
+703U14*Put_Line 21|56s7 74s10
 X 24 string_types.ads
-8A12*String255{string}<integer>
+3K9*String_Types 20|8w6 8r24 21|65r25 24|28e17
+10A12*String255{string}<integer>
+23A12*RequestURIStringType{10A12}<integer> 21|65r38 78r36 78r66 78r109 78r139
+24A12*ParsedRequestURIStringType{string}<integer>
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -234,9 +235,13 @@ FS .87 466U14 ada__text_io__initialize_standard_files
 FD 8 a-unccon.ads
 FD 9 a-uncdea.ads
 FD 10 config.ads
-FS .1 1K9 config
+FS .1 3K9 config
 FD 11 fileio.ads
-FS .1 4K9 fileio
+FS .1 10K9 fileio
+FS .2 35U14 fileio__trim_filename
+FS .3 40U14 fileio__read_file_to_mfb
+FS .4 45U14 fileio__print_file_status
+FS .5 50V13 fileio__construct_measured_filename
 FD 12 gnat.ads
 FS .1 34K9 gnat
 FD 13 g-socket.ads
@@ -307,8 +312,9 @@ FS .64 1116U14 gnat__sockets__check_selector
 FS .65 1140U14 gnat__sockets__check_selector__2
 FS .66 1152U14 gnat__sockets__abort_selector
 FD 14 http_message.ads
-FS .1 7K9 http_message
-FS .2 89V13 http_message__construct_simple_http_response
+FS .1 9K9 http_message
+FS .2 80V13 http_message__construct_simple_http_response
+FS .3 83V13 http_message__construct_simple_http_response__2
 FD 15 interfac.ads
 FS .1 38K9 interfaces
 FS .2 81V13 interfaces__shift_left
@@ -381,21 +387,21 @@ FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 18 network_ns.ads
 FS .1 13K9 network_ns
-FS .2 52U14 network_ns__initialize_tcp_state
-FS .3 57U14 network_ns__get_client_cxn
-FS .4 63U14 network_ns__recv_net_request
-FS .5 68U14 network_ns__send_test_response
-FS .6 74U14 network_ns__send_simple_response
+FS .2 53U14 network_ns__initialize_tcp_state
+FS .3 58U14 network_ns__get_client_cxn
+FS .4 64U14 network_ns__recv_net_request
+FS .5 69U14 network_ns__send_test_response
+FS .6 75U14 network_ns__send_simple_response
 FD 19 network_types.ads
 FS .1 1K9 network_types
 FD 20 parsing.ads
-FS .1 10K9 parsing
-FS .2 13U14 parsing__get_first_token_in_range
-FS .3 23U14 parsing__parse_http_request
+FS .1 11K9 parsing
+FS .2 14U14 parsing__get_first_token_in_range
+FS .3 24U14 parsing__parse_http_request
 FD 21 parsing.adb
 FS .1 4K14 parsing -> 20.1
 FS .2 6U14 parsing__get_first_token_in_range -> 20.2
-FS .3 37U14 parsing__parse_http_request -> 20.3
+FS .3 40U14 parsing__parse_http_request -> 20.3
 FD 22 spark.ads
 FS .1 29K9 spark
 FD 23 spark-text_io.ads
@@ -475,7 +481,7 @@ FS .73 109V13 spark__text_io__is_standard_file -> 23.7
 FS .74 133V13 spark__text_io__is_readable -> 23.12
 FS .75 137V13 spark__text_io__is_writable -> 23.13
 FD 24 string_types.ads
-FS .1 1K9 string_types
+FS .1 3K9 string_types
 FD 25 system.ads
 FS .1 37K9 system
 FS .2 77V13 system__Olt
@@ -566,36 +572,36 @@ FD 34 utils_ns.ads
 FS .1 3K9 utils_ns
 FS .2 7U14 utils_ns__string_to_byte_array
 FX 10 config.ads .1 config
-F 5*4 config__default_page 21|.3:78c73 78c101
+F 8*4 config__default_page 21|.3:81c73 81c101
 FX 18 network_ns.ads .1 network_ns
-F 50*4 network_ns__get_token_request_line 21|.3:56r25
+F 51*4 network_ns__get_token_request_line 21|.3:59r25
 FX 20 parsing.ads .1 parsing
-F 13*14 parsing__get_first_token_in_range 21|.3:46s7 64s10
+F 14*14 parsing__get_first_token_in_range 21|.3:49s7 67s10
 FX 20 parsing.ads .2 parsing__get_first_token_in_range
-F 14>7 parsing__get_first_token_in_range__source 21|.2:18c18 18c42 25c13
-. 30c43
-F 15>7 parsing__get_first_token_in_range__delimit 21|.2:25c25
-F 16>7 parsing__get_first_token_in_range__start 20c16 21|.2:18c10 23c30
-F 17>7 parsing__get_first_token_in_range__finish 20c24 21|.2:18c33 23c39
-F 18<7 parsing__get_first_token_in_range__token 21|.2:14m7 15m7 19m10 29r13
-. 29r28 29r50 30m13 30r26 31m13 31r29
+F 15>7 parsing__get_first_token_in_range__source 21|.2:20c18 20c42 27c13
+. 33c43
+F 16>7 parsing__get_first_token_in_range__delimit 21|.2:27c25
+F 17>7 parsing__get_first_token_in_range__start 21c16 21|.2:20c10 25c30
+F 18>7 parsing__get_first_token_in_range__finish 21c24 21|.2:20c33 25c39
+F 19<7 parsing__get_first_token_in_range__token 21|.2:15m7 16m7 21m10 32r13
+. 32r28 32r50 33m13 33r26 34m13 34r29
 FX 20 parsing.ads .3 parsing__parse_http_request
-F 24>7 parsing__parse_http_request__raw_request 21|.3:47c10 49c10 50c10 65c13
-. 67c13 68c13
-F 25<7 parsing__parse_http_request__parsed_request 21|.3:43m7 57m10 59m10
-. 75m10 77r16 78m16
+F 25>7 parsing__parse_http_request__raw_request 21|.3:50c10 52c10 53c10 68c13
+. 70c13 71c13
+F 26<7 parsing__parse_http_request__parsed_request 21|.3:46m7 60m10 62m10
+. 78m10 80r16 80r69 81m16
 FX 21 parsing.adb .2 parsing__get_first_token_in_range
-F 23*11 parsing__get_first_token_in_range__L_1__i 25c20 30c50
+F 25*11 parsing__get_first_token_in_range__L_1__i 27c20 33c50
 FX 21 parsing.adb .3 parsing__parse_http_request
-F 41*7 parsing__parse_http_request__token 51m10 53r49 56r10 62r10 67r40 69m13
-. 71r49 75r96 76r13 77r42 78r42 78r58
+F 44*7 parsing__parse_http_request__token 54m10 56r49 59r10 65r10 70r40 72m13
+. 74r49 78r96 79r13 80r42 80r95 81r42 81r58
 FX 23 spark-text_io.ads .1 spark__text_io
-F 703*14 spark__text_io__put_line__2 21|.3:53s7 71s10
+F 703*14 spark__text_io__put_line__2 21|.3:56s7 74s10
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 2 parsing__get_first_token_in_range parsing__parse_http_request local_init 0
-GG EK_GLOBALS parsing__get_first_token_in_range KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 6 parsing__get_first_token_in_range__start parsing__get_first_token_in_range__finish parsing__get_first_token_in_range__token parsing__get_first_token_in_range__L_1__i parsing__get_first_token_in_range__source parsing__get_first_token_in_range__delimit local_ghost 0 local_sub 0
+GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 2 parsing__parse_http_request parsing__get_first_token_in_range local_init 0
+GG EK_GLOBALS parsing__get_first_token_in_range KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 6 parsing__get_first_token_in_range__source parsing__get_first_token_in_range__delimit parsing__get_first_token_in_range__start parsing__get_first_token_in_range__finish parsing__get_first_token_in_range__token parsing__get_first_token_in_range__L_1__i local_ghost 0 local_sub 0
 GG EK_GLOBALS parsing__parse_http_request KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 1 parsing__get_first_token_in_range calls_conditional 0 local_var 5 parsing__parse_http_request__raw_request parsing__parse_http_request__parsed_request parsing__parse_http_request__token parsing__parse_http_request__R13b parsing__parse_http_request__R14b local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 3 parsing parsing__get_first_token_in_range parsing__parse_http_request

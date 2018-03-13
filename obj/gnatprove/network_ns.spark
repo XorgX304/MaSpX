@@ -15,7 +15,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 50
+          "line": 53
         }
       ],
       "spark": "spec"
@@ -25,7 +25,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 55
+          "line": 58
         }
       ],
       "spark": "spec"
@@ -35,7 +35,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 61
+          "line": 64
         }
       ],
       "spark": "spec"
@@ -45,7 +45,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 66
+          "line": 69
         }
       ],
       "spark": "spec"
@@ -55,7 +55,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 72
+          "line": 75
         }
       ],
       "spark": "spec"
@@ -63,207 +63,12 @@
   ],
   "flow": [
   ],
-  "proof": [
-    {
-      "file": "network_ns.ads",
-      "line": 48,
-      "col": 63,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "network_ns",
-        "sloc": [
-          {
-            "file": "network_ns.ads",
-            "line": 13
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 875,
-              "time": 9.38000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 876,
-          "max_time": 9.38000008463860E-02
-        }
-      }
-    },
-    {
-      "file": "network_ns.ads",
-      "line": 47,
-      "col": 63,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "network_ns",
-        "sloc": [
-          {
-            "file": "network_ns.ads",
-            "line": 13
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 875,
-              "time": 1.09400000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 876,
-          "max_time": 1.09399996697903E-01
-        }
-      }
-    }
-  ],
   "assumptions": [
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns.Recv_NET_Request",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 61
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns.Send_Simple_Response",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 72
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns.Send_TEST_Response",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 66
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns.Get_Client_Cxn",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 55
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 13
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns.Initialize_TCP_State",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 50
-            }
-          ]
-        }
-      }
-    }
   ],
   "timings": {
-    "marking": 4.22188499942422E-03,
-    "globals (basic)": 4.41825762391090E-02,
-    "globals/properties (advanced)": 2.81878616660833E-02,
-    "flow analysis": 2.57713776081800E-02,
-    "codepeer results": 5.64199990549241E-06,
-    "init_why_sections": 2.06633005291224E-04,
-    "translation of standard": 2.85478890873492E-03,
-    "translation of compilation unit": 1.13277196884155E-01,
-    "gnatwhy3.run_vcs": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
-    "gnatwhy3.register_vcs": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_if": 0.00000000000000E+00,
-    "gnatwhy3.transformations.explode_record_param": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eval_match": 1.56250000000000E-02,
-    "gnatwhy3.schedule_vcs": 1.56250000000000E-02,
-    "gnatwhy3.init": 1.71875000000000E+00,
-    "gnatwhy3.transformations.inline_trivial": 1.56250000000000E-02,
-    "gnatwhy3.transformations.inline_tagged": 0.00000000000000E+00,
-    "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_let": 1.56250000000000E-02,
-    "gnatwhy3.save_session": 1.56250000000000E-02,
-    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_algebraic": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_literal": 1.56250000000000E-02,
-    "gnatwhy3.transformations.eliminate_recursion": 0.00000000000000E+00,
-    "proof": 2.61297440528870E+00
+    "marking": 6.38519087806344E-03,
+    "globals (basic)": 5.19271045923233E-02,
+    "globals/properties (advanced)": 3.61252725124359E-02,
+    "flow analysis": 2.61042499914765E-03
   }
 }

@@ -1,31 +1,176 @@
 {
   "spark": [
     {
+      "name": "Http_Message",
+      "sloc": [
+        {
+          "file": "http_message.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
       "name": "Http_Message.Construct_Simple_HTTP_Response",
       "sloc": [
         {
           "file": "http_message.ads",
-          "line": 87
+          "line": 80
         }
       ],
-      "spark": "no"
+      "spark": "all"
+    },
+    {
+      "name": "Http_Message.Construct_Simple_HTTP_Response",
+      "sloc": [
+        {
+          "file": "http_message.ads",
+          "line": 83
+        }
+      ],
+      "spark": "all"
     }
   ],
   "flow": [
-  ],
-  "proof": [
+    {
+      "file": "http_message.adb",
+      "line": 22,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Http_Message.Construct_Simple_HTTP_Response",
+        "sloc": [
+          {
+            "file": "http_message.ads",
+            "line": 83
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "http_message__flow__27.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "http_message.adb",
+      "line": 22,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Http_Message.Construct_Simple_HTTP_Response",
+        "sloc": [
+          {
+            "file": "http_message.ads",
+            "line": 83
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "http_message__flow__27.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "http_message.adb",
+      "line": 10,
+      "col": 40,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Http_Message.Construct_Simple_HTTP_Response",
+        "sloc": [
+          {
+            "file": "http_message.ads",
+            "line": 80
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "http_message__flow__119.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "http_message.adb",
+      "line": 12,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Http_Message.Construct_Simple_HTTP_Response",
+        "sloc": [
+          {
+            "file": "http_message.ads",
+            "line": 80
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "http_message__flow__119.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "http_message.adb",
+      "line": 12,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Http_Message.Construct_Simple_HTTP_Response",
+        "sloc": [
+          {
+            "file": "http_message.ads",
+            "line": 80
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "http_message__flow__119.trace",
+      "how_proved": "flow"
+    }
   ],
   "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Http_Message.Construct_Simple_HTTP_Response",
+          "sloc": [
+            {
+              "file": "http_message.ads",
+              "line": 80
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Http_Message.Construct_Simple_HTTP_Response",
+          "sloc": [
+            {
+              "file": "http_message.ads",
+              "line": 83
+            }
+          ]
+        }
+      }
+    }
   ],
   "timings": {
-    "marking": 8.72728007379919E-04,
-    "globals (basic)": 3.12348199076951E-03,
-    "globals/properties (advanced)": 2.42424290627241E-03,
-    "flow analysis": 8.81550004123710E-05,
-    "codepeer results": 4.58400018032989E-06,
-    "init_why_sections": 3.06070985971019E-04,
-    "translation of standard": 4.73564909771085E-03,
-    "translation of compilation unit": 1.63501501083374E-02,
-    "proof": 2.82099995274621E-06
+    "marking": 3.71235399506986E-03,
+    "globals (basic)": 3.79634648561478E-02,
+    "globals/properties (advanced)": 2.95302756130695E-02,
+    "flow analysis": 8.59645288437605E-03
   }
 }

@@ -73,10 +73,6 @@ package body network_ns is
          Request.Length := C_ct;
          
          C_ct := C_ct + 1;
-      
-         if C(1) = LF and Prev_C(1) = CR then --this only works for Simple-Request, other versions of HTTP will be multi-line
-            exit;
-         end if;
          
          case C(1) is
             when CR =>
@@ -86,6 +82,10 @@ package body network_ns is
             when others =>
                Ada.Text_IO.Put(C);
          end case;
+         
+         if C(1) = LF and Prev_C(1) = CR then --this only works for Simple-Request, other versions of HTTP will be multi-line
+            exit;
+         end if;
             
          Prev_C := C;
       end loop;

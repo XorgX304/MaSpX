@@ -1,3 +1,5 @@
+pragma SPARK_Mode(On);
+
 with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 
 with fileio; use fileio;
