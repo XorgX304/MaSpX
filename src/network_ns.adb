@@ -42,6 +42,9 @@ package body network_ns is
       Client_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type)
    is
    begin
+      Client_Socket := GNAT.Sockets.No_Socket;
+      Client_Socket_Addr := GNAT.Sockets.No_Sock_Addr;
+   
       --establishes connection
       Gnat.Sockets.Accept_Socket(
          Server_Socket, Client_Socket, Client_Socket_Addr);

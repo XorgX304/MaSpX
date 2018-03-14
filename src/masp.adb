@@ -51,6 +51,8 @@ begin
       --TODO:Sanitize_HTTP_Request --be wary of directory traversal attacks
 
       Fulfill_HTTP_Request(Client_Socket, Parsed_Request);
+
+      GNAT.Sockets.Close_Socket(Client_Socket);
    end loop;
 
 end Masp;
