@@ -131,4 +131,12 @@ package body network_ns is
    
       String'Write(Client_Stream, Send_String);
    end Send_Simple_Response;
+   
+   -----------------------------------------------------------------------------
+   procedure Close_Client_Socket(
+      Client_Socket : GNAT.Sockets.Socket_Type)
+   is
+   begin
+      GNAT.Sockets.Close_Socket(Client_Socket);
+   end Close_Client_Socket;
 end network_ns;

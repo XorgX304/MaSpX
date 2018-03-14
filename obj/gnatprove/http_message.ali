@@ -10,7 +10,7 @@ RV SPARK_05
 
 U http_message%b	http_message.adb	d692e5ef OO PK IL
 
-U http_message%s	http_message.ads	4490ec0b OO PK KU
+U http_message%s	http_message.ads	adc00f16 OO PK KU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -24,9 +24,9 @@ D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180313162200 aa528ba9 config%s
-D fileio.ads		20180313232212 063b6919 fileio%s
-D http_message.ads	20180313162300 877247c0 http_message%s
+D config.ads		20180314171602 c13e6465 config%s
+D fileio.ads		20180314213654 840765c8 fileio%s
+D http_message.ads	20180314001726 877247c0 http_message%s
 D http_message.adb	20180313162256 51e0a22f http_message%b
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
@@ -38,40 +38,41 @@ D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
 D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
+D utils.ads		20180314171524 d0f67cff utils%s
 X 1 ada.ads
 16K9*Ada 20e8 9|3r6 3r34
 X 2 a-charac.ads
 16K13*Characters 18e19 9|3r10 3r38
 X 3 a-chlat1.ads
 18K24*Latin_1 296e27 9|3w21 3r49
-25e4*NUL{character} 9|50r44
+25e4*NUL{character} 9|51r44
 X 7 config.ads
-3K9*config 11e11 9|6w6 6r18
+3K9*config 12e11 9|6w6 6r18
 X 8 fileio.ads
-10K9*fileio 52e11 9|5w6 5r18
-12i4*MAX_FILE_READ_BYTE_CT{natural} 9|81r31
-13I12*ContentSize{natural} 9|49r24
-14A12*File_Buf{string}<integer> 9|50r21
-16R9*Measured_File_Buffer 20e14 9|83r50 10|15r50
-18i7*Length{13I12} 10|19r38
-19a7*Buffer{14A12} 10|20r35
+11K9*fileio 54e11 9|5w6 5r18
+13i4*MAX_FILE_READ_BYTE_CT{natural} 9|82r31
+14I12*ContentSize{natural} 9|50r24
+15A12*File_Buf{string}<integer> 9|51r21
+17R9*Measured_File_Buffer 21e14 9|84r50 10|15r50
+19i7*Length{14I12} 10|19r38
+20a7*Buffer{15A12} 10|20r35
 X 9 http_message.ads
-9K9*Http_Message 85l5 85e17 10|3b14 25l5 25t17
-10K12*ST=10:23 34r14 43r20 56r25 57r24 58r26 62r31 64r31 65r33
-12E9*ClientServerType 12e45 53r53
-12n30*Client{12E9} 60r15 71r26
-12n38*Server{12E9} 63r15
-13E9*MethodType 14e33 15r34 61r21
-13n24*NONE{13E9} 77r17
+9K9*Http_Message 86l5 86e17 10|3b14 25l5 25t17
+10K12*ST=10:23 34r14 44r20 57r25 58r24 59r26 63r31 65r31 66r33
+12E9*ClientServerType 12e45 54r53
+12n30*Client{12E9} 61r15 72r26
+12n38*Server{12E9} 64r15
+13E9*MethodType 14e33 15r34 62r21
+13n24*NONE{13E9} 78r17
 13n30*GET{13E9} 15r51
-13n35*UNKNOWN{13E9} 15r58 42r38
+13n35*UNKNOWN{13E9} 15r58 43r38
 13n44*HEAD{13E9}
 13n50*POST{13E9}
 14n7*PUT{13E9}
 14n12*DELETE{13E9}
 14n20*LINK{13E9}
 14n26*UNLINK{13E9}
-15E12*Simple_Method_Type{13E9} 42r16
+15E12*Simple_Method_Type{13E9} 43r16
 17i4*MaxHeaders{natural} 37r47 38r37
 19E9*HeaderType 27e54 30r42 30r57 33r13
 19n24*ALLOW{19E9}
@@ -90,7 +91,7 @@ X 9 http_message.ads
 20n88*SERVER{19E9}
 21n7*USER_AGENT{19E9}
 21n19*WWW_AUTHENTICATE{19E9}
-21n37*UNKNOWN_HEADER{19E9} 69r47
+21n37*UNKNOWN_HEADER{19E9} 70r47
 23n7*ACCEP{19E9}
 23n14*ACCEPT_CHARSET{19E9}
 23n30*ACCEPT_ENCODING{19E9}
@@ -127,37 +128,37 @@ X 9 http_message.ads
 27n41*VIA{19E9}
 27n46*WARNING{19E9}
 30i4*DistinctHeaders{natural}
-32R9*Header 35e14 38r52 69r28
-33e7*Name{19E9} 69m39
-34a7*Value{15|19A12} 69m63
-37I12*MaxHeadersType{integer} 54r24
-38A9*HeaderArrayType(32R9)<integer> 55r16
-40R9*Simple_HTTP_Request 44e14
-42e7*Method{15E12}
-43a7*RequestURI{15|24A12}
-46R9*Simple_HTTP_Response 51e14 80r66 83r79 10|5r66 7r18 15r79 17r18
-49i7*Content_Length{8|13I12} 10|9m16 19m16
-50a7*Entity_Body{8|14A12} 10|10m16 20m16
-53R9*Http_Message_Variant_Record 53d37 67e14 70r34
-53e37*ClientOrServer{12E9} 59r12 71m8
-54i7*NumberOfHeaders{37I12} 72m7
-55a7*Headers{38A9} 75m7
-56a7*EntityBodyString{15|20A12} 76m7
-57a7*FirstLineString{15|17A12} 73m7
-58a7*HttpVersionString{15|21A12} 74m7
-61e13*Method{13E9} 77m7
-62a13*RequestURIString{15|23A12} 78m7
-64a13*StatusCodeString{15|26A12}
-65a13*ReasonPhraseString{15|27A12}
-69r4*BLANK_HEADER{32R9} 75r29
-70r4*BLANK_HTTP_MESSAGE{53R9}
-80V13*Construct_Simple_HTTP_Response{46R9} 80>44 10|5b13 13l8 13t38
-80a44 Page{string} 81r16 10|5b44 9r34 10r28 10r43
-83V13*Construct_Simple_HTTP_Response{46R9} 83>44 10|15b13 23l8 23t38
-83r44 MFB{8|16R9} 10|15b44 19r34 20r31
+32R9*Header 35e14 38r52 70r28
+33e7*Name{19E9} 70m39
+34a7*Value{15|19A12} 70m63
+37I12*MaxHeadersType{integer} 55r24
+38A9*HeaderArrayType(32R9)<integer> 56r16
+41R9*Simple_HTTP_Request 45e14
+43e7*Method{15E12}
+44a7*RequestURI{15|24A12}
+47R9*Simple_HTTP_Response 52e14 81r66 84r79 10|5r66 7r18 15r79 17r18
+50i7*Content_Length{8|14I12} 10|9m16 19m16
+51a7*Entity_Body{8|15A12} 10|10m16 20m16
+54R9*Http_Message_Variant_Record 54d37 68e14 71r34
+54e37*ClientOrServer{12E9} 60r12 72m8
+55i7*NumberOfHeaders{37I12} 73m7
+56a7*Headers{38A9} 76m7
+57a7*EntityBodyString{15|20A12} 77m7
+58a7*FirstLineString{15|17A12} 74m7
+59a7*HttpVersionString{15|21A12} 75m7
+62e13*Method{13E9} 78m7
+63a13*RequestURIString{15|23A12} 79m7
+65a13*StatusCodeString{15|26A12}
+66a13*ReasonPhraseString{15|27A12}
+70r4*BLANK_HEADER{32R9} 76r29
+71r4*BLANK_HTTP_MESSAGE{54R9}
+81V13*Construct_Simple_HTTP_Response{47R9} 81>44 10|5b13 13l8 13t38
+81a44 Page{string} 82r16 10|5b44 9r34 10r28 10r43
+84V13*Construct_Simple_HTTP_Response{47R9} 84>44 10|15b13 23l8 23t38
+84r44 MFB{8|17R9} 10|15b44 19r34 20r31
 X 10 http_message.adb
-7r7 Response{9|46R9} 9m7 10m7 12r14
-17r7 Response{9|46R9} 19m7 20m7 22r14
+7r7 Response{9|47R9} 9m7 10m7 12r14
+17r7 Response{9|47R9} 19m7 20m7 22r14
 X 15 string_types.ads
 3K9*String_Types 9|7w6 10r23 15|28e17
 4A12*String4{string}<integer>
@@ -166,14 +167,14 @@ X 15 string_types.ads
 9A12*String128{string}<integer>
 10A12*String255{string}<integer>
 15A12*String32K{string}<integer>
-17A12*FirstLineStringType{9A12}<integer> 9|57r27
+17A12*FirstLineStringType{9A12}<integer> 9|58r27
 19A12*HeaderValueStringType{9A12}<integer> 9|34r17
-20A12*EntityBodyStringType{15A12}<integer> 9|56r28
-21A12*HttpVersionStringType{5A12}<integer> 9|58r29
-23A12*RequestURIStringType{10A12}<integer> 9|62r34
-24A12*ParsedRequestURIStringType{string}<integer> 9|43r23
-26A12*StatusCodeStringType{4A12}<integer> 9|64r34
-27A12*ReasonPhraseStringType{7A12}<integer> 9|65r36
+20A12*EntityBodyStringType{15A12}<integer> 9|57r28
+21A12*HttpVersionStringType{5A12}<integer> 9|59r29
+23A12*RequestURIStringType{10A12}<integer> 9|63r34
+24A12*ParsedRequestURIStringType{string}<integer> 9|44r23
+26A12*StatusCodeStringType{4A12}<integer> 9|65r34
+27A12*ReasonPhraseStringType{7A12}<integer> 9|66r36
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -281,15 +282,15 @@ FS .87 466U14 ada__text_io__initialize_standard_files
 FD 7 config.ads
 FS .1 3K9 config
 FD 8 fileio.ads
-FS .1 10K9 fileio
-FS .2 35U14 fileio__trim_filename
-FS .3 40U14 fileio__read_file_to_mfb
-FS .4 45U14 fileio__print_file_status
-FS .5 50V13 fileio__construct_measured_filename
+FS .1 11K9 fileio
+FS .2 36U14 fileio__trim_filename
+FS .3 42U14 fileio__read_file_to_mfb
+FS .4 47U14 fileio__print_file_status
+FS .5 52V13 fileio__construct_measured_filename
 FD 9 http_message.ads
 FS .1 9K9 http_message
-FS .2 80V13 http_message__construct_simple_http_response
-FS .3 83V13 http_message__construct_simple_http_response__2
+FS .2 81V13 http_message__construct_simple_http_response
+FS .3 84V13 http_message__construct_simple_http_response__2
 FD 10 http_message.adb
 FS .1 3K14 http_message -> 9.1
 FS .2 5V13 http_message__construct_simple_http_response -> 9.2
@@ -479,18 +480,22 @@ FS .1 41K16 system__wch_con
 FS .2 203V13 system__wch_con__get_wc_encoding_method
 FS .3 207V13 system__wch_con__get_wc_encoding_method__2
 FS .4 212V13 system__wch_con__is_start_of_encoding
+FD 21 utils.ads
+FS .1 7K9 utils
+FS .2 9U14 utils__debug_print_ln
+FS .3 10U14 utils__debug_print
 FX 3 a-chlat1.ads .1 ada__characters__latin_1
-F 25*4 ada__characters__latin_1__nul 9|.1:50c44
+F 25*4 ada__characters__latin_1__nul 9|.1:51c44
 FX 8 fileio.ads .1 fileio
-F 12*4 fileio__max_file_read_byte_ct 9|.2:81c31
+F 13*4 fileio__max_file_read_byte_ct 9|.2:82c31
 FX 9 http_message.ads .1 http_message
 F 17*4 http_message__maxheaders 37c47 38c37
-F 69*4 http_message__blank_header 75r29
+F 70*4 http_message__blank_header 76r29
 FX 9 http_message.ads .2 http_message__construct_simple_http_response
-F 80>44 http_message__construct_simple_http_response__page 81c16 10|.2:9c34
+F 81>44 http_message__construct_simple_http_response__page 82c16 10|.2:9c34
 . 10c28 10c43
 FX 9 http_message.ads .3 http_message__construct_simple_http_response__2
-F 83>44 http_message__construct_simple_http_response__2__mfb 10|.3:19c34
+F 84>44 http_message__construct_simple_http_response__2__mfb 10|.3:19c34
 . 20c31
 FX 10 http_message.adb .2 http_message__construct_simple_http_response
 F 7*7 http_message__construct_simple_http_response__response 9m7 10m7 12r14

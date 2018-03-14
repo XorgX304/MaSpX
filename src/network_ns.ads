@@ -76,5 +76,9 @@ is
       Client_Socket : Gnat.Sockets.Socket_Type;
       Response : Simple_HTTP_Response
    );
+   
+   procedure Close_Client_Socket(
+      Client_Socket : GNAT.Sockets.Socket_Type
+   );
 
 end network_ns;

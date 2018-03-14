@@ -59,16 +59,224 @@
         }
       ],
       "spark": "spec"
+    },
+    {
+      "name": "network_ns.Close_Client_Socket",
+      "sloc": [
+        {
+          "file": "network_ns.ads",
+          "line": 80
+        }
+      ],
+      "spark": "spec"
     }
   ],
   "flow": [
   ],
+  "proof": [
+    {
+      "file": "network_ns.ads",
+      "line": 51,
+      "col": 63,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "network_ns",
+        "sloc": [
+          {
+            "file": "network_ns.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 875,
+              "time": 9.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 876,
+          "max_time": 9.00000035762787E-02
+        }
+      }
+    },
+    {
+      "file": "network_ns.ads",
+      "line": 50,
+      "col": 63,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "network_ns",
+        "sloc": [
+          {
+            "file": "network_ns.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 875,
+              "time": 1.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 876,
+          "max_time": 1.09999999403954E-01
+        }
+      }
+    }
+  ],
   "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Send_TEST_Response",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 69
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Close_Client_Socket",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 80
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Get_Client_Cxn",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 58
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Initialize_TCP_State",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 53
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Recv_NET_Request",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 64
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Send_Simple_Response",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 75
+            }
+          ]
+        }
+      }
+    }
   ],
   "timings": {
-    "marking": 6.38519087806344E-03,
-    "globals (basic)": 5.19271045923233E-02,
-    "globals/properties (advanced)": 3.61252725124359E-02,
-    "flow analysis": 2.61042499914765E-03
+    "marking": 5.26810018345714E-03,
+    "globals (basic)": 4.77090999484062E-02,
+    "globals/properties (advanced)": 3.47229167819023E-02,
+    "flow analysis": 2.25815991871059E-03,
+    "codepeer results": 3.52600000042003E-06,
+    "init_why_sections": 2.15449006645940E-04,
+    "translation of standard": 2.90203909389675E-03,
+    "translation of compilation unit": 1.43942192196846E-01,
+    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
+    "gnatwhy3.init": 1.89062500000000E+00,
+    "gnatwhy3.save_session": 3.12500000000000E-02,
+    "proof": 2.52577400207520E+00
   }
 }

@@ -37,6 +37,7 @@ PACKAGE Http_Message IS
    SUBTYPE MaxHeadersType IS Integer RANGE 0..MaxHeaders;
    TYPE HeaderArrayType IS ARRAY(1..MaxHeaders) OF Header;
 
+   --TODO:ltj: discriminate this record for Raw?, Parsed, Canonicalized, Sanitized
    type Simple_HTTP_Request is
    record
       Method : Simple_Method_Type := UNKNOWN;

@@ -53,7 +53,7 @@ package body parsing is
          Raw_Request.Buffer'Last,
          Token
       );
-      Put_line("Debugging: Tokenized METHOD:" & Token.Buffer);
+      Debug_Print_Ln("Debugging: Tokenized METHOD:" & Token.Buffer);
       
       --parse to "GET" or "UNKNOWN" in http message
       if Token.Buffer = GET_TOKEN_REQUEST_LINE then
@@ -71,7 +71,7 @@ package body parsing is
             Raw_Request.Buffer'Last,
             Token
          );
-         Put_Line("Debugging: Tokenized URI:" & Token.Buffer);
+         Debug_Print_Ln("Debugging: Tokenized URI:" & Token.Buffer);
       
          --stick URI in parsed_request, sanitize at later stage. Add DEFAULT_PAGE if request is for directory.
          --ltj: shouldn't be cutting anything off... of well-formed requests... see sticky note for longest possible URI in this scheme

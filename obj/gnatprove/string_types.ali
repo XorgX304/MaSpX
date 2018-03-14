@@ -8,15 +8,15 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U string_types%s	string_types.ads	a39cbfe3 OO PK KU
+U string_types%s	string_types.ads	c8f0502f OO PK KU
 W config%s		config.ads		config.ali
 
-D config.ads		20180313162200 aa528ba9 config%s
+D config.ads		20180314171602 c13e6465 config%s
 D string_types.ads	20180306224850 09ce344a string_types%s
 D system.ads		20170516105954 32a08138 system%s
 X 1 config.ads
-3K9*config 11e11 2|1w6 1r18
-8a4*DEFAULT_PAGE{string} 2|24r83
+3K9*config 12e11 2|1w6 1r18
+9a4*DEFAULT_PAGE{string} 2|24r83
 X 2 string_types.ads
 3K9*String_Types 28l5 28e17
 4A12*String4{string}<integer> 26r36
@@ -48,7 +48,7 @@ FS .1 3K9 string_types
 FD 3 system.ads
 FS .1 37K9 system
 FX 1 config.ads .1 config
-F 8*4 config__default_page 2|.1:24c83
+F 9*4 config__default_page 2|.1:24c83
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0

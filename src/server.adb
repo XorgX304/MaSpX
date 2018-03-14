@@ -28,7 +28,7 @@ package body server is
             
             --construct name from web root and request uri
             MFT := Construct_Measured_Filename(Request.RequestURI);
-            Put_Line("Filename: " & MFT.Name);
+            Debug_Print_Ln("Filename: " & MFT.Name);
             
             Read_File_To_MFB(MFT, MFB);
             

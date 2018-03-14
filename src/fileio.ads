@@ -6,6 +6,7 @@ with SPARK.Text_IO; use SPARK.Text_IO;
 
 with String_Types; use String_Types;
 with config; use config;
+with utils; use utils;
 
 package fileio is
 
@@ -19,8 +20,16 @@ package fileio is
       Buffer : File_Buf := (others=>NUL);
    end record;
    
+   --TODO:ltj: prepend error code to constant name
    NOT_FOUND_PAGE : constant File_Buf := ('4','0','4',' ','N','o','t',' ','F','o','u','n','d', others=>' ');
    NOT_FOUND_LENGTH : constant ContentSize := 14;
+   
+   --TODO:ltj: prepend error code to constant name
+   CONFLICT_PAGE : constant File_Buf := ('4','0','9',' ','C','o','n','f','l','i','c','t', others=>' ');
+   CONFLICT_LENGTH : constant ContentSize := 13;
+   
+   c413_PAYLOAD_TOO_LARGE_PAGE : constant File_Buf := ('4','1','3',' ','P','a','y','l','o','a','d',' ','T','o','o',' ','L','a','r','g','e', others=>' ');
+   c413_PAYLOAD_TOO_LARGE_LENGTH : constant ContentSize := 22;
 
    MAX_FS_PATH_BYTE_CT : constant Positive := WEB_ROOT'Length + ParsedRequestURIStringType'Length;
    subtype MFT_First_Empty_Index_Type is Natural range Natural'First .. MAX_FS_PATH_BYTE_CT;
@@ -35,7 +44,8 @@ package fileio is
    procedure Trim_Filename(
       Pre_Filename : Measured_Filename_Type;
       Post_Filename : out String
-   );
+   )
+   with Pre => Post_Filename'Length = Pre_Filename.Length;
    
    procedure Read_File_To_MFB(
       MFT : Measured_Filename_Type;

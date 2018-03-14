@@ -6,6 +6,7 @@ with network_ns; use network_ns;
 with config; use config;
 with Http_Message; use Http_Message;
 with String_Types; use String_Types;
+with utils; use utils;
 
 --TODO: SPARKify
 package parsing is
