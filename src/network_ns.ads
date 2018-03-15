@@ -1,6 +1,7 @@
 with Gnat.Sockets;
 with Ada.Text_IO;
 with Ada.Exceptions;
+with Ada.IO_Exceptions;
 with Ada.Characters;
 with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 with Ada.Streams;
@@ -51,19 +52,19 @@ is
 
    procedure Initialize_TCP_State(
       Server_Socket : out Gnat.Sockets.Socket_Type;
-      Server_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type;
       Exception_Raised : out Boolean
    );
    
    procedure Get_Client_Cxn(
       Server_Socket : Gnat.Sockets.Socket_Type;
       Client_Socket : out Gnat.Sockets.Socket_Type;
-      Client_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type
+      Exception_Raised : out Boolean
    );
    
    procedure Recv_NET_Request(
       Client_Socket : Gnat.Sockets.Socket_Type;
-      Request : out Measured_Request_Buffer
+      Request : out Measured_Request_Buffer;
+      Exception_Raised : out Boolean
    );
    
    procedure Send_TEST_Response(

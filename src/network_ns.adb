@@ -4,9 +4,9 @@ package body network_ns is
 
    procedure Initialize_TCP_State(
       Server_Socket : out Gnat.Sockets.Socket_Type;
-      Server_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type;
       Exception_Raised : out Boolean)
    is
+      Server_Socket_Addr : Gnat.Sockets.Sock_Addr_Type;
    begin
       Exception_Raised := False;
       Server_Socket := Gnat.Sockets.No_Socket;
@@ -33,7 +33,12 @@ package body network_ns is
 
       --if any of the above operations fail
       exception
+         --ltj: we're expecting some possible socket error issues.
+         when E : GNAT.Sockets.Socket_Error =>
+            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+            Exception_Raised := True;
          when E : others =>
+            Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Initialize_TCP_State: WARNING, UNEXPECTED TYPE OF EXCEPTION");
             Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
             Exception_Raised := True;
    end Initialize_TCP_State;
@@ -42,9 +47,11 @@ package body network_ns is
    procedure Get_Client_Cxn(
       Server_Socket : Gnat.Sockets.Socket_Type;
       Client_Socket : out Gnat.Sockets.Socket_Type;
-      Client_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type)
+      Exception_Raised : out Boolean)
    is
+      Client_Socket_Addr : Gnat.Sockets.Sock_Addr_Type;
    begin
+      Exception_Raised := False;
       Client_Socket := GNAT.Sockets.No_Socket;
       Client_Socket_Addr := GNAT.Sockets.No_Sock_Addr;
    
@@ -56,12 +63,21 @@ package body network_ns is
       --Socket_Timeout.Set_Socket_Timeout(
          --Socket => Convert(Socket),
         -- Milliseconds => Socket_Timeout_Milliseconds);
+      exception
+         when E : GNAT.Sockets.Socket_Error =>
+            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+            Exception_Raised := True;
+         when E : others =>
+            Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Get_Client_Cxn: WARNING, UNEXPECTED TYPE OF EXCEPTION");
+            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+            Exception_Raised := True;
    end Get_Client_Cxn;
    
    -----------------------------------------------------------------------------
    procedure Recv_NET_Request(
       Client_Socket : Gnat.Sockets.Socket_Type;
-      Request : out Measured_Request_Buffer)
+      Request : out Measured_Request_Buffer;
+      Exception_Raised : out Boolean)
    is
       Client_Stream : Gnat.Sockets.Stream_Access;
       SP_ct : Natural := 0;  --space count
@@ -69,6 +85,7 @@ package body network_ns is
       Prev_C : String (1 .. 1);
       C : String(1 .. 1);
    begin
+      Exception_Raised := False;
       Prev_C(1) := NUL;
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
       
@@ -95,6 +112,15 @@ package body network_ns is
             
          Prev_C := C;
       end loop;
+      
+      exception
+         when E : Ada.IO_Exceptions.End_Error =>
+            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+            Exception_Raised := True;
+         when E : others =>
+            Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Recv_NET_Request: WARNING, UNEXPECTED TYPE OF EXCEPTION");
+            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+            Exception_Raised := True;
    end Recv_NET_Request;
    
    -----------------------------------------------------------------------------

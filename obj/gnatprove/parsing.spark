@@ -637,7 +637,7 @@
     },
     {
       "file": "network_ns.ads",
-      "line": 45,
+      "line": 44,
       "col": 39,
       "rule": "VC_LENGTH_CHECK",
       "severity": "info",
@@ -1486,19 +1486,19 @@
     }
   ],
   "timings": {
-    "marking": 6.83372002094984E-03,
-    "globals (basic)": 5.21644167602062E-02,
-    "globals/properties (advanced)": 3.71612645685673E-02,
-    "flow analysis": 1.08517920598388E-02,
-    "codepeer results": 4.58400018032989E-06,
-    "init_why_sections": 2.01344999368303E-04,
-    "translation of standard": 2.83045694231987E-03,
-    "translation of compilation unit": 1.51277333498001E-01,
+    "marking": 5.93137321993709E-03,
+    "globals (basic)": 5.30064664781094E-02,
+    "globals/properties (advanced)": 3.64701338112354E-02,
+    "flow analysis": 9.30768158286810E-03,
+    "codepeer results": 4.23199981014477E-06,
+    "init_why_sections": 1.94997002836317E-04,
+    "translation of standard": 3.09527292847633E-03,
+    "translation of compilation unit": 1.59793391823769E-01,
     "gnatwhy3.run_vcs": 0.00000000000000E+00,
-    "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.register_vcs": 1.56250000000000E-02,
     "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 1.93750000000000E+00,
+    "gnatwhy3.init": 2.00000000000000E+00,
     "gnatwhy3.save_session": 3.12500000000000E-02,
-    "proof": 2.74979901313782E+00
+    "proof": 2.76262760162354E+00
   }
 }

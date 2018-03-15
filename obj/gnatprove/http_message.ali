@@ -10,7 +10,7 @@ RV SPARK_05
 
 U http_message%b	http_message.adb	d692e5ef OO PK IL
 
-U http_message%s	http_message.ads	adc00f16 OO PK KU
+U http_message%s	http_message.ads	405d5bf2 OO PK KU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -24,8 +24,8 @@ D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180314171602 c13e6465 config%s
-D fileio.ads		20180314213654 840765c8 fileio%s
+D config.ads		20180315195032 766a2383 config%s
+D fileio.ads		20180315180308 dece76ca fileio%s
 D http_message.ads	20180314001726 877247c0 http_message%s
 D http_message.adb	20180313162256 51e0a22f http_message%b
 D interfac.ads		20170516105950 5ab55268 interfaces%s
@@ -38,7 +38,7 @@ D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
 D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180314171524 d0f67cff utils%s
+D utils.ads		20180315194522 6416160a utils%s
 X 1 ada.ads
 16K9*Ada 20e8 9|3r6 3r34
 X 2 a-charac.ads
@@ -47,9 +47,9 @@ X 3 a-chlat1.ads
 18K24*Latin_1 296e27 9|3w21 3r49
 25e4*NUL{character} 9|51r44
 X 7 config.ads
-3K9*config 12e11 9|6w6 6r18
+3K9*config 16e11 9|6w6 6r18
 X 8 fileio.ads
-11K9*fileio 54e11 9|5w6 5r18
+11K9*fileio 63e11 9|5w6 5r18
 13i4*MAX_FILE_READ_BYTE_CT{natural} 9|82r31
 14I12*ContentSize{natural} 9|50r24
 15A12*File_Buf{string}<integer> 9|51r21
@@ -283,10 +283,10 @@ FD 7 config.ads
 FS .1 3K9 config
 FD 8 fileio.ads
 FS .1 11K9 fileio
-FS .2 36U14 fileio__trim_filename
-FS .3 42U14 fileio__read_file_to_mfb
-FS .4 47U14 fileio__print_file_status
-FS .5 52V13 fileio__construct_measured_filename
+FS .2 45U14 fileio__trim_filename
+FS .3 51U14 fileio__read_file_to_mfb
+FS .4 56U14 fileio__print_file_status
+FS .5 61V13 fileio__construct_measured_filename
 FD 9 http_message.ads
 FS .1 9K9 http_message
 FS .2 81V13 http_message__construct_simple_http_response
@@ -484,6 +484,8 @@ FD 21 utils.ads
 FS .1 7K9 utils
 FS .2 9U14 utils__debug_print_ln
 FS .3 10U14 utils__debug_print
+FS .4 11U14 utils__check_print_ln
+FS .5 12U14 utils__check_print
 FX 3 a-chlat1.ads .1 ada__characters__latin_1
 F 25*4 ada__characters__latin_1__nul 9|.1:51c44
 FX 8 fileio.ads .1 fileio

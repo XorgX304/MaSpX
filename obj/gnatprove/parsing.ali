@@ -10,7 +10,7 @@ RV SPARK_05
 
 U parsing%b		parsing.adb		e151dabf OO PK IL
 
-U parsing%s		parsing.ads		1074ca4e OO PK IL
+U parsing%s		parsing.ads		bb7535ee OO PK IL
 W config%s		config.ads		config.ali
 W http_message%s	http_message.adb	http_message.ali
 W network_ns%s		network_ns.adb		network_ns.ali
@@ -28,15 +28,15 @@ D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D a-uncdea.ads		20170516105954 f15a5ed1 ada.unchecked_deallocation%s
-D config.ads		20180314171602 c13e6465 config%s
-D fileio.ads		20180314213654 840765c8 fileio%s
+D config.ads		20180315195032 766a2383 config%s
+D fileio.ads		20180315180308 dece76ca fileio%s
 D gnat.ads		20170516105956 fd2ad2f1 gnat%s
 D g-socket.ads		20170516105956 df7f0365 gnat.sockets%s
 D http_message.ads	20180314001726 877247c0 http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D network_ns.ads	20180314171918 b5e71ea0 network_ns%s
+D network_ns.ads	20180315202030 1d52cc13 network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
 D parsing.ads		20180314173248 2513f100 parsing%s
 D parsing.adb		20180314173238 c4422bbf parsing%b
@@ -52,11 +52,11 @@ D s-stalib.ads		20170516105954 09bd3940 system.standard_library%s
 D s-stoele.ads		20170516105956 2dc34a04 system.storage_elements%s
 D s-traent.ads		20170516105950 005bf670 system.traceback_entries%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180314171524 d0f67cff utils%s
+D utils.ads		20180315194522 6416160a utils%s
 D utils_ns.ads		20180220212052 c662e524 utils_ns%s
 X 10 config.ads
-3K9*config 12e11 20|6w6 6r18
-9a4*DEFAULT_PAGE{string} 21|81r73 81r101
+3K9*config 16e11 20|6w6 6r18
+13a4*DEFAULT_PAGE{string} 21|81r73 81r101
 X 14 http_message.ads
 9K9*Http_Message 86e17 20|7w6 7r24 21|60r35 62r35
 13n30*GET{13E9} 21|60r48
@@ -65,31 +65,31 @@ X 14 http_message.ads
 43e7*Method{15E12} 21|60m25 62m25
 44a7*RequestURI{24|24A12} 21|46m22 78m25 80r31 80r84 81m31
 X 18 network_ns.ads
-13K9*network_ns 84e15 20|5w6 5r22
-39I12*MRB_First_Empty_Index_Type{natural}
-40A12*Simple_Request_Line{string}<integer> 20|16r16 21|7r16
-43R9*Measured_Request_Buffer 47e14 20|20r19 26r21 21|11r19 41r21 44r15
-45a7*Buffer{40A12} 21|15m13 32r34 33m19 50r22 52r22 53r22 56r61 59r16 68r25
+14K9*network_ns 83e15 20|5w6 5r22
+38I12*MRB_First_Empty_Index_Type{natural}
+39A12*Simple_Request_Line{string}<integer> 20|16r16 21|7r16
+42R9*Measured_Request_Buffer 46e14 20|20r19 26r21 21|11r19 41r21 44r15
+44a7*Buffer{39A12} 21|15m13 32r34 33m19 50r22 52r22 53r22 56r61 59r16 68r25
 . 70r25 71r25 74r61 78r102
-46i7*Length{39I12} 21|16m13 21m16 32r19 32r56 33r32 34m19 34r35 65r16 70r46
+45i7*Length{38I12} 21|16m13 21m16 32r19 32r56 33r32 34m19 34r35 65r16 70r46
 . 79r19 80r48 80r101 81r48 81r64
-51a4*GET_TOKEN_REQUEST_LINE{40A12} 21|59r25
+50a4*GET_TOKEN_REQUEST_LINE{39A12} 21|59r25
 X 20 parsing.ads
 12K9*parsing 30l5 30e12 21|4b14 90l5 90t12
 15U14*Get_First_Token_In_Range 16>7 17>7 18>7 19>7 20<7 21|6b14 37l8 37t32
 . 49s7 67s10
-16a7 Source{18|40A12} 21|7b7 20r18 20r42 27r13 33r43
+16a7 Source{18|39A12} 21|7b7 20r18 20r42 27r13 33r43
 17e7 Delimit{character} 21|8b7 27r25
 18i7 Start{positive} 22r16 21|9b7 20r10 25r30
 19i7 Finish{positive} 22r24 21|10b7 20r33 25r39
-20r7 Token{18|43R9} 21|11b7 15m7 16m7 21m10 32r13 32r28 32r50 33m13 33r26
+20r7 Token{18|42R9} 21|11b7 15m7 16m7 21m10 32r13 32r28 32r50 33m13 33r26
 . 34m13 34r29
 25U14*Parse_HTTP_Request 26>7 27<7 21|40b14 88l8 88t26
-26r7 Raw_Request{18|43R9} 21|41b7 50r10 52r10 53r10 68r13 70r13 71r13
+26r7 Raw_Request{18|42R9} 21|41b7 50r10 52r10 53r10 68r13 70r13 71r13
 27r7 Parsed_Request{14|41R9} 21|42b7 46m7 60m10 62m10 78m10 80r16 80r69 81m16
 X 21 parsing.adb
 25i11 I{integer} 27r20 33r50
-44r7 Token{18|43R9} 54m10 56r55 59r10 65r10 70r40 72m13 74r55 78r96 79r13
+44r7 Token{18|42R9} 54m10 56r55 59r10 65r10 70r40 72m13 74r55 78r96 79r13
 . 80r42 80r95 81r42 81r58
 X 22 spark.ads
 29K9*SPARK 20|3r6 3r25 22|66e10
@@ -101,7 +101,7 @@ X 24 string_types.ads
 23A12*RequestURIStringType{10A12}<integer> 21|65r38 78r36 78r66 78r109 78r139
 24A12*ParsedRequestURIStringType{string}<integer>
 X 34 utils.ads
-7K9*utils 20|9w6 9r17 34|12e10
+7K9*utils 20|9w6 9r17 34|14e10
 9U14*Debug_Print_Ln 21|56s7 74s10
 FD 1 ada.ads
 FS .1 16K9 ada
@@ -242,10 +242,10 @@ FD 10 config.ads
 FS .1 3K9 config
 FD 11 fileio.ads
 FS .1 11K9 fileio
-FS .2 36U14 fileio__trim_filename
-FS .3 42U14 fileio__read_file_to_mfb
-FS .4 47U14 fileio__print_file_status
-FS .5 52V13 fileio__construct_measured_filename
+FS .2 45U14 fileio__trim_filename
+FS .3 51U14 fileio__read_file_to_mfb
+FS .4 56U14 fileio__print_file_status
+FS .5 61V13 fileio__construct_measured_filename
 FD 12 gnat.ads
 FS .1 34K9 gnat
 FD 13 g-socket.ads
@@ -390,13 +390,13 @@ FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 18 network_ns.ads
-FS .1 13K9 network_ns
-FS .2 53U14 network_ns__initialize_tcp_state
-FS .3 58U14 network_ns__get_client_cxn
-FS .4 64U14 network_ns__recv_net_request
-FS .5 69U14 network_ns__send_test_response
-FS .6 75U14 network_ns__send_simple_response
-FS .7 80U14 network_ns__close_client_socket
+FS .1 14K9 network_ns
+FS .2 52U14 network_ns__initialize_tcp_state
+FS .3 57U14 network_ns__get_client_cxn
+FS .4 63U14 network_ns__recv_net_request
+FS .5 68U14 network_ns__send_test_response
+FS .6 74U14 network_ns__send_simple_response
+FS .7 79U14 network_ns__close_client_socket
 FD 19 network_types.ads
 FS .1 1K9 network_types
 FD 20 parsing.ads
@@ -577,13 +577,15 @@ FD 34 utils.ads
 FS .1 7K9 utils
 FS .2 9U14 utils__debug_print_ln
 FS .3 10U14 utils__debug_print
+FS .4 11U14 utils__check_print_ln
+FS .5 12U14 utils__check_print
 FD 35 utils_ns.ads
 FS .1 3K9 utils_ns
 FS .2 7U14 utils_ns__string_to_byte_array
 FX 10 config.ads .1 config
-F 9*4 config__default_page 21|.3:81c73 81c101
+F 13*4 config__default_page 21|.3:81c73 81c101
 FX 18 network_ns.ads .1 network_ns
-F 51*4 network_ns__get_token_request_line 21|.3:59r25
+F 50*4 network_ns__get_token_request_line 21|.3:59r25
 FX 20 parsing.ads .1 parsing
 F 15*14 parsing__get_first_token_in_range 21|.3:49s7 67s10
 FX 20 parsing.ads .2 parsing__get_first_token_in_range
