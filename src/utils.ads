@@ -8,5 +8,7 @@ package utils is
 
    procedure Debug_Print_Ln(String_To_Print : String);
    procedure Debug_Print(String_To_Print : String);
+   procedure Check_Print_Ln(String_To_Print : String);
+   procedure Check_Print(String_To_Print : String);
 
 end utils;

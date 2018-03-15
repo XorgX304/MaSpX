@@ -20,6 +20,7 @@ package fileio is
       Buffer : File_Buf := (others=>NUL);
    end record;
    
+   --TODO:ltj: move these pages to config.ads!
    --TODO:ltj: prepend error code to constant name
    NOT_FOUND_PAGE : constant File_Buf := ('4','0','4',' ','N','o','t',' ','F','o','u','n','d', others=>' ');
    NOT_FOUND_LENGTH : constant ContentSize := 14;

@@ -1,6 +1,6 @@
 pragma SPARK_Mode(On);
 
-with Gnat.Sockets;
+with GNAT.Sockets; use GNAT.Sockets;
 with Ada.Characters.Latin_1;
 with SPARK.Text_IO; use SPARK.Text_IO;
 
@@ -15,20 +15,25 @@ with utils; use utils;
 procedure Masp is
    Server_Socket : Gnat.Sockets.Socket_Type;
    Server_Socket_addr : Gnat.Sockets.Sock_Addr_Type;
+   Init_Exception_Raised : Boolean;
    Client_Socket : Gnat.Sockets.Socket_Type;
    Client_Socket_addr : Gnat.Sockets.Sock_Addr_Type;
    --Message_Byte_Array : Network_Types.Byte_Array_Type;
    Raw_Request : Measured_Request_Buffer;
    Parsed_Request : Simple_HTTP_Request;
 begin
-   Put_line("Debugging: About to Init");
-   Initialize_TCP_State(Server_Socket, Server_Socket_addr); --        <--- network, non-SPARK stuff
+   Debug_Print_Ln("Debugging: About to Init");
+   Initialize_TCP_State(Server_Socket, Server_Socket_addr, Init_Exception_Raised); --        <--- network, non-SPARK stuff
+
+   if Init_Exception_Raised then
+      Check_Print_Ln("MaSpX: Failure to launch!");
+      return;
+   end if;
 
    loop
       Raw_Request.Length := 1;
       Raw_Request.Buffer := (others=>' ');
 
-      --Put_Line("Debugging: Waiting for client cxn...");
       Debug_Print_Ln("Debugging: Waiting for client cxn...");
       --TODO: make server able to accept more than one client, like in CRADLE
       Get_Client_Cxn(Server_Socket, Client_Socket, Client_Socket_addr); --        <--- network, non-SPARK stuff

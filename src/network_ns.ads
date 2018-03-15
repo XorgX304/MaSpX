@@ -9,13 +9,12 @@ with utils_ns;
 with network_types; use Network_Types;
 with Http_Message; use Http_Message;
 with fileio; use fileio;
+with config; use config;
 
 package network_ns 
 with SPARK_Mode => On
 is
 
-   HTTP_PORT : constant Natural := 80;
-   MAX_CXNS : constant Natural := 16; --arbitrary
    --   v--- TODO: change to MAX_REQUEST_LINE_BYTE_CT
    --TODO:ltj: change type to positive
    MAX_REQUEST_LINE_CT : constant Natural := 259;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri
@@ -52,7 +51,8 @@ is
 
    procedure Initialize_TCP_State(
       Server_Socket : out Gnat.Sockets.Socket_Type;
-      Server_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type
+      Server_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type;
+      Exception_Raised : out Boolean
    );
    
    procedure Get_Client_Cxn(

@@ -4,9 +4,11 @@ package body network_ns is
 
    procedure Initialize_TCP_State(
       Server_Socket : out Gnat.Sockets.Socket_Type;
-      Server_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type)
+      Server_Socket_Addr : out Gnat.Sockets.Sock_Addr_Type;
+      Exception_Raised : out Boolean)
    is
    begin
+      Exception_Raised := False;
       Server_Socket := Gnat.Sockets.No_Socket;
       Server_Socket_Addr := Gnat.Sockets.No_Sock_Addr;
    
@@ -27,12 +29,13 @@ package body network_ns is
       Gnat.Sockets.Bind_Socket(Server_Socket, Server_Socket_Addr);
 
       --now ready to accept connections
-      Gnat.Sockets.Listen_Socket(Socket => Server_Socket, Length => MAX_CXNS);  -- allow 16 queued connections
+      Gnat.Sockets.Listen_Socket(Socket => Server_Socket, Length => MAX_CXNS);  -- allow MAX_CXNS queued connections
 
       --if any of the above operations fail
       exception
          when E : others =>
             Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+            Exception_Raised := True;
    end Initialize_TCP_State;
    
    -----------------------------------------------------------------------------
@@ -139,4 +142,5 @@ package body network_ns is
    begin
       GNAT.Sockets.Close_Socket(Client_Socket);
    end Close_Client_Socket;
+   
 end network_ns;
