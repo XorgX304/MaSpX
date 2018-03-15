@@ -84,33 +84,43 @@ package body network_ns is
       C_ct : Positive := 1; --character count
       Prev_C : String (1 .. 1);
       C : String(1 .. 1);
+      Response : Simple_HTTP_Response;
    begin
       Exception_Raised := False;
       Prev_C(1) := NUL;
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
       
       loop
-         String'Read(Client_Stream, C); --TODO-SEC:what happens when non-ASCII character (control char is encountered) or when longer than 259??
-                                                 --http/0.9 request line *should* be all printable ascii, but of course, we've got to test violations of the standard        
-         Request.Buffer(C_ct) := C(1);  --TODO-SEC:what happens when network input is longer than String_Request? Crash probably. Fix by exiting loop when capacity reached.
-         Request.Length := C_ct;
+         if C_ct <= Request.Buffer'Last then
+            String'Read(Client_Stream, C); --TODO-SEC:what happens when non-ASCII character (control char is encountered) or when longer than 259??
+            --http/0.9 request line *should* be all printable ascii, but of course, we've got to test violations of the standard        
+            Request.Buffer(C_ct) := C(1);  --TODO-SEC:what happens when network input is longer than String_Request? Crash probably. Fix by exiting loop when capacity reached.
+            Request.Length := C_ct;
          
-         C_ct := C_ct + 1;
+            C_ct := C_ct + 1;
          
-         case C(1) is
+            case C(1) is
             when CR =>
                Ada.Text_IO.Put("\r");
             when LF =>
                Ada.Text_IO.Put("\n");
             when others =>
                Ada.Text_IO.Put(C);
-         end case;
+            end case;
          
-         if C(1) = LF and Prev_C(1) = CR then --this only works for Simple-Request, other versions of HTTP will be multi-line
-            exit;
-         end if;
+            --TODO:ltj: make server well-behaved. According to this: https://www.w3.org/Protocols/HTTP/AsImplemented.html a well behaved server does not require the carriage return character.
+            if C(1) = LF and Prev_C(1) = CR then --this only works for Simple-Request, other versions of HTTP will be multi-line
+               exit;
+            end if;
             
-         Prev_C := C;
+            Prev_C := C;
+         else
+            Debug_Print_Ln("Max request buffer exceeded! Sending 400 Bad Request");
+            Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
+            Send_Simple_Response(Client_Socket, Response);
+            Exception_Raised := True;
+            return;
+         end if;
       end loop;
       
       exception
@@ -147,7 +157,7 @@ package body network_ns is
    procedure Send_Simple_Response(
       Client_Socket : Gnat.Sockets.Socket_Type;
       Response : Simple_HTTP_Response)
-   is
+   is  --TODO:ltj: make constant for 2. Like CR_Length + LF_Length or Line_Ending_Length to put it in one.
       Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + ContentSize'Image(Response.Content_Length)'Length + 2 + 2 + Response.Content_Length));
       Client_Stream : Gnat.Sockets.Stream_Access;
    begin

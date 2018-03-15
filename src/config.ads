@@ -12,5 +12,8 @@ package config is
    --WEB_ROOT : constant String := "../test-web-root"; --the above actually works
    DEFAULT_PAGE : constant String := "index.html"; 
    --TODO:ltj: move MAX_..._CTs here?
+   
+   --error pages
+   c400_BAD_REQUEST_PAGE : constant String := "400 Bad Request";
 
 end config;
