@@ -11,6 +11,7 @@ with network_types; use Network_Types;
 with Http_Message; use Http_Message;
 with fileio; use fileio;
 with config; use config;
+with utils; use utils;
 
 package network_ns 
 with SPARK_Mode => On

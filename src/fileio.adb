@@ -42,7 +42,7 @@ package body fileio is
                if MFB.Length = 0 then
                   --ltj: buffer is full, but there is more in the file, send 413 page
                   Debug_Print_Ln("File too big for our buffer size! Send 413_Payload_Too_Big");
-                  MFB.Length := c413_PAYLOAD_TOO_LARGE_PAGE_LENGTH;
+                  MFB.Length := c413_PAYLOAD_TOO_LARGE_LENGTH;
                   MFB.Buffer := c413_PAYLOAD_TOO_LARGE_PAGE;
                   return;
                end if;
@@ -80,7 +80,7 @@ package body fileio is
       else
          Debug_Print_Ln("File in question already open! Send 409_Conflict");
          MFB.Buffer := CONFLICT_PAGE;
-         MFB.Length := CONFLICT_PAGE_LENGTH;
+         MFB.Length := CONFLICT_LENGTH;
       end if;
    end Read_File_To_MFB;
    

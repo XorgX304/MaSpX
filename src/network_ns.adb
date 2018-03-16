@@ -176,6 +176,8 @@ package body network_ns is
       Client_Socket : GNAT.Sockets.Socket_Type)
    is
    begin
+      --the Shutdown on Write flushes the stream, apparently.
+      GNAT.Sockets.Shutdown_Socket(Client_Socket, GNAT.Sockets.Shut_Write);
       GNAT.Sockets.Close_Socket(Client_Socket);
    end Close_Client_Socket;
    
