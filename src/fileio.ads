@@ -36,9 +36,12 @@ package fileio is
    subtype MFT_First_Empty_Index_Type is Natural range Natural'First .. MAX_FS_PATH_BYTE_CT;
    subtype Filename_Type is String(Positive'First .. MAX_FS_PATH_BYTE_CT);
    
+   FILENAME_TYPE_EMPTY_LENGTH : constant MFT_First_Empty_Index_Type := 1;
+   FILENAME_TYPE_FULL_LENGTH : constant MFT_First_Empty_Index_Type := 0;
+   
    type Measured_Filename_Type is
    record
-      Length : MFT_First_Empty_Index_Type := 1;
+      Length : MFT_First_Empty_Index_Type := FILENAME_TYPE_EMPTY_LENGTH;
       Name : Filename_Type := (others=>' ');
    end record;
    

@@ -89,8 +89,11 @@ package body fileio is
       Post_Filename : out String)
    is
    begin
-      --TODO:ltj: add case for First_Empty_Index (Length) = 0
-      Post_Filename := Pre_Filename.Name(Pre_Filename.Name'First .. Pre_Filename.Length);
+      if Pre_Filename.Length = FILENAME_TYPE_FULL_LENGTH then
+         Post_Filename := Pre_Filename.Name;
+      else
+         Post_Filename := Pre_Filename.Name(Pre_Filename.Name'First .. Pre_Filename.Length);
+      end if;
    end Trim_Filename;
    
    procedure Print_File_Status(

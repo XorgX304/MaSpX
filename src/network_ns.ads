@@ -19,7 +19,7 @@ is
 
    --   v--- TODO: change to MAX_REQUEST_LINE_BYTE_CT
    --TODO:ltj: change type to positive
-   MAX_REQUEST_LINE_CT : constant Natural := 261;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
+   MAX_REQUEST_LINE_CT : constant Natural := 270;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
 
    STATIC_TEST_RESPONSE_11 : constant String := "HTTP/1.1 200 OK" & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF &
                                              "Date: Mon, 27 Jul 2009 12:28:53 GMT" & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF &
