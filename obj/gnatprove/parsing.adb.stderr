@@ -1,3 +1,4 @@
+parsing.adb:80:108: medium: array index check might fail[#0]
 spark-text_io.ads:32:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:33:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:34:29: info: implicit function contract not available for proof ("Status" may not return)

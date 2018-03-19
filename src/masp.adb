@@ -21,6 +21,9 @@ procedure Masp is
    Raw_Request : Measured_Request_Buffer;
    Client_Request_Exception_Raised : Boolean;
    Parsed_Request : Simple_HTTP_Request;
+   Client_Parse_Exception_Raised : Boolean;
+   Canonicalized_Request : Simple_HTTP_Request;
+   Clean_Request : Simple_HTTP_Request;
 begin
    Debug_Print_Ln("Debugging: About to Init");
    Initialize_TCP_State(Server_Socket, Init_Exception_Raised); --        <--- network, non-SPARK stuff
@@ -45,24 +48,26 @@ begin
          if not Client_Request_Exception_Raised then
             Debug_Print_Ln("Debugging: Raw Request:" & Raw_Request.Buffer);
 
-            Parse_HTTP_Request(Raw_Request, Parsed_Request); --         <--- SPARK
+            Parse_HTTP_Request(Client_Socket, Raw_Request, Parsed_Request, Client_Parse_Exception_Raised); --         <--- SPARK
 
-            --debug: print Parsed_Request
-            case Parsed_Request.Method is
-            when Http_Message.GET =>
-               Debug_Print_Ln("Debugging: Parsed METHOD: GET");
-            when Http_Message.UNKNOWN =>
-               Debug_Print_Ln("Debugging: Parsed METHOD: UNKNOWN");
-            when others =>
-               Debug_Print_Ln("Debugging: Parsed METHOD:");
-            end case;
-            Debug_Print_Ln("Debugging: Parsed URI:" & Parsed_Request.RequestURI);
+            if not Client_Parse_Exception_Raised then
+               --debug: print Parsed_Request
+               case Parsed_Request.Method is
+               when Http_Message.GET =>
+                  Debug_Print_Ln("Debugging: Parsed METHOD: GET");
+               when Http_Message.UNKNOWN =>
+                  Debug_Print_Ln("Debugging: Parsed METHOD: UNKNOWN");
+               when others =>
+                  Debug_Print_Ln("Debugging: Parsed METHOD:");
+               end case;
+               Debug_Print_Ln("Debugging: Parsed URI:" & Parsed_Request.RequestURI);
 
-            --TODO:ltj: Canonicalize_HTTP_Request --interpret all ..'s and .'s. remove extra slashes, or throw error on them
+               Canonicalize_HTTP_Request(Parsed_Request, Canonicalized_Request); --interpret all ..'s and .'s. remove extra slashes, or throw error on them
 
-            --TODO:ltj: Sanitize_HTTP_Request --be wary of directory traversal attacks
+               Sanitize_HTTP_Request(Canonicalized_Request, Clean_Request); --WARNING: currently does nothing but copy canonicalized to clean
 
-            Fulfill_HTTP_Request(Client_Socket, Parsed_Request);  --           <-- SPARK
+               Fulfill_HTTP_Request(Client_Socket, Clean_Request);  --           <-- SPARK
+            end if;
          end if;
 
          Close_Client_Socket(Client_Socket); --                <--- Non-SPARK

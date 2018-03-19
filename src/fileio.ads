@@ -45,11 +45,15 @@ package fileio is
       Name : Filename_Type := (others=>' ');
    end record;
    
+   function Get_MFT_Length(
+      MFT : Measured_Filename_Type
+   ) return MFT_First_Empty_Index_Type;
+   
    procedure Trim_Filename(
       Pre_Filename : Measured_Filename_Type;
       Post_Filename : out String
    )
-   with Pre => Post_Filename'Length = Pre_Filename.Length;
+   with Pre => Post_Filename'Length = Get_MFT_Length(Pre_Filename);
    
    procedure Read_File_To_MFB(
       MFT : Measured_Filename_Type;

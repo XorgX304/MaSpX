@@ -6,7 +6,7 @@ package body fileio is
        MFT : Measured_Filename_Type;
        MFB : out Measured_File_Buffer)
    is
-      Trimmed_Name : String(1 .. MFT.Length);
+      Trimmed_Name : String(1 .. Get_MFT_Length(MFT));
       Read_File : File_Type;
       Read_File_Status : File_Status;
       C : Character_Result;
@@ -84,16 +84,23 @@ package body fileio is
       end if;
    end Read_File_To_MFB;
    
+   function Get_MFT_Length(
+      MFT : Measured_Filename_Type) return MFT_First_Empty_Index_Type
+   is
+   begin
+      if MFT.Length = 0 then
+         return MFT.Name'Length;
+      else
+         return MFT.Length - 1;
+      end if;
+   end Get_MFT_Length;
+   
    procedure Trim_Filename(
       Pre_Filename : Measured_Filename_Type;
       Post_Filename : out String)
    is
    begin
-      if Pre_Filename.Length = FILENAME_TYPE_FULL_LENGTH then
-         Post_Filename := Pre_Filename.Name;
-      else
-         Post_Filename := Pre_Filename.Name(Pre_Filename.Name'First .. Pre_Filename.Length);
-      end if;
+      Post_Filename := Pre_Filename.Name(Pre_Filename.Name'First .. Get_MFT_Length(Pre_Filename));
    end Trim_Filename;
    
    procedure Print_File_Status(

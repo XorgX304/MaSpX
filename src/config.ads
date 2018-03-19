@@ -15,5 +15,6 @@ package config is
    
    --error pages
    c400_BAD_REQUEST_PAGE : constant String := "400 Bad Request";
+   c400_BAD_REQUEST_URI_PAGE : constant String := "400 Bad Request (URI)";
 
 end config;

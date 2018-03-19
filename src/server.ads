@@ -8,17 +8,23 @@ with Http_Message; use Http_Message;
 with network_ns; use network_ns;
 with config; use config;
 with utils; use utils;
+with String_Types; use String_Types;
 
 package server is
 
-   --procedure Sanitize_HTTP_Request(
-   --   Unclean_Request : Simple_HTTP_Request;
-   --   Clean_Request : out Simple_HTTP_Request
-   --);
+   procedure Canonicalize_HTTP_Request(
+      Parsed_Request : Simple_HTTP_Request;
+      Canonicalized_Request : out Simple_HTTP_Request
+   );
+
+   procedure Sanitize_HTTP_Request(
+      Canonicalized_Request : Simple_HTTP_Request;
+      Clean_Request : out Simple_HTTP_Request
+   );
 
    procedure Fulfill_HTTP_Request(
       Client_Socket : Socket_Type;
-      Request : Simple_HTTP_Request
+      Clean_Request : Simple_HTTP_Request
    );
 
 end server;

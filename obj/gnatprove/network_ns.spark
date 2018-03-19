@@ -5,7 +5,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 14
+          "line": 16
         }
       ],
       "spark": "spec"
@@ -15,7 +15,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 52
+          "line": 53
         }
       ],
       "spark": "spec"
@@ -25,7 +25,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 57
+          "line": 58
         }
       ],
       "spark": "spec"
@@ -35,7 +35,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 63
+          "line": 64
         }
       ],
       "spark": "spec"
@@ -45,7 +45,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 68
+          "line": 70
         }
       ],
       "spark": "spec"
@@ -55,7 +55,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 74
+          "line": 76
         }
       ],
       "spark": "spec"
@@ -65,7 +65,7 @@
       "sloc": [
         {
           "file": "network_ns.ads",
-          "line": 79
+          "line": 81
         }
       ],
       "spark": "spec"
@@ -74,6 +74,43 @@
   "flow": [
   ],
   "proof": [
+    {
+      "file": "network_ns.ads",
+      "line": 51,
+      "col": 63,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "network_ns",
+        "sloc": [
+          {
+            "file": "network_ns.ads",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 771,
+              "time": 8.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 772,
+          "max_time": 7.99999982118607E-02
+        }
+      }
+    },
     {
       "file": "network_ns.ads",
       "line": 50,
@@ -85,7 +122,7 @@
         "sloc": [
           {
             "file": "network_ns.ads",
-            "line": 14
+            "line": 16
           }
         ]
       },
@@ -94,8 +131,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 867,
-              "time": 9.00000000000000E-02
+              "steps": 771,
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -106,45 +143,8 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 868,
-          "max_time": 9.00000035762787E-02
-        }
-      }
-    },
-    {
-      "file": "network_ns.ads",
-      "line": 49,
-      "col": 63,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "network_ns",
-        "sloc": [
-          {
-            "file": "network_ns.ads",
-            "line": 14
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 867,
-              "time": 1.10000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 868,
-          "max_time": 1.09999999403954E-01
+          "max_steps": 772,
+          "max_time": 5.99999986588955E-02
         }
       }
     }
@@ -156,91 +156,11 @@
       "claim": {
         "predicate": "CLAIM_AORTE",
         "arg": {
-          "name": "network_ns.Recv_NET_Request",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 63
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns.Send_Simple_Response",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 74
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
           "name": "network_ns.Initialize_TCP_State",
           "sloc": [
             {
               "file": "network_ns.ads",
-              "line": 52
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 14
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns.Send_TEST_Response",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 68
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "network_ns.Close_Client_Socket",
-          "sloc": [
-            {
-              "file": "network_ns.ads",
-              "line": 79
+              "line": 53
             }
           ]
         }
@@ -256,7 +176,87 @@
           "sloc": [
             {
               "file": "network_ns.ads",
-              "line": 57
+              "line": 58
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Send_Simple_Response",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 76
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Recv_NET_Request",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 64
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Send_TEST_Response",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 70
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns.Close_Client_Socket",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 81
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "network_ns",
+          "sloc": [
+            {
+              "file": "network_ns.ads",
+              "line": 16
             }
           ]
         }
@@ -264,19 +264,19 @@
     }
   ],
   "timings": {
-    "marking": 5.33051323145628E-03,
-    "globals (basic)": 4.95550520718098E-02,
-    "globals/properties (advanced)": 3.91891635954380E-02,
-    "flow analysis": 2.25216592662036E-03,
-    "codepeer results": 4.93700008519227E-06,
-    "init_why_sections": 2.06986005650833E-04,
-    "translation of standard": 4.22400096431375E-03,
-    "translation of compilation unit": 1.62996575236320E-01,
+    "marking": 6.20853016152978E-03,
+    "globals (basic)": 5.91811463236809E-02,
+    "globals/properties (advanced)": 3.67176719009876E-02,
+    "flow analysis": 1.84630299918354E-03,
+    "codepeer results": 4.23099982072017E-06,
+    "init_why_sections": 2.41190995438956E-04,
+    "translation of standard": 3.09104099869728E-03,
+    "translation of compilation unit": 1.46987393498421E-01,
     "gnatwhy3.run_vcs": 0.00000000000000E+00,
     "gnatwhy3.register_vcs": 0.00000000000000E+00,
     "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 2.00000000000000E+00,
-    "gnatwhy3.save_session": 3.12500000000000E-02,
-    "proof": 2.86701464653015E+00
+    "gnatwhy3.init": 1.85937500000000E+00,
+    "gnatwhy3.save_session": 1.56250000000000E-02,
+    "proof": 2.63633561134338E+00
   }
 }

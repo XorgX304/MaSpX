@@ -14,7 +14,7 @@
   "flow": [
     {
       "file": "masp.adb",
-      "line": 27,
+      "line": 30,
       "col": 7,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -29,12 +29,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__119.trace",
+      "tracefile": "masp__flow__141.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 38,
+      "line": 41,
       "col": 22,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -49,13 +49,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__119.trace",
+      "tracefile": "masp__flow__141.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 41,
-      "col": 24,
+      "line": 43,
+      "col": 14,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -69,172 +69,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__119.trace",
+      "tracefile": "masp__flow__141.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 42,
-      "col": 50,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 44,
-      "col": 26,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 44,
-      "col": 26,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 47,
-      "col": 12,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 55,
-      "col": 49,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 61,
-      "col": 28,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 61,
-      "col": 43,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 61,
-      "col": 43,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 63,
+      "line": 45,
       "col": 27,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -249,15 +89,295 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__119.trace",
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 47,
+      "col": 17,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 48,
+      "col": 56,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 50,
+      "col": 32,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 50,
+      "col": 32,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 53,
+      "col": 18,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 61,
+      "col": 55,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 63,
+      "col": 39,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 63,
+      "col": 39,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 65,
+      "col": 35,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 65,
+      "col": 35,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 67,
+      "col": 34,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 67,
+      "col": 49,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 67,
+      "col": 49,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 70,
+      "col": 30,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__141.trace",
       "how_proved": "flow"
     }
   ],
   "proof": [
     {
-      "file": "g-socket.ads",
-      "line": 1223,
-      "col": 43,
+      "file": "network_ns.ads",
+      "line": 45,
+      "col": 39,
       "rule": "VC_LENGTH_CHECK",
       "severity": "info",
       "entity": {
@@ -274,8 +394,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 339,
-              "time": 7.81000000000000E-02
+              "steps": 300,
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -286,8 +406,8 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 340,
-          "max_time": 7.81000033020973E-02
+          "max_steps": 301,
+          "max_time": 2.99999993294477E-02
         }
       }
     },
@@ -311,8 +431,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 399,
-              "time": 9.38000000000000E-02
+              "steps": 351,
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -323,14 +443,14 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 400,
-          "max_time": 9.38000008463860E-02
+          "max_steps": 352,
+          "max_time": 5.99999986588955E-02
         }
       }
     },
     {
       "file": "masp.adb",
-      "line": 34,
+      "line": 37,
       "col": 29,
       "rule": "VC_LENGTH_CHECK",
       "severity": "info",
@@ -348,8 +468,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 339,
-              "time": 7.81000000000000E-02
+              "steps": 300,
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -360,52 +480,15 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 340,
-          "max_time": 7.81000033020973E-02
+          "max_steps": 301,
+          "max_time": 2.99999993294477E-02
         }
       }
     },
     {
-      "file": "g-socket.ads",
-      "line": 1226,
-      "col": 43,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 339,
-              "time": 7.81000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 340,
-          "max_time": 7.81000033020973E-02
-        }
-      }
-    },
-    {
-      "file": "network_ns.ads",
+      "file": "http_message.ads",
       "line": 44,
-      "col": 39,
+      "col": 53,
       "rule": "VC_LENGTH_CHECK",
       "severity": "info",
       "entity": {
@@ -422,8 +505,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 339,
-              "time": 7.81000000000000E-02
+              "steps": 331,
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -434,15 +517,52 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 340,
-          "max_time": 7.81000033020973E-02
+          "max_steps": 332,
+          "max_time": 5.00000007450581E-02
+        }
+      }
+    },
+    {
+      "file": "http_message.ads",
+      "line": 44,
+      "col": 53,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 341,
+              "time": 5.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 342,
+          "max_time": 5.00000007450581E-02
         }
       }
     },
     {
       "file": "masp.adb",
-      "line": 55,
-      "col": 47,
+      "line": 61,
+      "col": 53,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
       "entity": {
@@ -459,8 +579,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 5107,
-              "time": 8.12500000000000E-01
+              "steps": 5112,
+              "time": 6.30000000000000E-01
             }
           },
           "transformations": {
@@ -471,15 +591,15 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 5108,
-          "max_time": 8.12500000000000E-01
+          "max_steps": 5113,
+          "max_time": 6.29999995231628E-01
         }
       }
     },
     {
       "file": "masp.adb",
-      "line": 42,
-      "col": 48,
+      "line": 48,
+      "col": 54,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
       "entity": {
@@ -496,8 +616,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 451,
-              "time": 1.25000000000000E-01
+              "steps": 403,
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -508,8 +628,8 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 452,
-          "max_time": 1.25000000000000E-01
+          "max_steps": 404,
+          "max_time": 5.99999986588955E-02
         }
       }
     }
@@ -524,7 +644,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 79
+                "line": 81
               }
             ]
           }
@@ -536,7 +656,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 57
+                "line": 58
               }
             ]
           }
@@ -548,7 +668,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 52
+                "line": 53
               }
             ]
           }
@@ -560,7 +680,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 63
+                "line": 64
               }
             ]
           }
@@ -580,11 +700,35 @@
         {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
+            "name": "server.Canonicalize_HTTP_Request",
+            "sloc": [
+              {
+                "file": "server.ads",
+                "line": 15
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
             "name": "server.Fulfill_HTTP_Request",
             "sloc": [
               {
                 "file": "server.ads",
-                "line": 19
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "server.Sanitize_HTTP_Request",
+            "sloc": [
+              {
+                "file": "server.ads",
+                "line": 20
               }
             ]
           }
@@ -636,7 +780,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 79
+                "line": 81
               }
             ]
           }
@@ -648,7 +792,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 57
+                "line": 58
               }
             ]
           }
@@ -660,7 +804,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 52
+                "line": 53
               }
             ]
           }
@@ -672,7 +816,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 63
+                "line": 64
               }
             ]
           }
@@ -692,11 +836,35 @@
         {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
+            "name": "server.Canonicalize_HTTP_Request",
+            "sloc": [
+              {
+                "file": "server.ads",
+                "line": 15
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
             "name": "server.Fulfill_HTTP_Request",
             "sloc": [
               {
                 "file": "server.ads",
-                "line": 19
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "server.Sanitize_HTTP_Request",
+            "sloc": [
+              {
+                "file": "server.ads",
+                "line": 20
               }
             ]
           }
@@ -732,7 +900,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 79
+                "line": 81
               }
             ]
           }
@@ -744,7 +912,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 57
+                "line": 58
               }
             ]
           }
@@ -756,7 +924,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 52
+                "line": 53
               }
             ]
           }
@@ -768,7 +936,7 @@
             "sloc": [
               {
                 "file": "network_ns.ads",
-                "line": 63
+                "line": 64
               }
             ]
           }
@@ -788,11 +956,35 @@
         {
           "predicate": "CLAIM_AORTE",
           "arg": {
+            "name": "server.Canonicalize_HTTP_Request",
+            "sloc": [
+              {
+                "file": "server.ads",
+                "line": 15
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
             "name": "server.Fulfill_HTTP_Request",
             "sloc": [
               {
                 "file": "server.ads",
-                "line": 19
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "server.Sanitize_HTTP_Request",
+            "sloc": [
+              {
+                "file": "server.ads",
+                "line": 20
               }
             ]
           }
@@ -837,32 +1029,19 @@
     }
   ],
   "timings": {
-    "marking": 6.02375902235508E-03,
-    "globals (basic)": 6.02742582559586E-02,
-    "globals/properties (advanced)": 4.02018800377846E-02,
-    "flow analysis": 8.24736244976521E-03,
-    "codepeer results": 4.23199981014477E-06,
-    "init_why_sections": 1.85829005204141E-04,
-    "translation of standard": 2.95069999992847E-03,
-    "translation of compilation unit": 1.66286841034889E-01,
+    "marking": 5.42889395728707E-03,
+    "globals (basic)": 5.14591820538044E-02,
+    "globals/properties (advanced)": 3.67747955024242E-02,
+    "flow analysis": 9.64972097426653E-03,
+    "codepeer results": 3.52600000042003E-06,
+    "init_why_sections": 2.23206006921828E-04,
+    "translation of standard": 2.79660709202290E-03,
+    "translation of compilation unit": 1.56273573637009E-01,
     "gnatwhy3.run_vcs": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_inductive": 1.56250000000000E-02,
     "gnatwhy3.register_vcs": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_if": 1.56250000000000E-02,
-    "gnatwhy3.transformations.explode_record_param": 1.56250000000000E-02,
-    "gnatwhy3.transformations.eval_match": 3.12500000000000E-02,
     "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 2.20312500000000E+00,
-    "gnatwhy3.transformations.inline_trivial": 7.81250000000000E-02,
-    "gnatwhy3.transformations.inline_tagged": 0.00000000000000E+00,
-    "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_let": 1.56250000000000E-02,
+    "gnatwhy3.init": 1.87500000000000E+00,
     "gnatwhy3.save_session": 3.12500000000000E-02,
-    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_algebraic": 1.56250000000000E-02,
-    "gnatwhy3.transformations.eliminate_literal": 1.56250000000000E-02,
-    "gnatwhy3.transformations.eliminate_recursion": 1.56250000000000E-02,
-    "proof": 4.54534053802490E+00
+    "proof": 2.64542269706726E+00
   }
 }

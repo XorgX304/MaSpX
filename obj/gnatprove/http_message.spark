@@ -662,19 +662,19 @@
     }
   ],
   "timings": {
-    "marking": 3.66898090578616E-03,
-    "globals (basic)": 4.06909584999084E-02,
-    "globals/properties (advanced)": 3.07972282171249E-02,
-    "flow analysis": 7.32667883858085E-03,
-    "codepeer results": 4.93700008519227E-06,
-    "init_why_sections": 3.54379997588694E-04,
-    "translation of standard": 4.52231522649527E-03,
-    "translation of compilation unit": 1.01012118160725E-01,
+    "marking": 4.51420480385423E-03,
+    "globals (basic)": 3.72994877398014E-02,
+    "globals/properties (advanced)": 3.34661863744259E-02,
+    "flow analysis": 6.23568193987012E-03,
+    "codepeer results": 4.23099982072017E-06,
+    "init_why_sections": 2.42248002905399E-04,
+    "translation of standard": 2.87065701559186E-03,
+    "translation of compilation unit": 9.46364477276802E-02,
     "gnatwhy3.run_vcs": 0.00000000000000E+00,
     "gnatwhy3.register_vcs": 0.00000000000000E+00,
     "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 1.14062500000000E+00,
+    "gnatwhy3.init": 1.10937500000000E+00,
     "gnatwhy3.save_session": 1.56250000000000E-02,
-    "proof": 1.75568783283234E+00
+    "proof": 1.64483237266541E+00
   }
 }

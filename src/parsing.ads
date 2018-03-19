@@ -1,6 +1,7 @@
 pragma SPARK_Mode(On);
 
 with SPARK.Text_IO; use SPARK.Text_IO;
+with GNAT.Sockets;
 
 with network_ns; use network_ns;
 with config; use config;
@@ -18,13 +19,15 @@ package parsing is
       Start : Positive;
       Finish : Positive;
       Token : out Measured_Request_Buffer
-   )
-   with Pre => Start < Finish;
+   );
+   --with Pre => Start < Finish;
    
    --creates an http message out of a raw request
    procedure Parse_HTTP_Request(
+      Client_Socket : GNAT.Sockets.Socket_Type;
       Raw_Request : Measured_Request_Buffer;
-      Parsed_Request : out Simple_HTTP_Request
+      Parsed_Request : out Simple_HTTP_Request;
+      Exception_Raised : out Boolean
    );
 
 end parsing;

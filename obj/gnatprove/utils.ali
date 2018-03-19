@@ -11,7 +11,7 @@ RV SPARK_05
 
 U utils%b		utils.adb		7cb980eb OO PK IL
 
-U utils%s		utils.ads		0d887b77 OO PK IL
+U utils%s		utils.ads		f495db0e OO PK IL
 W config%s		config.ads		config.ali
 W spark%s		spark.ads		spark.ali
 W spark.text_io%s	spark-text_io.adb	spark-text_io.ali
@@ -20,7 +20,7 @@ D ada.ads		20170516105950 76789da1 ada%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180315195032 766a2383 config%s
+D config.ads		20180315231322 8f7783fa config%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
 D spark.ads		20140410152036 86380d85 spark%s
@@ -33,7 +33,7 @@ D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
 D utils.ads		20180315194522 6416160a utils%s
 D utils.adb		20180315194616 18af96e1 utils%b
 X 5 config.ads
-3K9*config 16e11 15|5w6 5r18
+3K9*config 19e11 15|5w6 5r18
 5b4*DEBUG_PRINT_ON{boolean} 16|8r48 16r48
 X 8 spark.ads
 29K9*SPARK 66e10 15|3r6 3r25

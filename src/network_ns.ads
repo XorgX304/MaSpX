@@ -35,7 +35,6 @@ is
    STATIC_RESPONSE_HEADER_09 : constant String := "HTTP/0.9 200 OK" & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
    STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 : constant String := "Content-Length:";
    STATIC_TEST_RESPONSE_09 : constant String := "Hello World! My payload includes a trailing CRLF." & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
-   STATIC_UNKNOWN_METHOD_RESPONSE_09 : constant String := "<p>MaSpX error! Unknown HTTP METHOD</p><hr /><p><em>&copy; htmlg.com</em></p>";
 
    subtype MRB_First_Empty_Index_Type is Natural range Natural'First .. MAX_REQUEST_LINE_CT;
    subtype Simple_Request_Line is String(1 .. MAX_REQUEST_LINE_CT);

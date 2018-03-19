@@ -38,10 +38,13 @@ package body parsing is
 
 --------------------------------------------------------------------------------
    procedure Parse_HTTP_Request(
+      Client_Socket : GNAT.Sockets.Socket_Type;
       Raw_Request : Measured_Request_Buffer;
-      Parsed_Request : out Simple_HTTP_Request)
+      Parsed_Request : out Simple_HTTP_Request;
+      Exception_Raised : out Boolean)
    is
       Token : Measured_Request_Buffer;
+      Response : Simple_HTTP_Response;
    begin
       Parsed_Request.RequestURI := (others=>' ');
    
@@ -73,16 +76,26 @@ package body parsing is
          );
          Debug_Print_Ln("Debugging: Tokenized URI:" & Token.Buffer);
       
-         --stick URI in parsed_request, sanitize at later stage. Add DEFAULT_PAGE if request is for directory.
-         --ltj: shouldn't be cutting anything off... of well-formed requests... see sticky note for longest possible URI in this scheme
+         --ltj: if tokenized uri is larger than possible space in request URI, throw error
+         if Token.Length - 1 > RequestURIStringType'Last then
+            Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
+            Send_Simple_Response(Client_Socket, Response);
+            Exception_Raised := True;
+            return;
+         end if;
+         
+         --ltj: stick URI in parsed_request, sanitize at later stage. Add DEFAULT_PAGE if request is for directory.
          Parsed_Request.RequestURI(RequestURIStringType'First .. RequestURIStringType'Last) := Token.Buffer(RequestURIStringType'First .. RequestURIStringType'Last);
          if Token.Length >= 2 then
             if Parsed_Request.RequestURI(Token.Length - 1) = '/' or Parsed_Request.RequestURI(Token.Length - 1) = '\' then
                Parsed_Request.RequestURI(Token.Length .. Token.Length + DEFAULT_PAGE'Length - 1) := DEFAULT_PAGE;
             end if;
          else
-            --TODO:ltj: throw some error about no URI
-            null;
+            --ltj: throw some error about no URI
+            Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
+            Send_Simple_Response(Client_Socket, Response);
+            Exception_Raised := True;
+            return;
          end if;
       end if;
    end Parse_HTTP_Request;

@@ -10,7 +10,7 @@ RV SPARK_05
 
 U http_message%b	http_message.adb	d692e5ef OO PK IL
 
-U http_message%s	http_message.ads	405d5bf2 OO PK KU
+U http_message%s	http_message.ads	198d02ae OO PK KU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -24,8 +24,8 @@ D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180315195032 766a2383 config%s
-D fileio.ads		20180315180308 dece76ca fileio%s
+D config.ads		20180315231322 8f7783fa config%s
+D fileio.ads		20180319024258 7e038fef fileio%s
 D http_message.ads	20180314001726 877247c0 http_message%s
 D http_message.adb	20180313162256 51e0a22f http_message%b
 D interfac.ads		20170516105950 5ab55268 interfaces%s
@@ -47,9 +47,9 @@ X 3 a-chlat1.ads
 18K24*Latin_1 296e27 9|3w21 3r49
 25e4*NUL{character} 9|51r44
 X 7 config.ads
-3K9*config 16e11 9|6w6 6r18
+3K9*config 19e11 9|6w6 6r18
 X 8 fileio.ads
-11K9*fileio 63e11 9|5w6 5r18
+11K9*fileio 70e11 9|5w6 5r18
 13i4*MAX_FILE_READ_BYTE_CT{natural} 9|82r31
 14I12*ContentSize{natural} 9|50r24
 15A12*File_Buf{string}<integer> 9|51r21
@@ -283,10 +283,11 @@ FD 7 config.ads
 FS .1 3K9 config
 FD 8 fileio.ads
 FS .1 11K9 fileio
-FS .2 45U14 fileio__trim_filename
-FS .3 51U14 fileio__read_file_to_mfb
-FS .4 56U14 fileio__print_file_status
-FS .5 61V13 fileio__construct_measured_filename
+FS .2 48V13 fileio__get_mft_length
+FS .3 52U14 fileio__trim_filename
+FS .4 58U14 fileio__read_file_to_mfb
+FS .5 63U14 fileio__print_file_status
+FS .6 68V13 fileio__construct_measured_filename
 FD 9 http_message.ads
 FS .1 9K9 http_message
 FS .2 81V13 http_message__construct_simple_http_response

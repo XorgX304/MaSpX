@@ -15,15 +15,16 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U network_ns%b		network_ns.adb		9b530c2a OO PK IL
+U network_ns%b		network_ns.adb		2c657a37 OO PK IL
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.streams%s		a-stream.adb		a-stream.ali
 
-U network_ns%s		network_ns.ads		a1879c37 OO PK IL
+U network_ns%s		network_ns.ads		d187b635 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
 W ada.streams%s		a-stream.adb		a-stream.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W config%s		config.ads		config.ali
@@ -32,6 +33,7 @@ W gnat%s		gnat.ads		gnat.ali
 W gnat.sockets%s	g-socket.adb		g-socket.ali
 W http_message%s	http_message.adb	http_message.ali
 W network_types%s	network_types.ads	network_types.ali
+W utils%s		utils.adb		utils.ali
 W utils_ns%s		utils_ns.adb		utils_ns.ali
 
 D ada.ads		20170516105950 76789da1 ada%s
@@ -43,16 +45,16 @@ D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D a-uncdea.ads		20170516105954 f15a5ed1 ada.unchecked_deallocation%s
-D config.ads		20180315195032 766a2383 config%s
-D fileio.ads		20180315180308 dece76ca fileio%s
+D config.ads		20180315231322 8f7783fa config%s
+D fileio.ads		20180319024258 7e038fef fileio%s
 D gnat.ads		20170516105956 fd2ad2f1 gnat%s
 D g-socket.ads		20170516105956 df7f0365 gnat.sockets%s
 D http_message.ads	20180314001726 877247c0 http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D network_ns.ads	20180315202030 1d52cc13 network_ns%s
-D network_ns.adb	20180315202144 8601c039 network_ns%b
+D network_ns.ads	20180316174002 b434b623 network_ns%s
+D network_ns.adb	20180316164326 9851cc14 network_ns%b
 D network_types.ads	20180213214944 c18a7534 network_types%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
@@ -69,123 +71,142 @@ D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
 D utils.ads		20180315194522 6416160a utils%s
 D utils_ns.ads		20180220212052 c662e524 utils_ns%s
 X 1 ada.ads
-16K9*Ada 20e8 18|2r6 3r6 4r6 5r6 5r34 6r6 22r69 22r97 23r86 23r114 24r65
-. 24r93 25r95 25r123 26r77 26r105 27r71 27r99 28r69 28r97 29r72 29r100 30r75
-. 30r103 31r46 31r74 32r100 32r128 33r71 33r99 35r103 35r131 19|38r13 38r34
-. 38r77 41r13 42r13 42r34 42r77 90r16 92r16 94r16
+16K9*Ada 20e8 18|2r6 3r6 4r6 5r6 6r6 6r34 7r6 24r69 24r97 25r86 25r114 26r65
+. 26r93 27r95 27r123 28r77 28r105 29r71 29r99 30r69 30r97 31r72 31r100 32r75
+. 32r103 33r46 33r74 34r100 34r128 35r71 35r99 37r103 37r131 19|38r13 38r34
+. 38r77 41r13 42r13 42r34 42r77 68r13 68r34 68r77 71r13 72r13 72r34 72r77
+. 104r16 106r16 108r16 127r19 128r13 128r34 128r77 131r13 132r13 132r34 132r77
 X 2 a-charac.ads
-16K13*Characters 18e19 18|4w10 5r10 5r38 22r73 22r101 23r90 23r118 24r69
-. 24r97 25r99 25r127 26r81 26r109 27r75 27r103 28r73 28r101 29r76 29r104
-. 30r79 30r107 31r50 31r78 32r104 32r132 33r75 33r103 35r107 35r135
+16K13*Characters 18e19 18|5w10 6r10 6r38 24r73 24r101 25r90 25r118 26r69
+. 26r97 27r99 27r127 28r81 28r109 29r75 29r103 30r73 30r101 31r76 31r104
+. 32r79 32r107 33r50 33r78 34r104 34r132 35r75 35r103 37r107 37r135
 X 3 a-chlat1.ads
-18K24*Latin_1 296e27 18|5w21 5r49 22r84 22r112 23r101 23r129 24r80 24r108
-. 25r110 25r138 26r92 26r120 27r86 27r114 28r84 28r112 29r87 29r115 30r90
-. 30r118 31r61 31r89 32r115 32r143 33r86 33r114 35r118 35r146
-25e4*NUL{character} 19|77r20
-35e4*LF{character} 18|22r120 23r137 24r116 25r146 26r128 27r122 28r120 29r123
-. 30r126 31r97 32r151 33r122 35r154 19|91r18 97r20 136r115 137r27
-38e4*CR{character} 18|22r92 23r109 24r88 25r118 26r100 27r94 28r92 29r95
-. 30r98 31r69 32r123 33r94 35r126 19|89r18 97r39 136r110 137r22
+18K24*Latin_1 296e27 18|6w21 6r49 24r84 24r112 25r101 25r129 26r80 26r108
+. 27r110 27r138 28r92 28r120 29r86 29r114 30r84 30r112 31r87 31r115 32r90
+. 32r118 33r61 33r89 34r115 34r143 35r86 35r114 37r118 37r146
+25e4*NUL{character} 19|90r20
+35e4*LF{character} 18|24r120 25r137 26r116 27r146 28r128 29r122 30r120 31r123
+. 32r126 33r97 34r151 35r122 37r154 19|105r18 112r23 167r115 168r27
+38e4*CR{character} 18|24r92 25r109 26r88 27r118 28r100 29r94 30r92 31r95
+. 32r98 33r69 34r123 35r94 37r126 19|103r18 112r42 167r110 168r22
 X 4 a-except.ads
-54K13*Exceptions 349e19 18|3w10 19|38r38 38r81 42r38 42r81
-72V13*Exception_Name{string} 19|38s49 42s49
-94V13*Exception_Message{string} 19|38s92 42s92
+54K13*Exceptions 349e19 18|3w10 19|38r38 38r81 42r38 42r81 68r38 68r81 72r38
+. 72r81 128r38 128r81 132r38 132r81
+72V13*Exception_Name{string} 19|38s49 42s49 68s49 72s49 128s49 132s49
+94V13*Exception_Message{string} 19|38s92 42s92 68s92 72s92 128s92 132s92
+X 5 a-ioexce.ads
+18K13*IO_Exceptions 30e22 18|4w10 19|127r23
+26X4*End_Error 19|127r37
 X 6 a-stream.ads
-36K13*Streams 87e16 18|6w10
+36K13*Streams 87e16 18|7w10
 X 7 a-textio.ads
-49K13*Text_IO 471e16 18|2w10 19|38r17 41r17 42r17 90r20 92r20 94r20
-242U14*Put 19|90s28 92s28 94s28
-263U14*Put_Line 19|38s25 41s25 42s25
+49K13*Text_IO 471e16 18|2w10 19|38r17 41r17 42r17 68r17 71r17 72r17 104r20
+. 106r20 108r20 128r17 131r17 132r17
+242U14*Put 19|104s28 106s28 108s28
+263U14*Put_Line 19|38s25 41s25 42s25 68s25 71s25 72s25 128s25 131s25 132s25
 X 10 config.ads
-3K9*config 16e11 18|12w6 12r18
+3K9*config 19e11 18|13w6 13r18
 7i4*HTTP_PORT{natural} 19|28r57
 8i4*MAX_CXNS{natural} 19|32r69
+17a4*c400_BAD_REQUEST_PAGE{string} 19|119r56
 X 11 fileio.ads
-11K9*fileio 63e11 18|11w6 11r18
-14I12*ContentSize{natural} 19|130r119 136r65
+11K9*fileio 70e11 18|12w6 12r18
+14I12*ContentSize{natural} 19|161r119 167r65
 15A12*File_Buf{string}<integer>
 X 12 gnat.ads
-34K9*GNAT 37e9 18|1r6 53r27 58r23 59r27 60r32 64r23 69r23 75r23 80r23 19|6r27
-. 9r28 12r24 13r29 16r7 18r20 19r20 27r34 28r34 29r7 32r7 37r19 48r23 49r27
-. 50r32 53r24 54r29 57r7 68r23 71r23 78r24 107r23 110r23 115r24 127r23 131r23
-. 133r24 145r23 148r7
+34K9*GNAT 37e9 18|1r6 54r27 59r23 60r27 65r23 71r23 77r23 82r23 19|6r27 9r28
+. 12r24 13r29 16r7 18r20 19r20 27r34 28r34 29r7 32r7 37r19 48r23 49r27 52r28
+. 55r24 56r29 59r7 67r19 78r23 82r23 91r24 138r23 141r23 146r24 158r23 162r23
+. 164r24 176r23 180r7 180r51 181r7
 X 13 g-socket.ads
-55K14*Sockets 1284e17 18|1w11 53r32 58r28 59r32 60r37 64r28 69r28 75r28 80r28
-. 19|6r32 9r33 12r29 13r34 16r12 18r25 19r25 27r39 28r39 29r12 32r12 37r24
-. 48r28 49r32 50r37 53r29 54r34 57r12 68r28 71r28 78r29 107r28 110r28 115r29
-. 127r28 131r28 133r29 145r28 148r12
-412I9*Socket_Type<integer> 18|53r40 58r36 59r40 64r36 69r36 75r36 80r36 19|6r40
-. 48r36 49r40 68r36 107r36 127r36 145r36
-417i4*No_Socket{412I9} 19|12r37 53r37
-451X4*Socket_Error 19|37r32
+55K14*Sockets 1284e17 18|1w11 54r32 59r28 60r32 65r28 71r28 77r28 82r28 19|6r32
+. 9r33 12r29 13r34 16r12 18r25 19r25 27r39 28r39 29r12 32r12 37r24 48r28
+. 49r32 52r33 55r29 56r34 59r12 67r24 78r28 82r28 91r29 138r28 141r28 146r29
+. 158r28 162r28 164r29 176r28 180r12 180r56 181r12
+412I9*Socket_Type<integer> 18|54r40 59r36 60r40 65r36 71r36 77r36 82r36 19|6r40
+. 48r36 49r40 78r36 138r36 158r36 176r36
+417i4*No_Socket{412I9} 19|12r37 55r37
+451X4*Socket_Error 19|37r32 67r32
 463n25*Family_Inet{463E9} 19|18r33
 467n23*Socket_Stream{467E9} 19|19r33
+471n38*Shut_Write{471E9} 19|180r64
 479I9*Port_Type<integer> 19|28r47
 494r4*Any_Inet_Addr{488R9} 19|27r47
-505R9*Sock_Addr_Type 508e14 18|60r45 19|9r41 50r45
+505R9*Sock_Addr_Type 508e14 19|9r41 52r41
 506r7*Addr{488R9} 19|27m26
 507i7*Port{479I9} 19|28m26
-514r4*No_Sock_Addr{505R9} 19|13r42 54r42
+514r4*No_Sock_Addr{505R9} 19|13r42 56r42
 817U14*Create_Socket 19|16s20
-823U14*Accept_Socket 19|57s20
+823U14*Accept_Socket 19|59s20
 848U14*Bind_Socket 19|29s20
-854U14*Close_Socket 19|148s20
+854U14*Close_Socket 19|181s20
 901U14*Listen_Socket 19|32s20
-1021P9*Stream_Access(6|39R9) 19|71r36 110r36 131r36
-1024V13*Stream{1021P9} 19|78s37 115s37 133s37
+1014U14*Shutdown_Socket 19|180s20
+1021P9*Stream_Access(6|39R9) 19|82r36 141r36 162r36
+1024V13*Stream{1021P9} 19|91s37 146s37 164s37
 X 14 http_message.ads
-9K9*Http_Message 86e17 18|10w6 10r24
-47R9*Simple_HTTP_Response 52e14 18|76r18 19|128r18
-50i7*Content_Length{11|14I12} 19|130r146 130r188 136r92 138r57
-51a7*Entity_Body{11|15A12} 19|138r31
+9K9*Http_Message 86e17 18|11w6 11r24
+47R9*Simple_HTTP_Response 52e14 18|78r18 19|87r18 159r18
+50i7*Content_Length{11|14I12} 19|161r146 161r188 167r92 169r57
+51a7*Entity_Body{11|15A12} 19|169r31
+81V13*Construct_Simple_HTTP_Response{47R9} 19|119s25
 X 18 network_ns.ads
-14K9*network_ns 83l5 83e15 19|3b14 151l5 151t15
-20i4*MAX_REQUEST_LINE_CT{natural} 38r73 39r47
-22a4*STATIC_TEST_RESPONSE_11{string} 19|117r35
-33a4*STATIC_RESPONSE_HEADER_09{string} 19|130r34 135r22
-34a4*STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09{string} 19|130r69 136r22
-35a4*STATIC_TEST_RESPONSE_09{string}
-36a4*STATIC_UNKNOWN_METHOD_RESPONSE_09{string}
-38I12*MRB_First_Empty_Index_Type{natural} 45r16
-39A12*Simple_Request_Line{string}<integer> 44r16 49r40 50r38
-42R9*Measured_Request_Buffer 46e14 65r21 19|69r21
-44a7*Buffer{39A12} 19|83m18
-45i7*Length{38I12} 19|84m18
-49a4*BLANK_TOKEN_REQUEST_LINE{39A12}
-50a4*GET_TOKEN_REQUEST_LINE{39A12}
-52U14*Initialize_TCP_State 53<7 54<7 19|5b14 44l8 44t28
-53i7 Server_Socket{13|412I9} 19|6b7 12m7 17m20 29r32 32r44
-54b7 Exception_Raised{boolean} 19|7b7 11m7 39m13 43m13
-57U14*Get_Client_Cxn 58>7 59<7 60<7 19|47b14 64l8 64t22
-58i7 Server_Socket{13|412I9} 19|48b7 58r10
-59i7 Client_Socket{13|412I9} 19|49b7 53m7 58m25
-60r7 Client_Socket_Addr{13|505R9} 19|50b7 54m7 58m40
-63U14*Recv_NET_Request 64>7 65<7 19|67b14 103l8 103t24
-64i7 Client_Socket{13|412I9} 19|68b7 78r44
-65r7 Request{42R9} 19|69b7 83m10 84m10
-68U14*Send_TEST_Response 69>7 19|106b14 123l8 123t26
-69i7 Client_Socket{13|412I9} 19|107b7 115r44
-74U14*Send_Simple_Response 75>7 76>7 19|126b14 141l8 141t28
-75i7 Client_Socket{13|412I9} 19|127b7 133r44
-76r7 Response{14|47R9} 19|128b7 130r137 130r179 136r83 138r22 138r48
-79U14*Close_Client_Socket 80>7 19|144b14 149l8 149t27
-80i7 Client_Socket{13|412I9} 19|145b7 148r33
+16K9*network_ns 85l5 85e15 19|3b14 184l5 184t15
+22i4*MAX_REQUEST_LINE_CT{natural} 39r73 40r47
+24a4*STATIC_TEST_RESPONSE_11{string} 19|148r35
+35a4*STATIC_RESPONSE_HEADER_09{string} 19|161r34 166r22
+36a4*STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09{string} 19|161r69 167r22
+37a4*STATIC_TEST_RESPONSE_09{string}
+39I12*MRB_First_Empty_Index_Type{natural} 46r16
+40A12*Simple_Request_Line{string}<integer> 45r16 50r40 51r38
+43R9*Measured_Request_Buffer 47e14 66r21 19|79r21
+45a7*Buffer{40A12} 19|94r29 97m21
+46i7*Length{39I12} 19|98m21
+50a4*BLANK_TOKEN_REQUEST_LINE{40A12}
+51a4*GET_TOKEN_REQUEST_LINE{40A12}
+53U14*Initialize_TCP_State 54<7 55<7 19|5b14 44l8 44t28
+54i7 Server_Socket{13|412I9} 19|6b7 12m7 17m20 29r32 32r44
+55b7 Exception_Raised{boolean} 19|7b7 11m7 39m13 43m13
+58U14*Get_Client_Cxn 59>7 60<7 61<7 19|47b14 74l8 74t22
+59i7 Server_Socket{13|412I9} 19|48b7 60r10
+60i7 Client_Socket{13|412I9} 19|49b7 55m7 60m25
+61b7 Exception_Raised{boolean} 19|50b7 54m7 69m13 73m13
+64U14*Recv_NET_Request 65>7 66<7 67<7 19|77b14 134l8 134t24
+65i7 Client_Socket{13|412I9} 19|78b7 91r44 120r34
+66r7 Request{43R9} 19|79b7 94r21 97m13 98m13
+67b7 Exception_Raised{boolean} 19|80b7 89m7 121m13 129m13 133m13
+70U14*Send_TEST_Response 71>7 19|137b14 154l8 154t26
+71i7 Client_Socket{13|412I9} 19|138b7 146r44
+76U14*Send_Simple_Response 77>7 78>7 19|120s13 157b14 172l8 172t28
+77i7 Client_Socket{13|412I9} 19|158b7 164r44
+78r7 Response{14|47R9} 19|159b7 161r137 161r179 167r83 169r22 169r48
+81U14*Close_Client_Socket 82>7 19|175b14 182l8 182t27
+82i7 Client_Socket{13|412I9} 19|176b7 180r36 181r33
 X 19 network_ns.adb
 9r7 Server_Socket_Addr{13|505R9} 13m7 27m7 28m7 29r47
 37r15 E{4|63R9} 38r64 38r110
 40r15 E{4|63R9} 42r64 42r110
-71p7 Client_Stream{13|1021P9} 78m7 81r22
-72i7 SP_ct{natural}
-73i7 C_ct{positive} 83r25 84r28 86m10 86r18
-74a7 Prev_C{string} 77m7 97r27 101m10
-75a7 C{string} 81m37 81r37 83r34 88r15 94r32 97r13 101r20
-110p7 Client_Stream{13|1021P9} 115m7 117r20
-130a7 Send_String{string} 135m7 140r35
-131p7 Client_Stream{13|1021P9} 133m7 140r20
+52r7 Client_Socket_Addr{13|505R9} 56m7 60m40
+67r15 E{4|63R9} 68r64 68r110
+70r15 E{4|63R9} 72r64 72r110
+82p7 Client_Stream{13|1021P9} 91m7 95r25
+83i7 SP_ct{natural}
+84i7 C_ct{positive} 94r13 97r28 98r31 100m13 100r21
+85a7 Prev_C{string} 90m7 112r30 116m13
+86a7 C{string} 95m40 95r40 97r37 102r18 108r32 112r16 116r23
+87r7 Response{14|47R9} 119m13 120r49
+127r15 E{4|63R9} 128r64 128r110
+130r15 E{4|63R9} 132r64 132r110
+141p7 Client_Stream{13|1021P9} 146m7 148r20
+161a7 Send_String{string} 166m7 171r35
+162p7 Client_Stream{13|1021P9} 164m7 171r20
 X 20 network_types.ads
-1K9*Network_Types 18|9w6 9r25 20|21e18
+1K9*Network_Types 18|10w6 10r25 20|21e18
+X 33 utils.ads
+7K9*utils 18|14w6 14r17 33|14e10
+9U14*Debug_Print_Ln 19|118s13
 X 34 utils_ns.ads
-3K9*utils_ns 18|8w6 34|10e13
+3K9*utils_ns 18|9w6 34|10e13
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -325,10 +346,11 @@ FD 10 config.ads
 FS .1 3K9 config
 FD 11 fileio.ads
 FS .1 11K9 fileio
-FS .2 45U14 fileio__trim_filename
-FS .3 51U14 fileio__read_file_to_mfb
-FS .4 56U14 fileio__print_file_status
-FS .5 61V13 fileio__construct_measured_filename
+FS .2 48V13 fileio__get_mft_length
+FS .3 52U14 fileio__trim_filename
+FS .4 58U14 fileio__read_file_to_mfb
+FS .5 63U14 fileio__print_file_status
+FS .6 68V13 fileio__construct_measured_filename
 FD 12 gnat.ads
 FS .1 34K9 gnat
 FD 13 g-socket.ads
@@ -473,21 +495,21 @@ FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 18 network_ns.ads
-FS .1 14K9 network_ns
-FS .2 52U14 network_ns__initialize_tcp_state
-FS .3 57U14 network_ns__get_client_cxn
-FS .4 63U14 network_ns__recv_net_request
-FS .5 68U14 network_ns__send_test_response
-FS .6 74U14 network_ns__send_simple_response
-FS .7 79U14 network_ns__close_client_socket
+FS .1 16K9 network_ns
+FS .2 53U14 network_ns__initialize_tcp_state
+FS .3 58U14 network_ns__get_client_cxn
+FS .4 64U14 network_ns__recv_net_request
+FS .5 70U14 network_ns__send_test_response
+FS .6 76U14 network_ns__send_simple_response
+FS .7 81U14 network_ns__close_client_socket
 FD 19 network_ns.adb
 FS .1 3K14 network_ns -> 18.1
 FS .2 5U14 network_ns__initialize_tcp_state -> 18.2
 FS .3 47U14 network_ns__get_client_cxn -> 18.3
-FS .4 67U14 network_ns__recv_net_request -> 18.4
-FS .5 106U14 network_ns__send_test_response -> 18.5
-FS .6 126U14 network_ns__send_simple_response -> 18.6
-FS .7 144U14 network_ns__close_client_socket -> 18.7
+FS .4 77U14 network_ns__recv_net_request -> 18.4
+FS .5 137U14 network_ns__send_test_response -> 18.5
+FS .6 157U14 network_ns__send_simple_response -> 18.6
+FS .7 175U14 network_ns__close_client_socket -> 18.7
 FD 20 network_types.ads
 FS .1 1K9 network_types
 FD 21 spark.ads
@@ -666,84 +688,103 @@ FD 34 utils_ns.ads
 FS .1 3K9 utils_ns
 FS .2 7U14 utils_ns__string_to_byte_array
 FX 3 a-chlat1.ads .1 ada__characters__latin_1
-F 25*4 ada__characters__latin_1__nul 19|.4:77c20
-F 35*4 ada__characters__latin_1__lf 18|.1:22c120 23c137 24c116 25c146 26c128
-. 27c122 28c120 29c123 30c126 31c97 32c151 33c122 35c154 19|.4:91c18 97c20
-. .6:136c115 137c27
-F 38*4 ada__characters__latin_1__cr 18|.1:22c92 23c109 24c88 25c118 26c100
-. 27c94 28c92 29c95 30c98 31c69 32c123 33c94 35c126 19|.4:89c18 97c39 .6:136c110
-. 137c22
+F 25*4 ada__characters__latin_1__nul 19|.4:90c20
+F 35*4 ada__characters__latin_1__lf 18|.1:24c120 25c137 26c116 27c146 28c128
+. 29c122 30c120 31c123 32c126 33c97 34c151 35c122 37c154 19|.4:105c18 112c23
+. .6:167c115 168c27
+F 38*4 ada__characters__latin_1__cr 18|.1:24c92 25c109 26c88 27c118 28c100
+. 29c94 30c92 31c95 32c98 33c69 34c123 35c94 37c126 19|.4:103c18 112c42 .6:167c110
+. 168c22
 FX 4 a-except.ads .1 ada__exceptions
-F 72*13 ada__exceptions__exception_name__2 19|.2:38s49 42s49
-F 94*13 ada__exceptions__exception_message 19|.2:38s92 42s92
+F 72*13 ada__exceptions__exception_name__2 19|.2:38s49 42s49 .3:68s49 72s49
+. .4:128s49 132s49
+F 94*13 ada__exceptions__exception_message 19|.2:38s92 42s92 .3:68s92 72s92
+. .4:128s92 132s92
 FX 7 a-textio.ads .1 ada__text_io
-F 242*14 ada__text_io__put__4 19|.4:90s28 92s28 94s28
-F 263*14 ada__text_io__put_line__2 19|.2:38s25 41s25 42s25
+F 242*14 ada__text_io__put__4 19|.4:104s28 106s28 108s28
+F 263*14 ada__text_io__put_line__2 19|.2:38s25 41s25 42s25 .3:68s25 71s25
+. 72s25 .4:128s25 131s25 132s25
 FX 10 config.ads .1 config
 F 7*4 config__http_port 19|.2:28c57
 F 8*4 config__max_cxns 19|.2:32c69
+F 17*4 config__c400_bad_request_page 19|.4:119c56
 FX 13 g-socket.ads .1 gnat__sockets
-F 417*4 gnat__sockets__no_socket 19|.2:12c37 .3:53c37
+F 417*4 gnat__sockets__no_socket 19|.2:12c37 .3:55c37
 F 494*4 gnat__sockets__any_inet_addr 19|.2:27r47
-F 514*4 gnat__sockets__no_sock_addr 19|.2:13r42 .3:54r42
+F 514*4 gnat__sockets__no_sock_addr 19|.2:13r42 .3:56r42
 F 817*14 gnat__sockets__create_socket 19|.2:16s20
-F 823*14 gnat__sockets__accept_socket 19|.3:57s20
+F 823*14 gnat__sockets__accept_socket 19|.3:59s20
 F 848*14 gnat__sockets__bind_socket 19|.2:29s20
-F 854*14 gnat__sockets__close_socket 19|.7:148s20
+F 854*14 gnat__sockets__close_socket 19|.7:181s20
 F 901*14 gnat__sockets__listen_socket 19|.2:32s20
-F 1024*13 gnat__sockets__stream 19|.4:78s37 .5:115s37 .6:133s37
+F 1014*14 gnat__sockets__shutdown_socket 19|.7:180s20
+F 1024*13 gnat__sockets__stream 19|.4:91s37 .5:146s37 .6:164s37
+FX 14 http_message.ads .1 http_message
+F 81*13 http_message__construct_simple_http_response 19|.4:119s25
 FX 18 network_ns.ads .1 network_ns
-F 20*4 network_ns__max_request_line_ct 38c73 39c47
-F 22*4 network_ns__static_test_response_11 19|.5:117c35
-F 33*4 network_ns__static_response_header_09 19|.6:130c34 135c22
-F 34*4 network_ns__static_response_content_length_header_09 19|.6:130c69
-. 136c22
+F 22*4 network_ns__max_request_line_ct 39c73 40c47
+F 24*4 network_ns__static_test_response_11 19|.5:148c35
+F 35*4 network_ns__static_response_header_09 19|.6:161c34 166c22
+F 36*4 network_ns__static_response_content_length_header_09 19|.6:161c69
+. 167c22
+F 76*14 network_ns__send_simple_response 19|.4:120s13
 FX 18 network_ns.ads .2 network_ns__initialize_tcp_state
-F 53<7 network_ns__initialize_tcp_state__server_socket 19|.2:12m7 17m20 29r32
+F 54<7 network_ns__initialize_tcp_state__server_socket 19|.2:12m7 17m20 29r32
 . 32r44
-F 54<7 network_ns__initialize_tcp_state__exception_raised 19|.2:11m7 39m13
+F 55<7 network_ns__initialize_tcp_state__exception_raised 19|.2:11m7 39m13
 . 43m13
 FX 18 network_ns.ads .3 network_ns__get_client_cxn
-F 58>7 network_ns__get_client_cxn__server_socket 19|.3:58c10
-F 59<7 network_ns__get_client_cxn__client_socket 19|.3:53m7 58m25
-F 60<7 network_ns__get_client_cxn__client_socket_addr 19|.3:54m7 58m40
+F 59>7 network_ns__get_client_cxn__server_socket 19|.3:60c10
+F 60<7 network_ns__get_client_cxn__client_socket 19|.3:55m7 60m25
+F 61<7 network_ns__get_client_cxn__exception_raised 19|.3:54m7 69m13 73m13
 FX 18 network_ns.ads .4 network_ns__recv_net_request
-F 64>7 network_ns__recv_net_request__client_socket 19|.4:78c44
-F 65<7 network_ns__recv_net_request__request 19|.4:83m10 84m10
+F 65>7 network_ns__recv_net_request__client_socket 19|.4:91c44 120c34
+F 66<7 network_ns__recv_net_request__request 19|.4:94r21 97m13 98m13
+F 67<7 network_ns__recv_net_request__exception_raised 19|.4:89m7 121m13 129m13
+. 133m13
 FX 18 network_ns.ads .5 network_ns__send_test_response
-F 69>7 network_ns__send_test_response__client_socket 19|.5:115c44
+F 71>7 network_ns__send_test_response__client_socket 19|.5:146c44
 FX 18 network_ns.ads .6 network_ns__send_simple_response
-F 75>7 network_ns__send_simple_response__client_socket 19|.6:133c44
-F 76>7 network_ns__send_simple_response__response 19|.6:130c137 130c179 136c83
-. 138c22 138c48
+F 77>7 network_ns__send_simple_response__client_socket 19|.6:164c44
+F 78>7 network_ns__send_simple_response__response 19|.6:161c137 161c179 167c83
+. 169c22 169c48
 FX 18 network_ns.ads .7 network_ns__close_client_socket
-F 80>7 network_ns__close_client_socket__client_socket 19|.7:148c33
+F 82>7 network_ns__close_client_socket__client_socket 19|.7:180c36 181c33
 FX 19 network_ns.adb .2 network_ns__initialize_tcp_state
 F 9*7 network_ns__initialize_tcp_state__server_socket_addr 13m7 27m7 28m7
 . 29r47
 F 37*15 network_ns__initialize_tcp_state__E3b__e 38r64 38r110
 F 40*15 network_ns__initialize_tcp_state__E3b__e 42r64 42r110
+FX 19 network_ns.adb .3 network_ns__get_client_cxn
+F 52*7 network_ns__get_client_cxn__client_socket_addr 56m7 60m40
+F 67*15 network_ns__get_client_cxn__E7b__e 68r64 68r110
+F 70*15 network_ns__get_client_cxn__E7b__e 72r64 72r110
 FX 19 network_ns.adb .4 network_ns__recv_net_request
-F 71*7 network_ns__recv_net_request__client_stream 78m7 81r22
-F 73*7 network_ns__recv_net_request__c_ct 83r25 84r28 86m10 86r18
-F 74*7 network_ns__recv_net_request__prev_c 77m7 97r27 101m10
-F 75*7 network_ns__recv_net_request__c 81m37 81r37 83r34 88r15 94r32 97r13
-. 101r20
+F 82*7 network_ns__recv_net_request__client_stream 91m7 95r25
+F 84*7 network_ns__recv_net_request__c_ct 94r13 97r28 98r31 100m13 100r21
+F 85*7 network_ns__recv_net_request__prev_c 90m7 112r30 116m13
+F 86*7 network_ns__recv_net_request__c 95m40 95r40 97r37 102r18 108r32 112r16
+. 116r23
+F 87*7 network_ns__recv_net_request__response 119m13 120r49
+F 127*15 network_ns__recv_net_request__E15b__e 128r64 128r110
+F 130*15 network_ns__recv_net_request__E15b__e 132r64 132r110
 FX 19 network_ns.adb .5 network_ns__send_test_response
-F 110*7 network_ns__send_test_response__client_stream 115m7 117r20
+F 141*7 network_ns__send_test_response__client_stream 146m7 148r20
 FX 19 network_ns.adb .6 network_ns__send_simple_response
-F 130*7 network_ns__send_simple_response__send_string 135m7 140r35
-F 131*7 network_ns__send_simple_response__client_stream 133m7 140r20
+F 161*7 network_ns__send_simple_response__send_string 166m7 171r35
+F 162*7 network_ns__send_simple_response__client_stream 164m7 171r20
+FX 33 utils.ads .1 utils
+F 9*14 utils__debug_print_ln 19|.4:118s13
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS network_ns KIND_PACKAGE ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 network_ns__initialize_tcp_state network_ns__get_client_cxn network_ns__recv_net_request network_ns__send_test_response network_ns__send_simple_response network_ns__close_client_socket local_init 0
+GG EK_GLOBALS network_ns KIND_PACKAGE ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 network_ns__initialize_tcp_state network_ns__get_client_cxn network_ns__recv_net_request network_ns__send_test_response network_ns__close_client_socket network_ns__send_simple_response local_init 0
 GG EK_GLOBALS network_ns__initialize_tcp_state KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 2 gnat__sockets__any_inet_addr gnat__sockets__no_sock_addr var_out 0 calls_proof 0 calls 0 calls_conditional 6 gnat__sockets__create_socket gnat__sockets__bind_socket gnat__sockets__listen_socket ada__exceptions__exception_message ada__exceptions__exception_name__2 ada__text_io__put_line__2 local_var 0 local_ghost 0 local_sub 0
-GG EK_GLOBALS network_ns__get_client_cxn KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 1 gnat__sockets__no_sock_addr var_out 0 calls_proof 0 calls 0 calls_conditional 1 gnat__sockets__accept_socket local_var 0 local_ghost 0 local_sub 0
-GG EK_GLOBALS network_ns__recv_net_request KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 2 gnat__sockets__stream ada__text_io__put__4 local_var 0 local_ghost 0 local_sub 0
+GG EK_GLOBALS network_ns__get_client_cxn KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 1 gnat__sockets__no_sock_addr var_out 0 calls_proof 0 calls 0 calls_conditional 4 ada__exceptions__exception_message ada__exceptions__exception_name__2 ada__text_io__put_line__2 gnat__sockets__accept_socket local_var 0 local_ghost 0 local_sub 0
+GG EK_GLOBALS network_ns__recv_net_request KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 8 ada__exceptions__exception_message ada__exceptions__exception_name__2 ada__text_io__put_line__2 gnat__sockets__stream utils__debug_print_ln http_message__construct_simple_http_response network_ns__send_simple_response ada__text_io__put__4 local_var 0 local_ghost 0 local_sub 0
 GG EK_GLOBALS network_ns__send_test_response KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 1 gnat__sockets__stream local_var 0 local_ghost 0 local_sub 0
 GG EK_GLOBALS network_ns__send_simple_response KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 1 gnat__sockets__stream local_var 0 local_ghost 0 local_sub 0
-GG EK_GLOBALS network_ns__close_client_socket KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 1 gnat__sockets__close_socket local_var 0 local_ghost 0 local_sub 0
+GG EK_GLOBALS network_ns__close_client_socket KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 2 gnat__sockets__shutdown_socket gnat__sockets__close_socket local_var 0 local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 1 network_ns
 GG EK_NONRETURNING 6 network_ns__initialize_tcp_state network_ns__get_client_cxn network_ns__recv_net_request network_ns__send_test_response network_ns__send_simple_response network_ns__close_client_socket
