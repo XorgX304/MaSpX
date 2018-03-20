@@ -14,7 +14,7 @@
   "flow": [
     {
       "file": "masp.adb",
-      "line": 30,
+      "line": 31,
       "col": 7,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -29,12 +29,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 41,
+      "line": 42,
       "col": 22,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -49,12 +49,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 43,
+      "line": 44,
       "col": 14,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -69,12 +69,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 45,
+      "line": 46,
       "col": 27,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -89,12 +89,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 47,
+      "line": 48,
       "col": 17,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -109,12 +109,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 48,
+      "line": 49,
       "col": 56,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -129,12 +129,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 50,
+      "line": 51,
       "col": 32,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -149,13 +149,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 50,
-      "col": 32,
+      "line": 51,
+      "col": 47,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -169,13 +169,33 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 51,
+      "col": 47,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
       "line": 53,
-      "col": 18,
+      "col": 20,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -189,13 +209,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 61,
-      "col": 55,
+      "line": 55,
+      "col": 21,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -209,33 +229,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "masp.adb",
-      "line": 63,
-      "col": 39,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
       "line": 63,
-      "col": 39,
+      "col": 58,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -249,13 +249,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
       "line": 65,
-      "col": 35,
+      "col": 42,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -269,13 +269,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
       "line": 65,
-      "col": 35,
+      "col": 42,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -289,13 +289,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
       "line": 67,
-      "col": 34,
+      "col": 38,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -309,13 +309,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
       "line": 67,
-      "col": 49,
+      "col": 38,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -329,13 +329,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 67,
-      "col": 49,
+      "line": 69,
+      "col": 37,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -349,12 +349,52 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
     },
     {
       "file": "masp.adb",
-      "line": 70,
+      "line": 69,
+      "col": 52,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__148.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 69,
+      "col": 52,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Masp",
+        "sloc": [
+          {
+            "file": "masp.adb",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "masp__flow__148.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "masp.adb",
+      "line": 73,
       "col": 30,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -369,269 +409,8 @@
       },
       "check_tree": {
       },
-      "tracefile": "masp__flow__141.trace",
+      "tracefile": "masp__flow__148.trace",
       "how_proved": "flow"
-    }
-  ],
-  "proof": [
-    {
-      "file": "network_ns.ads",
-      "line": 45,
-      "col": 39,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 300,
-              "time": 3.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 301,
-          "max_time": 2.99999993294477E-02
-        }
-      }
-    },
-    {
-      "file": "http_message.ads",
-      "line": 44,
-      "col": 53,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 351,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 352,
-          "max_time": 5.99999986588955E-02
-        }
-      }
-    },
-    {
-      "file": "masp.adb",
-      "line": 37,
-      "col": 29,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 300,
-              "time": 3.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 301,
-          "max_time": 2.99999993294477E-02
-        }
-      }
-    },
-    {
-      "file": "http_message.ads",
-      "line": 44,
-      "col": 53,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 331,
-              "time": 5.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 332,
-          "max_time": 5.00000007450581E-02
-        }
-      }
-    },
-    {
-      "file": "http_message.ads",
-      "line": 44,
-      "col": 53,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 341,
-              "time": 5.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 342,
-          "max_time": 5.00000007450581E-02
-        }
-      }
-    },
-    {
-      "file": "masp.adb",
-      "line": 61,
-      "col": 53,
-      "rule": "VC_RANGE_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 5112,
-              "time": 6.30000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 5113,
-          "max_time": 6.29999995231628E-01
-        }
-      }
-    },
-    {
-      "file": "masp.adb",
-      "line": 48,
-      "col": 54,
-      "rule": "VC_RANGE_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Masp",
-        "sloc": [
-          {
-            "file": "masp.adb",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 403,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 404,
-          "max_time": 5.99999986588955E-02
-        }
-      }
     }
   ],
   "assumptions": [
@@ -692,7 +471,7 @@
             "sloc": [
               {
                 "file": "parsing.ads",
-                "line": 25
+                "line": 30
               }
             ]
           }
@@ -770,278 +549,12 @@
           ]
         }
       }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "network_ns.Close_Client_Socket",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 81
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "network_ns.Get_Client_Cxn",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 58
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "network_ns.Initialize_TCP_State",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 53
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "network_ns.Recv_NET_Request",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 64
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Parse_HTTP_Request",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 25
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "server.Canonicalize_HTTP_Request",
-            "sloc": [
-              {
-                "file": "server.ads",
-                "line": 15
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "server.Fulfill_HTTP_Request",
-            "sloc": [
-              {
-                "file": "server.ads",
-                "line": 25
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "server.Sanitize_HTTP_Request",
-            "sloc": [
-              {
-                "file": "server.ads",
-                "line": 20
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "utils.Check_Print_Ln",
-            "sloc": [
-              {
-                "file": "utils.ads",
-                "line": 11
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "utils.Debug_Print_Ln",
-            "sloc": [
-              {
-                "file": "utils.ads",
-                "line": 9
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "network_ns.Close_Client_Socket",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 81
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "network_ns.Get_Client_Cxn",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 58
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "network_ns.Initialize_TCP_State",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 53
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "network_ns.Recv_NET_Request",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 64
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Parse_HTTP_Request",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 25
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "server.Canonicalize_HTTP_Request",
-            "sloc": [
-              {
-                "file": "server.ads",
-                "line": 15
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "server.Fulfill_HTTP_Request",
-            "sloc": [
-              {
-                "file": "server.ads",
-                "line": 25
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "server.Sanitize_HTTP_Request",
-            "sloc": [
-              {
-                "file": "server.ads",
-                "line": 20
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "utils.Check_Print_Ln",
-            "sloc": [
-              {
-                "file": "utils.ads",
-                "line": 11
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "utils.Debug_Print_Ln",
-            "sloc": [
-              {
-                "file": "utils.ads",
-                "line": 9
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Masp",
-          "sloc": [
-            {
-              "file": "masp.adb",
-              "line": 15
-            }
-          ]
-        }
-      }
     }
   ],
   "timings": {
-    "marking": 5.42889395728707E-03,
-    "globals (basic)": 5.14591820538044E-02,
-    "globals/properties (advanced)": 3.67747955024242E-02,
-    "flow analysis": 9.64972097426653E-03,
-    "codepeer results": 3.52600000042003E-06,
-    "init_why_sections": 2.23206006921828E-04,
-    "translation of standard": 2.79660709202290E-03,
-    "translation of compilation unit": 1.56273573637009E-01,
-    "gnatwhy3.run_vcs": 0.00000000000000E+00,
-    "gnatwhy3.register_vcs": 0.00000000000000E+00,
-    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 1.87500000000000E+00,
-    "gnatwhy3.save_session": 3.12500000000000E-02,
-    "proof": 2.64542269706726E+00
+    "marking": 5.21979108452797E-03,
+    "globals (basic)": 5.21873384714127E-02,
+    "globals/properties (advanced)": 4.12572622299194E-02,
+    "flow analysis": 1.05418423190713E-02
   }
 }

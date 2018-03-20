@@ -8,8 +8,7 @@ package body server is
    is
       Intermediary_String : ParsedRequestURIStringType;
    begin
-      Canonicalized_Request.Method := Http_Message.UNKNOWN;
-      Canonicalized_Request.RequestURI := (others=>' ');
+      Intermediary_String := (others=>' ');
    
       --ltj: relevant: https://wiki.sei.cmu.edu/confluence/display/java/FIO16-J.+Canonicalize+path+names+before+validating+them
       --ltj: ignoring special files like links for now (not even sure if SPARK.Text_IO.Open deals with those...check impl)
