@@ -36,7 +36,7 @@ package body parsing is
    end Get_First_Token_In_Range;
    
 --------------------------------------------------------------------------------
-   procedure Get_First_Token_In_Range_Copy(
+   procedure Get_First_Token_In_Range_COPY_ALT(
       Source : String;
       Delimit : Character;
       Start : Positive;
@@ -45,35 +45,38 @@ package body parsing is
       Token_First_Empty_Index : out Natural)
    is
       First_Delimit_Index : Natural;
-      Len_Finish : Natural := Finish - Start + 1;
-      Len_First_Delimit_Index_Minus_One : Natural;
+      Length : Natural;
    begin
-      Token_String := (others=>' ');
-      Token_First_Empty_Index := 1;
+      Token_String := (others=>Delimit);
       
       First_Delimit_Index := Get_First_Delimit_Index_In_Range(Source, Delimit, Start, Finish);
+      Debug_Print_Ln("Debugging: First_Delimit_Index: " & Natural'Image(First_Delimit_Index));
       
       --TODO:ltj: make functions that make this understandable Get_Len(Start, Finish), Get_Finish(Start, Len)
-      --TODO:ltj: make more understandable, have just one Len, defined in the beginning of each basic block.
       if First_Delimit_Index = 0 then
-         Token_String(Token_String'First .. Token_String'First + Len_Finish - 1) := Source(Start .. Finish);
-         Token_First_Empty_Index := 0;
-         return;
+         Debug_Print_Ln("Debugging: In First_Delimit_Index case 0");
+         Length := Finish - Start + 1;
+         Token_String(Token_String'First .. Token_String'First + Length - 1) := Source(Start .. Finish);
+         --Assert(Is_Substring(Source(Start .. Finish), Source);
       else
-         Len_First_Delimit_Index_Minus_One := First_Delimit_Index - 1 - Start + 1;
-         Token_String(Token_String'First .. Token_String'First + Len_First_Delimit_Index_Minus_One - 1) := Source (Start .. First_Delimit_Index - 1);
-         Token_First_Empty_Index := Len_First_Delimit_Index_Minus_One + 1;
-         return;
+         Debug_Print_Ln("Debugging: In First_Delimit_Index case other");
+         Length := First_Delimit_Index - 1 - Start + 1;
+         Token_String(Token_String'First .. Token_String'First + Length - 1) := Source (Start .. First_Delimit_Index - 1);
       end if;
-   end Get_First_Token_In_Range_Copy;
+      
+      Token_First_Empty_Index := Token_String'First + Length;
+      
+      if Token_First_Empty_Index > Token_String'Last then
+         Token_First_Empty_Index := 0;
+      end if;
+   end Get_First_Token_In_Range_COPY_ALT;
 
 --------------------------------------------------------------------------------
    function Get_First_Delimit_Index_In_Range(
       Source : String;
       Delimit : Character;
       Start : Positive;
-      Finish : Positive
-   ) return Natural
+      Finish : Positive) return Natural
    is
    begin
       for I in Natural range Start .. Finish loop
@@ -84,6 +87,50 @@ package body parsing is
       
       return 0;
    end Get_First_Delimit_Index_In_Range;
+
+--------------------------------------------------------------------------------
+   function Is_Substring(
+      Substring : String;
+      Source : String) return Boolean
+   is
+   begin
+      for I in Source'Range loop
+         if Check_Substring(Substring, I, Source) then
+            return True;
+         end if;
+         
+         pragma Loop_Invariant( for all J in Source'First .. I => not Check_Substring(Substring, J, Source) );
+      end loop;
+      
+      return False;
+   end Is_Substring;
+
+--------------------------------------------------------------------------------
+   function Check_Substring(
+      Substring : String;
+      Start : Positive;
+      Source : String) return Boolean
+   is
+   begin
+      --for I in Substring'Range loop
+      --   if Substring(I) /= Source(I + Start - 1) then
+      --      return False;
+      --   end if;
+      --end loop;
+      
+      --return True;
+      
+      if Source'Last < Positive'Last - Substring'Length - 1 then
+         if Start + Substring'Length - 1 <= Source'Last then
+            return Substring = Source(Start .. Start + Substring'Length - 1);
+         else
+            return False;
+         end if;
+      else
+         Check_Print_Ln("BOUNDS WARNING:parsing.adb:Check_Substring!");
+         return False;
+      end if;
+   end Check_Substring;
 
 --------------------------------------------------------------------------------
    procedure Parse_HTTP_Request(
@@ -101,17 +148,18 @@ package body parsing is
       Parsed_Request.Method := Http_Message.UNKNOWN;
    
       --tokenize what should be the http METHOD
-      Get_First_Token_In_Range_Copy(
+      Get_First_Token_In_Range_COPY_ALT(
          Raw_Request.Buffer,
          ' ',
          Raw_Request.Buffer'First,
-         Raw_Request.Buffer'Last,
+         Raw_Request.Length - 1,
          Token_String,
          Token_First_Empty_Index
       );
       Debug_Print_Ln("Debugging: Tokenized METHOD:" & Token_String);
       
       if Token_First_Empty_Index = 0 or Token_First_Empty_Index >= Raw_Request.Buffer'Last - 2 then
+         Check_Print_Ln("MaSpX: First token in request too big for a second token! Sending 400 Bad Request.");
          Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
          Send_Simple_Response(Client_Socket, Response);
          Exception_Raised := True;
@@ -123,11 +171,11 @@ package body parsing is
          Parsed_Request.Method := Http_Message.GET;
          
          --tokenize what should be http REQUEST-URI
-         Get_First_Token_In_Range_Copy(
+         Get_First_Token_In_Range_COPY_ALT(
             Raw_Request.Buffer,
             ' ',
             Token_First_Empty_Index + 1,  --First_Empty_Index is the delimiter between tokens. Add one to get first character of new token.
-            Raw_Request.Buffer'Last,
+            Raw_Request.Length - 1,
             Token_String,
             Token_First_Empty_Index
          );
@@ -135,6 +183,7 @@ package body parsing is
       
          --ltj: if tokenized uri is larger than possible space in request URI, throw error
          if Token_First_Empty_Index - 1 > RequestURIStringType'Last then
+            Check_Print_Ln("MaSpX: Tokenized URI is larger than space possible to fit it! Sending 400 Bad Request (URI).");
             Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
             Send_Simple_Response(Client_Socket, Response);
             Exception_Raised := True;
@@ -148,8 +197,9 @@ package body parsing is
             if Parsed_Request.RequestURI(Token_First_Empty_Index - 1) = '/' or Parsed_Request.RequestURI(Token_First_Empty_Index - 1) = '\' then
                Parsed_Request.RequestURI(Token_First_Empty_Index .. Token_First_Empty_Index + DEFAULT_PAGE'Length - 1) := DEFAULT_PAGE;
             end if;
-         else
+         else --ltj: Token_First_Empty_Index will never equal 0 here because this path requires that there be a first token and if there is a first token, the second token will not take up the whole string
             --ltj: throw some error about no URI
+            Check_Print_Ln("MaSpX: missing second token! Sending 400 Bad Request (URI).");
             Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
             Send_Simple_Response(Client_Socket, Response);
             Exception_Raised := True;

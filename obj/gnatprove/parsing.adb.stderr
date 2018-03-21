@@ -1,3 +1,8 @@
+parsing.adb:53:57: low: range check might fail[#1]
+parsing.adb:59:64: medium: overflow check might fail[#2]
+parsing.adb:150:07: medium: precondition might fail[#3]
+parsing.adb:173:10: medium: precondition might fail[#4]
+parsing.ads:44:17: medium: postcondition might fail, cannot prove Is_Substring(Token_String, Source)[#0]
 spark-text_io.ads:32:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:33:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:34:29: info: implicit function contract not available for proof ("Status" may not return)

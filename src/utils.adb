@@ -7,6 +7,7 @@ package body utils is
    begin
       if Status(Standard_Output) = Success and DEBUG_PRINT_ON then
          Put_Line(String_To_Print);
+         Flush;
       end if;
    end Debug_Print_Ln;
 
@@ -15,6 +16,7 @@ package body utils is
    begin
       if Status(Standard_Output) = Success and DEBUG_PRINT_ON then
          Put(String_To_Print);
+         Flush;
       end if;
    end Debug_Print;
    
@@ -23,6 +25,7 @@ package body utils is
    begin
       if Status(Standard_Output) = Success then
          Put_Line(String_To_Print);
+         Flush;
       end if;
    end Check_Print_Ln;
 
@@ -31,6 +34,7 @@ package body utils is
    begin
       if Status(Standard_Output) = Success then
          Put(String_To_Print);
+         Flush;
       end if;
    end Check_Print;
 
