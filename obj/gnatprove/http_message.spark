@@ -1,176 +1,21 @@
 {
   "spark": [
-    {
-      "name": "Http_Message",
-      "sloc": [
-        {
-          "file": "http_message.ads",
-          "line": 9
-        }
-      ],
-      "spark": "all"
-    },
-    {
-      "name": "Http_Message.Construct_Simple_HTTP_Response",
-      "sloc": [
-        {
-          "file": "http_message.ads",
-          "line": 81
-        }
-      ],
-      "spark": "all"
-    },
-    {
-      "name": "Http_Message.Construct_Simple_HTTP_Response",
-      "sloc": [
-        {
-          "file": "http_message.ads",
-          "line": 84
-        }
-      ],
-      "spark": "all"
-    }
   ],
   "flow": [
-    {
-      "file": "http_message.adb",
-      "line": 22,
-      "col": 14,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Http_Message.Construct_Simple_HTTP_Response",
-        "sloc": [
-          {
-            "file": "http_message.ads",
-            "line": 84
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "http_message__flow__27.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "http_message.adb",
-      "line": 22,
-      "col": 14,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Http_Message.Construct_Simple_HTTP_Response",
-        "sloc": [
-          {
-            "file": "http_message.ads",
-            "line": 84
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "http_message__flow__27.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "http_message.adb",
-      "line": 10,
-      "col": 40,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Http_Message.Construct_Simple_HTTP_Response",
-        "sloc": [
-          {
-            "file": "http_message.ads",
-            "line": 81
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "http_message__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "http_message.adb",
-      "line": 12,
-      "col": 14,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Http_Message.Construct_Simple_HTTP_Response",
-        "sloc": [
-          {
-            "file": "http_message.ads",
-            "line": 81
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "http_message__flow__119.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "http_message.adb",
-      "line": 12,
-      "col": 14,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Http_Message.Construct_Simple_HTTP_Response",
-        "sloc": [
-          {
-            "file": "http_message.ads",
-            "line": 81
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "http_message__flow__119.trace",
-      "how_proved": "flow"
-    }
+  ],
+  "proof": [
   ],
   "assumptions": [
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Http_Message.Construct_Simple_HTTP_Response",
-          "sloc": [
-            {
-              "file": "http_message.ads",
-              "line": 81
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Http_Message.Construct_Simple_HTTP_Response",
-          "sloc": [
-            {
-              "file": "http_message.ads",
-              "line": 84
-            }
-          ]
-        }
-      }
-    }
   ],
   "timings": {
-    "marking": 3.61644104123116E-03,
-    "globals (basic)": 4.14399206638336E-02,
-    "globals/properties (advanced)": 3.09435650706291E-02,
-    "flow analysis": 7.54248118028045E-03
+    "marking": 4.03569778427482E-03,
+    "globals (basic)": 4.26912978291512E-02,
+    "globals/properties (advanced)": 3.07619236409664E-02,
+    "flow analysis": 1.85123994015157E-04,
+    "codepeer results": 4.58400018032989E-06,
+    "init_why_sections": 2.19680005102418E-04,
+    "translation of standard": 3.93132306635380E-03,
+    "translation of compilation unit": 8.94260480999947E-02,
+    "proof": 4.93600009576767E-06
   }
 }

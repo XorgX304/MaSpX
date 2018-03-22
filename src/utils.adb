@@ -37,5 +37,11 @@ package body utils is
          Flush;
       end if;
    end Check_Print;
+   
+   function Logical_Equivalence(P : Boolean; Q : Boolean) return Boolean
+   is
+   begin
+      return (P and Q) or (not P and not Q);
+   end Logical_Equivalence;
 
 end utils;

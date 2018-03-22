@@ -12,14 +12,11 @@ with Http_Message; use Http_Message;
 with fileio; use fileio;
 with config; use config;
 with utils; use utils;
+with measured_buffer_type; use measured_buffer_type;
 
 package network_ns 
 with SPARK_Mode => On
 is
-
-   --   v--- TODO: change to MAX_REQUEST_LINE_BYTE_CT
-   --TODO:ltj: change type to positive
-   MAX_REQUEST_LINE_CT : constant Natural := 270;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
 
    STATIC_TEST_RESPONSE_11 : constant String := "HTTP/1.1 200 OK" & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF &
                                              "Date: Mon, 27 Jul 2009 12:28:53 GMT" & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF &
@@ -36,8 +33,8 @@ is
    STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 : constant String := "Content-Length:";
    STATIC_TEST_RESPONSE_09 : constant String := "Hello World! My payload includes a trailing CRLF." & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
 
-   subtype MRB_First_Empty_Index_Type is Natural range Natural'First .. MAX_REQUEST_LINE_CT;
-   subtype Simple_Request_Line is String(1 .. MAX_REQUEST_LINE_CT);
+   subtype MRB_First_Empty_Index_Type is Natural range Natural'First .. MAX_REQUEST_LINE_BYTE_CT;
+   subtype Simple_Request_Line is String(1 .. MAX_REQUEST_LINE_BYTE_CT);
 
    --ltj: this will probably be expanded to have headers in it in future implementations of later HTTP
    type Measured_Request_Buffer is

@@ -1,84 +1,21 @@
 {
   "spark": [
-    {
-      "name": "network_ns",
-      "sloc": [
-        {
-          "file": "network_ns.ads",
-          "line": 16
-        }
-      ],
-      "spark": "spec"
-    },
-    {
-      "name": "network_ns.Initialize_TCP_State",
-      "sloc": [
-        {
-          "file": "network_ns.ads",
-          "line": 53
-        }
-      ],
-      "spark": "spec"
-    },
-    {
-      "name": "network_ns.Get_Client_Cxn",
-      "sloc": [
-        {
-          "file": "network_ns.ads",
-          "line": 58
-        }
-      ],
-      "spark": "spec"
-    },
-    {
-      "name": "network_ns.Recv_NET_Request",
-      "sloc": [
-        {
-          "file": "network_ns.ads",
-          "line": 64
-        }
-      ],
-      "spark": "spec"
-    },
-    {
-      "name": "network_ns.Send_TEST_Response",
-      "sloc": [
-        {
-          "file": "network_ns.ads",
-          "line": 70
-        }
-      ],
-      "spark": "spec"
-    },
-    {
-      "name": "network_ns.Send_Simple_Response",
-      "sloc": [
-        {
-          "file": "network_ns.ads",
-          "line": 76
-        }
-      ],
-      "spark": "spec"
-    },
-    {
-      "name": "network_ns.Close_Client_Socket",
-      "sloc": [
-        {
-          "file": "network_ns.ads",
-          "line": 81
-        }
-      ],
-      "spark": "spec"
-    }
   ],
   "flow": [
+  ],
+  "proof": [
   ],
   "assumptions": [
   ],
   "timings": {
-    "marking": 5.90704195201397E-03,
-    "globals (basic)": 4.95719760656357E-02,
-    "globals/properties (advanced)": 3.67049761116505E-02,
-    "flow analysis": 1.94715196266770E-03
+    "marking": 5.51880383864045E-03,
+    "globals (basic)": 5.65029382705688E-02,
+    "globals/properties (advanced)": 3.81626412272453E-02,
+    "flow analysis": 3.10655013890937E-04,
+    "codepeer results": 4.23099982072017E-06,
+    "init_why_sections": 1.96408000192605E-04,
+    "translation of standard": 3.06318094953895E-03,
+    "translation of compilation unit": 1.51767253875732E-01,
+    "proof": 4.93700008519227E-06
   }
 }

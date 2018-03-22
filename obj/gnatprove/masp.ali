@@ -8,7 +8,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U masp%b		masp.adb		09bd15ef OO SU
+U masp%b		masp.adb		9664b015 OO SU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -45,7 +45,7 @@ D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
 D masp.adb		20180319031238 b9e1a6f6 masp%b
 D network_ns.ads	20180316174002 b434b623 network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
-D parsing.ads		20180319221646 6ff6a50d parsing%s
+D parsing.ads		20180321162840 f02f00f7 parsing%s
 D server.ads		20180316194618 29dc5147 server%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
@@ -105,8 +105,8 @@ X 19 network_ns.ads
 X 20 network_types.ads
 1K9*Network_Types 18|11w6 20|21e18
 X 21 parsing.ads
-13K9*parsing 18|9w6 9r19 21|37e12
-30U14*Parse_HTTP_Request 18|51s13
+13K9*parsing 18|9w6 9r19 21|99e12
+92U14*Parse_HTTP_Request 18|51s13
 X 22 server.ads
 13K9*server 18|7w6 7r18 22|30e11
 15U14*Canonicalize_HTTP_Request 18|65s16
@@ -425,8 +425,12 @@ FD 20 network_types.ads
 FS .1 1K9 network_types
 FD 21 parsing.ads
 FS .1 13K9 parsing
-FS .2 16U14 parsing__get_first_token_in_range
-FS .3 30U14 parsing__parse_http_request
+FS .2 15V13 parsing__is_substring
+FS .3 27V13 parsing__check_substring
+FS .4 38U14 parsing__get_first_token_in_range
+FS .5 53U14 parsing__get_first_token_in_range_copy_alt
+FS .6 69V13 parsing__get_first_delimit_index_in_range
+FS .7 92U14 parsing__parse_http_request
 FD 22 server.ads
 FS .1 13K9 server
 FS .2 15U14 server__canonicalize_http_request
@@ -624,7 +628,7 @@ F 58*14 network_ns__get_client_cxn 18|.1:42s7
 F 64*14 network_ns__recv_net_request 18|.1:46s10
 F 81*14 network_ns__close_client_socket 18|.1:73s10
 FX 21 parsing.ads .1 parsing
-F 30*14 parsing__parse_http_request 18|.1:51s13
+F 92*14 parsing__parse_http_request 18|.1:51s13
 FX 22 server.ads .1 server
 F 15*14 server__canonicalize_http_request 18|.1:65s16
 F 20*14 server__sanitize_http_request 18|.1:67s16
@@ -636,7 +640,7 @@ F 11*14 utils__check_print_ln 18|.1:32s7
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS masp KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 2 utils__debug_print_ln network_ns__initialize_tcp_state calls_conditional 8 parsing__parse_http_request server__canonicalize_http_request server__sanitize_http_request server__fulfill_http_request network_ns__close_client_socket utils__check_print_ln network_ns__get_client_cxn network_ns__recv_net_request local_var 10 masp__client_parse_exception_raised masp__canonicalized_request masp__clean_request masp__server_socket masp__init_exception_raised masp__raw_request masp__client_socket masp__client_cxn_exception_raised masp__client_request_exception_raised masp__parsed_request local_ghost 0 local_sub 0
+GG EK_GLOBALS masp KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 2 utils__debug_print_ln network_ns__initialize_tcp_state calls_conditional 8 utils__check_print_ln network_ns__get_client_cxn network_ns__recv_net_request parsing__parse_http_request server__canonicalize_http_request server__sanitize_http_request server__fulfill_http_request network_ns__close_client_socket local_var 10 masp__server_socket masp__init_exception_raised masp__raw_request masp__client_socket masp__client_cxn_exception_raised masp__client_request_exception_raised masp__parsed_request masp__client_parse_exception_raised masp__canonicalized_request masp__clean_request local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 1 masp
 GG EK_NONRETURNING 1 masp

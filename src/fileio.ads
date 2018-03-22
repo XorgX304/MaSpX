@@ -7,10 +7,10 @@ with SPARK.Text_IO; use SPARK.Text_IO;
 with String_Types; use String_Types;
 with config; use config;
 with utils; use utils;
+with measured_buffer_type; use measured_buffer_type;
 
 package fileio is
 
-   MAX_FILE_READ_BYTE_CT : constant Natural := 10000;
    subtype ContentSize is Natural range Natural'First .. MAX_FILE_READ_BYTE_CT; 
    subtype File_Buf is String(Positive'First .. MAX_FILE_READ_BYTE_CT);
    

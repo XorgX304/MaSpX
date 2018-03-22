@@ -12,6 +12,32 @@ with utils; use utils;
 --TODO: SPARKify
 package parsing is
 
+   function Is_Substring(
+      Substring : String;
+      Source : String
+   ) return Boolean
+   with Global => null,
+        Pre => Substring'Length <= Source'Length and
+               Substring'Length >= 1,
+        Post => (if Is_Substring'Result then
+                    (for some I in Source'Range => Check_Substring(Substring, I, Source))
+                 else
+                    (for all I in Source'Range => not Check_Substring(Substring, I, Source)));
+        
+   function Check_Substring(
+      Substring : String;
+      Start : Positive;
+      Source : String
+   ) return Boolean
+   with Global => null,
+        Pre => Substring'Length <= Source'Length and
+               Substring'Length >= 1 and     --we're not in the business of the empty string
+               Start >= Source'First and Start <= Source'Last,
+        Post => (if Check_Substring'Result then
+                    Substring = Source(Start .. Start + Substring'Length - 1)
+                 else
+                    Substring /= Source(Start .. Start + Substring'Length - 1));
+
    --Start and Finish are inclusive
    procedure Get_First_Token_In_Range(
       Source : String;
@@ -41,7 +67,7 @@ package parsing is
                (Start < Source'Last and Start >= Source'First and
                Finish <= Source'Last and Finish > Source'First) and then
                Source'Length = Token_String'Length,
-        Post => Is_Substring(Token_String, Source);-- and
+        Post => Is_Substring(Token_String(Token_String'First .. Token_First_Empty_Index - 1), Source);-- and
         --        Token_First_Empty_Index = Get_First_Delimit_Index(Token_String, Delimit)
    
    function Get_First_Delimit_Index_In_Range(
@@ -57,28 +83,6 @@ package parsing is
         Post => (Get_First_Delimit_Index_In_Range'Result >= Start and
                 Get_First_Delimit_Index_In_Range'Result <= Finish) or
                 Get_First_Delimit_Index_In_Range'Result = 0;
-        
-   function Is_Substring(
-      Substring : String;
-      Source : String
-   ) return Boolean
-   with Global => null,
-        Pre => Substring'Length <= Source'Length and
-               Substring'Length >= 1,
-        Post => (if Is_Substring'Result then
-                    (for some I in Source'Range => Check_Substring(Substring, I, Source))
-                 else
-                    (for all I in Source'Range => not Check_Substring(Substring, I, Source)));
-        
-   function Check_Substring(
-      Substring : String;
-      Start : Positive;
-      Source : String
-   ) return Boolean
-   with Global => null,
-        Pre => Substring'Length <= Source'Length and
-               Substring'Length >= 1 and     --we're not in the business of the empty string
-               Start >= Source'First and Start <= Source'Last;
         
    --TODO:ltj:Get_Token_Ct --if we check this early, we can rule out some issues up front. Maybe put in precondition of parse_http_request?
    

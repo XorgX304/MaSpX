@@ -4,7 +4,8 @@ with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 
 with fileio; use fileio;
 with config; use config;
-WITH String_Types;
+with String_Types;
+with measured_buffer_type; use measured_buffer_type;
 
 PACKAGE Http_Message IS
    package ST renames String_Types;

@@ -100,6 +100,7 @@ package body parsing is
          end if;
          
          pragma Loop_Invariant( for all J in Source'First .. I => not Check_Substring(Substring, J, Source) );
+         pragma Loop_Variant( Increases => I );
       end loop;
       
       return False;
@@ -120,16 +121,19 @@ package body parsing is
       
       --return True;
       
-      if Source'Last < Positive'Last - Substring'Length - 1 then
-         if Start + Substring'Length - 1 <= Source'Last then
-            return Substring = Source(Start .. Start + Substring'Length - 1);
-         else
-            return False;
-         end if;
-      else
-         Check_Print_Ln("BOUNDS WARNING:parsing.adb:Check_Substring!");
-         return False;
-      end if;
+      
+      --if Source'Last < Positive'Last - Substring'Length - 1 then
+      --   if Start + Substring'Length - 1 <= Source'Last then
+      --      return Substring = Source(Start .. Start + Substring'Length - 1);
+      --   else
+       --     return False;
+       --  end if;
+      --else
+         --Check_Print_Ln("BOUNDS WARNING:parsing.adb:Check_Substring!");
+       --  return False;
+      --end if;
+      
+      return Substring = Source(Start .. Start + Substring'Length - 1);
    end Check_Substring;
 
 --------------------------------------------------------------------------------
