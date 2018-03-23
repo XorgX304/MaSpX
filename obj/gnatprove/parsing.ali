@@ -12,7 +12,7 @@ RV SPARK_05
 
 U parsing%b		parsing.adb		5954ed3f OO PK IL
 
-U parsing%s		parsing.ads		8e0e7ade OO PK IL
+U parsing%s		parsing.ads		398fa07d OO PK IL
 W config%s		config.ads		config.ali
 W gnat%s		gnat.ads		gnat.ali
 W gnat.sockets%s	g-socket.adb		g-socket.ali
@@ -32,21 +32,22 @@ D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D a-uncdea.ads		20170516105954 f15a5ed1 ada.unchecked_deallocation%s
-D config.ads		20180319032902 ec265e4d config%s
-D fileio.ads		20180319024258 7e038fef fileio%s
+D config.ads		20180321201252 ec265e4d config%s
+D fileio.ads		20180321201540 f0d24a6d fileio%s
 D gnat.ads		20170516105956 fd2ad2f1 gnat%s
 D g-socket.ads		20170516105956 df7f0365 gnat.sockets%s
-D http_message.ads	20180314001726 877247c0 http_message%s
+D http_message.ads	20180321201724 2472ea16 http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D network_ns.ads	20180316174002 b434b623 network_ns%s
+D measured_buffer_type.ads  20180322201932 654ed59a measured_buffer_type%s
+D network_ns.ads	20180321201014 391114d3 network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
-D parsing.ads		20180321165028 fc3dbaab parsing%s
-D parsing.adb		20180321165738 a5695794 parsing%b
+D parsing.ads		20180321232720 fc3dbaab parsing%s
+D parsing.adb		20180321183420 a5695794 parsing%b
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
-D string_types.ads	20180306224850 09ce344a string_types%s
+D string_types.ads	20180321204010 a6ddda79 string_types%s
 D system.ads		20170516105954 32a08138 system%s
 D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
@@ -56,108 +57,107 @@ D s-stalib.ads		20170516105954 09bd3940 system.standard_library%s
 D s-stoele.ads		20170516105956 2dc34a04 system.storage_elements%s
 D s-traent.ads		20170516105950 005bf670 system.traceback_entries%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180315194522 6416160a utils%s
+D utils.ads		20180321235658 52a12dbc utils%s
 D utils_ns.ads		20180220212052 c662e524 utils_ns%s
 X 10 config.ads
-3K9*config 20e11 20|7w6 7r18
-13a4*DEFAULT_PAGE{string} 21|201r95 201r123
-18a4*c400_BAD_REQUEST_URI_PAGE{string} 21|166r53 190r56 206r56
+3K9*config 18e11 21|7w6 7r18
+12a4*DEFAULT_PAGE{string} 22|202r95 202r123
+16a4*c400_BAD_REQUEST_URI_PAGE{string} 22|167r53 191r56 207r56
 X 12 gnat.ads
-34K9*GNAT 37e9 20|4r6 97r23 21|140r23
+34K9*GNAT 37e9 21|4r6 97r23 22|141r23
 X 13 g-socket.ads
-55K14*Sockets 1284e17 20|4w11 97r28 21|140r28
-412I9*Socket_Type<integer> 20|97r36 21|140r36
+55K14*Sockets 1284e17 21|4w11 97r28 22|141r28
+412I9*Socket_Type<integer> 21|97r36 22|141r36
 X 14 http_message.ads
-9K9*Http_Message 86e17 20|8w6 8r24 21|151r32 174r35 212r35
-13n30*GET{13E9} 21|174r48
-13n35*UNKNOWN{13E9} 21|151r45 212r48
-41R9*Simple_HTTP_Request 45e14 20|99r28 21|142r28
-43e7*Method{15E12} 21|151m22 174m25 212m25
-44a7*RequestURI{24|24A12} 21|150m22 197m25 200r31 200r95 201m31
-47R9*Simple_HTTP_Response 52e14 21|147r18
-81V13*Construct_Simple_HTTP_Response{47R9} 21|166s22 190s25 206s25
-X 18 network_ns.ads
-16K9*network_ns 85e15 20|6w6 6r22
-39I12*MRB_First_Empty_Index_Type{natural}
-40A12*Simple_Request_Line{string}<integer> 21|145r22
-43R9*Measured_Request_Buffer 47e14 20|98r21 21|141r21
-45a7*Buffer{40A12} 21|155r22 157r22 164r80 178r25
-46i7*Length{39I12} 21|158r22 181r25
-51a4*GET_TOKEN_REQUEST_LINE{40A12} 21|173r25
-76U14*Send_Simple_Response 21|167s10 191s13 207s13
-X 20 parsing.ads
-13K9*parsing 103l5 103e12 21|3b14 218l5 218t12
-15V13*Is_Substring{boolean} 16>7 17>7 22r21 70s17 21|92b13 107l8 107t20
-16a7 Substring{string} 20r16 21r16 23r68 25r71 21|93b7 98r29 102r87
-17a7 Source{string} 20r36 23r36 23r82 25r35 25r85 21|94b7 97r16 98r43 102r46
+10K9*Http_Message 87e17 21|8w6 8r24 22|152r32 175r35 213r35
+14n30*GET{14E9} 22|175r48
+14n35*UNKNOWN{14E9} 22|152r45 213r48
+42R9*Simple_HTTP_Request 46e14 21|99r28 22|143r28
+44e7*Method{16E12} 22|152m22 175m25 213m25
+45a7*RequestURI{25|25A12} 22|151m22 198m25 201r31 201r95 202m31
+48R9*Simple_HTTP_Response 53e14 22|148r18
+82V13*Construct_Simple_HTTP_Response{48R9} 22|167s22 191s25 207s25
+X 19 network_ns.ads
+17K9*network_ns 82e15 21|6w6 6r22
+36I12*MRB_First_Empty_Index_Type{natural}
+37A12*Simple_Request_Line{string}<integer> 22|146r22
+40R9*Measured_Request_Buffer 44e14 21|98r21 22|142r21
+42a7*Buffer{37A12} 22|156r22 158r22 165r80 179r25
+43i7*Length{36I12} 22|159r22 182r25
+48a4*GET_TOKEN_REQUEST_LINE{37A12} 22|174r25
+73U14*Send_Simple_Response 22|168s10 192s13 208s13
+X 21 parsing.ads
+13K9*parsing 103l5 103e12 22|3b14 219l5 219t12
+15V13*Is_Substring{boolean} 16>7 17>7 22r21 70s17 22|92b13 107l8 107t20
+16a7 Substring{string} 20r16 21r16 23r68 25r71 22|93b7 98r29 102r87
+17a7 Source{string} 20r36 23r36 23r82 25r35 25r85 22|94b7 97r16 98r43 102r46
 . 102r101
 23i31 I{integer} 23r79
 25i30 I{integer} 25r82
-27V13*Check_Substring{boolean} 23s52 25s55 28>7 29>7 30>7 36r21 21|98s13
-. 102s71 110b13 136l8 136t23
-28a7 Substring{string} 33r16 34r16 37r21 37r57 39r21 39r58 21|111b7 135r14
-. 135r50
-29i7 Start{positive} 35r16 35r42 37r40 37r49 39r41 39r50 21|112b7 135r33
-. 135r42
-30a7 Source{string} 33r36 35r25 35r51 37r33 39r34 21|113b7 135r26
-42U14*Get_First_Token_In_Range 43>7 44>7 45>7 46>7 47<7 48<7 21|5b14 36l8
+27V13*Check_Substring{boolean} 23s52 25s55 28>7 29>7 30>7 36r21 22|98s13
+. 102s71 110b13 137l8 137t23
+28a7 Substring{string} 33r16 34r16 37r21 37r57 39r21 39r58 22|111b7 136r14
+. 136r50
+29i7 Start{positive} 35r16 35r42 37r40 37r49 39r41 39r50 22|112b7 136r33
+. 136r42
+30a7 Source{string} 33r36 35r25 35r51 37r33 39r34 22|113b7 136r26
+42U14*Get_First_Token_In_Range 43>7 44>7 45>7 46>7 47<7 48<7 22|5b14 36l8
 . 36t32
-43a7 Source{string} 52r25 52r50 53r26 53r51 54r16 21|6b7 20r13 27r54
-44e7 Delimit{character} 21|7b7 20r25
-45i7 Start{positive} 51r16 52r17 52r41 21|8b7 18r30
-46i7 Finish{positive} 51r24 53r16 53r42 21|9b7 18r39
-47a7 Token_String{string} 54r32 21|10b7 15m7 26r43 26r92 27m13 29r43
-48i7 Token_First_Empty_Index{natural} 21|11b7 16m7 24r13 26r16 26r65 27r26
+43a7 Source{string} 52r25 52r50 53r26 53r51 54r16 22|6b7 20r13 27r54
+44e7 Delimit{character} 22|7b7 20r25
+45i7 Start{positive} 51r16 52r17 52r41 22|8b7 18r30
+46i7 Finish{positive} 51r24 53r16 53r42 22|9b7 18r39
+47a7 Token_String{string} 54r32 22|10b7 15m7 26r43 26r92 27m13 29r43
+48i7 Token_First_Empty_Index{natural} 22|11b7 16m7 24r13 26r16 26r65 27r26
 . 29r16 30m16 30r43 32m16
-57U14*Get_First_Token_In_Range_COPY_ALT 58>7 59>7 60>7 61>7 62<7 63<7 21|39b14
-. 72l8 72t41 154s7 177s10
-58a7 Source{string} 67r25 67r50 68r26 68r51 69r16 70r95 21|40b7 52r63 59r81
+57U14*Get_First_Token_In_Range_COPY_ALT 58>7 59>7 60>7 61>7 62<7 63<7 22|39b14
+. 72l8 72t41 155s7 178s10
+58a7 Source{string} 67r25 67r50 68r26 68r51 69r16 70r95 22|40b7 52r63 59r81
 . 64r81
-59e7 Delimit{character} 21|41b7 50r32 52r71
-60i7 Start{positive} 66r16 67r17 67r41 21|42b7 52r80 58r29 59r88 63r46 64r89
-61i7 Finish{positive} 66r24 68r16 68r42 21|43b7 52r87 58r20 59r97
-62a7 Token_String{string} 69r32 70r30 70r43 21|44b7 50m7 59m10 59r23 59r45
+59e7 Delimit{character} 22|41b7 50r32 52r71
+60i7 Start{positive} 66r16 67r17 67r41 22|42b7 52r80 58r29 59r88 63r46 64r89
+61i7 Finish{positive} 66r24 68r16 68r42 22|43b7 52r87 58r20 59r97
+62a7 Token_String{string} 69r32 70r30 70r43 22|44b7 50m7 59m10 59r23 59r45
 . 64m10 64r23 64r45 67r34 69r36
-63i7 Token_First_Empty_Index{natural} 70r65 21|45b7 67m7 69r10 70m10
+63i7 Token_First_Empty_Index{natural} 70r65 22|45b7 67m7 69r10 70m10
 73V13*Get_First_Delimit_Index_In_Range{natural} 74>7 75>7 76>7 77>7 83r18
-. 84r17 85r17 21|52s30 75b13 89l8 89t40
-74a7 Source{string} 81r25 81r50 82r26 82r51 21|76b7 83r13
-75e7 Delimit{character} 21|77b7 83r25
-76i7 Start{positive} 80r16 81r17 81r41 83r61 21|78b7 82r30
-77i7 Finish{positive} 80r24 82r16 82r42 84r60 21|79b7 82r39
-96U14*Parse_HTTP_Request 97>7 98>7 99<7 100<7 21|139b14 216l8 216t26
-97i7 Client_Socket{13|412I9} 21|140b7 167r31 191r34 207r34
-98r7 Raw_Request{18|43R9} 21|141b7 155r10 157r10 158r10 164r68 178r13 181r13
-99r7 Parsed_Request{14|41R9} 21|142b7 150m7 151m7 174m10 197m10 200r16 200r80
-. 201m16 212m10
-100b7 Exception_Raised{boolean} 21|143b7 149m7 168m10 192m13 208m13
-X 21 parsing.adb
+. 84r17 85r17 22|52s30 75b13 89l8 89t40
+74a7 Source{string} 81r25 81r50 82r26 82r51 22|76b7 83r13
+75e7 Delimit{character} 22|77b7 83r25
+76i7 Start{positive} 80r16 81r17 81r41 83r61 22|78b7 82r30
+77i7 Finish{positive} 80r24 82r16 82r42 84r60 22|79b7 82r39
+96U14*Parse_HTTP_Request 97>7 98>7 99<7 100<7 22|140b14 217l8 217t26
+97i7 Client_Socket{13|412I9} 22|141b7 168r31 192r34 208r34
+98r7 Raw_Request{19|40R9} 22|142b7 156r10 158r10 159r10 165r68 179r13 182r13
+99r7 Parsed_Request{14|42R9} 22|143b7 151m7 152m7 175m10 198m10 201r16 201r80
+. 202m16 213m10
+100b7 Exception_Raised{boolean} 22|144b7 150m7 169m10 193m13 209m13
+X 22 parsing.adb
 18i11 I{integer} 20r20 27r61
 47i7 First_Delimit_Index{natural} 52m7 53r73 56r10 63r20 64r98
 48i7 Length{natural} 58m10 59r66 63m10 64r66 67r55
 82i11 I{integer} 83r20 84r20
 97i11 I{integer} 98r40 102r62 103r44
 102i41 J{integer} 102r98
-145a7 Token_String{18|40A12} 159m10 162r55 173r10 182m13 185r55 197r96
-146i7 Token_First_Empty_Index{natural} 160m10 164r10 164r41 180r13 183m13
-. 188r13 199r13 200r42 200r106 201r42 201r69
-147r7 Response{14|47R9} 166m10 167r46 190m13 191r49 206m13 207r49
-X 22 spark.ads
-29K9*SPARK 20|3r6 3r25 22|66e10
-X 23 spark-text_io.ads
-27K15*Text_IO 20|3w12 3r31 23|718e18
-36R9*File_Type<22|53R9>
-81r4*Standard_Output{36R9} 20|65r30
-X 24 string_types.ads
-3K9*String_Types 20|9w6 9r24 24|28e17
-10A12*String255{string}<integer>
-23A12*RequestURIStringType{10A12}<integer> 21|188r43 197r36 197r66 197r109
-. 197r139
-24A12*ParsedRequestURIStringType{string}<integer>
-X 34 utils.ads
-7K9*utils 20|10w6 10r17 34|14e10
-9U14*Debug_Print_Ln 21|53s7 57s10 62s10 162s7 185s10
-11U14*Check_Print_Ln 21|165s10 189s13 205s13
+146a7 Token_String{19|37A12} 160m10 163r55 174r10 183m13 186r55 198r96
+147i7 Token_First_Empty_Index{natural} 161m10 165r10 165r41 181r13 184m13
+. 189r13 200r13 201r42 201r106 202r42 202r69
+148r7 Response{14|48R9} 167m10 168r46 191m13 192r49 207m13 208r49
+X 23 spark.ads
+29K9*SPARK 21|3r6 3r25 23|66e10
+X 24 spark-text_io.ads
+27K15*Text_IO 21|3w12 3r31 24|718e18
+36R9*File_Type<23|53R9>
+81r4*Standard_Output{36R9} 21|65r30
+X 25 string_types.ads
+4K9*String_Types 21|9w6 9r24 25|29e17
+24A12*RequestURIStringType{string}<integer> 22|189r43 198r36 198r66 198r109
+. 198r139
+25A12*ParsedRequestURIStringType{string}<integer>
+X 35 utils.ads
+7K9*utils 21|10w6 10r17 35|18e10
+10U14*Debug_Print_Ln 22|53s7 57s10 62s10 163s7 186s10
+12U14*Check_Print_Ln 22|166s10 190s13 206s13
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -296,7 +296,7 @@ FD 9 a-uncdea.ads
 FD 10 config.ads
 FS .1 3K9 config
 FD 11 fileio.ads
-FS .1 11K9 fileio
+FS .1 12K9 fileio
 FS .2 48V13 fileio__get_mft_length
 FS .3 52U14 fileio__trim_filename
 FS .4 58U14 fileio__read_file_to_mfb
@@ -372,9 +372,9 @@ FS .64 1116U14 gnat__sockets__check_selector
 FS .65 1140U14 gnat__sockets__check_selector__2
 FS .66 1152U14 gnat__sockets__abort_selector
 FD 14 http_message.ads
-FS .1 9K9 http_message
-FS .2 81V13 http_message__construct_simple_http_response
-FS .3 84V13 http_message__construct_simple_http_response__2
+FS .1 10K9 http_message
+FS .2 82V13 http_message__construct_simple_http_response
+FS .3 85V13 http_message__construct_simple_http_response__2
 FD 15 interfac.ads
 FS .1 38K9 interfaces
 FS .2 81V13 interfaces__shift_left
@@ -445,17 +445,30 @@ FS .14 223U14 interfaces__c_streams__set_binary_mode
 FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
-FD 18 network_ns.ads
-FS .1 16K9 network_ns
-FS .2 53U14 network_ns__initialize_tcp_state
-FS .3 58U14 network_ns__get_client_cxn
-FS .4 64U14 network_ns__recv_net_request
-FS .5 70U14 network_ns__send_test_response
-FS .6 76U14 network_ns__send_simple_response
-FS .7 81U14 network_ns__close_client_socket
-FD 19 network_types.ads
+FD 18 measured_buffer_type.ads
+FS .1 4K9 measured_buffer_type
+FS .2 14V13 measured_buffer_type__get_char
+FS .3 18V13 measured_buffer_type__calc_length
+FS .4 23V13 measured_buffer_type__get_length
+FS .5 27V13 measured_buffer_type__is_empty
+FS .6 32V13 measured_buffer_type__is_full
+FS .7 37V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
+FS .8 41V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
+FS .9 45V13 measured_buffer_type__is_one_left_edge
+FS .10 50V13 measured_buffer_type__is_one_right_edge
+FS .11 55V13 measured_buffer_type__is_contiguous
+FS .12 59V13 measured_buffer_type__is_aligned
+FD 19 network_ns.ads
+FS .1 17K9 network_ns
+FS .2 50U14 network_ns__initialize_tcp_state
+FS .3 55U14 network_ns__get_client_cxn
+FS .4 61U14 network_ns__recv_net_request
+FS .5 67U14 network_ns__send_test_response
+FS .6 73U14 network_ns__send_simple_response
+FS .7 78U14 network_ns__close_client_socket
+FD 20 network_types.ads
 FS .1 1K9 network_types
-FD 20 parsing.ads
+FD 21 parsing.ads
 FS .1 13K9 parsing
 FS .2 15V13 parsing__is_substring
 FS .3 27V13 parsing__check_substring
@@ -463,17 +476,17 @@ FS .4 42U14 parsing__get_first_token_in_range
 FS .5 57U14 parsing__get_first_token_in_range_copy_alt
 FS .6 73V13 parsing__get_first_delimit_index_in_range
 FS .7 96U14 parsing__parse_http_request
-FD 21 parsing.adb
-FS .1 3K14 parsing -> 20.1
-FS .2 5U14 parsing__get_first_token_in_range -> 20.4
-FS .3 39U14 parsing__get_first_token_in_range_copy_alt -> 20.5
-FS .4 75V13 parsing__get_first_delimit_index_in_range -> 20.6
-FS .5 92V13 parsing__is_substring -> 20.2
-FS .6 110V13 parsing__check_substring -> 20.3
-FS .7 139U14 parsing__parse_http_request -> 20.7
-FD 22 spark.ads
+FD 22 parsing.adb
+FS .1 3K14 parsing -> 21.1
+FS .2 5U14 parsing__get_first_token_in_range -> 21.4
+FS .3 39U14 parsing__get_first_token_in_range_copy_alt -> 21.5
+FS .4 75V13 parsing__get_first_delimit_index_in_range -> 21.6
+FS .5 92V13 parsing__is_substring -> 21.2
+FS .6 110V13 parsing__check_substring -> 21.3
+FS .7 140U14 parsing__parse_http_request -> 21.7
+FD 23 spark.ads
 FS .1 29K9 spark
-FD 23 spark-text_io.ads
+FD 24 spark-text_io.ads
 FS .1 27K15 spark__text_io
 FS .2 86V13 spark__text_io__status
 FS .3 92V13 spark__text_io__is_standard_input
@@ -545,20 +558,20 @@ FS .68 664U14 spark__text_io__get_line
 FS .69 679U14 spark__text_io__get_line__2
 FS .70 690U14 spark__text_io__put_line
 FS .71 703U14 spark__text_io__put_line__2
-FS .72 104V13 spark__text_io__is_standard_writable -> 23.6
-FS .73 109V13 spark__text_io__is_standard_file -> 23.7
-FS .74 133V13 spark__text_io__is_readable -> 23.12
-FS .75 137V13 spark__text_io__is_writable -> 23.13
-FD 24 string_types.ads
-FS .1 3K9 string_types
-FD 25 system.ads
+FS .72 104V13 spark__text_io__is_standard_writable -> 24.6
+FS .73 109V13 spark__text_io__is_standard_file -> 24.7
+FS .74 133V13 spark__text_io__is_readable -> 24.12
+FS .75 137V13 spark__text_io__is_writable -> 24.13
+FD 25 string_types.ads
+FS .1 4K9 string_types
+FD 26 system.ads
 FS .1 37K9 system
 FS .2 77V13 system__Olt
 FS .3 78V13 system__Ole
 FS .4 79V13 system__Ogt
 FS .5 80V13 system__Oge
 FS .6 81V13 system__Oeq
-FD 26 s-crtl.ads
+FD 27 s-crtl.ads
 FS .1 38K16 system__crtl
 FS .2 85V13 system__crtl__strlen
 FS .3 88U14 system__crtl__strncpy
@@ -604,22 +617,22 @@ FS .42 229V13 system__crtl__open
 FS .43 232V13 system__crtl__close
 FS .44 235V13 system__crtl__read
 FS .45 238V13 system__crtl__write
-FD 27 s-ficobl.ads
+FD 28 s-ficobl.ads
 FS .1 42K16 system__file_control_block
-FD 28 s-oscons.ads
+FD 29 s-oscons.ads
 FS .1 44K16 system__os_constants
-FD 29 s-parame.ads
+FD 30 s-parame.ads
 FS .1 51K16 system__parameters
 FS .2 81V13 system__parameters__default_stack_size
 FS .3 84V13 system__parameters__minimum_stack_size
 FS .4 87V13 system__parameters__adjust_storage_size
-FD 30 s-stalib.ads
+FD 31 s-stalib.ads
 FS .1 55K16 system__standard_library
 FS .2 76K4 system__standard_library__to_ptrGP4411
 FS .3 76V13 system__standard_library__to_ptr
 FS .4 254U14 system__standard_library__abort_undefer_direct
 FS .5 259U14 system__standard_library__adafinal
-FD 31 s-stoele.ads
+FD 32 s-stoele.ads
 FS .1 42K16 system__storage_elements
 FS .2 76V13 system__storage_elements__Oadd
 FS .3 81V13 system__storage_elements__Oadd__2
@@ -628,117 +641,118 @@ FS .5 91V13 system__storage_elements__Osubtract__2
 FS .6 96V13 system__storage_elements__Omod
 FS .7 107V13 system__storage_elements__to_address
 FS .8 112V13 system__storage_elements__to_integer
-FD 32 s-traent.ads
+FD 33 s-traent.ads
 FS .1 47K16 system__traceback_entries
 FS .2 58V13 system__traceback_entries__pc_for
 FS .3 63V13 system__traceback_entries__tb_entry_for
-FD 33 s-wchcon.ads
+FD 34 s-wchcon.ads
 FS .1 41K16 system__wch_con
 FS .2 203V13 system__wch_con__get_wc_encoding_method
 FS .3 207V13 system__wch_con__get_wc_encoding_method__2
 FS .4 212V13 system__wch_con__is_start_of_encoding
-FD 34 utils.ads
+FD 35 utils.ads
 FS .1 7K9 utils
-FS .2 9U14 utils__debug_print_ln
-FS .3 10U14 utils__debug_print
-FS .4 11U14 utils__check_print_ln
-FS .5 12U14 utils__check_print
-FD 35 utils_ns.ads
+FS .2 10U14 utils__debug_print_ln
+FS .3 11U14 utils__debug_print
+FS .4 12U14 utils__check_print_ln
+FS .5 13U14 utils__check_print
+FS .6 15V13 utils__logical_equivalence
+FD 36 utils_ns.ads
 FS .1 3K9 utils_ns
 FS .2 7U14 utils_ns__string_to_byte_array
 FX 10 config.ads .1 config
-F 13*4 config__default_page 21|.7:201c95 201c123
-F 18*4 config__c400_bad_request_uri_page 21|.7:166c53 190c56 206c56
+F 12*4 config__default_page 22|.7:202c95 202c123
+F 16*4 config__c400_bad_request_uri_page 22|.7:167c53 191c56 207c56
 FX 14 http_message.ads .1 http_message
-F 81*13 http_message__construct_simple_http_response 21|.7:166s22 190s25
-. 206s25
-FX 18 network_ns.ads .1 network_ns
-F 51*4 network_ns__get_token_request_line 21|.7:173r25
-F 76*14 network_ns__send_simple_response 21|.7:167s10 191s13 207s13
-FX 20 parsing.ads .1 parsing
+F 82*13 http_message__construct_simple_http_response 22|.7:167s22 191s25
+. 207s25
+FX 19 network_ns.ads .1 network_ns
+F 48*4 network_ns__get_token_request_line 22|.7:174r25
+F 73*14 network_ns__send_simple_response 22|.7:168s10 192s13 208s13
+FX 21 parsing.ads .1 parsing
 F 15*13 parsing__is_substring .5:70s17
-F 27*13 parsing__check_substring .2:23s52 25s55 21|.5:98s13 102s71
-F 57*14 parsing__get_first_token_in_range_copy_alt 21|.7:154s7 177s10
-F 73*13 parsing__get_first_delimit_index_in_range 21|.3:52s30
-FX 20 parsing.ads .2 parsing__is_substring
-F 16>7 parsing__is_substring__substring 20c16 21c16 23c68 25c71 21|.5:98c29
+F 27*13 parsing__check_substring .2:23s52 25s55 22|.5:98s13 102s71
+F 57*14 parsing__get_first_token_in_range_copy_alt 22|.7:155s7 178s10
+F 73*13 parsing__get_first_delimit_index_in_range 22|.3:52s30
+FX 21 parsing.ads .2 parsing__is_substring
+F 16>7 parsing__is_substring__substring 20c16 21c16 23c68 25c71 22|.5:98c29
 . 102c87
-F 17>7 parsing__is_substring__source 20c36 23c36 23c82 25c35 25c85 21|.5:97c16
+F 17>7 parsing__is_substring__source 20c36 23c36 23c82 25c35 25c85 22|.5:97c16
 . 98c43 102c46 102c101
 F 23*31 parsing__is_substring__L15s__i 23c79
 F 25*30 parsing__is_substring__L17s__i 25c82
-FX 20 parsing.ads .3 parsing__check_substring
+FX 21 parsing.ads .3 parsing__check_substring
 F 28>7 parsing__check_substring__substring 33c16 34c16 37c21 37c57 39c21
-. 39c58 21|.6:135c14 135c50
+. 39c58 22|.6:136c14 136c50
 F 29>7 parsing__check_substring__start 35c16 35c42 37c40 37c49 39c41 39c50
-. 21|.6:135c33 135c42
-F 30>7 parsing__check_substring__source 33c36 35c25 35c51 37c33 39c34 21|.6:135c26
-FX 20 parsing.ads .4 parsing__get_first_token_in_range
+. 22|.6:136c33 136c42
+F 30>7 parsing__check_substring__source 33c36 35c25 35c51 37c33 39c34 22|.6:136c26
+FX 21 parsing.ads .4 parsing__get_first_token_in_range
 F 43>7 parsing__get_first_token_in_range__source 52c25 52c50 53c26 53c51
-. 54c16 21|.2:20c13 27c54
-F 44>7 parsing__get_first_token_in_range__delimit 21|.2:20c25
-F 45>7 parsing__get_first_token_in_range__start 51c16 52c17 52c41 21|.2:18c30
-F 46>7 parsing__get_first_token_in_range__finish 51c24 53c16 53c42 21|.2:18c39
-F 47<7 parsing__get_first_token_in_range__token_string 54r32 21|.2:15m7 26r43
+. 54c16 22|.2:20c13 27c54
+F 44>7 parsing__get_first_token_in_range__delimit 22|.2:20c25
+F 45>7 parsing__get_first_token_in_range__start 51c16 52c17 52c41 22|.2:18c30
+F 46>7 parsing__get_first_token_in_range__finish 51c24 53c16 53c42 22|.2:18c39
+F 47<7 parsing__get_first_token_in_range__token_string 54r32 22|.2:15m7 26r43
 . 26r92 27m13 29r43
-F 48<7 parsing__get_first_token_in_range__token_first_empty_index 21|.2:16m7
+F 48<7 parsing__get_first_token_in_range__token_first_empty_index 22|.2:16m7
 . 24r13 26r16 26r65 27r26 29r16 30m16 30r43 32m16
-FX 20 parsing.ads .5 parsing__get_first_token_in_range_copy_alt
+FX 21 parsing.ads .5 parsing__get_first_token_in_range_copy_alt
 F 58>7 parsing__get_first_token_in_range_copy_alt__source 67c25 67c50 68c26
-. 68c51 69c16 70c95 21|.3:52c63 59c81 64c81
-F 59>7 parsing__get_first_token_in_range_copy_alt__delimit 21|.3:50c32 52c71
+. 68c51 69c16 70c95 22|.3:52c63 59c81 64c81
+F 59>7 parsing__get_first_token_in_range_copy_alt__delimit 22|.3:50c32 52c71
 F 60>7 parsing__get_first_token_in_range_copy_alt__start 66c16 67c17 67c41
-. 21|.3:52c80 58c29 59c88 63c46 64c89
+. 22|.3:52c80 58c29 59c88 63c46 64c89
 F 61>7 parsing__get_first_token_in_range_copy_alt__finish 66c24 68c16 68c42
-. 21|.3:52c87 58c20 59c97
+. 22|.3:52c87 58c20 59c97
 F 62<7 parsing__get_first_token_in_range_copy_alt__token_string 69r32 70r30
-. 70r43 21|.3:50m7 59m10 59r23 59r45 64m10 64r23 64r45 67r34 69r36
+. 70r43 22|.3:50m7 59m10 59r23 59r45 64m10 64r23 64r45 67r34 69r36
 F 63<7 parsing__get_first_token_in_range_copy_alt__token_first_empty_index
-. 70r65 21|.3:67m7 69r10 70m10
-FX 20 parsing.ads .6 parsing__get_first_delimit_index_in_range
+. 70r65 22|.3:67m7 69r10 70m10
+FX 21 parsing.ads .6 parsing__get_first_delimit_index_in_range
 F 74>7 parsing__get_first_delimit_index_in_range__source 81c25 81c50 82c26
-. 82c51 21|.4:83c13
-F 75>7 parsing__get_first_delimit_index_in_range__delimit 21|.4:83c25
+. 82c51 22|.4:83c13
+F 75>7 parsing__get_first_delimit_index_in_range__delimit 22|.4:83c25
 F 76>7 parsing__get_first_delimit_index_in_range__start 80c16 81c17 81c41
-. 83c61 21|.4:82c30
+. 83c61 22|.4:82c30
 F 77>7 parsing__get_first_delimit_index_in_range__finish 80c24 82c16 82c42
-. 84c60 21|.4:82c39
-FX 20 parsing.ads .7 parsing__parse_http_request
-F 97>7 parsing__parse_http_request__client_socket 21|.7:167c31 191c34 207c34
-F 98>7 parsing__parse_http_request__raw_request 21|.7:155c10 157c10 158c10
-. 164c68 178c13 181c13
-F 99<7 parsing__parse_http_request__parsed_request 21|.7:150m7 151m7 174m10
-. 197m10 200r16 200r80 201m16 212m10
-F 100<7 parsing__parse_http_request__exception_raised 21|.7:149m7 168m10
-. 192m13 208m13
-FX 21 parsing.adb .2 parsing__get_first_token_in_range
+. 84c60 22|.4:82c39
+FX 21 parsing.ads .7 parsing__parse_http_request
+F 97>7 parsing__parse_http_request__client_socket 22|.7:168c31 192c34 208c34
+F 98>7 parsing__parse_http_request__raw_request 22|.7:156c10 158c10 159c10
+. 165c68 179c13 182c13
+F 99<7 parsing__parse_http_request__parsed_request 22|.7:151m7 152m7 175m10
+. 198m10 201r16 201r80 202m16 213m10
+F 100<7 parsing__parse_http_request__exception_raised 22|.7:150m7 169m10
+. 193m13 209m13
+FX 22 parsing.adb .2 parsing__get_first_token_in_range
 F 18*11 parsing__get_first_token_in_range__L_1__i 20c20 27c61
-FX 21 parsing.adb .3 parsing__get_first_token_in_range_copy_alt
+FX 22 parsing.adb .3 parsing__get_first_token_in_range_copy_alt
 F 47*7 parsing__get_first_token_in_range_copy_alt__first_delimit_index 52m7
 . 53r73 56r10 63r20 64r98
 F 48*7 parsing__get_first_token_in_range_copy_alt__length 58m10 59r66 63m10
 . 64r66 67r55
-FX 21 parsing.adb .4 parsing__get_first_delimit_index_in_range
+FX 22 parsing.adb .4 parsing__get_first_delimit_index_in_range
 F 82*11 parsing__get_first_delimit_index_in_range__L_2__i 83c20 84c20
-FX 21 parsing.adb .5 parsing__is_substring
+FX 22 parsing.adb .5 parsing__is_substring
 F 97*11 parsing__is_substring__L_3__i 98c40 102c62 103c44
 F 102*41 parsing__is_substring__L_3__L34b__j 102c98
-FX 21 parsing.adb .7 parsing__parse_http_request
-F 145*7 parsing__parse_http_request__token_string 159m10 162r55 173r10 182m13
-. 185r55 197r96
-F 146*7 parsing__parse_http_request__token_first_empty_index 160m10 164r10
-. 164r41 180r13 183m13 188r13 199r13 200r42 200r106 201r42 201r69
-F 147*7 parsing__parse_http_request__response 166m10 167r46 190m13 191r49
-. 206m13 207r49
-FX 23 spark-text_io.ads .1 spark__text_io
-F 81*4 spark__text_io__standard_output 20|.5:65r30
-FX 34 utils.ads .1 utils
-F 9*14 utils__debug_print_ln 21|.3:53s7 57s10 62s10 .7:162s7 185s10
-F 11*14 utils__check_print_ln 21|.7:165s10 189s13 205s13
+FX 22 parsing.adb .7 parsing__parse_http_request
+F 146*7 parsing__parse_http_request__token_string 160m10 163r55 174r10 183m13
+. 186r55 198r96
+F 147*7 parsing__parse_http_request__token_first_empty_index 161m10 165r10
+. 165r41 181r13 184m13 189r13 200r13 201r42 201r106 202r42 202r69
+F 148*7 parsing__parse_http_request__response 167m10 168r46 191m13 192r49
+. 207m13 208r49
+FX 24 spark-text_io.ads .1 spark__text_io
+F 81*4 spark__text_io__standard_output 21|.5:65r30
+FX 35 utils.ads .1 utils
+F 10*14 utils__debug_print_ln 22|.3:53s7 57s10 62s10 .7:163s7 186s10
+F 12*14 utils__check_print_ln 22|.7:166s10 190s13 206s13
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 parsing__get_first_delimit_index_in_range parsing__get_first_token_in_range parsing__parse_http_request parsing__get_first_token_in_range_copy_alt parsing__check_substring parsing__is_substring local_init 0
+GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 parsing__get_first_token_in_range_copy_alt parsing__check_substring parsing__is_substring parsing__get_first_delimit_index_in_range parsing__get_first_token_in_range parsing__parse_http_request local_init 0
 GG EK_GLOBALS parsing__parse_http_request KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 1 utils__debug_print_ln calls_conditional 3 utils__check_print_ln http_message__construct_simple_http_response network_ns__send_simple_response local_var 9 parsing__parse_http_request__token_string parsing__parse_http_request__token_first_empty_index parsing__parse_http_request__response parsing__parse_http_request__R54b parsing__parse_http_request__R55b parsing__parse_http_request__client_socket parsing__parse_http_request__raw_request parsing__parse_http_request__parsed_request parsing__parse_http_request__exception_raised local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 7 parsing parsing__is_substring parsing__check_substring parsing__get_first_token_in_range parsing__get_first_token_in_range_copy_alt parsing__get_first_delimit_index_in_range parsing__parse_http_request

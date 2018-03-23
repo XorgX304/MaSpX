@@ -1,21 +1,951 @@
 {
   "spark": [
+    {
+      "name": "utils",
+      "sloc": [
+        {
+          "file": "utils.ads",
+          "line": 7
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "utils.Debug_Print_Ln",
+      "sloc": [
+        {
+          "file": "utils.ads",
+          "line": 10
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "utils.Debug_Print",
+      "sloc": [
+        {
+          "file": "utils.ads",
+          "line": 11
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "utils.Check_Print_Ln",
+      "sloc": [
+        {
+          "file": "utils.ads",
+          "line": 12
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "utils.Check_Print",
+      "sloc": [
+        {
+          "file": "utils.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "utils.Logical_Equivalence",
+      "sloc": [
+        {
+          "file": "utils.ads",
+          "line": 15
+        }
+      ],
+      "spark": "all"
+    }
   ],
   "flow": [
   ],
   "proof": [
+    {
+      "file": "utils.adb",
+      "line": 27,
+      "col": 10,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "utils.Check_Print_Ln",
+        "sloc": [
+          {
+            "file": "utils.ads",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 17,
+              "time": 0.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 18,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "utils.adb",
+      "line": 9,
+      "col": 10,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "utils.Debug_Print_Ln",
+        "sloc": [
+          {
+            "file": "utils.ads",
+            "line": 10
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 26,
+              "time": 0.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 27,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "utils.adb",
+      "line": 36,
+      "col": 10,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "utils.Check_Print",
+        "sloc": [
+          {
+            "file": "utils.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 17,
+              "time": 1.56000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 18,
+          "max_time": 1.55999995768070E-02
+        }
+      }
+    },
+    {
+      "file": "utils.adb",
+      "line": 18,
+      "col": 10,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "utils.Debug_Print",
+        "sloc": [
+          {
+            "file": "utils.ads",
+            "line": 11
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 26,
+              "time": 0.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 27,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    }
   ],
   "assumptions": [
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "SPARK.Text_IO.Put",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 646
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Put",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 646
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Put",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 646
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "utils.Debug_Print",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 11
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "utils",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 7
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "utils.Logical_Equivalence",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "utils.Logical_Equivalence",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Put_Line",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 703
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "utils.Check_Print_Ln",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 12
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "SPARK.Text_IO.Put_Line",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 703
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Put_Line",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 703
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Put_Line",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 703
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "utils.Check_Print_Ln",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 12
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Put_Line",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 703
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "utils.Debug_Print_Ln",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 10
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "SPARK.Text_IO.Put_Line",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 703
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Put_Line",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 703
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Put_Line",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 703
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "utils.Debug_Print_Ln",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 10
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Put",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 646
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "utils.Check_Print",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "SPARK.Text_IO.Put",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 646
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Put",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 646
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Put",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 646
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "utils.Check_Print",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Flush",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 236
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Put",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 646
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "SPARK.Text_IO.Status",
+            "sloc": [
+              {
+                "file": "spark-text_io.ads",
+                "line": 86
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "utils.Debug_Print",
+          "sloc": [
+            {
+              "file": "utils.ads",
+              "line": 11
+            }
+          ]
+        }
+      }
+    }
   ],
   "timings": {
-    "marking": 2.86113191395998E-03,
-    "globals (basic)": 4.11849208176136E-02,
-    "globals/properties (advanced)": 2.79561523348093E-02,
-    "flow analysis": 1.60087001859210E-04,
-    "codepeer results": 5.99499981035478E-06,
-    "init_why_sections": 2.15801002923399E-04,
-    "translation of standard": 3.04555008187890E-03,
-    "translation of compilation unit": 6.99217617511749E-02,
-    "proof": 8.10999972600257E-06
+    "marking": 2.78285192325711E-03,
+    "globals (basic)": 3.74249927699566E-02,
+    "globals/properties (advanced)": 3.56418117880821E-02,
+    "flow analysis": 5.04665309563279E-03,
+    "codepeer results": 4.58400018032989E-06,
+    "init_why_sections": 2.52474012086168E-04,
+    "translation of standard": 3.17355198785663E-03,
+    "translation of compilation unit": 7.93560817837715E-02,
+    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
+    "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_if": 0.00000000000000E+00,
+    "gnatwhy3.transformations.explode_record_param": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eval_match": 0.00000000000000E+00,
+    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
+    "gnatwhy3.init": 7.34375000000000E-01,
+    "gnatwhy3.transformations.inline_trivial": 1.56250000000000E-02,
+    "gnatwhy3.transformations.inline_tagged": 0.00000000000000E+00,
+    "gnatwhy3.transformations.simplify_formula": 3.12500000000000E-02,
+    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_let": 0.00000000000000E+00,
+    "gnatwhy3.save_session": 1.56250000000000E-02,
+    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_algebraic": 1.56250000000000E-02,
+    "gnatwhy3.transformations.eliminate_literal": 1.56250000000000E-02,
+    "gnatwhy3.transformations.eliminate_recursion": 1.56250000000000E-02,
+    "proof": 1.40912687778473E+00
   }
 }

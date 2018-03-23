@@ -5,13 +5,14 @@ P GP FX
 RN
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utils%b		utils.adb		a89a2430 OO PK IL
+U utils%b		utils.adb		e7ea8099 OO PK IL
 
-U utils%s		utils.ads		97c406b9 OO PK IL
+U utils%s		utils.ads		a1733d0f OO PK IL
 W config%s		config.ads		config.ali
 W spark%s		spark.ads		spark.ali
 W spark.text_io%s	spark-text_io.adb	spark-text_io.ali
@@ -20,7 +21,7 @@ D ada.ads		20170516105950 76789da1 ada%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180319032902 ec265e4d config%s
+D config.ads		20180321201252 ec265e4d config%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
 D spark.ads		20140410152036 86380d85 spark%s
@@ -30,10 +31,10 @@ D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
 D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180315194522 6416160a utils%s
-D utils.adb		20180320192040 cc8c323a utils%b
+D utils.ads		20180321235658 52a12dbc utils%s
+D utils.adb		20180321235604 b54bad25 utils%b
 X 5 config.ads
-3K9*config 20e11 15|5w6 5r18
+3K9*config 18e11 15|5w6 5r18
 5b4*DEBUG_PRINT_ON{boolean} 16|8r48 17r48
 X 8 spark.ads
 29K9*SPARK 66e10 15|3r6 3r25
@@ -48,15 +49,18 @@ X 9 spark-text_io.ads
 646U14*Put 16|18s10 36s10
 703U14*Put_Line 16|9s10 27s10
 X 15 utils.ads
-7K9*utils 14l5 14e10 16|3b14 41l5 41t10
-9U14*Debug_Print_Ln 9>29 16|5b14 12l8 12t22
-9a29 String_To_Print{string} 16|5b29 9r19
-10U14*Debug_Print 10>26 16|14b14 21l8 21t19
-10a26 String_To_Print{string} 16|14b26 18r14
-11U14*Check_Print_Ln 11>29 16|23b14 30l8 30t22
-11a29 String_To_Print{string} 16|23b29 27r19
-12U14*Check_Print 12>26 16|32b14 39l8 39t19
-12a26 String_To_Print{string} 16|32b26 36r14
+7K9*utils 18l5 18e10 16|3b14 47l5 47t10
+10U14*Debug_Print_Ln 10>29 16|5b14 12l8 12t22
+10a29 String_To_Print{string} 16|5b29 9r19
+11U14*Debug_Print 11>26 16|14b14 21l8 21t19
+11a26 String_To_Print{string} 16|14b26 18r14
+12U14*Check_Print_Ln 12>29 16|23b14 30l8 30t22
+12a29 String_To_Print{string} 16|23b29 27r19
+13U14*Check_Print 13>26 16|32b14 39l8 39t19
+13a26 String_To_Print{string} 16|32b26 36r14
+15V13*Logical_Equivalence{boolean} 15>33 15>46 16|41b13 45l8 45t27
+15b33 P{boolean} 16|41b33 44r15 44r32
+15b46 Q{boolean} 16|41b46 44r21 44r42
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-ioexce.ads
@@ -344,16 +348,18 @@ FS .3 207V13 system__wch_con__get_wc_encoding_method__2
 FS .4 212V13 system__wch_con__is_start_of_encoding
 FD 15 utils.ads
 FS .1 7K9 utils
-FS .2 9U14 utils__debug_print_ln
-FS .3 10U14 utils__debug_print
-FS .4 11U14 utils__check_print_ln
-FS .5 12U14 utils__check_print
+FS .2 10U14 utils__debug_print_ln
+FS .3 11U14 utils__debug_print
+FS .4 12U14 utils__check_print_ln
+FS .5 13U14 utils__check_print
+FS .6 15V13 utils__logical_equivalence
 FD 16 utils.adb
 FS .1 3K14 utils -> 15.1
 FS .2 5U14 utils__debug_print_ln -> 15.2
 FS .3 14U14 utils__debug_print -> 15.3
 FS .4 23U14 utils__check_print_ln -> 15.4
 FS .5 32U14 utils__check_print -> 15.5
+FS .6 41V13 utils__logical_equivalence -> 15.6
 FX 5 config.ads .1 config
 F 5*4 config__debug_print_on 16|.2:8c48 .3:17c48
 FX 9 spark-text_io.ads .1 spark__text_io
@@ -363,23 +369,26 @@ F 236*14 spark__text_io__flush__2 16|.2:10s10 .3:19s10 .4:28s10 .5:37s10
 F 646*14 spark__text_io__put__4 16|.3:18s10 .5:36s10
 F 703*14 spark__text_io__put_line__2 16|.2:9s10 .4:27s10
 FX 15 utils.ads .2 utils__debug_print_ln
-F 9>29 utils__debug_print_ln__string_to_print 16|.2:9c19
+F 10>29 utils__debug_print_ln__string_to_print 16|.2:9c19
 FX 15 utils.ads .3 utils__debug_print
-F 10>26 utils__debug_print__string_to_print 16|.3:18c14
+F 11>26 utils__debug_print__string_to_print 16|.3:18c14
 FX 15 utils.ads .4 utils__check_print_ln
-F 11>29 utils__check_print_ln__string_to_print 16|.4:27c19
+F 12>29 utils__check_print_ln__string_to_print 16|.4:27c19
 FX 15 utils.ads .5 utils__check_print
-F 12>26 utils__check_print__string_to_print 16|.5:36c14
+F 13>26 utils__check_print__string_to_print 16|.5:36c14
+FX 15 utils.ads .6 utils__logical_equivalence
+F 15>33 utils__logical_equivalence__p 16|.6:44c15 44c32
+F 15>46 utils__logical_equivalence__q 16|.6:44c21 44c42
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS utils KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 4 utils__debug_print_ln utils__debug_print utils__check_print_ln utils__check_print local_init 0
+GG EK_GLOBALS utils KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 5 utils__debug_print_ln utils__debug_print utils__check_print_ln utils__check_print utils__logical_equivalence local_init 0
 GG EK_GLOBALS utils__debug_print_ln KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 0 calls_conditional 0 local_var 1 utils__debug_print_ln__string_to_print local_ghost 0 local_sub 0
 GG EK_GLOBALS utils__debug_print KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 0 calls_conditional 0 local_var 1 utils__debug_print__string_to_print local_ghost 0 local_sub 0
 GG EK_GLOBALS utils__check_print_ln KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 0 calls_conditional 0 local_var 1 utils__check_print_ln__string_to_print local_ghost 0 local_sub 0
 GG EK_GLOBALS utils__check_print KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 0 calls_conditional 0 local_var 1 utils__check_print__string_to_print local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
-GG EK_NONBLOCKING 5 utils utils__debug_print_ln utils__debug_print utils__check_print_ln utils__check_print
+GG EK_NONBLOCKING 6 utils utils__debug_print_ln utils__debug_print utils__check_print_ln utils__check_print utils__logical_equivalence
 GG EK_NONRETURNING 0
 GG EK_TERMINATING 0
 GG EK_DIRECT_CALLS utils 0
@@ -387,9 +396,11 @@ GG EK_DIRECT_CALLS utils__debug_print_ln 3 spark__text_io__status spark__text_io
 GG EK_DIRECT_CALLS utils__debug_print 3 spark__text_io__status spark__text_io__flush__2 spark__text_io__put__4
 GG EK_DIRECT_CALLS utils__check_print_ln 3 spark__text_io__status spark__text_io__flush__2 spark__text_io__put_line__2
 GG EK_DIRECT_CALLS utils__check_print 3 spark__text_io__status spark__text_io__flush__2 spark__text_io__put__4
+GG EK_DIRECT_CALLS utils__logical_equivalence 0
 GG EK_TASKING_INFO utils ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO utils__debug_print_ln ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 spark__text_io__standard_output LOCKS 0
 GG EK_TASKING_INFO utils__debug_print ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 spark__text_io__standard_output LOCKS 0
 GG EK_TASKING_INFO utils__check_print_ln ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 spark__text_io__standard_output LOCKS 0
 GG EK_TASKING_INFO utils__check_print ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 spark__text_io__standard_output LOCKS 0
+GG EK_TASKING_INFO utils__logical_equivalence ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_END_MARKER

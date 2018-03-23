@@ -1,3 +1,6 @@
+spark-text_io.ads:32:29: info: implicit function contract not available for proof ("Status" may not return)
+spark-text_io.ads:33:29: info: implicit function contract not available for proof ("Status" may not return)
+spark-text_io.ads:34:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:134:31: info: implicit function contract not available for proof ("Mode" may not return)
 spark-text_io.ads:139:12: info: implicit function contract not available for proof ("Mode" may not return)
 spark-text_io.ads:139:43: info: implicit function contract not available for proof ("Mode" may not return)
@@ -310,4 +313,3 @@ spark-text_io.ads:712:21: info: implicit function contract not available for pro
 spark-text_io.ads:713:24: info: implicit function contract not available for proof ("Line_Length" may not return)
 spark-text_io.ads:714:21: info: implicit function contract not available for proof ("Page_Length" may not return)
 spark-text_io.ads:715:24: info: implicit function contract not available for proof ("Page_Length" may not return)
-parsing.ads:66:17: info: function contract not available for proof ("Is_Substring" may not return)
