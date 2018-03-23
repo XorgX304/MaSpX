@@ -21,15 +21,21 @@ package measured_buffer_type is
    
    function Calc_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
    with Global => null,
-        Pre'Class => Buf.Is_Contiguous and then
-                     Buf.Is_Aligned,
-        Post => Calc_Length'Result <= Buf.Size;
+        Pre'Class => Buf.Is_Filled_From_Left,
+        Post => (if Buf.Is_Full then 
+                    Calc_Length'Result = Buf.Size
+                 elsif Buf.Is_Empty then
+                    Calc_Length'Result = 0
+                 else
+                    Calc_Length'Result > 0 and Calc_Length'Result < Buf.Size);
    
    function Get_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
    with Global => null,
         Post => Get_Length'Result <= Buf.Size;
         
-   --function Set_Length(Buf : Measured_Buffer_Type; New_Length : Max_Buffer_Size_Type) return Boolean
+   procedure Update_Length(Buf : in out Measured_Buffer_Type)
+   with Global => null,
+        Pre'Class => Buf.Is_Filled_From_Left;
    
    function Is_Empty(Buf : Measured_Buffer_Type) return Boolean
    with Global => null,
@@ -43,33 +49,45 @@ package measured_buffer_type is
    with Global => null,
         Pre'Class => Idx >= Positive'First and Idx <= Buf.Size;
         
-   function Is_Right_Neighbor_EmptyChar_And_This_Isnt(Buf : Measured_Buffer_Type; Idx : Max_Buffer_Size_Type) return Boolean
-   with Global => null,
-        Pre'Class => Idx >= Positive'First and Idx <= Buf.Size;
+--     function Is_Right_Neighbor_EmptyChar_And_This_Isnt(Buf : Measured_Buffer_Type; Idx : Max_Buffer_Size_Type) return Boolean
+--     with Global => null,
+--          Pre'Class => Idx >= Positive'First and Idx <= Buf.Size;
         
-   function Is_One_Left_Edge(Buf : Measured_Buffer_Type) return Boolean
-   with Global => null;
+   --function Is_One_Left_Edge(Buf : Measured_Buffer_Type) return Boolean
+   --with Global => null;
         --Post => Is_One_Left_Edge'Result = (for some I in Positive'First .. Buf.Size =>
         --                                    (for all J in Positive'First .. Buf.Size => Logical_Equivalence(Buf.Is_Left_Neighbor_EmptyChar_And_This_Isnt(J),  J = I)));
                         
-   function Is_One_Right_Edge(Buf: Measured_Buffer_Type) return Boolean
-   with Global => null;
+   --function Is_One_Right_Edge(Buf : Measured_Buffer_Type) return Boolean
+   --with Global => null;
         --Post => Is_One_Right_Edge'Result = (for some I in Positive'First .. Buf.Size =>
         --                                      (for all J in Positive'First .. Buf.Size => Logical_Equivalence(Buf.Is_Right_Neighbor_EmptyChar_And_This_Isnt(J), J = I)));
         
-   function Is_Contiguous(Buf : Measured_Buffer_Type) return Boolean
+   function Is_Filled_From_Left(Buf : Measured_Buffer_Type) return Boolean
    with Global => null,
-        Post => Is_Contiguous'Result = Buf.Is_Empty or Buf.Is_Full or Buf.Is_One_Left_Edge or Buf.Is_One_Right_Edge;
-                    
-   function Is_Aligned(Buf : Measured_Buffer_Type) return Boolean
-   with Global => null,
-        Pre'Class => Buf.Is_Contiguous,
-        Post => (if not Buf.Is_Empty then
-                    Is_Aligned'Result = (Buf.Get_Char(Positive'First) /= Buf.EmptyChar)
-                 else
-                    Is_Aligned'Result = True);            
+        Post => Is_Filled_From_Left'Result =  Buf.Is_Empty or Buf.Is_Full or
+                                            (for all I in Positive'First .. Buf.Size => not Buf.Is_Left_Neighbor_EmptyChar_And_This_Isnt(I));
+        
+--     function Is_Contiguous(Buf : Measured_Buffer_Type) return Boolean
+--     with Global => null,
+--          Post => Is_Contiguous'Result = Buf.Is_Empty or Buf.Is_Full or Buf.Is_One_Left_Edge or Buf.Is_One_Right_Edge;
+--                      
+--     function Is_Aligned(Buf : Measured_Buffer_Type) return Boolean
+--     with Global => null,
+--          Pre'Class => Buf.Is_Contiguous,
+--          Post => (if not Buf.Is_Empty then
+--                      Is_Aligned'Result = (Buf.Get_Char(Positive'First) /= Buf.EmptyChar)
+--                   else
+--                      Is_Aligned'Result = True);            
    
-   --function Append(Buf : Measured_Buffer_Type; C : Character) return Boolean;
+   procedure Append(Buf : in out Measured_Buffer_Type; C : Character)
+   with Global => null,
+        Pre'Class => C /= Buf.EmptyChar and then
+                     not Buf.Is_Full and then
+                     Buf.Is_Filled_From_Left,
+        Post => Buf'Old.Calc_Length + 1 = Buf.Calc_Length and
+                Buf.Get_Char(Buf.Calc_Length) = C and
+                not Buf.Is_Empty;
    
    
    private

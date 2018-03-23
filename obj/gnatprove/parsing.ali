@@ -40,7 +40,7 @@ D http_message.ads	20180321201724 2472ea16 http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer_type.ads  20180322201932 654ed59a measured_buffer_type%s
+D measured_buffer_type.ads  20180323012746 13a17990 measured_buffer_type%s
 D network_ns.ads	20180321201014 391114d3 network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
 D parsing.ads		20180321232720 fc3dbaab parsing%s
@@ -446,18 +446,19 @@ FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 18 measured_buffer_type.ads
-FS .1 4K9 measured_buffer_type
-FS .2 14V13 measured_buffer_type__get_char
-FS .3 18V13 measured_buffer_type__calc_length
-FS .4 23V13 measured_buffer_type__get_length
-FS .5 27V13 measured_buffer_type__is_empty
-FS .6 32V13 measured_buffer_type__is_full
-FS .7 37V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
-FS .8 41V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
-FS .9 45V13 measured_buffer_type__is_one_left_edge
-FS .10 50V13 measured_buffer_type__is_one_right_edge
-FS .11 55V13 measured_buffer_type__is_contiguous
-FS .12 59V13 measured_buffer_type__is_aligned
+FS .1 8K9 measured_buffer_type
+FS .2 18V13 measured_buffer_type__get_char
+FS .3 22V13 measured_buffer_type__calc_length
+FS .4 28V13 measured_buffer_type__get_length
+FS .5 39V13 measured_buffer_type__is_empty
+FS .6 43V13 measured_buffer_type__is_full
+FS .7 47V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
+FS .8 51V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
+FS .9 55V13 measured_buffer_type__is_one_left_edge
+FS .10 60V13 measured_buffer_type__is_one_right_edge
+FS .11 65V13 measured_buffer_type__is_full_from_left
+FS .12 75V13 measured_buffer_type__is_contiguous
+FS .13 79V13 measured_buffer_type__is_aligned
 FD 19 network_ns.ads
 FS .1 17K9 network_ns
 FS .2 50U14 network_ns__initialize_tcp_state
@@ -753,7 +754,7 @@ F 12*14 utils__check_print_ln 22|.7:166s10 190s13 206s13
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
 GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 parsing__get_first_token_in_range_copy_alt parsing__check_substring parsing__is_substring parsing__get_first_delimit_index_in_range parsing__get_first_token_in_range parsing__parse_http_request local_init 0
-GG EK_GLOBALS parsing__parse_http_request KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 1 utils__debug_print_ln calls_conditional 3 utils__check_print_ln http_message__construct_simple_http_response network_ns__send_simple_response local_var 9 parsing__parse_http_request__token_string parsing__parse_http_request__token_first_empty_index parsing__parse_http_request__response parsing__parse_http_request__R54b parsing__parse_http_request__R55b parsing__parse_http_request__client_socket parsing__parse_http_request__raw_request parsing__parse_http_request__parsed_request parsing__parse_http_request__exception_raised local_ghost 0 local_sub 0
+GG EK_GLOBALS parsing__parse_http_request KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 1 utils__debug_print_ln calls_conditional 3 utils__check_print_ln http_message__construct_simple_http_response network_ns__send_simple_response local_var 9 parsing__parse_http_request__token_first_empty_index parsing__parse_http_request__response parsing__parse_http_request__R54b parsing__parse_http_request__R55b parsing__parse_http_request__client_socket parsing__parse_http_request__raw_request parsing__parse_http_request__parsed_request parsing__parse_http_request__exception_raised parsing__parse_http_request__token_string local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 7 parsing parsing__is_substring parsing__check_substring parsing__get_first_token_in_range parsing__get_first_token_in_range_copy_alt parsing__get_first_delimit_index_in_range parsing__parse_http_request
 GG EK_NONRETURNING 0

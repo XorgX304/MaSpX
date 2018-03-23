@@ -10,7 +10,7 @@ RV SPARK_05
 
 U http_message%b	http_message.adb	75924839 OO PK IL
 
-U http_message%s	http_message.ads	9d508ce4 OO PK KU
+U http_message%s	http_message.ads	ebbf20ee OO PK KU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -31,7 +31,7 @@ D http_message.ads	20180321201724 2472ea16 http_message%s
 D http_message.adb	20180313162256 51e0a22f http_message%b
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer_type.ads  20180322201932 654ed59a measured_buffer_type%s
+D measured_buffer_type.ads  20180323012746 13a17990 measured_buffer_type%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
 D string_types.ads	20180321204010 a6ddda79 string_types%s
@@ -161,8 +161,8 @@ X 10 http_message.adb
 7r7 Response{9|48R9} 9m7 10m7 12r14
 17r7 Response{9|48R9} 19m7 20m7 22r14
 X 13 measured_buffer_type.ads
-4K9*measured_buffer_type 9|8w6 8r32 13|78e25
-7i4*MAX_FILE_READ_BYTE_CT{natural} 9|83r31
+8K9*measured_buffer_type 9|8w6 8r32 13|98e25
+11i4*MAX_FILE_READ_BYTE_CT{natural} 9|83r31
 X 16 string_types.ads
 4K9*String_Types 9|7w6 11r23 16|29e17
 5A12*String4{string}<integer>
@@ -340,18 +340,19 @@ FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 13 measured_buffer_type.ads
-FS .1 4K9 measured_buffer_type
-FS .2 14V13 measured_buffer_type__get_char
-FS .3 18V13 measured_buffer_type__calc_length
-FS .4 23V13 measured_buffer_type__get_length
-FS .5 27V13 measured_buffer_type__is_empty
-FS .6 32V13 measured_buffer_type__is_full
-FS .7 37V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
-FS .8 41V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
-FS .9 45V13 measured_buffer_type__is_one_left_edge
-FS .10 50V13 measured_buffer_type__is_one_right_edge
-FS .11 55V13 measured_buffer_type__is_contiguous
-FS .12 59V13 measured_buffer_type__is_aligned
+FS .1 8K9 measured_buffer_type
+FS .2 18V13 measured_buffer_type__get_char
+FS .3 22V13 measured_buffer_type__calc_length
+FS .4 28V13 measured_buffer_type__get_length
+FS .5 39V13 measured_buffer_type__is_empty
+FS .6 43V13 measured_buffer_type__is_full
+FS .7 47V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
+FS .8 51V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
+FS .9 55V13 measured_buffer_type__is_one_left_edge
+FS .10 60V13 measured_buffer_type__is_one_right_edge
+FS .11 65V13 measured_buffer_type__is_full_from_left
+FS .12 75V13 measured_buffer_type__is_contiguous
+FS .13 79V13 measured_buffer_type__is_aligned
 FD 14 spark.ads
 FS .1 29K9 spark
 FD 15 spark-text_io.ads
@@ -521,13 +522,13 @@ FX 10 http_message.adb .3 http_message__construct_simple_http_response__2
 F 17*7 http_message__construct_simple_http_response__2__response 19m7 20m7
 . 22r14
 FX 13 measured_buffer_type.ads .1 measured_buffer_type
-F 7*4 measured_buffer_type__max_file_read_byte_ct 9|.2:83c31
+F 11*4 measured_buffer_type__max_file_read_byte_ct 9|.2:83c31
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
 GG EK_GLOBALS http_message KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 2 http_message__construct_simple_http_response http_message__construct_simple_http_response__2 local_init 0
 GG EK_GLOBALS http_message__construct_simple_http_response KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 2 http_message__construct_simple_http_response__page http_message__construct_simple_http_response__response local_ghost 0 local_sub 0
-GG EK_GLOBALS http_message__construct_simple_http_response__2 KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 2 http_message__construct_simple_http_response__2__response http_message__construct_simple_http_response__2__mfb local_ghost 0 local_sub 0
+GG EK_GLOBALS http_message__construct_simple_http_response__2 KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 2 http_message__construct_simple_http_response__2__mfb http_message__construct_simple_http_response__2__response local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 3 http_message http_message__construct_simple_http_response http_message__construct_simple_http_response__2
 GG EK_NONRETURNING 0

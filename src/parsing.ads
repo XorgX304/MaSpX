@@ -94,10 +94,10 @@ package parsing is
    
    --creates an http message out of a raw request
    procedure Parse_HTTP_Request(
-      Client_Socket : GNAT.Sockets.Socket_Type;
-      Raw_Request : Measured_Request_Buffer;
+      Client_Socket : GNAT.Sockets.Socket_Type; -- pre Open (but network code..)
+      Raw_Request : Measured_Request_Buffer;  --pre not null, or empty
       Parsed_Request : out Simple_HTTP_Request;
-      Exception_Raised : out Boolean
+      Exception_Raised : out Boolean  --refactor Invalid Request
    );
 
 end parsing;

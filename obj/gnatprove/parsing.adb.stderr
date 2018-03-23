@@ -1,15 +1,3 @@
-parsing.adb:53:57: low: range check might fail[#2]
-parsing.adb:59:64: medium: overflow check might fail[#0]
-parsing.adb:136:26: medium: range check might fail[#1]
-parsing.adb:136:48: medium: overflow check might fail[#4]
-parsing.adb:155:07: medium: precondition might fail[#7]
-parsing.adb:178:10: medium: precondition might fail[#8]
-parsing.adb:202:93: medium: overflow check might fail[#3]
-parsing.ads:70:17: medium: precondition might fail[#5]
-parsing.ads:70:17: medium: postcondition might fail, cannot prove Is_Substring(Token_String(Token_String'First .. Token_First_Empty_Index - 1), Source)[#6]
-spark-text_io.ads:32:29: info: implicit function contract not available for proof ("Status" may not return)
-spark-text_io.ads:33:29: info: implicit function contract not available for proof ("Status" may not return)
-spark-text_io.ads:34:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:134:31: info: implicit function contract not available for proof ("Mode" may not return)
 spark-text_io.ads:139:12: info: implicit function contract not available for proof ("Mode" may not return)
 spark-text_io.ads:139:43: info: implicit function contract not available for proof ("Mode" may not return)

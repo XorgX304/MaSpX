@@ -19,7 +19,7 @@ U network_ns%b		network_ns.adb		a140d8c7 OO PK IL
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.streams%s		a-stream.adb		a-stream.ali
 
-U network_ns%s		network_ns.ads		41db4f0a OO PK IL
+U network_ns%s		network_ns.ads		3734e300 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -54,7 +54,7 @@ D http_message.ads	20180321201724 2472ea16 http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer_type.ads  20180322201932 654ed59a measured_buffer_type%s
+D measured_buffer_type.ads  20180323012746 13a17990 measured_buffer_type%s
 D network_ns.ads	20180321201014 391114d3 network_ns%s
 D network_ns.adb	20180316164326 9851cc14 network_ns%b
 D network_types.ads	20180213214944 c18a7534 network_types%s
@@ -153,8 +153,8 @@ X 14 http_message.ads
 52a7*Entity_Body{11|15A12} 20|169r31
 82V13*Construct_Simple_HTTP_Response{48R9} 20|119s25
 X 18 measured_buffer_type.ads
-4K9*measured_buffer_type 78e25 19|15w6 15r32
-6i4*MAX_REQUEST_LINE_BYTE_CT{natural} 19|36r73 37r47
+8K9*measured_buffer_type 98e25 19|15w6 15r32
+10i4*MAX_REQUEST_LINE_BYTE_CT{natural} 19|36r73 37r47
 X 19 network_ns.ads
 17K9*network_ns 82l5 82e15 20|3b14 184l5 184t15
 21a4*STATIC_TEST_RESPONSE_11{string} 20|148r35
@@ -499,18 +499,19 @@ FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 18 measured_buffer_type.ads
-FS .1 4K9 measured_buffer_type
-FS .2 14V13 measured_buffer_type__get_char
-FS .3 18V13 measured_buffer_type__calc_length
-FS .4 23V13 measured_buffer_type__get_length
-FS .5 27V13 measured_buffer_type__is_empty
-FS .6 32V13 measured_buffer_type__is_full
-FS .7 37V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
-FS .8 41V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
-FS .9 45V13 measured_buffer_type__is_one_left_edge
-FS .10 50V13 measured_buffer_type__is_one_right_edge
-FS .11 55V13 measured_buffer_type__is_contiguous
-FS .12 59V13 measured_buffer_type__is_aligned
+FS .1 8K9 measured_buffer_type
+FS .2 18V13 measured_buffer_type__get_char
+FS .3 22V13 measured_buffer_type__calc_length
+FS .4 28V13 measured_buffer_type__get_length
+FS .5 39V13 measured_buffer_type__is_empty
+FS .6 43V13 measured_buffer_type__is_full
+FS .7 47V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
+FS .8 51V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
+FS .9 55V13 measured_buffer_type__is_one_left_edge
+FS .10 60V13 measured_buffer_type__is_one_right_edge
+FS .11 65V13 measured_buffer_type__is_full_from_left
+FS .12 75V13 measured_buffer_type__is_contiguous
+FS .13 79V13 measured_buffer_type__is_aligned
 FD 19 network_ns.ads
 FS .1 17K9 network_ns
 FS .2 50U14 network_ns__initialize_tcp_state
@@ -740,7 +741,7 @@ F 1024*13 gnat__sockets__stream 20|.4:91s37 .5:146s37 .6:164s37
 FX 14 http_message.ads .1 http_message
 F 82*13 http_message__construct_simple_http_response 20|.4:119s25
 FX 18 measured_buffer_type.ads .1 measured_buffer_type
-F 6*4 measured_buffer_type__max_request_line_byte_ct 19|.1:36c73 37c47
+F 10*4 measured_buffer_type__max_request_line_byte_ct 19|.1:36c73 37c47
 FX 19 network_ns.ads .1 network_ns
 F 21*4 network_ns__static_test_response_11 20|.5:148c35
 F 32*4 network_ns__static_response_header_09 20|.6:161c34 166c22
