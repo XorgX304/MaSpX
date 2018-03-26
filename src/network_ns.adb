@@ -76,7 +76,7 @@ package body network_ns is
    -----------------------------------------------------------------------------
    procedure Recv_NET_Request(
       Client_Socket : Gnat.Sockets.Socket_Type;
-      Request : out Measured_Request_Buffer;
+      Request : out Measured_Buffer_Type;
       Exception_Raised : out Boolean)
    is
       Client_Stream : Gnat.Sockets.Stream_Access;

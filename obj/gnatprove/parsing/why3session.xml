@@ -3868,13 +3868,13 @@
 </theory>
 <theory name="Measured_buffer_type__empty_buffer_length" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__measured_buffer_type__T28s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__measured_buffer_type__T18s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__measured_buffer_type__T29s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__measured_buffer_type__T19s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__measured_buffer_type__T30s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__measured_buffer_type__T20s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__measured_buffer_type__T31s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__measured_buffer_type__T21s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Measured_buffer_type__measured_buffer_type__emptychar" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -3892,43 +3892,35 @@
 </theory>
 <theory name="Measured_buffer_type__get_char__idx___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Measured_buffer_type__Tmeasured_buffer_typeC" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__get_char" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Measured_buffer_type__calc_length__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Measured_buffer_type__calc_length__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_aligned__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_aligned__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_contiguous__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_contiguous__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_empty__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_empty__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_empty__L16s__T17s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__get_length__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__get_length__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__get_length" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Measured_buffer_type__is_full__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Measured_buffer_type__is_full__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_full__L18s__T19s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__is_full__L14s__T15s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_one_left_edge__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__is_full" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_one_left_edge__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__is_empty__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_one_left_edge__L20s__T21s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__is_empty__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_one_left_edge__L20s__L22s__T23s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__is_empty__L12s__T13s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_empty" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_filled_from_left__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_filled_from_left__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_filled_from_left__L16s__T17s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -3938,23 +3930,25 @@
 </theory>
 <theory name="Measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt__idx___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_one_right_edge__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_one_right_edge__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__is_filled_from_left" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_one_right_edge__L24s__T25s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__calc_length" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_one_right_edge__L24s__L26s__T27s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__get_length__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__get_length__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__get_length" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt__idx" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__set_length__new_length" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt__idx___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__set_length__new_length___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__Tmeasured_buffer_typeC" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__append__c" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__append__c___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="String_types__Tstring4P1" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -5096,6 +5090,18 @@
 </theory>
 <theory name="Utils_ns__string_to_byte_array__bytearray___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Measured_buffer_type__set_length__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__set_length__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__update_length__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__update_length__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__append__buf" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__append__buf___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Fileio__trim_filename__post_filename" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Fileio__trim_filename__post_filename___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -5228,21 +5234,9 @@
 </theory>
 <theory name="Measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt__left_neighbor_emptychar___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt__this_isnt" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__append__append_idx" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt__this_isnt___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt__right_neighbor_emptychar" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt__right_neighbor_emptychar___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_one_left_edge__left_edge_sum" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_one_left_edge__left_edge_sum___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_one_right_edge__right_edge_sum" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_one_right_edge__right_edge_sum___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__append__append_idx___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Http_message__construct_simple_http_response__response" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -5256,10 +5250,6 @@
 </theory>
 <theory name="Network_ns__send_simple_response__client_stream___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Fileio__read_file_to_mfb__c" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Fileio__read_file_to_mfb__c___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
 <theory name="Fileio__read_file_to_mfb__trimmed_name" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Fileio__read_file_to_mfb__trimmed_name___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -5271,6 +5261,10 @@
 <theory name="Fileio__read_file_to_mfb__read_file_status" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Fileio__read_file_to_mfb__read_file_status___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Fileio__read_file_to_mfb__c" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Fileio__read_file_to_mfb__c___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Fileio__construct_measured_filename__mft" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -5741,6 +5735,12 @@
 <theory name="Utils__check_print_ln" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Utils__check_print" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__set_length" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__update_length" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__append" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Fileio__not_found_page__aggregate_def" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -6344,29 +6344,23 @@
 </theory>
 <theory name="Measured_buffer_type__max_buffer_size_type___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__measured_buffer_type__T28s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__measured_buffer_type__T18s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__measured_buffer_type__T29s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__measured_buffer_type__T19s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__measured_buffer_type__T30s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__measured_buffer_type__T20s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__measured_buffer_type__T31s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Measured_buffer_type__measured_buffer_type__T21s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Measured_buffer_type__measured_buffer_type___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Measured_buffer_type__is_empty__L16s__T17s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_full__L18s__T19s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_one_left_edge__L20s__T21s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_one_left_edge__L20s__L22s__T23s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_one_right_edge__L24s__T25s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Measured_buffer_type__is_one_right_edge__L24s__L26s__T27s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
 <theory name="Measured_buffer_type__Tmeasured_buffer_typeC___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_full__L14s__T15s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_empty__L12s__T13s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_filled_from_left__L16s__T17s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="String_types__Tstring4P1___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -6450,7 +6444,7 @@
 </theory>
 <theory name="Fileio__measured_file_buffer__T2s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___2815" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___2905" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Fileio__measured_file_buffer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -6476,7 +6470,7 @@
 </theory>
 <theory name="Fileio__measured_filename_type__T10s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___2841" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___2931" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Fileio__measured_filename_type___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -6502,7 +6496,7 @@
 </theory>
 <theory name="Http_message__simple_http_request__T4s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___2922" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___3012" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Http_message__simple_http_request___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -6510,7 +6504,7 @@
 </theory>
 <theory name="Http_message__simple_http_response__T6s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___2936" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___3026" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Http_message__simple_http_response___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -6560,7 +6554,7 @@
 </theory>
 <theory name="Network_ns__measured_request_buffer__T6s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___2983" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___3073" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Network_ns__measured_request_buffer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -6694,27 +6688,27 @@
 </theory>
 <theory name="Parsing__parse_http_request__T58b___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___3134" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___3224" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___3153" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___3243" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___String_Literal_3163" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___String_Literal_3253" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___String_Literal_3166" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___String_Literal_3256" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___String_Literal_3173" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___String_Literal_3263" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___3195" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___3285" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___String_Literal_3210" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___String_Literal_3300" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___String_Literal_3212" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___String_Literal_3302" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___String_Literal_3219" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___String_Literal_3309" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___String_Literal_3221" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___String_Literal_3311" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Temp___String_Literal_3230" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Temp___String_Literal_3320" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__system_name___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -8120,7 +8114,25 @@
 </theory>
 <theory name="Utils__logical_equivalence___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Measured_buffer_type__get_char___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_full___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_empty___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__is_filled_from_left___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__calc_length___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Measured_buffer_type__get_length___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__set_length___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__update_length___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Measured_buffer_type__append___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Fileio__get_mft_length___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>

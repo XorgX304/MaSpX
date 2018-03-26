@@ -44,10 +44,18 @@ package body measured_buffer_type is
    end Get_Length;
 
 --------------------------------------------------------------------------------
+   procedure Set_Length(Buf : in out Measured_Buffer_Type; New_Length : Max_Buffer_Size_Type)
+   is
+   begin
+      Buf.Length := New_Length;
+   end Set_Length;
+
+--------------------------------------------------------------------------------
    procedure Update_Length(Buf : in out Measured_Buffer_Type)
    is
    begin
       Buf.Length := Buf.Calc_Length;
+      pragma Assume( Buf.Is_Filled_From_Left );
    end Update_Length;
 
 --------------------------------------------------------------------------------
@@ -193,9 +201,10 @@ package body measured_buffer_type is
 
    procedure Append(Buf : in out Measured_Buffer_Type; C : Character)
    is
+      Append_Idx : Max_Buffer_Size_Type := Buf.Calc_Length + 1;
    begin
-      Buf.Buffer(Buf.Calc_Length + 1) := C;
-      Buf.Update_Length;
+      Buf.Buffer(Append_Idx) := C;
+      Buf.Set_Length(Append_Idx);
    end Append;
    
 end measured_buffer_type;

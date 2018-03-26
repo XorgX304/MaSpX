@@ -1,5 +1,25 @@
 {
   "spark": [
+    {
+      "name": "SPARK",
+      "sloc": [
+        {
+          "file": "spark.ads",
+          "line": 29
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "SPARK.Text_IO_File_Type",
+      "sloc": [
+        {
+          "file": "spark.ads",
+          "line": 53
+        }
+      ],
+      "spark": "no"
+    }
   ],
   "flow": [
   ],
@@ -8,14 +28,14 @@
   "assumptions": [
   ],
   "timings": {
-    "marking": 1.66223605629057E-03,
-    "globals (basic)": 3.91662158071995E-02,
-    "globals/properties (advanced)": 2.40823235362768E-02,
-    "flow analysis": 1.04375001683366E-04,
-    "codepeer results": 5.99399982093018E-06,
-    "init_why_sections": 3.22292005876079E-04,
-    "translation of standard": 3.77053301781416E-03,
-    "translation of compilation unit": 3.12534943223000E-02,
-    "proof": 5.99399982093018E-06
+    "marking": 1.62168499082327E-03,
+    "globals (basic)": 3.81030775606632E-02,
+    "globals/properties (advanced)": 2.12761983275414E-02,
+    "flow analysis": 5.51491975784302E-04,
+    "codepeer results": 4.23199981014477E-06,
+    "init_why_sections": 2.08748999284580E-04,
+    "translation of standard": 3.35938110947609E-03,
+    "translation of compilation unit": 3.22446972131729E-02,
+    "proof": 2.82099995274621E-06
   }
 }

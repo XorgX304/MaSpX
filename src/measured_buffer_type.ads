@@ -21,7 +21,6 @@ package measured_buffer_type is
    
    function Calc_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
    with Global => null,
-        Pre'Class => Buf.Is_Filled_From_Left,
         Post => (if Buf.Is_Full then 
                     Calc_Length'Result = Buf.Size
                  elsif Buf.Is_Empty then
@@ -32,10 +31,13 @@ package measured_buffer_type is
    function Get_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
    with Global => null,
         Post => Get_Length'Result <= Buf.Size;
+   
+   procedure Set_Length(Buf : in out Measured_Buffer_Type; New_Length : Max_Buffer_Size_Type)
+   with Global => null,
+        Pre'Class => New_Length <= Buf.Size;
         
    procedure Update_Length(Buf : in out Measured_Buffer_Type)
-   with Global => null,
-        Pre'Class => Buf.Is_Filled_From_Left;
+   with Global => null;
    
    function Is_Empty(Buf : Measured_Buffer_Type) return Boolean
    with Global => null,
@@ -83,11 +85,8 @@ package measured_buffer_type is
    procedure Append(Buf : in out Measured_Buffer_Type; C : Character)
    with Global => null,
         Pre'Class => C /= Buf.EmptyChar and then
-                     not Buf.Is_Full and then
-                     Buf.Is_Filled_From_Left,
-        Post => Buf'Old.Calc_Length + 1 = Buf.Calc_Length and
-                Buf.Get_Char(Buf.Calc_Length) = C and
-                not Buf.Is_Empty;
+                     not Buf.Is_Full;
+                
    
    
    private

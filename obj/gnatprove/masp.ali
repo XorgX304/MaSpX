@@ -43,10 +43,10 @@ D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
 D masp.adb		20180319031238 b9e1a6f6 masp%b
-D measured_buffer_type.ads  20180323012746 13a17990 measured_buffer_type%s
+D measured_buffer_type.ads  20180326002734 fc392d32 measured_buffer_type%s
 D network_ns.ads	20180321201014 391114d3 network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
-D parsing.ads		20180321232720 fc3dbaab parsing%s
+D parsing.ads		20180323201020 fc3dbaab parsing%s
 D server.ads		20180316194618 29dc5147 server%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
@@ -418,16 +418,14 @@ FD 19 measured_buffer_type.ads
 FS .1 8K9 measured_buffer_type
 FS .2 18V13 measured_buffer_type__get_char
 FS .3 22V13 measured_buffer_type__calc_length
-FS .4 28V13 measured_buffer_type__get_length
-FS .5 39V13 measured_buffer_type__is_empty
-FS .6 43V13 measured_buffer_type__is_full
-FS .7 47V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
-FS .8 51V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
-FS .9 55V13 measured_buffer_type__is_one_left_edge
-FS .10 60V13 measured_buffer_type__is_one_right_edge
-FS .11 65V13 measured_buffer_type__is_full_from_left
-FS .12 75V13 measured_buffer_type__is_contiguous
-FS .13 79V13 measured_buffer_type__is_aligned
+FS .4 32V13 measured_buffer_type__get_length
+FS .5 36U14 measured_buffer_type__set_length
+FS .6 40U14 measured_buffer_type__update_length
+FS .7 43V13 measured_buffer_type__is_empty
+FS .8 47V13 measured_buffer_type__is_full
+FS .9 51V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
+FS .10 69V13 measured_buffer_type__is_filled_from_left
+FS .11 86U14 measured_buffer_type__append
 FD 20 network_ns.ads
 FS .1 17K9 network_ns
 FS .2 50U14 network_ns__initialize_tcp_state
@@ -656,7 +654,7 @@ F 12*14 utils__check_print_ln 18|.1:32s7
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS masp KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 2 utils__debug_print_ln network_ns__initialize_tcp_state calls_conditional 8 network_ns__get_client_cxn network_ns__recv_net_request parsing__parse_http_request server__canonicalize_http_request server__sanitize_http_request server__fulfill_http_request network_ns__close_client_socket utils__check_print_ln local_var 10 masp__client_cxn_exception_raised masp__client_request_exception_raised masp__parsed_request masp__client_parse_exception_raised masp__canonicalized_request masp__clean_request masp__server_socket masp__init_exception_raised masp__raw_request masp__client_socket local_ghost 0 local_sub 0
+GG EK_GLOBALS masp KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 2 utils__debug_print_ln network_ns__initialize_tcp_state calls_conditional 8 parsing__parse_http_request server__canonicalize_http_request server__sanitize_http_request server__fulfill_http_request network_ns__close_client_socket utils__check_print_ln network_ns__get_client_cxn network_ns__recv_net_request local_var 10 masp__parsed_request masp__client_parse_exception_raised masp__canonicalized_request masp__clean_request masp__server_socket masp__init_exception_raised masp__raw_request masp__client_socket masp__client_cxn_exception_raised masp__client_request_exception_raised local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 1 masp
 GG EK_NONRETURNING 1 masp

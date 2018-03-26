@@ -10,7 +10,7 @@ RV SPARK_05
 
 U http_message%b	http_message.adb	75924839 OO PK IL
 
-U http_message%s	http_message.ads	ebbf20ee OO PK KU
+U http_message%s	http_message.ads	0427744c OO PK KU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -31,7 +31,7 @@ D http_message.ads	20180321201724 2472ea16 http_message%s
 D http_message.adb	20180313162256 51e0a22f http_message%b
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer_type.ads  20180323012746 13a17990 measured_buffer_type%s
+D measured_buffer_type.ads  20180326002734 fc392d32 measured_buffer_type%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
 D string_types.ads	20180321204010 a6ddda79 string_types%s
@@ -161,7 +161,7 @@ X 10 http_message.adb
 7r7 Response{9|48R9} 9m7 10m7 12r14
 17r7 Response{9|48R9} 19m7 20m7 22r14
 X 13 measured_buffer_type.ads
-8K9*measured_buffer_type 9|8w6 8r32 13|98e25
+8K9*measured_buffer_type 9|8w6 8r32 13|103e25
 11i4*MAX_FILE_READ_BYTE_CT{natural} 9|83r31
 X 16 string_types.ads
 4K9*String_Types 9|7w6 11r23 16|29e17
@@ -343,16 +343,14 @@ FD 13 measured_buffer_type.ads
 FS .1 8K9 measured_buffer_type
 FS .2 18V13 measured_buffer_type__get_char
 FS .3 22V13 measured_buffer_type__calc_length
-FS .4 28V13 measured_buffer_type__get_length
-FS .5 39V13 measured_buffer_type__is_empty
-FS .6 43V13 measured_buffer_type__is_full
-FS .7 47V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
-FS .8 51V13 measured_buffer_type__is_right_neighbor_emptychar_and_this_isnt
-FS .9 55V13 measured_buffer_type__is_one_left_edge
-FS .10 60V13 measured_buffer_type__is_one_right_edge
-FS .11 65V13 measured_buffer_type__is_full_from_left
-FS .12 75V13 measured_buffer_type__is_contiguous
-FS .13 79V13 measured_buffer_type__is_aligned
+FS .4 32V13 measured_buffer_type__get_length
+FS .5 36U14 measured_buffer_type__set_length
+FS .6 40U14 measured_buffer_type__update_length
+FS .7 43V13 measured_buffer_type__is_empty
+FS .8 47V13 measured_buffer_type__is_full
+FS .9 51V13 measured_buffer_type__is_left_neighbor_emptychar_and_this_isnt
+FS .10 69V13 measured_buffer_type__is_filled_from_left
+FS .11 86U14 measured_buffer_type__append
 FD 14 spark.ads
 FS .1 29K9 spark
 FD 15 spark-text_io.ads
