@@ -54,7 +54,7 @@ D http_message.ads	20180328045736 7b40c37e http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180328045604 e126b6e2 measured_buffer%s
+D measured_buffer.ads	20180328050152 e126b6e2 measured_buffer%s
 D network_ns.ads	20180328041304 d188b8e3 network_ns%s
 D network_ns.adb	20180327003656 00efd709 network_ns%b
 D network_types.ads	20180213214944 c18a7534 network_types%s

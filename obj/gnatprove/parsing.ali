@@ -10,9 +10,9 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U parsing%b		parsing.adb		68fe1f4d OO PK IL
+U parsing%b		parsing.adb		4e0c6cfa OO PK IL
 
-U parsing%s		parsing.ads		e0d53f33 OO PK IL
+U parsing%s		parsing.ads		77a23418 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -44,11 +44,11 @@ D http_message.ads	20180328045736 7b40c37e http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180328045604 e126b6e2 measured_buffer%s
+D measured_buffer.ads	20180328050152 e126b6e2 measured_buffer%s
 D network_ns.ads	20180328041304 d188b8e3 network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
-D parsing.ads		20180328040306 ff3d3d31 parsing%s
-D parsing.adb		20180328045546 97c3227c parsing%b
+D parsing.ads		20180328204754 684a361a parsing%s
+D parsing.adb		20180328205724 26465ae0 parsing%b
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180326153942 e7af9ede spark.text_io%s
 D string_types.ads	20180326171200 56f78cef string_types%s
@@ -72,74 +72,99 @@ X 3 a-chlat1.ads
 25e4*NUL{character} 21|17r126
 X 10 config.ads
 3K9*config 18e11 21|8w6 8r18
-12a4*DEFAULT_PAGE{string} 22|100r89 100r117
-16a4*c400_BAD_REQUEST_URI_PAGE{string} 22|88r56 105r56
+12a4*DEFAULT_PAGE{string} 22|163r89 163r117
+15a4*c400_BAD_REQUEST_PAGE{string} 22|109r53
+16a4*c400_BAD_REQUEST_URI_PAGE{string} 22|151r56 168r56
 X 12 gnat.ads
-34K9*GNAT 37e9 21|4r6 46r23 22|41r23
+34K9*GNAT 37e9 21|4r6 50r23 22|96r23
 X 13 g-socket.ads
-55K14*Sockets 1284e17 21|4w11 46r28 22|41r28
-412I9*Socket_Type<integer> 21|46r36 22|41r36
+55K14*Sockets 1284e17 21|4w11 50r28 22|96r28
+412I9*Socket_Type<integer> 21|50r36 22|96r36
 X 14 http_message.ads
-10K9*Http_Message 87e17 21|9w6 9r24 22|73r35 111r35
-14n30*GET{14E9} 22|73r48
-14n35*UNKNOWN{14E9} 22|111r48
-42R9*Simple_HTTP_Request 46e14 21|48r28 22|43r28
-44e7*Method{16E12} 22|73m25 111m25
-45a7*RequestURI{25|25A12} 22|50m22 96m25 99r31 99r84 100m31
-48R9*Simple_HTTP_Response 53e14 22|47r18
-82V13*Construct_Simple_HTTP_Response{48R9} 22|88s25 105s25
+10K9*Http_Message 87e17 21|9w6 9r24 22|106r32 136r35 174r35
+14n30*GET{14E9} 22|136r48
+14n35*UNKNOWN{14E9} 22|106r45 174r48
+42R9*Simple_HTTP_Request 46e14 21|52r28 22|98r28
+44e7*Method{16E12} 22|106m22 136m25 174m25
+45a7*RequestURI{25|25A12} 22|105m22 159m25 162r31 162r84 163m31
+48R9*Simple_HTTP_Response 53e14 22|102r18
+82V13*Construct_Simple_HTTP_Response{48R9} 22|109s22 151s25 168s25
 X 18 measured_buffer.ads
 6K9*measured_buffer 70e20 21|12w6 12r27
 8i4*MAX_REQUEST_LINE_BYTE_CT{natural} 21|17r100
-12I12*Max_Buffer_Size_Type{natural} 21|17r45
-15R9*Measured_Buffer_Type 19e14 21|17r79 21r20 25r23 47r21 22|6r20 10r23
-. 42r21 46r19
-15i30*Size{12I12} 21|29r37 30r37 31r27 31r44 22|46r52
-15e59*EmptyChar{character} 22|46r70
-17a7*Buffer{string} 22|19r24 23r39 56r22
-18i7*Length{12I12} 22|15r32 25r43 57r22 79r23 80r25 86r23 96r76 99r52 99r105
-. 100r52 100r76
-46V13*Is_Empty{boolean} 22|98s17
+12I12*Max_Buffer_Size_Type{natural} 21|17r45 41r13 22|53r35 57r18
+15R9*Measured_Buffer_Type 19e14 21|17r79 21r20 25r23 34r20 39r20 44r21 51r21
+. 22|6r20 10r23 31r20 52r20 77r21 81r19 97r21 101r19
+15i30*Size{12I12} 21|29r37 30r37 31r27 31r44 22|81r52 101r52
+15e59*EmptyChar{character} 22|35r40 81r70 101r70
+17a7*Buffer{string} 22|19r24 23r39 37r27 38r26 59r27 60r26 119r22
+18i7*Length{12I12} 22|15r32 25r43 83r40 88r37 120r22 142r23 143r25 149r23
+. 159r76 162r52 162r105 163r52 163r76
+46V13*Is_Empty{boolean} 21|56s20 22|161s17
 54U14*Append 22|23s10
 60U14*Clear 22|14s7
-65V13*Get_String{string} 22|60s55 72s10 83s55 96s87
+65V13*Get_String{string} 22|123s55 135s10 146s55 159s87
 X 19 network_ns.ads
 17K9*network_ns 83e15 21|7w6 7r22
-49a4*GET_TOKEN_STR{string} 22|72r34
-74U14*Send_Simple_Response 22|89s13 106s13
+49a4*GET_TOKEN_STR{string} 22|135r34
+74U14*Send_Simple_Response 22|110s10 152s13 169s13
 X 21 parsing.ads
-15K9*parsing 52l5 52e12 22|3b14 117l5 117t12
-17A9*Tokens_Request_Array_Type(18|15R9)<integer>
+15K9*parsing 58l5 58e12 22|3b14 180l5 180t12
+17A9*Tokens_Request_Array_Type(18|15R9)<integer> 46r13 22|78r35 80r16
 20U14*Get_First_Token_In_Range 21>7 22>7 23>7 24>7 25<7 22|5b14 27l8 27t32
-. 53s7 76s10
+. 86s10 116s7 139s10
 21r7 Source_Buf{18|15R9} 29r26 30r26 31r16 22|6b7 19r13 23r28
 22e7 Delimit{character} 22|7b7 19r36
 23i7 Start{positive} 28r16 29r17 29r46 22|8b7 17r30
 24i7 Finish{positive} 28r25 30r16 30r46 22|9b7 17r39
 25r7 Token_Buf{18|15R9} 31r34 22|10b7 14m13 15r22 23m17 25r33
-45U14*Parse_HTTP_Request 46>7 47>7 48<7 49<7 22|40b14 115l8 115t26
-46i7 Client_Socket{13|412I9} 22|41b7 89r34 106r34
-47r7 Raw_Request{18|15R9} 22|42b7 46r40 46r58 54r10 56r10 57r10 77r13 80r13
-48r7 Parsed_Request{14|42R9} 22|43b7 50m7 73m10 96m10 99r16 99r69 100m16
-. 111m10
-49b7 Exception_Raised{boolean} 22|44b7 49m7 90m13 107m13
+33V13*Is_Delimits_Well_Formed{boolean} 34>7 35>7 22|30b13 48l8 48t31 108s14
+34r7 Source_Buf{18|15R9} 22|31b7 35r29 37r16 38r15
+35e7 Delimit{character} 22|32b7 40r17 40r38
+38V13*Get_Token_Ct{18|12I12} 39>7 40>7 22|51b13 73l8 73t20 80s47
+39r7 Source_Buf{18|15R9} 22|52b7 59r16 60r15
+40e7 Delimit{character} 22|53b7 62r17 64r21
+43V13*Tokenize_Request_Buffer{17A9} 44>7 45>7 22|76b13 92l8 92t31
+44r7 Raw_Request{18|15R9} 22|77b7 80r60 81r40 81r58 83r28 86r35
+45e7 Delimit{character} 22|78b7 80r73 86r47
+49U14*Parse_HTTP_Request 50>7 51>7 52<7 53<7 22|95b14 178l8 178t26
+50i7 Client_Socket{13|412I9} 22|96b7 110r31 152r34 169r34
+51r7 Raw_Request{18|15R9} 56r29 22|97b7 101r40 101r58 108r38 117r10 119r10
+. 120r10 140r13 143r13
+52r7 Parsed_Request{14|42R9} 22|98b7 105m7 106m7 136m10 159m10 162r16 162r69
+. 163m16 174m10
+53b7 Exception_Raised{boolean} 22|99b7 104m7 111m10 153m13 170m13
 X 22 parsing.adb
 17i11 I{integer} 19r31 23r46 25r53
-46r7 Token_Buf{18|15R9} 58m10 60r66 72r21 79r13 81m13 83r66 86r13 96r66 96r98
-. 98r26 99r42 99r95 100r42 100r66
-47r7 Response{14|48R9} 88m13 89r49 105m13 106r49
+34e7 C{character} 38m10 40r13 44r20
+35e7 Prev_C{character} 40r29 44m10
+37i11 I{integer} 38r33
+55e7 C{character} 60m10 62r13 64r16
+56b7 Is_Delimit{boolean} 62r33 63m13 64r33 66m13
+57i7 Token_Ct{18|12I12} 65m13 65r25 69r32 72r14
+59i11 I{integer} 60r33 69r44
+80a7 Tokens{21|17A9} 85r16 87m10 91r14
+81r7 Token_Buf{18|15R9} 86m68 87r23 88r27
+82i7 Start{positive} 86r55 88m10 88r19
+83i7 Finish{positive} 86r61
+85i11 I{integer} 87r17
+101r7 Token_Buf{18|15R9} 121m10 123r66 135r21 142r13 144m13 146r66 149r13
+. 159r66 159r98 161r26 162r42 162r95 163r42 163r66
+102r7 Response{14|48R9} 109m10 110r46 151m13 152r49 168m13 169r49
 X 23 spark.ads
 29K9*SPARK 21|3r6 3r25 23|66e10
 X 24 spark-text_io.ads
 27K15*Text_IO 21|3w12 3r31 24|718e18
+36R9*File_Type<23|53R9>
+81r4*Standard_Output{36R9} 21|55r30
 X 25 string_types.ads
 4K9*String_Types 21|10w6 10r24 25|29e17
-24A12*RequestURIStringType{string}<integer> 22|86r32 96r36
+24A12*RequestURIStringType{string}<integer> 22|149r32 159r36
 25A12*ParsedRequestURIStringType{string}<integer>
 X 35 utils.ads
 7K9*utils 21|11w6 11r17 35|44e10
-10U14*Debug_Print_Ln 22|60s7 83s10
-12U14*Check_Print_Ln 22|87s13 104s13
+10U14*Debug_Print_Ln 22|123s7 146s10
+12U14*Check_Print_Ln 22|150s13 167s13
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -456,11 +481,17 @@ FS .1 1K9 network_types
 FD 21 parsing.ads
 FS .1 15K9 parsing
 FS .2 20U14 parsing__get_first_token_in_range
-FS .3 45U14 parsing__parse_http_request
+FS .3 33V13 parsing__is_delimits_well_formed
+FS .4 38V13 parsing__get_token_ct
+FS .5 43V13 parsing__tokenize_request_buffer
+FS .6 49U14 parsing__parse_http_request
 FD 22 parsing.adb
 FS .1 3K14 parsing -> 21.1
 FS .2 5U14 parsing__get_first_token_in_range -> 21.2
-FS .3 40U14 parsing__parse_http_request -> 21.3
+FS .3 30V13 parsing__is_delimits_well_formed -> 21.3
+FS .4 51V13 parsing__get_token_ct -> 21.4
+FS .5 76V13 parsing__tokenize_request_buffer -> 21.5
+FS .6 95U14 parsing__parse_http_request -> 21.6
 FD 23 spark.ads
 FS .1 29K9 spark
 FD 24 spark-text_io.ads
@@ -642,21 +673,25 @@ FS .2 7U14 utils_ns__string_to_byte_array
 FX 3 a-chlat1.ads .1 ada__characters__latin_1
 F 25*4 ada__characters__latin_1__nul 21|.1:17c126
 FX 10 config.ads .1 config
-F 12*4 config__default_page 22|.3:100c89 100c117
-F 16*4 config__c400_bad_request_uri_page 22|.3:88c56 105c56
+F 12*4 config__default_page 22|.6:163c89 163c117
+F 15*4 config__c400_bad_request_page 22|.6:109c53
+F 16*4 config__c400_bad_request_uri_page 22|.6:151c56 168c56
 FX 14 http_message.ads .1 http_message
-F 82*13 http_message__construct_simple_http_response 22|.3:88s25 105s25
+F 82*13 http_message__construct_simple_http_response 22|.6:109s22 151s25
+. 168s25
 FX 18 measured_buffer.ads .1 measured_buffer
 F 8*4 measured_buffer__max_request_line_byte_ct 21|.1:17c100
-F 46*13 measured_buffer__is_empty 22|.3:98s17
+F 46*13 measured_buffer__is_empty 21|.6:56s20 22|.6:161s17
 F 54*14 measured_buffer__append 22|.2:23s10
 F 60*14 measured_buffer__clear 22|.2:14s7
-F 65*13 measured_buffer__get_string 22|.3:60s55 72s10 83s55 96s87
+F 65*13 measured_buffer__get_string 22|.6:123s55 135s10 146s55 159s87
 FX 19 network_ns.ads .1 network_ns
-F 49*4 network_ns__get_token_str 22|.3:72c34
-F 74*14 network_ns__send_simple_response 22|.3:89s13 106s13
+F 49*4 network_ns__get_token_str 22|.6:135c34
+F 74*14 network_ns__send_simple_response 22|.6:110s10 152s13 169s13
 FX 21 parsing.ads .1 parsing
-F 20*14 parsing__get_first_token_in_range 22|.3:53s7 76s10
+F 20*14 parsing__get_first_token_in_range 22|.5:86s10 .6:116s7 139s10
+F 33*13 parsing__is_delimits_well_formed 22|.6:108s14
+F 38*13 parsing__get_token_ct 22|.5:80s47
 FX 21 parsing.ads .2 parsing__get_first_token_in_range
 F 21>7 parsing__get_first_token_in_range__source_buf 29c26 30c26 31c16 22|.2:19c13
 . 23c28
@@ -665,35 +700,72 @@ F 23>7 parsing__get_first_token_in_range__start 28c16 29c17 29c46 22|.2:17c30
 F 24>7 parsing__get_first_token_in_range__finish 28c25 30c16 30c46 22|.2:17c39
 F 25<7 parsing__get_first_token_in_range__token_buf 31r34 22|.2:14m13 15r22
 . 23m17 25r33
-FX 21 parsing.ads .3 parsing__parse_http_request
-F 46>7 parsing__parse_http_request__client_socket 22|.3:89c34 106c34
-F 47>7 parsing__parse_http_request__raw_request 22|.3:46c40 46c58 54c10 56c10
-. 57c10 77c13 80c13
-F 48<7 parsing__parse_http_request__parsed_request 22|.3:50m7 73m10 96m10
-. 99r16 99r69 100m16 111m10
-F 49<7 parsing__parse_http_request__exception_raised 22|.3:49m7 90m13 107m13
+FX 21 parsing.ads .3 parsing__is_delimits_well_formed
+F 34>7 parsing__is_delimits_well_formed__source_buf 22|.3:35c29 37c16 38c15
+F 35>7 parsing__is_delimits_well_formed__delimit 22|.3:40c17 40c38
+FX 21 parsing.ads .4 parsing__get_token_ct
+F 39>7 parsing__get_token_ct__source_buf 22|.4:59c16 60c15
+F 40>7 parsing__get_token_ct__delimit 22|.4:62c17 64c21
+FX 21 parsing.ads .5 parsing__tokenize_request_buffer
+F 44>7 parsing__tokenize_request_buffer__raw_request 22|.5:80c60 81c40 81c58
+. 83c28 86c35
+F 45>7 parsing__tokenize_request_buffer__delimit 22|.5:80c73 86c47
+FX 21 parsing.ads .6 parsing__parse_http_request
+F 50>7 parsing__parse_http_request__client_socket 22|.6:110c31 152c34 169c34
+F 51>7 parsing__parse_http_request__raw_request 56c29 22|.6:101c40 101c58
+. 108c38 117c10 119c10 120c10 140c13 143c13
+F 52<7 parsing__parse_http_request__parsed_request 22|.6:105m7 106m7 136m10
+. 159m10 162r16 162r69 163m16 174m10
+F 53<7 parsing__parse_http_request__exception_raised 22|.6:104m7 111m10 153m13
+. 170m13
 FX 22 parsing.adb .2 parsing__get_first_token_in_range
 F 17*11 parsing__get_first_token_in_range__L_1__i 19c31 23c46 25c53
-FX 22 parsing.adb .3 parsing__parse_http_request
-F 46*7 parsing__parse_http_request__token_buf 58m10 60r66 72r21 79r13 81m13
-. 83r66 86r13 96r66 96r98 98r26 99r42 99r95 100r42 100r66
-F 47*7 parsing__parse_http_request__response 88m13 89r49 105m13 106r49
+FX 22 parsing.adb .3 parsing__is_delimits_well_formed
+F 34*7 parsing__is_delimits_well_formed__c 38m10 40r13 44r20
+F 35*7 parsing__is_delimits_well_formed__prev_c 40r29 44m10
+F 37*11 parsing__is_delimits_well_formed__L_2__i 38c33
+FX 22 parsing.adb .4 parsing__get_token_ct
+F 55*7 parsing__get_token_ct__c 60m10 62r13 64r16
+F 56*7 parsing__get_token_ct__is_delimit 62r33 63m13 64r33 66m13
+F 57*7 parsing__get_token_ct__token_ct 65m13 65r25 69r32 72r14
+F 59*11 parsing__get_token_ct__L_3__i 60c33 69c44
+FX 22 parsing.adb .5 parsing__tokenize_request_buffer
+F 80*7 parsing__tokenize_request_buffer__tokens 85r16 87m10 91r14
+F 81*7 parsing__tokenize_request_buffer__token_buf 86m68 87r23 88r27
+F 82*7 parsing__tokenize_request_buffer__start 86r55 88m10 88r19
+F 83*7 parsing__tokenize_request_buffer__finish 86r61
+F 85*11 parsing__tokenize_request_buffer__L_4__i 87c17
+FX 22 parsing.adb .6 parsing__parse_http_request
+F 101*7 parsing__parse_http_request__token_buf 121m10 123r66 135r21 142r13
+. 144m13 146r66 149r13 159r66 159r98 161r26 162r42 162r95 163r42 163r66
+F 102*7 parsing__parse_http_request__response 109m10 110r46 151m13 152r49
+. 168m13 169r49
+FX 24 spark-text_io.ads .1 spark__text_io
+F 81*4 spark__text_io__standard_output 21|.6:55r30
 FX 35 utils.ads .1 utils
-F 10*14 utils__debug_print_ln 22|.3:60s7 83s10
-F 12*14 utils__check_print_ln 22|.3:87s13 104s13
+F 10*14 utils__debug_print_ln 22|.6:123s7 146s10
+F 12*14 utils__check_print_ln 22|.6:150s13 167s13
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 2 parsing__parse_http_request parsing__get_first_token_in_range local_init 0
-GG EK_GLOBALS parsing__parse_http_request KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 1 utils__debug_print_ln calls_conditional 3 utils__check_print_ln http_message__construct_simple_http_response network_ns__send_simple_response local_var 9 parsing__parse_http_request__client_socket parsing__parse_http_request__raw_request parsing__parse_http_request__parsed_request parsing__parse_http_request__exception_raised parsing__parse_http_request__token_buf parsing__parse_http_request__response parsing__parse_http_request__R14b parsing__parse_http_request__R17b parsing__parse_http_request__R18b local_ghost 0 local_sub 0
+GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 5 parsing__get_first_token_in_range parsing__get_token_ct parsing__tokenize_request_buffer parsing__is_delimits_well_formed parsing__parse_http_request local_init 0
+GG EK_GLOBALS parsing__is_delimits_well_formed KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 5 parsing__is_delimits_well_formed__source_buf parsing__is_delimits_well_formed__delimit parsing__is_delimits_well_formed__L_2__i parsing__is_delimits_well_formed__c parsing__is_delimits_well_formed__prev_c local_ghost 0 local_sub 0
+GG EK_GLOBALS parsing__get_token_ct KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 6 parsing__get_token_ct__source_buf parsing__get_token_ct__delimit parsing__get_token_ct__L_3__i parsing__get_token_ct__c parsing__get_token_ct__is_delimit parsing__get_token_ct__token_ct local_ghost 0 local_sub 0
+GG EK_GLOBALS parsing__tokenize_request_buffer KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 1 parsing__get_token_ct calls_conditional 0 local_var 8 parsing__tokenize_request_buffer__raw_request parsing__tokenize_request_buffer__delimit parsing__tokenize_request_buffer__start parsing__tokenize_request_buffer__finish parsing__tokenize_request_buffer__token_buf parsing__tokenize_request_buffer__L_4__i parsing__tokenize_request_buffer__tokens parsing__tokenize_request_buffer__R16b local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
-GG EK_NONBLOCKING 3 parsing parsing__get_first_token_in_range parsing__parse_http_request
+GG EK_NONBLOCKING 6 parsing parsing__get_first_token_in_range parsing__is_delimits_well_formed parsing__get_token_ct parsing__tokenize_request_buffer parsing__parse_http_request
 GG EK_NONRETURNING 0
 GG EK_TERMINATING 0
 GG EK_DIRECT_CALLS parsing 0
 GG EK_DIRECT_CALLS parsing__get_first_token_in_range 2 measured_buffer__append measured_buffer__clear
-GG EK_DIRECT_CALLS parsing__parse_http_request 7 parsing__get_first_token_in_range network_ns__send_simple_response http_message__construct_simple_http_response measured_buffer__is_empty measured_buffer__get_string utils__debug_print_ln utils__check_print_ln
+GG EK_DIRECT_CALLS parsing__is_delimits_well_formed 0
+GG EK_DIRECT_CALLS parsing__get_token_ct 0
+GG EK_DIRECT_CALLS parsing__tokenize_request_buffer 2 parsing__get_first_token_in_range parsing__get_token_ct
+GG EK_DIRECT_CALLS parsing__parse_http_request 8 parsing__get_first_token_in_range parsing__is_delimits_well_formed network_ns__send_simple_response http_message__construct_simple_http_response measured_buffer__is_empty measured_buffer__get_string utils__debug_print_ln utils__check_print_ln
 GG EK_TASKING_INFO parsing ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__get_first_token_in_range ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO parsing__is_delimits_well_formed ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO parsing__get_token_ct ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO parsing__tokenize_request_buffer ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__parse_http_request ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_END_MARKER

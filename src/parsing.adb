@@ -25,16 +25,71 @@ package body parsing is
          pragma Loop_Invariant( Token_Buf.Length <= I );
       end loop;
    end Get_First_Token_In_Range;
-   
+
 --------------------------------------------------------------------------------
---     function Tokenize_Request_Buffer( 
---        Raw_Request : Measured_Buffer_Type;
---        Delimit : Character) return Tokens_Request_Array_Type
---     is
---        
---     begin
---        null;
---     end Tokenize_Request_Buffer;
+   function Is_Delimits_Well_Formed(
+      Source_Buf : Measured_Buffer_Type;
+      Delimit : Character) return Boolean
+   is
+      C : Character;
+      Prev_C : Character := Source_Buf.EmptyChar;
+   begin    
+      for I in Source_Buf.Buffer'Range loop
+         C := Source_Buf.Buffer(I);
+         
+         if C = Delimit and Prev_C = Delimit then
+            return False;
+         end if;
+         
+         Prev_C := C;
+      end loop;
+      
+      return True;
+   end Is_Delimits_Well_Formed;
+
+--------------------------------------------------------------------------------
+   function Get_Token_Ct(
+      Source_Buf : Measured_Buffer_Type;
+      Delimit : Character) return Max_Buffer_Size_Type
+   is
+      C : Character;
+      Is_Delimit : Boolean := True;
+      Token_Ct : Max_Buffer_Size_Type := 0;
+   begin
+      for I in Source_Buf.Buffer'Range loop
+         C := Source_Buf.Buffer(I);
+         
+         if C = Delimit and not Is_Delimit then
+            Is_Delimit := True;
+         elsif C /= Delimit and Is_Delimit then
+            Token_Ct := Token_Ct + 1;
+            Is_Delimit := False;
+         end if;
+         
+         pragma Loop_Invariant(Token_Ct <= I);
+      end loop;
+      
+      return Token_Ct;
+   end Get_Token_Ct;
+
+--------------------------------------------------------------------------------
+   function Tokenize_Request_Buffer( 
+      Raw_Request : Measured_Buffer_Type;
+      Delimit : Character) return Tokens_Request_Array_Type
+   is
+      Tokens : Tokens_Request_Array_Type(1 .. Get_Token_Ct(Raw_Request, Delimit));
+      Token_Buf : Measured_Buffer_Type(Raw_Request.Size, Raw_Request.EmptyChar);
+      Start : Positive := 1;
+      Finish : Positive := Raw_Request.Length;
+   begin
+      for I in Tokens'Range loop
+         Get_First_Token_In_Range(Raw_Request,Delimit,Start,Finish,Token_Buf);
+         Tokens(I) := Token_Buf;
+         Start := Start + Token_Buf.Length + 1; --ltj: plus one for the delimiter
+      end loop;
+      
+      return Tokens;
+   end Tokenize_Request_Buffer;
 
 --------------------------------------------------------------------------------
    procedure Parse_HTTP_Request(
@@ -48,13 +103,21 @@ package body parsing is
    begin
       Exception_Raised := False;
       Parsed_Request.RequestURI := (others=>' ');
+      Parsed_Request.Method := Http_Message.UNKNOWN;
+      
+      if not Is_Delimits_Well_Formed(Raw_Request, ' ') then
+         Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
+         Send_Simple_Response(Client_Socket, Response);
+         Exception_Raised := True;
+         return;
+      end if;
    
       --tokenize what should be the http METHOD
       Get_First_Token_In_Range(
          Raw_Request,
          ' ',
          Raw_Request.Buffer'First,
-         Raw_Request.Length - 1,
+         Raw_Request.Length,
          Token_Buf
       );
       Debug_Print_Ln("Debugging: Tokenized METHOD:" & Get_String(Token_Buf));

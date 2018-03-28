@@ -6,14 +6,14 @@ SPARK Analysis results        Total         Flow   Interval   CodePeer          
 --------------------------------------------------------------------------------------------------------------
 Data Dependencies                 .            .          .          .                .           .          .
 Flow Dependencies                 .            .          .          .                .           .          .
-Initialization                  131          131          .          .                .           .          .
+Initialization                  106          106          .          .                .           .          .
 Non-Aliasing                      .            .          .          .                .           .          .
-Run-time Checks                 154            .          .          .    147 (altergo)           .          7
-Assertions                       16            .          .          .     16 (altergo)           .          .
-Functional Contracts             64            .          .          .     55 (altergo)           .          9
+Run-time Checks                 131            .          .          .    130 (altergo)           .          1
+Assertions                       15            .          .          .     15 (altergo)           .          .
+Functional Contracts             55            .          .          .     53 (altergo)           .          2
 LSP Verification                  .            .          .          .                .           .          .
 --------------------------------------------------------------------------------------------------------------
-Total                           365    131 (36%)          .          .        218 (60%)           .    16 (4%)
+Total                           307    106 (35%)          .          .        198 (64%)           .     3 (1%)
 
 
 Analyzed 14 units
@@ -66,10 +66,8 @@ in unit network_ns, 0 subprograms and packages out of 7 analyzed
   network_ns.Recv_NET_Request at network_ns.ads:61 skipped
   network_ns.Send_Simple_Response at network_ns.ads:73 skipped
   network_ns.Send_TEST_Response at network_ns.ads:67 skipped
-in unit parsing, 3 subprograms and packages out of 3 analyzed
-  parsing at parsing.ads:15 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  parsing.Get_First_Token_In_Range at parsing.ads:20 flow analyzed (0 errors and 0 warnings) and proved (9 checks)
-  parsing.Parse_HTTP_Request at parsing.ads:45 flow analyzed (0 errors and 0 warnings) and not proved, 19 checks out of 32 proved
+in unit parsing, 1 subprograms and packages out of 1 analyzed
+  parsing.Get_Token_Ct at parsing.ads:38 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
 in unit server, 4 subprograms and packages out of 4 analyzed
   server at server.ads:13 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
   server.Canonicalize_HTTP_Request at server.ads:15 flow analyzed (0 errors and 0 warnings) and proved (3 checks)

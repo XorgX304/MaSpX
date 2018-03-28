@@ -29,24 +29,30 @@ package parsing is
                (Start <= Source_Buf.Size and Start >= Positive'First and
                Finish <= Source_Buf.Size and Finish >= Positive'First) and then
                Source_Buf.Size = Token_Buf.Size;
-        
-   --TODO:ltj:Get_Token_Ct --if we check this early, we can rule out some issues up front. Maybe put in precondition of parse_http_request?
    
---     function Tokenize_Request_Buffer( 
---        Raw_Request : Measured_Buffer_Type;
---        Delimit : Character
---     ) return Tokens_Request_Array_Type;
+   function Is_Delimits_Well_Formed(
+      Source_Buf : Measured_Buffer_Type;
+      Delimit : Character
+   ) return Boolean;
    
-   --TODO:ltj:Compress_Delimits --delete any side-by-side delimiters.
+   function Get_Token_Ct(
+      Source_Buf : Measured_Buffer_Type;
+      Delimit : Character
+   ) return Max_Buffer_Size_Type;
    
-   --TODO:ltj:Get_First_Delimit_Index --get the first delimiter in a string
+   function Tokenize_Request_Buffer( 
+      Raw_Request : Measured_Buffer_Type;
+      Delimit : Character
+   ) return Tokens_Request_Array_Type;
    
    --creates an http message out of a raw request
    procedure Parse_HTTP_Request(
       Client_Socket : GNAT.Sockets.Socket_Type; -- pre Open (but network code..)
-      Raw_Request : Measured_Buffer_Type;  --pre not null, or empty
+      Raw_Request : Measured_Buffer_Type;
       Parsed_Request : out Simple_HTTP_Request;
       Exception_Raised : out Boolean  --refactor Invalid Request
-   );
+   )
+   with Global => (In_Out => Standard_Output),
+        Pre => not Is_Empty(Raw_Request);
 
 end parsing;
