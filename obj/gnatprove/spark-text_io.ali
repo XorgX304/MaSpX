@@ -13,12 +13,12 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U spark.text_io%b	spark-text_io.adb	035bed55 OO PK IU
+U spark.text_io%b	spark-text_io.adb	fb003d75 OO PK IU
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W spark%s		spark.ads		spark.ali
 
-U spark.text_io%s	spark-text_io.ads	99cc437b BD OO PK IU
+U spark.text_io%s	spark-text_io.ads	6197935b BD OO PK IU
 W spark%s		spark.ads		spark.ali
 
 D ada.ads		20170516105950 76789da1 ada%s
@@ -30,7 +30,7 @@ D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
 D spark.ads		20140410152036 86380d85 spark%s
-D spark-text_io.ads	20180220212228 1ff44efe spark.text_io%s
+D spark-text_io.ads	20180326153942 e7af9ede spark.text_io%s
 D spark-text_io.adb	20140410152036 35b6b17e spark.text_io%b
 D system.ads		20170516105954 32a08138 system%s
 D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s

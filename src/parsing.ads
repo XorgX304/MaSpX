@@ -2,91 +2,40 @@ pragma SPARK_Mode(On);
 
 with SPARK.Text_IO; use SPARK.Text_IO;
 with GNAT.Sockets;
+with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 
 with network_ns; use network_ns;
 with config; use config;
 with Http_Message; use Http_Message;
 with String_Types; use String_Types;
 with utils; use utils;
+with measured_buffer; use measured_buffer;
 
---TODO: SPARKify
+
 package parsing is
 
-   function Is_Substring(
-      Substring : String;
-      Source : String
-   ) return Boolean
-   with Global => null,
-        Pre => Substring'Length <= Source'Length and
-               Substring'Length >= 1,
-        Post => (if Is_Substring'Result then
-                    (for some I in Source'Range => Check_Substring(Substring, I, Source))
-                 else
-                    (for all I in Source'Range => not Check_Substring(Substring, I, Source)));
-        
-   function Check_Substring(
-      Substring : String;
-      Start : Positive;
-      Source : String
-   ) return Boolean
-   with Global => null,
-        Pre => Substring'Length <= Source'Length and
-               Substring'Length >= 1 and     --we're not in the business of the empty string
-               Start >= Source'First and Start <= Source'Last,
-        Post => (if Check_Substring'Result then
-                    Substring = Source(Start .. Start + Substring'Length - 1)
-                 else
-                    Substring /= Source(Start .. Start + Substring'Length - 1));
+   type Tokens_Request_Array_Type is array (Max_Buffer_Size_Type range <>) of Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
 
    --Start and Finish are inclusive
    procedure Get_First_Token_In_Range(
-      Source : String;
+      Source_Buf : Measured_Buffer_Type;
       Delimit : Character;
       Start : Positive;
       Finish : Positive;
-      Token_String : out String;
-      Token_First_Empty_Index : out Natural
+      Token_Buf : out Measured_Buffer_Type
    )
    with Global => null,
-        Pre => Start < Finish and then
-               (Start < Source'Last and Start >= Source'First and
-               Finish <= Source'Last and Finish > Source'First) and then
-               Source'Length = Token_String'Length;
-        
-   --Start and Finish are inclusive
-   procedure Get_First_Token_In_Range_COPY_ALT(
-      Source : String;
-      Delimit : Character;
-      Start : Positive;
-      Finish : Positive;
-      Token_String : out String;
-      Token_First_Empty_Index : out Natural
-   )
-   with Global => (In_Out => Standard_Output),
-        Pre => Start < Finish and then
-               (Start < Source'Last and Start >= Source'First and
-               Finish <= Source'Last and Finish > Source'First) and then
-               Source'Length = Token_String'Length,
-        Post => Is_Substring(Token_String(Token_String'First .. Token_First_Empty_Index - 1), Source);-- and
-        --        Token_First_Empty_Index = Get_First_Delimit_Index(Token_String, Delimit)
-   
-   function Get_First_Delimit_Index_In_Range(
-      Source : String;
-      Delimit : Character;
-      Start : Positive;
-      Finish : Positive
-   ) return Natural
-   with Global => null,
-        Pre => Start < Finish and then
-               (Start < Source'Last and Start >= Source'First and
-               Finish <= Source'Last and Finish > Source'First),
-        Post => (Get_First_Delimit_Index_In_Range'Result >= Start and
-                Get_First_Delimit_Index_In_Range'Result <= Finish) or
-                Get_First_Delimit_Index_In_Range'Result = 0;
+        Pre => Start <= Finish and then
+               (Start <= Source_Buf.Size and Start >= Positive'First and
+               Finish <= Source_Buf.Size and Finish >= Positive'First) and then
+               Source_Buf.Size = Token_Buf.Size;
         
    --TODO:ltj:Get_Token_Ct --if we check this early, we can rule out some issues up front. Maybe put in precondition of parse_http_request?
    
-   --TODO:ltj:Tokenize_String --convert string into array of tokens. Upper bound on array calc'd by how many possible tokens in string
+--     function Tokenize_Request_Buffer( 
+--        Raw_Request : Measured_Buffer_Type;
+--        Delimit : Character
+--     ) return Tokens_Request_Array_Type;
    
    --TODO:ltj:Compress_Delimits --delete any side-by-side delimiters.
    
@@ -95,7 +44,7 @@ package parsing is
    --creates an http message out of a raw request
    procedure Parse_HTTP_Request(
       Client_Socket : GNAT.Sockets.Socket_Type; -- pre Open (but network code..)
-      Raw_Request : Measured_Request_Buffer;  --pre not null, or empty
+      Raw_Request : Measured_Buffer_Type;  --pre not null, or empty
       Parsed_Request : out Simple_HTTP_Request;
       Exception_Raised : out Boolean  --refactor Invalid Request
    );

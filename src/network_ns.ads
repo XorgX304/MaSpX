@@ -12,7 +12,7 @@ with Http_Message; use Http_Message;
 with fileio; use fileio;
 with config; use config;
 with utils; use utils;
-with measured_buffer_type; use measured_buffer_type;
+with measured_buffer; use measured_buffer;
 
 package network_ns 
 with SPARK_Mode => On
@@ -46,6 +46,7 @@ is
    --constant tokens for parsing aid
    BLANK_TOKEN_REQUEST_LINE : constant Simple_Request_Line := (others=>' ');
    GET_TOKEN_REQUEST_LINE : constant Simple_Request_Line :=   ('G', 'E', 'T', others=>' ');
+   GET_TOKEN_STR : constant String := "GET";
 
    procedure Initialize_TCP_State(
       Server_Socket : out Gnat.Sockets.Socket_Type;

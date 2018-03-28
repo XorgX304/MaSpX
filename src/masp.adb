@@ -1,7 +1,7 @@
 pragma SPARK_Mode(On);
 
 with GNAT.Sockets; use GNAT.Sockets;
-with Ada.Characters.Latin_1;
+with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 with SPARK.Text_IO; use SPARK.Text_IO;
 
 with server; use server;
@@ -11,6 +11,7 @@ with network_ns; use network_ns;
 with Network_Types;
 with utils_ns;
 with utils; use utils;
+with measured_buffer; use measured_buffer;
 
 procedure Masp is
    Server_Socket : Gnat.Sockets.Socket_Type;
@@ -18,7 +19,7 @@ procedure Masp is
    Client_Socket : Gnat.Sockets.Socket_Type;
    Client_Cxn_Exception_Raised : Boolean;
    --Message_Byte_Array : Network_Types.Byte_Array_Type;
-   Raw_Request : Measured_Request_Buffer;
+   Raw_Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
    Client_Request_Exception_Raised : Boolean;
    Parsed_Request : Simple_HTTP_Request;
    Client_Parse_Exception_Raised : Boolean;
@@ -34,8 +35,9 @@ begin
    end if;
 
    loop
-      Raw_Request.Length := 1;
-      Raw_Request.Buffer := (others=>' ');
+      --Raw_Request.Length := 1;
+      --Raw_Request.Buffer := (others=>' ');
+      measured_buffer.Clear(Raw_Request);
 
       Debug_Print_Ln("Debugging: Waiting for client cxn...");
       --TODO:ltj: make server able to accept more than one client, like in CRADLE
@@ -46,7 +48,7 @@ begin
          Recv_NET_Request(Client_Socket, Raw_Request, Client_Request_Exception_Raised); --          <--- get string of request, non-SPARK
 
          if not Client_Request_Exception_Raised then
-            Debug_Print_Ln("Debugging: Raw Request:" & Raw_Request.Buffer);
+            Debug_Print_Ln("Debugging: Raw Request:" & Get_String(Raw_Request));
 
             Parse_HTTP_Request(Client_Socket, Raw_Request, Parsed_Request, Client_Parse_Exception_Raised); --         <--- SPARK
 

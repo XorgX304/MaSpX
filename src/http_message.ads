@@ -5,7 +5,7 @@ with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 with fileio; use fileio;
 with config; use config;
 with String_Types;
-with measured_buffer_type; use measured_buffer_type;
+with measured_buffer; use measured_buffer;
 
 PACKAGE Http_Message IS
    package ST renames String_Types;
@@ -38,7 +38,7 @@ PACKAGE Http_Message IS
    SUBTYPE MaxHeadersType IS Integer RANGE 0..MaxHeaders;
    TYPE HeaderArrayType IS ARRAY(1..MaxHeaders) OF Header;
 
-   --TODO:ltj: discriminate this record for Raw?, Parsed, Canonicalized, Sanitized
+   --TODO:ltj: variate this record for Raw?, Parsed, Canonicalized, Sanitized
    type Simple_HTTP_Request is
    record
       Method : Simple_Method_Type := UNKNOWN;

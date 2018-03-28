@@ -91,13 +91,24 @@ package body network_ns is
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
       
       loop
-         if C_ct <= Request.Buffer'Last then
+         --if C_ct <= Request.Buffer'Last then
+         if not Is_Full(Request) then
             String'Read(Client_Stream, C); --TODO-SEC:what happens when non-ASCII character (control char is encountered) or when longer than 259??
-            --http/0.9 request line *should* be all printable ascii, but of course, we've got to test violations of the standard        
-            Request.Buffer(C_ct) := C(1);  --TODO-SEC:what happens when network input is longer than String_Request? Crash probably. Fix by exiting loop when capacity reached.
-            Request.Length := C_ct;
+            --ltj:http/0.9 request line *should* be all printable ascii, but of course, we've got to test violations of the standard        
+            --Request.Buffer(C_ct) := C(1);
+            --Request.Length := C_ct;
          
-            C_ct := C_ct + 1;
+            --C_ct := C_ct + 1;
+            
+            if C(1) = Request.EmptyChar then
+               Debug_Print_Ln("Invalid character entered! Sending 400 Bad Request");
+               Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
+               Send_Simple_Response(Client_Socket, Response);
+               Exception_Raised := True;
+               return;
+            end if;
+               
+            Append(Request, C(1));   
          
             case C(1) is
             when CR =>

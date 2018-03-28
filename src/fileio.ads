@@ -7,7 +7,7 @@ with SPARK.Text_IO; use SPARK.Text_IO;
 with String_Types; use String_Types;
 with config; use config;
 with utils; use utils;
-with measured_buffer_type; use measured_buffer_type;
+with measured_buffer; use measured_buffer;
 
 package fileio is
 

@@ -1,5 +1,5 @@
 with config; use config;
-with measured_buffer_type; use measured_buffer_type;
+with measured_buffer; use measured_buffer;
 
 PACKAGE String_Types IS
    SUBTYPE String4 IS String(1..4);

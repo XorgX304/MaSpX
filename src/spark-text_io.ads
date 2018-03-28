@@ -91,26 +91,26 @@ is
    --  they cannot be opened or closed or reset (this not allowed in Ada).
    function Is_Standard_Input (File : File_Type) return Boolean
      with Global     => null,
-          Convention => C; --Ghost originally
+          Ghost      => True; --Ghost originally
 
    function Is_Standard_Output (File : File_Type) return Boolean
      with Global     => null,
-          Convention => C; --Ghost originally
+          Ghost => True; --Ghost originally
 
    function Is_Standard_Error (File : File_Type) return Boolean
      with Global     => null,
-          Convention => C; --Ghost originally
+          Ghost => True; --Ghost originally
 
    function Is_Standard_Writable (File : File_Type) return Boolean is
      (Is_Standard_Output (File) or else Is_Standard_Error (File))
    with Global     => null,
-        Convention => C; --Ghost originally
+        Ghost => True; --Ghost originally
 
    function Is_Standard_File (File : File_Type) return Boolean is
      (Is_Standard_Input (File) or else Is_Standard_Output (File)
           or else Is_Standard_Error (File))
      with Global     => null,
-          Convention => C; --Ghost originally
+          Ghost => True; --Ghost originally
 
    function Is_Open (File : in File_Type) return Boolean
      with Global => null;

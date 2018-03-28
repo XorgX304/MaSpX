@@ -65,7 +65,7 @@ package body fileio is
                end case;
             else
                Debug_Print_Ln("End_of_File on Read_File");
-               if Is_Open (Read_File) and not Is_Standard_File (Read_File) then
+               if Is_Open (Read_File) then --and not Is_Standard_File (Read_File) then
                   Close(Read_File);
                   Read_File_Status := Status(Read_File);
                   Debug_Print("On closing file:");
