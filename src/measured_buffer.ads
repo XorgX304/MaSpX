@@ -1,0 +1,70 @@
+pragma SPARK_Mode(On);
+
+with config; use config;
+with utils; use utils;
+
+package measured_buffer is
+
+   MAX_REQUEST_LINE_BYTE_CT : constant Natural := 270;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
+   MAX_FILE_READ_BYTE_CT : constant Natural := 10000;
+   MAX_URI_BYTE_CT : constant Natural := 255;
+   MAX_PARSED_URI_BYTE_CT : constant Natural := MAX_URI_BYTE_CT + DEFAULT_PAGE'Length - 1;
+   subtype Max_Buffer_Size_Type is Natural range Natural'First .. Natural'Max(Natural'Max(MAX_REQUEST_LINE_BYTE_CT, MAX_FILE_READ_BYTE_CT), Natural'Max(MAX_URI_BYTE_CT, MAX_PARSED_URI_BYTE_CT)); --ltj:set to the largest of the above constants
+   EMPTY_BUFFER_LENGTH : constant Natural := 0;
+   
+   type Measured_Buffer_Type(Size : Max_Buffer_Size_Type; EmptyChar : Character) is
+   record
+      Buffer : String(Positive'First .. Size) := (others=>EmptyChar);
+      Length : Max_Buffer_Size_Type := EMPTY_BUFFER_LENGTH;
+   end record;
+   --with Type_Invariant => Measured_Buffer_Type.Length = Calc_Length(Buf);
+   
+   function Get_Char(Buf : Measured_Buffer_Type; Idx : Max_Buffer_Size_Type) return Character
+   is ( Buf.Buffer(Idx) )
+   with Global => null,
+        Pre => Idx >= Positive'First and Idx <= Buf.Size;
+   
+   --ltj: used for type_invariant but those can only be used on private types or corresponding full views...
+   function Calc_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
+   with Global => null,
+        Post => (if Is_Full(Buf) then 
+                    Calc_Length'Result = Buf.Size
+                 elsif Is_Empty(Buf) then
+                    Calc_Length'Result = 0
+                 else
+                    Calc_Length'Result > 0 and Calc_Length'Result < Buf.Size);
+   
+   function Get_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
+   is ( Buf.Length )
+   with Global => null;
+   
+   procedure Set_Length(Buf : in out Measured_Buffer_Type; New_Length : Max_Buffer_Size_Type)
+   with Global => null,
+        Pre => New_Length <= Buf.Size,
+        Post => Buf.Length = New_Length;
+   
+   function Is_Empty(Buf : Measured_Buffer_Type) return Boolean
+   is ( Buf.Length <= EMPTY_BUFFER_LENGTH )
+   with Global => null;
+   
+   function Is_Full(Buf : Measured_Buffer_Type) return Boolean
+   is ( Buf.Length >= Buf.Size )
+   with Global => null;           
+   
+   procedure Append(Buf : in out Measured_Buffer_Type; C : Character)
+   with Global => null,
+        Pre =>  not Is_Full(Buf),
+        Post => Buf.Length'Old + 1 = Buf.Length and
+                Buf.Buffer(Buf.Length) = C;
+                
+   procedure Clear(Buf : out Measured_Buffer_Type)
+   with Global => null,
+        Post => Is_Empty(Buf) and
+                (for all I in Positive'First .. Buf.Size => Buf.Buffer(I) = Buf.EmptyChar);
+   
+   function Get_String(Buf : Measured_Buffer_Type) return String
+   is ( Buf.Buffer(Positive'First .. Buf.Length) )
+   with Global => null,
+        Pre => Buf.Length <= Buf.Size;
+
+end measured_buffer;
