@@ -6,16 +6,16 @@ SPARK Analysis results        Total        Flow   Interval   CodePeer         Pr
 ------------------------------------------------------------------------------------------------------------
 Data Dependencies                 .           .          .          .               .           .          .
 Flow Dependencies                 .           .          .          .               .           .          .
-Initialization                   16          16          .          .               .           .          .
+Initialization                   17          17          .          .               .           .          .
 Non-Aliasing                      .           .          .          .               .           .          .
-Run-time Checks                  18           .          .          .    18 (altergo)           .          .
-Assertions                        7           .          .          .     7 (altergo)           .          .
-Functional Contracts              2           .          .          .     1 (altergo)           .          1
+Run-time Checks                  24           .          .          .    24 (altergo)           .          .
+Assertions                        8           .          .          .     8 (altergo)           .          .
+Functional Contracts              2           .          .          .     2 (altergo)           .          .
 LSP Verification                  .           .          .          .               .           .          .
 ------------------------------------------------------------------------------------------------------------
-Total                            43    16 (37%)          .          .        26 (60%)           .     1 (2%)
+Total                            51    17 (33%)          .          .        34 (67%)           .          .
 
 
 Analyzed 1 unit
 in unit parsing, 1 subprograms and packages out of 1 analyzed
-  parsing.Get_All_Request_Tokens at parsing.ads:36 flow analyzed (0 errors and 0 warnings) and not proved, 26 checks out of 27 proved
+  parsing.Get_All_Request_Tokens at parsing.ads:36 flow analyzed (0 errors and 0 warnings) and proved (34 checks)

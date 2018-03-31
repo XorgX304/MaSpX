@@ -51,7 +51,7 @@ package body parsing is
                   Start := J + 1;
                   pragma Assert(Start > Raw_Request.Buffer'First);
                else
-                  return Tokens;
+                  Start := Raw_Request.Length + 1; --ltj: to skip inner loop
                end if;
                
                exit;
@@ -60,14 +60,17 @@ package body parsing is
             Append(Token_Buf, C);
             pragma Loop_Invariant( Token_Buf.Length <= J and then
                                    Start >= Raw_Request.Buffer'First and then
-                                   J >= Start);
+                                   J >= Start and then
+                                   Token_Buf.Length <= Token_Buf.Size);
          end loop;
          
          Tokens(I) := Token_Buf;
          
-         pragma Loop_Invariant( Start >= Raw_Request.Buffer'First );
+         pragma Loop_Invariant( Start >= Raw_Request.Buffer'First and
+                                (for all K in Tokens'First .. I => Tokens(K).Length <= Tokens(K).Size) );
       end loop;
       
+      pragma Assert( for all K in Tokens'Range => Tokens(K).Length <= Tokens(K).Size );
       return Tokens;
    end Get_All_Request_Tokens;
 
