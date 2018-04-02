@@ -8,7 +8,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U string_types%s	string_types.ads	5bf76440 OO PK KU
+U string_types%s	string_types.ads	ea3910f9 OO PK KU
 W config%s		config.ads		config.ali
 W measured_buffer%s	measured_buffer.adb	measured_buffer.ali
 
@@ -19,7 +19,7 @@ D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D config.ads		20180321201252 ec265e4d config%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180328050152 e126b6e2 measured_buffer%s
+D measured_buffer.ads	20180331232644 50e8c25b measured_buffer%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180326153942 e7af9ede spark.text_io%s
 D string_types.ads	20180326171200 56f78cef string_types%s
@@ -32,7 +32,7 @@ D utils.ads		20180328030430 b042fd55 utils%s
 X 5 config.ads
 3K9*config 18e11 11|1w6 1r18
 X 8 measured_buffer.ads
-6K9*measured_buffer 70e20 11|2w6 2r27
+6K9*measured_buffer 88e20 11|2w6 2r27
 10i4*MAX_URI_BYTE_CT{natural} 11|24r48
 11i4*MAX_PARSED_URI_BYTE_CT{natural} 11|25r54
 X 11 string_types.ads
@@ -204,19 +204,23 @@ FS .17 262U14 interfaces__c_streams__full_name
 FD 8 measured_buffer.ads
 FS .1 6K9 measured_buffer
 FS .2 22V13 measured_buffer__get_char
-FS .3 28V13 measured_buffer__calc_length
-FS .4 37V13 measured_buffer__get_length
-FS .5 41U14 measured_buffer__set_length
-FS .6 46V13 measured_buffer__is_empty
-FS .7 50V13 measured_buffer__is_full
-FS .8 54U14 measured_buffer__append
-FS .9 60U14 measured_buffer__clear
-FS .10 65V13 measured_buffer__get_string
-FS .11 22V13 measured_buffer__get_char -> 8.2
-FS .12 37V13 measured_buffer__get_length -> 8.4
-FS .13 46V13 measured_buffer__is_empty -> 8.6
-FS .14 50V13 measured_buffer__is_full -> 8.7
-FS .15 65V13 measured_buffer__get_string -> 8.10
+FS .3 27V13 measured_buffer__peek
+FS .4 34V13 measured_buffer__calc_length
+FS .5 43V13 measured_buffer__get_length
+FS .6 47U14 measured_buffer__set_length
+FS .7 52V13 measured_buffer__is_empty
+FS .8 56V13 measured_buffer__is_full
+FS .9 60U14 measured_buffer__append
+FS .10 66U14 measured_buffer__append_str
+FS .11 71U14 measured_buffer__clear
+FS .12 76U14 measured_buffer__copy
+FS .13 83V13 measured_buffer__get_string
+FS .14 22V13 measured_buffer__get_char -> 8.2
+FS .15 27V13 measured_buffer__peek -> 8.3
+FS .16 43V13 measured_buffer__get_length -> 8.5
+FS .17 52V13 measured_buffer__is_empty -> 8.7
+FS .18 56V13 measured_buffer__is_full -> 8.8
+FS .19 83V13 measured_buffer__get_string -> 8.13
 FD 9 spark.ads
 FS .1 29K9 spark
 FD 10 spark-text_io.ads

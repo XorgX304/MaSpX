@@ -62,7 +62,7 @@ begin
                when others =>
                   Debug_Print_Ln("Debugging: Parsed METHOD:");
                end case;
-               Debug_Print_Ln("Debugging: Parsed URI:" & Parsed_Request.RequestURI);
+               Debug_Print_Ln("Debugging: Parsed URI:" & Get_String(Parsed_Request.RequestURI));
 
                Canonicalize_HTTP_Request(Parsed_Request, Canonicalized_Request); --interpret all ..'s and .'s. remove extra slashes, or throw error on them
 

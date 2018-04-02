@@ -6,19 +6,21 @@ package body server is
       Parsed_Request : Simple_HTTP_Request;
       Canonicalized_Request : out Simple_HTTP_Request)
    is
-      Intermediary_String : ParsedRequestURIStringType;
+      Intermediary_String : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
    begin
-      Intermediary_String := (others=>' ');
+      Intermediary_String.Buffer := (others=>Intermediary_String.EmptyChar);
    
       --ltj: relevant: https://wiki.sei.cmu.edu/confluence/display/java/FIO16-J.+Canonicalize+path+names+before+validating+them
       --ltj: ignoring special files like links for now (not even sure if SPARK.Text_IO.Open deals with those...check impl)
       --ltj: convert all slashes to backslashes
-      for I in Parsed_Request.RequestURI'Range loop
-         if Parsed_Request.RequestURI(I) = '/' then
-            Intermediary_String(I) := '\';
+      --TODO:ltj: give this a measured_buffer api. Just copy record, then call Replace_All(Intermediary_String, '/', '\')
+      for I in Parsed_Request.RequestURI.Buffer'First .. Parsed_Request.RequestURI.Length loop
+         if Parsed_Request.RequestURI.Buffer(I) = '/' then
+            Intermediary_String.Buffer(I) := '\';
          else
-            Intermediary_String(I) := Parsed_Request.RequestURI(I);
+            Intermediary_String.Buffer(I) := Parsed_Request.RequestURI.Buffer(I);
          end if;
+         Intermediary_String.Length := Intermediary_String.Length + 1;
       end loop;
       --TODO:ltj: resolving ..'s and .'s (use get token with \ as delimit...)
       
@@ -43,7 +45,8 @@ package body server is
       Clean_Request : Simple_HTTP_Request)
    is
       Response : Simple_HTTP_Response;
-      MFT : Measured_Filename_Type;
+      --MFT : Measured_Filename_Type;
+      Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
       MFB : Measured_File_Buffer;
    begin
       case Clean_Request.Method is
@@ -54,10 +57,12 @@ package body server is
             --get document from server:
             
             --construct name from web root and request uri
-            MFT := Construct_Measured_Filename(Clean_Request.RequestURI);
-            Debug_Print_Ln("Filename: " & MFT.Name);
+            --MFT := Construct_Measured_Filename(Clean_Request.RequestURI);
+            Filename := Construct_Measured_Buffer(Filename.Size, Filename.EmptyChar, WEB_ROOT);
+            Append_Str(Filename, Get_String(Clean_Request.RequestURI)); --TODO:ltj:might need if-guard for this
+            Debug_Print_Ln("Filename: " & Get_String(Filename));
             
-            Read_File_To_MFB(MFT, MFB);
+            Read_File_To_MFB(Get_String(Filename), MFB);
             
             Response := Construct_Simple_HTTP_Response(MFB);
       end case;

@@ -248,10 +248,12 @@ package body parsing is
    is
       Delimit : Character := ' ';
       Tokens : Tokens_Request_Array_Type(1 .. Get_Token_Ct(Raw_Request, ' '));
+      Method_Token : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
+      URI_Token : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
       Response : Simple_HTTP_Response;
    begin
       Parsed_Request.Method := Http_Message.UNKNOWN;
-      Parsed_Request.RequestURI := (others=>Raw_Request.EmptyChar);
+      Parsed_Request.RequestURI.Buffer := (others=>Parsed_Request.RequestURI.EmptyChar);
       Exception_Raised := False;
       
       if Tokens'Length < 2 or not Is_Delimits_Well_Formed(Raw_Request, Delimit) 
@@ -263,8 +265,27 @@ package body parsing is
       end if;
       
       Tokens := Get_All_Request_Tokens(Raw_Request, Delimit);
+      Method_Token := Tokens(1);
+      URI_Token := Tokens(2);
       
-      --Get_String(Tokens(1))
+      if Get_String(Method_Token) = GET_TOKEN_STR then
+         Parsed_Request.Method := Http_Message.GET;
+      else
+         Parsed_Request.Method := Http_Message.UNKNOWN;
+      end if;
+      
+      if URI_Token.Length > Parsed_Request.RequestURI.Size then
+         Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
+         Send_Simple_Response(Client_Socket, Response);
+         Exception_Raised := True;
+         return;
+      end if;
+      
+      if Peek(URI_Token) = '/' or Peek(URI_Token) = '\' then
+         Append_Str(URI_Token, DEFAULT_PAGE);
+      end if;
+      
+      Copy(Parsed_Request.RequestURI, URI_Token);
    end Parse_HTTP_Request;
 
 end parsing;

@@ -42,7 +42,8 @@ PACKAGE Http_Message IS
    type Simple_HTTP_Request is
    record
       Method : Simple_Method_Type := UNKNOWN;
-      RequestURI : ST.ParsedRequestURIStringType := (others=>' ');
+      --RequestURI : ST.ParsedRequestURIStringType := (others=>' ');
+      RequestURI : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
    end record;
 
    type Simple_HTTP_Response is

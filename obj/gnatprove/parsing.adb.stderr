@@ -1,3 +1,18 @@
+parsing.adb:261:22: medium: precondition might fail[#10]
+parsing.adb:267:17: medium: precondition might fail[#14]
+parsing.adb:268:23: medium: discriminant check might fail[#6]
+parsing.adb:269:20: medium: discriminant check might fail[#8]
+parsing.adb:269:27: medium: array index check might fail[#4]
+parsing.adb:271:10: medium: precondition might fail[#11]
+parsing.adb:278:22: medium: precondition might fail[#12]
+parsing.adb:284:10: medium: precondition might fail[#9]
+parsing.adb:284:35: medium: precondition might fail[#13]
+parsing.adb:285:10: medium: precondition might fail[#7]
+parsing.adb:288:07: medium: precondition might fail[#5]
+parsing.adb:288:12: medium: input value of "Parsed_Request.RequestURI.Length" will be used[#3]
+parsing.ads:82:07: low: input value of "Parsed_Request.RequestURI.Length" might be used in "Parse_HTTP_Request"[#2]
+parsing.ads:85:30: warning: "Standard_Output" is not modified, could be INPUT[#0]
+parsing.ads:85:30: low: unused global "Standard_Output"[#1]
 spark-text_io.ads:134:31: info: implicit function contract not available for proof ("Mode" may not return)
 spark-text_io.ads:139:12: info: implicit function contract not available for proof ("Mode" may not return)
 spark-text_io.ads:139:43: info: implicit function contract not available for proof ("Mode" may not return)

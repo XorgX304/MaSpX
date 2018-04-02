@@ -8,9 +8,9 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U http_message%b	http_message.adb	2aa06151 OO PK IL
+U http_message%b	http_message.adb	9bd6ffa0 OO PK IL
 
-U http_message%s	http_message.ads	91d46e34 OO PK KU
+U http_message%s	http_message.ads	6a1fe98a OO PK KU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -26,12 +26,12 @@ D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D config.ads		20180321201252 ec265e4d config%s
-D fileio.ads		20180326171256 d726b43b fileio%s
-D http_message.ads	20180328045736 7b40c37e http_message%s
+D fileio.ads		20180331231356 2c55d9cd fileio%s
+D http_message.ads	20180331230122 ca365d8f http_message%s
 D http_message.adb	20180313162256 51e0a22f http_message%b
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180328050152 e126b6e2 measured_buffer%s
+D measured_buffer.ads	20180331232644 50e8c25b measured_buffer%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180326153942 e7af9ede spark.text_io%s
 D string_types.ads	20180326171200 56f78cef string_types%s
@@ -47,24 +47,24 @@ X 2 a-charac.ads
 16K13*Characters 18e19 9|3r10 3r38
 X 3 a-chlat1.ads
 18K24*Latin_1 296e27 9|3w21 3r49
-25e4*NUL{character} 9|52r44
+25e4*NUL{character} 9|46r65 53r44
 X 7 config.ads
 3K9*config 18e11 9|6w6 6r18
 X 8 fileio.ads
-12K9*fileio 70e11 9|5w6 5r18
-14I12*ContentSize{natural} 9|51r24
-15A12*File_Buf{string}<integer> 9|52r21
-17R9*Measured_File_Buffer 21e14 9|85r50 10|15r50
+12K9*fileio 71e11 9|5w6 5r18
+14I12*ContentSize{natural} 9|52r24
+15A12*File_Buf{string}<integer> 9|53r21
+17R9*Measured_File_Buffer 21e14 9|86r50 10|15r50
 19i7*Length{14I12} 10|19r38
 20a7*Buffer{15A12} 10|20r35
 X 9 http_message.ads
-10K9*Http_Message 87l5 87e17 10|3b14 25l5 25t17
-11K12*ST=11:23 35r14 45r20 58r25 59r24 60r26 64r31 66r31 67r33
-13E9*ClientServerType 13e45 55r53
-13n30*Client{13E9} 62r15 73r26
-13n38*Server{13E9} 65r15
-14E9*MethodType 15e33 16r34 63r21
-14n24*NONE{14E9} 79r17
+10K9*Http_Message 88l5 88e17 10|3b14 25l5 25t17
+11K12*ST=11:23 35r14 59r25 60r24 61r26 65r31 67r31 68r33
+13E9*ClientServerType 13e45 56r53
+13n30*Client{13E9} 63r15 74r26
+13n38*Server{13E9} 66r15
+14E9*MethodType 15e33 16r34 64r21
+14n24*NONE{14E9} 80r17
 14n30*GET{14E9} 16r51
 14n35*UNKNOWN{14E9} 16r58 44r38
 14n44*HEAD{14E9}
@@ -92,7 +92,7 @@ X 9 http_message.ads
 21n88*SERVER{20E9}
 22n7*USER_AGENT{20E9}
 22n19*WWW_AUTHENTICATE{20E9}
-22n37*UNKNOWN_HEADER{20E9} 71r47
+22n37*UNKNOWN_HEADER{20E9} 72r47
 24n7*ACCEP{20E9}
 24n14*ACCEPT_CHARSET{20E9}
 24n30*ACCEPT_ENCODING{20E9}
@@ -129,40 +129,42 @@ X 9 http_message.ads
 28n41*VIA{20E9}
 28n46*WARNING{20E9}
 31i4*DistinctHeaders{natural}
-33R9*Header 36e14 39r52 71r28
-34e7*Name{20E9} 71m39
-35a7*Value{16|20A12} 71m63
-38I12*MaxHeadersType{integer} 56r24
-39A9*HeaderArrayType(33R9)<integer> 57r16
-42R9*Simple_HTTP_Request 46e14
+33R9*Header 36e14 39r52 72r28
+34e7*Name{20E9} 72m39
+35a7*Value{16|20A12} 72m63
+38I12*MaxHeadersType{integer} 57r24
+39A9*HeaderArrayType(33R9)<integer> 58r16
+42R9*Simple_HTTP_Request 47e14
 44e7*Method{16E12}
-45a7*RequestURI{16|25A12}
-48R9*Simple_HTTP_Response 53e14 82r66 85r79 10|5r66 7r18 15r79 17r18
-51i7*Content_Length{8|14I12} 10|9m16 19m16
-52a7*Entity_Body{8|15A12} 10|10m16 20m16
-55R9*Http_Message_Variant_Record 55d37 69e14 72r34
-55e37*ClientOrServer{13E9} 61r12 73m8
-56i7*NumberOfHeaders{38I12} 74m7
-57a7*Headers{39A9} 77m7
-58a7*EntityBodyString{16|21A12} 78m7
-59a7*FirstLineString{16|18A12} 75m7
-60a7*HttpVersionString{16|22A12} 76m7
-63e13*Method{14E9} 79m7
-64a13*RequestURIString{16|24A12} 80m7
-66a13*StatusCodeString{16|27A12}
-67a13*ReasonPhraseString{16|28A12}
-71r4*BLANK_HEADER{33R9} 77r29
-72r4*BLANK_HTTP_MESSAGE{55R9}
-82V13*Construct_Simple_HTTP_Response{48R9} 82>44 10|5b13 13l8 13t38
-82a44 Page{string} 83r16 10|5b44 9r34 10r28 10r43
-85V13*Construct_Simple_HTTP_Response{48R9} 85>44 10|15b13 23l8 23t38
-85r44 MFB{8|17R9} 10|15b44 19r34 20r31
+46r7*RequestURI{13|15R9}
+49R9*Simple_HTTP_Response 54e14 83r66 86r79 10|5r66 7r18 15r79 17r18
+52i7*Content_Length{8|14I12} 10|9m16 19m16
+53a7*Entity_Body{8|15A12} 10|10m16 20m16
+56R9*Http_Message_Variant_Record 56d37 70e14 73r34
+56e37*ClientOrServer{13E9} 62r12 74m8
+57i7*NumberOfHeaders{38I12} 75m7
+58a7*Headers{39A9} 78m7
+59a7*EntityBodyString{16|21A12} 79m7
+60a7*FirstLineString{16|18A12} 76m7
+61a7*HttpVersionString{16|22A12} 77m7
+64e13*Method{14E9} 80m7
+65a13*RequestURIString{16|24A12} 81m7
+67a13*StatusCodeString{16|27A12}
+68a13*ReasonPhraseString{16|28A12}
+72r4*BLANK_HEADER{33R9} 78r29
+73r4*BLANK_HTTP_MESSAGE{56R9}
+83V13*Construct_Simple_HTTP_Response{49R9} 83>44 10|5b13 13l8 13t38
+83a44 Page{string} 84r16 10|5b44 9r34 10r28 10r43
+86V13*Construct_Simple_HTTP_Response{49R9} 86>44 10|15b13 23l8 23t38
+86r44 MFB{8|17R9} 10|15b44 19r34 20r31
 X 10 http_message.adb
-7r7 Response{9|48R9} 9m7 10m7 12r14
-17r7 Response{9|48R9} 19m7 20m7 22r14
+7r7 Response{9|49R9} 9m7 10m7 12r14
+17r7 Response{9|49R9} 19m7 20m7 22r14
 X 13 measured_buffer.ads
-6K9*measured_buffer 9|8w6 8r27 13|70e20
-9i4*MAX_FILE_READ_BYTE_CT{natural} 9|83r31
+6K9*measured_buffer 9|8w6 8r27 13|88e20
+9i4*MAX_FILE_READ_BYTE_CT{natural} 9|84r31
+11i4*MAX_PARSED_URI_BYTE_CT{natural} 9|46r41
+15R9*Measured_Buffer_Type 9|46r20 13|19e14
 X 16 string_types.ads
 4K9*String_Types 9|7w6 11r23 16|29e17
 5A12*String4{string}<integer>
@@ -170,14 +172,13 @@ X 16 string_types.ads
 8A12*String32{string}<integer>
 10A12*String128{string}<integer>
 16A12*String32K{string}<integer>
-18A12*FirstLineStringType{10A12}<integer> 9|59r27
+18A12*FirstLineStringType{10A12}<integer> 9|60r27
 20A12*HeaderValueStringType{10A12}<integer> 9|35r17
-21A12*EntityBodyStringType{16A12}<integer> 9|58r28
-22A12*HttpVersionStringType{6A12}<integer> 9|60r29
-24A12*RequestURIStringType{string}<integer> 9|64r34
-25A12*ParsedRequestURIStringType{string}<integer> 9|45r23
-27A12*StatusCodeStringType{5A12}<integer> 9|66r34
-28A12*ReasonPhraseStringType{8A12}<integer> 9|67r36
+21A12*EntityBodyStringType{16A12}<integer> 9|59r28
+22A12*HttpVersionStringType{6A12}<integer> 9|61r29
+24A12*RequestURIStringType{string}<integer> 9|65r34
+27A12*StatusCodeStringType{5A12}<integer> 9|67r34
+28A12*ReasonPhraseStringType{8A12}<integer> 9|68r36
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -289,12 +290,12 @@ FS .1 12K9 fileio
 FS .2 48V13 fileio__get_mft_length
 FS .3 52U14 fileio__trim_filename
 FS .4 58U14 fileio__read_file_to_mfb
-FS .5 63U14 fileio__print_file_status
-FS .6 68V13 fileio__construct_measured_filename
+FS .5 64U14 fileio__print_file_status
+FS .6 69V13 fileio__construct_measured_filename
 FD 9 http_message.ads
 FS .1 10K9 http_message
-FS .2 82V13 http_message__construct_simple_http_response
-FS .3 85V13 http_message__construct_simple_http_response__2
+FS .2 83V13 http_message__construct_simple_http_response
+FS .3 86V13 http_message__construct_simple_http_response__2
 FD 10 http_message.adb
 FS .1 3K14 http_message -> 9.1
 FS .2 5V13 http_message__construct_simple_http_response -> 9.2
@@ -342,19 +343,23 @@ FS .17 262U14 interfaces__c_streams__full_name
 FD 13 measured_buffer.ads
 FS .1 6K9 measured_buffer
 FS .2 22V13 measured_buffer__get_char
-FS .3 28V13 measured_buffer__calc_length
-FS .4 37V13 measured_buffer__get_length
-FS .5 41U14 measured_buffer__set_length
-FS .6 46V13 measured_buffer__is_empty
-FS .7 50V13 measured_buffer__is_full
-FS .8 54U14 measured_buffer__append
-FS .9 60U14 measured_buffer__clear
-FS .10 65V13 measured_buffer__get_string
-FS .11 22V13 measured_buffer__get_char -> 13.2
-FS .12 37V13 measured_buffer__get_length -> 13.4
-FS .13 46V13 measured_buffer__is_empty -> 13.6
-FS .14 50V13 measured_buffer__is_full -> 13.7
-FS .15 65V13 measured_buffer__get_string -> 13.10
+FS .3 27V13 measured_buffer__peek
+FS .4 34V13 measured_buffer__calc_length
+FS .5 43V13 measured_buffer__get_length
+FS .6 47U14 measured_buffer__set_length
+FS .7 52V13 measured_buffer__is_empty
+FS .8 56V13 measured_buffer__is_full
+FS .9 60U14 measured_buffer__append
+FS .10 66U14 measured_buffer__append_str
+FS .11 71U14 measured_buffer__clear
+FS .12 76U14 measured_buffer__copy
+FS .13 83V13 measured_buffer__get_string
+FS .14 22V13 measured_buffer__get_char -> 13.2
+FS .15 27V13 measured_buffer__peek -> 13.3
+FS .16 43V13 measured_buffer__get_length -> 13.5
+FS .17 52V13 measured_buffer__is_empty -> 13.7
+FS .18 56V13 measured_buffer__is_full -> 13.8
+FS .19 83V13 measured_buffer__get_string -> 13.13
 FD 14 spark.ads
 FS .1 29K9 spark
 FD 15 spark-text_io.ads
@@ -510,15 +515,15 @@ FS .6 15V13 utils__logical_equivalence
 FS .7 18V13 utils__is_substring
 FS .8 30V13 utils__check_substring
 FX 3 a-chlat1.ads .1 ada__characters__latin_1
-F 25*4 ada__characters__latin_1__nul 9|.1:52c44
+F 25*4 ada__characters__latin_1__nul 9|.1:46c65 53c44
 FX 9 http_message.ads .1 http_message
 F 18*4 http_message__maxheaders 38c47 39c37
-F 71*4 http_message__blank_header 77r29
+F 72*4 http_message__blank_header 78r29
 FX 9 http_message.ads .2 http_message__construct_simple_http_response
-F 82>44 http_message__construct_simple_http_response__page 83c16 10|.2:9c34
+F 83>44 http_message__construct_simple_http_response__page 84c16 10|.2:9c34
 . 10c28 10c43
 FX 9 http_message.ads .3 http_message__construct_simple_http_response__2
-F 85>44 http_message__construct_simple_http_response__2__mfb 10|.3:19c34
+F 86>44 http_message__construct_simple_http_response__2__mfb 10|.3:19c34
 . 20c31
 FX 10 http_message.adb .2 http_message__construct_simple_http_response
 F 7*7 http_message__construct_simple_http_response__response 9m7 10m7 12r14
@@ -526,7 +531,8 @@ FX 10 http_message.adb .3 http_message__construct_simple_http_response__2
 F 17*7 http_message__construct_simple_http_response__2__response 19m7 20m7
 . 22r14
 FX 13 measured_buffer.ads .1 measured_buffer
-F 9*4 measured_buffer__max_file_read_byte_ct 9|.2:83c31
+F 9*4 measured_buffer__max_file_read_byte_ct 9|.2:84c31
+F 11*4 measured_buffer__max_parsed_uri_byte_ct 9|.1:46r41
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0

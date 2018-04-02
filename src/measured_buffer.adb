@@ -2,6 +2,22 @@ pragma SPARK_Mode(On);
 
 package body measured_buffer is
 
+   function Construct_Measured_Buffer(
+      SizeInst : Max_Buffer_Size_Type; 
+      EmptyCharInst : Character;
+      Str : String) return Measured_Buffer_Type
+   is
+      Buf : Measured_Buffer_Type(SizeInst, EmptyCharInst);
+   begin
+      Buf.Buffer := (others=>EmptyCharInst);
+      Buf.Length := 0;
+      
+      Append_Str(Buf, Str);
+      
+      return Buf;
+   end Construct_Measured_Buffer;
+
+--------------------------------------------------------------------------------
    function Calc_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
    is
       Length : Max_Buffer_Size_Type := 1;
@@ -40,6 +56,14 @@ package body measured_buffer is
       Buf.Buffer(Append_Idx) := C;
       Buf.Length := Append_Idx;
    end Append;
+
+--------------------------------------------------------------------------------
+   procedure Append_Str(Buf : in out Measured_Buffer_Type; S : String)
+   is
+   begin
+      Buf.Buffer(Buf.Length+1 .. Buf.Length+1+S'Length-1) := S;
+      Buf.Length := Buf.Length + S'Length;
+   end Append_Str;
    
 --------------------------------------------------------------------------------
    procedure Clear(Buf : out Measured_Buffer_Type)
@@ -48,5 +72,13 @@ package body measured_buffer is
       Buf.Buffer := (others=>Buf.EmptyChar);
       Buf.Length := EMPTY_BUFFER_LENGTH;
    end Clear;
+
+--------------------------------------------------------------------------------
+   procedure Copy(Dst_Buf : in out Measured_Buffer_Type; Src_Buf : Measured_Buffer_Type)
+   is
+   begin
+      Dst_Buf.Buffer(Positive'First .. Src_Buf.Length) := Src_Buf.Buffer(Positive'First .. Src_Buf.Length);
+      Dst_Buf.Length := Src_Buf.Length;
+   end Copy;
    
 end measured_buffer;

@@ -19,10 +19,25 @@ package measured_buffer is
    end record;
    --with Type_Invariant => Measured_Buffer_Type.Length = Calc_Length(Buf);
    
+   function Construct_Measured_Buffer(
+      SizeInst : Max_Buffer_Size_Type; 
+      EmptyCharInst : Character;
+      Str : String
+   ) return Measured_Buffer_Type
+   with Global => null,
+        Pre => Str'Length <= SizeInst,
+        Post => Construct_Measured_Buffer'Result.Length <= Construct_Measured_Buffer'Result.Size;
+   
    function Get_Char(Buf : Measured_Buffer_Type; Idx : Max_Buffer_Size_Type) return Character
    is ( Buf.Buffer(Idx) )
    with Global => null,
         Pre => Idx >= Positive'First and Idx <= Buf.Size;
+   
+   function Peek(Buf : Measured_Buffer_Type) return Character
+   is ( Buf.Buffer(Buf.Length) )
+   with Global => null,
+        Pre => not Is_Empty(Buf) and
+               Buf.Length <= Buf.Size;
    
    --ltj: used for type_invariant but those can only be used on private types or corresponding full views...
    function Calc_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
@@ -56,11 +71,23 @@ package measured_buffer is
         Pre =>  not Is_Full(Buf),
         Post => Buf.Length'Old + 1 = Buf.Length and
                 Buf.Buffer(Buf.Length) = C;
+  
+   procedure Append_Str(Buf : in out Measured_Buffer_Type; S : String)
+   with Global => null,
+        Pre => Buf.Length <= Buf.Size - S'Length,
+        Post => Buf.Length'Old + S'Length = Buf.Length;
                 
    procedure Clear(Buf : out Measured_Buffer_Type)
    with Global => null,
         Post => Is_Empty(Buf) and
                 (for all I in Positive'First .. Buf.Size => Buf.Buffer(I) = Buf.EmptyChar);
+                
+   procedure Copy(Dst_Buf : in out Measured_Buffer_Type; Src_Buf : Measured_Buffer_Type)
+   with Global => null,
+        Pre => Src_Buf.Length <= Dst_Buf.Size and
+               Src_Buf.Length <= Src_Buf.Size,
+        Post => Dst_Buf.Buffer(Positive'First .. Src_Buf.Length) = Src_Buf.Buffer(Positive'First .. Src_Buf.Length) and
+                Dst_Buf.Length = Src_Buf.Length;
    
    function Get_String(Buf : Measured_Buffer_Type) return String
    is ( Buf.Buffer(Positive'First .. Buf.Length) )

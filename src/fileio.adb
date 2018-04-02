@@ -3,10 +3,11 @@ pragma SPARK_Mode(On);
 package body fileio is
 
    procedure Read_File_To_MFB(
-       MFT : Measured_Filename_Type;
+       --MFT : Measured_Filename_Type
+       Trimmed_Name : String;
        MFB : out Measured_File_Buffer)
    is
-      Trimmed_Name : String(1 .. Get_MFT_Length(MFT));
+      --Trimmed_Name : String(1 .. Get_MFT_Length(MFT));
       Read_File : File_Type;
       Read_File_Status : File_Status;
       C : Character_Result;
@@ -14,7 +15,7 @@ package body fileio is
       MFB.Length := 1;
       MFB.Buffer := (others=>NUL);
       
-      Trim_Filename(MFT, Trimmed_Name);
+      --Trim_Filename(MFT, Trimmed_Name);
       
       Debug_Print_Ln("Filename trimmed:" & Trimmed_Name);
 

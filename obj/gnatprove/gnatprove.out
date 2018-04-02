@@ -1,21 +1,36 @@
 Summary of SPARK analysis
 =========================
 
-------------------------------------------------------------------------------------------------------------
-SPARK Analysis results        Total        Flow   Interval   CodePeer         Provers   Justified   Unproved
-------------------------------------------------------------------------------------------------------------
-Data Dependencies                 .           .          .          .               .           .          .
-Flow Dependencies                 .           .          .          .               .           .          .
-Initialization                   17          17          .          .               .           .          .
-Non-Aliasing                      .           .          .          .               .           .          .
-Run-time Checks                  24           .          .          .    24 (altergo)           .          .
-Assertions                        8           .          .          .     8 (altergo)           .          .
-Functional Contracts              2           .          .          .     2 (altergo)           .          .
-LSP Verification                  .           .          .          .               .           .          .
-------------------------------------------------------------------------------------------------------------
-Total                            51    17 (33%)          .          .        34 (67%)           .          .
+-------------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total        Flow   Interval   CodePeer         Provers   Justified    Unproved
+-------------------------------------------------------------------------------------------------------------
+Data Dependencies                 .           .          .          .               .           .           .
+Flow Dependencies                 .           .          .          .               .           .           .
+Initialization                   36          34          .          .               .           .           2
+Non-Aliasing                      .           .          .          .               .           .           .
+Run-time Checks                  74           .          .          .    71 (altergo)           .           3
+Assertions                        2           .          .          .     2 (altergo)           .           .
+Functional Contracts             17           .          .          .     9 (altergo)           .           8
+LSP Verification                  .           .          .          .               .           .           .
+-------------------------------------------------------------------------------------------------------------
+Total                           129    34 (26%)          .          .        82 (64%)           .    13 (10%)
 
 
-Analyzed 1 unit
+Analyzed 2 units
+in unit measured_buffer, 14 subprograms and packages out of 14 analyzed
+  measured_buffer at measured_buffer.ads:6 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
+  measured_buffer.Append at measured_buffer.ads:69 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
+  measured_buffer.Append_Str at measured_buffer.ads:75 flow analyzed (0 errors and 0 warnings) and proved (14 checks)
+  measured_buffer.Calc_Length at measured_buffer.ads:43 flow analyzed (0 errors and 0 warnings) and proved (11 checks)
+  measured_buffer.Clear at measured_buffer.ads:80 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
+  measured_buffer.Construct_Measured_Buffer at measured_buffer.ads:22 flow analyzed (0 errors and 0 warnings) and proved (10 checks)
+  measured_buffer.Copy at measured_buffer.ads:85 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  measured_buffer.Get_Char at measured_buffer.ads:31 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Get_Length at measured_buffer.ads:52 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Get_String at measured_buffer.ads:92 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Is_Empty at measured_buffer.ads:61 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Is_Full at measured_buffer.ads:65 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Peek at measured_buffer.ads:36 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Set_Length at measured_buffer.ads:56 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
 in unit parsing, 1 subprograms and packages out of 1 analyzed
-  parsing.Get_All_Request_Tokens at parsing.ads:36 flow analyzed (0 errors and 0 warnings) and proved (34 checks)
+  parsing.Parse_HTTP_Request at parsing.ads:79 flow analyzed (0 errors and 4 warnings) and not proved, 19 checks out of 30 proved

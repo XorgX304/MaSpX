@@ -56,7 +56,8 @@ package fileio is
    with Pre => Post_Filename'Length = Get_MFT_Length(Pre_Filename);
    
    procedure Read_File_To_MFB(
-      MFT : Measured_Filename_Type;
+      --MFT : Measured_Filename_Type;
+      Trimmed_Name : String;
       MFB : out Measured_File_Buffer
    );
    
