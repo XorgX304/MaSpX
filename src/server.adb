@@ -29,6 +29,7 @@ package body server is
       Canonicalized_Request.RequestURI := Intermediary_String;
    end Canonicalize_HTTP_Request;
    
+--------------------------------------------------------------------------------
    procedure Sanitize_HTTP_Request(
       Canonicalized_Request : Simple_HTTP_Request;
       Clean_Request : out Simple_HTTP_Request)

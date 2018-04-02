@@ -19,7 +19,7 @@ U network_ns%b		network_ns.adb		d1676fea OO PK IL
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.streams%s		a-stream.adb		a-stream.ali
 
-U network_ns%s		network_ns.ads		4cc4002b OO PK IL
+U network_ns%s		network_ns.ads		b379a52a OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -54,7 +54,7 @@ D http_message.ads	20180331230122 ca365d8f http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180331232644 50e8c25b measured_buffer%s
+D measured_buffer.ads	20180402165150 af55675a measured_buffer%s
 D network_ns.ads	20180328041304 d188b8e3 network_ns%s
 D network_ns.adb	20180327003656 00efd709 network_ns%b
 D network_types.ads	20180213214944 c18a7534 network_types%s
@@ -153,12 +153,12 @@ X 14 http_message.ads
 53a7*Entity_Body{11|15A12} 20|180r31
 83V13*Construct_Simple_HTTP_Response{49R9} 20|105s28 130s25
 X 18 measured_buffer.ads
-6K9*measured_buffer 88e20 19|15w6 15r27
+6K9*measured_buffer 97e20 19|15w6 15r27
 8i4*MAX_REQUEST_LINE_BYTE_CT{natural} 19|36r73 37r47
 15R9*Measured_Buffer_Type 19e14 19|64r21 20|79r21
 15e59*EmptyChar{character} 20|103r31
-56V13*Is_Full{boolean} 20|95s17
-60U14*Append 20|111s13
+65V13*Is_Full{boolean} 20|95s17
+69U14*Append 20|111s13
 X 19 network_ns.ads
 17K9*network_ns 83l5 83e15 20|3b14 195l5 195t15
 21a4*STATIC_TEST_RESPONSE_11{string} 20|159r35
@@ -505,24 +505,25 @@ FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 18 measured_buffer.ads
 FS .1 6K9 measured_buffer
-FS .2 22V13 measured_buffer__get_char
-FS .3 27V13 measured_buffer__peek
-FS .4 34V13 measured_buffer__calc_length
-FS .5 43V13 measured_buffer__get_length
-FS .6 47U14 measured_buffer__set_length
-FS .7 52V13 measured_buffer__is_empty
-FS .8 56V13 measured_buffer__is_full
-FS .9 60U14 measured_buffer__append
-FS .10 66U14 measured_buffer__append_str
-FS .11 71U14 measured_buffer__clear
-FS .12 76U14 measured_buffer__copy
-FS .13 83V13 measured_buffer__get_string
-FS .14 22V13 measured_buffer__get_char -> 18.2
-FS .15 27V13 measured_buffer__peek -> 18.3
-FS .16 43V13 measured_buffer__get_length -> 18.5
-FS .17 52V13 measured_buffer__is_empty -> 18.7
-FS .18 56V13 measured_buffer__is_full -> 18.8
-FS .19 83V13 measured_buffer__get_string -> 18.13
+FS .2 22V13 measured_buffer__construct_measured_buffer
+FS .3 31V13 measured_buffer__get_char
+FS .4 36V13 measured_buffer__peek
+FS .5 43V13 measured_buffer__calc_length
+FS .6 52V13 measured_buffer__get_length
+FS .7 56U14 measured_buffer__set_length
+FS .8 61V13 measured_buffer__is_empty
+FS .9 65V13 measured_buffer__is_full
+FS .10 69U14 measured_buffer__append
+FS .11 75U14 measured_buffer__append_str
+FS .12 80U14 measured_buffer__clear
+FS .13 85U14 measured_buffer__copy
+FS .14 92V13 measured_buffer__get_string
+FS .15 31V13 measured_buffer__get_char -> 18.3
+FS .16 36V13 measured_buffer__peek -> 18.4
+FS .17 52V13 measured_buffer__get_length -> 18.6
+FS .18 61V13 measured_buffer__is_empty -> 18.8
+FS .19 65V13 measured_buffer__is_full -> 18.9
+FS .20 92V13 measured_buffer__get_string -> 18.14
 FD 19 network_ns.ads
 FS .1 17K9 network_ns
 FS .2 51U14 network_ns__initialize_tcp_state
@@ -755,8 +756,8 @@ FX 14 http_message.ads .1 http_message
 F 83*13 http_message__construct_simple_http_response 20|.4:105s28 130s25
 FX 18 measured_buffer.ads .1 measured_buffer
 F 8*4 measured_buffer__max_request_line_byte_ct 19|.1:36c73 37c47
-F 56*13 measured_buffer__is_full 20|.4:95s17
-F 60*14 measured_buffer__append 20|.4:111s13
+F 65*13 measured_buffer__is_full 20|.4:95s17
+F 69*14 measured_buffer__append 20|.4:111s13
 FX 19 network_ns.ads .1 network_ns
 F 21*4 network_ns__static_test_response_11 20|.5:159c35
 F 32*4 network_ns__static_response_header_09 20|.6:172c34 177c22
@@ -815,7 +816,7 @@ GG EK_REMOTE_STATES RS 0
 GG EK_GLOBALS network_ns KIND_PACKAGE ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 network_ns__initialize_tcp_state network_ns__get_client_cxn network_ns__recv_net_request network_ns__send_test_response network_ns__close_client_socket network_ns__send_simple_response local_init 0
 GG EK_GLOBALS network_ns__initialize_tcp_state KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 2 gnat__sockets__any_inet_addr gnat__sockets__no_sock_addr var_out 0 calls_proof 0 calls 0 calls_conditional 6 gnat__sockets__create_socket gnat__sockets__bind_socket gnat__sockets__listen_socket ada__exceptions__exception_message ada__exceptions__exception_name__2 ada__text_io__put_line__2 local_var 0 local_ghost 0 local_sub 0
 GG EK_GLOBALS network_ns__get_client_cxn KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 1 gnat__sockets__no_sock_addr var_out 0 calls_proof 0 calls 0 calls_conditional 4 ada__exceptions__exception_message ada__exceptions__exception_name__2 ada__text_io__put_line__2 gnat__sockets__accept_socket local_var 0 local_ghost 0 local_sub 0
-GG EK_GLOBALS network_ns__recv_net_request KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 10 ada__exceptions__exception_message ada__exceptions__exception_name__2 ada__text_io__put_line__2 gnat__sockets__stream utils__debug_print_ln http_message__construct_simple_http_response network_ns__send_simple_response measured_buffer__append ada__text_io__put__4 measured_buffer__is_full local_var 0 local_ghost 0 local_sub 0
+GG EK_GLOBALS network_ns__recv_net_request KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 10 measured_buffer__is_full ada__exceptions__exception_message ada__exceptions__exception_name__2 ada__text_io__put_line__2 gnat__sockets__stream utils__debug_print_ln http_message__construct_simple_http_response network_ns__send_simple_response measured_buffer__append ada__text_io__put__4 local_var 0 local_ghost 0 local_sub 0
 GG EK_GLOBALS network_ns__send_test_response KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 1 gnat__sockets__stream local_var 0 local_ghost 0 local_sub 0
 GG EK_GLOBALS network_ns__send_simple_response KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 1 gnat__sockets__stream local_var 0 local_ghost 0 local_sub 0
 GG EK_GLOBALS network_ns__close_client_socket KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 2 gnat__sockets__shutdown_socket gnat__sockets__close_socket local_var 0 local_ghost 0 local_sub 0

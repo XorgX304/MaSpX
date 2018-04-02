@@ -15,7 +15,6 @@ with measured_buffer; use measured_buffer;
 package parsing is
 
    type Tokens_Request_Array_Type is array (Max_Buffer_Size_Type range <>) of Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
-   type Token_Lengths_Array_Type is array (Max_Buffer_Size_Type range <>) of Max_Buffer_Size_Type;
 
    --Start and Finish are inclusive
    procedure Get_First_Token_In_Range(
@@ -66,15 +65,6 @@ package parsing is
    ) return Max_Buffer_Size_Type
    with Global => null;      
    
-   function Tokenize_Request_Buffer( 
-      Raw_Request : Measured_Buffer_Type;
-      Delimit : Character
-   ) return Tokens_Request_Array_Type
-   with Global => null,
-        Pre => Raw_Request.Length > 0 and then
-               Raw_Request.Size = MAX_REQUEST_LINE_BYTE_CT and then
-               Raw_Request.EmptyChar = NUL;
-   
    --creates an http message out of a raw request
    procedure Parse_HTTP_Request(
       Client_Socket : GNAT.Sockets.Socket_Type; -- pre Open (but network code..)
@@ -82,7 +72,7 @@ package parsing is
       Parsed_Request : out Simple_HTTP_Request;
       Exception_Raised : out Boolean  --refactor Invalid Request
    )
-   with Global => (In_Out => Standard_Output),
+   with Global => null,
         Pre => not Is_Empty(Raw_Request) and
                Raw_Request.Size = MAX_REQUEST_LINE_BYTE_CT and
                Raw_Request.EmptyChar = NUL and

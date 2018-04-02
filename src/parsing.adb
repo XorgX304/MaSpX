@@ -132,114 +132,8 @@ package body parsing is
       
       return Token_Ct;
    end Get_Token_Ct;
-
---------------------------------------------------------------------------------
-   function Tokenize_Request_Buffer( 
-      Raw_Request : Measured_Buffer_Type;
-      Delimit : Character) return Tokens_Request_Array_Type
-   is
-      Tokens : Tokens_Request_Array_Type(1 .. Get_Token_Ct(Raw_Request, Delimit));
-      Token_Buf : Measured_Buffer_Type(Raw_Request.Size, Raw_Request.EmptyChar);
-      Start : Max_Buffer_Size_Type := 1;
-      Finish : Max_Buffer_Size_Type := Raw_Request.Length;
-   begin
    
-      for I in Tokens'Range loop
-         Get_First_Token_In_Range(Raw_Request,Delimit,Start,Finish,Token_Buf);
-         Tokens(I) := Token_Buf;
-         
-         Start := Start + Token_Buf.Length + 1; --ltj: plus one for the delimiter           
-      end loop;
-      
-      return Tokens;
-   end Tokenize_Request_Buffer;
-
 --------------------------------------------------------------------------------
---     procedure Parse_HTTP_Request(
---        Client_Socket : GNAT.Sockets.Socket_Type;
---        Raw_Request : Measured_Buffer_Type;
---        Parsed_Request : out Simple_HTTP_Request;
---        Exception_Raised : out Boolean)
---     is
---        Token_Buf : Measured_Buffer_Type(Raw_Request.Size, Raw_Request.EmptyChar);
---        Response : Simple_HTTP_Response;
---     begin
---        Exception_Raised := False;
---        Parsed_Request.RequestURI := (others=>' ');
---        Parsed_Request.Method := Http_Message.UNKNOWN;
---        
---        if not Is_Delimits_Well_Formed(Raw_Request, ' ') then
---           Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
---           Send_Simple_Response(Client_Socket, Response);
---           Exception_Raised := True;
---           return;
---        end if;
---     
---        --tokenize what should be the http METHOD
---        Get_First_Token_In_Range(
---           Raw_Request,
---           ' ',
---           Raw_Request.Buffer'First,
---           Raw_Request.Length,
---           Token_Buf
---        );
---        Debug_Print_Ln("Debugging: Tokenized METHOD:" & Get_String(Token_Buf));
---        
---        --ltj: not even sure this is possible!
---  --        if Token_First_Empty_Index = 0 or Token_First_Empty_Index >= Raw_Request.Buffer'Last - 2 then
---  --           Check_Print_Ln("MaSpX: First token in request too big for a second token! Sending 400 Bad Request.");
---  --           Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
---  --           Send_Simple_Response(Client_Socket, Response);
---  --           Exception_Raised := True;
---  --           return;
---  --        end if;
---        
---        --parse to "GET" or "UNKNOWN" in http message
---        if Get_String(Token_Buf) = GET_TOKEN_STR then
---           Parsed_Request.Method := Http_Message.GET;
---           
---           --tokenize what should be http REQUEST-URI
---           Get_First_Token_In_Range(
---              Raw_Request,
---              ' ',
---              Token_Buf.Length + 2, --ltj:one to skip space and one to get to next char
---              Raw_Request.Length,
---              Token_Buf
---           );
---           Debug_Print_Ln("Debugging: Tokenized URI:" & Get_String(Token_Buf));
---        
---           --ltj: if tokenized uri is larger than possible space in request URI, throw error
---           if Token_Buf.Length > RequestURIStringType'Last then
---              Check_Print_Ln("MaSpX: Tokenized URI is larger than space possible to fit it! Sending 400 Bad Request (URI).");
---              Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
---              Send_Simple_Response(Client_Socket, Response);
---              Exception_Raised := True;
---              return;
---           end if;
---           
---           --ltj: stick URI in parsed_request, sanitize at later stage. This only doesn't cut stuff off because we make sure of it in the last bit of code.
---           --Parsed_Request.RequestURI(RequestURIStringType'First .. RequestURIStringType'Last) := Token_Buf.Buffer(RequestURIStringType'First .. RequestURIStringType'Last);
---           Parsed_Request.RequestURI(RequestURIStringType'First .. Token_Buf.Length) := Get_String(Token_Buf);
---           --ltj: Add DEFAULT_PAGE if request is for directory.
---           if not Is_Empty(Token_Buf) then
---              if Parsed_Request.RequestURI(Token_Buf.Length) = '/' or Parsed_Request.RequestURI(Token_Buf.Length) = '\' then
---                 Parsed_Request.RequestURI(Token_Buf.Length + 1 .. Token_Buf.Length + 1 + DEFAULT_PAGE'Length - 1) := DEFAULT_PAGE;
---              end if;
---           else --ltj: Token_First_Empty_Index will never equal 0 here because this path requires that there be a first token and if there is a first token, the second token will not take up the whole string
---              --ltj: throw some error about no URI
---              Check_Print_Ln("MaSpX: missing second token! Sending 400 Bad Request (URI).");
---              Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
---              Send_Simple_Response(Client_Socket, Response);
---              Exception_Raised := True;
---              return;
---           end if;
---        else
---           Parsed_Request.Method := Http_Message.UNKNOWN;
---        end if;
---        
---        
---     end Parse_HTTP_Request;
-
    procedure Parse_HTTP_Request(
       Client_Socket : GNAT.Sockets.Socket_Type; -- pre Open (but network code..)
       Raw_Request : Measured_Buffer_Type;
@@ -253,7 +147,7 @@ package body parsing is
       Response : Simple_HTTP_Response;
    begin
       Parsed_Request.Method := Http_Message.UNKNOWN;
-      Parsed_Request.RequestURI.Buffer := (others=>Parsed_Request.RequestURI.EmptyChar);
+      Clear(Parsed_Request.RequestURI);
       Exception_Raised := False;
       
       if Tokens'Length < 2 or not Is_Delimits_Well_Formed(Raw_Request, Delimit) 
@@ -265,8 +159,24 @@ package body parsing is
       end if;
       
       Tokens := Get_All_Request_Tokens(Raw_Request, Delimit);
-      Method_Token := Tokens(1);
-      URI_Token := Tokens(2);
+      pragma Assert( for all I in Tokens'Range => Tokens(I).Length <= Tokens(I).Size );
+      
+      pragma Assert( Method_Token.Size = Tokens(1).Size and
+                     Method_Token.EmptyChar = Tokens(1).EmptyChar and
+                     URI_Token.Size = Tokens(2).Size and
+                     URI_Token.EmptyChar = Tokens(2).EmptyChar);
+                     
+      Method_Token.Buffer := Tokens(1).Buffer;
+      Method_Token.Length := Tokens(1).Length;
+      pragma Assert( Tokens(1).Length <= Tokens(1).Size and then
+                     Method_Token.Length = Tokens(1).Length and then
+                     Method_Token.Length <= Method_Token.Size );
+                     
+      URI_Token.Buffer := Tokens(2).Buffer;
+      URI_Token.Length := Tokens(2).Length;
+      pragma Assert( Tokens(2).Length <= Tokens(2).Size and then
+                     URI_Token.Length = Tokens(2).Length and then
+                     URI_Token.Length <= URI_Token.Size );
       
       if Get_String(Method_Token) = GET_TOKEN_STR then
          Parsed_Request.Method := Http_Message.GET;
@@ -274,7 +184,7 @@ package body parsing is
          Parsed_Request.Method := Http_Message.UNKNOWN;
       end if;
       
-      if URI_Token.Length > Parsed_Request.RequestURI.Size then
+      if URI_Token.Length > Parsed_Request.RequestURI.Size - DEFAULT_PAGE'Length or Is_Empty(URI_Token) then
          Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
          Send_Simple_Response(Client_Socket, Response);
          Exception_Raised := True;
