@@ -1,10 +1,11 @@
 with Gnat.Sockets;
-with Ada.Text_IO;
 with Ada.Exceptions;
+with Ada.Text_IO;
 with Ada.IO_Exceptions;
 with Ada.Characters;
 with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 with Ada.Streams;
+with SPARK.Text_IO; use SPARK.Text_IO;
 
 with utils_ns;
 with network_types; use Network_Types;
@@ -63,7 +64,10 @@ is
       Client_Socket : Gnat.Sockets.Socket_Type;
       Request : out Measured_Buffer_Type;
       Exception_Raised : out Boolean
-   );
+   )
+   with Global => (In_Out => Standard_Output),
+        Post => (if not Exception_Raised then
+                    not Is_Empty(Request) and Request.Length <= Request.Size);
    
    procedure Send_TEST_Response(
       Client_Socket : Gnat.Sockets.Socket_Type

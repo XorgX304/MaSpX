@@ -76,6 +76,7 @@ package parsing is
         Pre => not Is_Empty(Raw_Request) and
                Raw_Request.Size = MAX_REQUEST_LINE_BYTE_CT and
                Raw_Request.EmptyChar = NUL and
-               Raw_Request.Length <= Raw_Request.Size;
+               Raw_Request.Length <= Raw_Request.Size,
+        Post => Parsed_Request.RequestURI.Length <= Parsed_Request.RequestURI.Size;
 
 end parsing;

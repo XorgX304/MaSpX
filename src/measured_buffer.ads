@@ -18,7 +18,8 @@ package measured_buffer is
       Length : Max_Buffer_Size_Type := EMPTY_BUFFER_LENGTH;
    end record;
    --with Type_Invariant => Measured_Buffer_Type.Length = Calc_Length(Buf);
-   
+--------------------------------------------------------------------------------
+
    function Construct_Measured_Buffer(
       SizeInst : Max_Buffer_Size_Type; 
       EmptyCharInst : Character;
@@ -77,6 +78,11 @@ package measured_buffer is
         Pre => Buf.Length <= Buf.Size - S'Length,
         Post => Buf.Length'Old + S'Length = Buf.Length;
                 
+   procedure Replace_Char(Buf : in out Measured_Buffer_Type; BeforeChar,AfterChar : Character)
+   with Global => null,
+        Pre => Buf.Length <= Buf.Size,
+        Post => Buf.Length'Old = Buf.Length;
+   
    procedure Clear(Buf : out Measured_Buffer_Type)
    with Global => null,
         Post => Is_Empty(Buf) and

@@ -66,6 +66,17 @@ package body measured_buffer is
    end Append_Str;
    
 --------------------------------------------------------------------------------
+   procedure Replace_Char(Buf : in out Measured_Buffer_Type; BeforeChar,AfterChar : Character)
+   is
+   begin
+      for I in Positive'First .. Buf.Length loop
+         if Buf.Buffer(I) = BeforeChar then
+            Buf.Buffer(I) := AfterChar;
+         end if;
+      end loop;
+   end Replace_Char;
+
+--------------------------------------------------------------------------------
    procedure Clear(Buf : out Measured_Buffer_Type)
    is
    begin

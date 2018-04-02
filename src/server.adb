@@ -6,27 +6,21 @@ package body server is
       Parsed_Request : Simple_HTTP_Request;
       Canonicalized_Request : out Simple_HTTP_Request)
    is
-      Intermediary_String : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
+      Intermediary_Buf : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
    begin
-      Intermediary_String.Buffer := (others=>Intermediary_String.EmptyChar);
+      Intermediary_Buf.Buffer := (others=>Intermediary_Buf.EmptyChar);
+      Intermediary_Buf.Length := 0;
+      Intermediary_Buf := Parsed_Request.RequestURI;
    
       --ltj: relevant: https://wiki.sei.cmu.edu/confluence/display/java/FIO16-J.+Canonicalize+path+names+before+validating+them
       --ltj: ignoring special files like links for now (not even sure if SPARK.Text_IO.Open deals with those...check impl)
       --ltj: convert all slashes to backslashes
-      --TODO:ltj: give this a measured_buffer api. Just copy record, then call Replace_All(Intermediary_String, '/', '\')
-      for I in Parsed_Request.RequestURI.Buffer'First .. Parsed_Request.RequestURI.Length loop
-         if Parsed_Request.RequestURI.Buffer(I) = '/' then
-            Intermediary_String.Buffer(I) := '\';
-         else
-            Intermediary_String.Buffer(I) := Parsed_Request.RequestURI.Buffer(I);
-         end if;
-         Intermediary_String.Length := Intermediary_String.Length + 1;
-      end loop;
+      Replace_Char(Intermediary_Buf, '/', '\');
       --TODO:ltj: resolving ..'s and .'s (use get token with \ as delimit...)
       
       --ltj: copy intermediary_string to Canonicalized_Request
       Canonicalized_Request.Method := Parsed_Request.Method;
-      Canonicalized_Request.RequestURI := Intermediary_String;
+      Canonicalized_Request.RequestURI := Intermediary_Buf;
    end Canonicalize_HTTP_Request;
    
 --------------------------------------------------------------------------------
