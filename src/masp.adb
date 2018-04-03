@@ -19,12 +19,13 @@ procedure Masp is
    Client_Socket : Gnat.Sockets.Socket_Type;
    Client_Cxn_Exception_Raised : Boolean;
    --Message_Byte_Array : Network_Types.Byte_Array_Type;
-   Raw_Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
+   Raw_Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL); --TODO:ltj: convert to Simple_HTTP_Request(Raw)
    Client_Request_Exception_Raised : Boolean;
-   Parsed_Request : Simple_HTTP_Request;
+   Parsed_Request : Simple_HTTP_Request(Parsed);
    Client_Parse_Exception_Raised : Boolean;
-   Canonicalized_Request : Simple_HTTP_Request;
-   Clean_Request : Simple_HTTP_Request;
+   Canonicalized_Request : Simple_HTTP_Request(Canonicalized);
+   Clean_Request : Simple_HTTP_Request(Sanitized);
+   Unsanitary_Request : Boolean;
 begin
    Debug_Print_Ln("Debugging: About to Init");
    Initialize_TCP_State(Server_Socket, Init_Exception_Raised); --        <--- network, non-SPARK stuff
@@ -35,9 +36,7 @@ begin
    end if;
 
    loop
-      --Raw_Request.Length := 1;
-      --Raw_Request.Buffer := (others=>' ');
-      measured_buffer.Clear(Raw_Request);
+      Clear(Raw_Request);
 
       Debug_Print_Ln("Debugging: Waiting for client cxn...");
       --TODO:ltj: make server able to accept more than one client, like in CRADLE
@@ -62,13 +61,15 @@ begin
                when others =>
                   Debug_Print_Ln("Debugging: Parsed METHOD:");
                end case;
-               Debug_Print_Ln("Debugging: Parsed URI:" & Get_String(Parsed_Request.RequestURI));
+               Debug_Print_Ln("Debugging: Parsed URI:" & Get_String(Parsed_Request.URI));
 
                Canonicalize_HTTP_Request(Parsed_Request, Canonicalized_Request); --interpret all ..'s and .'s. remove extra slashes, or throw error on them
 
-               Sanitize_HTTP_Request(Canonicalized_Request, Clean_Request); --WARNING: currently does nothing but copy canonicalized to clean
+               Sanitize_HTTP_Request(Client_Socket, Canonicalized_Request, Clean_Request, Unsanitary_Request); --WARNING: currently does nothing but copy canonicalized to clean
 
-               Fulfill_HTTP_Request(Client_Socket, Clean_Request);  --           <-- SPARK
+               if not Unsanitary_Request then
+                  Fulfill_HTTP_Request(Client_Socket, Clean_Request);  --           <-- SPARK
+               end if;
             end if;
          end if;
 

@@ -15,6 +15,13 @@ with measured_buffer; use measured_buffer;
 package parsing is
 
    type Tokens_Request_Array_Type is array (Max_Buffer_Size_Type range <>) of Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
+   type Tokens_Filename_Array_Type is array (Max_Buffer_Size_Type range <>) of Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+   
+   BLANK_FILENAME_TOKEN : constant Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL) :=
+      (Size => MAX_FS_PATH_BYTE_CT,
+       EmptyChar => NUL,
+       Buffer => (others=>NUL),
+       Length => 0);
 
    --Start and Finish are inclusive
    procedure Get_First_Token_In_Range(
@@ -46,6 +53,43 @@ package parsing is
         Post => Get_All_Request_Tokens'Result'Length = Get_Token_Ct(Raw_Request, Delimit) and
                 (for all I in Get_All_Request_Tokens'Result'Range => 
                     Get_All_Request_Tokens'Result(I).Length <= Get_All_Request_Tokens'Result(I).Size);
+                    
+   procedure Resolve_Special_Directories(Filename : in out Measured_Buffer_Type)
+   with Global => (Input => BLANK_FILENAME_TOKEN),
+        Pre => Is_Delimits_Well_Formed(Filename, '\') and then
+               Filename.Length <= Filename.Size and then
+               not Is_Empty(Filename) and then
+               Filename.Size = MAX_FS_PATH_BYTE_CT and then
+               Filename.EmptyChar = NUL;
+               
+   function Get_All_Filename_Tokens(
+      Filename : Measured_Buffer_Type;
+      Delimit : Character
+   ) return Tokens_Filename_Array_Type
+   with Global => null,
+        Pre => Is_Delimits_Well_Formed(Filename, '\') and then
+               Filename.Length <= Filename.Size and then
+               not Is_Empty(Filename) and then
+               Filename.Size = MAX_FS_PATH_BYTE_CT and then
+               Filename.EmptyChar = NUL,
+        Post => Get_All_Filename_Tokens'Result'Length = Get_Token_Ct(Filename, Delimit) and
+                (for all I in Get_All_Filename_Tokens'Result'Range =>
+                    Get_All_Filename_Tokens'Result(I).Length <= Get_All_Filename_Tokens'Result(I).Size);
+        
+   function Detokenize_Filename_Tokens(
+      Tokens : Tokens_Filename_Array_Type;
+      Delimit : Character
+   ) return Measured_Buffer_Type
+   with Global => (Input => BLANK_FILENAME_TOKEN),
+        Pre => (for all I in Tokens'Range => Tokens(I).Length <= Tokens(I).Size),
+        Post => Detokenize_Filename_Tokens'Result.Size = MAX_FS_PATH_BYTE_CT and
+                Detokenize_Filename_Tokens'Result.EmptyChar = NUL;
+                
+   function Is_Last_Token(
+      Tokens : Tokens_Filename_Array_Type;
+      J : Positive
+   ) return Boolean
+   with Global => (Input => BLANK_FILENAME_TOKEN);
    
    function Is_Delimits_Well_Formed(
       Source_Buf : Measured_Buffer_Type;
@@ -77,6 +121,7 @@ package parsing is
                Raw_Request.Size = MAX_REQUEST_LINE_BYTE_CT and
                Raw_Request.EmptyChar = NUL and
                Raw_Request.Length <= Raw_Request.Size,
-        Post => Parsed_Request.RequestURI.Length <= Parsed_Request.RequestURI.Size;
+        Post => Parsed_Request.Stage = Parsed and then
+                Parsed_Request.URI.Length <= Parsed_Request.URI.Size;
 
 end parsing;

@@ -75,6 +75,118 @@ package body parsing is
    end Get_All_Request_Tokens;
 
 --------------------------------------------------------------------------------
+   procedure Resolve_Special_Directories(Filename : in out Measured_Buffer_Type)
+   is
+      Tokens : Tokens_Filename_Array_Type(1 .. Get_Token_Ct(Filename, '\'));
+   begin
+      Tokens := Get_All_Filename_Tokens(Filename, '\');
+      
+      --ltj:(from left to right, ..: delete token left of .. and ..; .: delete .)
+      for I in Tokens'Range loop
+         if Get_String(Tokens(I)) = "." then
+            Tokens(I) := BLANK_FILENAME_TOKEN;
+         elsif Get_String(Tokens(I)) = ".." then
+            Tokens(I) := BLANK_FILENAME_TOKEN;
+            for J in reverse Tokens'First .. I loop
+               if Tokens(J) /= BLANK_FILENAME_TOKEN and Get_String(Tokens(J)) /= FS_ROOT then
+                  Tokens(J) := BLANK_FILENAME_TOKEN;
+                  exit;
+               end if;
+            end loop;
+         end if;
+      end loop;
+      
+      --ltj:convert back into single measured buffer
+      Filename := Detokenize_Filename_Tokens(Tokens, '\');
+   end Resolve_Special_Directories;
+
+--------------------------------------------------------------------------------
+   function Get_All_Filename_Tokens(
+      Filename : Measured_Buffer_Type;
+      Delimit : Character) return Tokens_Filename_Array_Type
+   is
+      Tokens : Tokens_Filename_Array_Type(1 .. Get_Token_Ct(Filename, Delimit));
+      Token_Buf : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+      Start : Max_Buffer_Size_Type := Filename.Buffer'First;
+      C : Character;
+   begin   
+      for I in Tokens'Range loop
+         Clear(Token_Buf);
+         pragma Assert( Token_Buf.Length = 0 );
+      
+         for J in Start .. Filename.Length loop
+            pragma Assert( Start >= Filename.Buffer'First and then
+                           J >= Start );
+                                      
+            C := Filename.Buffer(J);
+         
+            if C = Delimit then
+               if J + 1 <= Filename.Length then
+                  Start := J + 1;
+                  pragma Assert(Start > Filename.Buffer'First);
+               else
+                  Start := Filename.Length + 1; --ltj: to skip inner loop
+               end if;
+               
+               exit;
+            end if;
+         
+            Append(Token_Buf, C);
+            pragma Loop_Invariant( Token_Buf.Length <= J and then
+                                   Start >= Filename.Buffer'First and then
+                                   J >= Start and then
+                                   Token_Buf.Length <= Token_Buf.Size);
+         end loop;
+         
+         Tokens(I) := Token_Buf;
+         
+         pragma Loop_Invariant( Start >= Filename.Buffer'First and
+                                (for all K in Tokens'First .. I => Tokens(K).Length <= Tokens(K).Size) );
+      end loop;
+      
+      pragma Assert( for all K in Tokens'Range => Tokens(K).Length <= Tokens(K).Size );
+      return Tokens;
+   end Get_All_Filename_Tokens;
+
+--------------------------------------------------------------------------------
+   function Detokenize_Filename_Tokens(
+      Tokens : Tokens_Filename_Array_Type;
+      Delimit : Character) return Measured_Buffer_Type
+   is
+      Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+   begin
+      Clear(Filename);
+      
+      for I in Tokens'Range loop
+         if Tokens(I) /= BLANK_FILENAME_TOKEN then
+            Append_Str(Filename, Get_String(Tokens(I)));
+         
+            if not Is_Last_Token(Tokens, I) then
+               Append(Filename, Delimit);
+            end if;
+         end if;
+      end loop;
+      
+      return Filename;
+   end Detokenize_Filename_Tokens;
+
+--------------------------------------------------------------------------------
+   function Is_Last_Token(
+      Tokens : Tokens_Filename_Array_Type;
+      J : Positive
+   ) return Boolean
+   is
+   begin
+      for I in J .. Tokens'Last loop
+         if Tokens(I) /= BLANK_FILENAME_TOKEN and I /= J then
+            return False;
+         end if;
+      end loop;
+      
+      return True;
+   end Is_Last_Token;
+
+--------------------------------------------------------------------------------
    function Is_Delimits_Well_Formed(
       Source_Buf : Measured_Buffer_Type;
       Delimit : Character) return Boolean
@@ -147,7 +259,7 @@ package body parsing is
       Response : Simple_HTTP_Response;
    begin
       Parsed_Request.Method := Http_Message.UNKNOWN;
-      Clear(Parsed_Request.RequestURI);
+      Clear(Parsed_Request.URI);
       Exception_Raised := False;
       
       if Tokens'Length < 2 or not Is_Delimits_Well_Formed(Raw_Request, Delimit) 
@@ -182,7 +294,7 @@ package body parsing is
          Parsed_Request.Method := Http_Message.UNKNOWN;
       end if;
       
-      if URI_Token.Length > Parsed_Request.RequestURI.Size - DEFAULT_PAGE'Length 
+      if URI_Token.Length > Parsed_Request.URI.Size - DEFAULT_PAGE'Length 
       or Is_Empty(URI_Token) then
          Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
          Send_Simple_Response(Client_Socket, Response);
@@ -194,7 +306,7 @@ package body parsing is
          Append_Str(URI_Token, DEFAULT_PAGE);
       end if;
       
-      Copy(Parsed_Request.RequestURI, URI_Token);
+      Copy(Parsed_Request.URI, URI_Token);
    end Parse_HTTP_Request;
 
 end parsing;

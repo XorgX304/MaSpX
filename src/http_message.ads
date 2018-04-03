@@ -38,12 +38,21 @@ PACKAGE Http_Message IS
    SUBTYPE MaxHeadersType IS Integer RANGE 0..MaxHeaders;
    TYPE HeaderArrayType IS ARRAY(1..MaxHeaders) OF Header;
 
+   type RequestStageType is (Raw, Parsed, Canonicalized, Sanitized);
+
    --TODO:ltj: variate this record for Raw?, Parsed, Canonicalized, Sanitized
-   type Simple_HTTP_Request is
+   type Simple_HTTP_Request(Stage : RequestStageType) is
    record
       Method : Simple_Method_Type := UNKNOWN;
-      --RequestURI : ST.ParsedRequestURIStringType := (others=>' ');
-      RequestURI : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
+
+      case Stage is
+         when Raw =>
+            Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
+         when Parsed =>
+            URI : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
+         when others =>
+            Path : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+      end case;
    end record;
 
    type Simple_HTTP_Response is

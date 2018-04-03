@@ -9,7 +9,9 @@ package measured_buffer is
    MAX_FILE_READ_BYTE_CT : constant Natural := 10000;
    MAX_URI_BYTE_CT : constant Natural := 255;
    MAX_PARSED_URI_BYTE_CT : constant Natural := MAX_URI_BYTE_CT + DEFAULT_PAGE'Length - 1;
-   subtype Max_Buffer_Size_Type is Natural range Natural'First .. Natural'Max(Natural'Max(MAX_REQUEST_LINE_BYTE_CT, MAX_FILE_READ_BYTE_CT), Natural'Max(MAX_URI_BYTE_CT, MAX_PARSED_URI_BYTE_CT)); --ltj:set to the largest of the above constants
+   MAX_FS_PATH_BYTE_CT : constant Positive := WEB_ROOT'Length + MAX_PARSED_URI_BYTE_CT;
+   subtype Max_Buffer_Size_Type is Natural range 
+      Natural'First .. MAX_FILE_READ_BYTE_CT; --ltj: instead of just choosing obvious maximum, we can calculate it too: Natural'Max(Natural'Max(MAX_REQUEST_LINE_BYTE_CT, MAX_FILE_READ_BYTE_CT), Natural'Max(MAX_URI_BYTE_CT, MAX_PARSED_URI_BYTE_CT)); --ltj:set to the largest of the above constants
    EMPTY_BUFFER_LENGTH : constant Natural := 0;
    
    type Measured_Buffer_Type(Size : Max_Buffer_Size_Type; EmptyChar : Character) is
@@ -98,6 +100,11 @@ package measured_buffer is
                Src_Buf.Length <= Src_Buf.Size,
         Post => Dst_Buf.Buffer(Positive'First .. Src_Buf.Length) = Src_Buf.Buffer(Positive'First .. Src_Buf.Length) and
                 Dst_Buf.Length = Src_Buf.Length;
+                
+   function Is_Prefixed(Buf : Measured_Buffer_Type; Prefix : String) return Boolean
+   is ( Buf.Buffer(Positive'First .. Prefix'Length) = Prefix )
+   with Global => null,
+        Pre => Prefix'Length <= Buf.Size;
    
    function Get_String(Buf : Measured_Buffer_Type) return String
    is ( Buf.Buffer(Positive'First .. Buf.Length) )

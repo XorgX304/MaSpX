@@ -31,8 +31,6 @@ package fileio is
    
    c413_PAYLOAD_TOO_LARGE_PAGE : constant File_Buf := ('4','1','3',' ','P','a','y','l','o','a','d',' ','T','o','o',' ','L','a','r','g','e', others=>' ');
    c413_PAYLOAD_TOO_LARGE_LENGTH : constant ContentSize := 22;
-
-   MAX_FS_PATH_BYTE_CT : constant Positive := WEB_ROOT'Length + ParsedRequestURIStringType'Length;
    
    procedure Read_File_To_MFB(
       --MFT : Measured_Filename_Type;

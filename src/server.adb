@@ -6,34 +6,46 @@ package body server is
       Parsed_Request : Simple_HTTP_Request;
       Canonicalized_Request : out Simple_HTTP_Request)
    is
-      Intermediary_Buf : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
+      Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
    begin
-      pragma Assert( Intermediary_Buf.Size = Parsed_Request.RequestURI.Size );
-      Intermediary_Buf := Parsed_Request.RequestURI;
-      
-      pragma Assert( Intermediary_Buf.Length = Parsed_Request.RequestURI.Length and
-                     Intermediary_Buf.Length <= Intermediary_Buf.Size );
+      --construct name from web root and request uri
+      Filename := Construct_Measured_Buffer(Filename.Size, Filename.EmptyChar, WEB_ROOT);
+      Append_Str(Filename, Get_String(Parsed_Request.URI));
+      Debug_Print_Ln("Filename: " & Get_String(Filename));
    
       --ltj: relevant: https://wiki.sei.cmu.edu/confluence/display/java/FIO16-J.+Canonicalize+path+names+before+validating+them
       --ltj: ignoring special files like links for now (not even sure if SPARK.Text_IO.Open deals with those...check impl)
       --ltj: convert all slashes to backslashes
-      Replace_Char(Intermediary_Buf, '/', '\');
-      --TODO:ltj: resolving ..'s and .'s (use get token with \ as delimit...)
+      Replace_Char(Filename, '/', '\');
+      --TODO:ltj: insert guards for precond of Resolve...
+      --ltj: resolving ..'s and .'s 
+      Resolve_Special_Directories(Filename);
       
-      --ltj: copy intermediary_string to Canonicalized_Request
+      --ltj: copy intermediary_buf to Canonicalized_Request
       Canonicalized_Request.Method := Parsed_Request.Method;
-      Canonicalized_Request.RequestURI := Intermediary_Buf;
+      Canonicalized_Request.Path := Filename;
    end Canonicalize_HTTP_Request;
    
 --------------------------------------------------------------------------------
    procedure Sanitize_HTTP_Request(
+      Client_Socket : Socket_Type;
       Canonicalized_Request : Simple_HTTP_Request;
-      Clean_Request : out Simple_HTTP_Request)
+      Clean_Request : out Simple_HTTP_Request;
+      Unsanitary_Request : out Boolean)
    is
+      Response : Simple_HTTP_Response;
    begin
-      --TODO:ltj: check that web root prefix is present in canonicalized request uri, otherwise reject as forbidden
-      Clean_Request.Method := Canonicalized_Request.Method;
-      Clean_Request.RequestURI := Canonicalized_Request.RequestURI;
+      Unsanitary_Request := False;
+   
+      --ltj: check that web root prefix is present in canonicalized request uri, otherwise reject as forbidden
+      if Is_Prefixed(Canonicalized_Request.Path, WEB_ROOT) then
+         Clean_Request.Method := Canonicalized_Request.Method;
+         Clean_Request.Path := Canonicalized_Request.Path;
+      else
+         Response := Construct_Simple_HTTP_Response(c403_FORBIDDEN_PAGE);
+         Send_Simple_Response(Client_Socket, Response);
+         Unsanitary_Request := True;
+      end if;
    end Sanitize_HTTP_Request;
    
 --------------------------------------------------------------------------------
@@ -42,9 +54,7 @@ package body server is
       Clean_Request : Simple_HTTP_Request)
    is
       Response : Simple_HTTP_Response;
-      --MFT : Measured_Filename_Type;
-      Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
-      MFB : Measured_File_Buffer;
+      MFB : Measured_File_Buffer; --TODO:ltj: convert to Measured_Buffer_Type
    begin
       case Clean_Request.Method is
          when Http_Message.UNKNOWN =>
@@ -52,14 +62,7 @@ package body server is
             
          when Http_Message.GET =>
             --get document from server:
-            
-            --construct name from web root and request uri
-            --MFT := Construct_Measured_Filename(Clean_Request.RequestURI);
-            Filename := Construct_Measured_Buffer(Filename.Size, Filename.EmptyChar, WEB_ROOT);
-            Append_Str(Filename, Get_String(Clean_Request.RequestURI)); --TODO:ltj:might need if-guard for this
-            Debug_Print_Ln("Filename: " & Get_String(Filename));
-            
-            Read_File_To_MFB(Get_String(Filename), MFB);
+            Read_File_To_MFB(Get_String(Clean_Request.Path), MFB);
             
             Response := Construct_Simple_HTTP_Response(MFB);
       end case;

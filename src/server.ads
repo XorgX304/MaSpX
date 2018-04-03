@@ -11,6 +11,7 @@ with config; use config;
 with utils; use utils;
 with String_Types; use String_Types;
 with measured_buffer; use measured_buffer;
+with parsing; use parsing;
 
 package server is
 
@@ -19,22 +20,29 @@ package server is
       Canonicalized_Request : out Simple_HTTP_Request
    )
    with Global => null,
-        Pre => Parsed_Request.RequestURI.Length <= Parsed_Request.RequestURI.Size,
-        Post => Canonicalized_Request.RequestURI.Length <= Canonicalized_Request.RequestURI.Size;
+        Pre => Parsed_Request.Stage = Parsed and then
+               Parsed_Request.URI.Length <= Parsed_Request.URI.Size,
+        Post => Canonicalized_Request.Stage = Canonicalized and then
+                Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size;
 
    procedure Sanitize_HTTP_Request(
+      Client_Socket : Socket_Type;
       Canonicalized_Request : Simple_HTTP_Request;
-      Clean_Request : out Simple_HTTP_Request
+      Clean_Request : out Simple_HTTP_Request;
+      Unsanitary_Request : out Boolean
    )
    with Global => null,
-        Pre => Canonicalized_Request.RequestURI.Length <= Canonicalized_Request.RequestURI.Size,
-        Post => Clean_Request.RequestURI.Length <= Clean_Request.RequestURI.Size;
+        Pre => Canonicalized_Request.Stage = Canonicalized and then
+               Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size,
+        Post => Clean_Request.Stage = Sanitized and then
+                Clean_Request.Path.Length <= Clean_Request.Path.Size;
 
    procedure Fulfill_HTTP_Request(
       Client_Socket : Socket_Type;
       Clean_Request : Simple_HTTP_Request
    )
    with Global => (In_Out => Standard_Output),
-        Pre => Clean_Request.RequestURI.Length <= Clean_Request.RequestURI.Size;
+        Pre => Clean_Request.Stage = Sanitized and then
+               Clean_Request.Path.Length <= Clean_Request.Path.Size;
 
 end server;
