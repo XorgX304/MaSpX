@@ -35,10 +35,15 @@ package fileio is
    procedure Read_File_To_MFB(
       --MFT : Measured_Filename_Type;
       Trimmed_Name : String;
-      MFB : out Measured_File_Buffer
+      MFB : out Measured_File_Buffer;
+      JPEG : out Boolean
    )
    with Global => (In_Out => Standard_Output),
         Pre => Trimmed_Name'Length <= MAX_FS_PATH_BYTE_CT;
+        
+--     procedure Read_File_To_Buffer(
+--        Filename : String;
+--        Buf : Measured_File_Buffer;
    
    procedure Print_File_Status(
       My_File_Status : File_Status

@@ -9,7 +9,6 @@ with Http_Message; use Http_Message;
 with parsing; use parsing;
 with network_ns; use network_ns;
 with Network_Types;
-with utils_ns;
 with utils; use utils;
 with measured_buffer; use measured_buffer;
 
@@ -38,7 +37,7 @@ begin
    loop
       Clear(Raw_Request);
 
-      Debug_Print_Ln("Debugging: Waiting for client cxn...");
+      Debug_Print_Ln(LF & LF & LF & "Debugging: Waiting for client cxn...");
       --TODO:ltj: make server able to accept more than one client, like in CRADLE
       Get_Client_Cxn(Server_Socket, Client_Socket, Client_Cxn_Exception_Raised); --        <--- network, non-SPARK stuff
 

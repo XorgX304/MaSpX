@@ -55,6 +55,7 @@ package body server is
    is
       Response : Simple_HTTP_Response;
       MFB : Measured_File_Buffer; --TODO:ltj: convert to Measured_Buffer_Type
+      JPEG : Boolean;
    begin
       case Clean_Request.Method is
          when Http_Message.UNKNOWN =>
@@ -62,9 +63,14 @@ package body server is
             
          when Http_Message.GET =>
             --get document from server:
-            Read_File_To_MFB(Get_String(Clean_Request.Path), MFB);
+            Read_File_To_MFB(Get_String(Clean_Request.Path), MFB, JPEG);
             
             Response := Construct_Simple_HTTP_Response(MFB);
+            if JPEG then
+               Response.Content_Type := JPG;
+            else
+               Response.Content_Type := HTML;
+            end if;
       end case;
       
       Send_Simple_Response(Client_Socket, Response);

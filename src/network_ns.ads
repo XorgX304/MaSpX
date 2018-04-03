@@ -7,7 +7,6 @@ with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 with Ada.Streams;
 with SPARK.Text_IO; use SPARK.Text_IO;
 
-with utils_ns;
 with network_types; use Network_Types;
 with Http_Message; use Http_Message;
 with fileio; use fileio;
@@ -32,6 +31,8 @@ is
                                              "Hello World! My payload includes a trailing CRLF." & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
    STATIC_RESPONSE_HEADER_09 : constant String := "HTTP/0.9 200 OK" & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
    STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 : constant String := "Content-Length:";
+   STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09 : constant String := "Accept-Ranges: bytes";
+   STATIC_RESPONSE_CONTENT_TYPE_09 : constant String := "Content-Type: ";
    STATIC_TEST_RESPONSE_09 : constant String := "Hello World! My payload includes a trailing CRLF." & ada.Characters.Latin_1.CR & ada.Characters.Latin_1.LF;
 
    subtype MRB_First_Empty_Index_Type is Natural range Natural'First .. MAX_REQUEST_LINE_BYTE_CT;

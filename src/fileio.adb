@@ -6,15 +6,24 @@ package body fileio is
    procedure Read_File_To_MFB( --TODO:ltj: 
        --MFT : Measured_Filename_Type
        Trimmed_Name : String;
-       MFB : out Measured_File_Buffer)
+       MFB : out Measured_File_Buffer;
+       JPEG : out Boolean)
    is
       --Trimmed_Name : String(1 .. Get_MFT_Length(MFT));
       Read_File : File_Type;
       Read_File_Status : File_Status;
-      C : Character_Result;
+      C : Character_Result := 
+         (Status => Status_Error);
+      Prev_C : Character_Result;
+      FirstByteFlag : Boolean := True;
+      FirstByte : Character;
+      SecondByteFlag : Boolean := False;
+      SecondByte : Character;
+      OtherByteFlag : Boolean := False;
    begin
       MFB.Length := 1;
       MFB.Buffer := (others=>NUL);
+      JPEG := False;
       
       --Trim_Filename(MFT, Trimmed_Name);
       
@@ -45,9 +54,10 @@ package body fileio is
       
          --read all of it that can fit in MFB
          loop
-            pragma Loop_Invariant( not Is_Standard_File(Read_File) );
-         
-            if Is_Readable(Read_File) and then not End_Of_File(Read_File) then
+            pragma Loop_Invariant( not Is_Standard_File(Read_File) );  
+               
+            if (JPEG and then (Prev_C.Item /= Character'Val(16#FF#) or C.Item /= Character'Val(16#D9#)))
+            or (not JPEG and then Is_Readable(Read_File) and then not End_Of_File(Read_File)) then
                if MFB.Length = 0 then
                   --ltj: buffer is full, but there is more in the file, send 413 page
                   Debug_Print_Ln("File too big for our buffer size! Send 413_Payload_Too_Big");
@@ -56,11 +66,22 @@ package body fileio is
                   return;
                end if;
                
+               Prev_C := C;
                Get(Read_File, C);
                
                case C.Status is
                when Success =>
                   MFB.Buffer(MFB.Length) := C.Item;
+                  
+                  if FirstByteFlag then
+                     FirstByte := C.Item;
+                  elsif SecondByteFlag then
+                     SecondByte := C.Item;
+                  elsif OtherByteFlag then
+                     if FirstByte = Character'Val(16#FF#) and SecondByte = Character'Val(16#D8#) then
+                        JPEG := True;
+                     end if;
+                  end if;
                   
                   if MFB.Length = ContentSize'Last then
                      MFB.Length := 0;
@@ -68,14 +89,29 @@ package body fileio is
                      MFB.Length := MFB.Length + 1;
                   end if;
                when others =>
+                  --TODO:ltj: close file nicely here.
                   Debug_Print("In reading file loop:");
                   Print_File_Status(C.Status);
                   return;
                end case;
+               
+               if FirstByteFlag and not SecondByteFlag and not OtherByteFlag then
+                  FirstByteFlag := False;
+                  SecondByteFlag := True;
+                  OtherByteFlag := False;
+               elsif not FirstByteFlag and SecondByteFlag and not OtherByteFlag then
+                  FirstByteFlag := False;
+                  SecondByteFlag := False;
+                  OtherByteFlag := True;
+               elsif not FirstByteFlag and not SecondByteFlag and OtherByteFlag then
+                  FirstByteFlag := False;
+                  SecondByteFlag := False;
+                  OtherByteFlag := False;
+               end if;
             else
                Debug_Print_Ln("End_of_File on Read_File");
                pragma Assert( not Is_Standard_File(Read_File) );
-               if Is_Open (Read_File) then --and not Is_Standard_File (Read_File) then
+               if Is_Open (Read_File) then
                   Close(Read_File);
                   Read_File_Status := Status(Read_File);
                   Debug_Print("On closing file:");

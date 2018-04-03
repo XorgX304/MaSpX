@@ -55,11 +55,14 @@ PACKAGE Http_Message IS
       end case;
    end record;
 
+   type ContentTypeType is (UNKNOWN, HTML, JPG);
+
    type Simple_HTTP_Response is
    record
       --ltj: don't encode http version or status code because in MaspClassic, this is always HTTP/0.9 200 OK
       Content_Length : ContentSize := 0;
       Entity_Body : File_Buf := (others => NUL);
+      Content_Type : ContentTypeType := UNKNOWN;
    end record;
 
    TYPE Http_Message_Variant_Record(ClientOrServer: ClientServerType) IS RECORD

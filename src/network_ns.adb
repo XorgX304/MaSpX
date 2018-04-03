@@ -91,14 +91,8 @@ package body network_ns is
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
       
       loop
-         --if C_ct <= Request.Buffer'Last then
          if not Is_Full(Request) then
-            String'Read(Client_Stream, C); --TODO-SEC:what happens when non-ASCII character (control char is encountered) or when longer than 259??
-            --ltj:http/0.9 request line *should* be all printable ascii, but of course, we've got to test violations of the standard        
-            --Request.Buffer(C_ct) := C(1);
-            --Request.Length := C_ct;
-         
-            --C_ct := C_ct + 1;
+            String'Read(Client_Stream, C); --TODO-PERF:ltj: can C be a bigger buffer???
             
             if C(1) = Request.EmptyChar then
                Debug_Print_Ln("Invalid character entered! Sending 400 Bad Request");
@@ -169,16 +163,28 @@ package body network_ns is
       Client_Socket : Gnat.Sockets.Socket_Type;
       Response : Simple_HTTP_Response)
    is  --TODO:ltj: make constant for 2. Like CR_Length + LF_Length or Line_Ending_Length to put it in one.
-      Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + ContentSize'Image(Response.Content_Length)'Length + 2 + 2 + Response.Content_Length));
+      Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + ContentSize'Image(Response.Content_Length)'Length + 2 + STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09'Length + 2 + STATIC_RESPONSE_CONTENT_TYPE_09'Length + 10 + 2 + 2 + Response.Content_Length));
       Client_Stream : Gnat.Sockets.Stream_Access;
    begin
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
    
-      Send_String := STATIC_RESPONSE_HEADER_09 & 
-                     STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & ContentSize'Image(Response.Content_Length) & CR & LF &
-                     CR & LF &
-                     Response.Entity_Body(1 .. Response.Content_Length);
-   
+      if Response.Content_Type = JPG then
+         Send_String := STATIC_RESPONSE_HEADER_09 & 
+                        STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & ContentSize'Image(Response.Content_Length) & CR & LF &
+                        STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09 & CR & LF &
+                        STATIC_RESPONSE_CONTENT_TYPE_09 & "image/jpeg" & CR & LF &
+                        CR & LF &
+                        Response.Entity_Body(1 .. Response.Content_Length);
+      else
+         Send_String := STATIC_RESPONSE_HEADER_09 & 
+                        STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & ContentSize'Image(Response.Content_Length) & CR & LF &
+                        STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09 & CR & LF &
+                        STATIC_RESPONSE_CONTENT_TYPE_09 & "text/html " & CR & LF &
+                        CR & LF &
+                        Response.Entity_Body(1 .. Response.Content_Length);
+      end if;
+      
+      --TODO:ltj: add exception handling...
       String'Write(Client_Stream, Send_String);
    end Send_Simple_Response;
    
