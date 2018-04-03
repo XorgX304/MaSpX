@@ -182,7 +182,8 @@ package body parsing is
          Parsed_Request.Method := Http_Message.UNKNOWN;
       end if;
       
-      if URI_Token.Length > Parsed_Request.RequestURI.Size - DEFAULT_PAGE'Length or Is_Empty(URI_Token) then
+      if URI_Token.Length > Parsed_Request.RequestURI.Size - DEFAULT_PAGE'Length 
+      or Is_Empty(URI_Token) then
          Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
          Send_Simple_Response(Client_Socket, Response);
          Exception_Raised := True;

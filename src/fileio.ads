@@ -40,7 +40,7 @@ package fileio is
       MFB : out Measured_File_Buffer
    )
    with Global => (In_Out => Standard_Output),
-        Pre => Trimmed_Name'Length < MAX_FS_PATH_BYTE_CT;
+        Pre => Trimmed_Name'Length <= MAX_FS_PATH_BYTE_CT;
    
    procedure Print_File_Status(
       My_File_Status : File_Status

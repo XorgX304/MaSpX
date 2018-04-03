@@ -102,6 +102,7 @@ package measured_buffer is
    function Get_String(Buf : Measured_Buffer_Type) return String
    is ( Buf.Buffer(Positive'First .. Buf.Length) )
    with Global => null,
-        Pre => Buf.Length <= Buf.Size;
+        Pre => Buf.Length <= Buf.Size,
+        Post => Get_String'Result'Length <= Buf.Size;
 
 end measured_buffer;

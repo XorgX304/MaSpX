@@ -12,7 +12,7 @@ RV SPARK_05
 
 U parsing%b		parsing.adb		cb991b14 OO PK IL
 
-U parsing%s		parsing.ads		fd6e739c OO PK IL
+U parsing%s		parsing.ads		8e341b07 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -37,20 +37,20 @@ D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D a-uncdea.ads		20170516105954 f15a5ed1 ada.unchecked_deallocation%s
 D config.ads		20180321201252 ec265e4d config%s
-D fileio.ads		20180331231356 2c55d9cd fileio%s
+D fileio.ads		20180403013554 73921e13 fileio%s
 D gnat.ads		20170516105956 fd2ad2f1 gnat%s
 D g-socket.ads		20170516105956 df7f0365 gnat.sockets%s
 D http_message.ads	20180331230122 ca365d8f http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180402235052 75428fd8 measured_buffer%s
-D network_ns.ads	20180402221512 0c10cd4c network_ns%s
+D measured_buffer.ads	20180403013336 3b4d167d measured_buffer%s
+D network_ns.ads	20180403014234 d3a6ec9b network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
 D parsing.ads		20180402221956 1a0ca3fa parsing%s
 D parsing.adb		20180402225208 d195b8ee parsing%b
 D spark.ads		20140410152036 86380d85 spark%s
-D spark-text_io.ads	20180326153942 e7af9ede spark.text_io%s
+D spark-text_io.ads	20180403010726 e7af9ede spark.text_io%s
 D string_types.ads	20180326171200 56f78cef string_types%s
 D system.ads		20170516105954 32a08138 system%s
 D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
@@ -61,7 +61,7 @@ D s-stalib.ads		20170516105954 09bd3940 system.standard_library%s
 D s-stoele.ads		20170516105956 2dc34a04 system.storage_elements%s
 D s-traent.ads		20170516105950 005bf670 system.traceback_entries%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180328030430 b042fd55 utils%s
+D utils.ads		20180403010340 52a12dbc utils%s
 D utils_ns.ads		20180220212052 c662e524 utils_ns%s
 X 1 ada.ads
 16K9*Ada 20e8 21|5r6 5r34
@@ -90,7 +90,7 @@ X 14 http_message.ads
 49R9*Simple_HTTP_Response 54e14 22|147r18
 83V13*Construct_Simple_HTTP_Response{49R9} 22|155s22 186s22
 X 18 measured_buffer.ads
-6K9*measured_buffer 107e20 21|12w6 12r27
+6K9*measured_buffer 108e20 21|12w6 12r27
 8i4*MAX_REQUEST_LINE_BYTE_CT{natural} 21|17r100 44r35 77r35 22|35r40 145r43
 . 146r40
 12I12*Max_Buffer_Size_Type{natural} 21|17r45 23r15 24r16 65r13 22|8r15 9r16
@@ -112,9 +112,9 @@ X 18 measured_buffer.ads
 95U14*Copy 22|196s7
 102V13*Get_String{string} 22|179s10
 X 19 network_ns.ads
-18K9*network_ns 87e15 21|7w6 7r22
-50a4*GET_TOKEN_STR{string} 22|179r37
-78U14*Send_Simple_Response 22|156s10 187s10
+18K9*network_ns 85e15 21|7w6 7r22
+48a4*GET_TOKEN_STR{string} 22|179r37
+76U14*Send_Simple_Response 22|156s10 187s10
 X 21 parsing.ads
 15K9*parsing 82l5 82e12 22|3b14 199l5 199t12
 17A9*Tokens_Request_Array_Type(18|15R9)<integer> 38r13 22|32r35 34r16 144r16
@@ -321,11 +321,8 @@ FD 10 config.ads
 FS .1 3K9 config
 FD 11 fileio.ads
 FS .1 12K9 fileio
-FS .2 48V13 fileio__get_mft_length
-FS .3 52U14 fileio__trim_filename
-FS .4 58U14 fileio__read_file_to_mfb
-FS .5 64U14 fileio__print_file_status
-FS .6 69V13 fileio__construct_measured_filename
+FS .2 37U14 fileio__read_file_to_mfb
+FS .3 45U14 fileio__print_file_status
 FD 12 gnat.ads
 FS .1 34K9 gnat
 FD 13 g-socket.ads
@@ -493,12 +490,12 @@ FS .20 69V13 measured_buffer__is_full -> 18.9
 FS .21 102V13 measured_buffer__get_string -> 18.15
 FD 19 network_ns.ads
 FS .1 18K9 network_ns
-FS .2 52U14 network_ns__initialize_tcp_state
-FS .3 57U14 network_ns__get_client_cxn
-FS .4 63U14 network_ns__recv_net_request
-FS .5 72U14 network_ns__send_test_response
-FS .6 78U14 network_ns__send_simple_response
-FS .7 83U14 network_ns__close_client_socket
+FS .2 50U14 network_ns__initialize_tcp_state
+FS .3 55U14 network_ns__get_client_cxn
+FS .4 61U14 network_ns__recv_net_request
+FS .5 70U14 network_ns__send_test_response
+FS .6 76U14 network_ns__send_simple_response
+FS .7 81U14 network_ns__close_client_socket
 FD 20 network_types.ads
 FS .1 1K9 network_types
 FD 21 parsing.ads
@@ -690,8 +687,6 @@ FS .3 11U14 utils__debug_print
 FS .4 12U14 utils__check_print_ln
 FS .5 13U14 utils__check_print
 FS .6 15V13 utils__logical_equivalence
-FS .7 18V13 utils__is_substring
-FS .8 30V13 utils__check_substring
 FD 36 utils_ns.ads
 FS .1 3K9 utils_ns
 FS .2 7U14 utils_ns__string_to_byte_array
@@ -715,8 +710,8 @@ F 90*14 measured_buffer__clear 22|.2:14s7 .3:40s10 .7:150s7
 F 95*14 measured_buffer__copy 22|.7:196s7
 F 102*13 measured_buffer__get_string 22|.7:179s10
 FX 19 network_ns.ads .1 network_ns
-F 50*4 network_ns__get_token_str 22|.7:179c37
-F 78*14 network_ns__send_simple_response 22|.7:156s10 187s10
+F 48*4 network_ns__get_token_str 22|.7:179c37
+F 76*14 network_ns__send_simple_response 22|.7:156s10 187s10
 FX 21 parsing.ads .1 parsing
 F 35*13 parsing__get_all_request_tokens 22|.7:161s17
 F 50*13 parsing__is_delimits_well_formed .3:40s16 22|.7:153s35
@@ -791,7 +786,7 @@ F 162*30 parsing__parse_http_request__L39b__i 162c58 162c78
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 parsing__get_first_token_in_range parsing__parse_http_request parsing__get_all_request_tokens parsing__get_token_ct parsing__is_delimits_well_formed parsing__is_leading_delimit local_init 0
+GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 parsing__get_token_ct parsing__is_delimits_well_formed parsing__is_leading_delimit parsing__get_first_token_in_range parsing__parse_http_request parsing__get_all_request_tokens local_init 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 7 parsing parsing__get_first_token_in_range parsing__get_all_request_tokens parsing__is_delimits_well_formed parsing__is_leading_delimit parsing__get_token_ct parsing__parse_http_request
 GG EK_NONRETURNING 0

@@ -10,7 +10,7 @@ RV SPARK_05
 
 U http_message%b	http_message.adb	9bd6ffa0 OO PK IL
 
-U http_message%s	http_message.ads	4fb5a409 OO PK KU
+U http_message%s	http_message.ads	5e7dfa72 OO PK KU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -26,21 +26,21 @@ D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D config.ads		20180321201252 ec265e4d config%s
-D fileio.ads		20180331231356 2c55d9cd fileio%s
+D fileio.ads		20180403013554 73921e13 fileio%s
 D http_message.ads	20180331230122 ca365d8f http_message%s
 D http_message.adb	20180313162256 51e0a22f http_message%b
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180402235052 75428fd8 measured_buffer%s
+D measured_buffer.ads	20180403013336 3b4d167d measured_buffer%s
 D spark.ads		20140410152036 86380d85 spark%s
-D spark-text_io.ads	20180326153942 e7af9ede spark.text_io%s
+D spark-text_io.ads	20180403010726 e7af9ede spark.text_io%s
 D string_types.ads	20180326171200 56f78cef string_types%s
 D system.ads		20170516105954 32a08138 system%s
 D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
 D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180328030430 b042fd55 utils%s
+D utils.ads		20180403010340 52a12dbc utils%s
 X 1 ada.ads
 16K9*Ada 20e8 9|3r6 3r34
 X 2 a-charac.ads
@@ -51,7 +51,7 @@ X 3 a-chlat1.ads
 X 7 config.ads
 3K9*config 18e11 9|6w6 6r18
 X 8 fileio.ads
-12K9*fileio 71e11 9|5w6 5r18
+12K9*fileio 49e11 9|5w6 5r18
 14I12*ContentSize{natural} 9|52r24
 15A12*File_Buf{string}<integer> 9|53r21
 17R9*Measured_File_Buffer 21e14 9|86r50 10|15r50
@@ -161,7 +161,7 @@ X 10 http_message.adb
 7r7 Response{9|49R9} 9m7 10m7 12r14
 17r7 Response{9|49R9} 19m7 20m7 22r14
 X 13 measured_buffer.ads
-6K9*measured_buffer 9|8w6 8r27 13|107e20
+6K9*measured_buffer 9|8w6 8r27 13|108e20
 9i4*MAX_FILE_READ_BYTE_CT{natural} 9|84r31
 11i4*MAX_PARSED_URI_BYTE_CT{natural} 9|46r41
 15R9*Measured_Buffer_Type 9|46r20 13|19e14
@@ -287,11 +287,8 @@ FD 7 config.ads
 FS .1 3K9 config
 FD 8 fileio.ads
 FS .1 12K9 fileio
-FS .2 48V13 fileio__get_mft_length
-FS .3 52U14 fileio__trim_filename
-FS .4 58U14 fileio__read_file_to_mfb
-FS .5 64U14 fileio__print_file_status
-FS .6 69V13 fileio__construct_measured_filename
+FS .2 37U14 fileio__read_file_to_mfb
+FS .3 45U14 fileio__print_file_status
 FD 9 http_message.ads
 FS .1 10K9 http_message
 FS .2 83V13 http_message__construct_simple_http_response
@@ -514,8 +511,6 @@ FS .3 11U14 utils__debug_print
 FS .4 12U14 utils__check_print_ln
 FS .5 13U14 utils__check_print
 FS .6 15V13 utils__logical_equivalence
-FS .7 18V13 utils__is_substring
-FS .8 30V13 utils__check_substring
 FX 3 a-chlat1.ads .1 ada__characters__latin_1
 F 25*4 ada__characters__latin_1__nul 9|.1:46c65 53c44
 FX 9 http_message.ads .1 http_message
@@ -539,8 +534,8 @@ F 11*4 measured_buffer__max_parsed_uri_byte_ct 9|.1:46r41
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
 GG EK_GLOBALS http_message KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 2 http_message__construct_simple_http_response http_message__construct_simple_http_response__2 local_init 0
-GG EK_GLOBALS http_message__construct_simple_http_response KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 2 http_message__construct_simple_http_response__response http_message__construct_simple_http_response__page local_ghost 0 local_sub 0
-GG EK_GLOBALS http_message__construct_simple_http_response__2 KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 2 http_message__construct_simple_http_response__2__response http_message__construct_simple_http_response__2__mfb local_ghost 0 local_sub 0
+GG EK_GLOBALS http_message__construct_simple_http_response KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 2 http_message__construct_simple_http_response__page http_message__construct_simple_http_response__response local_ghost 0 local_sub 0
+GG EK_GLOBALS http_message__construct_simple_http_response__2 KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 2 http_message__construct_simple_http_response__2__mfb http_message__construct_simple_http_response__2__response local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
 GG EK_NONBLOCKING 3 http_message http_message__construct_simple_http_response http_message__construct_simple_http_response__2
 GG EK_NONRETURNING 0

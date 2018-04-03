@@ -45,8 +45,6 @@ is
    end record;
    
    --constant tokens for parsing aid
-   BLANK_TOKEN_REQUEST_LINE : constant Simple_Request_Line := (others=>' ');
-   GET_TOKEN_REQUEST_LINE : constant Simple_Request_Line :=   ('G', 'E', 'T', others=>' ');
    GET_TOKEN_STR : constant String := "GET";
 
    procedure Initialize_TCP_State(
