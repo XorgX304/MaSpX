@@ -8,9 +8,11 @@ package body server is
    is
       Intermediary_Buf : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
    begin
-      Intermediary_Buf.Buffer := (others=>Intermediary_Buf.EmptyChar);
-      Intermediary_Buf.Length := 0;
+      pragma Assert( Intermediary_Buf.Size = Parsed_Request.RequestURI.Size );
       Intermediary_Buf := Parsed_Request.RequestURI;
+      
+      pragma Assert( Intermediary_Buf.Length = Parsed_Request.RequestURI.Length and
+                     Intermediary_Buf.Length <= Intermediary_Buf.Size );
    
       --ltj: relevant: https://wiki.sei.cmu.edu/confluence/display/java/FIO16-J.+Canonicalize+path+names+before+validating+them
       --ltj: ignoring special files like links for now (not even sure if SPARK.Text_IO.Open deals with those...check impl)

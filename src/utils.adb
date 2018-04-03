@@ -50,31 +50,31 @@ package body utils is
    end Logical_Equivalence;
    
 --------------------------------------------------------------------------------
-   function Is_Substring(
-      Substring : String;
-      Source : String) return Boolean
-   is
-   begin
-      for I in Source'Range loop
-         if Check_Substring(Substring, I, Source) then
-            return True;
-         end if;
-         
-         pragma Loop_Invariant( for all J in Source'First .. I => not Check_Substring(Substring, J, Source) );
-         pragma Loop_Variant( Increases => I );
-      end loop;
-      
-      return False;
-   end Is_Substring;
-
---------------------------------------------------------------------------------
-   function Check_Substring(
-      Substring : String;
-      Start : Positive;
-      Source : String) return Boolean
-   is
-   begin    
-      return Substring = Source(Start .. Start + Substring'Length - 1);
-   end Check_Substring;
+--     function Is_Substring(
+--        Substring : String;
+--        Source : String) return Boolean
+--     is
+--     begin
+--        for I in Source'Range loop
+--           if Check_Substring(Substring, I, Source) then
+--              return True;
+--           end if;
+--           
+--           pragma Loop_Invariant( for all J in Source'First .. I => not Check_Substring(Substring, J, Source) );
+--           pragma Loop_Variant( Increases => I );
+--        end loop;
+--        
+--        return False;
+--     end Is_Substring;
+--  
+--  --------------------------------------------------------------------------------
+--     function Check_Substring(
+--        Substring : String;
+--        Start : Positive;
+--        Source : String) return Boolean
+--     is
+--     begin    
+--        return Substring = Source(Start .. Start + Substring'Length - 1);
+--     end Check_Substring;
 
 end utils;

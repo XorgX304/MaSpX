@@ -17,16 +17,24 @@ package server is
    procedure Canonicalize_HTTP_Request(
       Parsed_Request : Simple_HTTP_Request;
       Canonicalized_Request : out Simple_HTTP_Request
-   );
+   )
+   with Global => null,
+        Pre => Parsed_Request.RequestURI.Length <= Parsed_Request.RequestURI.Size,
+        Post => Canonicalized_Request.RequestURI.Length <= Canonicalized_Request.RequestURI.Size;
 
    procedure Sanitize_HTTP_Request(
       Canonicalized_Request : Simple_HTTP_Request;
       Clean_Request : out Simple_HTTP_Request
-   );
+   )
+   with Global => null,
+        Pre => Canonicalized_Request.RequestURI.Length <= Canonicalized_Request.RequestURI.Size,
+        Post => Clean_Request.RequestURI.Length <= Clean_Request.RequestURI.Size;
 
    procedure Fulfill_HTTP_Request(
       Client_Socket : Socket_Type;
       Clean_Request : Simple_HTTP_Request
-   );
+   )
+   with Global => (In_Out => Standard_Output),
+        Pre => Clean_Request.RequestURI.Length <= Clean_Request.RequestURI.Size;
 
 end server;

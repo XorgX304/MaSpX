@@ -27,7 +27,10 @@ package measured_buffer is
    ) return Measured_Buffer_Type
    with Global => null,
         Pre => Str'Length <= SizeInst,
-        Post => Construct_Measured_Buffer'Result.Length <= Construct_Measured_Buffer'Result.Size;
+        Post => Construct_Measured_Buffer'Result.Size = SizeInst and
+                Construct_Measured_Buffer'Result.EmptyChar = EmptyCharInst and
+                Construct_Measured_Buffer'Result.Length <= Construct_Measured_Buffer'Result.Size and
+                Construct_Measured_Buffer'Result.Length = Str'Length;
    
    function Get_Char(Buf : Measured_Buffer_Type; Idx : Max_Buffer_Size_Type) return Character
    is ( Buf.Buffer(Idx) )
@@ -76,7 +79,8 @@ package measured_buffer is
    procedure Append_Str(Buf : in out Measured_Buffer_Type; S : String)
    with Global => null,
         Pre => Buf.Length <= Buf.Size - S'Length,
-        Post => Buf.Length'Old + S'Length = Buf.Length;
+        Post => Buf.Length'Old + S'Length = Buf.Length and
+                Buf.Length <= Buf.Size;
                 
    procedure Replace_Char(Buf : in out Measured_Buffer_Type; BeforeChar,AfterChar : Character)
    with Global => null,

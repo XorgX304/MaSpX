@@ -33,39 +33,17 @@ package fileio is
    c413_PAYLOAD_TOO_LARGE_LENGTH : constant ContentSize := 22;
 
    MAX_FS_PATH_BYTE_CT : constant Positive := WEB_ROOT'Length + ParsedRequestURIStringType'Length;
-   subtype MFT_First_Empty_Index_Type is Natural range Natural'First .. MAX_FS_PATH_BYTE_CT;
-   subtype Filename_Type is String(Positive'First .. MAX_FS_PATH_BYTE_CT);
-   
-   FILENAME_TYPE_EMPTY_LENGTH : constant MFT_First_Empty_Index_Type := 1;
-   FILENAME_TYPE_FULL_LENGTH : constant MFT_First_Empty_Index_Type := 0;
-   
-   type Measured_Filename_Type is
-   record
-      Length : MFT_First_Empty_Index_Type := FILENAME_TYPE_EMPTY_LENGTH;
-      Name : Filename_Type := (others=>' ');
-   end record;
-   
-   function Get_MFT_Length(
-      MFT : Measured_Filename_Type
-   ) return MFT_First_Empty_Index_Type;
-   
-   procedure Trim_Filename(
-      Pre_Filename : Measured_Filename_Type;
-      Post_Filename : out String
-   )
-   with Pre => Post_Filename'Length = Get_MFT_Length(Pre_Filename);
    
    procedure Read_File_To_MFB(
       --MFT : Measured_Filename_Type;
       Trimmed_Name : String;
       MFB : out Measured_File_Buffer
-   );
+   )
+   with Global => (In_Out => Standard_Output),
+        Pre => Trimmed_Name'Length < MAX_FS_PATH_BYTE_CT;
    
    procedure Print_File_Status(
       My_File_Status : File_Status
    );
-   
-   --ltj: also prepends the web root to the URI
-   function Construct_Measured_Filename(URI : ParsedRequestURIStringType) return Measured_Filename_Type;
 
 end fileio;

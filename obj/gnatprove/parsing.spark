@@ -73,197 +73,17 @@
   ],
   "flow": [
     {
-      "file": "parsing.adb",
-      "line": 88,
-      "col": 29,
+      "file": "parsing.ads",
+      "line": 25,
+      "col": 7,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
-        "name": "parsing.Is_Delimits_Well_Formed",
+        "name": "parsing.Get_First_Token_In_Range",
         "sloc": [
           {
             "file": "parsing.ads",
-            "line": 50
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__38.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 88,
-      "col": 13,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Is_Delimits_Well_Formed",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 50
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__38.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 92,
-      "col": 20,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Is_Delimits_Well_Formed",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 50
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__38.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 123,
-      "col": 13,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Get_Token_Ct",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 62
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__83.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 123,
-      "col": 33,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Get_Token_Ct",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 62
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__83.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 125,
-      "col": 16,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Get_Token_Ct",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 62
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__83.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 127,
-      "col": 13,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Get_Token_Ct",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 62
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__83.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 126,
-      "col": 25,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Get_Token_Ct",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 62
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__83.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 130,
-      "col": 32,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Get_Token_Ct",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 62
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__83.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 133,
-      "col": 14,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Get_Token_Ct",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 62
+            "line": 20
           }
         ]
       },
@@ -289,27 +109,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__197.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.ads",
-      "line": 25,
-      "col": 7,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Get_First_Token_In_Range",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 20
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__197.trace",
+      "tracefile": "parsing__flow__83.trace",
       "how_proved": "flow"
     },
     {
@@ -329,7 +129,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__197.trace",
+      "tracefile": "parsing__flow__83.trace",
       "how_proved": "flow"
     },
     {
@@ -349,7 +149,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__197.trace",
+      "tracefile": "parsing__flow__83.trace",
       "how_proved": "flow"
     },
     {
@@ -369,7 +169,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__197.trace",
+      "tracefile": "parsing__flow__83.trace",
       "how_proved": "flow"
     },
     {
@@ -389,7 +189,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__197.trace",
+      "tracefile": "parsing__flow__83.trace",
       "how_proved": "flow"
     },
     {
@@ -409,7 +209,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__197.trace",
+      "tracefile": "parsing__flow__83.trace",
       "how_proved": "flow"
     },
     {
@@ -429,7 +229,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -449,7 +249,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -469,7 +269,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -489,7 +289,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -509,7 +309,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -529,7 +329,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -549,7 +349,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -569,7 +369,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -589,7 +389,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -609,7 +409,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -629,13 +429,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
       "line": 169,
-      "col": 30,
+      "col": 23,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -649,13 +449,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
       "line": 170,
-      "col": 30,
+      "col": 22,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -669,7 +469,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -689,13 +489,13 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 172,
-      "col": 22,
+      "line": 174,
+      "col": 20,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -709,52 +509,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 175,
-      "col": 27,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
       "line": 176,
-      "col": 27,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "parsing__flow__326.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "parsing.adb",
-      "line": 178,
       "col": 22,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -769,12 +529,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 177,
+      "line": 175,
       "col": 22,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -789,12 +549,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 181,
+      "line": 179,
       "col": 21,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -809,12 +569,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 181,
+      "line": 179,
       "col": 21,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -829,12 +589,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 187,
+      "line": 185,
       "col": 94,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -849,12 +609,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 187,
+      "line": 185,
       "col": 10,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -869,12 +629,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 189,
+      "line": 187,
       "col": 46,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -889,12 +649,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 189,
+      "line": 187,
       "col": 46,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -909,12 +669,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 194,
+      "line": 192,
       "col": 15,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -929,12 +689,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 194,
+      "line": 192,
       "col": 15,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -949,12 +709,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 195,
+      "line": 193,
       "col": 21,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -969,12 +729,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 195,
+      "line": 193,
       "col": 21,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -989,12 +749,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 198,
+      "line": 196,
       "col": 12,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -1009,12 +769,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 198,
+      "line": 196,
       "col": 12,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -1029,12 +789,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 198,
+      "line": 196,
       "col": 39,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -1049,12 +809,12 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
       "file": "parsing.adb",
-      "line": 198,
+      "line": 196,
       "col": 39,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -1069,7 +829,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__326.trace",
+      "tracefile": "parsing__flow__240.trace",
       "how_proved": "flow"
     },
     {
@@ -1089,7 +849,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1109,7 +869,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1129,7 +889,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1149,7 +909,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1169,7 +929,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1189,7 +949,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1209,7 +969,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1229,7 +989,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1249,7 +1009,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1269,7 +1029,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1289,7 +1049,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1309,7 +1069,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1329,7 +1089,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1349,7 +1109,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1369,7 +1129,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1389,7 +1149,7 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
       "how_proved": "flow"
     },
     {
@@ -1409,7 +1169,207 @@
       },
       "check_tree": {
       },
-      "tracefile": "parsing__flow__419.trace",
+      "tracefile": "parsing__flow__333.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 88,
+      "col": 29,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Is_Delimits_Well_Formed",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 50
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__372.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 88,
+      "col": 13,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Is_Delimits_Well_Formed",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 50
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__372.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 92,
+      "col": 20,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Is_Delimits_Well_Formed",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 50
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__372.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 123,
+      "col": 13,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_Token_Ct",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 62
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__417.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 123,
+      "col": 33,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_Token_Ct",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 62
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__417.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 125,
+      "col": 16,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_Token_Ct",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 62
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__417.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 127,
+      "col": 13,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_Token_Ct",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 62
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__417.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 126,
+      "col": 25,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_Token_Ct",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 62
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__417.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 130,
+      "col": 32,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_Token_Ct",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 62
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__417.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 133,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Get_Token_Ct",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 62
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "parsing__flow__417.trace",
       "how_proved": "flow"
     }
   ],
@@ -1434,8 +1394,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 5446,
-              "time": 1.77000000000000E+00
+              "steps": 5445,
+              "time": 1.94000000000000E+00
             }
           },
           "transformations": {
@@ -1457,8 +1417,8 @@
       "stats": {
         "altergo": {
           "count": 2,
-          "max_steps": 5447,
-          "max_time": 1.76999998092651E+00
+          "max_steps": 5446,
+          "max_time": 1.94000005722046E+00
         }
       }
     },
@@ -1483,7 +1443,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 152,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -1494,7 +1454,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 152,
-              "time": 5.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -1506,7 +1466,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 153,
-          "max_time": 5.99999986588955E-02
+          "max_time": 6.25000000000000E-02
         }
       }
     },
@@ -1568,7 +1528,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 219,
-              "time": 9.00000000000000E-02
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -1579,7 +1539,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 190,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -1590,7 +1550,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 193,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -1601,7 +1561,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 164,
-              "time": 8.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -1613,7 +1573,7 @@
         "altergo": {
           "count": 4,
           "max_steps": 220,
-          "max_time": 9.00000035762787E-02
+          "max_time": 9.38000008463860E-02
         }
       }
     },
@@ -1638,7 +1598,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 268,
-              "time": 9.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -1649,7 +1609,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 233,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -1660,7 +1620,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 232,
-              "time": 8.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -1671,7 +1631,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 197,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -1683,7 +1643,7 @@
         "altergo": {
           "count": 4,
           "max_steps": 269,
-          "max_time": 9.00000035762787E-02
+          "max_time": 7.81000033020973E-02
         }
       }
     },
@@ -1707,8 +1667,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 482,
-              "time": 1.60000000000000E-01
+              "steps": 483,
+              "time": 1.56300000000000E-01
             }
           },
           "transformations": {
@@ -1719,8 +1679,8 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 483,
-          "max_time": 1.59999996423721E-01
+          "max_steps": 484,
+          "max_time": 1.56299993395805E-01
         }
       }
     },
@@ -1819,7 +1779,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 127,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -1830,7 +1790,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 127,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -1842,7 +1802,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 128,
-          "max_time": 5.00000007450581E-02
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -1915,7 +1875,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 302,
-              "time": 1.60000000000000E-01
+              "time": 1.70000000000000E-01
             }
           },
           "transformations": {
@@ -1927,7 +1887,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 303,
-          "max_time": 1.59999996423721E-01
+          "max_time": 1.70000001788139E-01
         }
       }
     },
@@ -2000,7 +1960,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 202,
-              "time": 9.00000000000000E-02
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -2011,7 +1971,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 202,
-              "time": 9.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -2022,7 +1982,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 173,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -2033,7 +1993,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 173,
-              "time": 6.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -2044,7 +2004,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 176,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -2055,7 +2015,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 176,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -2066,7 +2026,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 147,
-              "time": 5.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -2077,7 +2037,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 147,
-              "time": 5.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -2089,14 +2049,88 @@
         "altergo": {
           "count": 8,
           "max_steps": 203,
-          "max_time": 9.00000035762787E-02
+          "max_time": 9.38000008463860E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 170,
+      "col": 22,
+      "rule": "VC_ASSERT",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 81798,
+              "time": 6.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Timeout",
+              "steps": -1,
+              "time": 1.00000000000000E+01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 70480,
+              "time": 6.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Timeout",
+              "steps": -1,
+              "time": 1.00000000000000E+01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 1920,
+              "time": 8.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 5.99999986588955E-02
+        },
+        "altergo": {
+          "count": 1,
+          "max_steps": 1921,
+          "max_time": 8.29999983310699E-01
         }
       }
     },
     {
       "file": "parsing.adb",
       "line": 171,
-      "col": 49,
+      "col": 51,
       "rule": "VC_INDEX_CHECK",
       "severity": "info",
       "entity": {
@@ -2113,8 +2147,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 309,
-              "time": 1.70000000000000E-01
+              "steps": 308,
+              "time": 1.60000000000000E-01
             }
           },
           "transformations": {
@@ -2124,8 +2158,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 309,
-              "time": 1.60000000000000E-01
+              "steps": 308,
+              "time": 1.90000000000000E-01
             }
           },
           "transformations": {
@@ -2136,15 +2170,83 @@
       "stats": {
         "altergo": {
           "count": 2,
-          "max_steps": 310,
-          "max_time": 1.70000001788139E-01
+          "max_steps": 309,
+          "max_time": 1.89999997615814E-01
+        }
+      }
+    },
+    {
+      "file": "parsing.ads",
+      "line": 80,
+      "col": 17,
+      "rule": "VC_POSTCONDITION",
+      "severity": "medium",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Timeout",
+              "steps": -1,
+              "time": 1.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 0,
+      "how_proved": "prover"
+    },
+    {
+      "file": "parsing.adb",
+      "line": 185,
+      "col": 60,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 90739,
+              "time": 9.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 9.00000035762787E-02
         }
       }
     },
     {
       "file": "parsing.adb",
-      "line": 195,
-      "col": 10,
+      "line": 192,
+      "col": 35,
       "rule": "VC_PRECONDITION",
       "severity": "info",
       "entity": {
@@ -2161,8 +2263,19 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 93523,
-              "time": 8.00000000000000E-02
+              "steps": 10534,
+              "time": 3.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 44953,
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -2172,9 +2285,9 @@
       "how_proved": "prover",
       "stats": {
         "Z3": {
-          "count": 1,
+          "count": 2,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -2247,7 +2360,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 232,
-              "time": 1.10000000000000E-01
+              "time": 1.40000000000000E-01
             }
           },
           "transformations": {
@@ -2259,7 +2372,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 233,
-          "max_time": 1.09999999403954E-01
+          "max_time": 1.40000000596046E-01
         }
       }
     },
@@ -2284,7 +2397,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 238,
-              "time": 1.30000000000000E-01
+              "time": 1.40000000000000E-01
             }
           },
           "transformations": {
@@ -2296,7 +2409,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 239,
-          "max_time": 1.29999995231628E-01
+          "max_time": 1.40000000596046E-01
         }
       }
     },
@@ -2320,7 +2433,7 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 2921,
+              "steps": 2918,
               "time": 9.70000000000000E-01
             }
           },
@@ -2332,136 +2445,15 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 2922,
+          "max_steps": 2919,
           "max_time": 9.70000028610229E-01
         }
       }
     },
     {
       "file": "parsing.adb",
-      "line": 175,
-      "col": 34,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 6108,
-              "time": 2.23000000000000E+00
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 312,
-              "time": 1.70000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 2,
-          "max_steps": 6109,
-          "max_time": 2.23000001907349E+00
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 177,
-      "col": 22,
-      "rule": "VC_ASSERT",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 82763,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 79801,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 79361,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-            "split_disj": [
-              {
-                "proof_attempts": {
-                },
-                "transformations": {
-                }
-              },
-              {
-                "proof_attempts": {
-                },
-                "transformations": {
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "Z3": {
-          "count": 3,
-          "max_steps": 1,
-          "max_time": 5.99999986588955E-02
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 194,
-      "col": 35,
+      "line": 179,
+      "col": 10,
       "rule": "VC_PRECONDITION",
       "severity": "info",
       "entity": {
@@ -2478,19 +2470,8 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 10594,
+              "steps": 10106,
               "time": 3.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 45637,
-              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -2500,9 +2481,9 @@
       "how_proved": "prover",
       "stats": {
         "Z3": {
-          "count": 2,
+          "count": 1,
           "max_steps": 1,
-          "max_time": 5.00000007450581E-02
+          "max_time": 2.99999993294477E-02
         }
       }
     },
@@ -2545,9 +2526,9 @@
     },
     {
       "file": "parsing.adb",
-      "line": 188,
-      "col": 22,
-      "rule": "VC_PRECONDITION",
+      "line": 169,
+      "col": 23,
+      "rule": "VC_DISCRIMINANT_CHECK",
       "severity": "info",
       "entity": {
         "name": "parsing.Parse_HTTP_Request",
@@ -2561,10 +2542,21 @@
       "check_tree": [
         {
           "proof_attempts": {
-            "Z3": {
+            "altergo": {
               "result": "Valid",
-              "steps": 91985,
-              "time": 6.00000000000000E-02
+              "steps": 292,
+              "time": 1.60000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 292,
+              "time": 1.60000000000000E-01
             }
           },
           "transformations": {
@@ -2573,10 +2565,10 @@
       ],
       "how_proved": "prover",
       "stats": {
-        "Z3": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+        "altergo": {
+          "count": 2,
+          "max_steps": 293,
+          "max_time": 1.59999996423721E-01
         }
       }
     },
@@ -2601,7 +2593,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 201,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -2612,7 +2604,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 201,
-              "time": 8.00000000000000E-02
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -2623,7 +2615,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 172,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -2634,7 +2626,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 172,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -2645,7 +2637,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 175,
-              "time": 6.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -2656,7 +2648,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 175,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -2667,7 +2659,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 145,
-              "time": 6.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -2678,7 +2670,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 145,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -2690,7 +2682,7 @@
         "altergo": {
           "count": 8,
           "max_steps": 202,
-          "max_time": 7.99999982118607E-02
+          "max_time": 9.38000008463860E-02
         }
       }
     },
@@ -2789,7 +2781,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 4831,
-              "time": 1.97000000000000E+00
+              "time": 1.92000000000000E+00
             }
           },
           "transformations": {
@@ -2801,14 +2793,14 @@
         "altergo": {
           "count": 1,
           "max_steps": 4832,
-          "max_time": 1.97000002861023E+00
+          "max_time": 1.91999995708466E+00
         }
       }
     },
     {
       "file": "parsing.adb",
-      "line": 176,
-      "col": 34,
+      "line": 175,
+      "col": 49,
       "rule": "VC_INDEX_CHECK",
       "severity": "info",
       "entity": {
@@ -2825,7 +2817,7 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 323,
+              "steps": 310,
               "time": 1.60000000000000E-01
             }
           },
@@ -2836,8 +2828,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 323,
-              "time": 1.70000000000000E-01
+              "steps": 310,
+              "time": 1.60000000000000E-01
             }
           },
           "transformations": {
@@ -2848,8 +2840,8 @@
       "stats": {
         "altergo": {
           "count": 2,
-          "max_steps": 324,
-          "max_time": 1.70000001788139E-01
+          "max_steps": 311,
+          "max_time": 1.59999996423721E-01
         }
       }
     },
@@ -2873,8 +2865,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 606,
-              "time": 2.00000000000000E-01
+              "steps": 605,
+              "time": 2.18800000000000E-01
             }
           },
           "transformations": {
@@ -2884,8 +2876,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 555,
-              "time": 2.00000000000000E-01
+              "steps": 556,
+              "time": 2.18800000000000E-01
             }
           },
           "transformations": {
@@ -2896,7 +2888,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 391,
-              "time": 1.30000000000000E-01
+              "time": 1.09400000000000E-01
             }
           },
           "transformations": {
@@ -2907,7 +2899,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 324,
-              "time": 1.10000000000000E-01
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -2918,45 +2910,8 @@
       "stats": {
         "altergo": {
           "count": 4,
-          "max_steps": 607,
-          "max_time": 2.00000002980232E-01
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 169,
-      "col": 39,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 185,
-              "time": 8.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 186,
-          "max_time": 7.99999982118607E-02
+          "max_steps": 606,
+          "max_time": 2.18799993395805E-01
         }
       }
     },
@@ -2981,7 +2936,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 213,
-              "time": 9.00000000000000E-02
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -2992,7 +2947,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 184,
-              "time": 8.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -3003,7 +2958,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 187,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -3014,7 +2969,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 158,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -3026,7 +2981,7 @@
         "altergo": {
           "count": 4,
           "max_steps": 214,
-          "max_time": 9.00000035762787E-02
+          "max_time": 9.38000008463860E-02
         }
       }
     },
@@ -3070,7 +3025,7 @@
     {
       "file": "parsing.adb",
       "line": 170,
-      "col": 37,
+      "col": 29,
       "rule": "VC_INDEX_CHECK",
       "severity": "info",
       "entity": {
@@ -3087,7 +3042,7 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 298,
+              "steps": 302,
               "time": 1.60000000000000E-01
             }
           },
@@ -3098,8 +3053,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 298,
-              "time": 1.40000000000000E-01
+              "steps": 302,
+              "time": 1.60000000000000E-01
             }
           },
           "transformations": {
@@ -3110,8 +3065,45 @@
       "stats": {
         "altergo": {
           "count": 2,
-          "max_steps": 299,
+          "max_steps": 303,
           "max_time": 1.59999996423721E-01
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 186,
+      "col": 22,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 90618,
+              "time": 8.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 7.99999982118607E-02
         }
       }
     },
@@ -3136,7 +3128,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 120,
-              "time": 3.00000000000000E-02
+              "time": 3.13000000000000E-02
             }
           },
           "transformations": {
@@ -3148,7 +3140,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 121,
-          "max_time": 2.99999993294477E-02
+          "max_time": 3.13000008463860E-02
         }
       }
     },
@@ -3191,9 +3183,9 @@
     },
     {
       "file": "parsing.adb",
-      "line": 181,
-      "col": 10,
-      "rule": "VC_PRECONDITION",
+      "line": 175,
+      "col": 22,
+      "rule": "VC_ASSERT",
       "severity": "info",
       "entity": {
         "name": "parsing.Parse_HTTP_Request",
@@ -3209,98 +3201,12 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 10166,
-              "time": 3.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "Z3": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.99999993294477E-02
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 187,
-      "col": 60,
-      "rule": "VC_OVERFLOW_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 92076,
-              "time": 9.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "Z3": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 9.00000035762787E-02
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 194,
-      "col": 10,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 10622,
-              "time": 3.00000000000000E-02
+              "steps": 84499,
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
             "split_disj": [
-              {
-                "proof_attempts": {
-                },
-                "transformations": {
-                }
-              },
-              {
-                "proof_attempts": {
-                },
-                "transformations": {
-                }
-              },
               {
                 "proof_attempts": {
                 },
@@ -3320,8 +3226,8 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 45818,
-              "time": 5.00000000000000E-02
+              "steps": 71677,
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -3334,6 +3240,133 @@
               },
               {
                 "proof_attempts": {
+                },
+                "transformations": {
+                }
+              }
+            ]
+          }
+        },
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 81132,
+              "time": 6.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 7.99999982118607E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 196,
+      "col": 7,
+      "rule": "VC_PRECONDITION",
+      "severity": "medium",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 453,
+              "time": 2.34400000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Timeout",
+              "steps": -1,
+              "time": 1.00000000000000E+00
+            }
+          },
+          "transformations": {
+            "split_disj": [
+              {
+                "proof_attempts": {
+                  "altergo": {
+                    "result": "Valid",
+                    "steps": 289,
+                    "time": 1.71900000000000E-01
+                  }
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                  "altergo": {
+                    "result": "Valid",
+                    "steps": 289,
+                    "time": 1.71900000000000E-01
+                  }
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                  "altergo": {
+                    "result": "Valid",
+                    "steps": 289,
+                    "time": 1.71900000000000E-01
+                  }
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                  "altergo": {
+                    "result": "Valid",
+                    "steps": 289,
+                    "time": 1.56300000000000E-01
+                  }
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                  "altergo": {
+                    "result": "Valid",
+                    "steps": 4982,
+                    "time": 2.35940000000000E+00
+                  }
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                  "altergo": {
+                    "result": "Timeout",
+                    "steps": -1,
+                    "time": 1.00000000000000E+00
+                  }
                 },
                 "transformations": {
                 }
@@ -3354,14 +3387,8 @@
           }
         }
       ],
-      "how_proved": "prover",
-      "stats": {
-        "Z3": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 5.00000007450581E-02
-        }
-      }
+      "msg_id": 1,
+      "how_proved": "prover"
     },
     {
       "file": "parsing.adb",
@@ -3450,6 +3477,54 @@
     },
     {
       "file": "parsing.adb",
+      "line": 192,
+      "col": 10,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 10562,
+              "time": 3.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 45134,
+              "time": 5.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 5.00000007450581E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
       "line": 54,
       "col": 47,
       "rule": "VC_RANGE_CHECK",
@@ -3469,7 +3544,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 550,
-              "time": 1.90000000000000E-01
+              "time": 1.87500000000000E-01
             }
           },
           "transformations": {
@@ -3480,7 +3555,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 483,
-              "time": 1.60000000000000E-01
+              "time": 1.71900000000000E-01
             }
           },
           "transformations": {
@@ -3491,7 +3566,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 378,
-              "time": 9.00000000000000E-02
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -3502,7 +3577,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 208,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -3514,7 +3589,7 @@
         "altergo": {
           "count": 4,
           "max_steps": 551,
-          "max_time": 1.89999997615814E-01
+          "max_time": 1.87500000000000E-01
         }
       }
     },
@@ -3539,7 +3614,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 310,
-              "time": 1.30000000000000E-01
+              "time": 1.25000000000000E-01
             }
           },
           "transformations": {
@@ -3550,7 +3625,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 379,
-              "time": 1.10000000000000E-01
+              "time": 1.09400000000000E-01
             }
           },
           "transformations": {
@@ -3562,7 +3637,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 380,
-          "max_time": 1.29999995231628E-01
+          "max_time": 1.25000000000000E-01
         }
       }
     },
@@ -3635,7 +3710,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 462,
-              "time": 1.40000000000000E-01
+              "time": 1.40600000000000E-01
             }
           },
           "transformations": {
@@ -3646,7 +3721,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 722,
-              "time": 2.00000000000000E-01
+              "time": 2.18800000000000E-01
             }
           },
           "transformations": {
@@ -3658,7 +3733,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 723,
-          "max_time": 2.00000002980232E-01
+          "max_time": 2.18799993395805E-01
         }
       }
     },
@@ -3683,7 +3758,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 231,
-              "time": 1.10000000000000E-01
+              "time": 9.00000000000000E-02
             }
           },
           "transformations": {
@@ -3695,7 +3770,44 @@
         "altergo": {
           "count": 1,
           "max_steps": 232,
-          "max_time": 1.09999999403954E-01
+          "max_time": 9.00000035762787E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 185,
+      "col": 74,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 89935,
+              "time": 6.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 5.99999986588955E-02
         }
       }
     },
@@ -3790,7 +3902,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 104,
-              "time": 3.00000000000000E-02
+              "time": 3.13000000000000E-02
             }
           },
           "transformations": {
@@ -3801,7 +3913,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 103,
-              "time": 5.00000000000000E-02
+              "time": 3.13000000000000E-02
             }
           },
           "transformations": {
@@ -3813,7 +3925,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 105,
-          "max_time": 5.00000007450581E-02
+          "max_time": 3.13000008463860E-02
         }
       }
     },
@@ -3838,7 +3950,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 131,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -3849,7 +3961,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 131,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -3861,7 +3973,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 132,
-          "max_time": 5.00000007450581E-02
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -3923,7 +4035,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 219,
-              "time": 1.10000000000000E-01
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -3934,7 +4046,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 219,
-              "time": 9.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -3945,7 +4057,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 219,
-              "time": 8.00000000000000E-02
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -3956,7 +4068,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 219,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -3967,7 +4079,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 193,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -3978,7 +4090,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 193,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -3989,7 +4101,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 193,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -4000,7 +4112,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 193,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -4012,14 +4124,62 @@
         "altergo": {
           "count": 8,
           "max_steps": 220,
-          "max_time": 1.09999999403954E-01
+          "max_time": 9.38000008463860E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 174,
+      "col": 20,
+      "rule": "VC_DISCRIMINANT_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 305,
+              "time": 1.70000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 305,
+              "time": 1.70000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 2,
+          "max_steps": 306,
+          "max_time": 1.70000001788139E-01
         }
       }
     },
     {
       "file": "parsing.adb",
       "line": 169,
-      "col": 37,
+      "col": 30,
       "rule": "VC_INDEX_CHECK",
       "severity": "info",
       "entity": {
@@ -4036,8 +4196,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 3192,
-              "time": 1.03000000000000E+00
+              "steps": 3185,
+              "time": 1.08000000000000E+00
             }
           },
           "transformations": {
@@ -4048,7 +4208,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 287,
-              "time": 1.30000000000000E-01
+              "time": 1.40000000000000E-01
             }
           },
           "transformations": {
@@ -4059,15 +4219,15 @@
       "stats": {
         "altergo": {
           "count": 2,
-          "max_steps": 3193,
-          "max_time": 1.02999997138977E+00
+          "max_steps": 3186,
+          "max_time": 1.08000004291534E+00
         }
       }
     },
     {
       "file": "parsing.adb",
-      "line": 177,
-      "col": 29,
+      "line": 176,
+      "col": 48,
       "rule": "VC_INDEX_CHECK",
       "severity": "info",
       "entity": {
@@ -4084,8 +4244,8 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 10172,
-              "time": 2.00000000000000E-02
+              "steps": 10142,
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -4109,7 +4269,7 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 10172,
+              "steps": 10142,
               "time": 3.00000000000000E-02
             }
           },
@@ -4254,7 +4414,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 1728,
-              "time": 5.90000000000000E-01
+              "time": 6.10000000000000E-01
             }
           },
           "transformations": {
@@ -4266,7 +4426,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 1729,
-          "max_time": 5.89999973773956E-01
+          "max_time": 6.10000014305115E-01
         }
       }
     },
@@ -4291,7 +4451,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 102,
-              "time": 3.00000000000000E-02
+              "time": 3.13000000000000E-02
             }
           },
           "transformations": {
@@ -4303,7 +4463,70 @@
         "altergo": {
           "count": 1,
           "max_steps": 103,
-          "max_time": 2.99999993294477E-02
+          "max_time": 3.13000008463860E-02
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
+      "line": 193,
+      "col": 10,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 92197,
+              "time": 9.00000000000000E-02
+            }
+          },
+          "transformations": {
+            "split_disj": [
+              {
+                "proof_attempts": {
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                },
+                "transformations": {
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 9.00000035762787E-02
         }
       }
     },
@@ -4328,7 +4551,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 105,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -4340,7 +4563,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 106,
-          "max_time": 5.00000007450581E-02
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -4457,6 +4680,54 @@
     },
     {
       "file": "parsing.adb",
+      "line": 174,
+      "col": 27,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "parsing.Parse_HTTP_Request",
+        "sloc": [
+          {
+            "file": "parsing.ads",
+            "line": 69
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 4613,
+              "time": 1.63000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 300,
+              "time": 1.70000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 2,
+          "max_steps": 4614,
+          "max_time": 1.62999999523163E+00
+        }
+      }
+    },
+    {
+      "file": "parsing.adb",
       "line": 130,
       "col": 32,
       "rule": "VC_LOOP_INVARIANT_PRESERV",
@@ -4513,7 +4784,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 208,
-              "time": 8.00000000000000E-02
+              "time": 9.00000000000000E-02
             }
           },
           "transformations": {
@@ -4525,7 +4796,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 209,
-          "max_time": 7.99999982118607E-02
+          "max_time": 9.00000035762787E-02
         }
       }
     },
@@ -4550,39 +4821,6 @@
             "altergo": {
               "result": "Valid",
               "steps": 272,
-              "time": 1.40000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 272,
-              "time": 1.40000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 272,
-              "time": 1.40000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 272,
               "time": 1.30000000000000E-01
             }
           },
@@ -4593,8 +4831,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 2449,
-              "time": 7.50000000000000E-01
+              "steps": 272,
+              "time": 1.40000000000000E-01
             }
           },
           "transformations": {
@@ -4604,8 +4842,41 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 5019,
-              "time": 1.52000000000000E+00
+              "steps": 272,
+              "time": 1.40000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 272,
+              "time": 1.40000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 2449,
+              "time": 8.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 5016,
+              "time": 1.86000000000000E+00
             }
           },
           "transformations": {
@@ -4616,8 +4887,8 @@
       "stats": {
         "altergo": {
           "count": 6,
-          "max_steps": 5020,
-          "max_time": 1.51999998092651E+00
+          "max_steps": 5017,
+          "max_time": 1.86000001430511E+00
         }
       }
     },
@@ -4642,7 +4913,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 95,
-              "time": 3.00000000000000E-02
+              "time": 3.13000000000000E-02
             }
           },
           "transformations": {
@@ -4654,7 +4925,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 96,
-          "max_time": 2.99999993294477E-02
+          "max_time": 3.13000008463860E-02
         }
       }
     },
@@ -4679,7 +4950,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 79365,
-              "time": 6.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -4689,8 +4960,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 9528,
-              "time": 3.08000000000000E+00
+              "steps": 9530,
+              "time": 3.23000000000000E+00
             }
           },
           "transformations": {
@@ -4701,7 +4972,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 5976,
-              "time": 1.86000000000000E+00
+              "time": 1.92000000000000E+00
             }
           },
           "transformations": {
@@ -4712,7 +4983,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 6055,
-              "time": 1.91000000000000E+00
+              "time": 2.48000000000000E+00
             }
           },
           "transformations": {
@@ -4724,60 +4995,12 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 7.99999982118607E-02
         },
         "altergo": {
           "count": 3,
-          "max_steps": 9529,
-          "max_time": 3.07999992370605E+00
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 198,
-      "col": 7,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 95537,
-              "time": 8.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 94973,
-              "time": 8.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "Z3": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_steps": 9531,
+          "max_time": 3.23000001907349E+00
         }
       }
     },
@@ -4802,7 +5025,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 137,
-              "time": 5.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -4813,7 +5036,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 137,
-              "time": 6.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -4825,15 +5048,15 @@
         "altergo": {
           "count": 2,
           "max_steps": 138,
-          "max_time": 5.99999986588955E-02
+          "max_time": 6.25000000000000E-02
         }
       }
     },
     {
       "file": "parsing.adb",
-      "line": 187,
-      "col": 74,
-      "rule": "VC_RANGE_CHECK",
+      "line": 175,
+      "col": 29,
+      "rule": "VC_INDEX_CHECK",
       "severity": "info",
       "entity": {
         "name": "parsing.Parse_HTTP_Request",
@@ -4849,8 +5072,33 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 91300,
-              "time": 8.00000000000000E-02
+              "steps": 10112,
+              "time": 3.00000000000000E-02
+            }
+          },
+          "transformations": {
+            "split_disj": [
+              {
+                "proof_attempts": {
+                },
+                "transformations": {
+                }
+              },
+              {
+                "proof_attempts": {
+                },
+                "transformations": {
+                }
+              }
+            ]
+          }
+        },
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 10112,
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -4860,16 +5108,16 @@
       "how_proved": "prover",
       "stats": {
         "Z3": {
-          "count": 1,
+          "count": 2,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 2.99999993294477E-02
         }
       }
     },
     {
       "file": "parsing.adb",
-      "line": 171,
-      "col": 29,
+      "line": 170,
+      "col": 49,
       "rule": "VC_INDEX_CHECK",
       "severity": "info",
       "entity": {
@@ -4886,8 +5134,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 314,
-              "time": 1.70000000000000E-01
+              "steps": 297,
+              "time": 1.60000000000000E-01
             }
           },
           "transformations": {
@@ -4897,7 +5145,7 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 314,
+              "steps": 297,
               "time": 1.70000000000000E-01
             }
           },
@@ -4909,7 +5157,7 @@
       "stats": {
         "altergo": {
           "count": 2,
-          "max_steps": 315,
+          "max_steps": 298,
           "max_time": 1.70000001788139E-01
         }
       }
@@ -4983,7 +5231,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 250,
-              "time": 9.00000000000000E-02
+              "time": 1.10000000000000E-01
             }
           },
           "transformations": {
@@ -4995,7 +5243,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 251,
-          "max_time": 9.00000035762787E-02
+          "max_time": 1.09999999403954E-01
         }
       }
     },
@@ -5075,68 +5323,6 @@
     },
     {
       "file": "parsing.adb",
-      "line": 178,
-      "col": 48,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 10202,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-            "split_disj": [
-              {
-                "proof_attempts": {
-                },
-                "transformations": {
-                }
-              },
-              {
-                "proof_attempts": {
-                },
-                "transformations": {
-                }
-              }
-            ]
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 10202,
-              "time": 3.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "Z3": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 5.99999986588955E-02
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
       "line": 36,
       "col": 57,
       "rule": "VC_RANGE_CHECK",
@@ -5156,7 +5342,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 138,
-              "time": 3.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -5168,55 +5354,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 139,
-          "max_time": 2.99999993294477E-02
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 172,
-      "col": 51,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 320,
-              "time": 1.40000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 320,
-              "time": 1.60000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 2,
-          "max_steps": 321,
-          "max_time": 1.59999996423721E-01
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -5241,7 +5379,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 129,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -5253,7 +5391,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 130,
-          "max_time": 5.00000007450581E-02
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -5278,7 +5416,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 220,
-              "time": 9.00000000000000E-02
+              "time": 1.10000000000000E-01
             }
           },
           "transformations": {
@@ -5289,7 +5427,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 219,
-              "time": 9.00000000000000E-02
+              "time": 1.10000000000000E-01
             }
           },
           "transformations": {
@@ -5301,44 +5439,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 221,
-          "max_time": 9.00000035762787E-02
-        }
-      }
-    },
-    {
-      "file": "parsing.ads",
-      "line": 80,
-      "col": 17,
-      "rule": "VC_POSTCONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 104518,
-              "time": 9.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "Z3": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 9.00000035762787E-02
+          "max_time": 1.09999999403954E-01
         }
       }
     },
@@ -5363,7 +5464,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 329,
-              "time": 9.00000000000000E-02
+              "time": 1.09400000000000E-01
             }
           },
           "transformations": {
@@ -5374,7 +5475,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 290,
-              "time": 8.00000000000000E-02
+              "time": 9.38000000000000E-02
             }
           },
           "transformations": {
@@ -5385,7 +5486,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 244,
-              "time": 8.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -5396,7 +5497,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 198,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -5408,7 +5509,7 @@
         "altergo": {
           "count": 4,
           "max_steps": 330,
-          "max_time": 9.00000035762787E-02
+          "max_time": 1.09399996697903E-01
         }
       }
     },
@@ -5444,7 +5545,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 295,
-              "time": 1.40000000000000E-01
+              "time": 1.60000000000000E-01
             }
           },
           "transformations": {
@@ -5481,7 +5582,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 107,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -5493,7 +5594,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 108,
-          "max_time": 5.00000007450581E-02
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -5518,7 +5619,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 170,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -5529,7 +5630,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 170,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -5540,7 +5641,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 143,
-              "time": 6.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -5551,7 +5652,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 143,
-              "time": 5.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -5563,7 +5664,7 @@
         "altergo": {
           "count": 4,
           "max_steps": 171,
-          "max_time": 7.99999982118607E-02
+          "max_time": 7.81000033020973E-02
         }
       }
     },
@@ -5588,7 +5689,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 484,
-              "time": 1.40000000000000E-01
+              "time": 1.40600000000000E-01
             }
           },
           "transformations": {
@@ -5600,7 +5701,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 485,
-          "max_time": 1.40000000596046E-01
+          "max_time": 1.40599995851517E-01
         }
       }
     },
@@ -5673,7 +5774,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 291,
-              "time": 1.40000000000000E-01
+              "time": 1.70000000000000E-01
             }
           },
           "transformations": {
@@ -5685,7 +5786,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 292,
-          "max_time": 1.40000000596046E-01
+          "max_time": 1.70000001788139E-01
         }
       }
     },
@@ -5710,7 +5811,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 263,
-              "time": 9.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -5721,7 +5822,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 228,
-              "time": 6.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -5732,7 +5833,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 227,
-              "time": 8.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -5743,7 +5844,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 192,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -5755,7 +5856,7 @@
         "altergo": {
           "count": 4,
           "max_steps": 264,
-          "max_time": 9.00000035762787E-02
+          "max_time": 7.81000033020973E-02
         }
       }
     },
@@ -5780,7 +5881,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 142,
-              "time": 5.00000000000000E-02
+              "time": 3.13000000000000E-02
             }
           },
           "transformations": {
@@ -5792,7 +5893,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 143,
-          "max_time": 5.00000007450581E-02
+          "max_time": 3.13000008463860E-02
         }
       }
     },
@@ -5887,7 +5988,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 528,
-              "time": 1.70000000000000E-01
+              "time": 1.71900000000000E-01
             }
           },
           "transformations": {
@@ -5898,7 +5999,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 276,
-              "time": 6.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -5910,7 +6011,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 529,
-          "max_time": 1.70000001788139E-01
+          "max_time": 1.71900004148483E-01
         }
       }
     },
@@ -5953,68 +6054,6 @@
     },
     {
       "file": "parsing.adb",
-      "line": 177,
-      "col": 49,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 10150,
-              "time": 2.00000000000000E-02
-            }
-          },
-          "transformations": {
-            "split_disj": [
-              {
-                "proof_attempts": {
-                },
-                "transformations": {
-                }
-              },
-              {
-                "proof_attempts": {
-                },
-                "transformations": {
-                }
-              }
-            ]
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 10150,
-              "time": 5.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "Z3": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 5.00000007450581E-02
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
       "line": 69,
       "col": 33,
       "rule": "VC_LOOP_INVARIANT_INIT",
@@ -6034,7 +6073,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 230,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -6045,7 +6084,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 277,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -6057,7 +6096,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 278,
-          "max_time": 7.99999982118607E-02
+          "max_time": 7.81000033020973E-02
         }
       }
     },
@@ -6082,7 +6121,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 221,
-              "time": 9.00000000000000E-02
+              "time": 1.10000000000000E-01
             }
           },
           "transformations": {
@@ -6094,44 +6133,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 222,
-          "max_time": 9.00000035762787E-02
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 175,
-      "col": 36,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 185,
-              "time": 8.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 1,
-          "max_steps": 186,
-          "max_time": 7.99999982118607E-02
+          "max_time": 1.09999999403954E-01
         }
       }
     },
@@ -6156,7 +6158,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 160,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -6167,7 +6169,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 160,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -6179,7 +6181,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 161,
-          "max_time": 5.99999986588955E-02
+          "max_time": 6.25000000000000E-02
         }
       }
     },
@@ -6289,7 +6291,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 285,
-              "time": 1.40000000000000E-01
+              "time": 1.60000000000000E-01
             }
           },
           "transformations": {
@@ -6300,7 +6302,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 285,
-              "time": 1.40000000000000E-01
+              "time": 1.70000000000000E-01
             }
           },
           "transformations": {
@@ -6312,7 +6314,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 286,
-          "max_time": 1.40000000596046E-01
+          "max_time": 1.70000001788139E-01
         }
       }
     },
@@ -6337,7 +6339,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 133,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -6349,7 +6351,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 134,
-          "max_time": 5.00000007450581E-02
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -6374,7 +6376,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 134,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -6385,7 +6387,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 134,
-              "time": 3.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -6397,7 +6399,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 135,
-          "max_time": 5.00000007450581E-02
+          "max_time": 4.69000004231930E-02
         }
       }
     },
@@ -6470,7 +6472,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 290,
-              "time": 1.60000000000000E-01
+              "time": 2.00000000000000E-01
             }
           },
           "transformations": {
@@ -6482,66 +6484,7 @@
         "altergo": {
           "count": 2,
           "max_steps": 291,
-          "max_time": 1.59999996423721E-01
-        }
-      }
-    },
-    {
-      "file": "parsing.adb",
-      "line": 171,
-      "col": 22,
-      "rule": "VC_ASSERT",
-      "severity": "info",
-      "entity": {
-        "name": "parsing.Parse_HTTP_Request",
-        "sloc": [
-          {
-            "file": "parsing.ads",
-            "line": 69
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 1721,
-              "time": 6.30000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 363,
-              "time": 1.60000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Valid",
-              "steps": 2310,
-              "time": 8.30000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "how_proved": "prover",
-      "stats": {
-        "altergo": {
-          "count": 3,
-          "max_steps": 2311,
-          "max_time": 8.29999983310699E-01
+          "max_time": 2.00000002980232E-01
         }
       }
     },
@@ -6566,7 +6509,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 227,
-              "time": 8.00000000000000E-02
+              "time": 9.00000000000000E-02
             }
           },
           "transformations": {
@@ -6578,7 +6521,7 @@
         "altergo": {
           "count": 1,
           "max_steps": 228,
-          "max_time": 7.99999982118607E-02
+          "max_time": 9.00000035762787E-02
         }
       }
     },
@@ -6603,7 +6546,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 190,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -6614,7 +6557,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 190,
-              "time": 8.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -6625,7 +6568,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 190,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -6636,7 +6579,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 190,
-              "time": 8.00000000000000E-02
+              "time": 7.81000000000000E-02
             }
           },
           "transformations": {
@@ -6647,7 +6590,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 164,
-              "time": 5.00000000000000E-02
+              "time": 4.69000000000000E-02
             }
           },
           "transformations": {
@@ -6658,7 +6601,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 164,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -6669,7 +6612,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 164,
-              "time": 5.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -6680,7 +6623,7 @@
             "altergo": {
               "result": "Valid",
               "steps": 164,
-              "time": 6.00000000000000E-02
+              "time": 6.25000000000000E-02
             }
           },
           "transformations": {
@@ -6692,7 +6635,7 @@
         "altergo": {
           "count": 8,
           "max_steps": 191,
-          "max_time": 7.99999982118607E-02
+          "max_time": 7.81000033020973E-02
         }
       }
     }
@@ -6707,7 +6650,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -6719,7 +6662,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -6731,7 +6674,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -6743,7 +6686,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -6755,7 +6698,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 61
+                "line": 65
               }
             ]
           }
@@ -6803,7 +6746,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -6815,7 +6758,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -6827,7 +6770,279 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 61
+                "line": 65
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "parsing.Get_Token_Ct",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 62
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "parsing.Is_Delimits_Well_Formed",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 50
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "parsing.Is_Leading_Delimit",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 56
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "parsing.Get_All_Request_Tokens",
+          "sloc": [
+            {
+              "file": "parsing.ads",
+              "line": 35
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "measured_buffer.Append",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 73
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "measured_buffer.Clear",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 90
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "measured_buffer.Is_Empty",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 65
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "parsing.Get_Token_Ct",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 62
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "parsing.Is_Delimits_Well_Formed",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 50
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "parsing.Is_Leading_Delimit",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 56
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "parsing.Get_All_Request_Tokens",
+          "sloc": [
+            {
+              "file": "parsing.ads",
+              "line": 35
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "measured_buffer.Append",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 73
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "measured_buffer.Clear",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 90
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "measured_buffer.Append",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 73
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "measured_buffer.Clear",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 90
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "measured_buffer.Is_Empty",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 65
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "parsing.Get_Token_Ct",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 62
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "parsing.Is_Delimits_Well_Formed",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 50
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "parsing.Is_Leading_Delimit",
+            "sloc": [
+              {
+                "file": "parsing.ads",
+                "line": 56
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "measured_buffer.Append",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 73
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "measured_buffer.Clear",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 90
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "measured_buffer.Is_Empty",
+            "sloc": [
+              {
+                "file": "measured_buffer.ads",
+                "line": 65
               }
             ]
           }
@@ -6891,7 +7106,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -6903,7 +7118,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -6915,7 +7130,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -6927,7 +7142,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -6939,7 +7154,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -6951,7 +7166,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -6979,7 +7194,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -6991,7 +7206,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -7019,7 +7234,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -7031,7 +7246,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -7043,7 +7258,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -7055,7 +7270,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -7067,7 +7282,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 69
+                "line": 73
               }
             ]
           }
@@ -7079,7 +7294,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -7181,54 +7396,6 @@
     {
       "assumptions": [
         {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "measured_buffer.Append_Str",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 75
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "measured_buffer.Copy",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 85
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "parsing.Get_All_Request_Tokens",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 35
-              }
-            ]
-          }
-        },
-        {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
             "name": "Http_Message.Construct_Simple_HTTP_Response",
@@ -7247,7 +7414,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 75
+                "line": 79
               }
             ]
           }
@@ -7259,7 +7426,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 80
+                "line": 90
               }
             ]
           }
@@ -7271,7 +7438,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 85
+                "line": 95
               }
             ]
           }
@@ -7283,7 +7450,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 92
+                "line": 102
               }
             ]
           }
@@ -7295,7 +7462,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 61
+                "line": 65
               }
             ]
           }
@@ -7307,311 +7474,7 @@
             "sloc": [
               {
                 "file": "measured_buffer.ads",
-                "line": 36
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "network_ns.Send_Simple_Response",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 78
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Get_All_Request_Tokens",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 35
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Get_Token_Ct",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 62
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Is_Delimits_Well_Formed",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 50
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Is_Leading_Delimit",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 56
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Http_Message.Construct_Simple_HTTP_Response",
-            "sloc": [
-              {
-                "file": "http_message.ads",
-                "line": 83
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Append_Str",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 75
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Copy",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 85
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Get_String",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 92
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Is_Empty",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 61
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Peek",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 36
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "network_ns.Send_Simple_Response",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 78
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Get_All_Request_Tokens",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 35
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Get_Token_Ct",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 62
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Is_Delimits_Well_Formed",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 50
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Is_Leading_Delimit",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 56
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "parsing.Parse_HTTP_Request",
-          "sloc": [
-            {
-              "file": "parsing.ads",
-              "line": 69
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Http_Message.Construct_Simple_HTTP_Response",
-            "sloc": [
-              {
-                "file": "http_message.ads",
-                "line": 83
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Append_Str",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 75
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Copy",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 85
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Get_String",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 92
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Is_Empty",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 61
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Peek",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 36
+                "line": 40
               }
             ]
           }
@@ -7679,358 +7542,6 @@
       ],
       "claim": {
         "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "parsing.Parse_HTTP_Request",
-          "sloc": [
-            {
-              "file": "parsing.ads",
-              "line": 69
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "measured_buffer.Append_Str",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 75
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "measured_buffer.Copy",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 85
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "parsing.Get_All_Request_Tokens",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 35
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Http_Message.Construct_Simple_HTTP_Response",
-            "sloc": [
-              {
-                "file": "http_message.ads",
-                "line": 83
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Append_Str",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 75
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Copy",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 85
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Get_String",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 92
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Is_Empty",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 61
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Peek",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 36
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "network_ns.Send_Simple_Response",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 78
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Get_All_Request_Tokens",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 35
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Get_Token_Ct",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 62
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Is_Delimits_Well_Formed",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 50
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Is_Leading_Delimit",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 56
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Http_Message.Construct_Simple_HTTP_Response",
-            "sloc": [
-              {
-                "file": "http_message.ads",
-                "line": 83
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Append_Str",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 75
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Copy",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 85
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Get_String",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 92
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Is_Empty",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 61
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Peek",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 36
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "network_ns.Send_Simple_Response",
-            "sloc": [
-              {
-                "file": "network_ns.ads",
-                "line": 78
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Get_All_Request_Tokens",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 35
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Get_Token_Ct",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 62
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Is_Delimits_Well_Formed",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 50
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Is_Leading_Delimit",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 56
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
         "arg": {
           "name": "parsing.Parse_HTTP_Request",
           "sloc": [
@@ -8069,278 +7580,6 @@
             {
               "file": "parsing.ads",
               "line": 56
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "measured_buffer.Append",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 69
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Append",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 69
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Is_Empty",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 61
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Get_Token_Ct",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 62
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Is_Delimits_Well_Formed",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 50
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Is_Leading_Delimit",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 56
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Append",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 69
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "measured_buffer.Is_Empty",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 61
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Get_Token_Ct",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 62
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Is_Delimits_Well_Formed",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 50
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "parsing.Is_Leading_Delimit",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 56
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "parsing.Get_All_Request_Tokens",
-          "sloc": [
-            {
-              "file": "parsing.ads",
-              "line": 35
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Append",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 69
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Clear",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 80
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "measured_buffer.Is_Empty",
-            "sloc": [
-              {
-                "file": "measured_buffer.ads",
-                "line": 61
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Get_Token_Ct",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 62
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Is_Delimits_Well_Formed",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 50
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "parsing.Is_Leading_Delimit",
-            "sloc": [
-              {
-                "file": "parsing.ads",
-                "line": 56
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "parsing.Get_All_Request_Tokens",
-          "sloc": [
-            {
-              "file": "parsing.ads",
-              "line": 35
             }
           ]
         }
@@ -8348,19 +7587,32 @@
     }
   ],
   "timings": {
-    "marking": 6.01740693673491E-03,
-    "globals (basic)": 5.24609312415123E-02,
-    "globals/properties (advanced)": 3.70184257626534E-02,
-    "flow analysis": 3.89081016182899E-02,
-    "codepeer results": 4.93700008519227E-06,
-    "init_why_sections": 1.93586005480029E-04,
-    "translation of standard": 3.12136509455740E-03,
-    "translation of compilation unit": 1.88680008053780E-01,
-    "gnatwhy3.run_vcs": 0.00000000000000E+00,
-    "gnatwhy3.register_vcs": 1.56250000000000E-01,
-    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 3.07812500000000E+00,
+    "marking": 6.13588606938720E-03,
+    "globals (basic)": 5.50967417657375E-02,
+    "globals/properties (advanced)": 3.99320982396603E-02,
+    "flow analysis": 4.36031930148602E-02,
+    "codepeer results": 4.58400018032989E-06,
+    "init_why_sections": 2.15096995816566E-04,
+    "translation of standard": 2.88087991066277E-03,
+    "translation of compilation unit": 1.92121550440788E-01,
+    "gnatwhy3.run_vcs": 1.56250000000000E-02,
+    "gnatwhy3.transformations.eliminate_inductive": 4.68750000000000E-02,
+    "gnatwhy3.register_vcs": 1.71875000000000E-01,
+    "gnatwhy3.transformations.eliminate_if": 2.81250000000000E-01,
+    "gnatwhy3.transformations.explode_record_param": 1.87500000000000E-01,
+    "gnatwhy3.transformations.eval_match": 5.15625000000000E-01,
+    "gnatwhy3.schedule_vcs": 1.56250000000000E-02,
+    "gnatwhy3.init": 3.15625000000000E+00,
+    "gnatwhy3.transformations.inline_trivial": 1.51562500000000E+00,
+    "gnatwhy3.transformations.inline_tagged": 2.65625000000000E-01,
+    "gnatwhy3.transformations.simplify_formula": 1.87500000000000E-01,
+    "gnatwhy3.transformations.eliminate_epsilon": 1.87500000000000E-01,
+    "gnatwhy3.transformations.eliminate_let": 1.56250000000000E-01,
     "gnatwhy3.save_session": 3.12500000000000E-02,
-    "proof": 4.27079772949219E+00
+    "gnatwhy3.transformations.eliminate_builtin": 7.81250000000000E-02,
+    "gnatwhy3.transformations.eliminate_algebraic": 2.50000000000000E-01,
+    "gnatwhy3.transformations.eliminate_literal": 2.34375000000000E-01,
+    "gnatwhy3.transformations.eliminate_recursion": 4.68750000000000E-02,
+    "proof": 3.36828231811523E+01
   }
 }

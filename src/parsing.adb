@@ -166,14 +166,12 @@ package body parsing is
                      URI_Token.Size = Tokens(2).Size and
                      URI_Token.EmptyChar = Tokens(2).EmptyChar);
                      
-      Method_Token.Buffer := Tokens(1).Buffer;
-      Method_Token.Length := Tokens(1).Length;
+      Method_Token := Tokens(1);
       pragma Assert( Tokens(1).Length <= Tokens(1).Size and then
                      Method_Token.Length = Tokens(1).Length and then
                      Method_Token.Length <= Method_Token.Size );
                      
-      URI_Token.Buffer := Tokens(2).Buffer;
-      URI_Token.Length := Tokens(2).Length;
+      URI_Token := Tokens(2);
       pragma Assert( Tokens(2).Length <= Tokens(2).Size and then
                      URI_Token.Length = Tokens(2).Length and then
                      URI_Token.Length <= URI_Token.Size );

@@ -20,7 +20,7 @@ U network_ns%b		network_ns.adb		0cff1a45 OO PK IL
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.streams%s		a-stream.adb		a-stream.ali
 
-U network_ns%s		network_ns.ads		894e4e5b OO PK IL
+U network_ns%s		network_ns.ads		5359a6d9 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -57,7 +57,7 @@ D http_message.ads	20180331230122 ca365d8f http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180402165150 af55675a measured_buffer%s
+D measured_buffer.ads	20180402235052 75428fd8 measured_buffer%s
 D network_ns.ads	20180402221512 0c10cd4c network_ns%s
 D network_ns.adb	20180327003656 00efd709 network_ns%b
 D network_types.ads	20180213214944 c18a7534 network_types%s
@@ -156,16 +156,16 @@ X 14 http_message.ads
 53a7*Entity_Body{11|15A12} 20|180r31
 83V13*Construct_Simple_HTTP_Response{49R9} 20|105s28 130s25
 X 18 measured_buffer.ads
-6K9*measured_buffer 97e20 19|16w6 16r27
+6K9*measured_buffer 107e20 19|16w6 16r27
 8i4*MAX_REQUEST_LINE_BYTE_CT{natural} 19|37r73 38r47
 12I12*Max_Buffer_Size_Type{natural}
 15R9*Measured_Buffer_Type 19e14 19|65r21 20|79r21
 15i30*Size{12I12} 19|70r73
 15e59*EmptyChar{character} 20|103r31
 18i7*Length{12I12} 19|70r55
-61V13*Is_Empty{boolean} 19|70s25
-65V13*Is_Full{boolean} 20|95s17
-69U14*Append 20|111s13
+65V13*Is_Empty{boolean} 19|70s25
+69V13*Is_Full{boolean} 20|95s17
+73U14*Append 20|111s13
 X 19 network_ns.ads
 18K9*network_ns 87l5 87e15 20|3b14 195l5 195t15
 22a4*STATIC_TEST_RESPONSE_11{string} 20|159r35
@@ -518,25 +518,26 @@ FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 18 measured_buffer.ads
 FS .1 6K9 measured_buffer
-FS .2 22V13 measured_buffer__construct_measured_buffer
-FS .3 31V13 measured_buffer__get_char
-FS .4 36V13 measured_buffer__peek
-FS .5 43V13 measured_buffer__calc_length
-FS .6 52V13 measured_buffer__get_length
-FS .7 56U14 measured_buffer__set_length
-FS .8 61V13 measured_buffer__is_empty
-FS .9 65V13 measured_buffer__is_full
-FS .10 69U14 measured_buffer__append
-FS .11 75U14 measured_buffer__append_str
-FS .12 80U14 measured_buffer__clear
-FS .13 85U14 measured_buffer__copy
-FS .14 92V13 measured_buffer__get_string
-FS .15 31V13 measured_buffer__get_char -> 18.3
-FS .16 36V13 measured_buffer__peek -> 18.4
-FS .17 52V13 measured_buffer__get_length -> 18.6
-FS .18 61V13 measured_buffer__is_empty -> 18.8
-FS .19 65V13 measured_buffer__is_full -> 18.9
-FS .20 92V13 measured_buffer__get_string -> 18.14
+FS .2 23V13 measured_buffer__construct_measured_buffer
+FS .3 35V13 measured_buffer__get_char
+FS .4 40V13 measured_buffer__peek
+FS .5 47V13 measured_buffer__calc_length
+FS .6 56V13 measured_buffer__get_length
+FS .7 60U14 measured_buffer__set_length
+FS .8 65V13 measured_buffer__is_empty
+FS .9 69V13 measured_buffer__is_full
+FS .10 73U14 measured_buffer__append
+FS .11 79U14 measured_buffer__append_str
+FS .12 85U14 measured_buffer__replace_char
+FS .13 90U14 measured_buffer__clear
+FS .14 95U14 measured_buffer__copy
+FS .15 102V13 measured_buffer__get_string
+FS .16 35V13 measured_buffer__get_char -> 18.3
+FS .17 40V13 measured_buffer__peek -> 18.4
+FS .18 56V13 measured_buffer__get_length -> 18.6
+FS .19 65V13 measured_buffer__is_empty -> 18.8
+FS .20 69V13 measured_buffer__is_full -> 18.9
+FS .21 102V13 measured_buffer__get_string -> 18.15
 FD 19 network_ns.ads
 FS .1 18K9 network_ns
 FS .2 52U14 network_ns__initialize_tcp_state
@@ -769,9 +770,9 @@ FX 14 http_message.ads .1 http_message
 F 83*13 http_message__construct_simple_http_response 20|.4:105s28 130s25
 FX 18 measured_buffer.ads .1 measured_buffer
 F 8*4 measured_buffer__max_request_line_byte_ct 19|.1:37c73 38c47
-F 61*13 measured_buffer__is_empty 19|.4:70s25
-F 65*13 measured_buffer__is_full 20|.4:95s17
-F 69*14 measured_buffer__append 20|.4:111s13
+F 65*13 measured_buffer__is_empty 19|.4:70s25
+F 69*13 measured_buffer__is_full 20|.4:95s17
+F 73*14 measured_buffer__append 20|.4:111s13
 FX 19 network_ns.ads .1 network_ns
 F 22*4 network_ns__static_test_response_11 20|.5:159c35
 F 33*4 network_ns__static_response_header_09 20|.6:172c34 177c22

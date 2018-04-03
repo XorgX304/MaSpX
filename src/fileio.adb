@@ -2,7 +2,8 @@ pragma SPARK_Mode(On);
 
 package body fileio is
 
-   procedure Read_File_To_MFB(
+--------------------------------------------------------------------------------
+   procedure Read_File_To_MFB( --TODO:ltj: 
        --MFT : Measured_Filename_Type
        Trimmed_Name : String;
        MFB : out Measured_File_Buffer)
@@ -35,10 +36,17 @@ package body fileio is
          when others =>
             Debug_Print("fileio.adb:Read_File_To_MFB: on Open(Read_File...)");
             Print_File_Status(Read_File_Status);
+            MFB.Length := NOT_FOUND_LENGTH;
+            MFB.Buffer := NOT_FOUND_PAGE;
+            return;
          end case;
+         
+         pragma Assert( not Is_Standard_File(Read_File) );
       
          --read all of it that can fit in MFB
          loop
+            pragma Loop_Invariant( not Is_Standard_File(Read_File) );
+         
             if Is_Readable(Read_File) and then not End_Of_File(Read_File) then
                if MFB.Length = 0 then
                   --ltj: buffer is full, but there is more in the file, send 413 page
@@ -66,6 +74,7 @@ package body fileio is
                end case;
             else
                Debug_Print_Ln("End_of_File on Read_File");
+               pragma Assert( not Is_Standard_File(Read_File) );
                if Is_Open (Read_File) then --and not Is_Standard_File (Read_File) then
                   Close(Read_File);
                   Read_File_Status := Status(Read_File);
@@ -84,26 +93,8 @@ package body fileio is
          MFB.Length := CONFLICT_LENGTH;
       end if;
    end Read_File_To_MFB;
-   
-   function Get_MFT_Length(
-      MFT : Measured_Filename_Type) return MFT_First_Empty_Index_Type
-   is
-   begin
-      if MFT.Length = 0 then
-         return MFT.Name'Length;
-      else
-         return MFT.Length - 1;
-      end if;
-   end Get_MFT_Length;
-   
-   procedure Trim_Filename(
-      Pre_Filename : Measured_Filename_Type;
-      Post_Filename : out String)
-   is
-   begin
-      Post_Filename := Pre_Filename.Name(Pre_Filename.Name'First .. Get_MFT_Length(Pre_Filename));
-   end Trim_Filename;
-   
+
+--------------------------------------------------------------------------------
    procedure Print_File_Status(
       My_File_Status : File_Status)
    is
@@ -144,22 +135,7 @@ package body fileio is
             return;
       end case;
    end Print_File_Status;
-   
-   function Construct_Measured_Filename(URI : ParsedRequestURIStringType) return Measured_Filename_Type
-   is
-      MFT : Measured_Filename_Type;
-   begin
-      MFT.Name(WEB_ROOT'Range) := WEB_ROOT;
-      MFT.Name(WEB_ROOT'Length + 1 .. WEB_ROOT'Length + URI'Length) := URI;
-      
-      for I in URI'Range loop
-         if URI(I) = ' ' then
-            MFT.Length := I + WEB_ROOT'Length;
-            return MFT;
-         end if;
-      end loop;
-      MFT.Length := 0;
-      return MFT;
-   end Construct_Measured_Filename;
+
+--------------------------------------------------------------------------------
    
 end fileio;
