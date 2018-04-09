@@ -3,10 +3,11 @@ pragma SPARK_Mode(On);
 package body server is
 
    procedure Canonicalize_HTTP_Request(
-      Parsed_Request : Simple_HTTP_Request;
-      Canonicalized_Request : out Simple_HTTP_Request)
+      Parsed_Request : Parsed_Simple_Request;
+      Canonicalized_Request : out Translated_Simple_Request)
    is
       Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+      Resolved_Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
    begin
       --construct name from web root and request uri
       Filename := Construct_Measured_Buffer(Filename.Size, Filename.EmptyChar, WEB_ROOT);
@@ -19,39 +20,45 @@ package body server is
       Replace_Char(Filename, '/', '\');
       --TODO:ltj: insert guards for precond of Resolve...
       --ltj: resolving ..'s and .'s 
-      Resolve_Special_Directories(Filename);
+      Resolve_Special_Directories(Filename, Resolved_Filename);
       
       --ltj: copy intermediary_buf to Canonicalized_Request
       Canonicalized_Request.Method := Parsed_Request.Method;
-      Canonicalized_Request.Path := Filename;
+      Canonicalized_Request.Path := Resolved_Filename;
+      Canonicalized_Request.Canonicalized := True;
+      Canonicalized_Request.Sanitary := False;
    end Canonicalize_HTTP_Request;
    
 --------------------------------------------------------------------------------
    procedure Sanitize_HTTP_Request(
       Client_Socket : Socket_Type;
-      Canonicalized_Request : Simple_HTTP_Request;
-      Clean_Request : out Simple_HTTP_Request;
-      Unsanitary_Request : out Boolean)
+      Canonicalized_Request : Translated_Simple_Request;
+      Clean_Request : out Translated_Simple_Request)
    is
       Response : Simple_HTTP_Response;
    begin
-      Unsanitary_Request := False;
-   
       --ltj: check that web root prefix is present in canonicalized request uri, otherwise reject as forbidden
       if Is_Prefixed(Canonicalized_Request.Path, WEB_ROOT) then
          Clean_Request.Method := Canonicalized_Request.Method;
          Clean_Request.Path := Canonicalized_Request.Path;
+         Clean_Request.Canonicalized := Canonicalized_Request.Canonicalized;
+         Clean_Request.Sanitary := True;
       else
          Response := Construct_Simple_HTTP_Response(c403_FORBIDDEN_PAGE);
          Send_Simple_Response(Client_Socket, Response);
-         Unsanitary_Request := True;
+         
+         Clean_Request.Method := Http_Message.UNKNOWN;
+         Clean_Request.Path.Buffer := (others=>NUL);
+         Clean_Request.Path.Length := 0;
+         Clean_Request.Canonicalized := False;
+         Clean_Request.Sanitary := False;
       end if;
    end Sanitize_HTTP_Request;
    
 --------------------------------------------------------------------------------
    procedure Fulfill_HTTP_Request(
       Client_Socket : Socket_Type;
-      Clean_Request : Simple_HTTP_Request)
+      Clean_Request : Translated_Simple_Request)
    is
       Response : Simple_HTTP_Response;
       MFB : Measured_File_Buffer; --TODO:ltj: convert to Measured_Buffer_Type

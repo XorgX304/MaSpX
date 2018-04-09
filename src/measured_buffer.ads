@@ -110,6 +110,7 @@ package measured_buffer is
    is ( Buf.Buffer(Positive'First .. Buf.Length) )
    with Global => null,
         Pre => Buf.Length <= Buf.Size,
-        Post => Get_String'Result'Length <= Buf.Size;
+        Post => Get_String'Result'Length <= Buf.Size and
+                Get_String'Result'Length = Buf.Length;
 
 end measured_buffer;

@@ -13,12 +13,15 @@ package body fileio is
       Read_File : File_Type;
       Read_File_Status : File_Status;
       C : Character_Result := 
-         (Status => Status_Error);
-      Prev_C : Character_Result;
+         (Status => Success,
+          Item => NUL);
+      Prev_C : Character_Result :=
+         (Status => Success,
+          Item => NUL);
       FirstByteFlag : Boolean := True;
-      FirstByte : Character;
+      FirstByte : Character := NUL;
       SecondByteFlag : Boolean := False;
-      SecondByte : Character;
+      SecondByte : Character := NUL;
       OtherByteFlag : Boolean := False;
    begin
       MFB.Length := 1;

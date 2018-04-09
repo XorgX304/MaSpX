@@ -10,9 +10,9 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U parsing%b		parsing.adb		cb9ce8e6 OO PK IL
+U parsing%b		parsing.adb		059be823 OO PK IL
 
-U parsing%s		parsing.ads		e68be127 OO PK IL
+U parsing%s		parsing.ads		4fa4d4c7 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -40,15 +40,15 @@ D config.ads		20180403143618 bd8f6989 config%s
 D fileio.ads		20180403184208 282a4d41 fileio%s
 D gnat.ads		20170516105956 fd2ad2f1 gnat%s
 D g-socket.ads		20170516105956 df7f0365 gnat.sockets%s
-D http_message.ads	20180403154440 b229035d http_message%s
+D http_message.ads	20180404123106 76d97a36 http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180403143406 2af80720 measured_buffer%s
-D network_ns.ads	20180403162344 a0430659 network_ns%s
+D measured_buffer.ads	20180404161702 462cc049 measured_buffer%s
+D network_ns.ads	20180403214202 9b4fc175 network_ns%s
 D network_types.ads	20180213214944 c18a7534 network_types%s
-D parsing.ads		20180403140740 3955cb53 parsing%s
-D parsing.adb		20180403140722 f2c923b5 parsing%b
+D parsing.ads		20180409222948 0352879d parsing%s
+D parsing.adb		20180409223538 06c96fbe parsing%b
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180403010726 e7af9ede spark.text_io%s
 D string_types.ads	20180326171200 56f78cef string_types%s
@@ -62,77 +62,74 @@ D s-stoele.ads		20170516105956 2dc34a04 system.storage_elements%s
 D s-traent.ads		20170516105950 005bf670 system.traceback_entries%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
 D utils.ads		20180403010340 52a12dbc utils%s
-D utils_ns.ads		20180220212052 c662e524 utils_ns%s
 X 1 ada.ads
 16K9*Ada 20e8 21|5r6 5r34
 X 2 a-charac.ads
 16K13*Characters 18e19 21|5r10 5r38
 X 3 a-chlat1.ads
 18K24*Latin_1 296e27 21|5w21 5r49
-25e4*NUL{character} 21|17r126 18r122 20r78 22r21 23r27 52r40 63r37 74r37
-. 86r63 122r40 22|35r66 109r61 156r60 257r69 258r66
+25e4*NUL{character} 21|17r126 18r122 20r78 22r21 23r27 52r40 66r43 68r41
+. 91r37 103r63 141r40 22|35r66 108r57 128r61 175r60 280r69 281r66
 X 10 config.ads
 3K9*config 20e11 21|8w6 8r18
-12a4*FS_ROOT{string} 22|91r82
-13a4*DEFAULT_PAGE{string} 22|297r55 306r32
-16a4*c400_BAD_REQUEST_PAGE{string} 22|267r53
-17a4*c400_BAD_REQUEST_URI_PAGE{string} 22|299r53
+12a4*FS_ROOT{string} 22|115r68
+13a4*DEFAULT_PAGE{string} 22|321r55 330r32
+16a4*c400_BAD_REQUEST_PAGE{string} 22|291r53
+17a4*c400_BAD_REQUEST_URI_PAGE{string} 22|323r53
 X 12 gnat.ads
-34K9*GNAT 37e9 21|4r6 114r23 22|250r23
+34K9*GNAT 37e9 21|4r6 133r23 22|273r23
 X 13 g-socket.ads
-55K14*Sockets 1284e17 21|4w11 114r28 22|250r28
-412I9*Socket_Type<integer> 21|114r36 22|250r36
+55K14*Sockets 1284e17 21|4w11 133r28 22|273r28
+412I9*Socket_Type<integer> 21|133r36 22|273r36
 X 14 http_message.ads
-10K9*Http_Message 100e17 21|9w6 9r24 22|261r32 292r35 294r35
-14n30*GET{14E9} 22|292r48
-14n35*UNKNOWN{14E9} 22|261r45 294r48
-41n35*Parsed{41E9} 21|124r40
-44R9*Simple_HTTP_Request 56e14 21|116r28 22|252r28
-44e29*Stage{41E9} 21|124r32
-46e7*Method{16E12} 22|261m22 292m25 294m25
-52r13*URI{18|17R9} 21|125r32 125r61 22|262m28 297r44 309m27
-60R9*Simple_HTTP_Response 66e14 22|259r18
-95V13*Construct_Simple_HTTP_Response{60R9} 22|267s22 299s22
+10K9*Http_Message 99e17 21|9w6 9r24 22|284r32 316r35 318r35
+14n30*GET{14E9} 22|316r48
+14n35*UNKNOWN{14E9} 22|284r45 318r48
+43R9*Parsed_Simple_Request 47e14 21|135r28 22|275r28
+45e7*Method{16E12} 22|284m22 316m25 318m25
+46r7*URI{18|17R9} 21|143r32 143r61 22|285m28 321r44 333m27
+59R9*Simple_HTTP_Response 65e14 22|282r18
+94V13*Construct_Simple_HTTP_Response{59R9} 22|291s22 323s22
 X 18 measured_buffer.ads
-6K9*measured_buffer 115e20 21|12w6 12r27
-8i4*MAX_REQUEST_LINE_BYTE_CT{natural} 21|17r100 51r35 121r35 22|35r40 257r43
-. 258r40
-12i4*MAX_FS_PATH_BYTE_CT{positive} 21|18r101 20r57 21r16 62r32 73r32 85r58
-. 22|109r40 156r39
-13I12*Max_Buffer_Size_Type{natural} 21|17r45 18r46 30r15 31r16 109r13 22|8r15
-. 9r16 36r15 110r15 226r35 230r18
-17R9*Measured_Buffer_Type 21e14 21|17r79 18r80 20r36 28r20 32r23 43r21 57r60
-. 66r18 82r13 95r20 101r20 107r20 115r21 22|6r20 10r23 31r21 35r19 78r60
-. 105r18 109r19 154r35 156r18 191r20 212r20 225r20 251r21 257r22 258r19
-17i30*Size{13I12} 21|36r48 39r27 39r44 49r50 51r28 60r44 62r25 71r44 73r25
-. 85r51 121r28 123r50 22|216r46
-17e59*EmptyChar{character} 21|52r28 63r25 74r25 86r51 122r28 22|195r40
+6K9*measured_buffer 116e20 21|12w6 12r27
+8i4*MAX_REQUEST_LINE_BYTE_CT{natural} 21|17r100 51r35 140r35 22|35r40 280r43
+. 281r40
+12i4*MAX_FS_PATH_BYTE_CT{positive} 21|18r101 20r57 21r16 65r38 67r36 90r32
+. 102r58 22|108r36 128r40 175r39
+13I12*Max_Buffer_Size_Type{natural} 21|17r45 18r46 30r15 31r16 71r11 128r13
+. 22|8r15 9r16 36r15 105r11 129r15 249r35 253r18
+17R9*Measured_Buffer_Type 21e14 21|17r79 18r80 20r36 28r20 32r23 43r21 58r24
+. 59r26 83r18 99r13 114r20 120r20 126r20 134r21 22|6r20 10r23 31r21 35r19
+. 79r24 80r26 108r15 124r18 128r19 173r35 175r18 214r20 235r20 248r20 274r21
+. 280r22 281r19
+17i30*Size{13I12} 21|36r48 39r27 39r44 49r50 51r28 63r56 65r31 67r29 88r44
+. 90r25 102r51 140r28 142r50 22|239r46
+17e59*EmptyChar{character} 21|52r28 66r31 68r29 91r25 103r51 141r28 22|218r40
 19a7*Buffer{string} 21|23m8 22|19r24 23r39 36r51 44r49 47r30 52r53 62r57
-. 69r54 110r48 118r46 121r27 126r50 136r54 143r51 197r27 198r26 220r25 232r27
-. 233r26
-20i7*Length{13I12} 21|24m8 36r27 37r37 38r37 40r27 40r48 49r28 55r54 60r25
-. 71r25 77r55 84r56 123r28 125r36 22|15r32 25r43 41r35 43r40 50r40 54r40
-. 61r46 64r46 70r78 73r61 115r35 117r37 124r37 128r37 135r46 138r46 144r78
-. 147r61 216r21 274r61 282r32 283r35 283r54 284r35 287r32 288r32 288r51 289r32
-. 297r20
-42V13*Peek{character} 22|305s10 305s35
-67V13*Is_Empty{boolean} 21|50s20 61s20 72s20 120s20 22|298s10
-75U14*Append 22|23s10 60s13 134s13 165s16
-81U14*Append_Str 22|162s13 306s10
-92U14*Clear 22|14s7 40s10 114s10 158s7 262s7
-97U14*Copy 22|309s7
-109V13*Get_String{string} 22|86s13 88s16 91s57 162s34 291s10
+. 69r54 129r48 137r46 140r27 145r50 155r54 162r51 220r27 221r26 243r25 255r27
+. 256r26
+20i7*Length{13I12} 21|24m8 36r27 37r37 38r37 40r27 40r48 49r28 55r54 63r31
+. 78r72 80r74 88r25 94r55 101r56 142r28 143r36 22|15r32 25r43 41r35 43r40
+. 50r40 54r40 61r46 64r46 70r78 73r61 89r88 112r88 134r35 136r37 143r37 147r37
+. 154r46 157r46 163r78 166r61 180r73 239r21 298r61 306r32 307r35 307r54 308r35
+. 311r32 312r32 312r51 313r32 321r20
+42V13*Peek{character} 22|329s10 329s35
+67V13*Is_Empty{boolean} 21|50s20 64s20 89s20 139s20 22|322s10
+75U14*Append 22|23s10 60s13 153s13 186s16
+81U14*Append_Str 22|183s13 330s10
+92U14*Clear 22|14s7 40s10 133s10 177s7 285s7
+97U14*Copy 22|333s7
+109V13*Get_String{string} 22|91s13 93s16 115s47 183s34 315s10
 X 19 network_ns.ads
-18K9*network_ns 87e15 21|7w6 7r22
-50a4*GET_TOKEN_STR{string} 22|291r37
-78U14*Send_Simple_Response 22|268s10 300s10
+17K9*network_ns 86e15 21|7w6 7r22
+49a4*GET_TOKEN_STR{string} 22|315r37
+77U14*Send_Simple_Response 22|292s10 324s10
 X 21 parsing.ads
-15K9*parsing 127l5 127e12 22|3b14 312l5 312t12
-17A9*Tokens_Request_Array_Type(18|17R9)<integer> 45r13 22|32r35 34r16 256r16
-18A9*Tokens_Filename_Array_Type(18|17R9)<integer> 68r13 80r16 89r16 22|80r16
-. 106r35 108r16 153r16 175r16
-20r4*BLANK_FILENAME_TOKEN{18|17R9} 58r29 83r29 92r29 22|87r26 89r26 91r32
-. 92r32 161r26 181r26
+15K9*parsing 145l5 145e12 22|3b14 336l5 336t12
+17A9*Tokens_Request_Array_Type(18|17R9)<integer> 45r13 22|32r35 34r16 279r16
+18A9*Tokens_Filename_Array_Type(18|17R9)<integer> 72r23 85r13 97r16 106r16
+. 22|82r16 106r23 125r35 127r16 172r16 196r16
+20r4*BLANK_FILENAME_TOKEN{18|17R9} 22|92r26 94r26 115r22 116r26 182r26 202r26
 27U14*Get_First_Token_In_Range 28>7 29>7 30>7 31>7 32<7 22|5b14 27l8 27t32
 28r7 Source_Buf{18|17R9} 36r16 36r37 37r26 38r26 39r16 40r37 22|6b7 19r13
 . 23r28
@@ -141,47 +138,56 @@ X 21 parsing.ads
 31i7 Finish{18|13I12} 35r25 38r16 38r48 22|9b7 17r39
 32r7 Token_Buf{18|17R9} 39r34 40r17 22|10b7 14m13 15r22 23m17 25r33
 42V13*Get_All_Request_Tokens{17A9} 43>7 44>7 53r17 54r31 55r21 55r64 22|30b13
-. 75l8 75t30 273s17
+. 75l8 75t30 297s17
 43r7 Raw_Request{18|17R9} 47r40 48r39 49r16 49r38 50r29 51r16 52r16 53r69
 . 22|31b7 34r60 36r39 43r28 44r37 47r18 50r28 52r41 54r28 62r45 69r42
 44e7 Delimit{character} 47r53 48r52 53r82 22|32b7 34r73 49r20
 54i26 I{integer} 55r51 55r94
-57U14*Resolve_Special_Directories 57=42 22|78b14 101l8 101t35
-57r42 Filename{18|17R9} 59r40 60r16 60r35 61r29 62r16 63r16 22|78b42 80r61
-. 82r41 100m7
-65V13*Get_All_Filename_Tokens{18A9} 66>7 67>7 75r17 76r31 77r21 77r65 22|82s17
-. 104b13 149l8 149t31
-66r7 Filename{18|17R9} 70r40 71r16 71r35 72r29 73r16 74r16 75r70 22|105b7
-. 108r61 110r39 117r28 118r37 121r18 124r28 126r41 128r28 136r45 143r42
-67e7 Delimit{character} 75r80 22|106b7 108r71 123r20
-76i26 I{integer} 77r52 77r96
-79V13*Detokenize_Filename_Tokens{18|17R9} 80>7 81>7 85r17 86r17 22|100s19
-. 152b13 171l8 171t34
-80a7 Tokens{18A9} 84r30 84r46 84r66 22|153b7 160r16 161r13 162r45 164r34
-81e7 Delimit{character} 22|154b7 165r33
-84i25 I{integer} 84r53 84r73
-88V13*Is_Last_Token{boolean} 89>7 90>7 22|164s20 174b13 187l8 187t21
-89a7 Tokens{18A9} 22|175b7 180r21 181r13
-90i7 J{positive} 22|176b7 180r16 181r56
-94V13*Is_Delimits_Well_Formed{boolean} 47s16 59s16 70s16 95>7 96>7 22|190b13
-. 208l8 208t31 265s35
-95r7 Source_Buf{18|17R9} 22|191b7 195r29 197r16 198r15
-96e7 Delimit{character} 22|192b7 200r17 200r38
-100V13*Is_Leading_Delimit{boolean} 48s20 101>7 102>7 22|211b13 221l8 221t26
-. 266s10
-101r7 Source_Buf{18|17R9} 22|212b7 216r10 216r35 220r14
-102e7 Delimit{character} 22|213b7 220r37
-106V13*Get_Token_Ct{18|13I12} 53s56 75s57 107>7 108>7 22|34s47 80s48 108s48
-. 224b13 246l8 246t20 256s47
-107r7 Source_Buf{18|17R9} 22|225b7 232r16 233r15
-108e7 Delimit{character} 22|226b7 235r17 237r21
-113U14*Parse_HTTP_Request 114>7 115>7 116<7 117<7 22|249b14 310l8 310t26
-114i7 Client_Socket{13|412I9} 22|250b7 268r31 300r31
-115r7 Raw_Request{18|17R9} 120r29 121r16 122r16 123r16 123r38 22|251b7 256r60
-. 265r59 266r29 273r40
-116r7 Parsed_Request{14|44R9} 124r17 125r17 125r46 22|252b7 261m7 262m13
-. 262r13 292m10 294m10 297r29 309m12 309r12
-117b7 Exception_Raised{boolean} 22|253b7 263m7 269m10 301m10
+57U14*Resolve_Special_Directories 58>7 59<7 22|78b14 101l8 101t35
+58r7 Filename_Start{18|17R9} 62r40 63r16 63r41 64r29 65r16 66r16 22|79b7
+. 82r61 84r41
+59r7 Filename_End{18|17R9} 67r16 68r16 22|80b7 100m7
+70U14*Delete_First_Dir_To_Left 71>7 72=7 22|95s13 104b14 120l8 120t32
+71i7 I{18|13I12} 75r17 76r17 22|105b7 110r40
+72a7 Tokens{18A9} 75r22 76r22 78r31 78r47 78r62 78r82 80r33 80r49 80r64 80r84
+. 22|106b7 110r24 112r47 112r63 112r78 112r98 114r19 116m13
+78i26 J{integer} 78r69 78r89
+80i28 X{integer} 80r71 80r91
+82V13*Get_All_Filename_Tokens{18A9} 83>7 84>7 92r17 93r31 94r21 94r65 22|84s17
+. 123b13 168l8 168t31
+83r7 Filename{18|17R9} 87r40 88r16 88r35 89r29 90r16 91r16 92r70 22|124b7
+. 127r61 129r39 136r28 137r37 140r18 143r28 145r41 147r28 155r45 162r42
+84e7 Delimit{character} 92r80 22|125b7 127r71 142r20
+93i26 I{integer} 94r52 94r96
+96V13*Detokenize_Filename_Tokens{18|17R9} 97>7 98>7 102r17 103r17 22|100s23
+. 171b13 192l8 192t34
+97a7 Tokens{18A9} 101r30 101r46 101r66 22|172b7 179r16 180r47 180r63 180r83
+. 182r13 183r45 185r43
+98e7 Delimit{character} 22|173b7 186r33
+101i25 I{integer} 101r53 101r73
+105V13*Is_Last_Filename_Token{boolean} 106>7 107>7 22|185s20 195b13 210l8
+. 210t30
+106a7 Tokens{18A9} 110r21 111r21 22|196b7 201r21 202r13 206r38
+107i7 J{positive} 110r16 111r16 22|197b7 201r16 202r56 206r33
+113V13*Is_Delimits_Well_Formed{boolean} 47s16 62s16 87s16 114>7 115>7 22|213b13
+. 231l8 231t31 289s35
+114r7 Source_Buf{18|17R9} 22|214b7 218r29 220r16 221r15
+115e7 Delimit{character} 22|215b7 223r17 223r38
+119V13*Is_Leading_Delimit{boolean} 48s20 120>7 121>7 22|234b13 244l8 244t26
+. 290s10
+120r7 Source_Buf{18|17R9} 22|235b7 239r10 239r35 243r14
+121e7 Delimit{character} 22|236b7 243r37
+125V13*Get_Token_Ct{18|13I12} 53s56 92s57 126>7 127>7 22|34s47 82s48 127s48
+. 247b13 269l8 269t20 279s47
+126r7 Source_Buf{18|17R9} 22|248b7 255r16 256r15
+127e7 Delimit{character} 22|249b7 258r17 260r21
+132U14*Parse_HTTP_Request 133>7 134>7 135<7 136<7 22|272b14 334l8 334t26
+133i7 Client_Socket{13|412I9} 22|273b7 292r31 324r31
+134r7 Raw_Request{18|17R9} 139r29 140r16 141r16 142r16 142r38 22|274b7 279r60
+. 289r59 290r29 297r40
+135r7 Parsed_Request{14|43R9} 143r17 143r46 22|275b7 284m7 285m13 285r13
+. 316m10 318m10 321r29 333m12 333r12
+136b7 Exception_Raised{boolean} 22|276b7 287m7 293m10 325m10
 X 22 parsing.adb
 17i11 I{integer} 19r31 23r46 25r53
 34a7 Tokens{21|17A9} 39r16 67m10 70r47 70r68 70r88 73r35 73r51 73r71 74r14
@@ -192,39 +198,43 @@ X 22 parsing.adb
 43i14 J{integer} 45r28 47r37 50r19 51r28 61r56 63r36
 70i42 K{integer} 70r75 70r95
 73i30 K{integer} 73r58 73r78
-80a7 Tokens{21|18A9} 82m7 85r16 86r24 87m13 88r27 89m13 90r30 91r19 91r68
-. 92m19 100r46
-85i11 I{integer} 86r31 87r20 88r34 89r20 90r46
-90i17 J{integer} 91r26 91r75 92r26
-108a7 Tokens{21|18A9} 113r16 141m10 144r47 144r68 144r88 147r35 147r51 147r71
-. 148r14
-109r7 Token_Buf{18|17R9} 114m16 115r25 134m20 134r20 135r36 138r36 138r56
-. 141r23
-110i7 Start{18|13I12} 117r19 118r28 119r33 125m19 126r33 128m19 136r36 137r41
-. 143r33
-111e7 C{character} 121m13 123r16 134r31
-113i11 I{integer} 141r17 144r63
-117i14 J{integer} 119r28 121r34 124r19 125r28 135r56 137r36
-144i42 K{integer} 144r75 144r95
-147i30 K{integer} 147r58 147r78
-156r7 Filename{18|17R9} 158m13 162m24 162r24 165m23 165r23 170r14
-160i11 I{integer} 161r20 162r52 164r42
-180i11 I{integer} 181r20 181r51
-194e7 C{character} 198m10 200r13 204r20
-195e7 Prev_C{character} 200r29 204m10
-197i11 I{integer} 198r33
-228e7 C{character} 233m10 235r13 237r16
-229b7 Is_Delimit{boolean} 235r33 236m13 237r33 239m13
-230i7 Token_Ct{18|13I12} 238m13 238r25 242r32 245r14
-232i11 I{integer} 233r33 242r44
-255e7 Delimit{character} 265r72 266r42 273r53
-256a7 Tokens{21|17A9} 265r10 273m7 274r35 274r51 274r71 276r42 277r47 278r39
-. 279r44 281r23 282r22 282r42 283r44 286r20 287r22 287r42 288r41
-257r7 Method_Token{18|17R9} 276r22 277r22 281m7 283r22 284r22 284r45 291r21
-258r7 URI_Token{18|17R9} 278r22 279r22 286m7 288r22 289r22 289r42 297r10
-. 298r19 305r15 305r40 306m21 306r21 309r32
-259r7 Response{14|60R9} 267m10 268r46 299m10 300r46
-274i30 I{integer} 274r58 274r78
+82a7 Tokens{21|18A9} 84m7 87r16 87r32 89r47 89r63 89r78 89r98 91r24 92m13
+. 93r27 94m13 95m41 95r41 100r50
+87i11 I{integer} 91r31 92r20 93r34 94r20 95r38
+89i42 X{integer} 89r85 89r105
+108r7 Token{18|17R9} 114m10 115r13 115r58
+110i11 J{integer} 114r26 116r20
+112i42 Y{integer} 112r85 112r105
+127a7 Tokens{21|18A9} 132r16 160m10 163r47 163r68 163r88 166r35 166r51 166r71
+. 167r14
+128r7 Token_Buf{18|17R9} 133m16 134r25 153m20 153r20 154r36 157r36 157r56
+. 160r23
+129i7 Start{18|13I12} 136r19 137r28 138r33 144m19 145r33 147m19 155r36 156r41
+. 162r33
+130e7 C{character} 140m13 142r16 153r31
+132i11 I{integer} 160r17 163r63
+136i14 J{integer} 138r28 140r34 143r19 144r28 154r56 156r36
+163i42 K{integer} 163r75 163r95
+166i30 K{integer} 166r58 166r78
+175r7 Filename{18|17R9} 177m13 183m24 183r24 186m23 186r23 191r14
+179i11 I{integer} 182r20 183r52 185r51
+180i42 X{integer} 180r70 180r90
+201i11 I{integer} 202r20 202r51
+217e7 C{character} 221m10 223r13 227r20
+218e7 Prev_C{character} 223r29 227m10
+220i11 I{integer} 221r33
+251e7 C{character} 256m10 258r13 260r16
+252b7 Is_Delimit{boolean} 258r33 259m13 260r33 262m13
+253i7 Token_Ct{18|13I12} 261m13 261r25 265r32 268r14
+255i11 I{integer} 256r33 265r44
+278e7 Delimit{character} 289r72 290r42 297r53
+279a7 Tokens{21|17A9} 289r10 297m7 298r35 298r51 298r71 300r42 301r47 302r39
+. 303r44 305r23 306r22 306r42 307r44 310r20 311r22 311r42 312r41
+280r7 Method_Token{18|17R9} 300r22 301r22 305m7 307r22 308r22 308r45 315r21
+281r7 URI_Token{18|17R9} 302r22 303r22 310m7 312r22 313r22 313r42 321r10
+. 322r19 329r15 329r40 330m21 330r21 333r32
+282r7 Response{14|59R9} 291m10 292r46 323m10 324r46
+298i30 I{integer} 298r58 298r78
 X 23 spark.ads
 29K9*SPARK 21|3r6 3r25 23|66e10
 X 24 spark-text_io.ads
@@ -445,8 +455,8 @@ FS .65 1140U14 gnat__sockets__check_selector__2
 FS .66 1152U14 gnat__sockets__abort_selector
 FD 14 http_message.ads
 FS .1 10K9 http_message
-FS .2 95V13 http_message__construct_simple_http_response
-FS .3 98V13 http_message__construct_simple_http_response__2
+FS .2 94V13 http_message__construct_simple_http_response
+FS .3 97V13 http_message__construct_simple_http_response__2
 FD 15 interfac.ads
 FS .1 38K9 interfaces
 FS .2 81V13 interfaces__shift_left
@@ -542,13 +552,13 @@ FS .21 71V13 measured_buffer__is_full -> 18.9
 FS .22 104V13 measured_buffer__is_prefixed -> 18.15
 FS .23 109V13 measured_buffer__get_string -> 18.16
 FD 19 network_ns.ads
-FS .1 18K9 network_ns
-FS .2 52U14 network_ns__initialize_tcp_state
-FS .3 57U14 network_ns__get_client_cxn
-FS .4 63U14 network_ns__recv_net_request
-FS .5 72U14 network_ns__send_test_response
-FS .6 78U14 network_ns__send_simple_response
-FS .7 83U14 network_ns__close_client_socket
+FS .1 17K9 network_ns
+FS .2 51U14 network_ns__initialize_tcp_state
+FS .3 56U14 network_ns__get_client_cxn
+FS .4 62U14 network_ns__recv_net_request
+FS .5 71U14 network_ns__send_test_response
+FS .6 77U14 network_ns__send_simple_response
+FS .7 82U14 network_ns__close_client_socket
 FD 20 network_types.ads
 FS .1 1K9 network_types
 FD 21 parsing.ads
@@ -556,25 +566,27 @@ FS .1 15K9 parsing
 FS .2 27U14 parsing__get_first_token_in_range
 FS .3 42V13 parsing__get_all_request_tokens
 FS .4 57U14 parsing__resolve_special_directories
-FS .5 65V13 parsing__get_all_filename_tokens
-FS .6 79V13 parsing__detokenize_filename_tokens
-FS .7 88V13 parsing__is_last_token
-FS .8 94V13 parsing__is_delimits_well_formed
-FS .9 100V13 parsing__is_leading_delimit
-FS .10 106V13 parsing__get_token_ct
-FS .11 113U14 parsing__parse_http_request
+FS .5 70U14 parsing__delete_first_dir_to_left
+FS .6 82V13 parsing__get_all_filename_tokens
+FS .7 96V13 parsing__detokenize_filename_tokens
+FS .8 105V13 parsing__is_last_filename_token
+FS .9 113V13 parsing__is_delimits_well_formed
+FS .10 119V13 parsing__is_leading_delimit
+FS .11 125V13 parsing__get_token_ct
+FS .12 132U14 parsing__parse_http_request
 FD 22 parsing.adb
 FS .1 3K14 parsing -> 21.1
 FS .2 5U14 parsing__get_first_token_in_range -> 21.2
 FS .3 30V13 parsing__get_all_request_tokens -> 21.3
 FS .4 78U14 parsing__resolve_special_directories -> 21.4
-FS .5 104V13 parsing__get_all_filename_tokens -> 21.5
-FS .6 152V13 parsing__detokenize_filename_tokens -> 21.6
-FS .7 174V13 parsing__is_last_token -> 21.7
-FS .8 190V13 parsing__is_delimits_well_formed -> 21.8
-FS .9 211V13 parsing__is_leading_delimit -> 21.9
-FS .10 224V13 parsing__get_token_ct -> 21.10
-FS .11 249U14 parsing__parse_http_request -> 21.11
+FS .5 104U14 parsing__delete_first_dir_to_left -> 21.5
+FS .6 123V13 parsing__get_all_filename_tokens -> 21.6
+FS .7 171V13 parsing__detokenize_filename_tokens -> 21.7
+FS .8 195V13 parsing__is_last_filename_token -> 21.8
+FS .9 213V13 parsing__is_delimits_well_formed -> 21.9
+FS .10 234V13 parsing__is_leading_delimit -> 21.10
+FS .11 247V13 parsing__get_token_ct -> 21.11
+FS .12 272U14 parsing__parse_http_request -> 21.12
 FD 23 spark.ads
 FS .1 29K9 spark
 FD 24 spark-text_io.ads
@@ -748,47 +760,46 @@ FS .3 11U14 utils__debug_print
 FS .4 12U14 utils__check_print_ln
 FS .5 13U14 utils__check_print
 FS .6 15V13 utils__logical_equivalence
-FD 36 utils_ns.ads
-FS .1 3K9 utils_ns
-FS .2 7U14 utils_ns__string_to_byte_array
 FX 3 a-chlat1.ads .1 ada__characters__latin_1
 F 25*4 ada__characters__latin_1__nul 21|.1:17c126 18c122 20c78 22c21 23c27
-. .3:52c40 .4:63c37 .5:74c37 .6:86c63 .11:122c40 22|.3:35c66 .5:109c61 .6:156c60
-. .11:257c69 258c66
+. .3:52c40 .4:66c43 68c41 .6:91c37 .7:103c63 .12:141c40 22|.3:35c66 .5:108c57
+. .6:128c61 .7:175c60 .12:280c69 281c66
 FX 10 config.ads .1 config
-F 12*4 config__fs_root 22|.4:91c82
-F 13*4 config__default_page 22|.11:297c55 306c32
-F 16*4 config__c400_bad_request_page 22|.11:267c53
-F 17*4 config__c400_bad_request_uri_page 22|.11:299c53
+F 12*4 config__fs_root 22|.5:115c68
+F 13*4 config__default_page 22|.12:321c55 330c32
+F 16*4 config__c400_bad_request_page 22|.12:291c53
+F 17*4 config__c400_bad_request_uri_page 22|.12:323c53
 FX 14 http_message.ads .1 http_message
-F 95*13 http_message__construct_simple_http_response 22|.11:267s22 299s22
+F 94*13 http_message__construct_simple_http_response 22|.12:291s22 323s22
 FX 18 measured_buffer.ads .1 measured_buffer
-F 8*4 measured_buffer__max_request_line_byte_ct 21|.1:17c100 .3:51c35 .11:121c35
-. 22|.3:35c40 .11:257c43 258c40
-F 12*4 measured_buffer__max_fs_path_byte_ct 21|.1:18r101 20r57 21r16 .4:62r32
-. .5:73r32 .6:85r58 22|.5:109r40 .6:156r39
-F 42*13 measured_buffer__peek 22|.11:305s10 305s35
-F 67*13 measured_buffer__is_empty 21|.3:50s20 .4:61s20 .5:72s20 .11:120s20
-. 22|.11:298s10
-F 75*14 measured_buffer__append 22|.2:23s10 .3:60s13 .5:134s13 .6:165s16
-F 81*14 measured_buffer__append_str 22|.6:162s13 .11:306s10
-F 92*14 measured_buffer__clear 22|.2:14s7 .3:40s10 .5:114s10 .6:158s7 .11:262s7
-F 97*14 measured_buffer__copy 22|.11:309s7
-F 109*13 measured_buffer__get_string 22|.4:86s13 88s16 91s57 .6:162s34 .11:291s10
+F 8*4 measured_buffer__max_request_line_byte_ct 21|.1:17c100 .3:51c35 .12:140c35
+. 22|.3:35c40 .12:280c43 281c40
+F 12*4 measured_buffer__max_fs_path_byte_ct 21|.1:18r101 20r57 21r16 .4:65r38
+. 67r36 .6:90r32 .7:102r58 22|.5:108r36 .6:128r40 .7:175r39
+F 42*13 measured_buffer__peek 22|.12:329s10 329s35
+F 67*13 measured_buffer__is_empty 21|.3:50s20 .4:64s20 .6:89s20 .12:139s20
+. 22|.12:322s10
+F 75*14 measured_buffer__append 22|.2:23s10 .3:60s13 .6:153s13 .7:186s16
+F 81*14 measured_buffer__append_str 22|.7:183s13 .12:330s10
+F 92*14 measured_buffer__clear 22|.2:14s7 .3:40s10 .6:133s10 .7:177s7 .12:285s7
+F 97*14 measured_buffer__copy 22|.12:333s7
+F 109*13 measured_buffer__get_string 22|.4:91s13 93s16 .5:115s47 .7:183s34
+. .12:315s10
 FX 19 network_ns.ads .1 network_ns
-F 50*4 network_ns__get_token_str 22|.11:291c37
-F 78*14 network_ns__send_simple_response 22|.11:268s10 300s10
+F 49*4 network_ns__get_token_str 22|.12:315c37
+F 77*14 network_ns__send_simple_response 22|.12:292s10 324s10
 FX 21 parsing.ads .1 parsing
-F 20*4 parsing__blank_filename_token .4:58r29 .6:83r29 .7:92r29 22|.4:87r26
-. 89r26 91r32 92r32 .6:161r26 .7:181r26
-F 42*13 parsing__get_all_request_tokens 22|.11:273s17
-F 65*13 parsing__get_all_filename_tokens 22|.4:82s17
-F 79*13 parsing__detokenize_filename_tokens 22|.4:100s19
-F 88*13 parsing__is_last_token 22|.6:164s20
-F 94*13 parsing__is_delimits_well_formed .3:47s16 .4:59s16 .5:70s16 22|.11:265s35
-F 100*13 parsing__is_leading_delimit .3:48s20 22|.11:266s10
-F 106*13 parsing__get_token_ct .3:53s56 .5:75s57 22|.3:34s47 .4:80s48 .5:108s48
-. .11:256s47
+F 20*4 parsing__blank_filename_token 22|.4:92r26 94r26 .5:115r22 116r26 .7:182r26
+. .8:202r26
+F 42*13 parsing__get_all_request_tokens 22|.12:297s17
+F 70*14 parsing__delete_first_dir_to_left 22|.4:95s13
+F 82*13 parsing__get_all_filename_tokens 22|.4:84s17
+F 96*13 parsing__detokenize_filename_tokens 22|.4:100s23
+F 105*13 parsing__is_last_filename_token 22|.7:185s20
+F 113*13 parsing__is_delimits_well_formed .3:47s16 .4:62s16 .6:87s16 22|.12:289s35
+F 119*13 parsing__is_leading_delimit .3:48s20 22|.12:290s10
+F 125*13 parsing__get_token_ct .3:53s56 .6:92s57 22|.3:34s47 .4:82s48 .6:127s48
+. .12:279s47
 FX 21 parsing.ads .2 parsing__get_first_token_in_range
 F 28>7 parsing__get_first_token_in_range__source_buf 36c16 36c37 37c26 38c26
 . 39c16 40c37 22|.2:19c13 23c28
@@ -803,41 +814,52 @@ F 43>7 parsing__get_all_request_tokens__raw_request 47c40 48c39 49c16 49c38
 . 54c28 62c45 69c42
 F 44>7 parsing__get_all_request_tokens__delimit 47c53 48c52 53c82 22|.3:34c73
 . 49c20
-F 54*26 parsing__get_all_request_tokens__L40s__i 55c51 55c94
+F 54*26 parsing__get_all_request_tokens__L46s__i 55c51 55c94
 FX 21 parsing.ads .4 parsing__resolve_special_directories
-F 57=42 parsing__resolve_special_directories__filename 59r40 60r16 60r35
-. 61r29 62r16 63r16 22|.4:80r61 82r41 100m7
-FX 21 parsing.ads .5 parsing__get_all_filename_tokens
-F 66>7 parsing__get_all_filename_tokens__filename 70c40 71c16 71c35 72c29
-. 73c16 74c16 75c70 22|.5:108c61 110c39 117c28 118c37 121c18 124c28 126c41
-. 128c28 136c45 143c42
-F 67>7 parsing__get_all_filename_tokens__delimit 75c80 22|.5:108c71 123c20
-F 76*26 parsing__get_all_filename_tokens__L42s__i 77c52 77c96
-FX 21 parsing.ads .6 parsing__detokenize_filename_tokens
-F 80>7 parsing__detokenize_filename_tokens__tokens 84c30 84c46 84c66 22|.6:160c16
-. 161c13 162c45 164c34
-F 81>7 parsing__detokenize_filename_tokens__delimit 22|.6:165c33
-F 84*25 parsing__detokenize_filename_tokens__L44s__i 84c53 84c73
-FX 21 parsing.ads .7 parsing__is_last_token
-F 89>7 parsing__is_last_token__tokens 22|.7:180c21 181c13
-F 90>7 parsing__is_last_token__j 22|.7:180c16 181c56
-FX 21 parsing.ads .8 parsing__is_delimits_well_formed
-F 95>7 parsing__is_delimits_well_formed__source_buf 22|.8:195c29 197c16 198c15
-F 96>7 parsing__is_delimits_well_formed__delimit 22|.8:200c17 200c38
-FX 21 parsing.ads .9 parsing__is_leading_delimit
-F 101>7 parsing__is_leading_delimit__source_buf 22|.9:216c10 216c35 220c14
-F 102>7 parsing__is_leading_delimit__delimit 22|.9:220c37
-FX 21 parsing.ads .10 parsing__get_token_ct
-F 107>7 parsing__get_token_ct__source_buf 22|.10:232c16 233c15
-F 108>7 parsing__get_token_ct__delimit 22|.10:235c17 237c21
-FX 21 parsing.ads .11 parsing__parse_http_request
-F 114>7 parsing__parse_http_request__client_socket 22|.11:268c31 300c31
-F 115>7 parsing__parse_http_request__raw_request 120c29 121c16 122c16 123c16
-. 123c38 22|.11:256c60 265c59 266c29 273c40
-F 116<7 parsing__parse_http_request__parsed_request 124r17 125r17 125r46
-. 22|.11:261m7 262m13 262r13 292m10 294m10 297r29 309m12 309r12
-F 117<7 parsing__parse_http_request__exception_raised 22|.11:263m7 269m10
-. 301m10
+F 58>7 parsing__resolve_special_directories__filename_start 62c40 63c16 63c41
+. 64c29 65c16 66c16 22|.4:82c61 84c41
+F 59<7 parsing__resolve_special_directories__filename_end 67r16 68r16 22|.4:100m7
+FX 21 parsing.ads .5 parsing__delete_first_dir_to_left
+F 71>7 parsing__delete_first_dir_to_left__i 75c17 76c17 22|.5:110c40
+F 72=7 parsing__delete_first_dir_to_left__tokens 75r22 76r22 78r31 78r47
+. 78r62 78r82 80r33 80r49 80r64 80r84 22|.5:110r24 112r47 112r63 112r78 112r98
+. 114r19 116m13
+F 78*26 parsing__delete_first_dir_to_left__L48s__j 78c69 78c89
+F 80*28 parsing__delete_first_dir_to_left__L50s__x 80c71 80c91
+FX 21 parsing.ads .6 parsing__get_all_filename_tokens
+F 83>7 parsing__get_all_filename_tokens__filename 87c40 88c16 88c35 89c29
+. 90c16 91c16 92c70 22|.6:127c61 129c39 136c28 137c37 140c18 143c28 145c41
+. 147c28 155c45 162c42
+F 84>7 parsing__get_all_filename_tokens__delimit 92c80 22|.6:127c71 142c20
+F 93*26 parsing__get_all_filename_tokens__L52s__i 94c52 94c96
+FX 21 parsing.ads .7 parsing__detokenize_filename_tokens
+F 97>7 parsing__detokenize_filename_tokens__tokens 101c30 101c46 101c66 22|.7:179c16
+. 180c47 180c63 180c83 182c13 183c45 185c43
+F 98>7 parsing__detokenize_filename_tokens__delimit 22|.7:186c33
+F 101*25 parsing__detokenize_filename_tokens__L54s__i 101c53 101c73
+FX 21 parsing.ads .8 parsing__is_last_filename_token
+F 106>7 parsing__is_last_filename_token__tokens 110c21 111c21 22|.8:201c21
+. 202c13 206c38
+F 107>7 parsing__is_last_filename_token__j 110c16 111c16 22|.8:201c16 202c56
+. 206c33
+FX 21 parsing.ads .9 parsing__is_delimits_well_formed
+F 114>7 parsing__is_delimits_well_formed__source_buf 22|.9:218c29 220c16
+. 221c15
+F 115>7 parsing__is_delimits_well_formed__delimit 22|.9:223c17 223c38
+FX 21 parsing.ads .10 parsing__is_leading_delimit
+F 120>7 parsing__is_leading_delimit__source_buf 22|.10:239c10 239c35 243c14
+F 121>7 parsing__is_leading_delimit__delimit 22|.10:243c37
+FX 21 parsing.ads .11 parsing__get_token_ct
+F 126>7 parsing__get_token_ct__source_buf 22|.11:255c16 256c15
+F 127>7 parsing__get_token_ct__delimit 22|.11:258c17 260c21
+FX 21 parsing.ads .12 parsing__parse_http_request
+F 133>7 parsing__parse_http_request__client_socket 22|.12:292c31 324c31
+F 134>7 parsing__parse_http_request__raw_request 139c29 140c16 141c16 142c16
+. 142c38 22|.12:279c60 289c59 290c29 297c40
+F 135<7 parsing__parse_http_request__parsed_request 143r17 143r46 22|.12:284m7
+. 285m13 285r13 316m10 318m10 321r29 333m12 333r12
+F 136<7 parsing__parse_http_request__exception_raised 22|.12:287m7 293m10
+. 325m10
 FX 22 parsing.adb .2 parsing__get_first_token_in_range
 F 17*11 parsing__get_first_token_in_range__L_1__i 19c31 23c46 25c53
 FX 22 parsing.adb .3 parsing__get_all_request_tokens
@@ -854,65 +876,71 @@ F 43*14 parsing__get_all_request_tokens__L_3__j 45c28 47c37 50c19 51c28 61c56
 F 70*42 parsing__get_all_request_tokens__L_2__L15b__k 70c75 70c95
 F 73*30 parsing__get_all_request_tokens__L17b__k 73c58 73c78
 FX 22 parsing.adb .4 parsing__resolve_special_directories
-F 80*7 parsing__resolve_special_directories__tokens 82m7 85r16 86r24 87m13
-. 88r27 89m13 90r30 91r19 91r68 92m19 100r46
-F 85*11 parsing__resolve_special_directories__L_4__i 86c31 87c20 88c34 89c20
-. 90c46
-F 90*17 parsing__resolve_special_directories__L_5__j 91c26 91c75 92c26
-FX 22 parsing.adb .5 parsing__get_all_filename_tokens
-F 108*7 parsing__get_all_filename_tokens__tokens 113r16 141m10 144r47 144r68
-. 144r88 147r35 147r51 147r71 148r14
-F 109*7 parsing__get_all_filename_tokens__token_buf 114m16 115r25 134m20
-. 134r20 135r36 138r36 138r56 141r23
-F 110*7 parsing__get_all_filename_tokens__start 117r19 118r28 119r33 125m19
-. 126r33 128m19 136r36 137r41 143r33
-F 111*7 parsing__get_all_filename_tokens__c 121m13 123r16 134r31
-F 113*11 parsing__get_all_filename_tokens__L_6__i 141c17 144c63
-F 117*14 parsing__get_all_filename_tokens__L_7__j 119c28 121c34 124c19 125c28
-. 135c56 137c36
-F 144*42 parsing__get_all_filename_tokens__L_6__L39b__k 144c75 144c95
-F 147*30 parsing__get_all_filename_tokens__L41b__k 147c58 147c78
-FX 22 parsing.adb .6 parsing__detokenize_filename_tokens
-F 156*7 parsing__detokenize_filename_tokens__filename 158m13 162m24 162r24
-. 165m23 165r23 170r14
-F 160*11 parsing__detokenize_filename_tokens__L_8__i 161c20 162c52 164c42
-FX 22 parsing.adb .7 parsing__is_last_token
-F 180*11 parsing__is_last_token__L_9__i 181c20 181c51
-FX 22 parsing.adb .8 parsing__is_delimits_well_formed
-F 194*7 parsing__is_delimits_well_formed__c 198m10 200r13 204r20
-F 195*7 parsing__is_delimits_well_formed__prev_c 200r29 204m10
-F 197*11 parsing__is_delimits_well_formed__L_10__i 198c33
-FX 22 parsing.adb .10 parsing__get_token_ct
-F 228*7 parsing__get_token_ct__c 233m10 235r13 237r16
-F 229*7 parsing__get_token_ct__is_delimit 235r33 236m13 237r33 239m13
-F 230*7 parsing__get_token_ct__token_ct 238m13 238r25 242r32 245r14
-F 232*11 parsing__get_token_ct__L_11__i 233c33 242c44
-FX 22 parsing.adb .11 parsing__parse_http_request
-F 255*7 parsing__parse_http_request__delimit 265r72 266r42 273r53
-F 256*7 parsing__parse_http_request__tokens 265r10 273m7 274r35 274r51 274r71
-. 276r42 277r47 278r39 279r44 281r23 282r22 282r42 283r44 286r20 287r22 287r42
-. 288r41
-F 257*7 parsing__parse_http_request__method_token 276r22 277r22 281m7 283r22
-. 284r22 284r45 291r21
-F 258*7 parsing__parse_http_request__uri_token 278r22 279r22 286m7 288r22
-. 289r22 289r42 297r10 298r19 305r15 305r40 306m21 306r21 309r32
-F 259*7 parsing__parse_http_request__response 267m10 268r46 299m10 300r46
-F 274*30 parsing__parse_http_request__L71b__i 274c58 274c78
+F 82*7 parsing__resolve_special_directories__tokens 84m7 87r16 87r32 89r47
+. 89r63 89r78 89r98 91r24 92m13 93r27 94m13 95m41 95r41 100r50
+F 87*11 parsing__resolve_special_directories__L_4__i 91c31 92c20 93c34 94c20
+. 95c38
+F 89*42 parsing__resolve_special_directories__L_4__L26b__x 89c85 89c105
+FX 22 parsing.adb .5 parsing__delete_first_dir_to_left
+F 108*7 parsing__delete_first_dir_to_left__token 114m10 115r13 115r58
+F 110*11 parsing__delete_first_dir_to_left__L_5__j 114c26 116c20
+F 112*42 parsing__delete_first_dir_to_left__L_5__L39b__y 112c85 112c105
+FX 22 parsing.adb .6 parsing__get_all_filename_tokens
+F 127*7 parsing__get_all_filename_tokens__tokens 132r16 160m10 163r47 163r68
+. 163r88 166r35 166r51 166r71 167r14
+F 128*7 parsing__get_all_filename_tokens__token_buf 133m16 134r25 153m20
+. 153r20 154r36 157r36 157r56 160r23
+F 129*7 parsing__get_all_filename_tokens__start 136r19 137r28 138r33 144m19
+. 145r33 147m19 155r36 156r41 162r33
+F 130*7 parsing__get_all_filename_tokens__c 140m13 142r16 153r31
+F 132*11 parsing__get_all_filename_tokens__L_6__i 160c17 163c63
+F 136*14 parsing__get_all_filename_tokens__L_7__j 138c28 140c34 143c19 144c28
+. 154c56 156c36
+F 163*42 parsing__get_all_filename_tokens__L_6__L51b__k 163c75 163c95
+F 166*30 parsing__get_all_filename_tokens__L53b__k 166c58 166c78
+FX 22 parsing.adb .7 parsing__detokenize_filename_tokens
+F 175*7 parsing__detokenize_filename_tokens__filename 177m13 183m24 183r24
+. 186m23 186r23 191r14
+F 179*11 parsing__detokenize_filename_tokens__L_8__i 182c20 183c52 185c51
+F 180*42 parsing__detokenize_filename_tokens__L_8__L61b__x 180c70 180c90
+FX 22 parsing.adb .8 parsing__is_last_filename_token
+F 201*11 parsing__is_last_filename_token__L_9__i 202c20 202c51
+FX 22 parsing.adb .9 parsing__is_delimits_well_formed
+F 217*7 parsing__is_delimits_well_formed__c 221m10 223r13 227r20
+F 218*7 parsing__is_delimits_well_formed__prev_c 223r29 227m10
+F 220*11 parsing__is_delimits_well_formed__L_10__i 221c33
+FX 22 parsing.adb .11 parsing__get_token_ct
+F 251*7 parsing__get_token_ct__c 256m10 258r13 260r16
+F 252*7 parsing__get_token_ct__is_delimit 258r33 259m13 260r33 262m13
+F 253*7 parsing__get_token_ct__token_ct 261m13 261r25 265r32 268r14
+F 255*11 parsing__get_token_ct__L_11__i 256c33 265c44
+FX 22 parsing.adb .12 parsing__parse_http_request
+F 278*7 parsing__parse_http_request__delimit 289r72 290r42 297r53
+F 279*7 parsing__parse_http_request__tokens 289r10 297m7 298r35 298r51 298r71
+. 300r42 301r47 302r39 303r44 305r23 306r22 306r42 307r44 310r20 311r22 311r42
+. 312r41
+F 280*7 parsing__parse_http_request__method_token 300r22 301r22 305m7 307r22
+. 308r22 308r45 315r21
+F 281*7 parsing__parse_http_request__uri_token 302r22 303r22 310m7 312r22
+. 313r22 313r42 321r10 322r19 329r15 329r40 330m21 330r21 333r32
+F 282*7 parsing__parse_http_request__response 291m10 292r46 323m10 324r46
+F 298*30 parsing__parse_http_request__L87b__i 298c58 298c78
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 10 parsing__detokenize_filename_tokens parsing__get_token_ct parsing__is_delimits_well_formed parsing__is_leading_delimit parsing__is_last_token parsing__get_first_token_in_range parsing__resolve_special_directories parsing__parse_http_request parsing__get_all_request_tokens parsing__get_all_filename_tokens local_init 0
+GG EK_GLOBALS parsing KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 11 parsing__delete_first_dir_to_left parsing__detokenize_filename_tokens parsing__get_token_ct parsing__is_delimits_well_formed parsing__is_leading_delimit parsing__is_last_filename_token parsing__get_first_token_in_range parsing__resolve_special_directories parsing__parse_http_request parsing__get_all_request_tokens parsing__get_all_filename_tokens local_init 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
-GG EK_NONBLOCKING 11 parsing parsing__get_first_token_in_range parsing__get_all_request_tokens parsing__resolve_special_directories parsing__get_all_filename_tokens parsing__detokenize_filename_tokens parsing__is_last_token parsing__is_delimits_well_formed parsing__is_leading_delimit parsing__get_token_ct parsing__parse_http_request
+GG EK_NONBLOCKING 12 parsing parsing__get_first_token_in_range parsing__get_all_request_tokens parsing__resolve_special_directories parsing__delete_first_dir_to_left parsing__get_all_filename_tokens parsing__detokenize_filename_tokens parsing__is_last_filename_token parsing__is_delimits_well_formed parsing__is_leading_delimit parsing__get_token_ct parsing__parse_http_request
 GG EK_NONRETURNING 0
 GG EK_TERMINATING 0
 GG EK_DIRECT_CALLS parsing 0
 GG EK_DIRECT_CALLS parsing__get_first_token_in_range 2 measured_buffer__append measured_buffer__clear
 GG EK_DIRECT_CALLS parsing__get_all_request_tokens 6 parsing__is_delimits_well_formed parsing__is_leading_delimit parsing__get_token_ct measured_buffer__is_empty measured_buffer__append measured_buffer__clear
-GG EK_DIRECT_CALLS parsing__resolve_special_directories 6 parsing__get_all_filename_tokens parsing__detokenize_filename_tokens parsing__is_delimits_well_formed parsing__get_token_ct measured_buffer__is_empty measured_buffer__get_string
+GG EK_DIRECT_CALLS parsing__resolve_special_directories 7 parsing__delete_first_dir_to_left parsing__get_all_filename_tokens parsing__detokenize_filename_tokens parsing__is_delimits_well_formed parsing__get_token_ct measured_buffer__is_empty measured_buffer__get_string
+GG EK_DIRECT_CALLS parsing__delete_first_dir_to_left 1 measured_buffer__get_string
 GG EK_DIRECT_CALLS parsing__get_all_filename_tokens 5 parsing__is_delimits_well_formed parsing__get_token_ct measured_buffer__is_empty measured_buffer__append measured_buffer__clear
-GG EK_DIRECT_CALLS parsing__detokenize_filename_tokens 5 parsing__is_last_token measured_buffer__append measured_buffer__append_str measured_buffer__clear measured_buffer__get_string
-GG EK_DIRECT_CALLS parsing__is_last_token 0
+GG EK_DIRECT_CALLS parsing__detokenize_filename_tokens 5 parsing__is_last_filename_token measured_buffer__append measured_buffer__append_str measured_buffer__clear measured_buffer__get_string
+GG EK_DIRECT_CALLS parsing__is_last_filename_token 0
 GG EK_DIRECT_CALLS parsing__is_delimits_well_formed 0
 GG EK_DIRECT_CALLS parsing__is_leading_delimit 0
 GG EK_DIRECT_CALLS parsing__get_token_ct 0
@@ -921,9 +949,10 @@ GG EK_TASKING_INFO parsing ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 
 GG EK_TASKING_INFO parsing__get_first_token_in_range ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__get_all_request_tokens ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__resolve_special_directories ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO parsing__delete_first_dir_to_left ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__get_all_filename_tokens ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__detokenize_filename_tokens ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
-GG EK_TASKING_INFO parsing__is_last_token ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO parsing__is_last_filename_token ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__is_delimits_well_formed ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__is_leading_delimit ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO parsing__get_token_ct ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0

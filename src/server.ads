@@ -16,33 +16,30 @@ with parsing; use parsing;
 package server is
 
    procedure Canonicalize_HTTP_Request(
-      Parsed_Request : Simple_HTTP_Request;
-      Canonicalized_Request : out Simple_HTTP_Request
+      Parsed_Request : Parsed_Simple_Request;
+      Canonicalized_Request : out Translated_Simple_Request
    )
-   with Global => null,
-        Pre => Parsed_Request.Stage = Parsed and then
-               Parsed_Request.URI.Length <= Parsed_Request.URI.Size,
-        Post => Canonicalized_Request.Stage = Canonicalized and then
-                Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size;
+   with Global => (In_Out => Standard_Output),
+        Pre =>  Parsed_Request.URI.Length <= Parsed_Request.URI.Size,
+        Post => Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size and
+                Canonicalized_Request.Canonicalized = True;
 
    procedure Sanitize_HTTP_Request(
       Client_Socket : Socket_Type;
-      Canonicalized_Request : Simple_HTTP_Request;
-      Clean_Request : out Simple_HTTP_Request;
-      Unsanitary_Request : out Boolean
+      Canonicalized_Request : Translated_Simple_Request;
+      Clean_Request : out Translated_Simple_Request
    )
    with Global => null,
-        Pre => Canonicalized_Request.Stage = Canonicalized and then
-               Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size,
-        Post => Clean_Request.Stage = Sanitized and then
-                Clean_Request.Path.Length <= Clean_Request.Path.Size;
+        Pre =>  Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size and
+                Canonicalized_Request.Canonicalized = True,
+        Post => Clean_Request.Path.Length <= Clean_Request.Path.Size;
 
    procedure Fulfill_HTTP_Request(
       Client_Socket : Socket_Type;
-      Clean_Request : Simple_HTTP_Request
+      Clean_Request : Translated_Simple_Request
    )
    with Global => (In_Out => Standard_Output),
-        Pre => Clean_Request.Stage = Sanitized and then
-               Clean_Request.Path.Length <= Clean_Request.Path.Size;
+        Pre => Clean_Request.Path.Length <= Clean_Request.Path.Size and
+               Clean_Request.Sanitary;
 
 end server;

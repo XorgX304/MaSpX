@@ -75,30 +75,49 @@ package body parsing is
    end Get_All_Request_Tokens;
 
 --------------------------------------------------------------------------------
-   procedure Resolve_Special_Directories(Filename : in out Measured_Buffer_Type)
+   procedure Resolve_Special_Directories(
+      Filename_Start : Measured_Buffer_Type;
+      Filename_End : out Measured_Buffer_Type)
    is
-      Tokens : Tokens_Filename_Array_Type(1 .. Get_Token_Ct(Filename, '\'));
+      Tokens : Tokens_Filename_Array_Type(1 .. Get_Token_Ct(Filename_Start, '\'));
    begin
-      Tokens := Get_All_Filename_Tokens(Filename, '\');
+      Tokens := Get_All_Filename_Tokens(Filename_Start, '\');
       
       --ltj:(from left to right, ..: delete token left of .. and ..; .: delete .)
-      for I in Tokens'Range loop
+      for I in Tokens'First .. Tokens'Last loop
+         --pragma Loop_Invariant( (for all X in Tokens'First .. I => Tokens(X).Length <= Tokens(X).Size) );
+         pragma Loop_Invariant( (for all X in Tokens'First .. Tokens'Last => Tokens(X).Length <= Tokens(X).Size) );
+         
          if Get_String(Tokens(I)) = "." then
             Tokens(I) := BLANK_FILENAME_TOKEN;
          elsif Get_String(Tokens(I)) = ".." then
             Tokens(I) := BLANK_FILENAME_TOKEN;
-            for J in reverse Tokens'First .. I loop
-               if Tokens(J) /= BLANK_FILENAME_TOKEN and Get_String(Tokens(J)) /= FS_ROOT then
-                  Tokens(J) := BLANK_FILENAME_TOKEN;
-                  exit;
-               end if;
-            end loop;
+            Delete_First_Dir_To_Left(I, Tokens);
          end if;
       end loop;
       
       --ltj:convert back into single measured buffer
-      Filename := Detokenize_Filename_Tokens(Tokens, '\');
+      Filename_End := Detokenize_Filename_Tokens(Tokens, '\');
    end Resolve_Special_Directories;
+
+--------------------------------------------------------------------------------
+   procedure Delete_First_Dir_To_Left(
+      I : Max_Buffer_Size_Type;
+      Tokens : in out Tokens_Filename_Array_Type)
+   is
+      Token : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+   begin
+      for J in reverse Tokens'First .. I loop
+         --pragma Loop_Invariant( (for all Y in reverse J .. I => Tokens(Y).Length <= Tokens(Y).Size));
+         pragma Loop_Invariant( (for all Y in Tokens'First .. Tokens'Last => Tokens(Y).Length <= Tokens(Y).Size) );
+         
+         Token := Tokens(J);
+         if Token /= BLANK_FILENAME_TOKEN and Get_String(Token) /= FS_ROOT then
+            Tokens(J) := BLANK_FILENAME_TOKEN;
+            exit;
+         end if;
+      end loop;
+   end Delete_First_Dir_To_Left;
 
 --------------------------------------------------------------------------------
    function Get_All_Filename_Tokens(
@@ -158,10 +177,12 @@ package body parsing is
       Clear(Filename);
       
       for I in Tokens'Range loop
+         pragma Loop_Invariant( (for all X in Tokens'Range => Tokens(X).Length <= Tokens(X).Size) );
+         
          if Tokens(I) /= BLANK_FILENAME_TOKEN then
             Append_Str(Filename, Get_String(Tokens(I)));
          
-            if not Is_Last_Token(Tokens, I) then
+            if not Is_Last_Filename_Token(Tokens, I) then
                Append(Filename, Delimit);
             end if;
          end if;
@@ -171,7 +192,7 @@ package body parsing is
    end Detokenize_Filename_Tokens;
 
 --------------------------------------------------------------------------------
-   function Is_Last_Token(
+   function Is_Last_Filename_Token(
       Tokens : Tokens_Filename_Array_Type;
       J : Positive
    ) return Boolean
@@ -181,10 +202,12 @@ package body parsing is
          if Tokens(I) /= BLANK_FILENAME_TOKEN and I /= J then
             return False;
          end if;
+         
+         pragma Loop_Invariant( J <= Tokens'Last );
       end loop;
       
       return True;
-   end Is_Last_Token;
+   end Is_Last_Filename_Token;
 
 --------------------------------------------------------------------------------
    function Is_Delimits_Well_Formed(
@@ -249,7 +272,7 @@ package body parsing is
    procedure Parse_HTTP_Request(
       Client_Socket : GNAT.Sockets.Socket_Type; -- pre Open (but network code..)
       Raw_Request : Measured_Buffer_Type;
-      Parsed_Request : out Simple_HTTP_Request;
+      Parsed_Request : out Parsed_Simple_Request;
       Exception_Raised : out Boolean)
    is
       Delimit : Character := ' ';
@@ -260,6 +283,7 @@ package body parsing is
    begin
       Parsed_Request.Method := Http_Message.UNKNOWN;
       Clear(Parsed_Request.URI);
+      
       Exception_Raised := False;
       
       if Tokens'Length < 2 or not Is_Delimits_Well_Formed(Raw_Request, Delimit) 
