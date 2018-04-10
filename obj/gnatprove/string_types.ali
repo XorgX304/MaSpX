@@ -8,7 +8,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U string_types%s	string_types.ads	ad54252f OO PK KU
+U string_types%s	string_types.ads	600c13ea OO PK KU
 W config%s		config.ads		config.ali
 W measured_buffer%s	measured_buffer.adb	measured_buffer.ali
 
@@ -16,10 +16,10 @@ D ada.ads		20170516105950 76789da1 ada%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180403143618 bd8f6989 config%s
+D config.ads		20180410171020 5523d8e9 config%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180404161702 462cc049 measured_buffer%s
+D measured_buffer.ads	20180410110212 63d847ec measured_buffer%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180403010726 e7af9ede spark.text_io%s
 D string_types.ads	20180326171200 56f78cef string_types%s
@@ -30,7 +30,7 @@ D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
 D utils.ads		20180403010340 52a12dbc utils%s
 X 5 config.ads
-3K9*config 20e11 11|1w6 1r18
+3K9*config 14e11 11|1w6 1r18
 X 8 measured_buffer.ads
 6K9*measured_buffer 116e20 11|2w6 2r27
 10i4*MAX_URI_BYTE_CT{natural} 11|24r48

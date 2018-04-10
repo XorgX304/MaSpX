@@ -10,12 +10,13 @@ with Http_Message; use Http_Message;
 with String_Types; use String_Types;
 with utils; use utils;
 with measured_buffer; use measured_buffer;
+with error; use error;
 
 
 package parsing is
 
-   type Tokens_Request_Array_Type is array (Max_Buffer_Size_Type range <>) of Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
-   type Tokens_Filename_Array_Type is array (Max_Buffer_Size_Type range <>) of Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+   type Tokens_Request_Array_Type is array (Buffer_Index_Type range <>) of Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
+   type Tokens_Filename_Array_Type is array (Buffer_Index_Type range <>) of Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
    
    BLANK_FILENAME_TOKEN : constant Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL) :=
       (Size => MAX_FS_PATH_BYTE_CT,
@@ -65,7 +66,8 @@ package parsing is
                Filename_Start.Size = MAX_FS_PATH_BYTE_CT and then
                Filename_Start.EmptyChar = NUL and then
                Filename_End.Size = MAX_FS_PATH_BYTE_CT and then
-               Filename_End.EmptyChar = NUL;
+               Filename_End.EmptyChar = NUL,
+        Post => Filename_End.Length <= Filename_End.Size;
                
    procedure Delete_First_Dir_To_Left(
       I : Max_Buffer_Size_Type;
@@ -100,7 +102,8 @@ package parsing is
    with Global => null,
         Pre => (for all I in Tokens'Range => Tokens(I).Length <= Tokens(I).Size),
         Post => Detokenize_Filename_Tokens'Result.Size = MAX_FS_PATH_BYTE_CT and
-                Detokenize_Filename_Tokens'Result.EmptyChar = NUL;
+                Detokenize_Filename_Tokens'Result.EmptyChar = NUL and
+                Detokenize_Filename_Tokens'Result.Length <= Detokenize_Filename_Tokens'Result.Size;
                 
    function Is_Last_Filename_Token(
       Tokens : Tokens_Filename_Array_Type;

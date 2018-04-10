@@ -17,8 +17,7 @@ procedure Masp is
    Init_Exception_Raised : Boolean;
    Client_Socket : Gnat.Sockets.Socket_Type;
    Client_Cxn_Exception_Raised : Boolean;
-   --Message_Byte_Array : Network_Types.Byte_Array_Type;
-   Raw_Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL); --TODO:ltj: convert to Simple_HTTP_Request(Raw)
+   Raw_Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
    Client_Request_Exception_Raised : Boolean;
    Parsed_Request : Parsed_Simple_Request;
    Client_Parse_Exception_Raised : Boolean;
@@ -26,7 +25,7 @@ procedure Masp is
    Clean_Request : Translated_Simple_Request;
 begin
    Debug_Print_Ln("Debugging: About to Init");
-   Initialize_TCP_State(Server_Socket, Init_Exception_Raised); --        <--- network, non-SPARK stuff
+   Initialize_TCP_State(Server_Socket, Init_Exception_Raised);
 
    if Init_Exception_Raised then
       Check_Print_Ln("MaSpX: Failure to launch!");
@@ -37,17 +36,18 @@ begin
       Clear(Raw_Request);
 
       Debug_Print_Ln(LF & LF & LF & "Debugging: Waiting for client cxn...");
-      --TODO:ltj: make server able to accept more than one client, like in CRADLE
-      Get_Client_Cxn(Server_Socket, Client_Socket, Client_Cxn_Exception_Raised); --        <--- network, non-SPARK stuff
+
+      --TODO:ltj: make server able to accept more than one client, like in CRADLE?
+      Get_Client_Cxn(Server_Socket, Client_Socket, Client_Cxn_Exception_Raised);
 
       if not Client_Cxn_Exception_Raised then
          Debug_Print_Ln("Debugging: Waiting for client request...");
-         Recv_NET_Request(Client_Socket, Raw_Request, Client_Request_Exception_Raised); --          <--- get string of request, non-SPARK
+         Recv_NET_Request(Client_Socket, Raw_Request, Client_Request_Exception_Raised);
 
          if not Client_Request_Exception_Raised then
             Debug_Print_Ln("Debugging: Raw Request:" & Get_String(Raw_Request));
 
-            Parse_HTTP_Request(Client_Socket, Raw_Request, Parsed_Request, Client_Parse_Exception_Raised); --         <--- SPARK
+            Parse_HTTP_Request(Client_Socket, Raw_Request, Parsed_Request, Client_Parse_Exception_Raised);
 
             if not Client_Parse_Exception_Raised then
                --debug: print Parsed_Request
@@ -61,17 +61,21 @@ begin
                end case;
                Debug_Print_Ln("Debugging: Parsed URI:" & Get_String(Parsed_Request.URI));
 
-               Canonicalize_HTTP_Request(Parsed_Request, Canonicalized_Request); --interpret all ..'s and .'s. remove extra slashes, or throw error on them
+               Canonicalize_HTTP_Request(Parsed_Request, Canonicalized_Request); --interpret all ..'s and .'s.
 
-               Sanitize_HTTP_Request(Client_Socket, Canonicalized_Request, Clean_Request); --WARNING: currently does nothing but copy canonicalized to clean
+               if Canonicalized_Request.Canonicalized then
 
-               if Clean_Request.Sanitary then
-                  Fulfill_HTTP_Request(Client_Socket, Clean_Request);  --           <-- SPARK
+                  Sanitize_HTTP_Request(Client_Socket, Canonicalized_Request, Clean_Request);
+
+                  if Clean_Request.Sanitary then
+                     Fulfill_HTTP_Request(Client_Socket, Clean_Request);
+                  end if;
+
                end if;
             end if;
          end if;
 
-         Close_Client_Socket(Client_Socket); --                <--- Non-SPARK
+         Close_Client_Socket(Client_Socket);
       end if;
    end loop;
 

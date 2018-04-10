@@ -4,7 +4,7 @@ with Gnat.Sockets; use Gnat.Sockets;
 with SPARK.Text_IO; use SPARK.Text_IO;
 with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 
-with fileio; use fileio;
+with fileio_ns; use fileio_ns;
 with Http_Message; use Http_Message;
 with network_ns; use network_ns;
 with config; use config;
@@ -12,6 +12,7 @@ with utils; use utils;
 with String_Types; use String_Types;
 with measured_buffer; use measured_buffer;
 with parsing; use parsing;
+with error; use error;
 
 package server is
 
@@ -21,8 +22,7 @@ package server is
    )
    with Global => (In_Out => Standard_Output),
         Pre =>  Parsed_Request.URI.Length <= Parsed_Request.URI.Size,
-        Post => Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size and
-                Canonicalized_Request.Canonicalized = True;
+        Post => Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size;
 
    procedure Sanitize_HTTP_Request(
       Client_Socket : Socket_Type;
@@ -38,7 +38,7 @@ package server is
       Client_Socket : Socket_Type;
       Clean_Request : Translated_Simple_Request
    )
-   with Global => (In_Out => Standard_Output),
+   with Global => null,
         Pre => Clean_Request.Path.Length <= Clean_Request.Path.Size and
                Clean_Request.Sanitary;
 

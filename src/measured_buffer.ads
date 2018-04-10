@@ -10,8 +10,8 @@ package measured_buffer is
    MAX_URI_BYTE_CT : constant Natural := 255;
    MAX_PARSED_URI_BYTE_CT : constant Natural := MAX_URI_BYTE_CT + DEFAULT_PAGE'Length - 1;
    MAX_FS_PATH_BYTE_CT : constant Positive := WEB_ROOT'Length + MAX_PARSED_URI_BYTE_CT;
-   subtype Max_Buffer_Size_Type is Natural range 
-      Natural'First .. MAX_FILE_READ_BYTE_CT; --ltj: instead of just choosing obvious maximum, we can calculate it too: Natural'Max(Natural'Max(MAX_REQUEST_LINE_BYTE_CT, MAX_FILE_READ_BYTE_CT), Natural'Max(MAX_URI_BYTE_CT, MAX_PARSED_URI_BYTE_CT)); --ltj:set to the largest of the above constants
+   subtype Max_Buffer_Size_Type is Natural range Natural'First .. MAX_FILE_READ_BYTE_CT; --ltj: instead of just choosing obvious maximum, we can calculate it too: Natural'Max(Natural'Max(MAX_REQUEST_LINE_BYTE_CT, MAX_FILE_READ_BYTE_CT), Natural'Max(MAX_URI_BYTE_CT, MAX_PARSED_URI_BYTE_CT)); --ltj:set to the largest of the above constants
+   subtype Buffer_Index_Type is Positive range Positive'First .. Max_Buffer_Size_Type'Last;
    EMPTY_BUFFER_LENGTH : constant Natural := 0;
    
    type Measured_Buffer_Type(Size : Max_Buffer_Size_Type; EmptyChar : Character) is

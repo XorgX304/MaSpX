@@ -4,17 +4,11 @@ package config is
 
    DEBUG_PRINT_ON : constant Boolean := True;
    
-   HTTP_PORT : constant Natural := 80;
-   MAX_CXNS : constant Natural := 16; --arbitrary
-   
    --TODO:ltj: move this to a config file
+   HTTP_PORT : constant Natural := 80;
+   MAX_CXNS : constant Natural := 16; --ltj: arbitrary   
    WEB_ROOT : constant String := "D:\OneDrive\OneDrive\ChthonianCyberServices\ada\masp\test-web-root";--ltj: 1. no trailing slash (we concatenate the Request-URI to this directly) 2. must be absolute path
    FS_ROOT : constant String := "D:";
    DEFAULT_PAGE : constant String := "index.html"; 
-   
-   --error pages
-   c400_BAD_REQUEST_PAGE : constant String := "400 Bad Request";
-   c400_BAD_REQUEST_URI_PAGE : constant String := "400 Bad Request (URI)";
-   c403_FORBIDDEN_PAGE : constant String := "403 Forbidden";
 
 end config;

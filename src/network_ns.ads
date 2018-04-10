@@ -9,10 +9,10 @@ with SPARK.Text_IO; use SPARK.Text_IO;
 
 with network_types; use Network_Types;
 with Http_Message; use Http_Message;
-with fileio; use fileio;
 with config; use config;
 with utils; use utils;
 with measured_buffer; use measured_buffer;
+with error; use error;
 
 package network_ns 
 with SPARK_Mode => On
@@ -38,6 +38,7 @@ is
    subtype MRB_First_Empty_Index_Type is Natural range Natural'First .. MAX_REQUEST_LINE_BYTE_CT;
    subtype Simple_Request_Line is String(1 .. MAX_REQUEST_LINE_BYTE_CT);
 
+   --TODO: ltj: delete this unused stuff
    --ltj: this will probably be expanded to have headers in it in future implementations of later HTTP
    type Measured_Request_Buffer is
    record

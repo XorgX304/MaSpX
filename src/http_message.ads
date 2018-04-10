@@ -2,7 +2,6 @@ pragma SPARK_Mode(On);
 
 with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 
-with fileio; use fileio;
 with config; use config;
 with String_Types;
 with measured_buffer; use measured_buffer;
@@ -54,14 +53,13 @@ PACKAGE Http_Message IS
       Sanitary : Boolean := False;
    end record;
 
-   type ContentTypeType is (UNKNOWN, HTML, JPG);
+   type ContentTypeType is (UNKNOWN_TYPE, HTML_TYPE, JPG_TYPE);
 
    type Simple_HTTP_Response is
    record
       --ltj: don't encode http version or status code because in MaspClassic, this is always HTTP/0.9 200 OK
-      Content_Length : ContentSize := 0;
-      Entity_Body : File_Buf := (others => NUL);
-      Content_Type : ContentTypeType := UNKNOWN;
+      Entity : Measured_Buffer_Type(MAX_FILE_READ_BYTE_CT, NUL); --ltj:in this case, NUL is a possible legitimate member of the buffer.
+      Content_Type : ContentTypeType := UNKNOWN_TYPE;
    end record;
 
    TYPE Http_Message_Variant_Record(ClientOrServer: ClientServerType) IS RECORD
@@ -94,7 +92,10 @@ PACKAGE Http_Message IS
    function Construct_Simple_HTTP_Response(Page : String) return Simple_HTTP_Response
    with Pre => Page'Length <= MAX_FILE_READ_BYTE_CT;
 
-   function Construct_Simple_HTTP_Response(MFB : Measured_File_Buffer) return Simple_HTTP_Response;
+   function Construct_Simple_HTTP_Response(Buf : Measured_Buffer_Type) return Simple_HTTP_Response
+   with Global => null,
+        Pre => Buf.Size = MAX_FILE_READ_BYTE_CT and
+               Buf.EmptyChar = NUL;
 
 END Http_Message;
 

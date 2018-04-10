@@ -1,6 +1,6 @@
-parsing.adb:183:13: medium: precondition might fail[#1]
-parsing.adb:185:51: medium: range check might fail[#0]
-parsing.adb:186:16: medium: precondition might fail[#2]
+spark-text_io.ads:32:29: info: implicit function contract not available for proof ("Status" may not return)
+spark-text_io.ads:33:29: info: implicit function contract not available for proof ("Status" may not return)
+spark-text_io.ads:34:29: info: implicit function contract not available for proof ("Status" may not return)
 spark-text_io.ads:134:31: info: implicit function contract not available for proof ("Mode" may not return)
 spark-text_io.ads:139:12: info: implicit function contract not available for proof ("Mode" may not return)
 spark-text_io.ads:139:43: info: implicit function contract not available for proof ("Mode" may not return)

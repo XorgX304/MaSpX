@@ -177,13 +177,20 @@ package body parsing is
       Clear(Filename);
       
       for I in Tokens'Range loop
-         pragma Loop_Invariant( (for all X in Tokens'Range => Tokens(X).Length <= Tokens(X).Size) );
+         pragma Loop_Invariant( (for all X in Tokens'Range => Tokens(X).Length <= Tokens(X).Size) and
+                                Filename.Length <= Filename.Size );
          
          if Tokens(I) /= BLANK_FILENAME_TOKEN then
-            Append_Str(Filename, Get_String(Tokens(I)));
+            --     v---- if statement inserted to satisfy preconditions for SPARK prover
+            if Filename.Length <= Filename.Size - Get_String(Tokens(I))'Length then
+               Append_Str(Filename, Get_String(Tokens(I)));
+            end if;
          
             if not Is_Last_Filename_Token(Tokens, I) then
-               Append(Filename, Delimit);
+               --     v---- if statement inserted to satisfy preconditions for SPARK prover
+               if not Is_Full(Filename) then
+                  Append(Filename, Delimit);
+               end if;
             end if;
          end if;
       end loop;

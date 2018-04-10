@@ -33,14 +33,14 @@ package body network_ns is
 
       --if any of the above operations fail
       exception
-         --ltj: we're expecting some possible socket error issues.
-         when E : GNAT.Sockets.Socket_Error =>
-            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-            Exception_Raised := True;
-         when E : others =>
-            Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Initialize_TCP_State: WARNING, UNEXPECTED TYPE OF EXCEPTION");
-            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-            Exception_Raised := True;
+      --ltj: we're expecting some possible socket error issues.
+      when E : GNAT.Sockets.Socket_Error =>
+         Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Exception_Raised := True;
+      when E : others =>
+         Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Initialize_TCP_State: WARNING, UNEXPECTED TYPE OF EXCEPTION");
+         Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Exception_Raised := True;
    end Initialize_TCP_State;
    
    -----------------------------------------------------------------------------
@@ -64,13 +64,13 @@ package body network_ns is
          --Socket => Convert(Socket),
         -- Milliseconds => Socket_Timeout_Milliseconds);
       exception
-         when E : GNAT.Sockets.Socket_Error =>
-            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-            Exception_Raised := True;
-         when E : others =>
-            Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Get_Client_Cxn: WARNING, UNEXPECTED TYPE OF EXCEPTION");
-            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-            Exception_Raised := True;
+      when E : GNAT.Sockets.Socket_Error =>
+         Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Exception_Raised := True;
+      when E : others =>
+         Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Get_Client_Cxn: WARNING, UNEXPECTED TYPE OF EXCEPTION");
+         Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Exception_Raised := True;
    end Get_Client_Cxn;
    
    -----------------------------------------------------------------------------
@@ -129,13 +129,13 @@ package body network_ns is
       end loop;
       
       exception
-         when E : Ada.IO_Exceptions.End_Error =>
-            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-            Exception_Raised := True;
-         when E : others =>
-            Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Recv_NET_Request: WARNING, UNEXPECTED TYPE OF EXCEPTION");
-            Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-            Exception_Raised := True;
+      when E : Ada.IO_Exceptions.End_Error =>
+         Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Exception_Raised := True;
+      when E : others =>
+         Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Recv_NET_Request: WARNING, UNEXPECTED TYPE OF EXCEPTION");
+         Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Exception_Raised := True;
    end Recv_NET_Request;
    
    -----------------------------------------------------------------------------
@@ -163,25 +163,25 @@ package body network_ns is
       Client_Socket : Gnat.Sockets.Socket_Type;
       Response : Simple_HTTP_Response)
    is  --TODO:ltj: make constant for 2. Like CR_Length + LF_Length or Line_Ending_Length to put it in one.
-      Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + ContentSize'Image(Response.Content_Length)'Length + 2 + STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09'Length + 2 + STATIC_RESPONSE_CONTENT_TYPE_09'Length + 10 + 2 + 2 + Response.Content_Length));
+      Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + Max_Buffer_Size_Type'Image(Response.Entity.Length)'Length + 2 + STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09'Length + 2 + STATIC_RESPONSE_CONTENT_TYPE_09'Length + 10 + 2 + 2 + Response.Entity.Length));
       Client_Stream : Gnat.Sockets.Stream_Access;
    begin
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
    
-      if Response.Content_Type = JPG then
+      if Response.Content_Type = JPG_TYPE then
          Send_String := STATIC_RESPONSE_HEADER_09 & 
-                        STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & ContentSize'Image(Response.Content_Length) & CR & LF &
+                        STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & Max_Buffer_Size_Type'Image(Response.Entity.Length) & CR & LF &
                         STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09 & CR & LF &
                         STATIC_RESPONSE_CONTENT_TYPE_09 & "image/jpeg" & CR & LF &
                         CR & LF &
-                        Response.Entity_Body(1 .. Response.Content_Length);
+                        Get_String(Response.Entity);
       else
          Send_String := STATIC_RESPONSE_HEADER_09 & 
-                        STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & ContentSize'Image(Response.Content_Length) & CR & LF &
+                        STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & Max_Buffer_Size_Type'Image(Response.Entity.Length) & CR & LF &
                         STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09 & CR & LF &
                         STATIC_RESPONSE_CONTENT_TYPE_09 & "text/html " & CR & LF &
                         CR & LF &
-                        Response.Entity_Body(1 .. Response.Content_Length);
+                        Get_String(Response.Entity);
       end if;
       
       --TODO:ltj: add exception handling...
