@@ -184,8 +184,13 @@ package body network_ns is
                         Get_String(Response.Entity);
       end if;
       
-      --TODO:ltj: add exception handling...
       String'Write(Client_Stream, Send_String);
+      
+      exception
+      when E : others =>
+         Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Send_Simple_Response: WARNING, UNEXPECTED TYPE OF EXCEPTION");
+         Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         --Exception_Raised := True;
    end Send_Simple_Response;
    
    -----------------------------------------------------------------------------
@@ -196,6 +201,11 @@ package body network_ns is
       --the Shutdown on Write flushes the stream, apparently.
       GNAT.Sockets.Shutdown_Socket(Client_Socket, GNAT.Sockets.Shut_Write);
       GNAT.Sockets.Close_Socket(Client_Socket);
+      
+      exception
+      when E : others =>
+         Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Close_Client_Socket: WARNING, UNEXPECTED TYPE OF EXCEPTION");
+         Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
    end Close_Client_Socket;
    
 end network_ns;
