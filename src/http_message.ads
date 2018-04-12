@@ -53,7 +53,7 @@ PACKAGE Http_Message IS
       Sanitary : Boolean := False;
    end record;
 
-   type ContentTypeType is (UNKNOWN_TYPE, HTML_TYPE, JPG_TYPE);
+   type ContentTypeType is (UNKNOWN_TYPE, HTML_TYPE, JPG_TYPE, GIF_TYPE, PNG_TYPE);
 
    type Simple_HTTP_Response is
    record

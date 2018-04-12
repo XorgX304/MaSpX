@@ -158,6 +158,10 @@ package body network_ns is
       
       Append_Str(Send_Buf, CONTENT_TYPE_HEADER);
       case Response.Content_Type is
+      when PNG_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_PNG);
+      when GIF_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_GIF);
       when JPG_TYPE =>
          Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_JPEG);
       when HTML_TYPE =>

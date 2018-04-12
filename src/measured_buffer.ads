@@ -5,7 +5,7 @@ with utils; use utils;
 
 package measured_buffer is
 
-   MAX_FILE_READ_BYTE_CT : constant Natural := 10000;
+   MAX_FILE_READ_BYTE_CT : constant Natural := 5_000_000;
    MAX_RESPONSE_LENGTH : constant Natural := MAX_STATUS_AND_HEADERS_LENGTH + MAX_FILE_READ_BYTE_CT;
    MAX_REQUEST_LINE_BYTE_CT : constant Natural := 270;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
    MAX_URI_BYTE_CT : constant Natural := 255;

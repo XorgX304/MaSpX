@@ -32,13 +32,19 @@ package body fileio_ns is
          
          Character'Read(Read_Stream, Item);
          Append(Buf, Item);
+         
+         --TODO:ltj: Check if falls in normal ASCII range. Mark if it doesn't
         
       end loop;
       
       Close(Read_File);
       
-      if Buf.Buffer(1) = Character'Val(16#FF#) and Buf.Buffer(2) = Character'Val(16#D8#) then
+      if Is_Prefixed(Buf, JPG_MAGIC) then
          ContentType := JPG_TYPE;
+      elsif Is_Prefixed(Buf, GIF89_MAGIC) or Is_Prefixed(Buf, GIF87_MAGIC) then
+         ContentType := GIF_TYPE;
+      elsif Is_Prefixed(Buf, PNG_MAGIC) then
+         ContentType := PNG_TYPE;
       else
          ContentType := HTML_TYPE;
       end if;

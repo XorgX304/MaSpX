@@ -21,6 +21,8 @@ package config is
    CONTENT_LENGTH_HEADER : constant String := "Content-Length:";
    CONTENT_TYPE_HEADER : constant String := "Content-Type:";
    CONTENT_TYPE_IMAGE_JPEG : constant String := " image/jpeg";
+   CONTENT_TYPE_IMAGE_GIF : constant String := " image/gif";
+   CONTENT_TYPE_IMAGE_PNG : constant String := " image/png";
    CONTENT_TYPE_TEXT_HTML : constant String := " text/html";
    CONTENT_TYPE_APPLICATION_OCTET_STREAM : constant String := " application/octet-stream";
    
