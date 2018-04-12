@@ -40,13 +40,13 @@ package measured_buffer is
    is ( Buf.Buffer(Idx) )
    with Global => null,
         Pre => Idx >= Positive'First and Idx <= Buf.Size;
-   
+     
    function Peek(Buf : Measured_Buffer_Type) return Character
    is ( Buf.Buffer(Buf.Length) )
    with Global => null,
         Pre => not Is_Empty(Buf) and
                Buf.Length <= Buf.Size;
-   
+     
    --ltj: used for type_invariant but those can only be used on private types or corresponding full views...
    function Calc_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
    with Global => null,
@@ -55,20 +55,21 @@ package measured_buffer is
                  elsif Is_Empty(Buf) then
                     Calc_Length'Result = 0
                  else
-                    Calc_Length'Result > 0 and Calc_Length'Result < Buf.Size);
+                    Calc_Length'Result > 0 and Calc_Length'Result < Buf.Size);   
    
    function Get_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
    is ( Buf.Length )
    with Global => null;
-   
+     
    procedure Set_Length(Buf : in out Measured_Buffer_Type; New_Length : Max_Buffer_Size_Type)
    with Global => null,
         Pre => New_Length <= Buf.Size,
         Post => Buf.Length = New_Length;
-   
+    
    function Is_Empty(Buf : Measured_Buffer_Type) return Boolean
    is ( Buf.Length <= EMPTY_BUFFER_LENGTH )
    with Global => null;
+   
    
    function Is_Full(Buf : Measured_Buffer_Type) return Boolean
    is ( Buf.Length >= Buf.Size )
@@ -102,17 +103,23 @@ package measured_buffer is
                Src_Buf.Length <= Src_Buf.Size,
         Post => Dst_Buf.Buffer(Positive'First .. Src_Buf.Length) = Src_Buf.Buffer(Positive'First .. Src_Buf.Length) and
                 Dst_Buf.Length = Src_Buf.Length;
-                
+            
+   --TODO:ltj: rename Has_Prefix?
    function Is_Prefixed(Buf : Measured_Buffer_Type; Prefix : String) return Boolean
    is ( Buf.Buffer(Positive'First .. Prefix'Length) = Prefix )
    with Global => null,
         Pre => Prefix'Length <= Buf.Size;
-   
+     
    function Get_String(Buf : Measured_Buffer_Type) return String
    is ( Buf.Buffer(Positive'First .. Buf.Length) )
    with Global => null,
         Pre => Buf.Length <= Buf.Size,
         Post => Get_String'Result'Length <= Buf.Size and
                 Get_String'Result'Length = Buf.Length;
+                
+   function Get_Extension(Buf : Measured_Buffer_Type) return String
+   with Global => null,
+        Pre => Buf.Length <= Buf.Size,
+        Post => Get_Extension'Result'Length <= Buf.Length;
 
 end measured_buffer;

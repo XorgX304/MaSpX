@@ -1,22 +1,22 @@
 Summary of SPARK analysis
 =========================
 
----------------------------------------------------------------------------------------------------------------------------
-SPARK Analysis results        Total         Flow   Interval   CodePeer                       Provers   Justified   Unproved
----------------------------------------------------------------------------------------------------------------------------
-Data Dependencies                 .            .          .          .                             .           .          .
-Flow Dependencies                 .            .          .          .                             .           .          .
-Initialization                  254          254          .          .                             .           .          .
-Non-Aliasing                      .            .          .          .                             .           .          .
-Run-time Checks                 233            .          .          .    231 (Z3  91%, altergo  9%)           .          2
-Assertions                       39            .          .          .     39 (Z3  99%, altergo  1%)           .          .
-Functional Contracts             92            .          .          .    90 (Z3  85%, altergo  15%)           .          2
-LSP Verification                  .            .          .          .                             .           .          .
----------------------------------------------------------------------------------------------------------------------------
-Total                           618    254 (41%)          .          .                     360 (58%)           .     4 (1%)
+----------------------------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total         Flow   Interval   CodePeer                        Provers   Justified   Unproved
+----------------------------------------------------------------------------------------------------------------------------
+Data Dependencies                 .            .          .          .                              .           .          .
+Flow Dependencies                 .            .          .          .                              .           .          .
+Initialization                  241          241          .          .                              .           .          .
+Non-Aliasing                      .            .          .          .                              .           .          .
+Run-time Checks                 183            .          .          .    181 (Z3  88%, altergo  12%)           .          2
+Assertions                       37            .          .          .      37 (Z3  99%, altergo  1%)           .          .
+Functional Contracts             81            .          .          .     79 (Z3  82%, altergo  18%)           .          2
+LSP Verification                  .            .          .          .                              .           .          .
+----------------------------------------------------------------------------------------------------------------------------
+Total                           542    241 (44%)          .          .                      297 (55%)           .     4 (1%)
 
 
-Analyzed 13 units
+Analyzed 12 units
 in unit config, 1 subprograms and packages out of 1 analyzed
   config at config.ads:3 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
 in unit error, 1 subprograms and packages out of 1 analyzed
@@ -34,23 +34,6 @@ in unit http_message, 3 subprograms and packages out of 3 analyzed
   Http_Message.Construct_Simple_HTTP_Response at http_message.ads:95 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
 in unit masp, 1 subprograms and packages out of 1 analyzed
   Masp at masp.adb:15 flow analyzed (0 errors and 0 warnings) and proved (14 checks)
-in unit measured_buffer, 16 subprograms and packages out of 16 analyzed
-  measured_buffer at measured_buffer.ads:6 flow analyzed (0 errors and 0 warnings) and proved (7 checks)
-  measured_buffer.Append at measured_buffer.ads:75 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
-  measured_buffer.Append_Str at measured_buffer.ads:81 flow analyzed (0 errors and 0 warnings) and proved (11 checks)
-  measured_buffer.Calc_Length at measured_buffer.ads:49 flow analyzed (0 errors and 0 warnings) and proved (7 checks)
-  measured_buffer.Clear at measured_buffer.ads:92 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
-  measured_buffer.Construct_Measured_Buffer at measured_buffer.ads:25 flow analyzed (0 errors and 0 warnings) and proved (9 checks)
-  measured_buffer.Copy at measured_buffer.ads:97 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
-  measured_buffer.Get_Char at measured_buffer.ads:37 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
-  measured_buffer.Get_Length at measured_buffer.ads:58 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  measured_buffer.Get_String at measured_buffer.ads:109 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
-  measured_buffer.Is_Empty at measured_buffer.ads:67 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  measured_buffer.Is_Full at measured_buffer.ads:71 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  measured_buffer.Is_Prefixed at measured_buffer.ads:104 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
-  measured_buffer.Peek at measured_buffer.ads:42 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
-  measured_buffer.Replace_Char at measured_buffer.ads:87 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
-  measured_buffer.Set_Length at measured_buffer.ads:62 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
 in unit network_ns, 0 subprograms and packages out of 7 analyzed
   network_ns at network_ns.ads:17 skipped
   network_ns.Close_Client_Socket at network_ns.ads:83 skipped

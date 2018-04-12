@@ -7,7 +7,8 @@ package body fileio_ns is
    
    procedure Read_File_To_Buffer(
       --MFT : Measured_Filename_Type;
-      Trimmed_Name : String;
+      Abs_Filename : String;
+      Extension : String;
       Buf : out Measured_Buffer_Type;
       ContentType : out ContentTypeType;
       Fileio_Error : out Fileio_Error_Type)
@@ -15,38 +16,58 @@ package body fileio_ns is
       Read_File : Ada.Streams.Stream_IO.File_Type;
       Read_Stream : Stream_Access;
       Item : Character;
+      Binary_File : Boolean := False;
    begin
       Fileio_Error := No_Error;
       Clear(Buf);
       ContentType := UNKNOWN_TYPE;
       
-      Open(Read_File, In_File, Trimmed_Name);
+      Open(Read_File, In_File, Abs_Filename);
       Read_Stream := Stream(Read_File);
       
       while not End_Of_File(Read_File) loop
          if Is_Full(Buf) then
             Put_Line("MaSpX: fileio_ns.adb: Read_File_To_Buffer: buffer full!");
             Fileio_Error := Buffer_Full_Error;
-            exit;
+            return;
          end if;
          
          Character'Read(Read_Stream, Item);
          Append(Buf, Item);
          
-         --TODO:ltj: Check if falls in normal ASCII range. Mark if it doesn't
+         --ltj: Check if falls in normal US-ASCII range. Mark stream as binary if it doesn't
+         if not Is_Standard_Printable(Item) and not Binary_File then
+            Put_Line("Not Standard,Printable, code: " & Integer'Image(Character'Pos(Item)));
+            Binary_File := True;
+         end if;
         
       end loop;
       
       Close(Read_File);
       
-      if Is_Prefixed(Buf, JPG_MAGIC) then
-         ContentType := JPG_TYPE;
-      elsif Is_Prefixed(Buf, GIF89_MAGIC) or Is_Prefixed(Buf, GIF87_MAGIC) then
-         ContentType := GIF_TYPE;
-      elsif Is_Prefixed(Buf, PNG_MAGIC) then
-         ContentType := PNG_TYPE;
-      else
-         ContentType := HTML_TYPE;
+      if Binary_File then
+         if Is_Prefixed(Buf, JPG_MAGIC) then
+            ContentType := JPG_TYPE;
+         elsif Is_Prefixed(Buf, GIF89_MAGIC) or Is_Prefixed(Buf, GIF87_MAGIC) then
+            ContentType := GIF_TYPE;
+         elsif Is_Prefixed(Buf, PNG_MAGIC) then
+            ContentType := PNG_TYPE;
+         elsif Is_Prefixed(Buf, BMP_MAGIC) then
+            ContentType := BMP_TYPE;
+         else
+            ContentType := UNKNOWN_TYPE;
+         end if;
+      else --text data
+         --TODO:ltj: check extension here to determine type.
+         if Extension = ".html" or Extension = ".htm" then
+            ContentType := HTML_TYPE;
+         elsif Extension = ".css" then
+            ContentType := CSS_TYPE;
+         elsif Extension = ".js" then
+            ContentType := JS_TYPE;
+         else
+            ContentType := PLAIN_TYPE;
+         end if;
       end if;
       
       exception

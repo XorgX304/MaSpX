@@ -92,4 +92,19 @@ package body measured_buffer is
       Dst_Buf.Length := Src_Buf.Length;
    end Copy;
    
+--------------------------------------------------------------------------------
+   function Get_Extension(Buf : Measured_Buffer_Type) return String
+   is
+   begin
+      for I in reverse Buf.Buffer'First .. Buf.Length loop
+         if Buf.Buffer(I) = '.' then
+            return Buf.Buffer(I .. Buf.Length);
+         end if;
+      end loop;
+      
+      return "";
+   end Get_Extension;
+   
+--------------------------------------------------------------------------------
+   
 end measured_buffer;

@@ -9,7 +9,7 @@ package config is
    --TODO:ltj: move this to a config file
    HTTP_PORT : constant Natural := 80;
    MAX_CXNS : constant Natural := 16; --ltj: arbitrary   
-   WEB_ROOT : constant String := "D:\OneDrive\OneDrive\ChthonianCyberServices\ada\masp\test-web-root";--ltj: 1. no trailing slash (we concatenate the Request-URI to this directly) 2. must be absolute path
+   WEB_ROOT : constant String := "D:\OneDrive\OneDrive\ChthonianCyberServices\ada\masp\test-web-root2";--ltj: 1. no trailing slash (we concatenate the Request-URI to this directly) 2. must be absolute path
    FS_ROOT : constant String := "D:";
    DEFAULT_PAGE : constant String := "index.html";
    
@@ -23,7 +23,11 @@ package config is
    CONTENT_TYPE_IMAGE_JPEG : constant String := " image/jpeg";
    CONTENT_TYPE_IMAGE_GIF : constant String := " image/gif";
    CONTENT_TYPE_IMAGE_PNG : constant String := " image/png";
+   CONTENT_TYPE_IMAGE_BMP : constant String := " image/bmp";
    CONTENT_TYPE_TEXT_HTML : constant String := " text/html";
+   CONTENT_TYPE_TEXT_PLAIN : constant String := " text/plain";
+   CONTENT_TYPE_TEXT_CSS : constant String := " text/css";
+   CONTENT_TYPE_APPLICATION_JS : constant String := " application/javascript";
    CONTENT_TYPE_APPLICATION_OCTET_STREAM : constant String := " application/octet-stream";
    
    MAX_STATUS_AND_HEADERS_LENGTH : constant Natural := 

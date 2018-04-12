@@ -48,7 +48,10 @@ package body utils is
    begin
       return (P and Q) or (not P and not Q);
    end Logical_Equivalence;
+
+--------------------------------------------------------------------------------
    
+
 --------------------------------------------------------------------------------
 --     function Is_Substring(
 --        Substring : String;

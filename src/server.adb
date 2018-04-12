@@ -29,7 +29,6 @@ package body server is
          Canonicalized_Request.Canonicalized := False;
       end if;
       
-      --ltj: copy intermediary_buf to Canonicalized_Request
       Canonicalized_Request.Method := Parsed_Request.Method;
       Canonicalized_Request.Sanitary := False;
    end Canonicalize_HTTP_Request;
@@ -74,9 +73,10 @@ package body server is
          when Http_Message.UNKNOWN =>
             Response := Construct_Simple_HTTP_Response(c501_NOT_IMPLEMENTED_PAGE);
             
-         when Http_Message.GET =>
-            --get document from server:
-            Read_File_To_Buffer(Get_String(Clean_Request.Path), Buf, ContentType, Fileio_Error);
+         when Http_Message.GET =>            
+            --ltj:get document from server:
+            Read_File_To_Buffer(Get_String(Clean_Request.Path), Get_Extension(Clean_Request.Path), 
+                                Buf, ContentType, Fileio_Error);
             
             case Fileio_Error is
             when No_Error =>

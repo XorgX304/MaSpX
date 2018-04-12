@@ -164,8 +164,16 @@ package body network_ns is
          Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_GIF);
       when JPG_TYPE =>
          Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_JPEG);
+      when BMP_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_BMP);
       when HTML_TYPE =>
          Append_Str(Send_Buf, CONTENT_TYPE_TEXT_HTML);
+      when CSS_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_TEXT_CSS);
+      when PLAIN_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_TEXT_PLAIN);
+      when JS_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_APPLICATION_JS);
       when UNKNOWN_TYPE =>
          Append_Str(Send_Buf, CONTENT_TYPE_APPLICATION_OCTET_STREAM);
       end case;
