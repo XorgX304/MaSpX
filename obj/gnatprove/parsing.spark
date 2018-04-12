@@ -2389,7 +2389,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 51762,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -2400,7 +2400,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 39445,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -2422,7 +2422,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 37648,
-              "time": 3.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -2445,7 +2445,7 @@
         "Z3": {
           "count": 8,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 5.99999986588955E-02
         }
       }
     },
@@ -2673,7 +2673,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 53207,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -2684,7 +2684,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 50243,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -2695,7 +2695,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 40972,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -2718,7 +2718,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 5.99999986588955E-02
         }
       }
     },
@@ -2994,7 +2994,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 50476,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -3005,7 +3005,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 49845,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -3038,7 +3038,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 38624,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -3145,7 +3145,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 77248,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -3348,7 +3348,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 53339,
-              "time": 9.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -3359,7 +3359,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 50524,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -3370,7 +3370,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 41217,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -3381,7 +3381,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 38409,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -3393,7 +3393,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 9.00000035762787E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -3451,7 +3451,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 77476,
-              "time": 9.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -3462,7 +3462,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 61624,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -3484,7 +3484,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 61510,
-              "time": 6.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -3495,7 +3495,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 61622,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -3507,7 +3507,7 @@
         "Z3": {
           "count": 8,
           "max_steps": 1,
-          "max_time": 9.00000035762787E-02
+          "max_time": 7.99999982118607E-02
         }
       }
     },
@@ -3580,7 +3580,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 51905,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -3592,7 +3592,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -3702,7 +3702,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 28908,
-              "time": 5.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -3713,7 +3713,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 27297,
-              "time": 8.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -3724,7 +3724,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 21813,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -3747,7 +3747,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 2.99999993294477E-02
         }
       }
     },
@@ -3986,7 +3986,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 46995,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -3998,7 +3998,7 @@
         "Z3": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -4145,7 +4145,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 39878,
-              "time": 5.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -4156,7 +4156,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 32967,
-              "time": 3.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -4167,7 +4167,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 30670,
-              "time": 5.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -4179,7 +4179,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 5.00000007450581E-02
+          "max_time": 7.99999982118607E-02
         }
       }
     },
@@ -4215,7 +4215,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 76022,
-              "time": 6.00000000000000E-02
+              "time": 9.00000000000000E-02
             }
           },
           "transformations": {
@@ -4226,7 +4226,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 64060,
-              "time": 8.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -4249,7 +4249,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 9.00000035762787E-02
         }
       }
     },
@@ -4311,7 +4311,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 50323,
-              "time": 8.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -4323,7 +4323,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -4492,7 +4492,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 8556,
-              "time": 5.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -4504,7 +4504,7 @@
         "Z3": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 5.00000007450581E-02
+          "max_time": 2.99999993294477E-02
         }
       }
     },
@@ -4939,7 +4939,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 8818,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -4961,7 +4961,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 7358,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -4972,7 +4972,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 55533,
-              "time": 6.00000000000000E-02
+              "time": 9.00000000000000E-02
             }
           },
           "transformations": {
@@ -4983,7 +4983,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 27522,
-              "time": 3.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -4995,7 +4995,7 @@
         "Z3": {
           "count": 8,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 9.00000035762787E-02
         }
       }
     },
@@ -5286,7 +5286,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 5756,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -5323,7 +5323,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 54573,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -5334,7 +5334,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 54530,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -5356,7 +5356,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 54596,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -5378,7 +5378,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 42237,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -5389,7 +5389,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 42191,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -6249,7 +6249,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 70173,
-              "time": 6.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -6286,7 +6286,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 76275,
-              "time": 8.00000000000000E-02
+              "time": 1.10000000000000E-01
             }
           },
           "transformations": {
@@ -6298,7 +6298,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 1.09999999403954E-01
         }
       }
     },
@@ -6456,7 +6456,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 23128,
-              "time": 3.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -6468,7 +6468,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -6530,7 +6530,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 80110,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -6541,7 +6541,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 76503,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -6575,7 +6575,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 5.99999986588955E-02
         }
       }
     },
@@ -6744,7 +6744,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 8866,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -6840,17 +6840,6 @@
             "Z3": {
               "result": "Valid",
               "steps": 70520,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 71486,
               "time": 9.00000000000000E-02
             }
           },
@@ -6861,18 +6850,7 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 67057,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 59520,
+              "steps": 71486,
               "time": 5.00000000000000E-02
             }
           },
@@ -6883,8 +6861,30 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
+              "steps": 67057,
+              "time": 5.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
+              "steps": 59520,
+              "time": 9.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
               "steps": 55533,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -6906,7 +6906,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 51788,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -7028,7 +7028,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 4088,
-              "time": 2.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -7040,7 +7040,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 1.99999995529652E-02
+          "max_time": 2.99999993294477E-02
         }
       }
     },
@@ -7556,7 +7556,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 5764,
-              "time": 2.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -7896,7 +7896,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 54700,
-              "time": 6.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -7908,7 +7908,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 7.99999982118607E-02
         }
       }
     },
@@ -7933,7 +7933,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 74015,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -7944,7 +7944,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 57972,
-              "time": 5.00000000000000E-02
+              "time": 1.10000000000000E-01
             }
           },
           "transformations": {
@@ -7956,7 +7956,7 @@
         "Z3": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 1.09999999403954E-01
         }
       }
     },
@@ -7981,7 +7981,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 46813,
-              "time": 8.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -7993,7 +7993,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -8066,7 +8066,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 90998,
-              "time": 9.00000000000000E-02
+              "time": 1.10000000000000E-01
             }
           },
           "transformations": {
@@ -8089,7 +8089,7 @@
         "Z3": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 9.00000035762787E-02
+          "max_time": 1.09999999403954E-01
         }
       }
     },
@@ -8379,7 +8379,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 50437,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -8390,7 +8390,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 5860,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -8401,7 +8401,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 49791,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -8445,7 +8445,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 37464,
-              "time": 8.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -8468,7 +8468,7 @@
         "Z3": {
           "count": 8,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 5.99999986588955E-02
         }
       }
     },
@@ -8755,7 +8755,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 56582,
-              "time": 6.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -8767,7 +8767,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 7.99999982118607E-02
         }
       }
     },
@@ -8914,7 +8914,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 6192,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -8926,7 +8926,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 1.99999995529652E-02
         }
       }
     },
@@ -8951,7 +8951,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 8798,
-              "time": 2.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -8962,7 +8962,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 67376,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -8974,7 +8974,7 @@
         "Z3": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -8999,7 +8999,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 53569,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -9010,7 +9010,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 50731,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -9021,7 +9021,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 41338,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -9032,7 +9032,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 38506,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -9573,7 +9573,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 76431,
-              "time": 6.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -9606,7 +9606,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 56746,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -9618,7 +9618,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 7.99999982118607E-02
         }
       }
     },
@@ -9813,7 +9813,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 5422,
-              "time": 2.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -9898,7 +9898,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 64650,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -9946,7 +9946,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 50899,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -9957,7 +9957,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 41499,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -9968,7 +9968,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 38664,
-              "time": 5.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -9980,7 +9980,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 7.99999982118607E-02
         }
       }
     },
@@ -10016,7 +10016,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 5724,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -10223,7 +10223,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 5680,
-              "time": 2.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -10234,7 +10234,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 5680,
-              "time": 3.00000000000000E-02
+              "time": 2.00000000000000E-02
             }
           },
           "transformations": {
@@ -10389,7 +10389,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 77525,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -10401,7 +10401,7 @@
         "Z3": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 5.99999986588955E-02
         }
       }
     },
@@ -10448,7 +10448,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 73515,
-              "time": 8.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -10459,7 +10459,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 73628,
-              "time": 8.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -10481,17 +10481,6 @@
             "Z3": {
               "result": "Valid",
               "steps": 57698,
-              "time": 6.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "Z3": {
-              "result": "Valid",
-              "steps": 53820,
               "time": 5.00000000000000E-02
             }
           },
@@ -10502,8 +10491,19 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
+              "steps": 53820,
+              "time": 3.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "Z3": {
+              "result": "Valid",
               "steps": 57767,
-              "time": 9.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -10515,7 +10515,7 @@
         "Z3": {
           "count": 8,
           "max_steps": 1,
-          "max_time": 9.00000035762787E-02
+          "max_time": 5.99999986588955E-02
         }
       }
     },
@@ -10625,7 +10625,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 75886,
-              "time": 5.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -10658,7 +10658,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 55940,
-              "time": 6.00000000000000E-02
+              "time": 9.00000000000000E-02
             }
           },
           "transformations": {
@@ -10670,7 +10670,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 9.00000035762787E-02
         }
       }
     },
@@ -10817,7 +10817,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 3852,
-              "time": 6.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -10828,7 +10828,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 3852,
-              "time": 2.00000000000000E-02
+              "time": 3.00000000000000E-02
             }
           },
           "transformations": {
@@ -10840,7 +10840,7 @@
         "Z3": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 2.99999993294477E-02
         }
       }
     },
@@ -10950,7 +10950,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 51628,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -10960,8 +10960,8 @@
           "proof_attempts": {
             "Z3": {
               "result": "Valid",
-              "steps": 52131,
-              "time": 9.00000000000000E-02
+              "steps": 52125,
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -10973,7 +10973,7 @@
         "Z3": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 9.00000035762787E-02
+          "max_time": 5.99999986588955E-02
         }
       }
     },
@@ -11142,7 +11142,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 49297,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -11153,7 +11153,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 36917,
-              "time": 6.00000000000000E-02
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -11165,7 +11165,7 @@
         "Z3": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 5.00000007450581E-02
         }
       }
     },
@@ -11201,7 +11201,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 51257,
-              "time": 5.00000000000000E-02
+              "time": 6.00000000000000E-02
             }
           },
           "transformations": {
@@ -11223,7 +11223,7 @@
             "Z3": {
               "result": "Valid",
               "steps": 38921,
-              "time": 5.00000000000000E-02
+              "time": 8.00000000000000E-02
             }
           },
           "transformations": {
@@ -11235,7 +11235,7 @@
         "Z3": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 7.99999982118607E-02
         }
       }
     },
@@ -14783,29 +14783,29 @@
     }
   ],
   "timings": {
-    "marking": 9.05028358101845E-03,
-    "globals (basic)": 5.43845705688000E-02,
-    "globals/properties (advanced)": 3.77653501927853E-02,
-    "flow analysis": 7.05764219164848E-02,
-    "codepeer results": 5.64199990549241E-06,
-    "init_why_sections": 2.09455000003800E-04,
-    "translation of standard": 3.12278093770146E-03,
-    "translation of compilation unit": 2.39610031247139E-01,
-    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 4.21875000000000E-01,
-    "gnatwhy3.transformations.detect_polymorphism": 1.25000000000000E-01,
-    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "marking": 6.55092997476459E-03,
+    "globals (basic)": 5.76811954379082E-02,
+    "globals/properties (advanced)": 4.52538914978504E-02,
+    "flow analysis": 7.40874335169792E-02,
+    "codepeer results": 5.28900000063004E-06,
+    "init_why_sections": 2.20386005821638E-04,
+    "translation of standard": 3.09281004592776E-03,
+    "translation of compilation unit": 2.29778707027435E-01,
+    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 2.81250000000000E-01,
+    "gnatwhy3.transformations.detect_polymorphism": 1.71875000000000E-01,
+    "gnatwhy3.run_vcs": 1.56250000000000E-02,
     "gnatwhy3.transformations.eliminate_inductive": 1.87500000000000E-01,
-    "gnatwhy3.register_vcs": 3.28125000000000E-01,
+    "gnatwhy3.register_vcs": 2.34375000000000E-01,
     "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
     "gnatwhy3.schedule_vcs": 1.56250000000000E-02,
-    "gnatwhy3.transformations.introduce_premises": 9.21875000000000E-01,
-    "gnatwhy3.init": 4.90625000000000E+00,
-    "gnatwhy3.transformations.inline_trivial": 4.01562500000000E+00,
-    "gnatwhy3.transformations.simplify_formula": 6.25000000000000E-01,
-    "gnatwhy3.transformations.eliminate_epsilon": 5.62500000000000E-01,
-    "gnatwhy3.save_session": 4.68750000000000E-02,
-    "gnatwhy3.transformations.eliminate_builtin": 1.56250000000000E-01,
+    "gnatwhy3.transformations.introduce_premises": 6.25000000000000E-01,
+    "gnatwhy3.init": 4.76562500000000E+00,
+    "gnatwhy3.transformations.inline_trivial": 2.40625000000000E+00,
+    "gnatwhy3.transformations.simplify_formula": 3.28125000000000E-01,
+    "gnatwhy3.transformations.eliminate_epsilon": 5.00000000000000E-01,
+    "gnatwhy3.save_session": 1.56250000000000E-02,
+    "gnatwhy3.transformations.eliminate_builtin": 4.68750000000000E-02,
     "gnatwhy3.transformations.encoding_smt_if_poly": 0.00000000000000E+00,
-    "proof": 2.22544441223145E+01
+    "proof": 1.65603961944580E+01
   }
 }

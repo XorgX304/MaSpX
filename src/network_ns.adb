@@ -139,54 +139,43 @@ package body network_ns is
    end Recv_NET_Request;
    
    -----------------------------------------------------------------------------
-   procedure Send_TEST_Response(
-      Client_Socket : Gnat.Sockets.Socket_Type)
-      --Message_Byte_Array : Network_Types.Byte_Array_Type)
-   is
-      Client_Stream : Gnat.Sockets.Stream_Access;
-      --Message_Stream_Array : Ada.Streams.Stream_Element_Array (1 .. Ada.Streams.Stream_Element_Offset(Network_Types.MAX_HTTP_MSG_LENGTH));
-      --for Message_Stream_Array'Address use Message_Byte_Array'Address;2
-      --Result_Last : Ada.Streams.Stream_Element_Offset;
-   begin
-      Client_Stream := Gnat.Sockets.Stream(Client_Socket);
-      
-      String'Write(Client_Stream, STATIC_TEST_RESPONSE_11);
-      --Gnat.Sockets.Send_Socket(Client_Socket, Message_Stream_Array, Result_Last);
-      
-      --This introduces erratic behavior in Chrome... but apparently it's not the only cause
-      --One Request One Response is HTTP/0.9/1.0
-      --Gnat.Sockets.Shutdown_Socket(Client_Socket);
-   end Send_TEST_Response;
-   
-   -----------------------------------------------------------------------------
    procedure Send_Simple_Response(
       Client_Socket : Gnat.Sockets.Socket_Type;
       Response : Simple_HTTP_Response)
    is  --TODO:ltj: make constant for 2. Like CR_Length + LF_Length or Line_Ending_Length to put it in one.
-      Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + Max_Buffer_Size_Type'Image(Response.Entity.Length)'Length + 2 + STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09'Length + 2 + STATIC_RESPONSE_CONTENT_TYPE_09'Length + 10 + 2 + 2 + Response.Entity.Length));
+      --Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + Max_Buffer_Size_Type'Image(Response.Entity.Length)'Length + 2 + STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09'Length + 2 + STATIC_RESPONSE_CONTENT_TYPE_09'Length + 10 + 2 + 2 + Response.Entity.Length));
+      Send_Buf : Measured_Buffer_Type(MAX_RESPONSE_LENGTH, NUL);
       Client_Stream : Gnat.Sockets.Stream_Access;
    begin
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
-   
-      if Response.Content_Type = JPG_TYPE then
-         Send_String := STATIC_RESPONSE_HEADER_09 & 
-                        STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & Max_Buffer_Size_Type'Image(Response.Entity.Length) & CR & LF &
-                        STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09 & CR & LF &
-                        STATIC_RESPONSE_CONTENT_TYPE_09 & "image/jpeg" & CR & LF &
-                        CR & LF &
-                        Get_String(Response.Entity);
-      else
-         Send_String := STATIC_RESPONSE_HEADER_09 & 
-                        STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09 & Max_Buffer_Size_Type'Image(Response.Entity.Length) & CR & LF &
-                        STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09 & CR & LF &
-                        STATIC_RESPONSE_CONTENT_TYPE_09 & "text/html " & CR & LF &
-                        CR & LF &
-                        Get_String(Response.Entity);
-      end if;
       
-      String'Write(Client_Stream, Send_String);
+      Append_Str(Send_Buf, STATUS_LINE_200_10);
+      Append_Str(Send_Buf, CRLF);
+      
+      Append_Str(Send_Buf, CONTENT_LENGTH_HEADER);
+      Append_Str(Send_Buf, Max_Buffer_Size_Type'Image(Response.Entity.Length));
+      Append_Str(Send_Buf, CRLF);
+      
+      Append_Str(Send_Buf, CONTENT_TYPE_HEADER);
+      case Response.Content_Type is
+      when JPG_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_JPEG);
+      when HTML_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_TEXT_HTML);
+      when UNKNOWN_TYPE =>
+         Append_Str(Send_Buf, CONTENT_TYPE_APPLICATION_OCTET_STREAM);
+      end case;
+      Append_Str(Send_Buf, CRLF);
+      
+      Append_Str(Send_Buf, CRLF);
+      
+      Append_Str(Send_Buf, Get_String(Response.Entity));
+      
+      
+      String'Write(Client_Stream, Get_String(Send_Buf));
       
       exception
+      --since this file isn't proved, any exceptions from invalidated SPARK code will land here
       when E : others =>
          Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Send_Simple_Response: WARNING, UNEXPECTED TYPE OF EXCEPTION");
          Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));

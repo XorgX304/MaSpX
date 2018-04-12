@@ -12,7 +12,7 @@ RV SPARK_05
 
 U parsing%b		parsing.adb		7f70a702 OO PK IL
 
-U parsing%s		parsing.ads		30e540ab OO PK IL
+U parsing%s		parsing.ads		53374e08 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -38,10 +38,10 @@ D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
 D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D a-uncdea.ads		20170516105954 f15a5ed1 ada.unchecked_deallocation%s
 D config.ads		20180410171020 5523d8e9 config%s
-D error.ads		20180410192104 025af05b error%s
+D error.ads		20180411171202 50b50105 error%s
 D gnat.ads		20170516105956 fd2ad2f1 gnat%s
 D g-socket.ads		20170516105956 df7f0365 gnat.sockets%s
-D http_message.ads	20180410172850 8df4dd8b http_message%s
+D http_message.ads	20180410202014 bcc92276 http_message%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-c.ads		20170516105948 5421119b interfaces.c%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
@@ -76,7 +76,7 @@ X 10 config.ads
 11a4*FS_ROOT{string} 22|115r68
 12a4*DEFAULT_PAGE{string} 22|328r55 337r32
 X 11 error.ads
-3K9*error 15e10 21|13w6 13r17
+3K9*error 16e10 21|13w6 13r17
 8a4*c400_BAD_REQUEST_PAGE{string} 22|298r53
 9a4*c400_BAD_REQUEST_URI_PAGE{string} 22|330r53
 X 12 gnat.ads
@@ -85,7 +85,7 @@ X 13 g-socket.ads
 55K14*Sockets 1284e17 21|4w11 136r28 22|280r28
 412I9*Socket_Type<integer> 21|136r36 22|280r36
 X 14 http_message.ads
-9K9*Http_Message 97e17 21|9w6 9r24 22|291r32 323r35 325r35
+9K9*Http_Message 100e17 21|9w6 9r24 22|291r32 323r35 325r35
 13n30*GET{13E9} 22|323r48
 13n35*UNKNOWN{13E9} 22|291r45 325r48
 42R9*Parsed_Simple_Request 46e14 21|138r28 22|282r28

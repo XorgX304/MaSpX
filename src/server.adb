@@ -72,7 +72,7 @@ package body server is
    begin
       case Clean_Request.Method is
          when Http_Message.UNKNOWN =>
-            Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
+            Response := Construct_Simple_HTTP_Response(c501_NOT_IMPLEMENTED_PAGE);
             
          when Http_Message.GET =>
             --get document from server:

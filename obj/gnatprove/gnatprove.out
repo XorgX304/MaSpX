@@ -10,10 +10,10 @@ Initialization                  254          254          .          .          
 Non-Aliasing                      .            .          .          .                             .           .          .
 Run-time Checks                 233            .          .          .    231 (Z3  91%, altergo  9%)           .          2
 Assertions                       39            .          .          .     39 (Z3  99%, altergo  1%)           .          .
-Functional Contracts             91            .          .          .    89 (Z3  85%, altergo  15%)           .          2
+Functional Contracts             92            .          .          .    90 (Z3  85%, altergo  15%)           .          2
 LSP Verification                  .            .          .          .                             .           .          .
 ---------------------------------------------------------------------------------------------------------------------------
-Total                           617    254 (41%)          .          .                     359 (58%)           .     4 (1%)
+Total                           618    254 (41%)          .          .                     360 (58%)           .     4 (1%)
 
 
 Analyzed 13 units
@@ -75,7 +75,7 @@ in unit parsing, 12 subprograms and packages out of 12 analyzed
 in unit server, 4 subprograms and packages out of 4 analyzed
   server at server.ads:17 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
   server.Canonicalize_HTTP_Request at server.ads:19 flow analyzed (0 errors and 0 warnings) and proved (17 checks)
-  server.Fulfill_HTTP_Request at server.ads:37 flow analyzed (0 errors and 2 warnings) and proved (11 checks)
+  server.Fulfill_HTTP_Request at server.ads:37 flow analyzed (0 errors and 0 warnings) and proved (12 checks)
   server.Sanitize_HTTP_Request at server.ads:27 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
 in unit spark, 1 subprograms and packages out of 2 analyzed
   SPARK at spark.ads:29 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
