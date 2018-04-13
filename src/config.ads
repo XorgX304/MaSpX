@@ -9,13 +9,12 @@ package config is
    --TODO:ltj: move this to a config file
    HTTP_PORT : constant Natural := 80;
    MAX_CXNS : constant Natural := 16; --ltj: arbitrary   
-   WEB_ROOT : constant String := "D:\OneDrive\OneDrive\ChthonianCyberServices\ada\masp\test-web-root2";--ltj: 1. no trailing slash (we concatenate the Request-URI to this directly) 2. must be absolute path
+   WEB_ROOT : constant String := "D:\OneDrive\OneDrive\ChthonianCyberServices\ada\masp\test-web-root";--ltj: 1. no trailing slash (we concatenate the Request-URI to this directly) 2. must be absolute path
    FS_ROOT : constant String := "D:";
    DEFAULT_PAGE : constant String := "index.html";
    
    STATUS_LINE_200_10 : constant String := "HTTP/1.0 200 OK";
    CRLF : constant String := CR & LF;
-   LINE_ENDING_LENGTH : constant Natural := 2;
    --header strings
    --ACCEPT_RANGES_HEADER : constant String := "Accept-Ranges: bytes";
    CONTENT_LENGTH_HEADER : constant String := "Content-Length:";
@@ -29,12 +28,13 @@ package config is
    CONTENT_TYPE_TEXT_CSS : constant String := " text/css";
    CONTENT_TYPE_APPLICATION_JS : constant String := " application/javascript";
    CONTENT_TYPE_APPLICATION_OCTET_STREAM : constant String := " application/octet-stream";
+   MAX_CONTENT_LENGTH_BYTE_CT : constant Natural := 11;  --the likely result of Natural'Image(Natural'Last)'Length + 1 for SP
    
    MAX_STATUS_AND_HEADERS_LENGTH : constant Natural := 
-      STATUS_LINE_200_10'Length + 
-      CONTENT_LENGTH_HEADER'Length + Natural'Image(Natural'Last)'Length + LINE_ENDING_LENGTH + --ltj: not exact since we are using natural instead of the max file size
-      CONTENT_TYPE_HEADER'Length + CONTENT_TYPE_APPLICATION_OCTET_STREAM'Length + LINE_ENDING_LENGTH + --ltj: note that we use the longest of the content type values
-      LINE_ENDING_LENGTH;
+      STATUS_LINE_200_10'Length + CRLF'Length + --15 + 2
+      CONTENT_LENGTH_HEADER'Length + MAX_CONTENT_LENGTH_BYTE_CT + CRLF'Length + --15 + 11 + 2 ltj: not exact since we are using natural instead of the max file size
+      CONTENT_TYPE_HEADER'Length + CONTENT_TYPE_APPLICATION_OCTET_STREAM'Length + CRLF'Length + --13 + 25 +2 ltj: note that we use the longest of the content type values
+      CRLF'LENGTH; -- 2
       
                              
 

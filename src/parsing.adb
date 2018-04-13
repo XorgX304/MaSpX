@@ -182,7 +182,8 @@ package body parsing is
          
          if Tokens(I) /= BLANK_FILENAME_TOKEN then
             --     v---- if statement inserted to satisfy preconditions for SPARK prover
-            if Filename.Length <= Filename.Size - Get_String(Tokens(I))'Length then
+            if Filename.Length <= Filename.Size - Get_String(Tokens(I))'Length 
+            and Get_String(Tokens(I))'Length >= 1 then
                Append_Str(Filename, Get_String(Tokens(I)));
             end if;
          

@@ -6,6 +6,8 @@ with utils; use utils;
 package measured_buffer is
 
    MAX_FILE_READ_BYTE_CT : constant Natural := 5_000_000;
+   pragma Assert( MAX_STATUS_AND_HEADERS_LENGTH = 87 and
+                  MAX_FILE_READ_BYTE_CT = 5_000_000 );
    MAX_RESPONSE_LENGTH : constant Natural := MAX_STATUS_AND_HEADERS_LENGTH + MAX_FILE_READ_BYTE_CT;
    MAX_REQUEST_LINE_BYTE_CT : constant Natural := 270;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
    MAX_URI_BYTE_CT : constant Natural := 255;
@@ -30,7 +32,8 @@ package measured_buffer is
       Str : String
    ) return Measured_Buffer_Type
    with Global => null,
-        Pre => Str'Length <= SizeInst,
+        Pre => Str'Length <= SizeInst and
+               Str'Length >= 1,
         Post => Construct_Measured_Buffer'Result.Size = SizeInst and
                 Construct_Measured_Buffer'Result.EmptyChar = EmptyCharInst and
                 Construct_Measured_Buffer'Result.Length <= Construct_Measured_Buffer'Result.Size and
@@ -83,7 +86,8 @@ package measured_buffer is
   
    procedure Append_Str(Buf : in out Measured_Buffer_Type; S : String)
    with Global => null,
-        Pre => Buf.Length <= Buf.Size - S'Length,
+        Pre => S'Length >= 1 and then
+               Buf.Length <= Buf.Size - S'Length,
         Post => Buf.Length'Old + S'Length = Buf.Length and
                 Buf.Length <= Buf.Size;
                 

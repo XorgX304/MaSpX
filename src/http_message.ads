@@ -93,7 +93,8 @@ PACKAGE Http_Message IS
       RequestURIString => (OTHERS => ' '));
 
    function Construct_Simple_HTTP_Response(Page : String) return Simple_HTTP_Response
-   with Pre => Page'Length <= MAX_FILE_READ_BYTE_CT;
+   with Pre => Page'Length <= MAX_FILE_READ_BYTE_CT and
+               Page'Length >= 1;
 
    function Construct_Simple_HTTP_Response(Buf : Measured_Buffer_Type) return Simple_HTTP_Response
    with Global => null,

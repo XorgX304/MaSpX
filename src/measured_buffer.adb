@@ -61,7 +61,7 @@ package body measured_buffer is
    procedure Append_Str(Buf : in out Measured_Buffer_Type; S : String)
    is
    begin
-      Buf.Buffer(Buf.Length+1 .. Buf.Length+1+S'Length-1) := S;
+      Buf.Buffer(Buf.Length+1 .. Buf.Length+S'Length) := S;
       Buf.Length := Buf.Length + S'Length;
    end Append_Str;
    

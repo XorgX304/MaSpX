@@ -61,16 +61,18 @@ begin
                end case;
                Debug_Print_Ln("Debugging: Parsed URI:" & Get_String(Parsed_Request.URI));
 
-               Canonicalize_HTTP_Request(Parsed_Request, Canonicalized_Request); --interpret all ..'s and .'s.
+               if Parsed_Request.URI.Length >= 1 then
+                  Canonicalize_HTTP_Request(Parsed_Request, Canonicalized_Request); --interpret all ..'s and .'s.
 
-               if Canonicalized_Request.Canonicalized then
+                  if Canonicalized_Request.Canonicalized then
 
-                  Sanitize_HTTP_Request(Client_Socket, Canonicalized_Request, Clean_Request);
+                     Sanitize_HTTP_Request(Client_Socket, Canonicalized_Request, Clean_Request);
 
-                  if Clean_Request.Sanitary then
-                     Fulfill_HTTP_Request(Client_Socket, Clean_Request);
+                     if Clean_Request.Sanitary then
+                        Fulfill_HTTP_Request(Client_Socket, Clean_Request);
+                     end if;
+
                   end if;
-
                end if;
             end if;
          end if;

@@ -10,9 +10,9 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utils%b		utils.adb		3505da57 OO PK IL
+U utils%b		utils.adb		edde59b7 OO PK IL
 
-U utils%s		utils.ads		09789744 OO PK IL
+U utils%s		utils.ads		9b1fc4c8 OO PK IL
 W config%s		config.ads		config.ali
 W spark%s		spark.ads		spark.ali
 W spark.text_io%s	spark-text_io.adb	spark-text_io.ali
@@ -23,7 +23,7 @@ D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180412151042 6e997ee8 config%s
+D config.ads		20180413120058 2425ae84 config%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
 D spark.ads		20140410152036 86380d85 spark%s
@@ -33,10 +33,10 @@ D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
 D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180412180300 804e7772 utils%s
+D utils.ads		20180412224906 5895f492 utils%s
 D utils.adb		20180412180210 b54bad25 utils%b
 X 7 config.ads
-5K9*config 37e11 17|5w6 5r18
+5K9*config 41e11 17|5w6 5r18
 7b4*DEBUG_PRINT_ON{boolean} 18|9r48 19r48
 X 10 spark.ads
 29K9*SPARK 66e10 17|3r6 3r25
@@ -51,7 +51,7 @@ X 11 spark-text_io.ads
 646U14*Put 18|20s10 40s10
 703U14*Put_Line 18|10s10 30s10
 X 17 utils.ads
-7K9*utils 48l5 48e10 18|3b14 83l5 83t10
+7K9*utils 50l5 50e10 18|3b14 83l5 83t10
 10U14*Debug_Print_Ln 10>29 18|6b14 13l8 13t22
 10a29 String_To_Print{string} 18|6b29 10r19
 11U14*Debug_Print 11>26 18|16b14 23l8 23t19
@@ -64,7 +64,7 @@ X 17 utils.ads
 15b33 P{boolean} 18|46b33 49r15 49r32
 15b46 Q{boolean} 18|46b46 49r21 49r42
 18V13*Is_Standard_Printable{boolean} 18>35
-18e35 C{character} 19r23 19r50
+18e35 C{character} 19r24 19r51 20r27 20r52 21r27
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -390,7 +390,7 @@ FX 17 utils.ads .6 utils__logical_equivalence
 F 15>33 utils__logical_equivalence__p 18|.6:49c15 49c32
 F 15>46 utils__logical_equivalence__q 18|.6:49c21 49c42
 FX 17 utils.ads .7 utils__is_standard_printable
-F 18>35 utils__is_standard_printable__c .8:19c23 19c50
+F 18>35 utils__is_standard_printable__c .8:19c24 19c51 20c27 20c52 21c27
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0

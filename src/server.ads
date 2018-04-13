@@ -21,7 +21,8 @@ package server is
       Canonicalized_Request : out Translated_Simple_Request
    )
    with Global => (In_Out => Standard_Output),
-        Pre =>  Parsed_Request.URI.Length <= Parsed_Request.URI.Size,
+        Pre =>  Parsed_Request.URI.Length <= Parsed_Request.URI.Size and
+                Parsed_Request.URI.Length >= 1,
         Post => Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size;
 
    procedure Sanitize_HTTP_Request(
