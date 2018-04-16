@@ -11,6 +11,7 @@ with network_ns; use network_ns;
 with Network_Types;
 with utils; use utils;
 with measured_buffer; use measured_buffer;
+with config; use config;
 
 procedure Masp is
    Server_Socket : Gnat.Sockets.Socket_Type;

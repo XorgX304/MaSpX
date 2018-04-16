@@ -297,7 +297,8 @@ package body parsing is
       if Tokens'Length < 2 or not Is_Delimits_Well_Formed(Raw_Request, Delimit) 
       or Is_Leading_Delimit(Raw_Request, Delimit) then
          Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
-         Send_Simple_Response(Client_Socket, Response);
+         Response.Status_Code := c400_BAD_REQUEST;
+         Send_HTTP_Response(Client_Socket, Response);
          Exception_Raised := True;
          return;
       end if;
@@ -322,6 +323,10 @@ package body parsing is
       
       if Get_String(Method_Token) = GET_TOKEN_STR then
          Parsed_Request.Method := Http_Message.GET;
+      elsif Get_String(Method_Token) = HEAD_TOKEN_STR then
+         Parsed_Request.Method := Http_Message.HEAD;
+      elsif Get_String(Method_Token) = POST_TOKEN_STR then
+         Parsed_Request.Method := Http_Message.POST;
       else
          Parsed_Request.Method := Http_Message.UNKNOWN;
       end if;
@@ -329,7 +334,8 @@ package body parsing is
       if URI_Token.Length > Parsed_Request.URI.Size - DEFAULT_PAGE'Length 
       or Is_Empty(URI_Token) then
          Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
-         Send_Simple_Response(Client_Socket, Response);
+         Response.Status_Code := c400_BAD_REQUEST;
+         Send_HTTP_Response(Client_Socket, Response);
          Exception_Raised := True;
          return;
       end if;

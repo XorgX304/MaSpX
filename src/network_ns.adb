@@ -97,7 +97,8 @@ package body network_ns is
             if C(1) = Request.EmptyChar then
                Debug_Print_Ln("Invalid character entered! Sending 400 Bad Request");
                Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
-               Send_Simple_Response(Client_Socket, Response);
+               Response.Status_Code := c400_BAD_REQUEST;
+               Send_HTTP_Response(Client_Socket, Response);
                Exception_Raised := True;
                return;
             end if;
@@ -122,7 +123,8 @@ package body network_ns is
          else
             Debug_Print_Ln("Max request buffer exceeded! Sending 400 Bad Request");
             Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
-            Send_Simple_Response(Client_Socket, Response);
+            Response.Status_Code := c400_BAD_REQUEST;
+            Send_HTTP_Response(Client_Socket, Response);
             Exception_Raised := True;
             return;
          end if;
@@ -139,60 +141,36 @@ package body network_ns is
    end Recv_NET_Request;
    
    -----------------------------------------------------------------------------
-   procedure Send_Simple_Response(
+   procedure Send_HTTP_Response(
       Client_Socket : Gnat.Sockets.Socket_Type;
       Response : Simple_HTTP_Response)
    is  --TODO:ltj: make constant for 2. Like CR_Length + LF_Length or Line_Ending_Length to put it in one.
       --Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + Max_Buffer_Size_Type'Image(Response.Entity.Length)'Length + 2 + STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09'Length + 2 + STATIC_RESPONSE_CONTENT_TYPE_09'Length + 10 + 2 + 2 + Response.Entity.Length));
-      Send_Buf : Measured_Buffer_Type(MAX_RESPONSE_LENGTH, NUL);
+      Send_Buf : Measured_Buffer_Type(MAX_RESPONSE_LENGTH, NUL); --TODO:ltj: fix MAX_RESPONSE_LENGTH
       Client_Stream : Gnat.Sockets.Stream_Access;
    begin
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
       
-      Append_Str(Send_Buf, STATUS_LINE_200_10);
-      Append_Str(Send_Buf, CRLF);
+      Craft_Status_Line(Send_Buf, Response);
       
-      Append_Str(Send_Buf, CONTENT_LENGTH_HEADER);
-      Append_Str(Send_Buf, Max_Buffer_Size_Type'Image(Response.Entity.Length));
-      Append_Str(Send_Buf, CRLF);
-      
-      Append_Str(Send_Buf, CONTENT_TYPE_HEADER);
-      case Response.Content_Type is
-      when PNG_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_PNG);
-      when GIF_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_GIF);
-      when JPG_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_JPEG);
-      when BMP_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_IMAGE_BMP);
-      when HTML_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_TEXT_HTML);
-      when CSS_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_TEXT_CSS);
-      when PLAIN_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_TEXT_PLAIN);
-      when JS_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_APPLICATION_JS);
-      when UNKNOWN_TYPE =>
-         Append_Str(Send_Buf, CONTENT_TYPE_APPLICATION_OCTET_STREAM);
-      end case;
-      Append_Str(Send_Buf, CRLF);
+      Craft_Headers(Send_Buf, Response); --TODO:ltj: now we must set Content_Length header elsewhere
       
       Append_Str(Send_Buf, CRLF);
       
-      Append_Str(Send_Buf, Get_String(Response.Entity));
+      if not Is_Empty(Response.Entity) then
+         Append_Str(Send_Buf, Get_String(Response.Entity));
+      end if;
       
       
       String'Write(Client_Stream, Get_String(Send_Buf));
       
       exception
-      --since this file isn't proved, any exceptions from invalidated SPARK code will land here
+      --ltj: since this file isn't proved, any exceptions from invalidated SPARK code will land here
       when E : others =>
          Ada.Text_IO.Put_Line("MaSpX: network_ns.adb: Send_Simple_Response: WARNING, UNEXPECTED TYPE OF EXCEPTION");
          Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
          --Exception_Raised := True;
-   end Send_Simple_Response;
+   end Send_HTTP_Response;
    
    -----------------------------------------------------------------------------
    procedure Close_Client_Socket(

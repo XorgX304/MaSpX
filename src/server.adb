@@ -49,7 +49,8 @@ package body server is
          Clean_Request.Sanitary := True;
       else
          Response := Construct_Simple_HTTP_Response(c403_FORBIDDEN_PAGE);
-         Send_Simple_Response(Client_Socket, Response);
+         Response.Status_Code := c403_FORBIDDEN;
+         Send_HTTP_Response(Client_Socket, Response);
          
          Clean_Request.Method := Http_Message.UNKNOWN;
          Clean_Request.Path.Buffer := (others=>NUL);
@@ -65,39 +66,26 @@ package body server is
       Clean_Request : Translated_Simple_Request)
    is
       Response : Simple_HTTP_Response;
-      Buf : Measured_Buffer_Type(MAX_FILE_READ_BYTE_CT, NUL);
-      ContentType : ContentTypeType;
-      Fileio_Error : Fileio_Error_Type;
    begin
+      Response.Version := HTTP_10;
+      Set_Str(Response.Header_Values(SERVER_HEADER), "MaSp1.0 Development Version");
+   
       case Clean_Request.Method is
-         when Http_Message.UNKNOWN =>
-            Response := Construct_Simple_HTTP_Response(c501_NOT_IMPLEMENTED_PAGE);
-            
-         when Http_Message.GET =>            
-            --ltj:get document from server:
-            Read_File_To_Buffer(Get_String(Clean_Request.Path), Get_Extension(Clean_Request.Path), 
-                                Buf, ContentType, Fileio_Error);
-            
-            case Fileio_Error is
-            when No_Error =>
-               Response := Construct_Simple_HTTP_Response(Buf);
-               Response.Content_Type := ContentType;
-            when Buffer_Full_Error =>
-               Response := Construct_Simple_HTTP_Response(c500_SERVER_ERROR_PAGE);
-               Response.Content_Type := HTML_TYPE;
-            when Not_Found_Error =>
-               Response := Construct_Simple_HTTP_Response(c404_NOT_FOUND_PAGE);
-               Response.Content_Type := HTML_TYPE;
-            when Conflict_Error =>
-               Response := Construct_Simple_HTTP_Response(c409_CONFLICT_PAGE);
-               Response.Content_Type := HTML_TYPE;
-            when Unexpected_Error =>
-               Response := Construct_Simple_HTTP_Response(c500_SERVER_ERROR_PAGE);
-               Response.Content_Type := HTML_TYPE;
-            end case;
+      when Http_Message.UNKNOWN =>
+         Response.Status_Code := c501_NOT_IMPLEMENTED;
+         
+      when Http_Message.GET =>            
+         --ltj:get document from server:
+         Read_File_To_Response(Get_String(Clean_Request.Path), Get_Extension(Clean_Request.Path), Response);
+         
+      when Http_Message.HEAD =>
+         Measure_File_To_Response(Get_String(Clean_Request.Path), Get_Extension(Clean_Request.Path), Response);
+         
+      when Http_Message.POST =>
+         null; --TODO:ltj: do something complex with request entity here
       end case;
       
-      Send_Simple_Response(Client_Socket, Response);
+      Send_HTTP_Response(Client_Socket, Response);
       
    end Fulfill_HTTP_Request;
    

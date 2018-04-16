@@ -13,29 +13,13 @@ package config is
    FS_ROOT : constant String := "D:";
    DEFAULT_PAGE : constant String := "index.html";
    
-   STATUS_LINE_200_10 : constant String := "HTTP/1.0 200 OK";
-   CRLF : constant String := CR & LF;
-   --header strings
-   --ACCEPT_RANGES_HEADER : constant String := "Accept-Ranges: bytes";
-   CONTENT_LENGTH_HEADER : constant String := "Content-Length:";
-   CONTENT_TYPE_HEADER : constant String := "Content-Type:";
-   CONTENT_TYPE_IMAGE_JPEG : constant String := " image/jpeg";
-   CONTENT_TYPE_IMAGE_GIF : constant String := " image/gif";
-   CONTENT_TYPE_IMAGE_PNG : constant String := " image/png";
-   CONTENT_TYPE_IMAGE_BMP : constant String := " image/bmp";
-   CONTENT_TYPE_TEXT_HTML : constant String := " text/html";
-   CONTENT_TYPE_TEXT_PLAIN : constant String := " text/plain";
-   CONTENT_TYPE_TEXT_CSS : constant String := " text/css";
-   CONTENT_TYPE_APPLICATION_JS : constant String := " application/javascript";
-   CONTENT_TYPE_APPLICATION_OCTET_STREAM : constant String := " application/octet-stream";
-   MAX_CONTENT_LENGTH_BYTE_CT : constant Natural := 11;  --the likely result of Natural'Image(Natural'Last)'Length + 1 for SP
-   
-   MAX_STATUS_AND_HEADERS_LENGTH : constant Natural := 
-      STATUS_LINE_200_10'Length + CRLF'Length + --15 + 2
-      CONTENT_LENGTH_HEADER'Length + MAX_CONTENT_LENGTH_BYTE_CT + CRLF'Length + --15 + 11 + 2 ltj: not exact since we are using natural instead of the max file size
-      CONTENT_TYPE_HEADER'Length + CONTENT_TYPE_APPLICATION_OCTET_STREAM'Length + CRLF'Length + --13 + 25 +2 ltj: note that we use the longest of the content type values
-      CRLF'LENGTH; -- 2
-      
-                             
+   --buffer limits
+   MAX_FILE_READ_BYTE_CT : constant Natural := 5_000_000;--ltj: arbitrary
+   MAX_RESPONSE_LENGTH : constant Natural := 4000 + MAX_FILE_READ_BYTE_CT;
+   MAX_HEADER_VALUE_BYTE_CT : constant Natural := 128; --ltj: arbitrary
+   MAX_REQUEST_LINE_BYTE_CT : constant Natural := 270;  --ltj: RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
+   MAX_URI_BYTE_CT : constant Natural := 255;
+   MAX_PARSED_URI_BYTE_CT : constant Natural := MAX_URI_BYTE_CT + DEFAULT_PAGE'Length - 1;
+   MAX_FS_PATH_BYTE_CT : constant Positive := WEB_ROOT'Length + MAX_PARSED_URI_BYTE_CT;
 
 end config;

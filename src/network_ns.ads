@@ -13,6 +13,7 @@ with config; use config;
 with utils; use utils;
 with measured_buffer; use measured_buffer;
 with error; use error;
+with response_strs; use response_strs;
 
 package network_ns 
 with SPARK_Mode => On
@@ -22,6 +23,8 @@ is
    
    --ltj: constant tokens for parsing aid
    GET_TOKEN_STR : constant String := "GET";
+   HEAD_TOKEN_STR : constant String := "HEAD";
+   POST_TOKEN_STR : constant String := "POST";
 
    procedure Initialize_TCP_State(
       Server_Socket : out Gnat.Sockets.Socket_Type;
@@ -43,7 +46,7 @@ is
         Post => (if not Exception_Raised then
                     not Is_Empty(Request) and Request.Length <= Request.Size);
    
-   procedure Send_Simple_Response(
+   procedure Send_HTTP_Response(
       Client_Socket : Gnat.Sockets.Socket_Type;
       Response : Simple_HTTP_Response
    );

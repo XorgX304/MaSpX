@@ -5,92 +5,68 @@ with Ada.Characters.Latin_1; use Ada.Characters.Latin_1;
 with config; use config;
 with String_Types;
 with measured_buffer; use measured_buffer;
+with response_strs; use response_strs;
 
-PACKAGE Http_Message IS
+package Http_Message is
    package ST renames String_Types;
 
-   TYPE ClientServerType IS (Client, Server);
-   TYPE MethodType IS (NONE, GET, UNKNOWN, HEAD, POST,  --only http 1.0 for now
+   type ClientServerType is (Client, Server);
+   type MethodType is (NONE, GET, UNKNOWN, HEAD, POST,  --only http 1.0 for now
       PUT, DELETE, LINK, UNLINK);   --less common
-   subtype Simple_Method_Type is MethodType range GET .. UNKNOWN;
+   subtype Simple_Method_Type is MethodType range GET .. POST;
 
-   MaxHeaders : constant Natural := 32;
-
-   TYPE HeaderType IS (ALLOW, AUTHORIZATION, CONTENT_ENCODING, CONTENT_LENGTH, CONTENT_TYPE,
-      DATE, EXPIRES, FROM, IF_MODIFIED_SINCE, LAST_MODIFIED, LOCATION, PRAGM, REFERER, SERVER,
-      USER_AGENT, WWW_AUTHENTICATE, UNKNOWN_HEADER,
+   type Header_Type is (ALLOW_HEADER, AUTHORIZATION_HEADER, CONTENT_ENCODING_HEADER, CONTENT_LENGTH_HEADER, CONTENT_TYPE_HEADER,
+      DATE_HEADER, EXPIRES_HEADER, FROM_HEADER, IF_MODIFIED_SINCE_HEADER, LAST_MODIFIED_HEADER, LOCATION_HEADER, PRAGMA_HEADER, REFERER_HEADER, SERVER_HEADER,
+      USER_AGENT_HEADER, WWW_AUTHENTICATE_HEADER,
          --less common
-      ACCEP, ACCEPT_CHARSET, ACCEPT_ENCODING, ACCEPT_LANGUAGE, CONTENT_LANGUAGE, LINK, MIME_VERSION, RETRY_AFTER, TITLE, URI,
+      ACCEPT_HEADER, ACCEPT_CHARSET_HEADER, ACCEPT_ENCODING_HEADER, ACCEPT_LANGUAGE_HEADER, CONTENT_LANGUAGE_HEADER, LINK_HEADER, MIME_VERSION_HEADER, RETRY_AFTER_HEADER, TITLE_HEADER, URI_HEADER);
          --http 1.1
-      ACCEPT_RANGES, AGE, CACHE_CONTROL, CONNECTION, CONTENT_LOCATION, CONTENT_MD5, CONTENT_RANGE, ETAG, EXPECT, HOST, IF_MATCH,
-      IF_NONE_MATCH, IF_RANGE, IF_UNMODIFIED_SINCE, MAX_FORWARDS, PROXY_AUTHENTICATE, PROXY_AUTHORIZATION, RANG, TE, TRAILER,
-      TRANSFER_ENCODING, UPGRADE, VARY, VIA, WARNING);
+      --ACCEPT_RANGES_HEADER, AGE_HEADER, CACHE_CONTROL_HEADER, CONNECTION_HEADER, CONTENT_LOCATION_HEADER, CONTENT_MD5_HEADER, CONTENT_RANGE_HEADER, ETAG_HEADER, EXPECT_HEADER, HOST_HEADER, IF_MATCH_HEADER,
+      --IF_NONE_MATCH_HEADER, IF_RANGE_HEADER, IF_UNMODIFIED_SINCE_HEADER, MAX_FORWARDS_HEADER, PROXY_AUTHENTICATE_HEADER, PROXY_AUTHORIZATION_HEADER, RANG_HEADER, TE_HEADER, TRAILER_HEADER,
+      --TRANSFER_ENCODING_HEADER, UPGRADE_HEADER, VARY_HEADER, VIA_HEADER, WARNING_HEADER);
 
-   --this must match size of HeaderType
-   DistinctHeaders : CONSTANT Natural := HeaderType'Pos(HeaderType'Last)+1;
+   type Header_Values_Array_Type is array (Header_Type range Header_Type'First .. Header_Type'Last) of Measured_Buffer_Type(MAX_HEADER_VALUE_BYTE_CT, NUL);
 
-   TYPE Header IS RECORD
-      Name: HeaderType;
-      Value: ST.HeaderValueStringType;
-   END RECORD;
-
-   SUBTYPE MaxHeadersType IS Integer RANGE 0..MaxHeaders;
-   TYPE HeaderArrayType IS ARRAY(1..MaxHeaders) OF Header;
+   type HTTP_Version_Type is (HTTP_09, HTTP_10, HTTP_11, HTTP_2, HTTP_0_UNKNOWN, HTTP_1_UNKNOWN, HTTP_2_UNKNOWN, HTTP_UNKNOWN);
 
    --ltj: Making this a variant record raises some flow issues that are impossible to get around.
    ---    Just creating different types instead.
+   --TODO:ltj: rename Parsed_HTTP_Request_Type
    type Parsed_Simple_Request is
    record
       Method : Simple_Method_Type := UNKNOWN;
       URI : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, NUL);
+      Version : HTTP_Version_Type;
+      Header_Values : Header_Values_Array_Type;
+      Entity : Measured_Buffer_Type(MAX_FILE_READ_BYTE_CT, NUL);
    end record;
 
+   --TODO:ltj: rename Translated_HTTP_Request_Type
    type Translated_Simple_Request is
    record
       Method : Simple_Method_Type := UNKNOWN;
       Path : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+      Version : HTTP_Version_Type;
+      Header_Values : Header_Values_Array_Type;
+      Entity : Measured_Buffer_Type(MAX_FILE_READ_BYTE_CT, NUL);
       Canonicalized : Boolean := False;
       Sanitary : Boolean := False;
    end record;
 
-   type ContentTypeType is (UNKNOWN_TYPE,
-                            JS_TYPE,
-                            HTML_TYPE, CSS_TYPE, PLAIN_TYPE,
-                            JPG_TYPE, GIF_TYPE, PNG_TYPE, BMP_TYPE);
+   type Status_Code_Type is (c200_OK, c201_CREATED, c202_ACCEPTED, c204_NO_CONTENT,
+                             c300_MULTIPLE_CHOICES, c301_MOVED_PERMANENTLY, c302_MOVED_TEMPORARILY, c304_NOT_MODIFIED,
+                             c400_BAD_REQUEST, c401_UNAUTHORIZED, c403_FORBIDDEN, c404_NOT_FOUND,
+                             c500_INTERNAL_SERVER_ERROR, c501_NOT_IMPLEMENTED, c502_BAD_GATEWAY, c503_SERVICE_UNAVAILABLE
+                             );
 
+   --TODO:ltj: rename HTTP_Repsonse_Type
    type Simple_HTTP_Response is
    record
-      --ltj: don't encode http version or status code because in MaspClassic, this is always HTTP/0.9 200 OK
+      Version : HTTP_Version_Type := HTTP_10;
+      Status_Code : Status_Code_Type := c200_OK;
+      Header_Values : Header_Values_Array_Type;
       Entity : Measured_Buffer_Type(MAX_FILE_READ_BYTE_CT, NUL); --ltj:in this case, NUL is a possible legitimate member of the buffer.
-      Content_Type : ContentTypeType := UNKNOWN_TYPE;
    end record;
-
-   TYPE Http_Message_Variant_Record(ClientOrServer: ClientServerType) IS RECORD
-      NumberOfHeaders: MaxHeadersType;
-      Headers: HeaderArrayType;
-      EntityBodyString: ST.EntityBodyStringType;
-      FirstLineString: ST.FirstLineStringType;
-      HttpVersionString: ST.HttpVersionStringType;
-      CASE ClientOrServer IS
-         WHEN Client =>
-            Method: MethodType;
-            RequestURIString: ST.RequestURIStringType;
-         WHEN Server =>
-            StatusCodeString: ST.StatusCodeStringType;
-            ReasonPhraseString: ST.ReasonPhraseStringType;
-      END CASE;
-   END RECORD;
-
-   BLANK_HEADER : CONSTANT Header := (Name => UNKNOWN_HEADER, Value => (OTHERS => ' '));
-   BLANK_HTTP_MESSAGE : CONSTANT Http_Message_Variant_Record :=
-      (ClientOrServer => Client,
-      NumberOfHeaders => 0,
-      FirstLineString => (OTHERS => ' '),
-      HttpVersionString => (OTHERS => ' '),
-      Headers => (OTHERS => BLANK_HEADER),
-      EntityBodyString => (OTHERS => ' '),
-      Method => NONE,
-      RequestURIString => (OTHERS => ' '));
 
    function Construct_Simple_HTTP_Response(Page : String) return Simple_HTTP_Response
    with Pre => Page'Length <= MAX_FILE_READ_BYTE_CT and
@@ -101,5 +77,11 @@ PACKAGE Http_Message IS
         Pre => Buf.Size = MAX_FILE_READ_BYTE_CT and
                Buf.EmptyChar = NUL;
 
-END Http_Message;
+   procedure Craft_Status_Line(Buf : out Measured_Buffer_Type; Response : Simple_HTTP_Response)
+   with Global => null;
+
+   procedure Craft_Headers(Buf: in out Measured_Buffer_Type; Response : Simple_HTTP_Response)
+   with Global => null;
+
+end Http_Message;
 

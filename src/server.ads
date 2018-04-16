@@ -13,6 +13,7 @@ with String_Types; use String_Types;
 with measured_buffer; use measured_buffer;
 with parsing; use parsing;
 with error; use error;
+with Http_Message; use Http_Message;
 
 package server is
 

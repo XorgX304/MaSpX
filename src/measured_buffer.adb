@@ -66,6 +66,14 @@ package body measured_buffer is
    end Append_Str;
    
 --------------------------------------------------------------------------------
+   procedure Set_Str(Buf : in out Measured_Buffer_Type; S : String)
+   is
+   begin
+      Clear(Buf);
+      Append_Str(Buf, S);
+   end Set_Str;
+
+--------------------------------------------------------------------------------
    procedure Replace_Char(Buf : in out Measured_Buffer_Type; BeforeChar,AfterChar : Character)
    is
    begin

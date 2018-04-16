@@ -5,14 +5,6 @@ with utils; use utils;
 
 package measured_buffer is
 
-   MAX_FILE_READ_BYTE_CT : constant Natural := 5_000_000;
-   pragma Assert( MAX_STATUS_AND_HEADERS_LENGTH = 87 and
-                  MAX_FILE_READ_BYTE_CT = 5_000_000 );
-   MAX_RESPONSE_LENGTH : constant Natural := MAX_STATUS_AND_HEADERS_LENGTH + MAX_FILE_READ_BYTE_CT;
-   MAX_REQUEST_LINE_BYTE_CT : constant Natural := 270;  -- RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
-   MAX_URI_BYTE_CT : constant Natural := 255;
-   MAX_PARSED_URI_BYTE_CT : constant Natural := MAX_URI_BYTE_CT + DEFAULT_PAGE'Length - 1;
-   MAX_FS_PATH_BYTE_CT : constant Positive := WEB_ROOT'Length + MAX_PARSED_URI_BYTE_CT;
    --TODO:ltj: v----- drop the "max" 
    subtype Max_Buffer_Size_Type is Natural range Natural'First .. MAX_RESPONSE_LENGTH; --ltj: instead of just choosing obvious maximum, we can calculate it too: Natural'Max(Natural'Max(MAX_REQUEST_LINE_BYTE_CT, MAX_FILE_READ_BYTE_CT), Natural'Max(MAX_URI_BYTE_CT, MAX_PARSED_URI_BYTE_CT)); --ltj:set to the largest of the above constants
    subtype Buffer_Index_Type is Positive range Positive'First .. Max_Buffer_Size_Type'Last;
@@ -89,6 +81,13 @@ package measured_buffer is
         Pre => S'Length >= 1 and then
                Buf.Length <= Buf.Size - S'Length,
         Post => Buf.Length'Old + S'Length = Buf.Length and
+                Buf.Length <= Buf.Size;
+                
+   procedure Set_Str(Buf : in out Measured_Buffer_Type; S : String)
+   with Global => null,
+        Pre => S'Length >= 1 and then
+               S'Length <= Buf.Size,
+        Post => S'Length = Buf.Length and
                 Buf.Length <= Buf.Size;
                 
    procedure Replace_Char(Buf : in out Measured_Buffer_Type; BeforeChar,AfterChar : Character)

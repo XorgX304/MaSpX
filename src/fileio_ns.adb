@@ -5,35 +5,31 @@ pragma SPARK_Mode(Off);
 
 package body fileio_ns is
    
-   procedure Read_File_To_Buffer(
+   procedure Read_File_To_Response(
       --MFT : Measured_Filename_Type;
       Abs_Filename : String;
       Extension : String;
-      Buf : out Measured_Buffer_Type;
-      ContentType : out ContentTypeType;
-      Fileio_Error : out Fileio_Error_Type)
+      Response : in out Simple_HTTP_Response)
    is
       Read_File : Ada.Streams.Stream_IO.File_Type;
       Read_Stream : Stream_Access;
       Item : Character;
       Binary_File : Boolean := False;
    begin
-      Fileio_Error := No_Error;
-      Clear(Buf);
-      ContentType := UNKNOWN_TYPE;
+      Response.Status_Code := c200_OK;
       
       Open(Read_File, In_File, Abs_Filename);
       Read_Stream := Stream(Read_File);
       
       while not End_Of_File(Read_File) loop
-         if Is_Full(Buf) then
+         if Is_Full(Response.Entity) then
             Put_Line("MaSpX: fileio_ns.adb: Read_File_To_Buffer: buffer full!");
-            Fileio_Error := Buffer_Full_Error;
+            Response.Status_Code := c500_INTERNAL_SERVER_ERROR;
             return;
          end if;
          
          Character'Read(Read_Stream, Item);
-         Append(Buf, Item);
+         Append(Response.Entity, Item);
          
          --ltj: Check if falls in normal US-ASCII range. Mark stream as binary if it doesn't
          if not Is_Standard_Printable(Item) and not Binary_File then
@@ -45,42 +41,73 @@ package body fileio_ns is
       
       Close(Read_File);
       
+      --ltj: set Content-Length header
+      Set_Str(Response.Header_Values(CONTENT_LENGTH_HEADER), Max_Buffer_Size_Type'Image(Response.Entity.Length));
+      
+      --ltj: set Content-Type header
       if Binary_File then
-         if Is_Prefixed(Buf, JPG_MAGIC) then
-            ContentType := JPG_TYPE;
-         elsif Is_Prefixed(Buf, GIF89_MAGIC) or Is_Prefixed(Buf, GIF87_MAGIC) then
-            ContentType := GIF_TYPE;
-         elsif Is_Prefixed(Buf, PNG_MAGIC) then
-            ContentType := PNG_TYPE;
-         elsif Is_Prefixed(Buf, BMP_MAGIC) then
-            ContentType := BMP_TYPE;
+         if Is_Prefixed(Response.Entity, JPG_MAGIC) then
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_IMAGE_JPEG_STR);
+         elsif Is_Prefixed(Response.Entity, GIF89_MAGIC) or Is_Prefixed(Response.Entity, GIF87_MAGIC) then
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_IMAGE_GIF_STR);
+         elsif Is_Prefixed(Response.Entity, PNG_MAGIC) then
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_IMAGE_PNG_STR);
+         elsif Is_Prefixed(Response.Entity, BMP_MAGIC) then
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_IMAGE_BMP_STR);
          else
-            ContentType := UNKNOWN_TYPE;
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_APPLICATION_OCTET_STREAM_STR);
          end if;
       else --text data
-         --TODO:ltj: check extension here to determine type.
+         --ltj: check extension here to determine textual type.
          if Extension = ".html" or Extension = ".htm" then
-            ContentType := HTML_TYPE;
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_TEXT_HTML_STR);
          elsif Extension = ".css" then
-            ContentType := CSS_TYPE;
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_TEXT_CSS_STR);
          elsif Extension = ".js" then
-            ContentType := JS_TYPE;
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_APPLICATION_JS_STR);
          else
-            ContentType := PLAIN_TYPE;
+            Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_TEXT_PLAIN_STR);
          end if;
       end if;
       
       exception
       when E : Ada.IO_Exceptions.Name_Error =>
          Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-         Fileio_Error := Not_Found_Error;
+         Response.Status_Code := c404_NOT_FOUND;
       when E : Ada.IO_Exceptions.Use_Error =>
          Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-         Fileio_Error := Conflict_Error;
+         Response.Status_Code := c400_BAD_REQUEST;
       when E : others =>
          Ada.Text_IO.Put_Line("MaSpX: fileio_ns.adb: Read_File_To_Buffer: WARNING, UNEXPECTED TYPE OF EXCEPTION");
          Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
-         Fileio_Error := Unexpected_Error;
-   end Read_File_To_Buffer;
+         Response.Status_Code := c500_INTERNAL_SERVER_ERROR;
+   end Read_File_To_Response;
+   
+--------------------------------------------------------------------------------
+   procedure Measure_File_To_Response(
+      Abs_Filename : String;
+      Extension : String;
+      Response : in out Simple_HTTP_Response)
+   is
+      Filesize : Ada.Directories.File_Size;
+   begin
+      Response.Status_Code := c200_OK;
+   
+      Filesize := Size(Abs_Filename);
+      
+      Set_Str(Response.Header_Values(CONTENT_LENGTH_HEADER), Ada.Directories.File_Size'Image(Filesize));
+      
+      exception
+      when E : Ada.IO_Exceptions.Name_Error =>
+         Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Response.Status_Code := c404_NOT_FOUND;
+      when E : Ada.IO_Exceptions.Use_Error =>
+         Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Response.Status_Code := c400_BAD_REQUEST;
+      when E : others =>
+         Ada.Text_IO.Put_Line("MaSpX: fileio_ns.adb: Read_File_To_Buffer: WARNING, UNEXPECTED TYPE OF EXCEPTION");
+         Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
+         Response.Status_Code := c500_INTERNAL_SERVER_ERROR;
+   end Measure_File_To_Response;
    
 end fileio_ns;
