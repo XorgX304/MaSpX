@@ -8,7 +8,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U string_types%s	string_types.ads	2e745e46 OO PK KU
+U string_types%s	string_types.ads	b726a3ed OO PK KU
 W config%s		config.ads		config.ali
 W measured_buffer%s	measured_buffer.adb	measured_buffer.ali
 
@@ -18,10 +18,10 @@ D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180413120058 2425ae84 config%s
+D config.ads		20180417134152 a68f5a60 config%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180413120234 5ca67c2d measured_buffer%s
+D measured_buffer.ads	20180417111202 475e7562 measured_buffer%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180403010726 e7af9ede spark.text_io%s
 D string_types.ads	20180326171200 56f78cef string_types%s
@@ -32,11 +32,11 @@ D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
 D utils.ads		20180412224906 5895f492 utils%s
 X 7 config.ads
-5K9*config 41e11 13|1w6 1r18
+5K9*config 27e11 13|1w6 1r18
+21i4*MAX_URI_BYTE_CT{natural} 13|24r48
+22i4*MAX_PARSED_URI_BYTE_CT{natural} 13|25r54
 X 10 measured_buffer.ads
-6K9*measured_buffer 129e20 13|2w6 2r27
-13i4*MAX_URI_BYTE_CT{natural} 13|24r48
-14i4*MAX_PARSED_URI_BYTE_CT{natural} 13|25r54
+6K9*measured_buffer 139e20 13|2w6 2r27
 X 13 string_types.ads
 4K9*String_Types 29l5 29e17
 5A12*String4{string}<integer> 27r36
@@ -209,29 +209,31 @@ FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 10 measured_buffer.ads
 FS .1 6K9 measured_buffer
-FS .2 29V13 measured_buffer__construct_measured_buffer
-FS .3 42V13 measured_buffer__get_char
-FS .4 47V13 measured_buffer__peek
-FS .5 54V13 measured_buffer__calc_length
-FS .6 63V13 measured_buffer__get_length
-FS .7 67U14 measured_buffer__set_length
-FS .8 72V13 measured_buffer__is_empty
-FS .9 77V13 measured_buffer__is_full
-FS .10 81U14 measured_buffer__append
-FS .11 87U14 measured_buffer__append_str
-FS .12 94U14 measured_buffer__replace_char
-FS .13 99U14 measured_buffer__clear
-FS .14 104U14 measured_buffer__copy
-FS .15 112V13 measured_buffer__is_prefixed
-FS .16 117V13 measured_buffer__get_string
-FS .17 124V13 measured_buffer__get_extension
-FS .18 42V13 measured_buffer__get_char -> 10.3
-FS .19 47V13 measured_buffer__peek -> 10.4
-FS .20 63V13 measured_buffer__get_length -> 10.6
-FS .21 72V13 measured_buffer__is_empty -> 10.8
-FS .22 77V13 measured_buffer__is_full -> 10.9
-FS .23 112V13 measured_buffer__is_prefixed -> 10.15
-FS .24 117V13 measured_buffer__get_string -> 10.16
+FS .2 21V13 measured_buffer__construct_measured_buffer
+FS .3 34V13 measured_buffer__get_char
+FS .4 39V13 measured_buffer__peek
+FS .5 46V13 measured_buffer__calc_length
+FS .6 55V13 measured_buffer__get_length
+FS .7 59U14 measured_buffer__set_length
+FS .8 64V13 measured_buffer__is_empty
+FS .9 70V13 measured_buffer__is_full
+FS .10 75U14 measured_buffer__append
+FS .11 81U14 measured_buffer__append_str
+FS .12 88U14 measured_buffer__set_str
+FS .13 95U14 measured_buffer__replace_char
+FS .14 100U14 measured_buffer__clear
+FS .15 105U14 measured_buffer__copy
+FS .16 113V13 measured_buffer__is_prefixed
+FS .17 119V13 measured_buffer__get_string
+FS .18 126V13 measured_buffer__get_string_trunc
+FS .19 134V13 measured_buffer__get_extension
+FS .20 34V13 measured_buffer__get_char -> 10.3
+FS .21 39V13 measured_buffer__peek -> 10.4
+FS .22 55V13 measured_buffer__get_length -> 10.6
+FS .23 64V13 measured_buffer__is_empty -> 10.8
+FS .24 70V13 measured_buffer__is_full -> 10.9
+FS .25 113V13 measured_buffer__is_prefixed -> 10.16
+FS .26 119V13 measured_buffer__get_string -> 10.17
 FD 11 spark.ads
 FS .1 29K9 spark
 FD 12 spark-text_io.ads
@@ -386,9 +388,9 @@ FS .5 13U14 utils__check_print
 FS .6 15V13 utils__logical_equivalence
 FS .7 18V13 utils__is_standard_printable
 FS .8 18V13 utils__is_standard_printable -> 19.7
-FX 10 measured_buffer.ads .1 measured_buffer
-F 13*4 measured_buffer__max_uri_byte_ct 13|.1:24c48
-F 14*4 measured_buffer__max_parsed_uri_byte_ct 13|.1:25r54
+FX 7 config.ads .1 config
+F 21*4 config__max_uri_byte_ct 13|.1:24c48
+F 22*4 config__max_parsed_uri_byte_ct 13|.1:25r54
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0

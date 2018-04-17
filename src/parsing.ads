@@ -15,13 +15,13 @@ with error; use error;
 
 package parsing is
 
-   type Tokens_Request_Array_Type is array (Buffer_Index_Type range <>) of Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
-   type Tokens_Filename_Array_Type is array (Buffer_Index_Type range <>) of Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+   type Tokens_Request_Array_Type is array (Buffer_Index_Type range <>) of Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
+   type Tokens_Filename_Array_Type is array (Buffer_Index_Type range <>) of Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
    
-   BLANK_FILENAME_TOKEN : constant Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL) :=
+   BLANK_FILENAME_TOKEN : constant Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR) :=
       (Size => MAX_FS_PATH_BYTE_CT,
-       EmptyChar => NUL,
-       Buffer => (others=>NUL),
+       EmptyChar => MEASURED_BUFFER_EMPTY_CHAR,
+       Buffer => (others=>MEASURED_BUFFER_EMPTY_CHAR),
        Length => 0);
 
    --Start and Finish are inclusive
@@ -50,7 +50,7 @@ package parsing is
                Raw_Request.Length <= Raw_Request.Size and then
                not Is_Empty(Raw_Request) and then
                Raw_Request.Size = MAX_REQUEST_LINE_BYTE_CT and then
-               Raw_Request.EmptyChar = NUL,
+               Raw_Request.EmptyChar = MEASURED_BUFFER_EMPTY_CHAR,
         Post => Get_All_Request_Tokens'Result'Length = Get_Token_Ct(Raw_Request, Delimit) and
                 (for all I in Get_All_Request_Tokens'Result'Range => 
                     Get_All_Request_Tokens'Result(I).Length <= Get_All_Request_Tokens'Result(I).Size);
@@ -64,9 +64,9 @@ package parsing is
                Filename_Start.Length <= Filename_Start.Size and then
                not Is_Empty(Filename_Start) and then
                Filename_Start.Size = MAX_FS_PATH_BYTE_CT and then
-               Filename_Start.EmptyChar = NUL and then
+               Filename_Start.EmptyChar = MEASURED_BUFFER_EMPTY_CHAR and then
                Filename_End.Size = MAX_FS_PATH_BYTE_CT and then
-               Filename_End.EmptyChar = NUL,
+               Filename_End.EmptyChar = MEASURED_BUFFER_EMPTY_CHAR,
         Post => Filename_End.Length <= Filename_End.Size;
                
    procedure Delete_First_Dir_To_Left(
@@ -90,7 +90,7 @@ package parsing is
                Filename.Length <= Filename.Size and then
                not Is_Empty(Filename) and then
                Filename.Size = MAX_FS_PATH_BYTE_CT and then
-               Filename.EmptyChar = NUL,
+               Filename.EmptyChar = MEASURED_BUFFER_EMPTY_CHAR,
         Post => Get_All_Filename_Tokens'Result'Length = Get_Token_Ct(Filename, Delimit) and
                 (for all I in Get_All_Filename_Tokens'Result'Range =>
                     Get_All_Filename_Tokens'Result(I).Length <= Get_All_Filename_Tokens'Result(I).Size);
@@ -102,7 +102,7 @@ package parsing is
    with Global => null,
         Pre => (for all I in Tokens'Range => Tokens(I).Length <= Tokens(I).Size),
         Post => Detokenize_Filename_Tokens'Result.Size = MAX_FS_PATH_BYTE_CT and
-                Detokenize_Filename_Tokens'Result.EmptyChar = NUL and
+                Detokenize_Filename_Tokens'Result.EmptyChar = MEASURED_BUFFER_EMPTY_CHAR and
                 Detokenize_Filename_Tokens'Result.Length <= Detokenize_Filename_Tokens'Result.Size;
                 
    function Is_Last_Filename_Token(
@@ -141,7 +141,7 @@ package parsing is
    with Global => null,
         Pre => not Is_Empty(Raw_Request) and
                Raw_Request.Size = MAX_REQUEST_LINE_BYTE_CT and
-               Raw_Request.EmptyChar = NUL and
+               Raw_Request.EmptyChar = MEASURED_BUFFER_EMPTY_CHAR and
                Raw_Request.Length <= Raw_Request.Size,
         Post => Parsed_Request.URI.Length <= Parsed_Request.URI.Size;
 

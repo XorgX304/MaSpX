@@ -32,7 +32,7 @@ package body parsing is
       Delimit : Character) return Tokens_Request_Array_Type
    is
       Tokens : Tokens_Request_Array_Type(1 .. Get_Token_Ct(Raw_Request, Delimit));
-      Token_Buf : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
+      Token_Buf : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
       Start : Max_Buffer_Size_Type := Raw_Request.Buffer'First;
       C : Character;
    begin   
@@ -105,7 +105,7 @@ package body parsing is
       I : Max_Buffer_Size_Type;
       Tokens : in out Tokens_Filename_Array_Type)
    is
-      Token : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+      Token : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
    begin
       for J in reverse Tokens'First .. I loop
          --pragma Loop_Invariant( (for all Y in reverse J .. I => Tokens(Y).Length <= Tokens(Y).Size));
@@ -125,7 +125,7 @@ package body parsing is
       Delimit : Character) return Tokens_Filename_Array_Type
    is
       Tokens : Tokens_Filename_Array_Type(1 .. Get_Token_Ct(Filename, Delimit));
-      Token_Buf : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+      Token_Buf : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
       Start : Max_Buffer_Size_Type := Filename.Buffer'First;
       C : Character;
    begin   
@@ -172,7 +172,7 @@ package body parsing is
       Tokens : Tokens_Filename_Array_Type;
       Delimit : Character) return Measured_Buffer_Type
    is
-      Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+      Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
    begin
       Clear(Filename);
       
@@ -285,12 +285,15 @@ package body parsing is
    is
       Delimit : Character := ' ';
       Tokens : Tokens_Request_Array_Type(1 .. Get_Token_Ct(Raw_Request, ' '));
-      Method_Token : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
-      URI_Token : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
+      Method_Token : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
+      URI_Token : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
       Response : Simple_HTTP_Response;
    begin
       Parsed_Request.Method := Http_Message.UNKNOWN;
       Clear(Parsed_Request.URI);
+      Parsed_Request.Version := HTTP_UNKNOWN;
+      Init(Parsed_Request.Header_Values);
+      Clear(Parsed_Request.Entity);
       
       Exception_Raised := False;
       

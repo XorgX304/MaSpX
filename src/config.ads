@@ -15,11 +15,13 @@ package config is
    
    --buffer limits
    MAX_FILE_READ_BYTE_CT : constant Natural := 5_000_000;--ltj: arbitrary
-   MAX_RESPONSE_LENGTH : constant Natural := 4000 + MAX_FILE_READ_BYTE_CT;
+   MAX_RESPONSE_LENGTH : constant Natural := 3585 + MAX_FILE_READ_BYTE_CT; --ltj:3585 is MAX_STATUS_AND_HEADERS_LENGTH, can't include the file unfortunately
    MAX_HEADER_VALUE_BYTE_CT : constant Natural := 128; --ltj: arbitrary
    MAX_REQUEST_LINE_BYTE_CT : constant Natural := 270;  --ltj: RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
    MAX_URI_BYTE_CT : constant Natural := 255;
    MAX_PARSED_URI_BYTE_CT : constant Natural := MAX_URI_BYTE_CT + DEFAULT_PAGE'Length - 1;
    MAX_FS_PATH_BYTE_CT : constant Positive := WEB_ROOT'Length + MAX_PARSED_URI_BYTE_CT;
+   --buffer empty char
+   MEASURED_BUFFER_EMPTY_CHAR : constant Character := NUL;
 
 end config;

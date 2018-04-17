@@ -23,6 +23,16 @@ package body http_message is
    end Construct_Simple_HTTP_Response;
 
 --------------------------------------------------------------------------------
+   procedure Init(Header_Values : out Header_Values_Array_Type)
+   is
+   begin
+      for Header in Header_Type'First .. Header_Type'Last loop
+         Header_Values(Header).Buffer := (others => MEASURED_BUFFER_EMPTY_CHAR);
+         Header_values(Header).Length := EMPTY_BUFFER_LENGTH;
+      end loop;
+   end Init;
+
+--------------------------------------------------------------------------------
    procedure Craft_Status_Line(Buf : out Measured_Buffer_Type; Response : Simple_HTTP_Response)
    is
    begin
@@ -83,7 +93,12 @@ package body http_message is
    is
    begin
       for Header in Response.Header_Values'First .. Response.Header_Values'Last loop
+         pragma Loop_Invariant( Buf.Length <= HTTP_VERSION_10_STR'Length + STATUS_LINE_500_STR'Length + CRLF'Length +
+                                              Header_Type'Pos(Header) * (IF_MODIFIED_SINCE_HEADER_STR'Length + COLON_SPACE'Length + MAX_HEADER_VALUE_BYTE_CT + CRLF'Length) );
+         
          if not Is_Empty(Response.Header_Values(Header)) then
+            pragma Assert( Response.Header_Values(Header).Length > EMPTY_BUFFER_LENGTH );
+         
             case Header is
             when ALLOW_HEADER => 
                Append_Str(Buf, ALLOW_HEADER_STR);
@@ -141,7 +156,7 @@ package body http_message is
             
             Append_Str(Buf, ": ");
             --ltj: print the value. should be same for all headers
-            Append_Str(Buf, Get_String(Response.Header_Values(Header)));
+            Append_Str(Buf, Get_String_Trunc(Response.Header_Values(Header)));
             Append_Str(Buf, CRLF);
          end if;
       end loop;

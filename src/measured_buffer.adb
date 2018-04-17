@@ -66,7 +66,7 @@ package body measured_buffer is
    end Append_Str;
    
 --------------------------------------------------------------------------------
-   procedure Set_Str(Buf : in out Measured_Buffer_Type; S : String)
+   procedure Set_Str(Buf : out Measured_Buffer_Type; S : String)
    is
    begin
       Clear(Buf);
@@ -99,7 +99,18 @@ package body measured_buffer is
       Dst_Buf.Buffer(Positive'First .. Src_Buf.Length) := Src_Buf.Buffer(Positive'First .. Src_Buf.Length);
       Dst_Buf.Length := Src_Buf.Length;
    end Copy;
-   
+
+--------------------------------------------------------------------------------
+   function Get_String_Trunc(Buf : Measured_Buffer_Type) return String
+   is
+   begin
+      if Buf.Length <= Buf.Size then
+         return Buf.Buffer(Buf.Buffer'First .. Buf.Length);
+      else
+         return Buf.Buffer(Buf.Buffer'First .. Buf.Size);
+      end if;
+   end Get_String_Trunc;
+
 --------------------------------------------------------------------------------
    function Get_Extension(Buf : Measured_Buffer_Type) return String
    is

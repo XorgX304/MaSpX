@@ -6,8 +6,8 @@ package body server is
       Parsed_Request : Parsed_Simple_Request;
       Canonicalized_Request : out Translated_Simple_Request)
    is
-      Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
-      Resolved_Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, NUL);
+      Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
+      Resolved_Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
    begin
       --construct name from web root and request uri
       Filename := Construct_Measured_Buffer(Filename.Size, Filename.EmptyChar, WEB_ROOT);
@@ -30,6 +30,9 @@ package body server is
       end if;
       
       Canonicalized_Request.Method := Parsed_Request.Method;
+      Canonicalized_Request.Version := Parsed_Request.Version;
+      Canonicalized_Request.Header_Values := Parsed_Request.Header_Values;
+      Canonicalized_Request.Entity := Parsed_Request.Entity;
       Canonicalized_Request.Sanitary := False;
    end Canonicalize_HTTP_Request;
    
@@ -42,9 +45,12 @@ package body server is
       Response : Simple_HTTP_Response;
    begin
       --ltj: check that web root prefix is present in canonicalized request uri, otherwise reject as forbidden
-      if Is_Prefixed(Canonicalized_Request.Path, WEB_ROOT) then
+      if Canonicalized_Request.Canonicalized and then Is_Prefixed(Canonicalized_Request.Path, WEB_ROOT) then
          Clean_Request.Method := Canonicalized_Request.Method;
          Clean_Request.Path := Canonicalized_Request.Path;
+         Clean_Request.Version := Canonicalized_Request.Version;
+         Clean_Request.Header_Values := Canonicalized_Request.Header_Values;
+         Clean_Request.Entity := Canonicalized_Request.Entity;
          Clean_Request.Canonicalized := Canonicalized_Request.Canonicalized;
          Clean_Request.Sanitary := True;
       else
@@ -53,8 +59,10 @@ package body server is
          Send_HTTP_Response(Client_Socket, Response);
          
          Clean_Request.Method := Http_Message.UNKNOWN;
-         Clean_Request.Path.Buffer := (others=>NUL);
-         Clean_Request.Path.Length := 0;
+         Clear(Clean_Request.Path);
+         Clean_Request.Version := HTTP_UNKNOWN;
+         Init(Clean_Request.Header_Values);
+         Clear(Clean_Request.Entity);
          Clean_Request.Canonicalized := False;
          Clean_Request.Sanitary := False;
       end if;

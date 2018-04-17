@@ -12,13 +12,14 @@ with Network_Types;
 with utils; use utils;
 with measured_buffer; use measured_buffer;
 with config; use config;
+with response_strs; use response_strs;
 
 procedure Masp is
    Server_Socket : Gnat.Sockets.Socket_Type;
    Init_Exception_Raised : Boolean;
    Client_Socket : Gnat.Sockets.Socket_Type;
    Client_Cxn_Exception_Raised : Boolean;
-   Raw_Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, NUL);
+   Raw_Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
    Client_Request_Exception_Raised : Boolean;
    Parsed_Request : Parsed_Simple_Request;
    Client_Parse_Exception_Raised : Boolean;
@@ -26,6 +27,7 @@ procedure Masp is
    Clean_Request : Translated_Simple_Request;
 begin
    Debug_Print_Ln("Debugging: About to Init");
+   --Debug_Print_Ln("MAX_STATUS_AND_HEADERS_LENGTH: " & Natural'Image(MAX_STATUS_AND_HEADERS_LENGTH));
    Initialize_TCP_State(Server_Socket, Init_Exception_Raised);
 
    if Init_Exception_Raised then
@@ -51,16 +53,6 @@ begin
             Parse_HTTP_Request(Client_Socket, Raw_Request, Parsed_Request, Client_Parse_Exception_Raised);
 
             if not Client_Parse_Exception_Raised then
-               --debug: print Parsed_Request
-               case Parsed_Request.Method is
-               when Http_Message.GET =>
-                  Debug_Print_Ln("Debugging: Parsed METHOD: GET");
-               when Http_Message.UNKNOWN =>
-                  Debug_Print_Ln("Debugging: Parsed METHOD: UNKNOWN");
-               when others =>
-                  Debug_Print_Ln("Debugging: Parsed METHOD:");
-               end case;
-               Debug_Print_Ln("Debugging: Parsed URI:" & Get_String(Parsed_Request.URI));
 
                if Parsed_Request.URI.Length >= 1 then
                   Canonicalize_HTTP_Request(Parsed_Request, Canonicalized_Request); --interpret all ..'s and .'s.

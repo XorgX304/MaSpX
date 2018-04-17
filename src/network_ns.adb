@@ -146,7 +146,7 @@ package body network_ns is
       Response : Simple_HTTP_Response)
    is  --TODO:ltj: make constant for 2. Like CR_Length + LF_Length or Line_Ending_Length to put it in one.
       --Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + Max_Buffer_Size_Type'Image(Response.Entity.Length)'Length + 2 + STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09'Length + 2 + STATIC_RESPONSE_CONTENT_TYPE_09'Length + 10 + 2 + 2 + Response.Entity.Length));
-      Send_Buf : Measured_Buffer_Type(MAX_RESPONSE_LENGTH, NUL); --TODO:ltj: fix MAX_RESPONSE_LENGTH
+      Send_Buf : Measured_Buffer_Type(MAX_RESPONSE_LENGTH, MEASURED_BUFFER_EMPTY_CHAR); --TODO:ltj: fix MAX_RESPONSE_LENGTH
       Client_Stream : Gnat.Sockets.Stream_Access;
    begin
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);

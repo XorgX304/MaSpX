@@ -66,9 +66,11 @@ package measured_buffer is
    with Global => null;
    
    
+   
    function Is_Full(Buf : Measured_Buffer_Type) return Boolean
    is ( Buf.Length >= Buf.Size )
-   with Global => null;           
+   with Global => null;        
+   
    
    procedure Append(Buf : in out Measured_Buffer_Type; C : Character)
    with Global => null,
@@ -83,7 +85,7 @@ package measured_buffer is
         Post => Buf.Length'Old + S'Length = Buf.Length and
                 Buf.Length <= Buf.Size;
                 
-   procedure Set_Str(Buf : in out Measured_Buffer_Type; S : String)
+   procedure Set_Str(Buf : out Measured_Buffer_Type; S : String)
    with Global => null,
         Pre => S'Length >= 1 and then
                S'Length <= Buf.Size,
@@ -112,6 +114,7 @@ package measured_buffer is
    is ( Buf.Buffer(Positive'First .. Prefix'Length) = Prefix )
    with Global => null,
         Pre => Prefix'Length <= Buf.Size;
+        
      
    function Get_String(Buf : Measured_Buffer_Type) return String
    is ( Buf.Buffer(Positive'First .. Buf.Length) )
@@ -119,6 +122,14 @@ package measured_buffer is
         Pre => Buf.Length <= Buf.Size,
         Post => Get_String'Result'Length <= Buf.Size and
                 Get_String'Result'Length = Buf.Length;
+                
+   function Get_String_Trunc(Buf : Measured_Buffer_Type) return String
+   with Global => null,
+        Post => Get_String_Trunc'Result'Length <= Buf.Size and
+                ( if Buf.Length <= Buf.Size then
+                     Get_String_Trunc'Result'Length = Buf.Length
+                  else
+                     Get_String_Trunc'Result'Length = Buf.Size );
                 
    function Get_Extension(Buf : Measured_Buffer_Type) return String
    with Global => null,

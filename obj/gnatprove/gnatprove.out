@@ -6,73 +6,79 @@ SPARK Analysis results        Total         Flow   Interval   CodePeer      Prov
 ----------------------------------------------------------------------------------------------------------
 Data Dependencies                 .            .          .          .            .           .          .
 Flow Dependencies                 .            .          .          .            .           .          .
-Initialization                  213          213          .          .            .           .          .
+Initialization                  302          301          .          .            .           .          1
 Non-Aliasing                      .            .          .          .            .           .          .
-Run-time Checks                 288            .          .          .     288 (Z3)           .          .
-Assertions                       36            .          .          .      36 (Z3)           .          .
-Functional Contracts             91            .          .          .      90 (Z3)           .          1
+Run-time Checks                 261            .          .          .     261 (Z3)           .          .
+Assertions                       38            .          .          .      38 (Z3)           .          .
+Functional Contracts            144            .          .          .     143 (Z3)           .          1
 LSP Verification                  .            .          .          .            .           .          .
 ----------------------------------------------------------------------------------------------------------
-Total                           628    213 (34%)          .          .    414 (66%)           .     1 (0%)
+Total                           745    301 (40%)          .          .    442 (59%)           .     2 (0%)
 
 
 Analyzed 12 units
 in unit config, 1 subprograms and packages out of 1 analyzed
-  config at config.ads:5 flow analyzed (0 errors and 0 warnings) and proved (17 checks)
+  config at config.ads:5 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
 in unit error, 1 subprograms and packages out of 1 analyzed
   error at error.ads:3 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-in unit fileio_ns, 0 subprograms and packages out of 2 analyzed
-  fileio_ns at fileio_ns.ads:14 skipped
-  fileio_ns.Read_File_To_Buffer at fileio_ns.ads:22 skipped
-in unit http_message, 3 subprograms and packages out of 3 analyzed
-  Http_Message at http_message.ads:9 flow analyzed (0 errors and 0 warnings) and proved (12 checks)
-  Http_Message.Construct_Simple_HTTP_Response at http_message.ads:95 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
-  Http_Message.Construct_Simple_HTTP_Response at http_message.ads:99 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
+in unit fileio_ns, 0 subprograms and packages out of 3 analyzed
+  fileio_ns at fileio_ns.ads:17 skipped
+  fileio_ns.Measure_File_To_Response at fileio_ns.ads:34 skipped
+  fileio_ns.Read_File_To_Response at fileio_ns.ads:25 skipped
+in unit http_message, 6 subprograms and packages out of 6 analyzed
+  Http_Message at http_message.ads:10 flow analyzed (0 errors and 0 warnings) and proved (10 checks)
+  Http_Message.Construct_Simple_HTTP_Response at http_message.ads:71 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+  Http_Message.Construct_Simple_HTTP_Response at http_message.ads:75 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
+  Http_Message.Craft_Headers at http_message.ads:88 flow analyzed (0 errors and 0 warnings) and proved (50 checks)
+  Http_Message.Craft_Status_Line at http_message.ads:83 flow analyzed (0 errors and 0 warnings) and proved (28 checks)
+  Http_Message.Init at http_message.ads:80 flow analyzed (0 errors and 1 warnings) and proved (1 checks)
 in unit masp, 1 subprograms and packages out of 1 analyzed
-  Masp at masp.adb:15 flow analyzed (0 errors and 0 warnings) and proved (18 checks)
-in unit measured_buffer, 17 subprograms and packages out of 17 analyzed
-  measured_buffer at measured_buffer.ads:6 flow analyzed (0 errors and 0 warnings) and proved (12 checks)
-  measured_buffer.Append at measured_buffer.ads:81 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
-  measured_buffer.Append_Str at measured_buffer.ads:87 flow analyzed (0 errors and 0 warnings) and proved (13 checks)
-  measured_buffer.Calc_Length at measured_buffer.ads:54 flow analyzed (0 errors and 0 warnings) and proved (11 checks)
-  measured_buffer.Clear at measured_buffer.ads:99 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
-  measured_buffer.Construct_Measured_Buffer at measured_buffer.ads:29 flow analyzed (0 errors and 0 warnings) and proved (11 checks)
-  measured_buffer.Copy at measured_buffer.ads:104 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
-  measured_buffer.Get_Char at measured_buffer.ads:42 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
-  measured_buffer.Get_Extension at measured_buffer.ads:124 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
-  measured_buffer.Get_Length at measured_buffer.ads:63 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  measured_buffer.Get_String at measured_buffer.ads:117 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
-  measured_buffer.Is_Empty at measured_buffer.ads:72 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  measured_buffer.Is_Full at measured_buffer.ads:77 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  measured_buffer.Is_Prefixed at measured_buffer.ads:112 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
-  measured_buffer.Peek at measured_buffer.ads:47 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
-  measured_buffer.Replace_Char at measured_buffer.ads:94 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
-  measured_buffer.Set_Length at measured_buffer.ads:67 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  Masp at masp.adb:17 flow analyzed (0 errors and 0 warnings) and proved (18 checks)
+in unit measured_buffer, 19 subprograms and packages out of 19 analyzed
+  measured_buffer at measured_buffer.ads:6 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Append at measured_buffer.ads:75 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+  measured_buffer.Append_Str at measured_buffer.ads:81 flow analyzed (0 errors and 0 warnings) and proved (11 checks)
+  measured_buffer.Calc_Length at measured_buffer.ads:46 flow analyzed (0 errors and 0 warnings) and proved (7 checks)
+  measured_buffer.Clear at measured_buffer.ads:100 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+  measured_buffer.Construct_Measured_Buffer at measured_buffer.ads:21 flow analyzed (0 errors and 0 warnings) and proved (9 checks)
+  measured_buffer.Copy at measured_buffer.ads:105 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  measured_buffer.Get_Char at measured_buffer.ads:34 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Get_Extension at measured_buffer.ads:134 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
+  measured_buffer.Get_Length at measured_buffer.ads:55 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Get_String at measured_buffer.ads:119 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+  measured_buffer.Get_String_Trunc at measured_buffer.ads:126 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  measured_buffer.Is_Empty at measured_buffer.ads:64 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Is_Full at measured_buffer.ads:70 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Is_Prefixed at measured_buffer.ads:113 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  measured_buffer.Peek at measured_buffer.ads:39 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Replace_Char at measured_buffer.ads:95 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  measured_buffer.Set_Length at measured_buffer.ads:59 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Set_Str at measured_buffer.ads:88 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
 in unit network_ns, 0 subprograms and packages out of 6 analyzed
-  network_ns at network_ns.ads:17 skipped
-  network_ns.Close_Client_Socket at network_ns.ads:51 skipped
-  network_ns.Get_Client_Cxn at network_ns.ads:31 skipped
-  network_ns.Initialize_TCP_State at network_ns.ads:26 skipped
-  network_ns.Recv_NET_Request at network_ns.ads:37 skipped
-  network_ns.Send_Simple_Response at network_ns.ads:46 skipped
+  network_ns at network_ns.ads:18 skipped
+  network_ns.Close_Client_Socket at network_ns.ads:54 skipped
+  network_ns.Get_Client_Cxn at network_ns.ads:34 skipped
+  network_ns.Initialize_TCP_State at network_ns.ads:29 skipped
+  network_ns.Recv_NET_Request at network_ns.ads:40 skipped
+  network_ns.Send_HTTP_Response at network_ns.ads:49 skipped
 in unit parsing, 12 subprograms and packages out of 12 analyzed
-  parsing at parsing.ads:16 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
-  parsing.Delete_First_Dir_To_Left at parsing.ads:72 flow analyzed (0 errors and 0 warnings) and proved (18 checks)
-  parsing.Detokenize_Filename_Tokens at parsing.ads:98 flow analyzed (0 errors and 0 warnings) and proved (20 checks)
-  parsing.Get_All_Filename_Tokens at parsing.ads:84 flow analyzed (0 errors and 0 warnings) and proved (34 checks)
-  parsing.Get_All_Request_Tokens at parsing.ads:43 flow analyzed (0 errors and 0 warnings) and proved (34 checks)
+  parsing at parsing.ads:16 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
+  parsing.Delete_First_Dir_To_Left at parsing.ads:72 flow analyzed (0 errors and 0 warnings) and proved (17 checks)
+  parsing.Detokenize_Filename_Tokens at parsing.ads:98 flow analyzed (0 errors and 0 warnings) and proved (18 checks)
+  parsing.Get_All_Filename_Tokens at parsing.ads:84 flow analyzed (0 errors and 0 warnings) and proved (30 checks)
+  parsing.Get_All_Request_Tokens at parsing.ads:43 flow analyzed (0 errors and 0 warnings) and proved (30 checks)
   parsing.Get_First_Token_In_Range at parsing.ads:28 flow analyzed (0 errors and 0 warnings) and proved (10 checks)
-  parsing.Get_Token_Ct at parsing.ads:128 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  parsing.Get_Token_Ct at parsing.ads:128 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
   parsing.Is_Delimits_Well_Formed at parsing.ads:116 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
   parsing.Is_Last_Filename_Token at parsing.ads:108 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
   parsing.Is_Leading_Delimit at parsing.ads:122 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
-  parsing.Parse_HTTP_Request at parsing.ads:135 flow analyzed (0 errors and 0 warnings) and proved (48 checks)
-  parsing.Resolve_Special_Directories at parsing.ads:58 flow analyzed (0 errors and 0 warnings) and proved (21 checks)
+  parsing.Parse_HTTP_Request at parsing.ads:135 flow analyzed (0 errors and 0 warnings) and proved (46 checks)
+  parsing.Resolve_Special_Directories at parsing.ads:58 flow analyzed (0 errors and 0 warnings) and proved (20 checks)
 in unit server, 4 subprograms and packages out of 4 analyzed
-  server at server.ads:17 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  server.Canonicalize_HTTP_Request at server.ads:19 flow analyzed (0 errors and 0 warnings) and proved (19 checks)
-  server.Fulfill_HTTP_Request at server.ads:38 flow analyzed (0 errors and 0 warnings) and proved (15 checks)
-  server.Sanitize_HTTP_Request at server.ads:28 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  server at server.ads:18 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  server.Canonicalize_HTTP_Request at server.ads:20 flow analyzed (0 errors and 0 warnings) and proved (18 checks)
+  server.Fulfill_HTTP_Request at server.ads:39 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  server.Sanitize_HTTP_Request at server.ads:29 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
 in unit spark, 1 subprograms and packages out of 2 analyzed
   SPARK at spark.ads:29 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
   SPARK.Text_IO_File_Type at spark.ads:53 skipped
