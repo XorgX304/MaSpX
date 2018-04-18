@@ -10,7 +10,7 @@ package body server is
       Resolved_Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
    begin
       --construct name from web root and request uri
-      Filename := Construct_Measured_Buffer(Filename.Size, Filename.EmptyChar, WEB_ROOT);
+      Filename := Construct_Measured_Buffer(Filename.Max_Size, Filename.EmptyChar, WEB_ROOT);
       Append_Str(Filename, Get_String(Parsed_Request.URI));
       Debug_Print_Ln("Filename: " & Get_String(Filename));
    

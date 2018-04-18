@@ -22,9 +22,9 @@ package server is
       Canonicalized_Request : out Translated_HTTP_Request_Type
    )
    with Global => (In_Out => Standard_Output),
-        Pre =>  Parsed_Request.URI.Length <= Parsed_Request.URI.Size and
+        Pre =>  Parsed_Request.URI.Length <= Parsed_Request.URI.Max_Size and
                 Parsed_Request.URI.Length >= 1,
-        Post => Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size;
+        Post => Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Max_Size;
 
    procedure Sanitize_HTTP_Request(
       Client_Socket : Socket_Type;
@@ -32,16 +32,16 @@ package server is
       Clean_Request : out Translated_HTTP_Request_Type
    )
    with Global => null,
-        Pre =>  Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size and
+        Pre =>  Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Max_Size and
                 Canonicalized_Request.Canonicalized = True,
-        Post => Clean_Request.Path.Length <= Clean_Request.Path.Size;
+        Post => Clean_Request.Path.Length <= Clean_Request.Path.Max_Size;
 
    procedure Fulfill_HTTP_Request(
       Client_Socket : Socket_Type;
       Clean_Request : Translated_HTTP_Request_Type
    )
    with Global => null,
-        Pre => Clean_Request.Path.Length <= Clean_Request.Path.Size and
+        Pre => Clean_Request.Path.Length <= Clean_Request.Path.Max_Size and
                Clean_Request.Sanitary;
 
 end server;

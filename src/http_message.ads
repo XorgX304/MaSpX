@@ -71,7 +71,7 @@ package Http_Message is
 
    function Construct_Simple_HTTP_Response(Buf : Measured_Buffer_Type) return HTTP_Response_Type
    with Global => null,
-        Pre => Buf.Size = MAX_FILE_READ_BYTE_CT and
+        Pre => Buf.Max_Size = MAX_FILE_READ_BYTE_CT and
                Buf.EmptyChar = MEASURED_BUFFER_EMPTY_CHAR;
 
    procedure Init(Header_Values : out Header_Values_Array_Type)
@@ -79,12 +79,12 @@ package Http_Message is
 
    procedure Craft_Status_Line(Buf : out Measured_Buffer_Type; Response : HTTP_Response_Type)
    with Global => null,
-        Pre => Buf.Size = MAX_RESPONSE_LENGTH,
+        Pre => Buf.Max_Size = MAX_RESPONSE_LENGTH,
         Post => Buf.Length <= HTTP_VERSION_10_STR'Length + STATUS_LINE_500_STR'Length + CRLF'Length;
 
    procedure Craft_Headers(Buf: in out Measured_Buffer_Type; Response : HTTP_Response_Type)
    with Global => null,
-        Pre => Buf.Size = MAX_RESPONSE_LENGTH and
+        Pre => Buf.Max_Size = MAX_RESPONSE_LENGTH and
                Buf.Length <= HTTP_VERSION_10_STR'Length + STATUS_LINE_500_STR'Length + CRLF'Length;
 
 end Http_Message;

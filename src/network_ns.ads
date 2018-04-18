@@ -44,7 +44,7 @@ is
    )
    with Global => (In_Out => Standard_Output),
         Post => (if not Exception_Raised then
-                    not Is_Empty(Request) and Request.Length <= Request.Size);
+                    not Is_Empty(Request) and Request.Length <= Request.Max_Size);
    
    procedure Send_HTTP_Response(
       Client_Socket : Gnat.Sockets.Socket_Type;

@@ -23,11 +23,11 @@ package body measured_buffer is
       Length : Buffer_Size_Type := 1;
    begin
       if Is_Full(Buf) then
-         return Buf.Size;
+         return Buf.Max_Size;
       elsif Is_Empty(Buf) then
          return 0;
       else
-         for I in Positive'First + 1 .. Buf.Size - 1 loop --ltj: we can do Buf.Size - 1 because we know that the Buf is not empty, or full and it is filled from the left.
+         for I in Positive'First + 1 .. Buf.Max_Size - 1 loop --ltj: we can do Buf.Size - 1 because we know that the Buf is not empty, or full and it is filled from the left.
             if Get_Char(Buf, I) = Buf.EmptyChar then       --     we start Length at 1 and start at Positive'First +1 because we essentially count one by saying it's not empty
                exit;
             end if;
@@ -104,10 +104,10 @@ package body measured_buffer is
    function Get_String_Trunc(Buf : Measured_Buffer_Type) return String
    is
    begin
-      if Buf.Length <= Buf.Size then
+      if Buf.Length <= Buf.Max_Size then
          return Buf.Buffer(Buf.Buffer'First .. Buf.Length);
       else
-         return Buf.Buffer(Buf.Buffer'First .. Buf.Size);
+         return Buf.Buffer(Buf.Buffer'First .. Buf.Max_Size);
       end if;
    end Get_String_Trunc;
 

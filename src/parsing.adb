@@ -60,16 +60,16 @@ package body parsing is
             pragma Loop_Invariant( Token_Buf.Length <= J and then
                                    Start >= Raw_Request.Buffer'First and then
                                    J >= Start and then
-                                   Token_Buf.Length <= Token_Buf.Size);
+                                   Token_Buf.Length <= Token_Buf.Max_Size);
          end loop;
          
          Tokens(I) := Token_Buf;
          
          pragma Loop_Invariant( Start >= Raw_Request.Buffer'First and
-                                (for all K in Tokens'First .. I => Tokens(K).Length <= Tokens(K).Size) );
+                                (for all K in Tokens'First .. I => Tokens(K).Length <= Tokens(K).Max_Size) );
       end loop;
       
-      pragma Assert( for all K in Tokens'Range => Tokens(K).Length <= Tokens(K).Size );
+      pragma Assert( for all K in Tokens'Range => Tokens(K).Length <= Tokens(K).Max_Size );
       return Tokens;
    end Get_All_Request_Tokens;
 
@@ -85,7 +85,7 @@ package body parsing is
       --ltj:(from left to right, ..: delete token left of .. and ..; .: delete .)
       for I in Tokens'First .. Tokens'Last loop
          --pragma Loop_Invariant( (for all X in Tokens'First .. I => Tokens(X).Length <= Tokens(X).Size) );
-         pragma Loop_Invariant( (for all X in Tokens'First .. Tokens'Last => Tokens(X).Length <= Tokens(X).Size) );
+         pragma Loop_Invariant( (for all X in Tokens'First .. Tokens'Last => Tokens(X).Length <= Tokens(X).Max_Size) );
          
          if Get_String(Tokens(I)) = "." then
             Tokens(I) := BLANK_FILENAME_TOKEN;
@@ -108,7 +108,7 @@ package body parsing is
    begin
       for J in reverse Tokens'First .. I loop
          --pragma Loop_Invariant( (for all Y in reverse J .. I => Tokens(Y).Length <= Tokens(Y).Size));
-         pragma Loop_Invariant( (for all Y in Tokens'First .. Tokens'Last => Tokens(Y).Length <= Tokens(Y).Size) );
+         pragma Loop_Invariant( (for all Y in Tokens'First .. Tokens'Last => Tokens(Y).Length <= Tokens(Y).Max_Size) );
          
          Token := Tokens(J);
          if Token /= BLANK_FILENAME_TOKEN and Get_String(Token) /= FS_ROOT then
@@ -153,16 +153,16 @@ package body parsing is
             pragma Loop_Invariant( Token_Buf.Length <= J and then
                                    Start >= Filename.Buffer'First and then
                                    J >= Start and then
-                                   Token_Buf.Length <= Token_Buf.Size);
+                                   Token_Buf.Length <= Token_Buf.Max_Size);
          end loop;
          
          Tokens(I) := Token_Buf;
          
          pragma Loop_Invariant( Start >= Filename.Buffer'First and
-                                (for all K in Tokens'First .. I => Tokens(K).Length <= Tokens(K).Size) );
+                                (for all K in Tokens'First .. I => Tokens(K).Length <= Tokens(K).Max_Size) );
       end loop;
       
-      pragma Assert( for all K in Tokens'Range => Tokens(K).Length <= Tokens(K).Size );
+      pragma Assert( for all K in Tokens'Range => Tokens(K).Length <= Tokens(K).Max_Size );
       return Tokens;
    end Get_All_Filename_Tokens;
 
@@ -176,12 +176,12 @@ package body parsing is
       Clear(Filename);
       
       for I in Tokens'Range loop
-         pragma Loop_Invariant( (for all X in Tokens'Range => Tokens(X).Length <= Tokens(X).Size) and
-                                Filename.Length <= Filename.Size );
+         pragma Loop_Invariant( (for all X in Tokens'Range => Tokens(X).Length <= Tokens(X).Max_Size) and
+                                Filename.Length <= Filename.Max_Size );
          
          if Tokens(I) /= BLANK_FILENAME_TOKEN then
             --     v---- if statement inserted to satisfy preconditions for SPARK prover
-            if Filename.Length <= Filename.Size - Get_String(Tokens(I))'Length 
+            if Filename.Length <= Filename.Max_Size - Get_String(Tokens(I))'Length 
             and Get_String(Tokens(I))'Length >= 1 then
                Append_Str(Filename, Get_String(Tokens(I)));
             end if;
@@ -243,7 +243,7 @@ package body parsing is
       Delimit : Character) return Boolean
    is
    begin
-      if Source_Buf.Length = 0 or Source_Buf.Size = 0 then
+      if Source_Buf.Length = 0 or Source_Buf.Max_Size = 0 then
          return False;
       end if;
       
@@ -306,22 +306,22 @@ package body parsing is
       end if;
       
       Tokens := Get_All_Request_Tokens(Raw_Request, Delimit);
-      pragma Assert( for all I in Tokens'Range => Tokens(I).Length <= Tokens(I).Size );
+      pragma Assert( for all I in Tokens'Range => Tokens(I).Length <= Tokens(I).Max_Size );
       
-      pragma Assert( Method_Token.Size = Tokens(1).Size and
+      pragma Assert( Method_Token.Max_Size = Tokens(1).Max_Size and
                      Method_Token.EmptyChar = Tokens(1).EmptyChar and
-                     URI_Token.Size = Tokens(2).Size and
+                     URI_Token.Max_Size = Tokens(2).Max_Size and
                      URI_Token.EmptyChar = Tokens(2).EmptyChar);
                      
       Method_Token := Tokens(1);
-      pragma Assert( Tokens(1).Length <= Tokens(1).Size and then
+      pragma Assert( Tokens(1).Length <= Tokens(1).Max_Size and then
                      Method_Token.Length = Tokens(1).Length and then
-                     Method_Token.Length <= Method_Token.Size );
+                     Method_Token.Length <= Method_Token.Max_Size );
                      
       URI_Token := Tokens(2);
-      pragma Assert( Tokens(2).Length <= Tokens(2).Size and then
+      pragma Assert( Tokens(2).Length <= Tokens(2).Max_Size and then
                      URI_Token.Length = Tokens(2).Length and then
-                     URI_Token.Length <= URI_Token.Size );
+                     URI_Token.Length <= URI_Token.Max_Size );
       
       if Get_String(Method_Token) = GET_TOKEN_STR then
          Parsed_Request.Method := Http_Message.GET;
@@ -333,7 +333,7 @@ package body parsing is
          Parsed_Request.Method := Http_Message.UNKNOWN;
       end if;
       
-      if URI_Token.Length > Parsed_Request.URI.Size - DEFAULT_PAGE'Length 
+      if URI_Token.Length > Parsed_Request.URI.Max_Size - DEFAULT_PAGE'Length 
       or Is_Empty(URI_Token) then
          Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_URI_PAGE);
          Response.Status_Code := c400_BAD_REQUEST;
