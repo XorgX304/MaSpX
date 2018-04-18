@@ -26,7 +26,7 @@ package fileio_ns is
       --MFT : Measured_Filename_Type;
       Abs_Filename : String;
       Extension : String;
-      Response : in out Simple_HTTP_Response
+      Response : in out HTTP_Response_Type
    )
    with Global => null,
         Pre => Abs_Filename'Length <= MAX_FS_PATH_BYTE_CT;
@@ -34,7 +34,7 @@ package fileio_ns is
    procedure Measure_File_To_Response(
       Abs_Filename : String;
       Extension : String;
-      Response : in out Simple_HTTP_Response
+      Response : in out HTTP_Response_Type
    )
    with Global => null;
 

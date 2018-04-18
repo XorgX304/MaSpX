@@ -3,7 +3,7 @@ pragma SPARK_Mode(On);
 package body measured_buffer is
 
    function Construct_Measured_Buffer(
-      SizeInst : Max_Buffer_Size_Type; 
+      SizeInst : Buffer_Size_Type; 
       EmptyCharInst : Character;
       Str : String) return Measured_Buffer_Type
    is
@@ -18,9 +18,9 @@ package body measured_buffer is
    end Construct_Measured_Buffer;
 
 --------------------------------------------------------------------------------
-   function Calc_Length(Buf : Measured_Buffer_Type) return Max_Buffer_Size_Type
+   function Calc_Length(Buf : Measured_Buffer_Type) return Buffer_Size_Type
    is
-      Length : Max_Buffer_Size_Type := 1;
+      Length : Buffer_Size_Type := 1;
    begin
       if Is_Full(Buf) then
          return Buf.Size;
@@ -42,7 +42,7 @@ package body measured_buffer is
    end Calc_Length;
 
 --------------------------------------------------------------------------------
-   procedure Set_Length(Buf : in out Measured_Buffer_Type; New_Length : Max_Buffer_Size_Type)
+   procedure Set_Length(Buf : in out Measured_Buffer_Type; New_Length : Buffer_Size_Type)
    is
    begin
       Buf.Length := New_Length;
@@ -51,7 +51,7 @@ package body measured_buffer is
 --------------------------------------------------------------------------------
    procedure Append(Buf : in out Measured_Buffer_Type; C : Character)
    is
-      Append_Idx : Max_Buffer_Size_Type := Buf.Length + 1;
+      Append_Idx : Buffer_Size_Type := Buf.Length + 1;
    begin
       Buf.Buffer(Append_Idx) := C;
       Buf.Length := Append_Idx;

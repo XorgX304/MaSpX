@@ -48,7 +48,7 @@ is
    
    procedure Send_HTTP_Response(
       Client_Socket : Gnat.Sockets.Socket_Type;
-      Response : Simple_HTTP_Response
+      Response : HTTP_Response_Type
    );
    
    procedure Close_Client_Socket(

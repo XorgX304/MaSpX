@@ -82,7 +82,7 @@ package body network_ns is
       C_ct : Positive := 1; --character count
       Prev_C : String (1 .. 1);
       C : String(1 .. 1);
-      Response : Simple_HTTP_Response;
+      Response : HTTP_Response_Type;
    begin
       Exception_Raised := False;
       Prev_C(1) := NUL;
@@ -90,7 +90,7 @@ package body network_ns is
       
       loop
          if not Is_Full(Request) then
-            String'Read(Client_Stream, C); --TODO-PERF:ltj: can C be a bigger buffer???
+            String'Read(Client_Stream, C); --TODO-PERF:ltj: can C be a bigger buffer??? Might need to use something that has a Last, and Stream_Element_Array
             
             if C(1) = Request.EmptyChar then
                Debug_Print_Ln("Invalid character entered! Sending 400 Bad Request");
@@ -141,17 +141,17 @@ package body network_ns is
    -----------------------------------------------------------------------------
    procedure Send_HTTP_Response(
       Client_Socket : Gnat.Sockets.Socket_Type;
-      Response : Simple_HTTP_Response)
-   is  --TODO:ltj: make constant for 2. Like CR_Length + LF_Length or Line_Ending_Length to put it in one.
+      Response : HTTP_Response_Type)
+   is
       --Send_String : String(1 .. (STATIC_RESPONSE_HEADER_09'Length + STATIC_RESPONSE_CONTENT_LENGTH_HEADER_09'Length + Max_Buffer_Size_Type'Image(Response.Entity.Length)'Length + 2 + STATIC_RESPONSE_ACCEPT_RANGES_HEADER_09'Length + 2 + STATIC_RESPONSE_CONTENT_TYPE_09'Length + 10 + 2 + 2 + Response.Entity.Length));
-      Send_Buf : Measured_Buffer_Type(MAX_RESPONSE_LENGTH, MEASURED_BUFFER_EMPTY_CHAR); --TODO:ltj: fix MAX_RESPONSE_LENGTH
+      Send_Buf : Measured_Buffer_Type(MAX_RESPONSE_LENGTH, MEASURED_BUFFER_EMPTY_CHAR);
       Client_Stream : Gnat.Sockets.Stream_Access;
    begin
       Client_Stream := Gnat.Sockets.Stream(Client_Socket);
       
       Craft_Status_Line(Send_Buf, Response);
       
-      Craft_Headers(Send_Buf, Response); --TODO:ltj: now we must set Content_Length header elsewhere
+      Craft_Headers(Send_Buf, Response);
       
       Append_Str(Send_Buf, CRLF);
       

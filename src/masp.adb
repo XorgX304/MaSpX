@@ -21,10 +21,10 @@ procedure Masp is
    Client_Cxn_Exception_Raised : Boolean;
    Raw_Request : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
    Client_Request_Exception_Raised : Boolean;
-   Parsed_Request : Parsed_Simple_Request;
+   Parsed_Request : Parsed_HTTP_Request_Type;
    Client_Parse_Exception_Raised : Boolean;
-   Canonicalized_Request : Translated_Simple_Request;
-   Clean_Request : Translated_Simple_Request;
+   Canonicalized_Request : Translated_HTTP_Request_Type;
+   Clean_Request : Translated_HTTP_Request_Type;
 begin
    Debug_Print_Ln("Debugging: About to Init");
    --Debug_Print_Ln("MAX_STATUS_AND_HEADERS_LENGTH: " & Natural'Image(MAX_STATUS_AND_HEADERS_LENGTH));
@@ -40,7 +40,7 @@ begin
 
       Debug_Print_Ln(LF & LF & LF & "Debugging: Waiting for client cxn...");
 
-      --TODO:ltj: make server able to accept more than one client, like in CRADLE?
+      --TODO:ltj: make server able to accept more than one client, like in CRADLE? Probably needed for Connection:Keep-Alive
       Get_Client_Cxn(Server_Socket, Client_Socket, Client_Cxn_Exception_Raised);
 
       if not Client_Cxn_Exception_Raised then

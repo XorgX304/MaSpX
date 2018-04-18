@@ -3,8 +3,8 @@ pragma SPARK_Mode(On);
 package body server is
 
    procedure Canonicalize_HTTP_Request(
-      Parsed_Request : Parsed_Simple_Request;
-      Canonicalized_Request : out Translated_Simple_Request)
+      Parsed_Request : Parsed_HTTP_Request_Type;
+      Canonicalized_Request : out Translated_HTTP_Request_Type)
    is
       Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
       Resolved_Filename : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
@@ -18,7 +18,6 @@ package body server is
       --ltj: ignoring special files like links for now (not even sure if SPARK.Text_IO.Open deals with those...check impl)
       --ltj: convert all slashes to backslashes
       Replace_Char(Filename, '/', '\');
-      --TODO:ltj: insert guards for precond of Resolve...
       --ltj: resolving ..'s and .'s 
       if Is_Delimits_Well_Formed(Filename, '\') and not Is_Empty(Filename) then
          Resolve_Special_Directories(Filename, Resolved_Filename);
@@ -39,13 +38,13 @@ package body server is
 --------------------------------------------------------------------------------
    procedure Sanitize_HTTP_Request(
       Client_Socket : Socket_Type;
-      Canonicalized_Request : Translated_Simple_Request;
-      Clean_Request : out Translated_Simple_Request)
+      Canonicalized_Request : Translated_HTTP_Request_Type;
+      Clean_Request : out Translated_HTTP_Request_Type)
    is
-      Response : Simple_HTTP_Response;
+      Response : HTTP_Response_Type;
    begin
       --ltj: check that web root prefix is present in canonicalized request uri, otherwise reject as forbidden
-      if Canonicalized_Request.Canonicalized and then Is_Prefixed(Canonicalized_Request.Path, WEB_ROOT) then
+      if Canonicalized_Request.Canonicalized and then Has_Prefix(Canonicalized_Request.Path, WEB_ROOT) then
          Clean_Request.Method := Canonicalized_Request.Method;
          Clean_Request.Path := Canonicalized_Request.Path;
          Clean_Request.Version := Canonicalized_Request.Version;
@@ -71,9 +70,9 @@ package body server is
 --------------------------------------------------------------------------------
    procedure Fulfill_HTTP_Request(
       Client_Socket : Socket_Type;
-      Clean_Request : Translated_Simple_Request)
+      Clean_Request : Translated_HTTP_Request_Type)
    is
-      Response : Simple_HTTP_Response;
+      Response : HTTP_Response_Type;
    begin
       Response.Version := HTTP_10;
       Set_Str(Response.Header_Values(SERVER_HEADER), "MaSp1.0 Development Version");

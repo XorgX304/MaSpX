@@ -28,8 +28,8 @@ package parsing is
    procedure Get_First_Token_In_Range(
       Source_Buf : Measured_Buffer_Type;
       Delimit : Character;
-      Start : Max_Buffer_Size_Type;
-      Finish : Max_Buffer_Size_Type;
+      Start : Buffer_Size_Type;
+      Finish : Buffer_Size_Type;
       Token_Buf : out Measured_Buffer_Type
    )
    with Global => null,
@@ -70,7 +70,7 @@ package parsing is
         Post => Filename_End.Length <= Filename_End.Size;
                
    procedure Delete_First_Dir_To_Left(
-      I : Max_Buffer_Size_Type;
+      I : Buffer_Size_Type;
       Tokens : in out Tokens_Filename_Array_Type
    )
    with Global => null,
@@ -128,14 +128,14 @@ package parsing is
    function Get_Token_Ct(
       Source_Buf : Measured_Buffer_Type;
       Delimit : Character
-   ) return Max_Buffer_Size_Type
+   ) return Buffer_Size_Type
    with Global => null;      
    
    --creates an http message out of a raw request
    procedure Parse_HTTP_Request(
       Client_Socket : GNAT.Sockets.Socket_Type; -- pre Open (but network code..)
       Raw_Request : Measured_Buffer_Type;
-      Parsed_Request : out Parsed_Simple_Request;
+      Parsed_Request : out Parsed_HTTP_Request_Type;
       Exception_Raised : out Boolean  --refactor Invalid Request
    )
    with Global => null,

@@ -5,10 +5,9 @@ package body parsing is
    procedure Get_First_Token_In_Range(
       Source_Buf : Measured_Buffer_Type;
       Delimit : Character;
-      Start : Max_Buffer_Size_Type;
-      Finish : Max_Buffer_Size_Type;
+      Start : Buffer_Size_Type;
+      Finish : Buffer_Size_Type;
       Token_Buf : out Measured_Buffer_Type)
-      --TODO:ltj: add Success : out Boolean?
    is
    begin
       Clear(Token_Buf);
@@ -33,7 +32,7 @@ package body parsing is
    is
       Tokens : Tokens_Request_Array_Type(1 .. Get_Token_Ct(Raw_Request, Delimit));
       Token_Buf : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
-      Start : Max_Buffer_Size_Type := Raw_Request.Buffer'First;
+      Start : Buffer_Size_Type := Raw_Request.Buffer'First;
       C : Character;
    begin   
       for I in Tokens'Range loop
@@ -102,7 +101,7 @@ package body parsing is
 
 --------------------------------------------------------------------------------
    procedure Delete_First_Dir_To_Left(
-      I : Max_Buffer_Size_Type;
+      I : Buffer_Size_Type;
       Tokens : in out Tokens_Filename_Array_Type)
    is
       Token : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
@@ -126,7 +125,7 @@ package body parsing is
    is
       Tokens : Tokens_Filename_Array_Type(1 .. Get_Token_Ct(Filename, Delimit));
       Token_Buf : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
-      Start : Max_Buffer_Size_Type := Filename.Buffer'First;
+      Start : Buffer_Size_Type := Filename.Buffer'First;
       C : Character;
    begin   
       for I in Tokens'Range loop
@@ -254,11 +253,11 @@ package body parsing is
 --------------------------------------------------------------------------------
    function Get_Token_Ct(
       Source_Buf : Measured_Buffer_Type;
-      Delimit : Character) return Max_Buffer_Size_Type
+      Delimit : Character) return Buffer_Size_Type
    is
       C : Character;
       Is_Delimit : Boolean := True;
-      Token_Ct : Max_Buffer_Size_Type := 0;
+      Token_Ct : Buffer_Size_Type := 0;
    begin
       for I in Source_Buf.Buffer'Range loop
          C := Source_Buf.Buffer(I);
@@ -280,14 +279,14 @@ package body parsing is
    procedure Parse_HTTP_Request(
       Client_Socket : GNAT.Sockets.Socket_Type; -- pre Open (but network code..)
       Raw_Request : Measured_Buffer_Type;
-      Parsed_Request : out Parsed_Simple_Request;
+      Parsed_Request : out Parsed_HTTP_Request_Type;
       Exception_Raised : out Boolean)
    is
       Delimit : Character := ' ';
       Tokens : Tokens_Request_Array_Type(1 .. Get_Token_Ct(Raw_Request, ' '));
       Method_Token : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
       URI_Token : Measured_Buffer_Type(MAX_REQUEST_LINE_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
-      Response : Simple_HTTP_Response;
+      Response : HTTP_Response_Type;
    begin
       Parsed_Request.Method := Http_Message.UNKNOWN;
       Clear(Parsed_Request.URI);

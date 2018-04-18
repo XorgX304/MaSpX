@@ -9,7 +9,7 @@ package body fileio_ns is
       --MFT : Measured_Filename_Type;
       Abs_Filename : String;
       Extension : String;
-      Response : in out Simple_HTTP_Response)
+      Response : in out HTTP_Response_Type)
    is
       Read_File : Ada.Streams.Stream_IO.File_Type;
       Read_Stream : Stream_Access;
@@ -42,17 +42,17 @@ package body fileio_ns is
       Close(Read_File);
       
       --ltj: set Content-Length header
-      Set_Str(Response.Header_Values(CONTENT_LENGTH_HEADER), Max_Buffer_Size_Type'Image(Response.Entity.Length));
+      Set_Str(Response.Header_Values(CONTENT_LENGTH_HEADER), Buffer_Size_Type'Image(Response.Entity.Length));
       
       --ltj: set Content-Type header
       if Binary_File then
-         if Is_Prefixed(Response.Entity, JPG_MAGIC) then
+         if Has_Prefix(Response.Entity, JPG_MAGIC) then
             Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_IMAGE_JPEG_STR);
-         elsif Is_Prefixed(Response.Entity, GIF89_MAGIC) or Is_Prefixed(Response.Entity, GIF87_MAGIC) then
+         elsif Has_Prefix(Response.Entity, GIF89_MAGIC) or Has_Prefix(Response.Entity, GIF87_MAGIC) then
             Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_IMAGE_GIF_STR);
-         elsif Is_Prefixed(Response.Entity, PNG_MAGIC) then
+         elsif Has_Prefix(Response.Entity, PNG_MAGIC) then
             Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_IMAGE_PNG_STR);
-         elsif Is_Prefixed(Response.Entity, BMP_MAGIC) then
+         elsif Has_Prefix(Response.Entity, BMP_MAGIC) then
             Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_IMAGE_BMP_STR);
          else
             Set_Str(Response.Header_Values(CONTENT_TYPE_HEADER), CONTENT_TYPE_APPLICATION_OCTET_STREAM_STR);
@@ -87,7 +87,7 @@ package body fileio_ns is
    procedure Measure_File_To_Response(
       Abs_Filename : String;
       Extension : String;
-      Response : in out Simple_HTTP_Response)
+      Response : in out HTTP_Response_Type)
    is
       Filesize : Ada.Directories.File_Size;
    begin

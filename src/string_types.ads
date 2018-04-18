@@ -23,7 +23,6 @@ PACKAGE String_Types IS
    subTYPE MethodStringType is String8;
    subTYPE RequestURIStringType IS String(1 .. MAX_URI_BYTE_CT); -- RFC 2616:3.2.1 - a warning note that servers should be careful with URI's longer than 255 bytes which some older browsers may not handle.
    subtype ParsedRequestURIStringType is String(1 .. MAX_PARSED_URI_BYTE_CT); --     ^-- this warning probably is not applicable in the year 2018, but for MaspClassic let's honor it.
-   --TODO:ltj: add assert about length of ParsedRequestURIStringType
    subTYPE StatusCodeStringType IS String4;
    subTYPE ReasonPhraseStringType IS String32;
 END String_Types;

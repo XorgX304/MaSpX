@@ -3,9 +3,9 @@ pragma SPARK_Mode(On);
 package body http_message is
 
 --------------------------------------------------------------------------------
-   function Construct_Simple_HTTP_Response(Page : String) return Simple_HTTP_Response
+   function Construct_Simple_HTTP_Response(Page : String) return HTTP_Response_Type
    is
-      Response : Simple_HTTP_Response;
+      Response : HTTP_Response_Type;
    begin
       Append_Str(Response.Entity, Page);
       
@@ -13,9 +13,9 @@ package body http_message is
    end Construct_Simple_HTTP_Response;
 
 --------------------------------------------------------------------------------
-   function Construct_Simple_HTTP_Response(Buf : Measured_Buffer_Type) return Simple_HTTP_Response
+   function Construct_Simple_HTTP_Response(Buf : Measured_Buffer_Type) return HTTP_Response_Type
    is
-      Response : Simple_HTTP_Response;
+      Response : HTTP_Response_Type;
    begin
       Response.Entity := Buf;
       
@@ -26,14 +26,19 @@ package body http_message is
    procedure Init(Header_Values : out Header_Values_Array_Type)
    is
    begin
-      for Header in Header_Type'First .. Header_Type'Last loop
-         Header_Values(Header).Buffer := (others => MEASURED_BUFFER_EMPTY_CHAR);
-         Header_values(Header).Length := EMPTY_BUFFER_LENGTH;
-      end loop;
+      Header_Values := (EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, 
+                        EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, 
+                        EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, 
+                        EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, 
+                        EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, 
+                        EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, 
+                        EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, 
+                        EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER, 
+                        EMPTY_HEADER_VALUE_BUFFER, EMPTY_HEADER_VALUE_BUFFER);
    end Init;
 
 --------------------------------------------------------------------------------
-   procedure Craft_Status_Line(Buf : out Measured_Buffer_Type; Response : Simple_HTTP_Response)
+   procedure Craft_Status_Line(Buf : out Measured_Buffer_Type; Response : HTTP_Response_Type)
    is
    begin
    
@@ -89,7 +94,7 @@ package body http_message is
    end Craft_Status_Line;
    
 --------------------------------------------------------------------------------
-   procedure Craft_Headers(Buf: in out Measured_Buffer_Type; Response : Simple_HTTP_Response)
+   procedure Craft_Headers(Buf: in out Measured_Buffer_Type; Response : HTTP_Response_Type)
    is
    begin
       for Header in Response.Header_Values'First .. Response.Header_Values'Last loop

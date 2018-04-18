@@ -18,8 +18,8 @@ with Http_Message; use Http_Message;
 package server is
 
    procedure Canonicalize_HTTP_Request(
-      Parsed_Request : Parsed_Simple_Request;
-      Canonicalized_Request : out Translated_Simple_Request
+      Parsed_Request : Parsed_HTTP_Request_Type;
+      Canonicalized_Request : out Translated_HTTP_Request_Type
    )
    with Global => (In_Out => Standard_Output),
         Pre =>  Parsed_Request.URI.Length <= Parsed_Request.URI.Size and
@@ -28,8 +28,8 @@ package server is
 
    procedure Sanitize_HTTP_Request(
       Client_Socket : Socket_Type;
-      Canonicalized_Request : Translated_Simple_Request;
-      Clean_Request : out Translated_Simple_Request
+      Canonicalized_Request : Translated_HTTP_Request_Type;
+      Clean_Request : out Translated_HTTP_Request_Type
    )
    with Global => null,
         Pre =>  Canonicalized_Request.Path.Length <= Canonicalized_Request.Path.Size and
@@ -38,7 +38,7 @@ package server is
 
    procedure Fulfill_HTTP_Request(
       Client_Socket : Socket_Type;
-      Clean_Request : Translated_Simple_Request
+      Clean_Request : Translated_HTTP_Request_Type
    )
    with Global => null,
         Pre => Clean_Request.Path.Length <= Clean_Request.Path.Size and

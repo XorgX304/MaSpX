@@ -31,8 +31,7 @@ package Http_Message is
 
    --ltj: Making this a variant record raises some flow issues that are impossible to get around.
    ---    Just creating different types instead.
-   --TODO:ltj: rename Parsed_HTTP_Request_Type
-   type Parsed_Simple_Request is
+   type Parsed_HTTP_Request_Type is
    record
       Method : Simple_Method_Type := UNKNOWN;
       URI : Measured_Buffer_Type(MAX_PARSED_URI_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
@@ -41,8 +40,7 @@ package Http_Message is
       Entity : Measured_Buffer_Type(MAX_FILE_READ_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
    end record;
 
-   --TODO:ltj: rename Translated_HTTP_Request_Type
-   type Translated_Simple_Request is
+   type Translated_HTTP_Request_Type is
    record
       Method : Simple_Method_Type := UNKNOWN;
       Path : Measured_Buffer_Type(MAX_FS_PATH_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR);
@@ -59,8 +57,7 @@ package Http_Message is
                              c500_INTERNAL_SERVER_ERROR, c501_NOT_IMPLEMENTED, c502_BAD_GATEWAY, c503_SERVICE_UNAVAILABLE
                              );
 
-   --TODO:ltj: rename HTTP_Repsonse_Type
-   type Simple_HTTP_Response is
+   type HTTP_Response_Type is
    record
       Version : HTTP_Version_Type := HTTP_10;
       Status_Code : Status_Code_Type := c200_OK;
@@ -68,11 +65,11 @@ package Http_Message is
       Entity : Measured_Buffer_Type(MAX_FILE_READ_BYTE_CT, MEASURED_BUFFER_EMPTY_CHAR); --ltj:in this case, NUL is a possible legitimate member of the buffer.
    end record;
 
-   function Construct_Simple_HTTP_Response(Page : String) return Simple_HTTP_Response
+   function Construct_Simple_HTTP_Response(Page : String) return HTTP_Response_Type
    with Pre => Page'Length <= MAX_FILE_READ_BYTE_CT and
                Page'Length >= 1;
 
-   function Construct_Simple_HTTP_Response(Buf : Measured_Buffer_Type) return Simple_HTTP_Response
+   function Construct_Simple_HTTP_Response(Buf : Measured_Buffer_Type) return HTTP_Response_Type
    with Global => null,
         Pre => Buf.Size = MAX_FILE_READ_BYTE_CT and
                Buf.EmptyChar = MEASURED_BUFFER_EMPTY_CHAR;
@@ -80,12 +77,12 @@ package Http_Message is
    procedure Init(Header_Values : out Header_Values_Array_Type)
    with Global => null;
 
-   procedure Craft_Status_Line(Buf : out Measured_Buffer_Type; Response : Simple_HTTP_Response)
+   procedure Craft_Status_Line(Buf : out Measured_Buffer_Type; Response : HTTP_Response_Type)
    with Global => null,
         Pre => Buf.Size = MAX_RESPONSE_LENGTH,
         Post => Buf.Length <= HTTP_VERSION_10_STR'Length + STATUS_LINE_500_STR'Length + CRLF'Length;
 
-   procedure Craft_Headers(Buf: in out Measured_Buffer_Type; Response : Simple_HTTP_Response)
+   procedure Craft_Headers(Buf: in out Measured_Buffer_Type; Response : HTTP_Response_Type)
    with Global => null,
         Pre => Buf.Size = MAX_RESPONSE_LENGTH and
                Buf.Length <= HTTP_VERSION_10_STR'Length + STATUS_LINE_500_STR'Length + CRLF'Length;

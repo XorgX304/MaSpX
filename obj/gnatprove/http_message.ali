@@ -10,9 +10,9 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U http_message%b	http_message.adb	2009f611 OO PK IL
+U http_message%b	http_message.adb	cc881d2a OO PK IL
 
-U http_message%s	http_message.ads	90f5eeec OO PK
+U http_message%s	http_message.ads	4bdb87e9 OO PK
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
@@ -27,22 +27,22 @@ D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180417134152 a68f5a60 config%s
-D http_message.ads	20180417134632 d4a2e04c http_message%s
-D http_message.adb	20180417134600 f4ab165d http_message%b
+D config.ads		20180418030508 6ea25412 config%s
+D http_message.ads	20180418111226 9134532e http_message%s
+D http_message.adb	20180418122348 5dbc4e04 http_message%b
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180417111202 475e7562 measured_buffer%s
+D measured_buffer.ads	20180418122254 11cba177 measured_buffer%s
 D response_strs.ads	20180417005812 9534d07c response_strs%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180403010726 e7af9ede spark.text_io%s
-D string_types.ads	20180326171200 56f78cef string_types%s
+D string_types.ads	20180418112746 56f78cef string_types%s
 D system.ads		20170516105954 32a08138 system%s
 D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
 D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180412224906 5895f492 utils%s
+D utils.ads		20180417181156 5895f492 utils%s
 X 1 ada.ads
 16K9*Ada 20e8 8|3r6 3r34
 X 2 a-charac.ads
@@ -50,16 +50,16 @@ X 2 a-charac.ads
 X 3 a-chlat1.ads
 18K24*Latin_1 296e27 8|3w21 3r49
 X 7 config.ads
-5K9*config 27e11 8|5w6 5r18
-17i4*MAX_FILE_READ_BYTE_CT{natural} 8|41r37 51r37 68r37 72r31 77r27
-18i4*MAX_RESPONSE_LENGTH{natural} 8|85r27 90r27
-19i4*MAX_HEADER_VALUE_BYTE_CT{natural} 8|28r125 9|97r133
-22i4*MAX_PARSED_URI_BYTE_CT{natural} 8|38r34
-23i4*MAX_FS_PATH_BYTE_CT{positive} 8|48r35
-25e4*MEASURED_BUFFER_EMPTY_CHAR{character} 8|28r151 38r58 41r60 48r56 51r60
-. 68r60 78r32 9|30r53
+5K9*config 28e11 8|5w6 5r18
+18i4*MAX_FILE_READ_BYTE_CT{natural} 8|40r37 49r37 65r37 69r31 74r27
+19i4*MAX_RESPONSE_LENGTH{natural} 8|82r27 87r27
+20i4*MAX_HEADER_VALUE_BYTE_CT{natural} 8|28r125 9|102r133
+23i4*MAX_PARSED_URI_BYTE_CT{natural} 8|37r34
+24i4*MAX_FS_PATH_BYTE_CT{positive} 8|46r35
+26e4*MEASURED_BUFFER_EMPTY_CHAR{character} 8|28r151 37r58 40r60 46r56 49r60
+. 65r60 75r32
 X 8 http_message.ads
-10K9*Http_Message 93l5 93e17 9|3b14 165l5 165t17
+10K9*Http_Message 90l5 90e17 9|3b14 170l5 170t17
 11K12*ST=11:23
 13E9*ClientServerType 13e45
 13n30*Client{13E9}
@@ -67,181 +67,182 @@ X 8 http_message.ads
 14E9*MethodType 15e33 16r34
 14n24*NONE{14E9}
 14n30*GET{14E9} 16r51
-14n35*UNKNOWN{14E9} 37r38 47r38
+14n35*UNKNOWN{14E9} 36r38 45r38
 14n44*HEAD{14E9}
 14n50*POST{14E9} 16r58
 15n7*PUT{14E9}
 15n12*DELETE{14E9}
 15n20*LINK{14E9}
 15n26*UNLINK{14E9}
-16E12*Simple_Method_Type{14E9} 37r16 47r16
-18E9*Header_Type 22e197 28r44 28r62 28r83 9|29r21 29r42 97r47
-18n25*ALLOW_HEADER{18E9} 9|103r18
-18n39*AUTHORIZATION_HEADER{18E9} 9|105r18
-18n61*CONTENT_ENCODING_HEADER{18E9} 9|107r18
-18n86*CONTENT_LENGTH_HEADER{18E9} 9|109r18
-18n109*CONTENT_TYPE_HEADER{18E9} 9|111r18
-19n7*DATE_HEADER{18E9} 9|113r18
-19n20*EXPIRES_HEADER{18E9} 9|115r18
-19n36*FROM_HEADER{18E9} 9|117r18
-19n49*IF_MODIFIED_SINCE_HEADER{18E9} 9|119r18
-19n75*LAST_MODIFIED_HEADER{18E9} 9|121r18
-19n97*LOCATION_HEADER{18E9} 9|123r18
-19n114*PRAGMA_HEADER{18E9} 9|125r18
-19n129*REFERER_HEADER{18E9} 9|127r18
-19n145*SERVER_HEADER{18E9} 9|129r18
-20n7*USER_AGENT_HEADER{18E9} 9|131r18
-20n26*WWW_AUTHENTICATE_HEADER{18E9} 9|133r18
-22n7*ACCEPT_HEADER{18E9} 9|135r18
-22n22*ACCEPT_CHARSET_HEADER{18E9} 9|137r18
-22n45*ACCEPT_ENCODING_HEADER{18E9} 9|139r18
-22n69*ACCEPT_LANGUAGE_HEADER{18E9} 9|141r18
-22n93*CONTENT_LANGUAGE_HEADER{18E9} 9|143r18
-22n118*LINK_HEADER{18E9} 9|145r18
-22n131*MIME_VERSION_HEADER{18E9} 9|147r18
-22n152*RETRY_AFTER_HEADER{18E9} 9|149r18
-22n172*TITLE_HEADER{18E9} 9|151r18
-22n186*URI_HEADER{18E9} 9|153r18
-28A9*Header_Values_Array_Type(12|13R9)<18E9> 40r23 50r23 67r23 80r39 9|26r39
-30E9*HTTP_Version_Type 30e127 39r17 49r17 65r17
-30n31*HTTP_09{30E9} 9|41r12
-30n40*HTTP_10{30E9} 65r38 9|43r12
-30n49*HTTP_11{30E9} 9|45r12
-30n58*HTTP_2{30E9} 9|47r12
+16E12*Simple_Method_Type{14E9} 36r16 45r16
+18E9*Header_Type 22e197 28r44 28r62 28r83 9|102r47
+18n25*ALLOW_HEADER{18E9} 9|108r18
+18n39*AUTHORIZATION_HEADER{18E9} 9|110r18
+18n61*CONTENT_ENCODING_HEADER{18E9} 9|112r18
+18n86*CONTENT_LENGTH_HEADER{18E9} 9|114r18
+18n109*CONTENT_TYPE_HEADER{18E9} 9|116r18
+19n7*DATE_HEADER{18E9} 9|118r18
+19n20*EXPIRES_HEADER{18E9} 9|120r18
+19n36*FROM_HEADER{18E9} 9|122r18
+19n49*IF_MODIFIED_SINCE_HEADER{18E9} 9|124r18
+19n75*LAST_MODIFIED_HEADER{18E9} 9|126r18
+19n97*LOCATION_HEADER{18E9} 9|128r18
+19n114*PRAGMA_HEADER{18E9} 9|130r18
+19n129*REFERER_HEADER{18E9} 9|132r18
+19n145*SERVER_HEADER{18E9} 9|134r18
+20n7*USER_AGENT_HEADER{18E9} 9|136r18
+20n26*WWW_AUTHENTICATE_HEADER{18E9} 9|138r18
+22n7*ACCEPT_HEADER{18E9} 9|140r18
+22n22*ACCEPT_CHARSET_HEADER{18E9} 9|142r18
+22n45*ACCEPT_ENCODING_HEADER{18E9} 9|144r18
+22n69*ACCEPT_LANGUAGE_HEADER{18E9} 9|146r18
+22n93*CONTENT_LANGUAGE_HEADER{18E9} 9|148r18
+22n118*LINK_HEADER{18E9} 9|150r18
+22n131*MIME_VERSION_HEADER{18E9} 9|152r18
+22n152*RETRY_AFTER_HEADER{18E9} 9|154r18
+22n172*TITLE_HEADER{18E9} 9|156r18
+22n186*URI_HEADER{18E9} 9|158r18
+28A9*Header_Values_Array_Type(12|12R9)<18E9> 39r23 48r23 64r23 77r39 9|26r39
+30E9*HTTP_Version_Type 30e127 38r17 47r17 62r17
+30n31*HTTP_09{30E9} 9|46r12
+30n40*HTTP_10{30E9} 62r38 9|48r12
+30n49*HTTP_11{30E9} 9|50r12
+30n58*HTTP_2{30E9} 9|52r12
 30n66*HTTP_0_UNKNOWN{30E9}
 30n82*HTTP_1_UNKNOWN{30E9}
 30n98*HTTP_2_UNKNOWN{30E9}
 30n114*HTTP_UNKNOWN{30E9}
-35R9*Parsed_Simple_Request 42e14
-37e7*Method{16E12}
-38r7*URI{12|13R9}
-39e7*Version{30E9}
-40a7*Header_Values{28A9}
-41r7*Entity{12|13R9}
-45R9*Translated_Simple_Request 54e14
-47e7*Method{16E12}
-48r7*Path{12|13R9}
-49e7*Version{30E9}
-50a7*Header_Values{28A9}
-51r7*Entity{12|13R9}
-52b7*Canonicalized{boolean}
-53b7*Sanitary{boolean}
-56E9*Status_Code_Type 60e31 66r21
-56n30*c200_OK{56E9} 66r41 9|54r12
-56n39*c201_CREATED{56E9} 9|56r12
-56n53*c202_ACCEPTED{56E9} 9|58r12
-56n68*c204_NO_CONTENT{56E9} 9|60r12
-57n30*c300_MULTIPLE_CHOICES{56E9} 9|62r12
-57n53*c301_MOVED_PERMANENTLY{56E9} 9|64r12
-57n77*c302_MOVED_TEMPORARILY{56E9} 9|66r12
-57n101*c304_NOT_MODIFIED{56E9} 9|68r12
-58n30*c400_BAD_REQUEST{56E9} 9|70r12
-58n48*c401_UNAUTHORIZED{56E9} 9|72r12
-58n67*c403_FORBIDDEN{56E9} 9|74r12
-58n83*c404_NOT_FOUND{56E9} 9|76r12
-59n30*c500_INTERNAL_SERVER_ERROR{56E9} 9|78r12
-59n58*c501_NOT_IMPLEMENTED{56E9} 9|80r12
-59n80*c502_BAD_GATEWAY{56E9} 9|82r12
-59n98*c503_SERVICE_UNAVAILABLE{56E9} 9|84r12
-63R9*Simple_HTTP_Response 69e14 71r66 75r79 83r75 88r73 9|6r66 8r18 16r79
-. 18r18 36r75 92r73
-65e7*Version{30E9} 9|40r21
-66e7*Status_Code{56E9} 9|53r21
-67a7*Header_Values{28A9} 9|95r30 95r62 99r35 100r37 159r55
-68r7*Entity{12|13R9} 9|10m27 20m16
-71V13*Construct_Simple_HTTP_Response{63R9} 71>44 9|6b13 13l8 13t38
-71a44 Page{string} 72r16 73r16 9|6b44 10r35
-75V13*Construct_Simple_HTTP_Response{63R9} 75>44 9|16b13 23l8 23t38
-75r44 Buf{12|13R9} 77r16 78r16 9|16b44 20r26
-80U14*Init 80<19 9|26b14 33l8 33t12
-80a19 Header_Values{28A9} 9|26b19 30m10 31m10
-83U14*Craft_Status_Line 83<32 83>64 9|36b14 89l8 89t25
-83r32 Buf{12|13R9} 85r16 86r17 9|36b32 42m18 44m18 46m18 48m18 50m18 55m21
-. 57m21 59m21 61m21 63m21 65m21 67m21 69m21 71m21 73m21 75m21 77m21 79m21
-. 81m21 83m21 85m21 88m18
-83r64 Response{63R9} 9|36b64 40r12 53r12
-88U14*Craft_Headers 88=28 88>62 9|92b14 163l8 163t21
-88r28 Buf{12|13R9} 90r16 91r16 9|92b28 96r33 104m27 106m27 108m27 110m27
-. 112m27 114m27 116m27 118m27 120m27 122m27 124m27 126m27 128m27 130m27 132m27
-. 134m27 136m27 138m27 140m27 142m27 144m27 146m27 148m27 150m27 152m27 154m27
-. 157m24 159m24 160m24
-88r62 Response{63R9} 9|92b62 95r21 95r53 99r26 100r28 159r46
+34R9*Parsed_HTTP_Request_Type 41e14
+36e7*Method{16E12}
+37r7*URI{12|12R9}
+38e7*Version{30E9}
+39a7*Header_Values{28A9}
+40r7*Entity{12|12R9}
+43R9*Translated_HTTP_Request_Type 52e14
+45e7*Method{16E12}
+46r7*Path{12|12R9}
+47e7*Version{30E9}
+48a7*Header_Values{28A9}
+49r7*Entity{12|12R9}
+50b7*Canonicalized{boolean}
+51b7*Sanitary{boolean}
+54E9*Status_Code_Type 58e31 63r21
+54n30*c200_OK{54E9} 63r41 9|59r12
+54n39*c201_CREATED{54E9} 9|61r12
+54n53*c202_ACCEPTED{54E9} 9|63r12
+54n68*c204_NO_CONTENT{54E9} 9|65r12
+55n30*c300_MULTIPLE_CHOICES{54E9} 9|67r12
+55n53*c301_MOVED_PERMANENTLY{54E9} 9|69r12
+55n77*c302_MOVED_TEMPORARILY{54E9} 9|71r12
+55n101*c304_NOT_MODIFIED{54E9} 9|73r12
+56n30*c400_BAD_REQUEST{54E9} 9|75r12
+56n48*c401_UNAUTHORIZED{54E9} 9|77r12
+56n67*c403_FORBIDDEN{54E9} 9|79r12
+56n83*c404_NOT_FOUND{54E9} 9|81r12
+57n30*c500_INTERNAL_SERVER_ERROR{54E9} 9|83r12
+57n58*c501_NOT_IMPLEMENTED{54E9} 9|85r12
+57n80*c502_BAD_GATEWAY{54E9} 9|87r12
+57n98*c503_SERVICE_UNAVAILABLE{54E9} 9|89r12
+60R9*HTTP_Response_Type 66e14 68r66 72r79 80r75 85r73 9|6r66 8r18 16r79 18r18
+. 41r75 97r73
+62e7*Version{30E9} 9|45r21
+63e7*Status_Code{54E9} 9|58r21
+64a7*Header_Values{28A9} 9|100r30 100r62 104r35 105r37 164r55
+65r7*Entity{12|12R9} 9|10m27 20m16
+68V13*Construct_Simple_HTTP_Response{60R9} 68>44 9|6b13 13l8 13t38
+68a44 Page{string} 69r16 70r16 9|6b44 10r35
+72V13*Construct_Simple_HTTP_Response{60R9} 72>44 9|16b13 23l8 23t38
+72r44 Buf{12|12R9} 74r16 75r16 9|16b44 20r26
+77U14*Init 77<19 9|26b14 38l8 38t12
+77a19 Header_Values{28A9} 9|26b19 29m7
+80U14*Craft_Status_Line 80<32 80>64 9|41b14 94l8 94t25
+80r32 Buf{12|12R9} 82r16 83r17 9|41b32 47m18 49m18 51m18 53m18 55m18 60m21
+. 62m21 64m21 66m21 68m21 70m21 72m21 74m21 76m21 78m21 80m21 82m21 84m21
+. 86m21 88m21 90m21 93m18
+80r64 Response{60R9} 9|41b64 45r12 58r12
+85U14*Craft_Headers 85=28 85>62 9|97b14 168l8 168t21
+85r28 Buf{12|12R9} 87r16 88r16 9|97b28 101r33 109m27 111m27 113m27 115m27
+. 117m27 119m27 121m27 123m27 125m27 127m27 129m27 131m27 133m27 135m27 137m27
+. 139m27 141m27 143m27 145m27 147m27 149m27 151m27 153m27 155m27 157m27 159m27
+. 162m24 164m24 165m24
+85r62 Response{60R9} 9|97b62 100r21 100r53 104r26 105r28 164r46
 X 9 http_message.adb
-8r7 Response{8|63R9} 10m18 10r18 12r14
-18r7 Response{8|63R9} 20m7 22r14
-29e11 Header{8|18E9} 30r24 31r24
-95e11 Header{8|18E9} 97r63 99r49 100r51 102r18 159r69
+8r7 Response{8|60R9} 10m18 10r18 12r14
+18r7 Response{8|60R9} 20m7 22r14
+100e11 Header{8|18E9} 102r63 104r49 105r51 107r18 164r69
 X 12 measured_buffer.ads
-6K9*measured_buffer 8|7w6 7r27 12|139e20
-9I12*Max_Buffer_Size_Type{natural}
-11i4*EMPTY_BUFFER_LENGTH{natural} 9|31r42 100r68
-13R9*Measured_Buffer_Type 8|28r104 38r13 41r16 48r14 51r16 68r16 75r50 83r42
-. 88r40 9|16r50 36r42 92r40 12|17e14
-13i30*Size{9I12} 8|77r20 85r20 90r20
-13e59*EmptyChar{character} 8|78r20
-15a7*Buffer{string} 9|30m32
-16i7*Length{9I12} 8|86r21 91r20 9|31m32 96r37 100r59
-64V13*Is_Empty{boolean} 9|99s17
-81U14*Append_Str 9|10s7 55s10 57s10 59s10 61s10 63s10 65s10 67s10 69s10 71s10
-. 73s10 75s10 77s10 79s10 81s10 83s10 85s10 88s7 104s16 106s16 108s16 110s16
-. 112s16 114s16 116s16 118s16 120s16 122s16 124s16 126s16 128s16 130s16 132s16
-. 134s16 136s16 138s16 140s16 142s16 144s16 146s16 148s16 150s16 152s16 154s16
-. 157s13 159s13 160s13
-88U14*Set_Str 9|42s10 44s10 46s10 48s10 50s10
-126V13*Get_String_Trunc{string} 9|159s29
+6K9*measured_buffer 8|7w6 7r27 12|143e20
+8I12*Buffer_Size_Type{natural}
+10i4*EMPTY_BUFFER_LENGTH{natural} 9|105r68
+12R9*Measured_Buffer_Type 8|28r104 37r13 40r16 46r14 49r16 65r16 72r50 80r42
+. 85r40 9|16r50 41r42 97r40 12|16e14
+12i30*Size{8I12} 8|74r20 82r20 87r20
+12e55*EmptyChar{character} 8|75r20
+15i7*Length{8I12} 8|83r21 88r20 9|101r37 105r59
+19r4*EMPTY_HEADER_VALUE_BUFFER{12R9} 9|29r25 29r52 29r79 30r25 30r52 30r79
+. 31r25 31r52 31r79 32r25 32r52 32r79 33r25 33r52 33r79 34r25 34r52 34r79
+. 35r25 35r52 35r79 36r25 36r52 36r79 37r25 37r52
+69V13*Is_Empty{boolean} 9|104s17
+86U14*Append_Str 9|10s7 60s10 62s10 64s10 66s10 68s10 70s10 72s10 74s10 76s10
+. 78s10 80s10 82s10 84s10 86s10 88s10 90s10 93s7 109s16 111s16 113s16 115s16
+. 117s16 119s16 121s16 123s16 125s16 127s16 129s16 131s16 133s16 135s16 137s16
+. 139s16 141s16 143s16 145s16 147s16 149s16 151s16 153s16 155s16 157s16 159s16
+. 162s13 164s13 165s13
+93U14*Set_Str 9|47s10 49s10 51s10 53s10 55s10
+130V13*Get_String_Trunc{string} 9|164s29
 X 13 response_strs.ads
 5K9*response_strs 8|8w6 8r25 13|108e18
-8a4*HTTP_VERSION_09_STR{string} 9|42r23
-9a4*HTTP_VERSION_10_STR{string} 8|86r31 91r30 9|44r23 96r47
-10a4*HTTP_VERSION_11_STR{string} 9|46r23
-11a4*HTTP_VERSION_2_STR{string} 9|48r23
-12a4*HTTP_VERSION_UNKNOWN_STR{string} 9|50r23
-15a4*STATUS_LINE_200_STR{string} 9|55r26
-16a4*STATUS_LINE_201_STR{string} 9|57r26
-17a4*STATUS_LINE_202_STR{string} 9|59r26
-18a4*STATUS_LINE_204_STR{string} 9|61r26
-19a4*STATUS_LINE_300_STR{string} 9|63r26
-20a4*STATUS_LINE_301_STR{string} 9|65r26
-21a4*STATUS_LINE_302_STR{string} 9|67r26
-22a4*STATUS_LINE_304_STR{string} 9|69r26
-23a4*STATUS_LINE_400_STR{string} 9|71r26
-24a4*STATUS_LINE_401_STR{string} 9|73r26
-25a4*STATUS_LINE_403_STR{string} 9|75r26
-26a4*STATUS_LINE_404_STR{string} 9|77r26
-27a4*STATUS_LINE_500_STR{string} 8|86r60 91r59 9|79r26 96r76
-28a4*STATUS_LINE_501_STR{string} 9|81r26
-29a4*STATUS_LINE_502_STR{string} 9|83r26
-30a4*STATUS_LINE_503_STR{string} 9|85r26
-33a4*CRLF{string} 8|86r89 91r88 9|88r23 96r105 97r160 160r29
-34a4*COLON_SPACE{string} 9|97r112
-37a4*ALLOW_HEADER_STR{string} 9|104r32
-38a4*AUTHORIZATION_HEADER_STR{string} 9|106r32
-39a4*CONTENT_ENCODING_HEADER_STR{string} 9|108r32
-40a4*CONTENT_LENGTH_HEADER_STR{string} 9|110r32
-41a4*CONTENT_TYPE_HEADER_STR{string} 9|112r32
-42a4*DATE_HEADER_STR{string} 9|114r32
-43a4*EXPIRES_HEADER_STR{string} 9|116r32
-44a4*FROM_HEADER_STR{string} 9|118r32
-45a4*IF_MODIFIED_SINCE_HEADER_STR{string} 9|97r74 120r32
-46a4*LAST_MODIFIED_HEADER_STR{string} 9|122r32
-47a4*LOCATION_HEADER_STR{string} 9|124r32
-48a4*PRAGMA_HEADER_STR{string} 9|126r32
-49a4*REFERER_HEADER_STR{string} 9|128r32
-50a4*SERVER_HEADER_STR{string} 9|130r32
-51a4*USER_AGENT_HEADER_STR{string} 9|132r32
-52a4*WWW_AUTHENTICATE_HEADER_STR{string} 9|134r32
-53a4*ACCEPT_HEADER_STR{string} 9|136r32
-54a4*ACCEPT_CHARSET_HEADER_STR{string} 9|138r32
-55a4*ACCEPT_ENCODING_HEADER_STR{string} 9|140r32
-56a4*ACCEPT_LANGUAGE_HEADER_STR{string} 9|142r32
-57a4*CONTENT_LANGUAGE_HEADER_STR{string} 9|144r32
-58a4*LINK_HEADER_STR{string} 9|146r32
-59a4*MIME_VERSION_HEADER_STR{string} 9|148r32
-60a4*RETRY_AFTER_HEADER_STR{string} 9|150r32
-61a4*TITLE_HEADER_STR{string} 9|152r32
-62a4*URI_HEADER_STR{string} 9|154r32
+8a4*HTTP_VERSION_09_STR{string} 9|47r23
+9a4*HTTP_VERSION_10_STR{string} 8|83r31 88r30 9|49r23 101r47
+10a4*HTTP_VERSION_11_STR{string} 9|51r23
+11a4*HTTP_VERSION_2_STR{string} 9|53r23
+12a4*HTTP_VERSION_UNKNOWN_STR{string} 9|55r23
+15a4*STATUS_LINE_200_STR{string} 9|60r26
+16a4*STATUS_LINE_201_STR{string} 9|62r26
+17a4*STATUS_LINE_202_STR{string} 9|64r26
+18a4*STATUS_LINE_204_STR{string} 9|66r26
+19a4*STATUS_LINE_300_STR{string} 9|68r26
+20a4*STATUS_LINE_301_STR{string} 9|70r26
+21a4*STATUS_LINE_302_STR{string} 9|72r26
+22a4*STATUS_LINE_304_STR{string} 9|74r26
+23a4*STATUS_LINE_400_STR{string} 9|76r26
+24a4*STATUS_LINE_401_STR{string} 9|78r26
+25a4*STATUS_LINE_403_STR{string} 9|80r26
+26a4*STATUS_LINE_404_STR{string} 9|82r26
+27a4*STATUS_LINE_500_STR{string} 8|83r60 88r59 9|84r26 101r76
+28a4*STATUS_LINE_501_STR{string} 9|86r26
+29a4*STATUS_LINE_502_STR{string} 9|88r26
+30a4*STATUS_LINE_503_STR{string} 9|90r26
+33a4*CRLF{string} 8|83r89 88r88 9|93r23 101r105 102r160 165r29
+34a4*COLON_SPACE{string} 9|102r112
+37a4*ALLOW_HEADER_STR{string} 9|109r32
+38a4*AUTHORIZATION_HEADER_STR{string} 9|111r32
+39a4*CONTENT_ENCODING_HEADER_STR{string} 9|113r32
+40a4*CONTENT_LENGTH_HEADER_STR{string} 9|115r32
+41a4*CONTENT_TYPE_HEADER_STR{string} 9|117r32
+42a4*DATE_HEADER_STR{string} 9|119r32
+43a4*EXPIRES_HEADER_STR{string} 9|121r32
+44a4*FROM_HEADER_STR{string} 9|123r32
+45a4*IF_MODIFIED_SINCE_HEADER_STR{string} 9|102r74 125r32
+46a4*LAST_MODIFIED_HEADER_STR{string} 9|127r32
+47a4*LOCATION_HEADER_STR{string} 9|129r32
+48a4*PRAGMA_HEADER_STR{string} 9|131r32
+49a4*REFERER_HEADER_STR{string} 9|133r32
+50a4*SERVER_HEADER_STR{string} 9|135r32
+51a4*USER_AGENT_HEADER_STR{string} 9|137r32
+52a4*WWW_AUTHENTICATE_HEADER_STR{string} 9|139r32
+53a4*ACCEPT_HEADER_STR{string} 9|141r32
+54a4*ACCEPT_CHARSET_HEADER_STR{string} 9|143r32
+55a4*ACCEPT_ENCODING_HEADER_STR{string} 9|145r32
+56a4*ACCEPT_LANGUAGE_HEADER_STR{string} 9|147r32
+57a4*CONTENT_LANGUAGE_HEADER_STR{string} 9|149r32
+58a4*LINK_HEADER_STR{string} 9|151r32
+59a4*MIME_VERSION_HEADER_STR{string} 9|153r32
+60a4*RETRY_AFTER_HEADER_STR{string} 9|155r32
+61a4*TITLE_HEADER_STR{string} 9|157r32
+62a4*URI_HEADER_STR{string} 9|159r32
 X 16 string_types.ads
-4K9*String_Types 8|6w6 11r23 16|29e17
+4K9*String_Types 8|6w6 11r23 16|28e17
 FD 1 ada.ads
 FS .1 16K9 ada
 FD 2 a-charac.ads
@@ -350,18 +351,18 @@ FD 7 config.ads
 FS .1 5K9 config
 FD 8 http_message.ads
 FS .1 10K9 http_message
-FS .2 71V13 http_message__construct_simple_http_response
-FS .3 75V13 http_message__construct_simple_http_response__2
-FS .4 80U14 http_message__init
-FS .5 83U14 http_message__craft_status_line
-FS .6 88U14 http_message__craft_headers
+FS .2 68V13 http_message__construct_simple_http_response
+FS .3 72V13 http_message__construct_simple_http_response__2
+FS .4 77U14 http_message__init
+FS .5 80U14 http_message__craft_status_line
+FS .6 85U14 http_message__craft_headers
 FD 9 http_message.adb
 FS .1 3K14 http_message -> 8.1
 FS .2 6V13 http_message__construct_simple_http_response -> 8.2
 FS .3 16V13 http_message__construct_simple_http_response__2 -> 8.3
 FS .4 26U14 http_message__init -> 8.4
-FS .5 36U14 http_message__craft_status_line -> 8.5
-FS .6 92U14 http_message__craft_headers -> 8.6
+FS .5 41U14 http_message__craft_status_line -> 8.5
+FS .6 97U14 http_message__craft_headers -> 8.6
 FD 10 interfac.ads
 FS .1 38K9 interfaces
 FS .2 81V13 interfaces__shift_left
@@ -404,31 +405,31 @@ FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
 FD 12 measured_buffer.ads
 FS .1 6K9 measured_buffer
-FS .2 21V13 measured_buffer__construct_measured_buffer
-FS .3 34V13 measured_buffer__get_char
-FS .4 39V13 measured_buffer__peek
-FS .5 46V13 measured_buffer__calc_length
-FS .6 55V13 measured_buffer__get_length
-FS .7 59U14 measured_buffer__set_length
-FS .8 64V13 measured_buffer__is_empty
-FS .9 70V13 measured_buffer__is_full
-FS .10 75U14 measured_buffer__append
-FS .11 81U14 measured_buffer__append_str
-FS .12 88U14 measured_buffer__set_str
-FS .13 95U14 measured_buffer__replace_char
-FS .14 100U14 measured_buffer__clear
-FS .15 105U14 measured_buffer__copy
-FS .16 113V13 measured_buffer__is_prefixed
-FS .17 119V13 measured_buffer__get_string
-FS .18 126V13 measured_buffer__get_string_trunc
-FS .19 134V13 measured_buffer__get_extension
-FS .20 34V13 measured_buffer__get_char -> 12.3
-FS .21 39V13 measured_buffer__peek -> 12.4
-FS .22 55V13 measured_buffer__get_length -> 12.6
-FS .23 64V13 measured_buffer__is_empty -> 12.8
-FS .24 70V13 measured_buffer__is_full -> 12.9
-FS .25 113V13 measured_buffer__is_prefixed -> 12.16
-FS .26 119V13 measured_buffer__get_string -> 12.17
+FS .2 26V13 measured_buffer__construct_measured_buffer
+FS .3 39V13 measured_buffer__get_char
+FS .4 44V13 measured_buffer__peek
+FS .5 51V13 measured_buffer__calc_length
+FS .6 60V13 measured_buffer__get_length
+FS .7 64U14 measured_buffer__set_length
+FS .8 69V13 measured_buffer__is_empty
+FS .9 75V13 measured_buffer__is_full
+FS .10 80U14 measured_buffer__append
+FS .11 86U14 measured_buffer__append_str
+FS .12 93U14 measured_buffer__set_str
+FS .13 100U14 measured_buffer__replace_char
+FS .14 105U14 measured_buffer__clear
+FS .15 110U14 measured_buffer__copy
+FS .16 117V13 measured_buffer__has_prefix
+FS .17 123V13 measured_buffer__get_string
+FS .18 130V13 measured_buffer__get_string_trunc
+FS .19 138V13 measured_buffer__get_extension
+FS .20 39V13 measured_buffer__get_char -> 12.3
+FS .21 44V13 measured_buffer__peek -> 12.4
+FS .22 60V13 measured_buffer__get_length -> 12.6
+FS .23 69V13 measured_buffer__is_empty -> 12.8
+FS .24 75V13 measured_buffer__is_full -> 12.9
+FS .25 117V13 measured_buffer__has_prefix -> 12.16
+FS .26 123V13 measured_buffer__get_string -> 12.17
 FD 13 response_strs.ads
 FS .1 5K9 response_strs
 FD 14 spark.ads
@@ -586,104 +587,105 @@ FS .6 15V13 utils__logical_equivalence
 FS .7 18V13 utils__is_standard_printable
 FS .8 18V13 utils__is_standard_printable -> 22.7
 FX 7 config.ads .1 config
-F 17*4 config__max_file_read_byte_ct 8|.1:41c37 51c37 68c37 .2:72c31 .3:77c27
-F 18*4 config__max_response_length 8|.5:85c27 .6:90c27
-F 19*4 config__max_header_value_byte_ct 8|.1:28c125 9|.6:97c133
-F 22*4 config__max_parsed_uri_byte_ct 8|.1:38r34
-F 23*4 config__max_fs_path_byte_ct 8|.1:48r35
-F 25*4 config__measured_buffer_empty_char 8|.1:28c151 38c58 41c60 48c56 51c60
-. 68c60 .3:78c32 9|.4:30c53
+F 18*4 config__max_file_read_byte_ct 8|.1:40c37 49c37 65c37 .2:69c31 .3:74c27
+F 19*4 config__max_response_length 8|.5:82c27 .6:87c27
+F 20*4 config__max_header_value_byte_ct 8|.1:28c125 9|.6:102c133
+F 23*4 config__max_parsed_uri_byte_ct 8|.1:37r34
+F 24*4 config__max_fs_path_byte_ct 8|.1:46r35
+F 26*4 config__measured_buffer_empty_char 8|.1:28c151 37c58 40c60 46c56 49c60
+. 65c60 .3:75c32
 FX 8 http_message.ads .2 http_message__construct_simple_http_response
-F 71>44 http_message__construct_simple_http_response__page 72c16 73c16 9|.2:10c35
+F 68>44 http_message__construct_simple_http_response__page 69c16 70c16 9|.2:10c35
 FX 8 http_message.ads .3 http_message__construct_simple_http_response__2
-F 75>44 http_message__construct_simple_http_response__2__buf 77c16 78c16
+F 72>44 http_message__construct_simple_http_response__2__buf 74c16 75c16
 . 9|.3:20c26
 FX 8 http_message.ads .4 http_message__init
-F 80<19 http_message__init__header_values 9|.4:30m10 31m10
+F 77<19 http_message__init__header_values 9|.4:29m7
 FX 8 http_message.ads .5 http_message__craft_status_line
-F 83<32 http_message__craft_status_line__buf 85r16 86r17 9|.5:42m18 44m18
-. 46m18 48m18 50m18 55m21 57m21 59m21 61m21 63m21 65m21 67m21 69m21 71m21
-. 73m21 75m21 77m21 79m21 81m21 83m21 85m21 88m18
-F 83>64 http_message__craft_status_line__response 9|.5:40c12 53c12
+F 80<32 http_message__craft_status_line__buf 82r16 83r17 9|.5:47m18 49m18
+. 51m18 53m18 55m18 60m21 62m21 64m21 66m21 68m21 70m21 72m21 74m21 76m21
+. 78m21 80m21 82m21 84m21 86m21 88m21 90m21 93m18
+F 80>64 http_message__craft_status_line__response 9|.5:45c12 58c12
 FX 8 http_message.ads .6 http_message__craft_headers
-F 88=28 http_message__craft_headers__buf 90r16 91r16 9|.6:96r33 104m27 106m27
-. 108m27 110m27 112m27 114m27 116m27 118m27 120m27 122m27 124m27 126m27 128m27
-. 130m27 132m27 134m27 136m27 138m27 140m27 142m27 144m27 146m27 148m27 150m27
-. 152m27 154m27 157m24 159m24 160m24
-F 88>62 http_message__craft_headers__response 9|.6:95c21 95c53 99c26 100c28
-. 159c46
+F 85=28 http_message__craft_headers__buf 87r16 88r16 9|.6:101r33 109m27 111m27
+. 113m27 115m27 117m27 119m27 121m27 123m27 125m27 127m27 129m27 131m27 133m27
+. 135m27 137m27 139m27 141m27 143m27 145m27 147m27 149m27 151m27 153m27 155m27
+. 157m27 159m27 162m24 164m24 165m24
+F 85>62 http_message__craft_headers__response 9|.6:100c21 100c53 104c26 105c28
+. 164c46
 FX 9 http_message.adb .2 http_message__construct_simple_http_response
 F 8*7 http_message__construct_simple_http_response__response 10m18 10r18
 . 12r14
 FX 9 http_message.adb .3 http_message__construct_simple_http_response__2
 F 18*7 http_message__construct_simple_http_response__2__response 20m7 22r14
-FX 9 http_message.adb .4 http_message__init
-F 29*11 http_message__init__L_1__header 30c24 31c24
 FX 9 http_message.adb .6 http_message__craft_headers
-F 95*11 http_message__craft_headers__L_2__header 97c63 99c49 100c51 102c18
-. 159c69
+F 100*11 http_message__craft_headers__L_1__header 102c63 104c49 105c51 107c18
+. 164c69
 FX 12 measured_buffer.ads .1 measured_buffer
-F 11*4 measured_buffer__empty_buffer_length 9|.4:31c42 .6:100c68
-F 64*13 measured_buffer__is_empty 9|.6:99s17
-F 81*14 measured_buffer__append_str 9|.2:10s7 .5:55s10 57s10 59s10 61s10
-. 63s10 65s10 67s10 69s10 71s10 73s10 75s10 77s10 79s10 81s10 83s10 85s10
-. 88s7 .6:104s16 106s16 108s16 110s16 112s16 114s16 116s16 118s16 120s16
-. 122s16 124s16 126s16 128s16 130s16 132s16 134s16 136s16 138s16 140s16 142s16
-. 144s16 146s16 148s16 150s16 152s16 154s16 157s13 159s13 160s13
-F 88*14 measured_buffer__set_str 9|.5:42s10 44s10 46s10 48s10 50s10
-F 126*13 measured_buffer__get_string_trunc 9|.6:159s29
+F 10*4 measured_buffer__empty_buffer_length 9|.6:105c68
+F 19*4 measured_buffer__empty_header_value_buffer 9|.4:29r25 29r52 29r79
+. 30r25 30r52 30r79 31r25 31r52 31r79 32r25 32r52 32r79 33r25 33r52 33r79
+. 34r25 34r52 34r79 35r25 35r52 35r79 36r25 36r52 36r79 37r25 37r52
+F 69*13 measured_buffer__is_empty 9|.6:104s17
+F 86*14 measured_buffer__append_str 9|.2:10s7 .5:60s10 62s10 64s10 66s10
+. 68s10 70s10 72s10 74s10 76s10 78s10 80s10 82s10 84s10 86s10 88s10 90s10
+. 93s7 .6:109s16 111s16 113s16 115s16 117s16 119s16 121s16 123s16 125s16
+. 127s16 129s16 131s16 133s16 135s16 137s16 139s16 141s16 143s16 145s16 147s16
+. 149s16 151s16 153s16 155s16 157s16 159s16 162s13 164s13 165s13
+F 93*14 measured_buffer__set_str 9|.5:47s10 49s10 51s10 53s10 55s10
+F 130*13 measured_buffer__get_string_trunc 9|.6:164s29
 FX 13 response_strs.ads .1 response_strs
-F 8*4 response_strs__http_version_09_str 9|.5:42c23
-F 9*4 response_strs__http_version_10_str 8|.5:86c31 .6:91c30 9|.5:44c23 .6:96c47
-F 10*4 response_strs__http_version_11_str 9|.5:46c23
-F 11*4 response_strs__http_version_2_str 9|.5:48c23
-F 12*4 response_strs__http_version_unknown_str 9|.5:50c23
-F 15*4 response_strs__status_line_200_str 9|.5:55c26
-F 16*4 response_strs__status_line_201_str 9|.5:57c26
-F 17*4 response_strs__status_line_202_str 9|.5:59c26
-F 18*4 response_strs__status_line_204_str 9|.5:61c26
-F 19*4 response_strs__status_line_300_str 9|.5:63c26
-F 20*4 response_strs__status_line_301_str 9|.5:65c26
-F 21*4 response_strs__status_line_302_str 9|.5:67c26
-F 22*4 response_strs__status_line_304_str 9|.5:69c26
-F 23*4 response_strs__status_line_400_str 9|.5:71c26
-F 24*4 response_strs__status_line_401_str 9|.5:73c26
-F 25*4 response_strs__status_line_403_str 9|.5:75c26
-F 26*4 response_strs__status_line_404_str 9|.5:77c26
-F 27*4 response_strs__status_line_500_str 8|.5:86c60 .6:91c59 9|.5:79c26
-. .6:96c76
-F 28*4 response_strs__status_line_501_str 9|.5:81c26
-F 29*4 response_strs__status_line_502_str 9|.5:83c26
-F 30*4 response_strs__status_line_503_str 9|.5:85c26
-F 33*4 response_strs__crlf 8|.5:86c89 .6:91c88 9|.5:88c23 .6:96c105 97c160
-. 160c29
-F 34*4 response_strs__colon_space 9|.6:97c112
-F 37*4 response_strs__allow_header_str 9|.6:104c32
-F 38*4 response_strs__authorization_header_str 9|.6:106c32
-F 39*4 response_strs__content_encoding_header_str 9|.6:108c32
-F 40*4 response_strs__content_length_header_str 9|.6:110c32
-F 41*4 response_strs__content_type_header_str 9|.6:112c32
-F 42*4 response_strs__date_header_str 9|.6:114c32
-F 43*4 response_strs__expires_header_str 9|.6:116c32
-F 44*4 response_strs__from_header_str 9|.6:118c32
-F 45*4 response_strs__if_modified_since_header_str 9|.6:97c74 120c32
-F 46*4 response_strs__last_modified_header_str 9|.6:122c32
-F 47*4 response_strs__location_header_str 9|.6:124c32
-F 48*4 response_strs__pragma_header_str 9|.6:126c32
-F 49*4 response_strs__referer_header_str 9|.6:128c32
-F 50*4 response_strs__server_header_str 9|.6:130c32
-F 51*4 response_strs__user_agent_header_str 9|.6:132c32
-F 52*4 response_strs__www_authenticate_header_str 9|.6:134c32
-F 53*4 response_strs__accept_header_str 9|.6:136c32
-F 54*4 response_strs__accept_charset_header_str 9|.6:138c32
-F 55*4 response_strs__accept_encoding_header_str 9|.6:140c32
-F 56*4 response_strs__accept_language_header_str 9|.6:142c32
-F 57*4 response_strs__content_language_header_str 9|.6:144c32
-F 58*4 response_strs__link_header_str 9|.6:146c32
-F 59*4 response_strs__mime_version_header_str 9|.6:148c32
-F 60*4 response_strs__retry_after_header_str 9|.6:150c32
-F 61*4 response_strs__title_header_str 9|.6:152c32
-F 62*4 response_strs__uri_header_str 9|.6:154c32
+F 8*4 response_strs__http_version_09_str 9|.5:47c23
+F 9*4 response_strs__http_version_10_str 8|.5:83c31 .6:88c30 9|.5:49c23 .6:101c47
+F 10*4 response_strs__http_version_11_str 9|.5:51c23
+F 11*4 response_strs__http_version_2_str 9|.5:53c23
+F 12*4 response_strs__http_version_unknown_str 9|.5:55c23
+F 15*4 response_strs__status_line_200_str 9|.5:60c26
+F 16*4 response_strs__status_line_201_str 9|.5:62c26
+F 17*4 response_strs__status_line_202_str 9|.5:64c26
+F 18*4 response_strs__status_line_204_str 9|.5:66c26
+F 19*4 response_strs__status_line_300_str 9|.5:68c26
+F 20*4 response_strs__status_line_301_str 9|.5:70c26
+F 21*4 response_strs__status_line_302_str 9|.5:72c26
+F 22*4 response_strs__status_line_304_str 9|.5:74c26
+F 23*4 response_strs__status_line_400_str 9|.5:76c26
+F 24*4 response_strs__status_line_401_str 9|.5:78c26
+F 25*4 response_strs__status_line_403_str 9|.5:80c26
+F 26*4 response_strs__status_line_404_str 9|.5:82c26
+F 27*4 response_strs__status_line_500_str 8|.5:83c60 .6:88c59 9|.5:84c26
+. .6:101c76
+F 28*4 response_strs__status_line_501_str 9|.5:86c26
+F 29*4 response_strs__status_line_502_str 9|.5:88c26
+F 30*4 response_strs__status_line_503_str 9|.5:90c26
+F 33*4 response_strs__crlf 8|.5:83c89 .6:88c88 9|.5:93c23 .6:101c105 102c160
+. 165c29
+F 34*4 response_strs__colon_space 9|.6:102c112
+F 37*4 response_strs__allow_header_str 9|.6:109c32
+F 38*4 response_strs__authorization_header_str 9|.6:111c32
+F 39*4 response_strs__content_encoding_header_str 9|.6:113c32
+F 40*4 response_strs__content_length_header_str 9|.6:115c32
+F 41*4 response_strs__content_type_header_str 9|.6:117c32
+F 42*4 response_strs__date_header_str 9|.6:119c32
+F 43*4 response_strs__expires_header_str 9|.6:121c32
+F 44*4 response_strs__from_header_str 9|.6:123c32
+F 45*4 response_strs__if_modified_since_header_str 9|.6:102c74 125c32
+F 46*4 response_strs__last_modified_header_str 9|.6:127c32
+F 47*4 response_strs__location_header_str 9|.6:129c32
+F 48*4 response_strs__pragma_header_str 9|.6:131c32
+F 49*4 response_strs__referer_header_str 9|.6:133c32
+F 50*4 response_strs__server_header_str 9|.6:135c32
+F 51*4 response_strs__user_agent_header_str 9|.6:137c32
+F 52*4 response_strs__www_authenticate_header_str 9|.6:139c32
+F 53*4 response_strs__accept_header_str 9|.6:141c32
+F 54*4 response_strs__accept_charset_header_str 9|.6:143c32
+F 55*4 response_strs__accept_encoding_header_str 9|.6:145c32
+F 56*4 response_strs__accept_language_header_str 9|.6:147c32
+F 57*4 response_strs__content_language_header_str 9|.6:149c32
+F 58*4 response_strs__link_header_str 9|.6:151c32
+F 59*4 response_strs__mime_version_header_str 9|.6:153c32
+F 60*4 response_strs__retry_after_header_str 9|.6:155c32
+F 61*4 response_strs__title_header_str 9|.6:157c32
+F 62*4 response_strs__uri_header_str 9|.6:159c32
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
