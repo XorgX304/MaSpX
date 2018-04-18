@@ -8,14 +8,15 @@ package config is
    
    --TODO:ltj: move this to a config file
    HTTP_PORT : constant Natural := 80;
-   MAX_CXNS : constant Natural := 16; --ltj: arbitrary   
+   MAX_CXNS : constant Natural := 16; --ltj: arbitrary
+   SOCKET_TIMEOUT_MS : constant Duration := 1.0; --ltj: arbitrary
    WEB_ROOT : constant String := "D:\OneDrive\OneDrive\ChthonianCyberServices\ada\masp\test-web-root";--ltj: 1. no trailing slash (we concatenate the Request-URI to this directly) 2. must be absolute path
    FS_ROOT : constant String := "D:";
    DEFAULT_PAGE : constant String := "index.html";
    
    --buffer limits
    MAX_FILE_READ_BYTE_CT : constant Natural := 5_000_000;--ltj: arbitrary
-   MAX_RESPONSE_LENGTH : constant Natural := 3585 + MAX_FILE_READ_BYTE_CT; --ltj:3585 is MAX_STATUS_AND_HEADERS_LENGTH, can't include the file unfortunately
+   MAX_RESPONSE_LENGTH : constant Natural := 3_585 + MAX_FILE_READ_BYTE_CT; --ltj:3585 is MAX_STATUS_AND_HEADERS_LENGTH, can't include the file unfortunately
    MAX_HEADER_VALUE_BYTE_CT : constant Natural := 128; --ltj: arbitrary
    MAX_REQUEST_LINE_BYTE_CT : constant Natural := 270;  --ltj: RFC1945:5.1 3 for Method (always GET) 1 for Space, 255 for request-uri, 2 for proper line ending
    MAX_URI_BYTE_CT : constant Natural := 255;

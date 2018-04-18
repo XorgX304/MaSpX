@@ -59,10 +59,8 @@ package body network_ns is
       Gnat.Sockets.Accept_Socket(
          Server_Socket, Client_Socket, Client_Socket_Addr);
          
-      --TODO: add timeout to socket here
-      --Socket_Timeout.Set_Socket_Timeout(
-         --Socket => Convert(Socket),
-        -- Milliseconds => Socket_Timeout_Milliseconds);
+      GNAT.Sockets.Set_Socket_Option(Client_Socket, GNAT.Sockets.Socket_Level, (GNAT.Sockets.Receive_Timeout, SOCKET_TIMEOUT_MS));
+      
       exception
       when E : GNAT.Sockets.Socket_Error =>
          Ada.Text_IO.Put_Line(Ada.Exceptions.Exception_Name(E) & ":  " & Ada.Exceptions.Exception_Message(E));
