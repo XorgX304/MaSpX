@@ -31,7 +31,7 @@ begin
    Initialize_TCP_State(Server_Socket, Init_Exception_Raised);
 
    if Init_Exception_Raised then
-      Check_Print_Ln("MaSpX: Failure to launch!");
+      Check_Print_Ln("MaSpX: Failure to launch! Couldn't initialized network state.");
       return;
    end if;
 

@@ -50,5 +50,10 @@ package body utils is
    end Logical_Equivalence;
 
 --------------------------------------------------------------------------------
+   function Get_HTTP_Time_Str(Time : Ada.Calendar.Time) return String
+   is
+   begin
+      return Day_Name'Image(Day_Of_Week(Time)) & ", " & Day_Number'Image(Ada.Calendar.Formatting.Day(Time)) & "-" & Month_Number'Image(Ada.Calendar.Formatting.Month(Time)) & "-" & Year_Number'Image(Ada.Calendar.Formatting.Year(Time)) & " " & Hour_Number'Image(Ada.Calendar.Formatting.Hour(Time)) & ":" & Minute_Number'Image(Ada.Calendar.Formatting.Minute(Time)) & ":" & Second_Number'Image(Ada.Calendar.Formatting.Second(Time)) & " GMT";
+   end Get_HTTP_Time_Str;
 
 end utils;

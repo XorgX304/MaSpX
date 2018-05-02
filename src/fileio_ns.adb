@@ -44,6 +44,9 @@ package body fileio_ns is
       --ltj: set Content-Length header
       Set_Str(Response.Header_Values(CONTENT_LENGTH_HEADER), Buffer_Size_Type'Image(Response.Entity.Length));
       
+      --ltj: set last-modified header
+      Set_Str(Response.Header_Values(LAST_MODIFIED_HEADER), Get_HTTP_Time_Str(Modification_Time(Abs_Filename)));
+      
       --ltj: set Content-Type header
       if Binary_File then
          if Has_Prefix(Response.Entity, JPG_MAGIC) then
@@ -95,7 +98,11 @@ package body fileio_ns is
    
       Filesize := Size(Abs_Filename);
       
+      --ltj: set Content-Length header
       Set_Str(Response.Header_Values(CONTENT_LENGTH_HEADER), Ada.Directories.File_Size'Image(Filesize));
+      
+      --ltj: set Last-Modified header
+      Set_Str(Response.Header_Values(LAST_MODIFIED_HEADER), Get_HTTP_Time_Str(Modification_Time(Abs_Filename)));
       
       exception
       when E : Ada.IO_Exceptions.Name_Error =>

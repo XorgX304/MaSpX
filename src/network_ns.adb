@@ -92,7 +92,7 @@ package body network_ns is
          if not Is_Full(Request) then
             String'Read(Client_Stream, C); --TODO-PERF:ltj: can C be a bigger buffer??? Might need to use something that has a Last, and Stream_Element_Array
             
-            if C(1) = Request.EmptyChar then
+            if C(1) = Request.EmptyChar then --TODO: remove this, it won't work when client might possibly send an Entity-Body
                Debug_Print_Ln("Invalid character entered! Sending 400 Bad Request");
                Response := Construct_Simple_HTTP_Response(c400_BAD_REQUEST_PAGE);
                Response.Status_Code := c400_BAD_REQUEST;

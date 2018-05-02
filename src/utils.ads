@@ -1,6 +1,8 @@
 pragma SPARK_Mode(On);
 
 with SPARK.Text_IO; use SPARK.Text_IO;
+with Ada.Calendar; use Ada.Calendar;
+with Ada.Calendar.Formatting; use Ada.Calendar.Formatting;
 
 with config; use config;
 
@@ -20,5 +22,11 @@ package utils is
          or Character'Pos(C) = 13 or Character'Pos(C) = 10
          or Character'Pos(C) = 9 )
    with Global => null;
+
+   function Get_HTTP_Time_Str(Time : Ada.Calendar.Time) return String
+   with Global => null;
+
+   --function Get_Day_Of_Week_Str(Day : Day_Of_Week) return String
+   --with Global => null;
 
 end utils;
