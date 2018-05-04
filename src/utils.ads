@@ -29,4 +29,19 @@ package utils is
    --function Get_Day_Of_Week_Str(Day : Day_Of_Week) return String
    --with Global => null;
 
+   function Get_Wkday_Str(Day : Day_Name) return String
+   with Global => null;
+
+   function Get_Month_Str(Month : Month_Number) return String
+   with Global => null;
+
+   function Trim_Number_Image(Str : String) return String
+   with Global => null;
+
+   function Insert_Leading_Zeroes_2DIGIT(Str : String) return String
+   with Global => null;
+
+   function Insert_Leading_Zeroes_4DIGIT(Str : String) return String
+   with Global => null;
+
 end utils;

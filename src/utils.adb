@@ -53,7 +53,106 @@ package body utils is
    function Get_HTTP_Time_Str(Time : Ada.Calendar.Time) return String
    is
    begin
-      return Day_Name'Image(Day_Of_Week(Time)) & ", " & Day_Number'Image(Ada.Calendar.Formatting.Day(Time)) & "-" & Month_Number'Image(Ada.Calendar.Formatting.Month(Time)) & "-" & Year_Number'Image(Ada.Calendar.Formatting.Year(Time)) & " " & Hour_Number'Image(Ada.Calendar.Formatting.Hour(Time)) & ":" & Minute_Number'Image(Ada.Calendar.Formatting.Minute(Time)) & ":" & Second_Number'Image(Ada.Calendar.Formatting.Second(Time)) & " GMT";
+      return Get_Wkday_Str(Day_Of_Week(Time)) & ", " & 
+         Insert_Leading_Zeroes_2DIGIT(Trim_Number_Image(Day_Number'Image(Ada.Calendar.Formatting.Day(Time)))) & " " & 
+         Get_Month_Str(Ada.Calendar.Formatting.Month(Time)) & " " & 
+         Insert_Leading_Zeroes_4DIGIT(Trim_Number_Image(Year_Number'Image(Ada.Calendar.Formatting.Year(Time)))) & " " &
+         Insert_Leading_Zeroes_2DIGIT(Trim_Number_Image(Hour_Number'Image(Ada.Calendar.Formatting.Hour(Time)))) & ":" & 
+         Insert_Leading_Zeroes_2DIGIT(Trim_Number_Image(Minute_Number'Image(Ada.Calendar.Formatting.Minute(Time)))) & ":" & 
+         Insert_Leading_Zeroes_2DIGIT(Trim_Number_Image(Second_Number'Image(Ada.Calendar.Formatting.Second(Time)))) & " GMT";
    end Get_HTTP_Time_Str;
+   
+--------------------------------------------------------------------------------
+   function Get_Wkday_Str(Day : Day_Name) return String
+   is
+   begin
+      case Day is
+      when Monday =>
+         return "Mon";
+      when Tuesday => 
+         return "Tue";
+      when Wednesday =>
+         return "Wed";
+      when Thursday =>
+         return "Thu";
+      when Friday =>
+         return "Fri";
+      when Saturday =>
+         return "Sat";
+      when Sunday =>
+         return "Sun";
+      end case;
+   end Get_Wkday_Str;
+   
+--------------------------------------------------------------------------------
+   function Get_Month_Str(Month : Month_Number) return String
+   is
+   begin
+      case Month is
+      when 1 =>
+         return "Jan";
+      when 2 =>
+         return "Feb";
+      when 3 =>
+         return "Mar";
+      when 4 => 
+         return "Apr";
+      when 5 =>
+         return "May";
+      when 6 =>
+         return "Jun";
+      when 7 =>
+         return "Jul";
+      when 8 =>
+         return "Aug";
+      when 9 =>
+         return "Sep";
+      when 10 =>
+         return "Oct";
+      when 11 =>
+         return "Nov";
+      when 12 =>
+         return "Dec";
+      end case;
+   end Get_Month_Str;
+   
+--------------------------------------------------------------------------------
+   function Trim_Number_Image(Str : String) return String
+   is
+   begin
+      if Str'Last > Str'First then
+         if Str(Str'First) = ' ' then
+            return Str(Str'First + 1 .. Str'Last);
+         end if;
+      end if;
+      
+      return Str;
+   end Trim_Number_Image;
+   
+--------------------------------------------------------------------------------
+   function Insert_Leading_Zeroes_2DIGIT(Str : String) return String
+   is
+   begin
+      if Str'Length = 1 then
+         return "0" & Str;
+      end if;
+      
+      return Str;
+   end Insert_Leading_Zeroes_2DIGIT;
+   
+--------------------------------------------------------------------------------
+   function Insert_Leading_Zeroes_4DIGIT(Str : String) return String
+   is
+   begin
+      if Str'Length = 1 then
+         return "000" & Str;
+      elsif Str'Length = 2 then
+         return "00" & Str;
+      elsif Str'Length = 3 then
+         return "0" & Str;
+      end if;
+      
+      return Str;
+   end Insert_Leading_Zeroes_4DIGIT;
 
 end utils;
