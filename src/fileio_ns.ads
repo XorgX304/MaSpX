@@ -12,6 +12,7 @@ with Http_Message; use Http_Message;
 with measured_buffer; use measured_buffer;
 with error; use error;
 with utils; use utils;
+with utils_ns; use utils_ns;
 with response_strs; use response_strs;
 with config; use config;
 

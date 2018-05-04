@@ -1,22 +1,30 @@
 Summary of SPARK analysis
 =========================
 
----------------------------------------------------------------------------------------------------------
-SPARK Analysis results        Total        Flow   Interval   CodePeer      Provers   Justified   Unproved
----------------------------------------------------------------------------------------------------------
-Data Dependencies                 .           .          .          .            .           .          .
-Flow Dependencies                 .           .          .          .            .           .          .
-Initialization                   50          50          .          .            .           .          .
-Non-Aliasing                      .           .          .          .            .           .          .
-Run-time Checks                  68           .          .          .      68 (Z3)           .          .
-Assertions                        3           .          .          .       3 (Z3)           .          .
-Functional Contracts             53           .          .          .      53 (Z3)           .          .
-LSP Verification                  .           .          .          .            .           .          .
----------------------------------------------------------------------------------------------------------
-Total                           174    50 (29%)          .          .    124 (71%)           .          .
+----------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total         Flow   Interval   CodePeer      Provers   Justified   Unproved
+----------------------------------------------------------------------------------------------------------
+Data Dependencies                 .            .          .          .            .           .          .
+Flow Dependencies                 .            .          .          .            .           .          .
+Initialization                  300          300          .          .            .           .          .
+Non-Aliasing                      .            .          .          .            .           .          .
+Run-time Checks                 298            .          .          .     298 (Z3)           .          .
+Assertions                       38            .          .          .      38 (Z3)           .          .
+Functional Contracts            144            .          .          .     143 (Z3)           .          1
+LSP Verification                  .            .          .          .            .           .          .
+----------------------------------------------------------------------------------------------------------
+Total                           780    300 (38%)          .          .    479 (61%)           .     1 (0%)
 
 
-Analyzed 1 unit
+Analyzed 13 units
+in unit config, 1 subprograms and packages out of 1 analyzed
+  config at config.ads:5 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
+in unit error, 1 subprograms and packages out of 1 analyzed
+  error at error.ads:3 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+in unit fileio_ns, 0 subprograms and packages out of 3 analyzed
+  fileio_ns at fileio_ns.ads:19 skipped
+  fileio_ns.Measure_File_To_Response at fileio_ns.ads:36 skipped
+  fileio_ns.Read_File_To_Response at fileio_ns.ads:27 skipped
 in unit http_message, 6 subprograms and packages out of 6 analyzed
   Http_Message at http_message.ads:10 flow analyzed (0 errors and 0 warnings) and proved (10 checks)
   Http_Message.Construct_Simple_HTTP_Response at http_message.ads:68 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
@@ -24,3 +32,141 @@ in unit http_message, 6 subprograms and packages out of 6 analyzed
   Http_Message.Craft_Headers at http_message.ads:85 flow analyzed (0 errors and 0 warnings) and proved (50 checks)
   Http_Message.Craft_Status_Line at http_message.ads:80 flow analyzed (0 errors and 0 warnings) and proved (28 checks)
   Http_Message.Init at http_message.ads:77 flow analyzed (0 errors and 0 warnings) and proved (27 checks)
+in unit masp, 1 subprograms and packages out of 1 analyzed
+  Masp at masp.adb:17 flow analyzed (0 errors and 0 warnings) and proved (18 checks)
+in unit measured_buffer, 19 subprograms and packages out of 19 analyzed
+  measured_buffer at measured_buffer.ads:6 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
+  measured_buffer.Append at measured_buffer.ads:80 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+  measured_buffer.Append_Str at measured_buffer.ads:86 flow analyzed (0 errors and 0 warnings) and proved (11 checks)
+  measured_buffer.Calc_Length at measured_buffer.ads:51 flow analyzed (0 errors and 0 warnings) and proved (7 checks)
+  measured_buffer.Clear at measured_buffer.ads:105 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+  measured_buffer.Construct_Measured_Buffer at measured_buffer.ads:26 flow analyzed (0 errors and 0 warnings) and proved (9 checks)
+  measured_buffer.Copy at measured_buffer.ads:110 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  measured_buffer.Get_Char at measured_buffer.ads:39 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Get_Extension at measured_buffer.ads:138 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
+  measured_buffer.Get_Length at measured_buffer.ads:60 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Get_String at measured_buffer.ads:123 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+  measured_buffer.Get_String_Trunc at measured_buffer.ads:130 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  measured_buffer.Has_Prefix at measured_buffer.ads:117 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  measured_buffer.Is_Empty at measured_buffer.ads:69 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Is_Full at measured_buffer.ads:75 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  measured_buffer.Peek at measured_buffer.ads:44 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Replace_Char at measured_buffer.ads:100 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  measured_buffer.Set_Length at measured_buffer.ads:64 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  measured_buffer.Set_Str at measured_buffer.ads:93 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+in unit network_ns, 0 subprograms and packages out of 6 analyzed
+  network_ns at network_ns.ads:18 skipped
+  network_ns.Close_Client_Socket at network_ns.ads:54 skipped
+  network_ns.Get_Client_Cxn at network_ns.ads:34 skipped
+  network_ns.Initialize_TCP_State at network_ns.ads:29 skipped
+  network_ns.Recv_NET_Request at network_ns.ads:40 skipped
+  network_ns.Send_HTTP_Response at network_ns.ads:49 skipped
+in unit parsing, 12 subprograms and packages out of 12 analyzed
+  parsing at parsing.ads:16 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
+  parsing.Delete_First_Dir_To_Left at parsing.ads:72 flow analyzed (0 errors and 0 warnings) and proved (17 checks)
+  parsing.Detokenize_Filename_Tokens at parsing.ads:98 flow analyzed (0 errors and 0 warnings) and proved (18 checks)
+  parsing.Get_All_Filename_Tokens at parsing.ads:84 flow analyzed (0 errors and 0 warnings) and proved (30 checks)
+  parsing.Get_All_Request_Tokens at parsing.ads:43 flow analyzed (0 errors and 0 warnings) and proved (30 checks)
+  parsing.Get_First_Token_In_Range at parsing.ads:28 flow analyzed (0 errors and 0 warnings) and proved (10 checks)
+  parsing.Get_Token_Ct at parsing.ads:128 flow analyzed (0 errors and 0 warnings) and proved (6 checks)
+  parsing.Is_Delimits_Well_Formed at parsing.ads:116 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  parsing.Is_Last_Filename_Token at parsing.ads:108 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  parsing.Is_Leading_Delimit at parsing.ads:122 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  parsing.Parse_HTTP_Request at parsing.ads:135 flow analyzed (0 errors and 0 warnings) and proved (46 checks)
+  parsing.Resolve_Special_Directories at parsing.ads:58 flow analyzed (0 errors and 0 warnings) and proved (20 checks)
+in unit server, 4 subprograms and packages out of 4 analyzed
+  server at server.ads:18 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  server.Canonicalize_HTTP_Request at server.ads:20 flow analyzed (0 errors and 0 warnings) and proved (18 checks)
+  server.Fulfill_HTTP_Request at server.ads:39 flow analyzed (0 errors and 0 warnings) and proved (8 checks)
+  server.Sanitize_HTTP_Request at server.ads:29 flow analyzed (0 errors and 0 warnings) and proved (5 checks)
+in unit spark, 1 subprograms and packages out of 2 analyzed
+  SPARK at spark.ads:29 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  SPARK.Text_IO_File_Type at spark.ads:53 skipped
+in unit spark-text_io, 4 subprograms and packages out of 71 analyzed
+  SPARK.Text_IO at spark-text_io.ads:27 skipped
+  SPARK.Text_IO.Close at spark-text_io.ads:182 skipped
+  SPARK.Text_IO.Col at spark-text_io.ads:484 skipped
+  SPARK.Text_IO.Col at spark-text_io.ads:488 skipped
+  SPARK.Text_IO.Create at spark-text_io.ads:144 skipped
+  SPARK.Text_IO.Delete at spark-text_io.ads:188 skipped
+  SPARK.Text_IO.End_Of_File at spark-text_io.ads:412 skipped
+  SPARK.Text_IO.End_Of_File at spark-text_io.ads:416 skipped
+  SPARK.Text_IO.End_Of_Line at spark-text_io.ads:357 skipped
+  SPARK.Text_IO.End_Of_Line at spark-text_io.ads:361 skipped
+  SPARK.Text_IO.End_Of_Page at spark-text_io.ads:405 skipped
+  SPARK.Text_IO.End_Of_Page at spark-text_io.ads:409 skipped
+  SPARK.Text_IO.Flush at spark-text_io.ads:225 skipped
+  SPARK.Text_IO.Flush at spark-text_io.ads:236 skipped
+  SPARK.Text_IO.Form at spark-text_io.ads:129 skipped
+  SPARK.Text_IO.Get at spark-text_io.ads:507 skipped
+  SPARK.Text_IO.Get at spark-text_io.ads:515 skipped
+  SPARK.Text_IO.Get at spark-text_io.ads:613 skipped
+  SPARK.Text_IO.Get at spark-text_io.ads:624 skipped
+  SPARK.Text_IO.Get_Immediate at spark-text_io.ads:573 skipped
+  SPARK.Text_IO.Get_Immediate at spark-text_io.ads:582 skipped
+  SPARK.Text_IO.Get_Immediate at spark-text_io.ads:591 skipped
+  SPARK.Text_IO.Get_Immediate at spark-text_io.ads:601 skipped
+  SPARK.Text_IO.Get_Line at spark-text_io.ads:664 skipped
+  SPARK.Text_IO.Get_Line at spark-text_io.ads:679 skipped
+  SPARK.Text_IO.Is_Open at spark-text_io.ads:115 skipped
+  SPARK.Text_IO.Is_Readable at spark-text_io.ads:133 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  SPARK.Text_IO.Is_Standard_Error at spark-text_io.ads:100 skipped
+  SPARK.Text_IO.Is_Standard_File at spark-text_io.ads:109 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  SPARK.Text_IO.Is_Standard_Input at spark-text_io.ads:92 skipped
+  SPARK.Text_IO.Is_Standard_Output at spark-text_io.ads:96 skipped
+  SPARK.Text_IO.Is_Standard_Writable at spark-text_io.ads:104 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  SPARK.Text_IO.Is_Writable at spark-text_io.ads:137 flow analyzed (0 errors and 0 warnings) and proved (2 checks)
+  SPARK.Text_IO.Line at spark-text_io.ads:491 skipped
+  SPARK.Text_IO.Line at spark-text_io.ads:495 skipped
+  SPARK.Text_IO.Line_Length at spark-text_io.ads:298 skipped
+  SPARK.Text_IO.Line_Length at spark-text_io.ads:302 skipped
+  SPARK.Text_IO.Look_Ahead at spark-text_io.ads:555 skipped
+  SPARK.Text_IO.Look_Ahead at spark-text_io.ads:565 skipped
+  SPARK.Text_IO.Mode at spark-text_io.ads:118 skipped
+  SPARK.Text_IO.Name at spark-text_io.ads:125 skipped
+  SPARK.Text_IO.New_Line at spark-text_io.ads:314 skipped
+  SPARK.Text_IO.New_Line at spark-text_io.ads:325 skipped
+  SPARK.Text_IO.New_Page at spark-text_io.ads:364 skipped
+  SPARK.Text_IO.New_Page at spark-text_io.ads:374 skipped
+  SPARK.Text_IO.Open at spark-text_io.ads:164 skipped
+  SPARK.Text_IO.Page at spark-text_io.ads:498 skipped
+  SPARK.Text_IO.Page at spark-text_io.ads:502 skipped
+  SPARK.Text_IO.Page_Length at spark-text_io.ads:305 skipped
+  SPARK.Text_IO.Page_Length at spark-text_io.ads:309 skipped
+  SPARK.Text_IO.Put at spark-text_io.ads:528 skipped
+  SPARK.Text_IO.Put at spark-text_io.ads:540 skipped
+  SPARK.Text_IO.Put at spark-text_io.ads:634 skipped
+  SPARK.Text_IO.Put at spark-text_io.ads:646 skipped
+  SPARK.Text_IO.Put_Line at spark-text_io.ads:690 skipped
+  SPARK.Text_IO.Put_Line at spark-text_io.ads:703 skipped
+  SPARK.Text_IO.Reset at spark-text_io.ads:194 skipped
+  SPARK.Text_IO.Reset at spark-text_io.ads:205 skipped
+  SPARK.Text_IO.Set_Col at spark-text_io.ads:420 skipped
+  SPARK.Text_IO.Set_Col at spark-text_io.ads:435 skipped
+  SPARK.Text_IO.Set_Line at spark-text_io.ads:452 skipped
+  SPARK.Text_IO.Set_Line at spark-text_io.ads:467 skipped
+  SPARK.Text_IO.Set_Line_Length at spark-text_io.ads:252 skipped
+  SPARK.Text_IO.Set_Line_Length at spark-text_io.ads:263 skipped
+  SPARK.Text_IO.Set_Page_Length at spark-text_io.ads:276 skipped
+  SPARK.Text_IO.Set_Page_Length at spark-text_io.ads:286 skipped
+  SPARK.Text_IO.Skip_Line at spark-text_io.ads:339 skipped
+  SPARK.Text_IO.Skip_Line at spark-text_io.ads:348 skipped
+  SPARK.Text_IO.Skip_Page at spark-text_io.ads:388 skipped
+  SPARK.Text_IO.Skip_Page at spark-text_io.ads:396 skipped
+  SPARK.Text_IO.Status at spark-text_io.ads:86 skipped
+in unit utils, 12 subprograms and packages out of 12 analyzed
+  utils at utils.ads:9 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  utils.Check_Print at utils.ads:15 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  utils.Check_Print_Ln at utils.ads:14 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  utils.Debug_Print at utils.ads:13 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  utils.Debug_Print_Ln at utils.ads:12 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  utils.Get_Month_Str at utils.ads:32 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  utils.Get_Wkday_Str at utils.ads:29 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  utils.Insert_Leading_Zeroes_2DIGIT at utils.ads:38 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  utils.Insert_Leading_Zeroes_4DIGIT at utils.ads:41 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  utils.Is_Standard_Printable at utils.ads:20 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  utils.Logical_Equivalence at utils.ads:17 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  utils.Trim_Number_Image at utils.ads:35 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+in unit utils_ns, 0 subprograms and packages out of 2 analyzed
+  utils_ns at utils_ns.ads:8 skipped
+  utils_ns.Get_HTTP_Time_Str at utils_ns.ads:10 skipped

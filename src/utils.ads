@@ -23,9 +23,6 @@ package utils is
          or Character'Pos(C) = 9 )
    with Global => null;
 
-   function Get_HTTP_Time_Str(Time : Ada.Calendar.Time) return String
-   with Global => null;
-
    --function Get_Day_Of_Week_Str(Day : Day_Of_Week) return String
    --with Global => null;
 

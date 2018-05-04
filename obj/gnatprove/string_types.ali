@@ -8,20 +8,23 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U string_types%s	string_types.ads	299e798a OO PK KU
+U string_types%s	string_types.ads	3fbb5517 OO PK KU
 W config%s		config.ads		config.ali
 W measured_buffer%s	measured_buffer.adb	measured_buffer.ali
 
 D ada.ads		20170516105950 76789da1 ada%s
+D a-calend.ads		20170516105954 2d5f01d4 ada.calendar%s
+D a-calfor.ads		20170516105948 0a6f9afc ada.calendar.formatting%s
+D a-catizo.ads		20170516105954 409d7e5b ada.calendar.time_zones%s
 D a-charac.ads		20170516105954 2d3ec45b ada.characters%s
 D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180418030508 6ea25412 config%s
+D config.ads		20180502220708 6ea25412 config%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D measured_buffer.ads	20180418122254 11cba177 measured_buffer%s
+D measured_buffer.ads	20180418123656 07ee8dea measured_buffer%s
 D spark.ads		20140410152036 86380d85 spark%s
 D spark-text_io.ads	20180403010726 e7af9ede spark.text_io%s
 D string_types.ads	20180418112746 56f78cef string_types%s
@@ -30,14 +33,14 @@ D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
 D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180417181156 5895f492 utils%s
-X 7 config.ads
-5K9*config 28e11 13|1w6 1r18
-22i4*MAX_URI_BYTE_CT{natural} 13|24r48
-23i4*MAX_PARSED_URI_BYTE_CT{natural} 13|25r54
-X 10 measured_buffer.ads
-6K9*measured_buffer 143e20 13|2w6 2r27
-X 13 string_types.ads
+D utils.ads		20180504223336 94c1b6f6 utils%s
+X 10 config.ads
+5K9*config 28e11 16|1w6 1r18
+22i4*MAX_URI_BYTE_CT{natural} 16|24r48
+23i4*MAX_PARSED_URI_BYTE_CT{natural} 16|25r54
+X 13 measured_buffer.ads
+6K9*measured_buffer 143e20 16|2w6 2r27
+X 16 string_types.ads
 4K9*String_Types 28l5 28e17
 5A12*String4{string}<integer> 26r36
 6A12*String8{string}<integer> 22r37 23r32
@@ -63,21 +66,82 @@ X 13 string_types.ads
 27A12*ReasonPhraseStringType{8A12}<integer>
 FD 1 ada.ads
 FS .1 16K9 ada
-FD 2 a-charac.ads
+FD 2 a-calend.ads
+FS .1 36K13 ada__calendar
+FS .2 58V13 ada__calendar__clock
+FS .3 66V13 ada__calendar__year
+FS .4 67V13 ada__calendar__month
+FS .5 68V13 ada__calendar__day
+FS .6 69V13 ada__calendar__seconds
+FS .7 71U14 ada__calendar__split
+FS .8 82V13 ada__calendar__time_of
+FS .9 102V13 ada__calendar__Oadd
+FS .10 103V13 ada__calendar__Oadd__2
+FS .11 104V13 ada__calendar__Osubtract
+FS .12 105V13 ada__calendar__Osubtract__2
+FS .13 111V13 ada__calendar__Olt
+FS .14 112V13 ada__calendar__Ole
+FS .15 113V13 ada__calendar__Ogt
+FS .16 114V13 ada__calendar__Oge
+FS .17 233V13 ada__calendar__is_leap
+FS .18 248K12 ada__calendar__arithmetic_operations
+FS .19 250V16 ada__calendar__arithmetic_operations__add
+FS .20 253U17 ada__calendar__arithmetic_operations__difference
+FS .21 264V16 ada__calendar__arithmetic_operations__subtract
+FS .22 273K12 ada__calendar__conversion_operations
+FS .23 275V16 ada__calendar__conversion_operations__to_ada_time
+FS .24 278V16 ada__calendar__conversion_operations__to_ada_time__2
+FS .25 288V16 ada__calendar__conversion_operations__to_duration
+FS .26 293U17 ada__calendar__conversion_operations__to_struct_timespec
+FS .27 299U17 ada__calendar__conversion_operations__to_struct_tm
+FS .28 309V16 ada__calendar__conversion_operations__to_unix_time
+FS .29 318K12 ada__calendar__delay_operations
+FS .30 320V16 ada__calendar__delay_operations__to_duration
+FS .31 330K12 ada__calendar__formatting_operations
+FS .32 332V16 ada__calendar__formatting_operations__day_of_week
+FS .33 336U17 ada__calendar__formatting_operations__split
+FS .34 357V16 ada__calendar__formatting_operations__time_of
+FS .35 387K12 ada__calendar__time_zones_operations
+FS .36 389V16 ada__calendar__time_zones_operations__utc_time_offset
+FD 3 a-calfor.ads
+FS .1 24K22 ada__calendar__formatting
+FS .2 31V13 ada__calendar__formatting__day_of_week
+FS .3 40V13 ada__calendar__formatting__year
+FS .4 44V13 ada__calendar__formatting__month
+FS .5 48V13 ada__calendar__formatting__day
+FS .6 52V13 ada__calendar__formatting__hour
+FS .7 56V13 ada__calendar__formatting__minute
+FS .8 60V13 ada__calendar__formatting__second
+FS .9 63V13 ada__calendar__formatting__sub_second
+FS .10 66V13 ada__calendar__formatting__seconds_of
+FS .11 78U14 ada__calendar__formatting__split
+FS .12 88U14 ada__calendar__formatting__split__2
+FS .13 102V13 ada__calendar__formatting__time_of
+FS .14 121V13 ada__calendar__formatting__time_of__2
+FS .15 137U14 ada__calendar__formatting__split__3
+FS .16 157U14 ada__calendar__formatting__split__4
+FS .17 176V13 ada__calendar__formatting__image
+FS .18 189V13 ada__calendar__formatting__value
+FS .19 197V13 ada__calendar__formatting__image__2
+FS .20 209V13 ada__calendar__formatting__value__2
+FD 4 a-catizo.ads
+FS .1 19K22 ada__calendar__time_zones
+FS .2 27V13 ada__calendar__time_zones__utc_time_offset
+FD 5 a-charac.ads
 FS .1 16K13 ada__characters
-FD 3 a-chlat1.ads
+FD 6 a-chlat1.ads
 FS .1 18K24 ada__characters__latin_1
-FD 4 a-ioexce.ads
+FD 7 a-ioexce.ads
 FS .1 18K13 ada__io_exceptions
-FD 5 a-stream.ads
+FD 8 a-stream.ads
 FS .1 36K13 ada__streams
 FS .2 76U14 ada__streams__read_sea
 FS .3 80U14 ada__streams__write_sea
 FS .4 84U4 ada__streams__stream_element_arraySR
 FS .5 85U4 ada__streams__stream_element_arraySW
-FS .6 84U4 ada__streams__stream_element_arraySR -> 5.4
-FS .7 85U4 ada__streams__stream_element_arraySW -> 5.5
-FD 6 a-textio.ads
+FS .6 84U4 ada__streams__stream_element_arraySR -> 8.4
+FS .7 85U4 ada__streams__stream_element_arraySW -> 8.5
+FD 9 a-textio.ads
 FS .1 49K13 ada__text_io
 FS .2 86U14 ada__text_io__create
 FS .3 92U14 ada__text_io__open
@@ -165,9 +229,9 @@ FS .84 431U14 ada__text_io__read__2
 FS .85 437U14 ada__text_io__write__2
 FS .86 460V13 ada__text_io__eof_char
 FS .87 466U14 ada__text_io__initialize_standard_files
-FD 7 config.ads
+FD 10 config.ads
 FS .1 5K9 config
-FD 8 interfac.ads
+FD 11 interfac.ads
 FS .1 38K9 interfaces
 FS .2 81V13 interfaces__shift_left
 FS .3 85V13 interfaces__shift_right
@@ -189,7 +253,7 @@ FS .18 145V13 interfaces__shift_right__4
 FS .19 149V13 interfaces__shift_right_arithmetic__4
 FS .20 153V13 interfaces__rotate_left__4
 FS .21 157V13 interfaces__rotate_right__4
-FD 9 i-cstrea.ads
+FD 12 i-cstrea.ads
 FS .1 37K20 interfaces__c_streams
 FS .2 72V13 interfaces__c_streams__stdin
 FS .3 73V13 interfaces__c_streams__stdout
@@ -207,7 +271,7 @@ FS .14 223U14 interfaces__c_streams__set_binary_mode
 FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
-FD 10 measured_buffer.ads
+FD 13 measured_buffer.ads
 FS .1 6K9 measured_buffer
 FS .2 26V13 measured_buffer__construct_measured_buffer
 FS .3 39V13 measured_buffer__get_char
@@ -227,16 +291,16 @@ FS .16 117V13 measured_buffer__has_prefix
 FS .17 123V13 measured_buffer__get_string
 FS .18 130V13 measured_buffer__get_string_trunc
 FS .19 138V13 measured_buffer__get_extension
-FS .20 39V13 measured_buffer__get_char -> 10.3
-FS .21 44V13 measured_buffer__peek -> 10.4
-FS .22 60V13 measured_buffer__get_length -> 10.6
-FS .23 69V13 measured_buffer__is_empty -> 10.8
-FS .24 75V13 measured_buffer__is_full -> 10.9
-FS .25 117V13 measured_buffer__has_prefix -> 10.16
-FS .26 123V13 measured_buffer__get_string -> 10.17
-FD 11 spark.ads
+FS .20 39V13 measured_buffer__get_char -> 13.3
+FS .21 44V13 measured_buffer__peek -> 13.4
+FS .22 60V13 measured_buffer__get_length -> 13.6
+FS .23 69V13 measured_buffer__is_empty -> 13.8
+FS .24 75V13 measured_buffer__is_full -> 13.9
+FS .25 117V13 measured_buffer__has_prefix -> 13.16
+FS .26 123V13 measured_buffer__get_string -> 13.17
+FD 14 spark.ads
 FS .1 29K9 spark
-FD 12 spark-text_io.ads
+FD 15 spark-text_io.ads
 FS .1 27K15 spark__text_io
 FS .2 86V13 spark__text_io__status
 FS .3 92V13 spark__text_io__is_standard_input
@@ -308,20 +372,20 @@ FS .68 664U14 spark__text_io__get_line
 FS .69 679U14 spark__text_io__get_line__2
 FS .70 690U14 spark__text_io__put_line
 FS .71 703U14 spark__text_io__put_line__2
-FS .72 104V13 spark__text_io__is_standard_writable -> 12.6
-FS .73 109V13 spark__text_io__is_standard_file -> 12.7
-FS .74 133V13 spark__text_io__is_readable -> 12.12
-FS .75 137V13 spark__text_io__is_writable -> 12.13
-FD 13 string_types.ads
+FS .72 104V13 spark__text_io__is_standard_writable -> 15.6
+FS .73 109V13 spark__text_io__is_standard_file -> 15.7
+FS .74 133V13 spark__text_io__is_readable -> 15.12
+FS .75 137V13 spark__text_io__is_writable -> 15.13
+FD 16 string_types.ads
 FS .1 4K9 string_types
-FD 14 system.ads
+FD 17 system.ads
 FS .1 37K9 system
 FS .2 77V13 system__Olt
 FS .3 78V13 system__Ole
 FS .4 79V13 system__Ogt
 FS .5 80V13 system__Oge
 FS .6 81V13 system__Oeq
-FD 15 s-crtl.ads
+FD 18 s-crtl.ads
 FS .1 38K16 system__crtl
 FS .2 85V13 system__crtl__strlen
 FS .3 88U14 system__crtl__strncpy
@@ -367,30 +431,35 @@ FS .42 229V13 system__crtl__open
 FS .43 232V13 system__crtl__close
 FS .44 235V13 system__crtl__read
 FS .45 238V13 system__crtl__write
-FD 16 s-ficobl.ads
+FD 19 s-ficobl.ads
 FS .1 42K16 system__file_control_block
-FD 17 s-parame.ads
+FD 20 s-parame.ads
 FS .1 51K16 system__parameters
 FS .2 81V13 system__parameters__default_stack_size
 FS .3 84V13 system__parameters__minimum_stack_size
 FS .4 87V13 system__parameters__adjust_storage_size
-FD 18 s-wchcon.ads
+FD 21 s-wchcon.ads
 FS .1 41K16 system__wch_con
 FS .2 203V13 system__wch_con__get_wc_encoding_method
 FS .3 207V13 system__wch_con__get_wc_encoding_method__2
 FS .4 212V13 system__wch_con__is_start_of_encoding
-FD 19 utils.ads
-FS .1 7K9 utils
-FS .2 10U14 utils__debug_print_ln
-FS .3 11U14 utils__debug_print
-FS .4 12U14 utils__check_print_ln
-FS .5 13U14 utils__check_print
-FS .6 15V13 utils__logical_equivalence
-FS .7 18V13 utils__is_standard_printable
-FS .8 18V13 utils__is_standard_printable -> 19.7
-FX 7 config.ads .1 config
-F 22*4 config__max_uri_byte_ct 13|.1:24c48
-F 23*4 config__max_parsed_uri_byte_ct 13|.1:25r54
+FD 22 utils.ads
+FS .1 9K9 utils
+FS .2 12U14 utils__debug_print_ln
+FS .3 13U14 utils__debug_print
+FS .4 14U14 utils__check_print_ln
+FS .5 15U14 utils__check_print
+FS .6 17V13 utils__logical_equivalence
+FS .7 20V13 utils__is_standard_printable
+FS .8 29V13 utils__get_wkday_str
+FS .9 32V13 utils__get_month_str
+FS .10 35V13 utils__trim_number_image
+FS .11 38V13 utils__insert_leading_zeroes_2digit
+FS .12 41V13 utils__insert_leading_zeroes_4digit
+FS .13 20V13 utils__is_standard_printable -> 22.7
+FX 10 config.ads .1 config
+F 22*4 config__max_uri_byte_ct 16|.1:24c48
+F 23*4 config__max_parsed_uri_byte_ct 16|.1:25r54
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0

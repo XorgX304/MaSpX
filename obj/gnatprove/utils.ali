@@ -3,6 +3,8 @@ A -gnatc
 P GP FX
 
 RN
+RV NO_CALENDAR
+RV NO_DELAY
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
@@ -10,20 +12,26 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utils%b		utils.adb		edde59b7 OO PK IL
+U utils%b		utils.adb		d8762e7a OO PK IL
 
-U utils%s		utils.ads		d1983e5e OO PK IL
+U utils%s		utils.ads		3afce712 OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.calendar.formatting%s  a-calfor.adb	a-calfor.ali
 W config%s		config.ads		config.ali
 W spark%s		spark.ads		spark.ali
 W spark.text_io%s	spark-text_io.adb	spark-text_io.ali
 
 D ada.ads		20170516105950 76789da1 ada%s
+D a-calend.ads		20170516105954 2d5f01d4 ada.calendar%s
+D a-calfor.ads		20170516105948 0a6f9afc ada.calendar.formatting%s
+D a-catizo.ads		20170516105954 409d7e5b ada.calendar.time_zones%s
 D a-charac.ads		20170516105954 2d3ec45b ada.characters%s
 D a-chlat1.ads		20170516105952 66457d31 ada.characters.latin_1%s
 D a-ioexce.ads		20170516105948 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
 D a-textio.ads		20170516105954 386df5d4 ada.text_io%s
-D config.ads		20180418030508 6ea25412 config%s
+D config.ads		20180502220708 6ea25412 config%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
 D spark.ads		20140410152036 86380d85 spark%s
@@ -33,55 +41,142 @@ D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
 D s-parame.ads		20170516105954 7e2a0d7f system.parameters%s
 D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
-D utils.ads		20180417181156 5895f492 utils%s
-D utils.adb		20180417181226 b54bad25 utils%b
-X 7 config.ads
-5K9*config 28e11 17|5w6 5r18
-7b4*DEBUG_PRINT_ON{boolean} 18|9r48 19r48
-X 10 spark.ads
-29K9*SPARK 66e10 17|3r6 3r25
-42n25*Success{41E9} 18|9r36 19r36 29r36 39r36
-X 11 spark-text_io.ads
-27K15*Text_IO 718e18 17|3w12 3r31
-36R9*File_Type<10|53R9>
-37E9*File_Status<10|41E9>
-81r4*Standard_Output{36R9} 18|9r17 19r17 29r17 39r17
-86V13*Status{37E9} 18|9s10 19s10 29s10 39s10
-236U14*Flush 18|11s10 21s10 31s10 41s10
-646U14*Put 18|20s10 40s10
-703U14*Put_Line 18|10s10 30s10
-X 17 utils.ads
-7K9*utils 24l5 24e10 18|3b14 54l5 54t10
-10U14*Debug_Print_Ln 10>29 18|6b14 13l8 13t22
-10a29 String_To_Print{string} 18|6b29 10r19
-11U14*Debug_Print 11>26 18|16b14 23l8 23t19
-11a26 String_To_Print{string} 18|16b26 20r14
-12U14*Check_Print_Ln 12>29 18|26b14 33l8 33t22
-12a29 String_To_Print{string} 18|26b29 30r19
-13U14*Check_Print 13>26 18|36b14 43l8 43t19
-13a26 String_To_Print{string} 18|36b26 40r14
-15V13*Logical_Equivalence{boolean} 15>33 15>46 18|46b13 50l8 50t27
-15b33 P{boolean} 18|46b33 49r15 49r32
-15b46 Q{boolean} 18|46b46 49r21 49r42
-18V13*Is_Standard_Printable{boolean} 18>35
-18e35 C{character} 19r24 19r51 20r27 20r52 21r27
+D utils.ads		20180504223336 94c1b6f6 utils%s
+D utils.adb		20180504223400 4cb7988c utils%b
+X 1 ada.ads
+16K9*Ada 20e8 20|4r6 4r24 5r6 5r35
+X 2 a-calend.ads
+36K13*Calendar 395e17 20|4w10 4r28 5r10 5r39
+51I12*Month_Number{integer} 20|32r35 21|75r35
+X 3 a-calfor.ads
+24K22*Formatting 215e28 20|5w19 5r48
+28E9*Day_Name 29e70 20|29r33 21|53r33
+29n7*Monday{28E9} 21|57r12
+29n15*Tuesday{28E9} 21|59r12
+29n24*Wednesday{28E9} 21|61r12
+29n35*Thursday{28E9} 21|63r12
+29n45*Friday{28E9} 21|65r12
+29n53*Saturday{28E9} 21|67r12
+29n63*Sunday{28E9} 21|69r12
+X 10 config.ads
+5K9*config 28e11 20|7w6 7r18
+7b4*DEBUG_PRINT_ON{boolean} 21|9r48 19r48
+X 13 spark.ads
+29K9*SPARK 66e10 20|3r6 3r25
+42n25*Success{41E9} 21|9r36 19r36 29r36 39r36
+X 14 spark-text_io.ads
+27K15*Text_IO 718e18 20|3w12 3r31
+36R9*File_Type<13|53R9>
+37E9*File_Status<13|41E9>
+81r4*Standard_Output{36R9} 21|9r17 19r17 29r17 39r17
+86V13*Status{37E9} 21|9s10 19s10 29s10 39s10
+236U14*Flush 21|11s10 21s10 31s10 41s10
+646U14*Put 21|20s10 40s10
+703U14*Put_Line 21|10s10 30s10
+X 20 utils.ads
+9K9*utils 44l5 44e10 21|3b14 145l5 145t10
+12U14*Debug_Print_Ln 12>29 21|6b14 13l8 13t22
+12a29 String_To_Print{string} 21|6b29 10r19
+13U14*Debug_Print 13>26 21|16b14 23l8 23t19
+13a26 String_To_Print{string} 21|16b26 20r14
+14U14*Check_Print_Ln 14>29 21|26b14 33l8 33t22
+14a29 String_To_Print{string} 21|26b29 30r19
+15U14*Check_Print 15>26 21|36b14 43l8 43t19
+15a26 String_To_Print{string} 21|36b26 40r14
+17V13*Logical_Equivalence{boolean} 17>33 17>46 21|46b13 50l8 50t27
+17b33 P{boolean} 21|46b33 49r15 49r32
+17b46 Q{boolean} 21|46b46 49r21 49r42
+20V13*Is_Standard_Printable{boolean} 20>35
+20e35 C{character} 21r24 21r51 22r27 22r52 23r27
+29V13*Get_Wkday_Str{string} 29>27 21|53b13 72l8 72t21
+29e27 Day{3|28E9} 21|53b27 56r12
+32V13*Get_Month_Str{string} 32>27 21|75b13 104l8 104t21
+32i27 Month{2|51I12} 21|75b27 78r12
+35V13*Trim_Number_Image{string} 35>31 21|107b13 117l8 117t25
+35a31 Str{string} 21|107b31 110r10 110r21 111r13 111r17 112r20 112r24 112r41
+. 116r14
+38V13*Insert_Leading_Zeroes_2DIGIT{string} 38>42 21|120b13 128l8 128t36
+38a42 Str{string} 21|120b42 123r10 124r23 127r14
+41V13*Insert_Leading_Zeroes_4DIGIT{string} 41>42 21|131b13 143l8 143t36
+41a42 Str{string} 21|131b42 134r10 135r25 136r13 137r24 138r13 139r23 142r14
 FD 1 ada.ads
 FS .1 16K9 ada
-FD 2 a-charac.ads
+FD 2 a-calend.ads
+FS .1 36K13 ada__calendar
+FS .2 58V13 ada__calendar__clock
+FS .3 66V13 ada__calendar__year
+FS .4 67V13 ada__calendar__month
+FS .5 68V13 ada__calendar__day
+FS .6 69V13 ada__calendar__seconds
+FS .7 71U14 ada__calendar__split
+FS .8 82V13 ada__calendar__time_of
+FS .9 102V13 ada__calendar__Oadd
+FS .10 103V13 ada__calendar__Oadd__2
+FS .11 104V13 ada__calendar__Osubtract
+FS .12 105V13 ada__calendar__Osubtract__2
+FS .13 111V13 ada__calendar__Olt
+FS .14 112V13 ada__calendar__Ole
+FS .15 113V13 ada__calendar__Ogt
+FS .16 114V13 ada__calendar__Oge
+FS .17 233V13 ada__calendar__is_leap
+FS .18 248K12 ada__calendar__arithmetic_operations
+FS .19 250V16 ada__calendar__arithmetic_operations__add
+FS .20 253U17 ada__calendar__arithmetic_operations__difference
+FS .21 264V16 ada__calendar__arithmetic_operations__subtract
+FS .22 273K12 ada__calendar__conversion_operations
+FS .23 275V16 ada__calendar__conversion_operations__to_ada_time
+FS .24 278V16 ada__calendar__conversion_operations__to_ada_time__2
+FS .25 288V16 ada__calendar__conversion_operations__to_duration
+FS .26 293U17 ada__calendar__conversion_operations__to_struct_timespec
+FS .27 299U17 ada__calendar__conversion_operations__to_struct_tm
+FS .28 309V16 ada__calendar__conversion_operations__to_unix_time
+FS .29 318K12 ada__calendar__delay_operations
+FS .30 320V16 ada__calendar__delay_operations__to_duration
+FS .31 330K12 ada__calendar__formatting_operations
+FS .32 332V16 ada__calendar__formatting_operations__day_of_week
+FS .33 336U17 ada__calendar__formatting_operations__split
+FS .34 357V16 ada__calendar__formatting_operations__time_of
+FS .35 387K12 ada__calendar__time_zones_operations
+FS .36 389V16 ada__calendar__time_zones_operations__utc_time_offset
+FD 3 a-calfor.ads
+FS .1 24K22 ada__calendar__formatting
+FS .2 31V13 ada__calendar__formatting__day_of_week
+FS .3 40V13 ada__calendar__formatting__year
+FS .4 44V13 ada__calendar__formatting__month
+FS .5 48V13 ada__calendar__formatting__day
+FS .6 52V13 ada__calendar__formatting__hour
+FS .7 56V13 ada__calendar__formatting__minute
+FS .8 60V13 ada__calendar__formatting__second
+FS .9 63V13 ada__calendar__formatting__sub_second
+FS .10 66V13 ada__calendar__formatting__seconds_of
+FS .11 78U14 ada__calendar__formatting__split
+FS .12 88U14 ada__calendar__formatting__split__2
+FS .13 102V13 ada__calendar__formatting__time_of
+FS .14 121V13 ada__calendar__formatting__time_of__2
+FS .15 137U14 ada__calendar__formatting__split__3
+FS .16 157U14 ada__calendar__formatting__split__4
+FS .17 176V13 ada__calendar__formatting__image
+FS .18 189V13 ada__calendar__formatting__value
+FS .19 197V13 ada__calendar__formatting__image__2
+FS .20 209V13 ada__calendar__formatting__value__2
+FD 4 a-catizo.ads
+FS .1 19K22 ada__calendar__time_zones
+FS .2 27V13 ada__calendar__time_zones__utc_time_offset
+FD 5 a-charac.ads
 FS .1 16K13 ada__characters
-FD 3 a-chlat1.ads
+FD 6 a-chlat1.ads
 FS .1 18K24 ada__characters__latin_1
-FD 4 a-ioexce.ads
+FD 7 a-ioexce.ads
 FS .1 18K13 ada__io_exceptions
-FD 5 a-stream.ads
+FD 8 a-stream.ads
 FS .1 36K13 ada__streams
 FS .2 76U14 ada__streams__read_sea
 FS .3 80U14 ada__streams__write_sea
 FS .4 84U4 ada__streams__stream_element_arraySR
 FS .5 85U4 ada__streams__stream_element_arraySW
-FS .6 84U4 ada__streams__stream_element_arraySR -> 5.4
-FS .7 85U4 ada__streams__stream_element_arraySW -> 5.5
-FD 6 a-textio.ads
+FS .6 84U4 ada__streams__stream_element_arraySR -> 8.4
+FS .7 85U4 ada__streams__stream_element_arraySW -> 8.5
+FD 9 a-textio.ads
 FS .1 49K13 ada__text_io
 FS .2 86U14 ada__text_io__create
 FS .3 92U14 ada__text_io__open
@@ -169,9 +264,9 @@ FS .84 431U14 ada__text_io__read__2
 FS .85 437U14 ada__text_io__write__2
 FS .86 460V13 ada__text_io__eof_char
 FS .87 466U14 ada__text_io__initialize_standard_files
-FD 7 config.ads
+FD 10 config.ads
 FS .1 5K9 config
-FD 8 interfac.ads
+FD 11 interfac.ads
 FS .1 38K9 interfaces
 FS .2 81V13 interfaces__shift_left
 FS .3 85V13 interfaces__shift_right
@@ -193,7 +288,7 @@ FS .18 145V13 interfaces__shift_right__4
 FS .19 149V13 interfaces__shift_right_arithmetic__4
 FS .20 153V13 interfaces__rotate_left__4
 FS .21 157V13 interfaces__rotate_right__4
-FD 9 i-cstrea.ads
+FD 12 i-cstrea.ads
 FS .1 37K20 interfaces__c_streams
 FS .2 72V13 interfaces__c_streams__stdin
 FS .3 73V13 interfaces__c_streams__stdout
@@ -211,9 +306,9 @@ FS .14 223U14 interfaces__c_streams__set_binary_mode
 FS .15 224U14 interfaces__c_streams__set_text_mode
 FS .16 254U14 interfaces__c_streams__set_mode
 FS .17 262U14 interfaces__c_streams__full_name
-FD 10 spark.ads
+FD 13 spark.ads
 FS .1 29K9 spark
-FD 11 spark-text_io.ads
+FD 14 spark-text_io.ads
 FS .1 27K15 spark__text_io
 FS .2 86V13 spark__text_io__status
 FS .3 92V13 spark__text_io__is_standard_input
@@ -285,18 +380,18 @@ FS .68 664U14 spark__text_io__get_line
 FS .69 679U14 spark__text_io__get_line__2
 FS .70 690U14 spark__text_io__put_line
 FS .71 703U14 spark__text_io__put_line__2
-FS .72 104V13 spark__text_io__is_standard_writable -> 11.6
-FS .73 109V13 spark__text_io__is_standard_file -> 11.7
-FS .74 133V13 spark__text_io__is_readable -> 11.12
-FS .75 137V13 spark__text_io__is_writable -> 11.13
-FD 12 system.ads
+FS .72 104V13 spark__text_io__is_standard_writable -> 14.6
+FS .73 109V13 spark__text_io__is_standard_file -> 14.7
+FS .74 133V13 spark__text_io__is_readable -> 14.12
+FS .75 137V13 spark__text_io__is_writable -> 14.13
+FD 15 system.ads
 FS .1 37K9 system
 FS .2 77V13 system__Olt
 FS .3 78V13 system__Ole
 FS .4 79V13 system__Ogt
 FS .5 80V13 system__Oge
 FS .6 81V13 system__Oeq
-FD 13 s-crtl.ads
+FD 16 s-crtl.ads
 FS .1 38K16 system__crtl
 FS .2 85V13 system__crtl__strlen
 FS .3 88U14 system__crtl__strncpy
@@ -342,65 +437,87 @@ FS .42 229V13 system__crtl__open
 FS .43 232V13 system__crtl__close
 FS .44 235V13 system__crtl__read
 FS .45 238V13 system__crtl__write
-FD 14 s-ficobl.ads
+FD 17 s-ficobl.ads
 FS .1 42K16 system__file_control_block
-FD 15 s-parame.ads
+FD 18 s-parame.ads
 FS .1 51K16 system__parameters
 FS .2 81V13 system__parameters__default_stack_size
 FS .3 84V13 system__parameters__minimum_stack_size
 FS .4 87V13 system__parameters__adjust_storage_size
-FD 16 s-wchcon.ads
+FD 19 s-wchcon.ads
 FS .1 41K16 system__wch_con
 FS .2 203V13 system__wch_con__get_wc_encoding_method
 FS .3 207V13 system__wch_con__get_wc_encoding_method__2
 FS .4 212V13 system__wch_con__is_start_of_encoding
-FD 17 utils.ads
-FS .1 7K9 utils
-FS .2 10U14 utils__debug_print_ln
-FS .3 11U14 utils__debug_print
-FS .4 12U14 utils__check_print_ln
-FS .5 13U14 utils__check_print
-FS .6 15V13 utils__logical_equivalence
-FS .7 18V13 utils__is_standard_printable
-FS .8 18V13 utils__is_standard_printable -> 17.7
-FD 18 utils.adb
-FS .1 3K14 utils -> 17.1
-FS .2 6U14 utils__debug_print_ln -> 17.2
-FS .3 16U14 utils__debug_print -> 17.3
-FS .4 26U14 utils__check_print_ln -> 17.4
-FS .5 36U14 utils__check_print -> 17.5
-FS .6 46V13 utils__logical_equivalence -> 17.6
-FX 7 config.ads .1 config
-F 7*4 config__debug_print_on 18|.2:9c48 .3:19c48
-FX 11 spark-text_io.ads .1 spark__text_io
-F 81*4 spark__text_io__standard_output 18|.2:9r17 .3:19r17 .4:29r17 .5:39r17
-F 86*13 spark__text_io__status 18|.2:9s10 .3:19s10 .4:29s10 .5:39s10
-F 236*14 spark__text_io__flush__2 18|.2:11s10 .3:21s10 .4:31s10 .5:41s10
-F 646*14 spark__text_io__put__4 18|.3:20s10 .5:40s10
-F 703*14 spark__text_io__put_line__2 18|.2:10s10 .4:30s10
-FX 17 utils.ads .2 utils__debug_print_ln
-F 10>29 utils__debug_print_ln__string_to_print 18|.2:10c19
-FX 17 utils.ads .3 utils__debug_print
-F 11>26 utils__debug_print__string_to_print 18|.3:20c14
-FX 17 utils.ads .4 utils__check_print_ln
-F 12>29 utils__check_print_ln__string_to_print 18|.4:30c19
-FX 17 utils.ads .5 utils__check_print
-F 13>26 utils__check_print__string_to_print 18|.5:40c14
-FX 17 utils.ads .6 utils__logical_equivalence
-F 15>33 utils__logical_equivalence__p 18|.6:49c15 49c32
-F 15>46 utils__logical_equivalence__q 18|.6:49c21 49c42
-FX 17 utils.ads .7 utils__is_standard_printable
-F 18>35 utils__is_standard_printable__c .8:19c24 19c51 20c27 20c52 21c27
+FD 20 utils.ads
+FS .1 9K9 utils
+FS .2 12U14 utils__debug_print_ln
+FS .3 13U14 utils__debug_print
+FS .4 14U14 utils__check_print_ln
+FS .5 15U14 utils__check_print
+FS .6 17V13 utils__logical_equivalence
+FS .7 20V13 utils__is_standard_printable
+FS .8 29V13 utils__get_wkday_str
+FS .9 32V13 utils__get_month_str
+FS .10 35V13 utils__trim_number_image
+FS .11 38V13 utils__insert_leading_zeroes_2digit
+FS .12 41V13 utils__insert_leading_zeroes_4digit
+FS .13 20V13 utils__is_standard_printable -> 20.7
+FD 21 utils.adb
+FS .1 3K14 utils -> 20.1
+FS .2 6U14 utils__debug_print_ln -> 20.2
+FS .3 16U14 utils__debug_print -> 20.3
+FS .4 26U14 utils__check_print_ln -> 20.4
+FS .5 36U14 utils__check_print -> 20.5
+FS .6 46V13 utils__logical_equivalence -> 20.6
+FS .7 53V13 utils__get_wkday_str -> 20.8
+FS .8 75V13 utils__get_month_str -> 20.9
+FS .9 107V13 utils__trim_number_image -> 20.10
+FS .10 120V13 utils__insert_leading_zeroes_2digit -> 20.11
+FS .11 131V13 utils__insert_leading_zeroes_4digit -> 20.12
+FX 10 config.ads .1 config
+F 7*4 config__debug_print_on 21|.2:9c48 .3:19c48
+FX 14 spark-text_io.ads .1 spark__text_io
+F 81*4 spark__text_io__standard_output 21|.2:9r17 .3:19r17 .4:29r17 .5:39r17
+F 86*13 spark__text_io__status 21|.2:9s10 .3:19s10 .4:29s10 .5:39s10
+F 236*14 spark__text_io__flush__2 21|.2:11s10 .3:21s10 .4:31s10 .5:41s10
+F 646*14 spark__text_io__put__4 21|.3:20s10 .5:40s10
+F 703*14 spark__text_io__put_line__2 21|.2:10s10 .4:30s10
+FX 20 utils.ads .2 utils__debug_print_ln
+F 12>29 utils__debug_print_ln__string_to_print 21|.2:10c19
+FX 20 utils.ads .3 utils__debug_print
+F 13>26 utils__debug_print__string_to_print 21|.3:20c14
+FX 20 utils.ads .4 utils__check_print_ln
+F 14>29 utils__check_print_ln__string_to_print 21|.4:30c19
+FX 20 utils.ads .5 utils__check_print
+F 15>26 utils__check_print__string_to_print 21|.5:40c14
+FX 20 utils.ads .6 utils__logical_equivalence
+F 17>33 utils__logical_equivalence__p 21|.6:49c15 49c32
+F 17>46 utils__logical_equivalence__q 21|.6:49c21 49c42
+FX 20 utils.ads .7 utils__is_standard_printable
+F 20>35 utils__is_standard_printable__c .13:21c24 21c51 22c27 22c52 23c27
+FX 20 utils.ads .8 utils__get_wkday_str
+F 29>27 utils__get_wkday_str__day 21|.7:56c12
+FX 20 utils.ads .9 utils__get_month_str
+F 32>27 utils__get_month_str__month 21|.8:78c12
+FX 20 utils.ads .10 utils__trim_number_image
+F 35>31 utils__trim_number_image__str 21|.9:110c10 110c21 111c13 111c17 112c20
+. 112c24 112c41 116c14
+FX 20 utils.ads .11 utils__insert_leading_zeroes_2digit
+F 38>42 utils__insert_leading_zeroes_2digit__str 21|.10:123c10 124c23 127c14
+FX 20 utils.ads .12 utils__insert_leading_zeroes_4digit
+F 41>42 utils__insert_leading_zeroes_4digit__str 21|.11:134c10 135c25 136c13
+. 137c24 138c13 139c23 142c14
 
 QQ SPARKVERSION 2017 (20170515)
 GG EK_REMOTE_STATES RS 0
-GG EK_GLOBALS utils KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 6 utils__debug_print_ln utils__debug_print utils__check_print_ln utils__check_print utils__logical_equivalence utils__is_standard_printable local_init 0
+GG EK_GLOBALS utils KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 11 utils__debug_print_ln utils__debug_print utils__check_print_ln utils__check_print utils__logical_equivalence utils__is_standard_printable utils__get_wkday_str utils__get_month_str utils__trim_number_image utils__insert_leading_zeroes_2digit utils__insert_leading_zeroes_4digit local_init 0
 GG EK_GLOBALS utils__debug_print_ln KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 0 calls_conditional 0 local_var 1 utils__debug_print_ln__string_to_print local_ghost 0 local_sub 0
 GG EK_GLOBALS utils__debug_print KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 0 calls_conditional 0 local_var 1 utils__debug_print__string_to_print local_ghost 0 local_sub 0
 GG EK_GLOBALS utils__check_print_ln KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 0 calls_conditional 0 local_var 1 utils__check_print_ln__string_to_print local_ghost 0 local_sub 0
 GG EK_GLOBALS utils__check_print KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 1 spark__text_io__standard_output var_out 1 spark__text_io__standard_output calls_proof 0 calls 0 calls_conditional 0 local_var 1 utils__check_print__string_to_print local_ghost 0 local_sub 0
 GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
-GG EK_NONBLOCKING 7 utils utils__debug_print_ln utils__debug_print utils__check_print_ln utils__check_print utils__logical_equivalence utils__is_standard_printable
+GG EK_NONBLOCKING 12 utils utils__debug_print_ln utils__debug_print utils__check_print_ln utils__check_print utils__logical_equivalence utils__is_standard_printable utils__get_wkday_str utils__get_month_str utils__trim_number_image utils__insert_leading_zeroes_2digit utils__insert_leading_zeroes_4digit
 GG EK_NONRETURNING 0
 GG EK_TERMINATING 0
 GG EK_DIRECT_CALLS utils 0
@@ -410,6 +527,11 @@ GG EK_DIRECT_CALLS utils__check_print_ln 3 spark__text_io__status spark__text_io
 GG EK_DIRECT_CALLS utils__check_print 3 spark__text_io__status spark__text_io__flush__2 spark__text_io__put__4
 GG EK_DIRECT_CALLS utils__logical_equivalence 0
 GG EK_DIRECT_CALLS utils__is_standard_printable 0
+GG EK_DIRECT_CALLS utils__get_wkday_str 0
+GG EK_DIRECT_CALLS utils__get_month_str 0
+GG EK_DIRECT_CALLS utils__trim_number_image 0
+GG EK_DIRECT_CALLS utils__insert_leading_zeroes_2digit 0
+GG EK_DIRECT_CALLS utils__insert_leading_zeroes_4digit 0
 GG EK_TASKING_INFO utils ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO utils__debug_print_ln ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 spark__text_io__standard_output LOCKS 0
 GG EK_TASKING_INFO utils__debug_print ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 spark__text_io__standard_output LOCKS 0
@@ -417,4 +539,9 @@ GG EK_TASKING_INFO utils__check_print_ln ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACC
 GG EK_TASKING_INFO utils__check_print ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 spark__text_io__standard_output LOCKS 0
 GG EK_TASKING_INFO utils__logical_equivalence ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_TASKING_INFO utils__is_standard_printable ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO utils__get_wkday_str ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO utils__get_month_str ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO utils__trim_number_image ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO utils__insert_leading_zeroes_2digit ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO utils__insert_leading_zeroes_4digit ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_END_MARKER
