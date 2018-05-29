@@ -27,3 +27,6 @@ MaSp might seem like a strange name, but it is the name of the two chief protein
   * Null Dereference,  No vulnerability in SPARK
   
 In Apache 2.4, about 50% of security vulnerabilties are caused by the bugs listed above. The other 50% are design or implementation bugs.
+
+# Building MaSpX
+The most efficient way to get started collaborating on this project is to get access to GNAT Programming Studio (GPS): [GNAT Community Edition](https://www.adacore.com/download). Download and install both GNAT-GPL and SPARK-Discovery. GPS streamlines the SPARK development process by including most SPARK functionality in an IDE.
