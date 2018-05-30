@@ -30,3 +30,7 @@ In Apache 2.4, about 50% of security vulnerabilties are caused by the bugs liste
 
 # Building MaSpX
 The most efficient way to get started collaborating on this project is to get access to GNAT Programming Studio (GPS): [GNAT Community Edition](https://www.adacore.com/download). Download and install both GNAT-GPL and SPARK-Discovery. GPS streamlines the SPARK development process by including most SPARK functionality in an IDE.
+
+Start GPS and open the "masp.gpr" file as a project. Go to "Masp > src > config.ads" in the file explorer. Change "WEB_ROOT" to the full path of "test-web-root" in your local git clone of MaSpX. Change "FS_ROOT" to whatever drive letter is in the previous full path.
+
+Finally, select "Build > Project > Build All". Now you can run the server using a terminal in the "obj" folder and running "masp.exe".
